@@ -15,5 +15,5 @@ bundle exec jekyll serve
 Get pandoc
 
 ```
-pandoc -s <file> -t markdown_strict -o ./docs/model2.md --wrap=none
+pandoc -s <file> -t markdown -o ./docs/output.md --wrap=none
 ```

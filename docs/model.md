@@ -12,7 +12,7 @@ has_children: true
 De naam van de Content Partner (CP).
 
 |------------------------|----------------------------------------|
-| **XML element**        | `<CP>`                                 |
+| **XML element**        | ` `<CP>`                                 |
 | ---------------------- | -------------------------------------- |
 | **Datatype**           | Vrije tekst                            |
 | ---------------------- | -------------------------------------- |
@@ -22,7 +22,7 @@ De naam van de Content Partner (CP).
 | ---------------------- | -------------------------------------- |
 
 ```xml
-<CP>MHKA</CP>   
+ `<CP>MHKA `</CP>   
 ```
 
 ## CP ID
@@ -30,7 +30,7 @@ De naam van de Content Partner (CP).
 De unieke identifier van de Content Partner.
 
 |----------------------|--------------------------------------|
-| **XML element**        | `<CP_id>`                                      |
+| **XML element**        | ` `<CP_id>`                                      |
 | ---------------------- | ---------------------------------------------- |
 | **Datatype**           | ID                                             |
 | ---------------------- | ---------------------------------------------- |
@@ -40,7 +40,7 @@ De unieke identifier van de Content Partner.
 | ---------------------- | ---------------------------------------------- |
 
 ```xml
-<CP_id>OR-1245</CP_id>
+ `<CP_id>OR-1245 `</CP_id>
 ```
 
 ## Sub CP naam
@@ -48,7 +48,7 @@ De unieke identifier van de Content Partner.
 De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing indien uw organisatie onderverdeeld is in suborganisaties)
 
 |----------------------|--------------------------------------|
-| **XML element**        | `<Sub_CP>`                                                                                                                                |
+| **XML element**        | ` `<Sub_CP>`                                                                                                                                |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
@@ -58,7 +58,7 @@ De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing ind
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
 
 ```
-<Sub_CP>Faculteit Letterkunde</Sub_CP>
+ `<Sub_CP>Faculteit Letterkunde `</Sub_CP>
 ```
 
 ## PID   
@@ -70,7 +70,7 @@ Elk digitaal object in het meemoo archief heeft een unieke pid.
 Mogelijke mapping naar [dc:identifier](http://purl.org/dc/elements/1.1/identifier); [ebucore:hasIdentifier](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifier); [pbcore:pbcoreIdentifier](https://pbcore.org/elements/pbcoreidentifier.html)
 
 |----------------------|--------------------------------------|
-| **XML element**        | `<PID>`                                                             |
+| **XML element**        | ` `<PID>`                                                             |
 | ---------------------- | ------------------------------------------------------------------- |
 | **Datatype**           | ID                                                                  |
 | ---------------------- | ------------------------------------------------------------------- |
@@ -81,7 +81,7 @@ Mogelijke mapping naar [dc:identifier](http://purl.org/dc/elements/1.1/identifie
 
 
 ```
-<PID>294805325</PID> 
+ `<PID>294805325 `</PID> 
 ```
 
 
@@ -91,7 +91,7 @@ De hoofd ID van de oorspronkelijke drager of het *born digital* item. Dit is de 
 
 Mogelijke mapping van [dc:identifier](http://purl.org/dc/elements/1.1/identifier); [ebucore:hasIdentifier](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifier); [pbcore:pbcoreIdentifier](https://pbcore.org/elements/pbcoreidentifier.html)
 
-Dit is de unieke ID van de content partner die de linkt vormt naar het eigen collectiebeheerssysteem. Dit kan later gebruikt worden om metadata te koppelen in het VIAA archiefsysteem. Voor digitalisering door VIAA is deze ID al in Mediahaven aanwezig, indien deze mee wordt gegeven in AMS <original_carrier_id/>.
+Dit is de unieke ID van de content partner die de linkt vormt naar het eigen collectiebeheerssysteem. Dit kan later gebruikt worden om metadata te koppelen in het VIAA archiefsysteem. Voor digitalisering door VIAA is deze ID al in Mediahaven aanwezig, indien deze mee wordt gegeven in AMS  `<original_carrier_id/>`.
 
 Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registratienummer bijhoudt (ook al raadt VIAA aan om vóór registratie in AMS dit alsnog toe te kennen). In dat geval blijft dit veld leeg. 
 
@@ -100,7 +100,7 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 
 
 |----------------------|--------------------------------------|
-| **XML element**            | `<dc_identifier_localid>`            |
+| **XML element**            | ` `<dc_identifier_localid>`            |
 | -------------------------- | ------------------------------------ |
 | **Data type**              | ID                                   |
 | -------------------------- |                                      |
@@ -111,7 +111,7 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 
 
 ```xml
-<dc_identifier_localid>audiocassette 365</dc_identifier_localid>
+ `<dc_identifier_localid>audiocassette 365 `</dc_identifier_localid>
 ```
 
 ## Overige lokale CP ID   
@@ -126,12 +126,12 @@ Mogelijke mapping van [dc:identifier](http://purl.org/dc/elements/1.1/identifier
 |----------------------|--------------------------------------|
 | **XML element**     | 
 ```xml
-<dc_identifier_localids type="list">
-    <ARDOME/>
-    <priref/>
+ `<dc_identifier_localids type="list">
+     `<ARDOME/>`
+     `<priref/>`
     ...
-</dc_identifier_localids>
-```                        |
+ `</dc_identifier_localids>
+| ```                        |
 | -------------------------- | ------------- |
 | **Data type**              | ID            |
 | -------------------------- | ------------- |
@@ -140,27 +140,27 @@ Mogelijke mapping van [dc:identifier](http://purl.org/dc/elements/1.1/identifier
 | **Herhaalbaar**            | Ja            |
 | -------------------------- | ------------- |
 
-**VRT:**                                                                                                                                                          
+**VRT:**           
 
-```xml                                                                                                                                                          
-<dc_identifier_localids type="list">                                                                                                                              
-  <ARDOME>ABC135</ARDOME>                                                                                                                                           
-</dc_identifier_localids>                                                                                                                                         
-```                                                                                                                                                                  
-**AMSAB**:                                                                                                                                                        
+```xml           
+ `<dc_identifier_localids type="list">                                                                                                                              
+   `<ARDOME>ABC135 `</ARDOME>                                                                                                                                           
+ `</dc_identifier_localids>                                                                                                                                         
+```                   
+**AMSAB**:         
 
-```xml                                                                                                                                                                  
-<dc_identifier_localids type="list">                                                                                                                              
- <reproduction.reference>audiocassette_420</reproduction.reference>                                                                                                
- <acquisition.number>S/2005/051</acquisition.number>                                                                                                               
-                                                                                                                                                                  
- <alternative_number>MG/05/051-102/1</alternative_number>                                                                                                          
-                                                                                                                                                                   
-</dc_identifier_localids>
+```xml                   
+ `<dc_identifier_localids type="list">                                                                                                                              
+  `<reproduction.reference>audiocassette_420 `</reproduction.reference>                                                                                                
+  `<acquisition.number>S/2005/051 `</acquisition.number>                                                                                                               
+                   
+  `<alternative_number>MG/05/051-102/1 `</alternative_number>                                                                                                          
+                    
+ `</dc_identifier_localids>
 ```                                                                                                                                   
 | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                  |
-|                            |                                                                                                                                                                   |
+|                            |                    |
 |     | -   Lokale ID('s) |
 | --- | ----------------- |
 
@@ -172,11 +172,11 @@ De relatiemetadatavelden in het VIAA datamodel worden gebruikt om de formele rel
 |----------------------|--------------------------------------------------------------------------------------------------------|
 | **Veld**             | ### (Dit digitaal object) is deel van                                                                  |
 |======================|========================================================================================================|
-| **XML element** | <dc_relations type="list">                                                                          |
+| **XML element** |  `<dc_relations type="list">                                                                          |
 |                      |                                                                                                        |
-|                      | <is_deel_van/>                                                                                     |
+|                      |  `<is_deel_van/>`                                                                                     |
 |                      |                                                                                                        |
-|                        | </dc_relations>                                                                                          |
+|                        |  `</dc_relations>                                                                                          |
 | ---------------------- | -------------------------------------------------------------------------------------------------------- |
 | **Mapping**            | dcterms:isPartOf                                                                                         |
 |                        |                                                                                                          |
@@ -191,14 +191,13 @@ De relatiemetadatavelden in het VIAA datamodel worden gebruikt om de formele rel
 | **Herhaalbaar**        | Ja                                                                                                       |
 | ---------------------- | -------------------------------------------------------------------------------------------------------- |
 
-|----------------------|--------------------------------------------------------------------------------------|
-| **Veld**             | ### (Dit digitaal object) bevat                                                      |
+## (Dit digitaal object) bevat
 |======================|======================================================================================|
-| **XML element** | <dc_relations type="list">                                                        |
+| **XML element** |  `<dc_relations type="list">                                                        |
 |                      |                                                                                      |
-|                      | <bevat/>                                                                           |
+|                      |  `<bevat/>`                                                                           |
 |                      |                                                                                      |
-|                        | </dc_relations>                                                                        |
+|                        |  `</dc_relations>                                                                        |
 | ---------------------- | -------------------------------------------------------------------------------------- |
 | **Mapping**            | ebucore:hasPart                                                                        |
 |                        |                                                                                        |
@@ -213,14 +212,14 @@ De relatiemetadatavelden in het VIAA datamodel worden gebruikt om de formele rel
 | **Herhaalbaar**        | Ja                                                                                     |
 | ---------------------- | -------------------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------|
-| **Veld**             | ### (Dit digitaal object) is verwant aan                         |
+## (Dit digitaal object) is verwant aan
+
 |======================|==================================================================|
-| **XML element** | <dc_relations type="list">                                    |
+| **XML element** |  `<dc_relations type="list">                                    |
 |                      |                                                                  |
-|                      | <is_verwant_aan/>                                            |
+|                      |  `<is_verwant_aan/>`                                            |
 |                      |                                                                  |
-|                        | </dc_relations>                                                    |
+|                        |  `</dc_relations>                                                    |
 | ---------------------- | ------------------------------------------------------------------ |
 | **Definitie**          | In dit veld worden verwante digitale objecten (PIDs) aangegeven.   |
 | ---------------------- | ------------------------------------------------------------------ |
@@ -231,14 +230,13 @@ De relatiemetadatavelden in het VIAA datamodel worden gebruikt om de formele rel
 | **Herhaalbaar**        | Ja                                                                 |
 | ---------------------- | ------------------------------------------------------------------ |
 
-|----------------------|-------------------------------------------------------------------------------------------|
-| **Veld**             | ### (Dit digitaal object) is versie van                                                   |
+## (Dit digitaal object) is versie van
 |======================|===========================================================================================|
-| **XML element** | <dc_relations type="list">                                                             |
+| **XML element** |  `<dc_relations type="list">                                                             |
 |                      |                                                                                           |
-|                      | <is_versie_van/>                                                                      |
+|                      |  `<is_versie_van/>`                                                                      |
 |                      |                                                                                           |
-|                        | </dc_relations>                                                                             |
+|                        |  `</dc_relations>                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------------- |
 | **Definitie**          | In dit veld worden versies van digitale objecten (PIDs) aangegeven. (vb. Dubbele kopieën)   |
 | ---------------------- | ------------------------------------------------------------------------------------------- |
@@ -249,15 +247,14 @@ De relatiemetadatavelden in het VIAA datamodel worden gebruikt om de formele rel
 | **Herhaalbaar**        | Ja                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------- |
 
-Titels
-------
+# Titels
 
-### 
+## Hoofdtitel 
 
-|--------------------------|----------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Hoofdtitel                                                                                     |
+De algemene benaming of hoofdtitel.
+
 |==========================|====================================================================================================|
-| **XML element**            | <title/>                                                                                             |
+| **XML element**            |  `<title/>`                                                                                             |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
 | **Mapping**                | dc:title                                                                                             |
 |                            |                                                                                                      |
@@ -265,7 +262,7 @@ Titels
 |                            |                                                                                                      |
 |                            | pbcore:pbcoreTitle/title                                                                             |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
-| **Definitie**              | De algemene benaming of hoofdtitel.                                                                  |
+| **Definitie**              |                                                                                                      |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
 | **Datatype**               | Vrije tekst                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -273,7 +270,7 @@ Titels
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**            | Nee                                                                                                  |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <title>nieuws 19-09-94</title>                                                                       |
+| **Voorbeeld**              |  `<title>nieuws 19-09-94 `</title>                                                                       |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
 | **Opmerkingen**            | Voor andere versies (lange titels, vertalingen) kan het veld 'Alternatieve Titel' worden gebruikt.   |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -284,14 +281,16 @@ Titels
 |                            | -   Itemtitel (titel van te beschrijven archiefitem)                                                 |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Serie                                                  |
+## Secundaire titel: Serie  
+
+De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.
+
 |======================|==============================================================================|
-| **XML element** | <dc_titles type="list">                                                   |
+| **XML element** |  `<dc_titles type="list">                                                   |
 |                      |                                                                              |
-|                      | <serie/>                                                                   |
+|                      |  `<serie/>`                                                                   |
 |                      |                                                                              |
-|                        | </dc_titles>                                                                   |
+|                        |  `</dc_titles>                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------ |
 | **Mapping**            | dcterms:alternative                                                            |
 |                        |                                                                                |
@@ -299,29 +298,29 @@ Titels
 |                        |                                                                                |
 |                        | pbcore:titleType                                                               |
 | ---------------------- | ------------------------------------------------------------------------------ |
-| **Definitie**          | De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.   |
-| ---------------------- | ------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------ |
 | **Verplichting**       | Optioneel                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Ja                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <dc_titles type="list">                                                        |
+| **Voorbeeld**          |  `<dc_titles type="list">                                                        |
 |                        |                                                                                |
-|                        | <serie>Het Journaal</serie>                                                    |
+|                        |  `<serie>Het Journaal `</serie>                                                    |
 |                        |                                                                                |
-|                        | </dc_titles>                                                                   |
+|                        |  `</dc_titles>                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------ |
 
-|----------------------|----------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Episode                            |
+## Secundaire titel: Episode             
+
+De titel van de episode waar het item deel van uitmaakt.
+
 |======================|==========================================================|
-| **XML element** | <dc_titles type="list">                               |
+| **XML element** |  `<dc_titles type="list">                               |
 |                      |                                                          |
-|                      | <episode/>                                             |
+|                      |  `<episode/>`                                             |
 |                      |                                                          |
-|                        | </dc_titles>                                               |
+|                        |  `</dc_titles>                                               |
 | ---------------------- | ---------------------------------------------------------- |
 | **Mapping**            | dcterms:alternative                                        |
 |                        |                                                            |
@@ -329,37 +328,33 @@ Titels
 |                        |                                                            |
 |                        | pbcore:titleType                                           |
 | ---------------------- | ---------------------------------------------------------- |
-| **Definitie**          | De titel van de episode waar het item deel van uitmaakt.   |
-| ---------------------- | ---------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                |
 | ---------------------- | ---------------------------------------------------------- |
 | **Verplichting**       | Optioneel                                                  |
 | ---------------------- | ---------------------------------------------------------- |
 | **Herhaalbaar**        | Ja                                                         |
 | ---------------------- | ---------------------------------------------------------- |
-| **Voorbeeld**          | <dc_titles type="list">                                    |
+| **Voorbeeld**          |  `<dc_titles type="list">                                    |
 |                        |                                                            |
-|                        | <epsiode>Het Journaal</episode>                            |
+|                        |  `<epsiode>Het Journaal `</episode>                            |
 |                        |                                                            |
-|                        | </dc_titles>                                               |
+|                        |  `</dc_titles>                                               |
 | ---------------------- | ---------------------------------------------------------- |
 
-|----------------------|--------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Aflevering                                   |
+## Secundaire titel: Aflevering
+
+Dit is de titel van de aflevering waar het item deel van uitmaakt.
+
 |======================|====================================================================|
-| **XML element** | <dc_titles type="list">                                         |
-|                      |                                                                    |
-|                      | <aflevering/>                                                    |
-|                      |                                                                    |
-|                        | </dc_titles>                                                         |
+| **XML element** | ` `<dc_titles type="list">`                                         |
+|                      | ` `<aflevering/>``                                                    |
+|                        | ` `</dc_titles>`                                                       |
 | ---------------------- | -------------------------------------------------------------------- |
 | **Mapping**            | dcterms:alternative                                                  |
 |                        |                                                                      |
 |                        | ebucore:alternativeTitle/\@typeLabel                                 |
 |                        |                                                                      |
 |                        | pbcore:titleType                                                     |
-| ---------------------- | -------------------------------------------------------------------- |
-| **Definitie**          | Dit is de titel van de aflevering waar het item deel van uitmaakt.   |
 | ---------------------- | -------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                          |
 | ---------------------- | -------------------------------------------------------------------- |
@@ -368,22 +363,20 @@ Titels
 | **Herhaalbaar**        | Ja                                                                   |
 | ---------------------- | -------------------------------------------------------------------- |
 
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Alternatief                                                                                                                                        |
+## Secundaire titel: Alternatief                
+
+De alternatieve titel. Dit is een alternatieve titel voor het digitale object. Een alternatieve titel kan bijvoorbeeld een vertaling van de originele (hoofd)titel zijn. 
+
 |======================|==========================================================================================================================================================================|
-| **XML element** | <dc_titles type="list">                                                                                                                                               |
-|                      |                                                                                                                                                                          |
-|                      | <alternatief/>                                                                                                                                                         |
-|                      |                                                                                                                                                                          |
-|                        | </dc_titles>                                                                                                                                                               |
+| **XML element** | ` `<dc_titles type="list">`                                                                                                                                               |
+|                      | ` `<alternatief/>``          |
+|                        | ` `</dc_titles>`                                                                                                                                                             |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mapping **           | dcterms:alternative                                                                                                                                                        |
 |                        |                                                                                                                                                                            |
 |                        | ebucore:alternativeTitle/\@typeLabel                                                                                                                                       |
 |                        |                                                                                                                                                                            |
 |                        | pbcore:titleType                                                                                                                                                           |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | De alternatieve titel. Dit is een alternatieve titel voor het digitale object. Een alternatieve titel kan bijvoorbeeld een vertaling van de originele (hoofd)titel zijn.   |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                                                                                                                |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -392,22 +385,20 @@ Titels
 | **Herhaalbaar**        | Ja                                                                                                                                                                         |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Programma                                                                                                                                |
+## Secundaire titel: Programma     
+
+De programmatitel. Dit is de titel van het programma waarvan het item deel uitmaakt. Hiermee wordt een specifieke aflevering of episode van een serie bedoeld.  
+
 |======================|================================================================================================================================================================|
-| **XML element** | <dc_titles type="list">                                                                                                                                     |
-|                      |                                                                                                                                                                |
-|                      | <programma/>                                                                                                                                                 |
-|                      |                                                                                                                                                                |
-|                        | </dc_titles>                                                                                                                                                     |
+| **XML element** | ` `<dc_titles type="list">`                                                                                                                                     |
+|                      | ` `<programma/>``  |
+|                        | ` `</dc_titles>`                                                                                                                                                   |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mapping**            | dcterms:alternative                                                                                                                                              |
 |                        |                                                                                                                                                                  |
 |                        | ebucore:alternativeTitle/\@typeLabel                                                                                                                             |
 |                        |                                                                                                                                                                  |
 |                        | pbcore:titleType                                                                                                                                                 |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | De programmatitel. Dit is de titel van het programma waarvan het item deel uitmaakt. Hiermee wordt een specifieke aflevering of episode van een serie bedoeld.   |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                                                                                                      |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -416,22 +407,20 @@ Titels
 | **Herhaalbaar**        | Ja                                                                                                                                                               |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|----------------------|---------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Serienummer                       |
+## Secundaire titel: Serienummer 
+
+Het nummer van de serie waarvan het item deel uitmaakt.
+
 |======================|=========================================================|
-| **XML element** | <dc_titles type="list">                              |
-|                      |                                                         |
-|                      | <serienummer/>                                        |
-|                      |                                                         |
-|                        | </dc_titles>                                              |
+| **XML element** | ` `<dc_titles type="list">`                              |
+|                      | ` `<serienummer/>``                                        |
+|                        | ` `</dc_titles>`                                            |
 | ---------------------- | --------------------------------------------------------- |
 | **Mapping**            | dcterms:alternative                                       |
 |                        |                                                           |
 |                        | ebucore:alternativeTitle/\@typeLabel                      |
 |                        |                                                           |
 |                        | pbcore:titleType                                          |
-| ---------------------- | --------------------------------------------------------- |
-| **Definitie**          | Het nummer van de serie waarvan het item deel uitmaakt.   |
 | ---------------------- | --------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                               |
 | ---------------------- | --------------------------------------------------------- |
@@ -440,14 +429,13 @@ Titels
 | **Herhaalbaar**        | Ja                                                        |
 | ---------------------- | --------------------------------------------------------- |
 
-|----------------------|-------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Seizoen                                     |
+
+## Secundaire titel: Seizoen
+
 |======================|===================================================================|
-| **XML element** | <dc_titles type="list">                                        |
-|                      |                                                                   |
-|                      | <seizoen>                                                       |
-|                      |                                                                   |
-|                        | </dc_titles>                                                        |
+| **XML element** | ` `<dc_titles type="list">`                                        |
+|                      | ` `<seizoen>`                                                       |
+|                        | ` `</dc_titles>`                                                      |
 | ---------------------- | ------------------------------------------------------------------- |
 | **Definitie**          | Het seizoen/jaargang van de serie waarvan het item deel uitmaakt.   |
 | ---------------------- | ------------------------------------------------------------------- |
@@ -458,16 +446,16 @@ Titels
 | **Herhaalbaar**        | Ja                                                                  |
 | ---------------------- | ------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Seizoennummer                        |
+## Secundaire titel: Seizoennummer 
+
+Het nummer van het seizoen waarvan het item deel uitmaakt.
+
 |======================|============================================================|
-| **XML element** | <dc_titles type="list">                                 |
+| **XML element** |  `<dc_titles type="list">                                 |
 |                      |                                                            |
-|                      | <seizoennummer>                                          |
+|                      |  `<seizoennummer>                                          |
 |                      |                                                            |
-|                        | </dc_titles>                                                 |
-| ---------------------- | ------------------------------------------------------------ |
-| **Definitie**          | Het nummer van het seizoen waarvan het item deel uitmaakt.   |
+|                        |  `</dc_titles>                                                 |
 | ---------------------- | ------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                  |
 | ---------------------- | ------------------------------------------------------------ |
@@ -476,18 +464,14 @@ Titels
 | **Herhaalbaar**        | Ja                                                           |
 | ---------------------- | ------------------------------------------------------------ |
 
-|----------------------|---------------------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Archief                                                   |
+## Secundaire titel: Archief   
+
+Het hoogste beschrijvingsniveau: het archief waar het object deel van uitmaakt.
+
 |======================|=================================================================================|
-| **XML element** | <dc_titles type="list">                                                      |
-|                      |                                                                                 |
-|                      | <archief/>                                                                    |
-|                      |                                                                                 |
-|                        | </dc_titles>                                                                      |
+| **XML element**        | ` `<dc_titles type="list"> `<archief/>` `</dc_titles>`                                   |
 | ---------------------- | --------------------------------------------------------------------------------- |
-| **Mapping **           | ISAD(G):archief                                                                   |
-| ---------------------- | --------------------------------------------------------------------------------- |
-| **Definitie**          | Het hoogste beschrijvingsniveau: het archief waar het object deel van uitmaakt.   |
+| **Mapping**            | ISAD(G):archief                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                       |
 | ---------------------- | --------------------------------------------------------------------------------- |
@@ -495,23 +479,22 @@ Titels
 | ---------------------- | --------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Ja                                                                                |
 | ---------------------- | --------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_titles type="list">                                                           |
-|                        |                                                                                   |
-|                        | <archief>Archief Gezinsbond</archief>                                             |
-|                        |                                                                                   |
-|                        | </dc_titles                                                                       |
-| ---------------------- | --------------------------------------------------------------------------------- |
 
-|----------------------|-----------------------------------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Deelarchief                                                             |
+```xml
+ `<dc_titles type="list">                                                          
+     `<archief>Archief Gezinsbond `</archief>
+ `</dc_titles>
+```
+
+## Secundaire titel: Deelarchief                                                             
 |======================|===============================================================================================|
-| **XML element** | <dc_titles type="list">                                                                    |
+| **XML element** |  `<dc_titles type="list">                                                                    |
 |                      |                                                                                               |
-|                      | <deelarchief/>                                                                              |
+|                      |  `<deelarchief/>`                                                                              |
 |                      |                                                                                               |
-|                        | </dc_titles>                                                                                    |
+|                        |  `</dc_titles>                                                                                    |
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
-| **Mapping **           | ISAD(G):deelarchief                                                                             |
+| **Mapping**            | ISAD(G):deelarchief                                                                             |
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
 | **Definitie**          | Een deel van een archief dat bestaat uit een geheel van onderling gerelateerde archiefstukken   |
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
@@ -521,51 +504,46 @@ Titels
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Ja                                                                                              |
 | ---------------------- | ----------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_titles type="list">                                                                         |
-|                        |                                                                                                 |
-|                        | <deelarchief>Groene Omroep (deelarchief Agalev)</deelarchief>                                   |
-|                        |                                                                                                 |
-|                        | </dc_titles>                                                                                    |
-| ---------------------- | ----------------------------------------------------------------------------------------------- |
 
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Reeks                                                                                                                                                                                                                                                                                       |
-|======================|===================================================================================================================================================================================================================================================================================================================|
-| **XML element** | <dc_titles type="list">                                                                                                                                                                                                                                                                                        |
-|                      |                                                                                                                                                                                                                                                                                                                   |
-|                      | <reeks/>                                                                                                                                                                                                                                                                                                        |
-|                      |                                                                                                                                                                                                                                                                                                                   |
-|                        | </dc_titles>                                                                                                                                                                                                                                                                                                        |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping **           | ISAD(G):reeks                                                                                                                                                                                                                                                                                                       |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Documenten gerangschikt volgens een ordeningsplan of beheerd als een eenheid omdat ze het resultaat zijn van een zelfde proces van archiefvorming of opslag, of van eenzelfde activiteit, of omdat ze een bepaalde vorm hebben, of wegens enige andere samenhang die voortkomt uit creatie, ontvangst of gebruik.   |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**           | Vrije tekst                                                                                                                                                                                                                                                                                                         |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**       | Optioneel                                                                                                                                                                                                                                                                                                           |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**        | Ja                                                                                                                                                                                                                                                                                                                  |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_titles type="list">                                                                                                                                                                                                                                                                                             |
-|                        |                                                                                                                                                                                                                                                                                                                     |
-|                        | <reeks>Mondelinge Bronnen</reeks>                                                                                                                                                                                                                                                                                   |
-|                        |                                                                                                                                                                                                                                                                                                                     |
-|                        | </dc_titles>                                                                                                                                                                                                                                                                                                        |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+```xml
+ `<dc_titles type="list">                                                                        
+     `<deelarchief>Groene Omroep (deelarchief Agalev) `</deelarchief>
+ `</dc_titles>
+```
 
-|----------------------|----------------------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Deelreeks                                                  |
+
+## Secundaire titel: Reeks
+
+Documenten gerangschikt volgens een ordeningsplan of beheerd als een eenheid omdat ze het resultaat zijn van een zelfde proces van archiefvorming of opslag, of van eenzelfde activiteit, of omdat ze een bepaalde vorm hebben, of wegens enige andere samenhang die voortkomt uit creatie, ontvangst of gebruik.
+
+|======================|====|
+| **XML element**        | ` `<dc_titles type="list"> `<reeks/>` `</dc_titles>` |
+| ---------------------- | --------------------------------------------- |
+| **Mapping**            | ISAD(G):reeks                                 |
+| ---------------------- | ---                                           |
+| **Datatype**           | Vrije tekst                                   |
+| ---------------------- | ---                                           |
+| **Verplichting**       | Optioneel                                     |
+| ---------------------- | ---                                           |
+| **Herhaalbaar**        | Ja                                            |
+| ---------------------- | ---                                           |
+
+```xml
+ `<dc_titles type="list">
+     `<reeks>Mondelinge Bronnen `</reeks>|
+ `</dc_titles>
+```
+
+## Secundaire titel: Deelreeks                        
+
+ Een reeks, een onderdeel van een bovenliggende reeks zoals hierboven omschreven. 
+
 |======================|==================================================================================|
-| **XML element** | <dc_titles type="list">                                                       |
-|                      |                                                                                  |
-|                      | <deelreeks/>                                                                   |
-|                      |                                                                                  |
-|                        | </dc_titles>                                                                       |
+| **XML element** | ` `<dc_titles type="list">`                                                       |
+|                      | ` `<deelreeks/>``                                                                   |
+|                        | ` `</dc_titles>`                                                                     |
 | ---------------------- | ---------------------------------------------------------------------------------- |
-| **Mapping **           | ISAD(G):deelreeks                                                                  |
-| ---------------------- | ---------------------------------------------------------------------------------- |
-| **Definitie**          | Een reeks, een onderdeel van een bovenliggende reeks zoals hierboven omschreven.   |
+| **Mapping**            | ISAD(G):deelreeks                                                                  |
 | ---------------------- | ---------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                        |
 | ---------------------- | ---------------------------------------------------------------------------------- |
@@ -573,124 +551,108 @@ Titels
 | ---------------------- | ---------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Ja                                                                                 |
 | ---------------------- | ---------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_titles type="list">                                                            |
-|                        |                                                                                    |
-|                        | <deelreeks>Over bloemetjes en bijtjes: seksuele voorlichting in                    |
-|                        |                                                                                    |
-|                        | en rond het socialistisch milieu</deelreeks>                                       |
-|                        |                                                                                    |
-|                        | </dc_titles>                                                                       |
-| ---------------------- | ---------------------------------------------------------------------------------- |
 
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Secundaire titel: Registratie                                                                                                                                                                                                                                                                                                                                                      |
-|======================|========================================================================================================================================================================================================================================================================================================================================================================================|
-| **XML element** | <dc_titles type="list">                                                                                                                                                                                                                                                                                                                                                             |
-|                      |                                                                                                                                                                                                                                                                                                                                                                                        |
-|                      | <registratie/>                                                                                                                                                                                                                                                                                                                                                                       |
-|                      |                                                                                                                                                                                                                                                                                                                                                                                        |
-|                        | </dc_titles>                                                                                                                                                                                                                                                                                                                                                                             |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping **           | dcterms:alternative                                                                                                                                                                                                                                                                                                                                                                      |
-|                        |                                                                                                                                                                                                                                                                                                                                                                                          |
-|                        | ebucore:alternativeTitle/\@typeLabel                                                                                                                                                                                                                                                                                                                                                     |
-|                        |                                                                                                                                                                                                                                                                                                                                                                                          |
-|                        | pbcore:titleType                                                                                                                                                                                                                                                                                                                                                                         |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Dit is de registratie-titel zoals ingegeven in AMS.                                                                                                                                                                                                                                                                                                                                      |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**           | Vrije tekst                                                                                                                                                                                                                                                                                                                                                                              |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**       | Optioneel                                                                                                                                                                                                                                                                                                                                                                                |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**        | Ja                                                                                                                                                                                                                                                                                                                                                                                       |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_titles type="list">                                                                                                                                                                                                                                                                                                                                                                  |
-|                        |                                                                                                                                                                                                                                                                                                                                                                                          |
-|                        | <registratie>landbouwbeleid: interview Willy De                                                                                                                                                                                                                                                                                                                                          |
-|                        |                                                                                                                                                                                                                                                                                                                                                                                          |
-|                        | Clercq; mensenrechten: interview Karel De Gucht;                                                                                                                                                                                                                                                                                                                                         |
-|                        |                                                                                                                                                                                                                                                                                                                                                                                          |
-|                        | LVZ: interview Louis Bril; sfeerbeelden</registratie>                                                                                                                                                                                                                                                                                                                                    |
-|                        |                                                                                                                                                                                                                                                                                                                                                                                          |
-|                        | </dc_titles>                                                                                                                                                                                                                                                                                                                                                                             |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Opmerking**          | Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens de registratie werd ingegeven in de AMS registratiesoftware opgeschoond dient te worden maar tegelijk ook interessante informatie bevat. Op dat moment kan de registratietitel bewaard worden onder de secundaire titel 'registratie' en kan de hoofdtitel vervangen worden door een opgeschoonde titel.   |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+```xml
+ `<dc_titles type="list">
+     `<deelreeks>Over bloemetjes en bijtjes: seksuele voorlichting in en rond het socialistisch milieu `</deelreeks>
+ `</dc_titles>      
+```
 
-Datum
------
+## Secundaire titel: Registratie
 
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Datum creatie                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|==========================|================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================|
-| **XML element**            | <dcterms_created/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping**                | dcterms:created                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | ebucore:date/created/@\*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | De datum waarop de inhoud van het object werd gecreëerd.                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**               | Datum / Tijd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Notatie**                | Als basis gebruiken we ISO 8601 : **jjjj-mm-dd**                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | ([[http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=40874]{.underline}])                                                                                                                                                                                                                                                                                                                                                                                                             |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | Om verfijning en benaderende waarden toe te staat wordt EDTF gebruikt : Extended Date Time Format (EDTF)                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | ([[https://www.loc.gov/standards/datetime/]{.underline}])                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | EDTF laat verschillende vormen van verfijning, veralgemening en benaderende waarden toe.                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | In MediaHaven worden volgende mogelijkheden aangeboden:                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   precieze tijd: **2001-02-03T09:30:01**                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   precieze tijd met tijdzone: **2004-01-01T10:10:10+05:00**                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   eeuw: **19xx**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   decennium: **196x**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   onbekend jaar in eeuw: **19uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   onbekend jaar in decennium:**1960u**                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   onbekende maand in jaar: **1962-uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   onbekende dag in een jaar: **1962-uu-uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   onbekende dag in een maand: **1962-10-uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   onbekende datum: **uuuu-uu-uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   lege datum                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**           | Verplicht (indien 'datum uitgave' niet is ingevuld).                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**            | Nee                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dcterms_created>192u</dcterms_created>                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Opmerking A**            | Bij de mapping naar het VIAA datamodel wordt de creatiedatum ook gemapt naar het veld <date>. Dit metadataveld verwacht een exacte datum om zo ook een facet toe te kunnen voegen in de zoekinterface. Bijkomend wordt hierdoor het item ook zichtbaar op de tijdslijn in de VIAA archiefwebsite.                                                                                                                                                                                                                |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Opmerking B**            | Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht bij registratie in AMS) gekozen, aangezien deze doorgaans met de datum van de creatie van de originele inhoud samenvalt of er toch dicht bij aansluit. Het is evenwel mogelijk dat de intellectuele inhoud ('content') vastgelegd op de drager een latere kopie is van een ouder origineel (bijvoorbeeld een kopie van een film op Umatic). In dit geval verschillen de datum van creatie van de datum van de originele drager.   |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   precieze datum: yyyy-mm-dd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                            | -   Productiedatum en/of gebruiksdatum (bijv. datum eerste uitzending).                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+Dit is de registratie-titel zoals ingegeven in AMS.
 
-### 
+**Opmerking** Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens de registratie werd ingegeven in de AMS registratiesoftware opgeschoond dient te worden maar tegelijk ook interessante informatie bevat. Op dat moment kan de registratietitel bewaard worden onder de secundaire titel 'registratie' en kan de hoofdtitel vervangen worden door een opgeschoonde titel.
 
-|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Datum uitgave / uitzending                                                                                                                   |
+|======================|===|
+| **XML element**        | ` `<dc_titles type="list"> `<registratie/>` `</dc_titles>` |
+| ---------------------- | --------------------------------------------------- |
+| **Mapping**            | dcterms:alternative                                 |
+|                        | ebucore:alternativeTitle/\@typeLabel                |
+|                        | pbcore:titleType                                    |
+| ---------------------- | ---                                                 |
+| **Datatype**           | Vrije tekst                                         |
+| ---------------------- | ---                                                 |
+| **Verplichting**       | Optioneel                                           |
+| ---------------------- | ---                                                 |
+| **Herhaalbaar**        | Ja                                                  |
+| ---------------------- | ---                                                 |
+
+```xml
+ `<dc_titles type="list">
+     `<registratie>landbouwbeleid: interview Willy De Clercq; mensenrechten: interview Karel De Gucht; LVZ: interview Louis Bril; sfeerbeelden
+ `</registratie>
+ `</dc_titles>
+```
+
+# Datum
+
+## Datum creatie
+
+De datum waarop de inhoud van het object werd gecreëerd.
+
+|==========================|===|
+| **XML element**            | ` `<dcterms_created/>``                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping**                | dcterms:created                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | ebucore:date/created/@\*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Datatype**               | Datum / Tijd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Notatie**                | Als basis gebruiken we ISO 8601 : **jjjj-mm-dd**                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                            | ([[http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=40874]{.underline}])                                                                                                                                                                                                                                                                                                                                                                                                           |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | Om verfijning en benaderende waarden toe te staat wordt EDTF gebruikt : Extended Date Time Format (EDTF)                                                                                                                                                                                                                                                                                                                                                                                                       |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | ([[https://www.loc.gov/standards/datetime/]{.underline}])                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | EDTF laat verschillende vormen van verfijning, veralgemening en benaderende waarden toe.                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | In MediaHaven worden volgende mogelijkheden aangeboden:                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   precieze tijd: **2001-02-03T09:30:01**                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   precieze tijd met tijdzone: **2004-01-01T10:10:10+05:00**                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   eeuw: **19xx**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   decennium: **196x**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   onbekend jaar in eeuw: **19uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   onbekend jaar in decennium:**1960u**                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   onbekende maand in jaar: **1962-uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   onbekende dag in een jaar: **1962-uu-uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   onbekende dag in een maand: **1962-10-uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   onbekende datum: **uuuu-uu-uu**                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   lege datum                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Verplichting**           | Verplicht (indien 'datum uitgave' niet is ingevuld).                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Herhaalbaar**            | Nee                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Voorbeeld**              |  `<dcterms_created>192u `</dcterms_created>                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Opmerking A**            | Bij de mapping naar het VIAA datamodel wordt de creatiedatum ook gemapt naar het veld  `<date>. Dit metadataveld verwacht een exacte datum om zo ook een facet toe te kunnen voegen in de zoekinterface. Bijkomend wordt hierdoor het item ook zichtbaar op de tijdslijn in de VIAA archiefwebsite.                                                                                                                                                                                                              |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Opmerking B**            | Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht bij registratie in AMS) gekozen, aangezien deze doorgaans met de datum van de creatie van de originele inhoud samenvalt of er toch dicht bij aansluit. Het is evenwel mogelijk dat de intellectuele inhoud ('content') vastgelegd op de drager een latere kopie is van een ouder origineel (bijvoorbeeld een kopie van een film op Umatic). In dit geval verschillen de datum van creatie van de datum van de originele drager. |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   precieze datum: yyyy-mm-dd                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                                                                                                                                                                                                                                                                                                                                               |
+|                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|                            | -   Productiedatum en/of gebruiksdatum (bijv. datum eerste uitzending).                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+
+## Datum uitgave / uitzending 
+
 |==========================|==================================================================================================================================================|
-| **XML element**            | <dcterms_issued/>                                                                                                                                  |
+| **XML element**            |  `<dcterms_issued/>`                                                                                                                                  |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mapping**                | dcterms:issued                                                                                                                                     |
 |                            |                                                                                                                                                    |
@@ -736,76 +698,74 @@ Datum
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**            | Nee                                                                                                                                                |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dcterms_issued>2016-01-27T13:00</dcterms_issued>                                                                                                  |
+| **Voorbeeld**              |  `<dcterms_issued>2016-01-27T13:00 `</dcterms_issued>                                                                                                  |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                   |
 |                            |                                                                                                                                                    |
 |                            | Productiedatum en/of gebruiksdatum (bijv. datum eerste uitzending).                                                                                |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-Productie
----------
+# Productie
 
-|--------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Maker                                                                                                                                                                                                                                                                                                                                                             |
-|==========================|=======================================================================================================================================================================================================================================================================================================================================================================|
-| **XML element**     | <dc_creators type=\"list\">                                                                                                                                                                                                                                                                                                                                        |
-|                          |                                                                                                                                                                                                                                                                                                                                                                       |
-|                          | <Maker/>                                                                                                                                                                                                                                                                                                                                                            |
-|                          |                                                                                                                                                                                                                                                                                                                                                                       |
-|                          | <Regisseur/>                                                                                                                                                                                                                                                                                                                                                        |
-|                          |                                                                                                                                                                                                                                                                                                                                                                       |
-|                          | <Archiefvormer/>                                                                                                                                                                                                                                                                                                                                                    |
-|                          |                                                                                                                                                                                                                                                                                                                                                                       |
-|                          | ...                                                                                                                                                                                                                                                                                                                                                                   |
-|                          |                                                                                                                                                                                                                                                                                                                                                                       |
-|                            | </dc_creators>                                                                                                                                                                                                                                                                                                                                                          |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping**                | dc:creator                                                                                                                                                                                                                                                                                                                                                              |
-|                            |                                                                                                                                                                                                                                                                                                                                                                         |
-|                            | ebucore:creator                                                                                                                                                                                                                                                                                                                                                         |
-|                            |                                                                                                                                                                                                                                                                                                                                                                         |
-|                            | pbcore:pbcoreCreator/creator                                                                                                                                                                                                                                                                                                                                            |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie van de inhoud van het item.                                                                                                                                                                                                                                                             |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**               | Vrije tekst                                                                                                                                                                                                                                                                                                                                                             |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gecontroleerde lijst**   | Zie §4. Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. VIAA biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met VIAA de gecontroleerde lijst worden uitgebreid.   |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**           | Verplicht indien gekend (VA)                                                                                                                                                                                                                                                                                                                                            |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**            | Ja                                                                                                                                                                                                                                                                                                                                                                      |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dc_creators type=\"list\">                                                                                                                                                                                                                                                                                                                                             |
-|                            |                                                                                                                                                                                                                                                                                                                                                                         |
-|                            | <maker>Paul de Vree</maker>                                                                                                                                                                                                                                                                                                                                             |
-|                            |                                                                                                                                                                                                                                                                                                                                                                         |
-|                            | <archiefvormer>Jef van Hoof</archiefvormer>                                                                                                                                                                                                                                                                                                                             |
-|                            |                                                                                                                                                                                                                                                                                                                                                                         |
-|                            | </dc_creators>                                                                                                                                                                                                                                                                                                                                                          |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                                                                                                                                                                                                        |
-|                            |                                                                                                                                                                                                                                                                                                                                                                         |
-|                            | -   Producent/Maker (indien gekend)                                                                                                                                                                                                                                                                                                                                     |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+## Maker            
+|==========================|===|
+| **XML element**     |  `<dc_creators type=\"list\">                     |
+|                          |                      |
+|                          |  `<Maker/>`           |
+|                          |                      |
+|                          |  `<Regisseur/>`       |
+|                          |                      |
+|                          |  `<Archiefvormer/>`   |
+|                          |                      |
+|                          | ...                  |
+|                          |                      |
+|                            |  `</dc_creators>                                                                                                                                                                                                                                                                                                                                                        |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping**                | dc:creator                                                                                                                                                                                                                                                                                                                                                            |
+|                            |                                                                                                                                                                                                                                                                                                                                                                       |
+|                            | ebucore:creator                                                                                                                                                                                                                                                                                                                                                       |
+|                            |                                                                                                                                                                                                                                                                                                                                                                       |
+|                            | pbcore:pbcoreCreator/creator                                                                                                                                                                                                                                                                                                                                          |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                   |
+| **Definitie**              | De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie van de inhoud van het item.                                                                                                                                                                                                                                                           |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                   |
+| **Datatype**               | Vrije tekst                                                                                                                                                                                                                                                                                                                                                           |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                   |
+| **Gecontroleerde lijst**   | Zie §4. Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. VIAA biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met VIAA de gecontroleerde lijst worden uitgebreid. |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                   |
+| **Verplichting**           | Verplicht indien gekend (VA)                                                                                                                                                                                                                                                                                                                                          |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                   |
+| **Herhaalbaar**            | Ja                                                                                                                                                                                                                                                                                                                                                                    |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                   |
+| **Voorbeeld**              |  `<dc_creators type=\"list\">                                                                                                                                                                                                                                                                                                                                           |
+|                            |                                                                                                                                                                                                                                                                                                                                                                       |
+|                            |  `<maker>Paul de Vree `</maker>                                                                                                                                                                                                                                                                                                                                           |
+|                            |                                                                                                                                                                                                                                                                                                                                                                       |
+|                            |  `<archiefvormer>Jef van Hoof `</archiefvormer>                                                                                                                                                                                                                                                                                                                           |
+|                            |                                                                                                                                                                                                                                                                                                                                                                       |
+|                            |  `</dc_creators>                                                                                                                                                                                                                                                                                                                                                        |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                   |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                                                                                                                                                                                                      |
+|                            |                                                                                                                                                                                                                                                                                                                                                                       |
+|                            | -   Producent/Maker (indien gekend)                                                                                                                                                                                                                                                                                                                                   |
+| -------------------------- | ---                                                                                                                                                                                                                                                                                                                                                                   |
 
 ### 
 
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Bijdrager                                                                                                                                      |
+## Bijdrager                                                                                                                                      
+
 |==========================|====================================================================================================================================================|
-| **XML element**     | <dc_contributors type=\"list\">                                                                                                                 |
-|                          |                                                                                                                                                    |
-|                          | <Bijdrager/>                                                                                                                                     |
-|                          |                                                                                                                                                    |
-|                          | <Auteur/>                                                                                                                                        |
-|                          |                                                                                                                                                    |
-|                          | <Cameraman/>                                                                                                                                     |
-|                          |                                                                                                                                                    |
+| **XML element**     |  `<dc_contributors type=\"list\">                                                                                                                 |
+|                          |     |
+|                          |  `<Bijdrager/>`                                                                                                                                     |
+|                          |     |
+|                          |  `<Auteur/>`                                                                                                                                        |
+|                          |     |
+|                          |  `<Cameraman/>`                                                                                                                                     |
+|                          |     |
 |                          | \...                                                                                                                                               |
-|                          |                                                                                                                                                    |
-|                            | </dc_contributors>                                                                                                                                   |
+|                          |     |
+|                            |  `</dc_contributors>                                                                                                                                   |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mapping**                | dc:contributor                                                                                                                                       |
 |                            |                                                                                                                                                      |
@@ -824,109 +784,107 @@ Productie
 | **Herhaalbaar**            | Ja                                                                                                                                                   |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Publisher                                                                                                                                                                                                                                                                                                                                                                 |
-|==========================|===============================================================================================================================================================================================================================================================================================================================================================================|
-| **XML element**     | <dc_publishers type=list/>                                                                                                                                                                                                                                                                                                                                                 |
-|                          |                                                                                                                                                                                                                                                                                                                                                                               |
-|                          | <Publisher/>                                                                                                                                                                                                                                                                                                                                                                |
-|                          |                                                                                                                                                                                                                                                                                                                                                                               |
-|                          | <Distributeur/>                                                                                                                                                                                                                                                                                                                                                             |
-|                          |                                                                                                                                                                                                                                                                                                                                                                               |
-|                          | ...                                                                                                                                                                                                                                                                                                                                                                           |
-|                          |                                                                                                                                                                                                                                                                                                                                                                               |
-|                            | </dc_publishers>                                                                                                                                                                                                                                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping**                | dc:publisher                                                                                                                                                                                                                                                                                                                                                                    |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                 |
-|                            | ebucore:publisher                                                                                                                                                                                                                                                                                                                                                               |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                 |
-|                            | pbcore:pbcorePublisher/publisher                                                                                                                                                                                                                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een item voor derden door omroep, verkoop, verhuur,\...                                                                                                                                                                                                                               |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**               | Vrije tekst                                                                                                                                                                                                                                                                                                                                                                     |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gecontroleerde lijst**   | Zie §4. Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. VIAA biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'bijdrager' worden gebruikt, ofwel kan in overleg met VIAA de gecontroleerde lijst worden uitgebreid.   |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**           | Optioneel                                                                                                                                                                                                                                                                                                                                                                       |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**            | Ja                                                                                                                                                                                                                                                                                                                                                                              |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dc_publishers type=list/>                                                                                                                                                                                                                                                                                                                                                      |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                 |
-|                            | <Publisher>VRT</Publisher>                                                                                                                                                                                                                                                                                                                                                      |
-|                            |                                                                                                                                                                                                                                                                                                                                                                                 |
-|                            | </dc_publishers>                                                                                                                                                                                                                                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+## Publisher
+
+|==========================|===|
+| **XML element**     |  `<dc_publishers type=list/>`|
+|                          |                              |
+|                          |  `<Publisher/>`               |
+|                          |                              |
+|                          |  `<Distributeur/>`            |
+|                          |                              |
+|                          | ...                          |
+|                          |                              |
+|                            |  `</dc_publishers>                                                                                                                                                                                                                                                                                                                                                              |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping**                | dc:publisher                                                                                                                                                                                                                                                                                                                                                                  |
+|                            |                                                                                                                                                                                                                                                                                                                                                                               |
+|                            | ebucore:publisher                                                                                                                                                                                                                                                                                                                                                             |
+|                            |                                                                                                                                                                                                                                                                                                                                                                               |
+|                            | pbcore:pbcorePublisher/publisher                                                                                                                                                                                                                                                                                                                                              |
+| -------------------------- | -----------                                                                                                                                                                                                                                                                                                                                                                   |
+| **Definitie**              | De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een item voor derden door omroep, verkoop, verhuur,\...                                                                                                                                                                                                                             |
+| -------------------------- | -----------                                                                                                                                                                                                                                                                                                                                                                   |
+| **Datatype**               | Vrije tekst                                                                                                                                                                                                                                                                                                                                                                   |
+| -------------------------- | -----------                                                                                                                                                                                                                                                                                                                                                                   |
+| **Gecontroleerde lijst**   | Zie §4. Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. VIAA biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'bijdrager' worden gebruikt, ofwel kan in overleg met VIAA de gecontroleerde lijst worden uitgebreid. |
+| -------------------------- | -----------                                                                                                                                                                                                                                                                                                                                                                   |
+| **Verplichting**           | Optioneel                                                                                                                                                                                                                                                                                                                                                                     |
+| -------------------------- | -----------                                                                                                                                                                                                                                                                                                                                                                   |
+| **Herhaalbaar**            | Ja                                                                                                                                                                                                                                                                                                                                                                            |
+| -------------------------- | -----------                                                                                                                                                                                                                                                                                                                                                                   |
+| **Voorbeeld**              |  `<dc_publishers type=list/>`                                                                                                                                                                                                                                                                                                                                                    |
+|                            |                                                                                                                                                                                                                                                                                                                                                                               |
+|                            |  `<Publisher>VRT `</Publisher>                                                                                                                                                                                                                                                                                                                                                    |
+|                            |                                                                                                                                                                                                                                                                                                                                                                               |
+|                            |  `</dc_publishers>                                                                                                                                                                                                                                                                                                                                                              |
+| -------------------------- | -----------                                                                                                                                                                                                                                                                                                                                                                   |
 
 Inhoud
 ------
 
-### 
+## Hoofdbeschrijving
 
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Hoofdbeschrijving                                                                                                                                                                                       |
 |==========================|=============================================================================================================================================================================================================|
-| **XML element**            | <description/>                                                                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping**                | dc:description                                                                                                                                                                                                |
-|                            |                                                                                                                                                                                                               |
-|                            | ebucore:description/dc:description                                                                                                                                                                            |
-|                            |                                                                                                                                                                                                               |
-|                            | pbcore:pbcoreDescription                                                                                                                                                                                      |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | Een korte, algemene omschrijving van de intellectuele inhoud van een item.                                                                                                                                    |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**               | Vrije tekst                                                                                                                                                                                                   |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**           | Verplicht indien geen minimum van vijf trefwoorden.                                                                                                                                                           |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**            | Nee                                                                                                                                                                                                           |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dc_description>Deze interviews zijn ingericht door het Universiteitsarchief en vormen een basis voor een onderzoek. Het eindresultaat is de publicatie \'Meisjestudenten aan de RUG</dc_description>         |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                                              |
-|                            |                                                                                                                                                                                                               |
-|                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) of een minimum van 5 trefwoorden die de inhoud van het item beschrijven                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **XML element**            |  `<description/>`                                                                                                                                                                                        |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping**                | dc:description                                                                                                                                                                                        |
+|                            |                                                                                                                                                                                                       |
+|                            | ebucore:description/dc:description                                                                                                                                                                    |
+|                            |                                                                                                                                                                                                       |
+|                            | pbcore:pbcoreDescription                                                                                                                                                                              |
+| -------------------------- | ------------------------------                                                                                                                                                                        |
+| **Definitie**              | Een korte, algemene omschrijving van de intellectuele inhoud van een item.                                                                                                                            |
+| -------------------------- | ------------------------------                                                                                                                                                                        |
+| **Datatype**               | Vrije tekst                                                                                                                                                                                           |
+| -------------------------- | ------------------------------                                                                                                                                                                        |
+| **Verplichting**           | Verplicht indien geen minimum van vijf trefwoorden.                                                                                                                                                   |
+| -------------------------- | ------------------------------                                                                                                                                                                        |
+| **Herhaalbaar**            | Nee                                                                                                                                                                                                   |
+| -------------------------- | ------------------------------                                                                                                                                                                        |
+| **Voorbeeld**              |  `<dc_description>Deze interviews zijn ingericht door het Universiteitsarchief en vormen een basis voor een onderzoek. Het eindresultaat is de publicatie \'Meisjestudenten aan de RUG `</dc_description> |
+| -------------------------- | ------------------------------                                                                                                                                                                        |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                                      |
+|                            |                                                                                                                                                                                                       |
+|                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) of een minimum van 5 trefwoorden die de inhoud van het item beschrijven                                        |
+| -------------------------- | ------------------------------                                                                                                                                                                        |
 
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Lange beschrijving                                                                                                                                                                                               |
+## Lange beschrijving   
+
+Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbeeld door puntsgewijs de voornaamste scènes, stock-shots, aparte items... te beschrijven. Voor ondertitels is een apart veld voorzien. 
+                        
 |==========================|======================================================================================================================================================================================================================|
-| **XML element**            | <dc_description_long/>                                                                                                                                                                                                 |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping **               | dc:description                                                                                                                                                                                                         |
-|                            |                                                                                                                                                                                                                        |
-|                            | ebucore:description/dc:description                                                                                                                                                                                     |
-|                            |                                                                                                                                                                                                                        |
-|                            | pbcore:pbcoreDescription                                                                                                                                                                                               |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbeeld door puntsgewijs de voornaamste scènes, stock-shots, aparte items... te beschrijven. Voor ondertitels is een apart veld voorzien.   |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**               | Vrije tekst                                                                                                                                                                                                            |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**           | Optioneel                                                                                                                                                                                                              |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**            | Nee                                                                                                                                                                                                                    |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                                                       |
-|                            |                                                                                                                                                                                                                        |
-|                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven                                       |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **XML element**            |  `<dc_description_long/>`                                                                                                                                                           |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping **               | dc:description                                                                                                                                                                   |
+|                            |                                                                                                                                                                                  |
+|                            | ebucore:description/dc:description                                                                                                                                               |
+|                            |                                                                                                                                                                                  |
+|                            | pbcore:pbcoreDescription                                                                                                                                                         |
+| -------------------------- | ---------------------------------------                                                                                                                                          |
+| **Datatype**               | Vrije tekst                                                                                                                                                                      |
+| -------------------------- | ---------------------------------------                                                                                                                                          |
+| **Verplichting**           | Optioneel                                                                                                                                                                        |
+| -------------------------- | ---------------------------------------                                                                                                                                          |
+| **Herhaalbaar**            | Nee                                                                                                                                                                              |
+| -------------------------- | ---------------------------------------                                                                                                                                          |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                 |
+|                            |                                                                                                                                                                                  |
+|                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
+| -------------------------- | ---------------------------------------                                                                                                                                          |
 
-|----------------------|---------------------------------------------------------------------------------|
-| **Veld**             | ### Programmabeschrijving                                                       |
+## Programmabeschrijving    
+
+Een korte beschrijving van het programma waar het item een onderdeel van vormt.   
+                                                   
 |======================|=================================================================================|
-| **XML element**        | <dc_description_programme/>                                                       |
+| **XML element**        |  `<dc_description_programme/>`                                                       |
 | ---------------------- | --------------------------------------------------------------------------------- |
 | **Mapping**            | dc:description                                                                    |
 |                        |                                                                                   |
 |                        | ebucore:description/dc:description                                                |
 |                        |                                                                                   |
 |                        | pbcore:pbcoreDescription                                                          |
-| ---------------------- | --------------------------------------------------------------------------------- |
-| **Definitie**          | Een korte beschrijving van het programma waar het item een onderdeel van vormt.   |
 | ---------------------- | --------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                       |
 | ---------------------- | --------------------------------------------------------------------------------- |
@@ -935,10 +893,12 @@ Inhoud
 | **Herhaalbaar**        | Nee                                                                               |
 | ---------------------- | --------------------------------------------------------------------------------- |
 
-|----------------------|-------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Cast                                                                                                    |
+## Cast    
+
+Een oplijsting van de voornaamste acteurs/performers en hun respectievelijke rol. 
+                                                                                                |
 |======================|=============================================================================================================|
-| **XML element**        | <dc_description_cast/>                                                                                        |
+| **XML element**        | ` `<dc_description_cast/>``                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Mapping**            | dc:description                                                                                                |
 |                        |                                                                                                               |
@@ -946,85 +906,83 @@ Inhoud
 |                        |                                                                                                               |
 |                        | pbcore:pbcoreDescription                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Een oplijsting van de voornaamste acteurs/performers en hun respectievelijke rol.                             |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Verplichting**       | Optioneel                                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Ja                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_description_cast>Julien Schoenaert (Oedipus), Aafke Bruyninckx (Antigone)</dc_description_cast>           |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------- |
 
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Ondertitels                                                                                                                                                                  |
+```xml
+ `<dc_description_cast>Julien Schoenaert (Oedipus), Aafke Bruyninckx (Antigone) `</dc_description_cast>
+```
+
+## Ondertitels  
+
+|==========================|===|
+| **XML element**            | ` `<dc_description_ondertitels/>``                                                                                                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping**                | dc:description                                                                                                                                                                   |
+|                            |                                                                                                                                                                                  |
+|                            | ebucore:description/dc:description                                                                                                                                               |
+|                            |                                                                                                                                                                                  |
+|                            | pbcore:pbcoreDescription                                                                                                                                                         |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Definitie**              | Een weergave van de ondertitels die bij het digitale object horen.                                                                                                               |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Datatype**               | Vrije tekst                                                                                                                                                                      |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Verplichting**           | Optioneel                                                                                                                                                                        |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Herhaalbaar**            | Nee                                                                                                                                                                              |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                 |
+|                            |                                                                                                                                                                                  |
+|                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
+| -------------------------- | ---                                                                                                                                                                              |
+
+## Transcriptie 
+
+Een weergave van de transcriptie van het digitale object. 
+
+**Opmerkingen** De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden door een speech to text engine.
+
 |==========================|==================================================================================================================================================================================|
-| **XML element**            | <dc_description_ondertitels/>                                                                                                                                                      |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping **               | dc:description                                                                                                                                                                     |
-|                            |                                                                                                                                                                                    |
-|                            | ebucore:description/dc:description                                                                                                                                                 |
-|                            |                                                                                                                                                                                    |
-|                            | pbcore:pbcoreDescription                                                                                                                                                           |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | Een weergave van de ondertitels die bij het digitale object horen.                                                                                                                 |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**               | Vrije tekst                                                                                                                                                                        |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**           | Optioneel                                                                                                                                                                          |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**            | Nee                                                                                                                                                                                |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                   |
-|                            |                                                                                                                                                                                    |
-|                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven   |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **XML element**            | ` `<dc_description_transcriptie/>``                                                                                                                                                 |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping **               | dc:description                                                                                                                                                                   |
+|                            |                                                                                                                                                                                  |
+|                            | ebucore:description/dc:description                                                                                                                                               |
+|                            |                                                                                                                                                                                  |
+|                            | pbcore:pbcoreDescription                                                                                                                                                         |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Datatype**               | Vrije tekst                                                                                                                                                                      |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Verplichting**           | Optioneel                                                                                                                                                                        |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Herhaalbaar**            | Nee                                                                                                                                                                              |
+| -------------------------- | ---                                                                                                                                                                              |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                 |
+|                            |                                                                                                                                                                                  |
+|                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
+| -------------------------- | ---                                                                                                                                                                              |
 
-### 
+## Genre
 
-|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Transcriptie                                                                                                                                                                 |
-|==========================|==================================================================================================================================================================================|
-| **XML element**            | <dc_description_transcriptie/>                                                                                                                                                     |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping **               | dc:description                                                                                                                                                                     |
-|                            |                                                                                                                                                                                    |
-|                            | ebucore:description/dc:description                                                                                                                                                 |
-|                            |                                                                                                                                                                                    |
-|                            | pbcore:pbcoreDescription                                                                                                                                                           |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | Een weergave van de transcriptie van het digitale object.                                                                                                                          |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**               | Vrije tekst                                                                                                                                                                        |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**           | Optioneel                                                                                                                                                                          |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**            | Nee                                                                                                                                                                                |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Opmerkingen**            | De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden door een speech to text engine.                                                                     |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                                   |
-|                            |                                                                                                                                                                                    |
-|                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven   |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door VIAA beheerd wordt.
 
-|--------------------------|-------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Genre                                                                                                   |
 |==========================|=============================================================================================================|
-| **XML element**     | <dc_types type="list">                                                                                   |
+| **XML element**     |  `<dc_types type="list">                                                                                   |
 |                          |                                                                                                             |
-|                          | <genre/>                                                                                                  |
+|                          |  `<genre/>`                                                                                                  |
 |                          |                                                                                                             |
-|                            | </dc_types>                                                                                                   |
+|                            |  `</dc_types>                                                                                                   |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Mapping**                | dc:type                                                                                                       |
 |                            |                                                                                                               |
 |                            | ebucore:type/genre                                                                                            |
 |                            |                                                                                                               |
 |                            | pbcore:pbcoreGenre                                                                                            |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door VIAA beheerd wordt.   |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Datatype**               | Gecontroleerde lijst                                                                                          |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------- |
@@ -1034,29 +992,27 @@ Inhoud
 | -------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**            | Ja                                                                                                            |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dc_types type="list">                                                                                        |
-|                            |                                                                                                               |
-|                            | <genre>sportverslaggeving</genre>                                                                             |
-|                            |                                                                                                               |
-|                            | </dc_types>                                                                                                   |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------- |
 
-### 
+```xml
+ `<dc_types type="list">        
+ `<genre>sportverslaggeving `</genre>
+ `</dc_types>
+```
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Coverage (ruimtelijk)                                                                                                                |
+## Coverage (ruimtelijk)
+
+Een beschrijvende afbakening van het geografisch gebied (straat, stad, land, continent) waar de inhoud van het item betrekking op heeft.
+                                                                                                                
 |======================|==========================================================================================================================================|
-| **XML element** | <dc_coverages type="list">                                                                                                            |
+| **XML element** |  `<dc_coverages type="list">                                                                                                            |
 |                      |                                                                                                                                          |
-|                      | <ruimte/>                                                                                                                              |
+|                      |  `<ruimte/>`                                                                                                                              |
 |                      |                                                                                                                                          |
-|                        | </dc_coverages>                                                                                                                            |
+|                        |  `</dc_coverages>                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Mapping**            | dc:coverage                                                                                                                                |
 |                        |                                                                                                                                            |
 |                        | dcterms:spatial                                                                                                                            |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | Een beschrijvende afbakening van het geografisch gebied (straat, stad, land, continent) waar de inhoud van het item betrekking op heeft.   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                                                                                |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1064,57 +1020,56 @@ Inhoud
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Ja                                                                                                                                         |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <dc_coverages type="list">                                                                                                                 |
-|                        |                                                                                                                                            |
-|                        | <ruimte>Parijs</ruimte>                                                                                                                    |
-|                        |                                                                                                                                            |
-|                        | <ruimte>provincie Antwerpen</ruimte>                                                                                                       |
-|                        |                                                                                                                                            |
-|                        | </dc_coverages>                                                                                                                            |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Coverage (tijd)                                                                                                                                                                                                                              |
-|======================|==================================================================================================================================================================================================================================================|
-| **XML element** | <dc_coverages type="list">                                                                                                                                                                                                                    |
-|                      |                                                                                                                                                                                                                                                  |
-|                      | <tijd/>                                                                                                                                                                                                                                        |
-|                      |                                                                                                                                                                                                                                                  |
-|                        | </dc_coverages>                                                                                                                                                                                                                                    |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping**            | dc:coverage                                                                                                                                                                                                                                        |
-|                        |                                                                                                                                                                                                                                                    |
-|                        | dcterms:temporal                                                                                                                                                                                                                                   |
-|                        |                                                                                                                                                                                                                                                    |
-|                        | ebucore:coverage/temporal                                                                                                                                                                                                                          |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Een beschrijvende afbakening van de tijdsperiode waar de inhoud van het item betrekking op heeft.                                                                                                                                                  |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**           | Vrije tekst                                                                                                                                                                                                                                        |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**       | Optioneel                                                                                                                                                                                                                                          |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**        | Ja                                                                                                                                                                                                                                                 |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_coverages type="list">                                                                                                                                                                                                                         |
-|                        |                                                                                                                                                                                                                                                    |
-|                        | <tijd>interbellum</tijd>                                                                                                                                                                                                                           |
-|                        |                                                                                                                                                                                                                                                    |
-|                        | <tijd>jaren 1920</tijd>                                                                                                                                                                                                                            |
-|                        |                                                                                                                                                                                                                                                    |
-|                        | </dc_coverages>                                                                                                                                                                                                                                    |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Opmerkingen**        | Let wel: het betreft hier de tijdsperiode waar het item *inhoudelijk* betrekking op heeft, niet de datum van creatie. Een documentaire uit de jaren 1950 over de Gulden Sporenslag heeft dus bijvoorbeeld als temporele coverage 'middeleeuwen'.   |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+```xml
+ `<dc_coverages type="list"> 
+ `<ruimte>Parijs `</ruimte>
+ `<ruimte>provincie Antwerpen `</ruimte>
+ `</dc_coverages>
+```
 
-|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Trefwoorden                                                                                                                                                    |
-|==========================|====================================================================================================================================================================|
-| **XML element**     | <dc_subjects type=\"list\">                                                                                                                                     |
-|                          |                                                                                                                                                                    |
-|                          | <Trefwoord/>                                                                                                                                                     |
-|                          |                                                                                                                                                                    |
-|                            | </dc_subjects>                                                                                                                                                       |
+## Coverage (tijd)
+
+|======================|====|
+| **XML element** |  `<dc_coverages type="list">                                                |
+|                      |                                                                              |
+|                      |  `<tijd/>`                                                                    |
+|                      |                                                                              |
+|                        |  `</dc_coverages>                                                                                                                                                                                                                                  |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Mapping**            | dc:coverage                                                                                                                                                                                                                                      |
+|                        |                                                                                                                                                                                                                                                  |
+|                        | dcterms:temporal                                                                                                                                                                                                                                 |
+|                        |                                                                                                                                                                                                                                                  |
+|                        | ebucore:coverage/temporal                                                                                                                                                                                                                        |
+| ---------------------- | -------------------------------------------------------------------                                                                                                                                                                              |
+| **Definitie**          | Een beschrijvende afbakening van de tijdsperiode waar de inhoud van het item betrekking op heeft.                                                                                                                                                |
+| ---------------------- | -------------------------------------------------------------------                                                                                                                                                                              |
+| **Datatype**           | Vrije tekst                                                                                                                                                                                                                                      |
+| ---------------------- | -------------------------------------------------------------------                                                                                                                                                                              |
+| **Verplichting**       | Optioneel                                                                                                                                                                                                                                        |
+| ---------------------- | -------------------------------------------------------------------                                                                                                                                                                              |
+| **Herhaalbaar**        | Ja                                                                                                                                                                                                                                               |
+| ---------------------- | -------------------------------------------------------------------                                                                                                                                                                              |
+| **Voorbeeld**          |  `<dc_coverages type="list">                                                                                                                                                                                                                       |
+|                        |                                                                                                                                                                                                                                                  |
+|                        |  `<tijd>interbellum `</tijd>                                                                                                                                                                                                                         |
+|                        |                                                                                                                                                                                                                                                  |
+|                        |  `<tijd>jaren 1920 `</tijd>                                                                                                                                                                                                                          |
+|                        |                                                                                                                                                                                                                                                  |
+|                        |  `</dc_coverages>                                                                                                                                                                                                                                  |
+| ---------------------- | -------------------------------------------------------------------                                                                                                                                                                              |
+| **Opmerkingen**        | Let wel: het betreft hier de tijdsperiode waar het item *inhoudelijk* betrekking op heeft, niet de datum van creatie. Een documentaire uit de jaren 1950 over de Gulden Sporenslag heeft dus bijvoorbeeld als temporele coverage 'middeleeuwen'. |
+| ---------------------- | -------------------------------------------------------------------                                                                                                                                                                              |
+
+## Trefwoorden
+
+|==========================|===|
+| **XML element**     |  `<dc_subjects type=\"list\"> |
+|                          |                     |
+|                          |  `<Trefwoord/>`      |
+|                          |                     |
+|                            |  `</dc_subjects>                                                                                                                                                       |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mapping**                | dc:subject                                                                                                                                                           |
 |                            |                                                                                                                                                                      |
@@ -1130,27 +1085,27 @@ Inhoud
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**            | Ja                                                                                                                                                                   |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dc_subjects type=\"list\">                                                                                                                                          |
+| **Voorbeeld**              |  `<dc_subjects type=\"list\">                                                                                                                                          |
 |                            |                                                                                                                                                                      |
-|                            | <trefwoord>seksuele voorlichting</trefwoord>                                                                                                                         |
+|                            |  `<trefwoord>seksuele voorlichting `</trefwoord>                                                                                                                         |
 |                            |                                                                                                                                                                      |
-|                            | <trefwoord>socialistische beweging</trefwoord>                                                                                                                       |
+|                            |  `<trefwoord>socialistische beweging `</trefwoord>                                                                                                                       |
 |                            |                                                                                                                                                                      |
-|                            | </dc_subjects>                                                                                                                                                       |
+|                            |  `</dc_subjects>                                                                                                                                                       |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                     |
 |                            |                                                                                                                                                                      |
 |                            | -   Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **of** een minimum van 5 trefwoorden die de inhoud van het item beschrijven   |
 | -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Taal                                                                                                                                                                  |
+## Taal 
+                 |
 |==========================|===========================================================================================================================================================================|
-| **XML element**     | <dc_languages type="list">                                                                                                                                             |
-|                          |                                                                                                                                                                           |
-|                          | <multiselect/>                                                                                                                                                          |
-|                          |                                                                                                                                                                           |
-|                            | </dc_languages>                                                                                                                                                             |
+| **XML element**     |  `<dc_languages type="list">                                                                                                                                             |
+|                          |       |
+|                          |  `<multiselect/>`           |
+|                          |       |
+|                            |  `</dc_languages>                                                                                                                                                             |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mapping**                | dc:language                                                                                                                                                                 |
 |                            |                                                                                                                                                                             |
@@ -1168,13 +1123,13 @@ Inhoud
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**            | Ja                                                                                                                                                                          |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dc_languages type="list">                                                                                                                                                  |
+| **Voorbeeld**              |  `<dc_languages type="list">                                                                                                                                                  |
 |                            |                                                                                                                                                                             |
-|                            | <multiselect>nl</multiselect>                                                                                                                                               |
+|                            |  `<multiselect>nl `</multiselect>                                                                                                                                               |
 |                            |                                                                                                                                                                             |
-|                            | <multiselect>fr</multiselect>                                                                                                                                               |
+|                            |  `<multiselect>fr `</multiselect>                                                                                                                                               |
 |                            |                                                                                                                                                                             |
-|                            | </dc_languages>                                                                                                                                                             |
+|                            |  `</dc_languages>                                                                                                                                                             |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Opmerkingen**            | Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitels. In het geval van een stomme film, is de taal van de eventuele tussentitels indicatief.   |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1183,57 +1138,55 @@ Inhoud
 |                            | Taal: taal van het item                                                                                                                                                     |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-Rechten
--------
+# Rechten
 
-|--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Licentie                                                                                                                                                                                                                                    |
+## Licentie                                                                |
 |==========================|=================================================================================================================================================================================================================================================|
-| **XML element**     | <dc_rights_licenses type="list">                                                                                                                                                                                                            |
-|                          |                                                                                                                                                                                                                                                 |
-|                          | <licentie/>                                                                                                                                                                                                                                   |
-|                          |                                                                                                                                                                                                                                                 |
-|                            | </dc_rights_licences>                                                                                                                                                                                                                             |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping**                | dc:rights                                                                                                                                                                                                                                         |
-|                            |                                                                                                                                                                                                                                                   |
-|                            | dc:license                                                                                                                                                                                                                                        |
-|                            |                                                                                                                                                                                                                                                   |
-|                            | odrl:permission                                                                                                                                                                                                                                   |
-|                            |                                                                                                                                                                                                                                                   |
-|                            | odrl:policy                                                                                                                                                                                                                                       |
-|                            |                                                                                                                                                                                                                                                   |
-|                            | premis:copyrightStatus                                                                                                                                                                                                                            |
-|                            |                                                                                                                                                                                                                                                   |
-|                            | premis:rightsStatement/licenseInformation/licenseIdentifier/licenseIdentifierValue                                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**              | Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewerking) van het item wordt bepaald. De licenties zijn zo opgesteld dat er een onderscheid gemaakt kan worden tussen het hergebruik van het object en de metadata.   |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**               | Gecontroleerde lijst                                                                                                                                                                                                                              |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Gecontroleerde lijst**   | Zie §4 voor verdere toelichting.                                                                                                                                                                                                                  |
-|                            |                                                                                                                                                                                                                                                   |
-|                            | -   VIAA-licentie                                                                                                                                                                                                                                 |
-|                            |                                                                                                                                                                                                                                                   |
-|                            | -   Creative Commons                                                                                                                                                                                                                              |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**           | Verplicht                                                                                                                                                                                                                                         |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**            | Ja                                                                                                                                                                                                                                                |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dc_rights_license>CC BY-SA-METADATA</dc_rights_licence>                                                                                                                                                                                          |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **XML element**     |  `<dc_rights_licenses type="list">                                        |
+|                          |                                                                             |
+|                          |  `<licentie/>`                                                               |
+|                          |                                                                             |
+|                            |  `</dc_rights_licences>                                                                                                                                                                                                                           |
+| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping**                | dc:rights                                                                                                                                                                                                                                       |
+|                            |                                                                                                                                                                                                                                                 |
+|                            | dc:license                                                                                                                                                                                                                                      |
+|                            |                                                                                                                                                                                                                                                 |
+|                            | odrl:permission                                                                                                                                                                                                                                 |
+|                            |                                                                                                                                                                                                                                                 |
+|                            | odrl:policy                                                                                                                                                                                                                                     |
+|                            |                                                                                                                                                                                                                                                 |
+|                            | premis:copyrightStatus                                                                                                                                                                                                                          |
+|                            |                                                                                                                                                                                                                                                 |
+|                            | premis:rightsStatement/licenseInformation/licenseIdentifier/licenseIdentifierValue                                                                                                                                                              |
+| -------------------------- | ------------------------------------------------------------------                                                                                                                                                                              |
+| **Definitie**              | Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewerking) van het item wordt bepaald. De licenties zijn zo opgesteld dat er een onderscheid gemaakt kan worden tussen het hergebruik van het object en de metadata. |
+| -------------------------- | ------------------------------------------------------------------                                                                                                                                                                              |
+| **Datatype**               | Gecontroleerde lijst                                                                                                                                                                                                                            |
+| -------------------------- | ------------------------------------------------------------------                                                                                                                                                                              |
+| **Gecontroleerde lijst**   | Zie §4 voor verdere toelichting.                                                                                                                                                                                                                |
+|                            |                                                                                                                                                                                                                                                 |
+|                            | -   VIAA-licentie                                                                                                                                                                                                                               |
+|                            |                                                                                                                                                                                                                                                 |
+|                            | -   Creative Commons                                                                                                                                                                                                                            |
+| -------------------------- | ------------------------------------------------------------------                                                                                                                                                                              |
+| **Verplichting**           | Verplicht                                                                                                                                                                                                                                       |
+| -------------------------- | ------------------------------------------------------------------                                                                                                                                                                              |
+| **Herhaalbaar**            | Ja                                                                                                                                                                                                                                              |
+| -------------------------- | ------------------------------------------------------------------                                                                                                                                                                              |
+| **Voorbeeld**              |  `<dc_rights_license>CC BY-SA-METADATA `</dc_rights_licence>                                                                                                                                                                                        |
+| -------------------------- | ------------------------------------------------------------------                                                                                                                                                                              |
 
 ### 
 
 |--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Veld**                 | ### Auteursrechthouder                                                                                                                                              |
 |==========================|=====================================================================================================================================================================|
-| **XML element**     | <dc_rights_rightsOwners type="list">                                                                                                                            |
-|                          |                                                                                                                                                                     |
-|                          | <auteursrechthouder/>                                                                                                                                             |
-|                          |                                                                                                                                                                     |
-|                            | </dc_rights_rightsOwners>                                                                                                                                             |
+| **XML element**     |  `<dc_rights_rightsOwners type="list">                                                                                                                            |
+|                          | |
+|                          |  `<auteursrechthouder/>`                                                                                                                                             |
+|                          | |
+|                            |  `</dc_rights_rightsOwners>                                                                                                                                             |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Mapping **               | dc:rightsHolder                                                                                                                                                       |
 |                            |                                                                                                                                                                       |
@@ -1249,47 +1202,49 @@ Rechten
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**            | Ja                                                                                                                                                                    |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**              | <dc_rights_rightsOwner>Etienne Tordoir</dc_rights_rightsOwner>                                                                                                        |
+| **Voorbeeld**              |  `<dc_rights_rightsOwner>Etienne Tordoir `</dc_rights_rightsOwner>                                                                                                        |
 |                            |                                                                                                                                                                       |
-|                            | <dc_rights_rightsOwner>KADOC</dc_rights_rightsOwner>                                                                                                                  |
+|                            |  `<dc_rights_rightsOwner>KADOC `</dc_rights_rightsOwner>                                                                                                                  |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                      |
 |                            |                                                                                                                                                                       |
 |                            | -   Rechthebbende (indien gekend)                                                                                                                                     |
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Licentiehouder                                                                                                                                                                                                                                                                |
-|======================|===================================================================================================================================================================================================================================================================================|
-| **XML element** | <dc_rights_rightsHolders type="list">                                                                                                                                                                                                                                         |
-|                      |                                                                                                                                                                                                                                                                                   |
-|                      | <licentiehouder/>                                                                                                                                                                                                                                                               |
-|                      |                                                                                                                                                                                                                                                                                   |
-|                        | </dc_rights_rightsHolders>                                                                                                                                                                                                                                                          |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Mapping**            | plus:LicensorName                                                                                                                                                                                                                                                                   |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | De persoon of organisatie die eigenaar is van de resource of de rechten beheert.                                                                                                                                                                                                    |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**           | Vrije tekst                                                                                                                                                                                                                                                                         |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**       | Optioneel                                                                                                                                                                                                                                                                           |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**        | Ja                                                                                                                                                                                                                                                                                  |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_rights_rightsholder>SABAM</dc_rights_rightsholder>                                                                                                                                                                                                                              |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Opmerkingen**        | Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de inkomsten gegenereerd uit het gebruik van auteursrechtelijk beschermde werken uitbesteed aan een externe persoon of organisatie (een zogenaamd auteursrechtvennootschappen zoals SABAM, SEMU,\...).   |
-| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+## Licentiehouder
 
-|----------------------|----------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Credit                                                                                                                 |
+De persoon of organisatie die eigenaar is van de resource of de rechten beheert. 
+
+|======================|===|
+| **XML element** |  `<dc_rights_rightsHolders type="list">                                                                     |
+|                      |                                                                                                               |
+|                      |  `<licentiehouder/>`                                                                                           |
+|                      |                                                                                                               |
+|                        |  `</dc_rights_rightsHolders>                                                                                                                                                                                                                                                        |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Mapping**            | plus:LicensorName                                                                                                                                                                                                                                                                 |
+| ---------------------- | ----------------------------------------------------------------------------------------------------                                                                                                                                                                              |
+| **Datatype**           | Vrije tekst                                                                                                                                                                                                                                                                       |
+| ---------------------- | ----------------------------------------------------------------------------------------------------                                                                                                                                                                              |
+| **Verplichting**       | Optioneel                                                                                                                                                                                                                                                                         |
+| ---------------------- | ----------------------------------------------------------------------------------------------------                                                                                                                                                                              |
+| **Herhaalbaar**        | Ja                                                                                                                                                                                                                                                                                |
+| ---------------------- | ----------------------------------------------------------------------------------------------------                                                                                                                                                                              |
+| **Voorbeeld**          |  `<dc_rights_rightsholder>SABAM `</dc_rights_rightsholder>                                                                                                                                                                                                                            |
+| ---------------------- | ----------------------------------------------------------------------------------------------------                                                                                                                                                                              |
+| **Opmerkingen**        | Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de inkomsten gegenereerd uit het gebruik van auteursrechtelijk beschermde werken uitbesteed aan een externe persoon of organisatie (een zogenaamd auteursrechtvennootschappen zoals SABAM, SEMU,\...). |
+| ---------------------- | ----------------------------------------------------------------------------------------------------                                                                                                                                                                              |
+
+## Credit
+
+Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.
+
 |======================|============================================================================================================================|
-| **XML element**        | <dc_rights_credit/>                                                                                                          |
+| **XML element**        |  `<dc_rights_credit/>`                                                                                                          |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **Mapping**            | dc:rights                                                                                                                    |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.                                                  |
+| **Definitie**          |                                                                                                                              |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                                                                  |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
@@ -1297,21 +1252,22 @@ Rechten
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Ja                                                                                                                           |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <dc_rights_credit>Copyright AMSAB. Onder de licentie Creative Commons CC-PD</dc_rights_credit/>                              |
+| **Voorbeeld**          |  `<dc_rights_credit>Copyright AMSAB. Onder de licentie Creative Commons CC-PD `</dc_rights_credit/>`                              |
 |                        |                                                                                                                              |
-|                        | <dc_rights_credit/>Copyright SMAK. Alle rechten voorbehouden</dc_rights_credit>                                              |
+|                        |  `<dc_rights_credit/>`Copyright SMAK. Alle rechten voorbehouden `</dc_rights_credit>                                              |
 |                        |                                                                                                                              |
-|                        | <dc_rights_credit>Alle rechten voorbehouden. Gelieve contact op te nemen met reproductie\@uu.be</dc_rights_credit>           |
+|                        |  `<dc_rights_credit>Alle rechten voorbehouden. Gelieve contact op te nemen met reproductie\@uu.be `</dc_rights_credit>           |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 
-|--------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**                 | ### Opmerkingen rechten                                                                                                                              |
+## Opmerkingen rechten
+
+Hier kunnen bijkomende opmerkingen en voorwaarden met betrekking tot de gebruiksrechten van toepassing op het item worden vastgelegd.  
+
+
 |==========================|======================================================================================================================================================|
-| **XML element**            | <dc_rights_comment/>                                                                                                                                   |
+| **XML element**            |  `<dc_rights_comment/>`                                                                                                                                   |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Mapping **               | dc:rights                                                                                                                                              |
-| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**              | Hier kunnen bijkomende opmerkingen en voorwaarden met betrekking tot de gebruiksrechten van toepassing op het item worden vastgelegd.                  |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**               | Vrije tekst                                                                                                                                            |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1324,57 +1280,56 @@ Rechten
 |                            | -   Gebruiksbeperkingen indien van toepassing (afwijking van de standaard policy: mag gebruikt worden voor VIAA doelgroepen conform de overeenkomst)   |
 | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-QC
---
+# QC
 
 Dit stuk in het VIAA datamodel is enkel van toepassing op materiaal afkomstig van digitaliseringsprojecten door VIAA.
 
-|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Resultaat manuele QC                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|======================|========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================|
-| **XML element**        | < QCoutcome/>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Na het uitvoeren van de manuele kwaliteitscontrole wordt de CP gevraagd de kwaliteit van het digitale bestand te beoordelen. Dit kan door aan te geven of de kwaliteit 'ok' is of 'not ok'. Hierbij kan de dropdownlijst onder het veld 'Resultaat manuele kwaliteitscontrole' geraadpleegd worden. De waarden in de lijst 'audio' en 'video' geven aan wat er visueel en auditief gedetecteerd kan worden. Deze lijsten zullen verder uitgebreid worden. Indien vragen of feedback kan dit steeds gemeld worden via [[support\@viaa.be]{.underline}].   |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**           | OK / NOT OK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, VIAA adviseert om een statistische selectie van 10% te maken)                                                                                                                                                                                                                                                                                                                                                                                                       |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**        | Neen                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|----------------------|-------------------------------------------|
+| **Veld**             | ### Resultaat manuele QC                                                                     |
+|======================|============================================================================================================================================================================|
+| **XML element**        | ` `<QCoutcome/>``                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Definitie**          | Na het uitvoeren van de manuele kwaliteitscontrole wordt de CP gevraagd de kwaliteit van het digitale bestand te beoordelen. Dit kan door aan te geven of de kwaliteit 'ok' is of 'not ok'. Hierbij kan de dropdownlijst onder het veld 'Resultaat manuele kwaliteitscontrole' geraadpleegd worden. De waarden in de lijst 'audio' en 'video' geven aan wat er visueel en auditief gedetecteerd kan worden. Deze lijsten zullen verder uitgebreid worden. Indien vragen of feedback kan dit steeds gemeld worden via [[support\@viaa.be]{.underline}]. |
+| ---------------------- | -------------------------------------------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Datatype**           | OK / NOT OK                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ---------------------- | -------------------------------------------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, VIAA adviseert om een statistische selectie van 10% te maken)                                                                                                                                                                                                                                                                                                                                                                                                     |
+| ---------------------- | -------------------------------------------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Herhaalbaar**        | Neen                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| ---------------------- | -------------------------------------------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### QC Audio                                                                                                                                                                                                                                                                                   |
-|======================|================================================================================================================================================================================================================================================================================================|
-| **XML element**        | < QCaudio/>                                                                                                                                                                                                                                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | Indien de kwaliteit van de audio in het digitaal object niet ok is dan kan in deze dropdown list een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlist aanwezig is kan het opmerkingenveld gebruikt worden.   |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Datatype**           | OK / NOT OK                                                                                                                                                                                                                                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, VIAA adviseert om een statistische selectie van 10% te maken)                                                                                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Herhaalbaar**        | Neen                                                                                                                                                                                                                                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+## QC Audio
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### QC Video                                                                                                                                                                                                                                                                                   |
-|======================|================================================================================================================================================================================================================================================================================================|
-| **XML element**        | < QCvideo/>                                                                                                                                                                                                                                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | Indien de kwaliteit van de video in het digitaal object niet ok is dan kan in deze dropdown list een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlist aanwezig is kan het opmerkingenveld gebruikt worden.   |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Datatype**           | OK / NOT OK                                                                                                                                                                                                                                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, VIAA adviseert om een statistische selectie van 10% te maken)                                                                                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Herhaalbaar**        | Neen                                                                                                                                                                                                                                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+Indien de kwaliteit van de audio in het digitaal object niet ok is dan kan in deze dropdown list een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlist aanwezig is kan het opmerkingenveld gebruikt worden. 
 
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### QC Opmerkingen                                                                                                                                 |
+|======================|=====================================================================================================================================================================================================|
+| **XML element**        | `<QCaudio/>`                                                                                                                                       |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Datatype**           | OK / NOT OK                                                                                                                                        |
+| ---------------------- | -----------------------------------------------------------------------------------------------------------------                                  |
+| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, VIAA adviseert om een statistische selectie van 10% te maken) |
+| ---------------------- | -----------------------------------------------------------------------------------------------------------------                                  |
+| **Herhaalbaar**        | Neen                                                                                                                                               |
+| ---------------------- | -----------------------------------------------------------------------------------------------------------------                                  |
+
+## QC Video
+
+Indien de kwaliteit van de video in het digitaal object niet ok is dan kan in deze dropdown list een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlist aanwezig is kan het opmerkingenveld gebruikt worden. 
+
+|======================|=========================================================================================================================================================================|
+| **XML element**        | `<QCvideo/>`                                                                                                                                       |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Datatype**           | OK / NOT OK                                                                                                                                        |
+| ---------------------- | -----------------------------------------------------------------------------------------------------------------                                  |
+| **Verplichting**       | Optioneel (enkel van toepassing op de statistische selectie van een volledige batch, VIAA adviseert om een statistische selectie van 10% te maken) |
+| ---------------------- | -----------------------------------------------------------------------------------------------------------------                                  |
+| **Herhaalbaar**        | Neen                                                                                                                                               |
+| ---------------------- | -----------------------------------------------------------------------------------------------------------------                                  |
+
+## QC Opmerkingen    
+                                                                                                                             |
 |======================|====================================================================================================================================================|
-| **XML element**        | < QCcomment/>                                                                                                                                        |
+| **XML element**        | `<QCcomment/>`                                                                                                                                       |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Definitie**          | Dit is een vrij tekstveld dat gebruikt kan worden om alle bijkomende opmerkingen rond de uitgevoerde kwaliteitscontrole te bewaren.                  |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1385,17 +1340,16 @@ Dit stuk in het VIAA datamodel is enkel van toepassing op materiaal afkomstig va
 | **Herhaalbaar**        | Neen                                                                                                                                                 |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-Drager
-------
+# Drager
 
-|--------------------------|------------------------------------------------------------------------------------|
-| **Veld**                 | ### Bestandstype                                                                   |
+## Bestandstype
+
+Type drager (onderverdeeld in audio, video, film, papier)
+
 |==========================|====================================================================================|
-| **XML element**            | <type/>                                                                              |
+| **XML element**            | ` `<type/>``                                                                            |
 | -------------------------- | ------------------------------------------------------------------------------------ |
 | **Mapping **               | pbcore:instantiation/mediaType                                                       |
-| -------------------------- | ------------------------------------------------------------------------------------ |
-| **Definitie**              | Type drager (onderverdeeld in audio, video, film, papier)                            |
 | -------------------------- | ------------------------------------------------------------------------------------ |
 | **Datatype**               | Vrije tekst                                                                          |
 | -------------------------- | ------------------------------------------------------------------------------------ |
@@ -1405,17 +1359,17 @@ Drager
 | -------------------------- | ------------------------------------------------------------------------------------ |
 | **Herhaalbaar**            | Nee                                                                                  |
 | -------------------------- | ------------------------------------------------------------------------------------ |
-| **Voorbeeld**              | <type>video</type>                                                                   |
+| **Voorbeeld**              |  `<type>video `</type>                                                                   |
 | -------------------------- | ------------------------------------------------------------------------------------ |
 
-|----------------------|----------------------------------------------------------------------------------------------|
-| **Veld**             | ### Formaat                                                                                  |
+## Formaat     
+
+Een omschrijving van het type materiële drager waarop het item oorspronkelijk is vastgelegd.
+
 |======================|==============================================================================================|
-| **XML element**        | <format/>                                                                                      |
+| **XML element**        |  `<format/>`                                                                                      |
 | ---------------------- | ---------------------------------------------------------------------------------------------- |
 | **Mapping **           | EN 15744 (Metadata Standards for Cinematographic Work)                                         |
-| ---------------------- | ---------------------------------------------------------------------------------------------- |
-| **Definitie**          | Een omschrijving van het type materiële drager waarop het item oorspronkelijk is vastgelegd.   |
 | ---------------------- | ---------------------------------------------------------------------------------------------- |
 | **Datatype**           | Gecontroleerde lijst [[(zie AMS handleiding)]{.underline}]                                     |
 | ---------------------- | ---------------------------------------------------------------------------------------------- |
@@ -1423,15 +1377,16 @@ Drager
 | ---------------------- | ---------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                            |
 | ---------------------- | ---------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <format>Betacam SP</format>                                                                    |
+| **Voorbeeld**          |  `<format>Betacam SP `</format>                                                                    |
 | ---------------------- | ---------------------------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------------|
-| **Veld**             | ### Barcode drager                                                                 |
+
+## Barcode drager
+
+Dit is de barcode die op de materiële drager werd aangebracht.
+
 |======================|====================================================================================|
-| **XML element**        | <carrier_barcode/>                                                                   |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| **Definitie**          | Dit is de barcode die op de materiële drager werd aangebracht.                       |
+| **XML element**        |  `<carrier_barcode/>`                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Datatype**           | ID                                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------------ |
@@ -1439,15 +1394,15 @@ Drager
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <carrier_barcode>AACC_AMS_000540</carrier_barcode>                                   |
+| **Voorbeeld**          |  `<carrier_barcode>AACC_AMS_000540 `</carrier_barcode>                                   |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Originele locatie                                                                                                                           |
+## Originele locatie
+
+Dit is de standplaats van de originele materiële drager. Dit kan een lokaal- of reknummer, een plaatskenmerk of de naam van een collectie zijn.
+
 |======================|=================================================================================================================================================|
-| **XML element**        | <original_location/>                                                                                                                              |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Dit is de standplaats van de originele materiële drager. Dit kan een lokaal- of reknummer, een plaatskenmerk of de naam van een collectie zijn.   |
+| **XML element**        |  `<original_location/>`                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1455,19 +1410,19 @@ Drager
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <original_location>10A</original_location>                                                                                                        |
+| **Voorbeeld**          |  `<original_location>10A `</original_location>                                                                                                        |
 |                        |                                                                                                                                                   |
-|                        | <original_location>rek 12, plank 3</original_location>                                                                                            |
+|                        |  `<original_location>rek 12, plank 3 `</original_location>                                                                                            |
 |                        |                                                                                                                                                   |
-|                        | <original_location>Erfenis Amaat Burssens</original_location>                                                                                     |
+|                        |  `<original_location>Erfenis Amaat Burssens `</original_location>                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------------|
-| **Veld**             | ### Merk                                                                           |
+## Merk   
+
+Dit is het merk of de fabrikant van de materiële drager.
+
 |======================|====================================================================================|
-| **XML element**        | <brand/>                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| **Definitie**          | Dit is het merk of de fabrikant van de materiële drager.                             |
+| **XML element**        |  `<brand/>`                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Datatype**           | Gecontroleerde lijst (zie AMS handleiding)                                           |
 | ---------------------- | ------------------------------------------------------------------------------------ |
@@ -1475,15 +1430,15 @@ Drager
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <brand>Philips</brand>                                                               |
+| **Voorbeeld**          |  `<brand>Philips `</brand>                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Productiedatum drager                                                                                                              |
+## Productiedatum drager
+
+Dit is de (geschatte) productiedatum van de materiële drager.
+
 |======================|========================================================================================================================================|
-| **XML element**        | <date/>                                                                                                                                  |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Dit is de (geschatte) productiedatum van de materiële drager.                                                                            |
+| **XML element**        |  `<date/>`                                                                                                                                  |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | Datum / Tijd                                                                                                                             |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1497,15 +1452,17 @@ Drager
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                                                      |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <date>1937-09-07</date>                                                                                                                  |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------------------|
-| **Veld**             | ### Kern/Spoel                                                                           |
+```xml
+<date>1937-09-07</date>
+```
+
+## Kern/Spoel
+
+In dit veld kan worden aangegeven of de tape op kern dan wel op open spoel is bevestigd.
+
 |======================|==========================================================================================|
-| **XML element**        | <core_reel/>                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------ |
-| **Definitie**          | In dit veld kan worden aangegeven of de tape op kern dan wel op open spoel is bevestigd.   |
+| **XML element**        |  `<core_reel/>`                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------ |
 | **Datatype**           | Kern/Spoel (zie ook AMS handleiding -- Annex dragers)                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------ |
@@ -1513,15 +1470,15 @@ Drager
 | ---------------------- | ------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <core_reel>Spoel</core_reel>                                                               |
+| **Voorbeeld**          |  `<core_reel>Spoel</core_reel>`                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------ |
 
-|----------------------|----------------------------------------------------------------------------------------|
-| **Veld**             | ### OTC start                                                                          |
+## OTC start
+
+Het startpunt van de tijdscodering zoals die op de originele drager wordt bijgehouden.
+
 |======================|========================================================================================|
-| **XML element**        | <OTC_start/>                                                                             |
-| ---------------------- | ---------------------------------------------------------------------------------------- |
-| **Definitie**          | Het startpunt van de tijdscodering zoals die op de originele drager wordt bijgehouden.   |
+| **XML element**        | `<OTC_start/>`                                                                           |
 | ---------------------- | ---------------------------------------------------------------------------------------- |
 | **Datatype**           | Tijd                                                                                     |
 | ---------------------- | ---------------------------------------------------------------------------------------- |
@@ -1531,19 +1488,19 @@ Drager
 | ---------------------- | ---------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                      |
 | ---------------------- | ---------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <OTC_start>01:00:00:000</OTC_start>                                                      |
+| **Voorbeeld**          |  `<OTC_start>01:00:00:000</OTC_start>`                                                      |
 | ---------------------- | ---------------------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------------|
-| **Veld**             | ### Duur                                                                           |
+## Duur
+
+De gekende of geschatte duur van de inhoud van de originele drager.
+
 |======================|====================================================================================|
-| **XML element**        | <file_duration/>                                                                     |
+| **XML element**        | `<file_duration/>`                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Mapping **           | EN15744:Original Duration                                                            |
 |                        |                                                                                      |
 |                        | SMPTE 12M                                                                            |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| **Definitie**          | De gekende of geschatte duur van de inhoud van de originele drager.                  |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Datatype**           | Tijd                                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------ |
@@ -1553,15 +1510,17 @@ Drager
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <file_duration>00:30:14</file_duration>                                              |
+| **Voorbeeld**          |  `<file_duration>00:30:14 `</file_duration>                                              |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 
-|----------------------|--------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Recording speed                                                                              |
+## Recording speed
+
+De opnamesnelheid van de drager. Dit is hoofdzakelijk van toepassing voor open spoel audiotapes.
+
 |======================|==================================================================================================|
-| **XML element**        | <audio_carrier_speed/>                                                                             |
+| **XML element**        | `<audio_carrier_speed/>`                                                                          |
 | ---------------------- | -------------------------------------------------------------------------------------------------- |
-| **Definitie**          | De opnamesnelheid van de drager. Dit is hoofdzakelijk van toepassing voor open spoel audiotapes.   |
+| **Definitie**          |                                                                                                    |
 | ---------------------- | -------------------------------------------------------------------------------------------------- |
 | **Datatype**           | cm/s                                                                                               |
 | ---------------------- | -------------------------------------------------------------------------------------------------- |
@@ -1569,15 +1528,15 @@ Drager
 | ---------------------- | -------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                |
 | ---------------------- | -------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <audio_carrier_speed>4.75 cm/s</audio_carrier_speed>                                               |
+| **Voorbeeld**          |  `<audio_carrier_speed>4.75 cm/s `</audio_carrier_speed>                                               |
 | ---------------------- | -------------------------------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------------|
-| **Veld**             | ### Audio noise reduction                                                          |
+## Audio noise reduction
+
+De bij audiocassettes gebruikte technologie van ruisonderdrukking.
+
 |======================|====================================================================================|
-| **XML element**        | <audio_noise_reduction/>                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| **Definitie**          | De bij audiocassettes gebruikte technologie van ruisonderdrukking.                   |
+| **XML element**        |  `<audio_noise_reduction/>`                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------ |
@@ -1585,15 +1544,15 @@ Drager
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <audio_noise_reduction>Dolby A</audio_noise_reduction>                               |
+| **Voorbeeld**          |  `<audio_noise_reduction>Dolby A</audio_noise_reduction>`                               |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------|
-| **Veld**             | ### Audio IEC type                                                                 |
+## Audio IEC type
+
+Het type magnetische coating gebruikt voor de tape van een audiocassette.
+
 |======================|====================================================================================|
-| **XML element**        | <audio_iec_type/>                                                                    |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| **Definitie**          | Het type magnetische coating gebruikt voor de tape van een audiocassette.            |
+| **XML element**        |  `<audio_iec_type/>`                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Datatype**           | I-IV (IEC 60094) (zie ook AMS handleiding -- Annex dragers)                          |
 | ---------------------- | ------------------------------------------------------------------------------------ |
@@ -1601,15 +1560,15 @@ Drager
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <audio_iec_type>II</audio_iec_type>                                                  |
+| **Voorbeeld**          |  `<audio_iec_type>II</audio_iec_type>`                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------|
-| **Veld**             | ### Audio tracks                                                                   |
+## Audio tracks                                                                  
+
+Het aantal geluidssporen dat op de drager kan worden vastgelegd.  
+
 |======================|====================================================================================|
-| **XML element**        | <audio_tracks/>                                                                      |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| **Definitie**          | Het aantal geluidssporen dat op de drager kan worden vastgelegd.                     |
+| **XML element**        |  `<audio_tracks/>`                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Datatype**           | Integer                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------ |
@@ -1617,34 +1576,33 @@ Drager
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <audio_tracks>2</audio_tracks>                                                       |
+| **Voorbeeld**          |  `<audio_tracks>2</audio_tracks>`                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Deterioratiefenomenen                                                                                                                                                           |
+## Deterioratiefenomenen
+
+Fenomenen -- doorgaans onder invloed van fysische of chemische factoren -- die mogelijks de integriteit en raadpleegbaarheid van de gegevens op de drager in gevaar kunnen brengen.
+
 |======================|=====================================================================================================================================================================================|
-| **XML element**        | <preservation_problems/>                                                                                                                                                              |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | Fenomenen -- doorgaans onder invloed van fysische of chemische factoren -- die mogelijks de integriteit en raadpleegbaarheid van de gegevens op de drager in gevaar kunnen brengen.   |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**           | Gecontroleerde lijst (zie AMS handleiding)                                                                                                                                            |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in AMS.                                                                                                    |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**        | Ja                                                                                                                                                                                    |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <preservation_problems>disc rot</preservation_problems>                                                                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **XML element**        |  `<preservation_problems/>`                                                           |
+| ---------------------- | ---------------------------------------------------------------------------------- |
+| **Datatype**           | Gecontroleerde lijst (zie AMS handleiding)                                         |
+| ---------------------- | ------                                                                             |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in AMS. |
+| ---------------------- | ------                                                                             |
+| **Herhaalbaar**        | Ja                                                                                 |
+| ---------------------- | ------                                                                             |
+| **Voorbeeld**          |  `<preservation_problems>disc rot</preservation_problems>`                            |
+| ---------------------- | ------                                                                             |
 
-Logistieke info
----------------
+# Logistieke info
 
-|----------------------|------------------------------------------------------------------------------------|
-| **Veld**             | ### Registratiedatum drager                                                        |
+## Registratiedatum drager
+
+De datum waarop de drager in AMS werd geregistreerd.
+
 |======================|====================================================================================|
-| **XML element**        | <created_on/>                                                                        |
-| ---------------------- | ------------------------------------------------------------------------------------ |
-| **Definitie**          | De datum waarop de drager in AMS werd geregistreerd.                                 |
+| **XML element**        |  `<created_on/>`                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Datatype**           | Datum en tijd                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------ |
@@ -1654,13 +1612,15 @@ Logistieke info
 | ---------------------- | ------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <created_on>2014-11-27T14:11:11</created_on>                                         |
+| **Voorbeeld**          |  `<created_on>2014-11-27T14:11:11 `</created_on>                                         |
 | ---------------------- | ------------------------------------------------------------------------------------ |
 
-|----------------------|---------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Barcode verzameldoos                                                                                            |
+## Barcode verzameldoos
+
+De barcode die werd bevestigd op de verzameldoos waarin de drager werd geplaatst tijdens het digitaliseringsproces. 
+
 |======================|=====================================================================================================================|
-| **XML element**        | <collection_box_barcode/>                                                                                             |
+| **XML element**        |  `<collection_box_barcode/>`                                                                                             |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Definitie**          | De barcode die werd bevestigd op de verzameldoos waarin de drager werd geplaatst tijdens het digitaliseringsproces.   |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
@@ -1670,15 +1630,17 @@ Logistieke info
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                                   |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <collection_box_barcode>BBMX_AMS_000007</collection_box_barcode>                                                      |
+| **Voorbeeld**          |  `<collection_box_barcode>BBMX_AMS_000007 `</collection_box_barcode>                                                      |
 | ---------------------- | --------------------------------------------------------------------------------------------------------------------- |
 
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Batch ID                                                                                                                                                    |
+## Batch ID
+De ID van de batch waarin de drager van de content partner naar de service provider werd verstuurd. Deze is vooral van belang voor de service provider en VIAA.
+
+
 |======================|=================================================================================================================================================================|
-| **XML element**        | <batch_id/>                                                                                                                                                       |
+| **XML element**        |  `<batch_id/>`                                                                                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | De ID van de batch waarin de drager van de content partner naar de service provider werd verstuurd. Deze is vooral van belang voor de service provider en VIAA.   |
+| **Definitie**          |    |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | ID                                                                                                                                                                |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1686,13 +1648,14 @@ Logistieke info
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                                                                               |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <batch_id>BMXMJPGB01</batch_id>                                                                                                                                   |
+| **Voorbeeld**          |  `<batch_id>BMXMJPGB01 `</batch_id>                                                                                                                                   |
 | ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Shipment ID                                                                                                                                                      |
+
+## Shipment ID
+
 |======================|======================================================================================================================================================================|
-| **XML element**        | <shipment_id/>                                                                                                                                                         |
+| **XML element**        | `<shipment_id/>`                                                                                                                                                       |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Definitie**          | De ID van de verzending waarin de drager van de content partner naar de service provider werd verstuurd. Deze is vooral van belang voor de service provider en VIAA.   |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -1702,18 +1665,17 @@ Logistieke info
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                                                                                    |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <shipment_id>14314364782</shipment_id>                                                                                                                                 |
+| **Voorbeeld**          |  `<shipment_id>14314364782 `</shipment_id>                                                                                                                                 |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-Events digitalisatie
---------------------
+# Events digitalisatie
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Service Provider                                                                                                                           |
+## Service Provider
+
+De naam van de service provider aan wie de digitalisering van de originele drager werd uitbesteed.
+
 |======================|================================================================================================================================================|
-| **XML element**        | <sp_name/>                                                                                                                                       |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De naam van de service provider aan wie de digitalisering van de originele drager werd uitbesteed.                                               |
+| **XML element**        | `<sp_name/>`                                                                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1721,15 +1683,15 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <sp_name>Vectracom</sp_name>                                                                                                                     |
+| **Voorbeeld**          |  `<sp_name>Vectracom `</sp_name>                                                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Service Provider ID                                                                                                                        |
+## Service Provider ID
+
+De unieke ID van de service provider aan wie de digitalisering van de originele drager werd uitbesteed.  
+
 |======================|================================================================================================================================================|
-| **XML element**        | < sp_id/>                                                                                                                                        |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De unieke ID van de service provider aan wie de digitalisering van de originele drager werd uitbesteed.                                          |
+| **XML element**        | `<sp_id/>`                                                                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | ID                                                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1737,15 +1699,15 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <sp_id> OR-183420s</sp_id>                                                                                                                       |
+| **Voorbeeld**          |  `<sp_id> OR-183420s `</sp_id>                                                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Datum inspectie analoge drager                                                                                                             |
+## Datum inspectie analoge drager
+
+De datum waarop de materiële drager door de Service Provider werd geïnspecteerd.  
+
 |======================|================================================================================================================================================|
-| **XML element**        | <inspection_date/>                                                                                                                               |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | Dat datum waarop de materiële drager door de Service Provider werd geïnspecteerd.                                                                |
+| **XML element**        | ` <inspection_date/>`                                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Datum                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1755,15 +1717,15 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | < inspection_date > 2015-04-21</ inspection_date >                                                                                               |
+| **Voorbeeld**          |  `< inspection_date > 2015-04-21 `</ inspection_date >                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Uitkomst inspectie analoge drager                                                                                                          |
+## Uitkomst inspectie analoge drager
+
+De uitkomst van de inspectie van de drager door de Service Provider. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
+
 |======================|================================================================================================================================================|
-| **XML element**        | <inspection_outcome />                                                                                                                           |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De uitkomst van de inspectie van de drager door de Service Provider. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).               |
+| **XML element**        |  `<inspection_outcome />`                                                                                                                           |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1772,12 +1734,12 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Opmerking inspectie analoge drager                                                                                                         |
+## Opmerking inspectie analoge drager
+
+Eventuele opmerkingen van de Service Provider naar aanleiding van de inspectie van de analoge drager (denk aan schade, ontbrekende elementen).
+
 |======================|================================================================================================================================================|
-| **XML element**        | < inspection_note />                                                                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | Eventuele opmerkingen van de Service Provider naar aanleiding van de inspectie van de analoge drager (denk aan schade, ontbrekende elementen).   |
+| **XML element**        |  `<inspection_note />`                                                                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1785,15 +1747,15 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | < inspection_note >Beschadiging cassette</ inspection_note >                                                                                     |
+| **Voorbeeld**          |  `< inspection_note >Beschadiging cassette `</ inspection_note >                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Datum herstel analoge dragger                                                                                                              |
+## Datum herstel analoge dragger
+
+De datum waarop de Service Provider herstellende ingrepen op de drager heeft toegepast.
+
 |======================|================================================================================================================================================|
-| **XML element**        | < repair_date/>                                                                                                                                  |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De datum waarop de Service Provider herstellende ingrepen op de drager heeft toegepast.                                                          |
+| **XML element**        | ` `<repair_date/>``                                                                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Datum                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1803,15 +1765,15 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | < repair_date>2015-10-03</ repair_date>                                                                                                          |
+| **Voorbeeld**          |  `< repair_date>2015-10-03 `</ repair_date>                                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Uitkomst herstel analoge drager                                                                                                            |
+## Uitkomst herstel analoge drager
+
+De uitkomst van de door de Service Provider ondernomen herstelacties. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
+
 |======================|================================================================================================================================================|
-| **XML element**        | <repair_outcome/>                                                                                                                                |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De uitkomst van de door de Service Provider ondernomen herstelacties. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).              |
+| **XML element**        | ` `<repair_outcome/>``                                                                                                                                |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1819,13 +1781,12 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | < repair_outcome>geslaagd</ repair_outcome>                                                                                                      |
+| **Voorbeeld**          |  `<repair_outcome>geslaagd `</ repair_outcome>                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Opmerking herstel analoge drager                                                                                                           |
+## Opmerking herstel analoge drager
 |======================|================================================================================================================================================|
-| **XML element**        | <repair_note/>                                                                                                                                   |
+| **XML element**        |  `<repair_note/>`                                                                                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Bijkomende opmerkingen met betrekking tot de herstelactie                                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1836,12 +1797,14 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Datum reiniging analoge drager                                                                                                             |
+## Datum reiniging analoge drager
+
+De datum waarop de materiële drager werd gereinigd.  
+
 |======================|================================================================================================================================================|
-| **XML element**        | < cleaning_date/>                                                                                                                                |
+| **XML element**        |  `<cleaning_date/>`                                                                                                                                |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De datum waarop de materiële drager werd gereinigd.                                                                                              |
+| **Definitie**          |                                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Datum                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1852,12 +1815,12 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Uitkomst reiniging analoge drager                                                                                                          |
+## Uitkomst reiniging analoge drager
+
+De uitkomst van de reinigingsactie van de materiële drager. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
+
 |======================|================================================================================================================================================|
-| **XML element**        | <cleaning_outcome/>                                                                                                                              |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De uitkomst van de reinigingsactie van de materiële drager. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).                        |
+| **XML element**        |  `<cleaning_outcome/>`                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1865,13 +1828,13 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <cleaning_outcome>geslaagd</cleaning_outcome>                                                                                                    |
+| **Voorbeeld**          |  `<cleaning_outcome>geslaagd `</cleaning_outcome>                                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Opmerking reiniging analoge drager                                                                                                         |
+## Opmerking reiniging analoge drager
+
 |======================|================================================================================================================================================|
-| **XML element**        | <cleaning_note/>                                                                                                                                 |
+| **XML element**        |  `<cleaning_note/>`                                                                                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Eventuele opmerking m.b.t. de reiniging van de materiële drager.                                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1882,12 +1845,12 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Datum bakken analoge drager                                                                                                                |
+## Datum bakken analoge drager
+
+De datum waarop de analoge drager werd gebakken.
+
 |======================|================================================================================================================================================|
-| **XML element**        | <baking_date/>                                                                                                                                   |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De datum waarop de analoge drager werd gebakken.                                                                                                 |
+| **XML element**        |  `<baking_date/>`                                                                                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Datum                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1898,12 +1861,12 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Uitkomst bakken analoge drager                                                                                                             |
+## Uitkomst bakken analoge drager
+
+De uitkomst van het bakproces van de analoge drager.   
+
 |======================|================================================================================================================================================|
-| **XML element**        | <baking_outcome/>                                                                                                                                |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De uitkomst van het bakproces van de analoge drager.                                                                                             |
+| **XML element**        |  `<baking_outcome/>`                                                                                                                                |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1911,15 +1874,16 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | < baking_outcome>geslaagd</ baking_outcome>                                                                                                      |
+| **Voorbeeld**          |  `<baking_outcome>geslaagd `</baking_outcome>                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Digitaliseringsdatum                                                                                                                       |
+## Digitaliseringsdatum
+
+De datum waarop de digitalisering van de analoge drager plaats vond.  
+
+
 |======================|================================================================================================================================================|
-| **XML element**        | <digitization_date/>                                                                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De datum waarop de digitalisering van de analoge drager plaats vond.                                                                             |
+| **XML element**        |  `<digitization_date/>`                                                                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Datum                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1929,13 +1893,13 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | < digitization_date >2015-10-03</ digitization_date >                                                                                            |
+| **Voorbeeld**          |  `< digitization_date >2015-10-03 `</ digitization_date >                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Tijdstip digitalisering                                                                                                                    |
+## Tijdstip digitalisering
+
 |======================|================================================================================================================================================|
-| **XML element**        | <digitization_time />                                                                                                                            |
+| **XML element**        |  `<digitization_time />`                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het tijdstip waarop de digitalisering van de analoge drager plaats vond.                                                                         |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1948,12 +1912,13 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Uitkomst digitalisering                                                                                                                    |
+
+## Uitkomst digitalisering
+
+De uitkomst van de digitalisatie. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
+
 |======================|================================================================================================================================================|
-| **XML element**        | <digitization_outcome/>                                                                                                                          |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De uitkomst van de digitalisatie. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).                                                  |
+| **XML element**        |  `<digitization_outcome/>`                                                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst (y/n)                                                                                                                                |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1961,15 +1926,16 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | < digitization_outcome >y</ digitization_outcome >                                                                                               |
+| **Voorbeeld**          |  `< digitization_outcome >y `</ digitization_outcome >                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Opmerking digitalisatie                                                                                                                    |
+
+## Opmerking digitalisatie
+
+Een eventuele opmerking bij de digitalisatie van een analoge drager. 
+
 |======================|================================================================================================================================================|
-| **XML element**        | <digitization_note/>                                                                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | Een eventuele opmerking bij de digitalisatie van een analoge drager.                                                                             |
+| **XML element**        |  `<digitization_note/>`                                                                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1978,10 +1944,10 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Datum kwaliteitscontrole SP                                                                                                                |
+
+## Datum kwaliteitscontrole SP
 |======================|================================================================================================================================================|
-| **XML element**        | <qc_date/>                                                                                                                                       |
+| **XML element**        |  `<qc_date/>`                                                                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | De datum waarop door de Service Provider een kwaliteitscontrole van het digitale item is uitgevoerd.                                             |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -1994,10 +1960,9 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Uitkomst kwaliteitscontrole SP                                                                                                             |
+## Uitkomst kwaliteitscontrole SP
 |======================|================================================================================================================================================|
-| **XML element**        | <qc_outcome/>                                                                                                                                    |
+| **XML element**        |  `<qc_outcome/>`                                                                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | De uitkomst van de kwaliteitscontrole door de Service Provider. Is deze positief (y) of negatief (n)?                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2007,15 +1972,15 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | < qc_outcome >y</qc_outcome>                                                                                                                     |
+| **Voorbeeld**          |  `<qc_outcome >y</qc_outcome>`                                                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|-----------------------------------------------------------------------------|
-| **Veld**             | ### Opmerking kwaliteitscontrole SP                                         |
+## Opmerking kwaliteitscontrole SP
+
+Een eventuele opmerking bij de kwaliteitscontrole door de Service Provider.
+
 |======================|=============================================================================|
-| **XML element**        | <qc_note/>                                                                    |
-| ---------------------- | ----------------------------------------------------------------------------- |
-| **Definitie**          | Een eventuele opmerking bij de kwaliteitscontrole door de Service Provider.   |
+| **XML element**        |  `<qc_note/>`                                                                    |
 | ---------------------- | ----------------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                                   |
 | ---------------------- | ----------------------------------------------------------------------------- |
@@ -2024,12 +1989,13 @@ Events digitalisatie
 | **Herhaalbaar**        | Nee                                                                           |
 | ---------------------- | ----------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Agent kwaliteitscontrole SP                                                                                                                |
+
+## Agent kwaliteitscontrole SP
+
+Dit is een verwijzing naar de persoon bij de Service Provider die de kwaliteitscontrole heeft uitgevoerd.
+
 |======================|================================================================================================================================================|
-| **XML element**        | <qc_by/>                                                                                                                                         |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | Dit is een verwijzing naar de persoon bij de Service Provider die de kwaliteitscontrole heeft uitgevoerd.                                        |
+| **XML element**        |  `<qc_by/>`                                                                                                                                         |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst (y/n)                                                                                                                                |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2037,15 +2003,16 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <qc_by>User001</qc_by>                                                                                                                           |
+| **Voorbeeld**          |  `<qc_by>User001 `</qc_by>                                                                                                                           |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Datum transfer naar LTO tape                                                                                                               |
+
+## Datum transfer naar LTO tape
+
+De datum waarop het digitale item bij de service provider naar LTO tape werd geschreven.
+
 |======================|================================================================================================================================================|
-| **XML element**        | <transfer_lto_date/>                                                                                                                             |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De datum waarop het digitale item bij de service provider naar LTO tape werd geschreven.                                                         |
+| **XML element**        |  `<transfer_lto_date/>`                                                                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | Datum                                                                                                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2055,15 +2022,16 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <transfer_lto_date>2015-10-03</transfer_lto_date>                                                                                                |
+| **Voorbeeld**          |  `<transfer_lto_date>2015-10-03</transfer_lto_date>`                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### LTO ID                                                                                                                                     |
+
+## LTO ID
+
+De unieke ID van de LTO tape waarop het digitale item wordt aangeleverd door de Service Provider.
+
 |======================|================================================================================================================================================|
-| **XML element**        | <lto_id/>                                                                                                                                        |
-| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Definitie**          | De unieke ID van de LTO tape waarop het digitale item wordt aangeleverd door de Service Provider.                                                |
+| **XML element**        |  `<lto_id/>`                                                                                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Datatype**           | ID                                                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2071,16 +2039,15 @@ Events digitalisatie
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <lto_id>IM0180L5</lto_id>                                                                                                                        |
+| **Voorbeeld**          |  `<lto_id>IM0180L5</lto_id>`                                                                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-Digitaliseringsketen
---------------------
+# Digitaliseringsketen
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Digitaliseringsformaat                                                                                                                     |
+
+## Digitaliseringsformaat                                                                                                                     
 |======================|================================================================================================================================================|
-| **XML element**        | <digitization_format/>                                                                                                                           |
+| **XML element**        |  `<digitization_format/>`                                                                                                                           |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het formaat waarin de master copy van het digitale item werd geproduceerd door de service provider.                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2090,13 +2057,13 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <digitization_format>WAV</digitization_format>                                                                                                   |
+| **Voorbeeld**          |  `<digitization_format>WAV `</digitization_format>                                                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Player fabrikant                                                                                                                           |
+
+## Player fabrikant                                                                                                                           
 |======================|================================================================================================================================================|
-| **XML element**        | <player_manufacturer/>                                                                                                                           |
+| **XML element**        |  `<player_manufacturer/>`                                                                                                                           |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | De fabrikant van de tijdens het digitaliseringsproces gebruikte afspeelapparatuur.                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2106,13 +2073,12 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <player_manufacturer>Sony</player_manufacturer>                                                                                                  |
+| **Voorbeeld**          |  `<player_manufacturer>Sony `</player_manufacturer>                                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Player serienummer                                                                                                                         |
+## Player serienummer                                                                                                                         
 |======================|================================================================================================================================================|
-| **XML element**        | <player_serial_number/>                                                                                                                          |
+| **XML element**        |  `<player_serial_number/>`                                                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het serienummer van de tijdens het digitaliseringsproces gebruikte afspeelapparatuur.                                                            |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2122,13 +2088,12 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <player_serial_number>33418</player_serial_number>                                                                                               |
+| **Voorbeeld**          |  `<player_serial_number>33418 `</player_serial_number>                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Player model                                                                                                                               |
+## Player model                                                                                                                               
 |======================|================================================================================================================================================|
-| **XML element**        | <player_model/>                                                                                                                                  |
+| **XML element**        |  `<player_model/>`                                                                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het model van de tijdens het digitalliseringsproces gebruikte afspeelapparatuur.                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2138,13 +2103,15 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <player_model>BVH-2000PS</player_model>                                                                                                          |
+| **Voorbeeld**          |  `<player_model>BVH-2000PS `</player_model>                                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Timebase corrector fabrikant                                                                                                                                     |
+## Timebase corrector fabrikant
+
+
+
 |======================|======================================================================================================================================================================|
-| **XML element**        | <timebase_corrector_manufacturer/>                                                                                                                                     |
+| **XML element**        |  `<timebase_corrector_manufacturer/>`                                                                                                                                     |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Definitie**          | Naam van de fabrikant van de timebase corrector (TBC). Dit is een toestel dat storingen en vervormingen van het beeldsignaal op een videotape buffert en corrigeert.   |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -2154,13 +2121,13 @@ Digitaliseringsketen
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                                                                                    |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <timebase_corrector_manufacturer>Leitch</timebase_corrector_manufacturer>                                                                                              |
+| **Voorbeeld**          |  `<timebase_corrector_manufacturer>Leitch `</timebase_corrector_manufacturer>                                                                                              |
 | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Timebase corrector serienummer                                                                                                             |
+## Timebase corrector serienummer          
+
 |======================|================================================================================================================================================|
-| **XML element**        | <timebase_corrector_serial_number/>                                                                                                              |
+| **XML element**        |  `<timebase_corrector_serial_number/>`                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het serienummer van de timebase corrector gebruikt om storingen in het beeldsignaal van een videotape te corrigeren.                             |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2170,13 +2137,13 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <timebase_corrector_serial_number>LTHI0123706032\#9315</timebase_corrector_serial_number>                                                        |
+| **Voorbeeld**          |  `<timebase_corrector_serial_number>LTHI0123706032\#9315 `</timebase_corrector_serial_number>                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Timebase corrector model                                                                                                                   |
+## Timebase corrector model
+
 |======================|================================================================================================================================================|
-| **XML element**        | <timebase_corrector_model/>                                                                                                                      |
+| **XML element**        |  `<timebase_corrector_model/>`                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het model van de timebase corrector gebruikt om storingen in het beeldsignaal van een videotape te corrigeren.                                   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2186,13 +2153,13 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <timebase_corrector_model>DPS-575</timebase_corrector_model>                                                                                     |
+| **Voorbeeld**          |  `<timebase_corrector_model>DPS-575 `</timebase_corrector_model>                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### AD fabrikant                                                                                                                               |
+## AD fabrikant
+
 |======================|================================================================================================================================================|
-| **XML element**        | <AD_manufacturer/>                                                                                                                               |
+| **XML element**        |  `<AD_manufacturer/>`                                                                                                                               |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Naam van de fabrikant van de analoog-digitaalomzetter. De AD omzetter zet een analoog signaal om in een digitaal.                                |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2202,13 +2169,12 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <AD_manufacturer>Realtek</AD_manufacturer>                                                                                                       |
+| **Voorbeeld**          |  `<AD_manufacturer>Realtek `</AD_manufacturer>                                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### AD serienummer                                                                                                                             |
+## AD serienummer                                                                                                                             
 |======================|================================================================================================================================================|
-| **XML element**        | <AD_serial_number/>                                                                                                                              |
+| **XML element**        |  `<AD_serial_number/>`                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het serienummer van de AD omzetter.                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2218,13 +2184,12 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <AD_serial_number>1</AD_serial_number>                                                                                                           |
+| **Voorbeeld**          |  `<AD_serial_number>1 `</AD_serial_number>                                                                                                           |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### AD model                                                                                                                                   |
+## AD model                                                                                                                                   
 |======================|================================================================================================================================================|
-| **XML element**        | <AD_model/>                                                                                                                                      |
+| **XML element**        |  `<AD_model/>`                                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het model van de AD omzetter.                                                                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2234,29 +2199,27 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <AD_model>Alc887</AD_model>                                                                                                                      |
+| **Voorbeeld**          |  `<AD_model>Alc887 `</AD_model>                                                                                                                      |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Encoder fabrikant                                                                                                                                                                                          |
+## Encoder fabrikant                      
 |======================|================================================================================================================================================================================================================|
-| **XML element**        | <encoder_manufacturer/>                                                                                                                                                                                          |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Definitie**          | De fabrikant van de tijdens het digitalisatieproces gebruikte encoder. Dit zijn de hardware of software die gebruikt worden voor het transcoderen van informatie van het ene formaat (of code) naar de andere.   |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Datatype**           | Vrije tekst                                                                                                                                                                                                      |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering.                                                                   |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Herhaalbaar**        | Nee                                                                                                                                                                                                              |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <encoder_manufacturer>EVS</encoder_manufacturer>                                                                                                                                                                 |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **XML element**        |  `<encoder_manufacturer/>`                                                                                                                                                                                        |
+| ---------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Definitie**          | De fabrikant van de tijdens het digitalisatieproces gebruikte encoder. Dit zijn de hardware of software die gebruikt worden voor het transcoderen van informatie van het ene formaat (of code) naar de andere. |
+| ---------------------- | ---------------------------------                                                                                                                                                                              |
+| **Datatype**           | Vrije tekst                                                                                                                                                                                                    |
+| ---------------------- | ---------------------------------                                                                                                                                                                              |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering.                                                                 |
+| ---------------------- | ---------------------------------                                                                                                                                                                              |
+| **Herhaalbaar**        | Nee                                                                                                                                                                                                            |
+| ---------------------- | ---------------------------------                                                                                                                                                                              |
+| **Voorbeeld**          |  `<encoder_manufacturer>EVS `</encoder_manufacturer>                                                                                                                                                               |
+| ---------------------- | ---------------------------------                                                                                                                                                                              |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Encoder serienummer                                                                                                                        |
+## Encoder serienummer                                                                                                                        
 |======================|================================================================================================================================================|
-| **XML element**        | <encoder_serial_number/>                                                                                                                         |
+| **XML element**        |  `<encoder_serial_number/>`                                                                                                                         |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het serienummer van de tijdens het digitalisatieproces gebruikte encoder.                                                                        |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2266,13 +2229,12 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <encoder_serial_number>41130319</encoder_serial_number>                                                                                          |
+| **Voorbeeld**          |  `<encoder_serial_number>41130319 `</encoder_serial_number>                                                                                          |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Encoder model                                                                                                                              |
+## Encoder model                                                                                                                              
 |======================|================================================================================================================================================|
-| **XML element**        | <encoder_model/>                                                                                                                                 |
+| **XML element**        |  `<encoder_model/>`                                                                                                                                 |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Het specifieke model van de tijdens het digitalisatieproces gebruikte encoder.                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -2282,7 +2244,7 @@ Digitaliseringsketen
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                                              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <encoder_model>Open Cube</encoder_model>                                                                                                         |
+| **Voorbeeld**          |  `<encoder_model>Open Cube `</encoder_model>                                                                                                         |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 
 Technische metadata
@@ -2290,10 +2252,9 @@ Technische metadata
 
 De technische metadata wordt automatisch uitgelezen uit de header van de archiefmaster.
 
-|----------------------|-----------------------------------------------------------------------------|
-| **Veld**             | ### Video formaat                                                           |
+## Video formaat
 |======================|=============================================================================|
-| **XML element**        | <VideoFormat/>                                                                |
+| **XML element**        |  `<VideoFormat/>`                                                                |
 | ---------------------- | ----------------------------------------------------------------------------- |
 | **Definitie**          | Het videoformaat waarin de master copy van het digitale item bewaard wordt.   |
 | ---------------------- | ----------------------------------------------------------------------------- |
@@ -2301,13 +2262,12 @@ De technische metadata wordt automatisch uitgelezen uit de header van de archief
 | ---------------------- | ----------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                           |
 | ---------------------- | ----------------------------------------------------------------------------- |
-| **Voorbeeld**          | <VideoFormat>JPEG2000</VideoFormat>                                           |
+| **Voorbeeld**          |  `<VideoFormat>JPEG2000 `</VideoFormat>                                           |
 | ---------------------- | ----------------------------------------------------------------------------- |
 
-|----------------------|------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Video technisch                                                                                              |
+## Video technisch
 |======================|==================================================================================================================|
-| **XML element**        | <VideoTechnical/>                                                                                                  |
+| **XML element**        |  `<VideoTechnical/>`                                                                                                  |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | **Definitie**          | Dit is de videotechnische metadata van de archiefmaster die uit de header van de mxf wordt opgehaald.              |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
@@ -2315,13 +2275,12 @@ De technische metadata wordt automatisch uitgelezen uit de header van de archief
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Nee                                                                                                                |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
-| **Voorbeeld**          | <VideoTechnical>jpeg2000 (JPEG 2000 codestream restriction 0) 720x288 50.0fps 122815000bps </VideoTechnical>       |
+| **Voorbeeld**          |  `<VideoTechnical>jpeg2000 (JPEG 2000 codestream restriction 0) 720x288 50.0fps 122815000bps  `</VideoTechnical>       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------ |
 
-|----------------------|-------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### Audio technisch                                                                                   |
+## Audio technisch
 |======================|=======================================================================================================|
-| **XML element**        | <AudioTechnical/>                                                                                       |
+| **XML element**        |  `<AudioTechnical/>`                                                                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------- |
 | **Definitie**          | Dit is de audiotechnische metadata van de archiefmaster die uit de header van de mxf wordt opgehaald.   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------- |
@@ -2329,33 +2288,30 @@ De technische metadata wordt automatisch uitgelezen uit de header van de archief
 | ---------------------- | ------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                     |
 | ---------------------- | ------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <AudioTechnical>pcm_s24le 8ch 48000HZ 9216000bps</AudioTechnical>                                       |
+| **Voorbeeld**          |  `<AudioTechnical>pcm_s24le 8ch 48000HZ 9216000bps `</AudioTechnical>                                       |
 | ---------------------- | ------------------------------------------------------------------------------------------------------- |
 
-|----------------------|-----------------------------------------------------------------------------------------|
-| **Veld**             | ### TC IN                                                                               |
+## TC IN
 |======================|=========================================================================================|
-| **XML element**        | <TcInTimecode/>                                                                           |
+| **XML element**        |  `<TcInTimecode/>`                                                                           |
 | ---------------------- | ----------------------------------------------------------------------------------------- |
 | **Definitie**          | Dit zijn de tijdscodes die overgenomen zijn van de analoge drager in de digitale kopie.   |
 | ---------------------- | ----------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------- |
 
-|----------------------|-----------------------------------------------------------------------------------------|
-| **Veld**             | ### TC OUT                                                                              |
+## TC OUT                                                                              
 |======================|=========================================================================================|
-| **XML element**        | <TcOutTimecode/>                                                                          |
+| **XML element**        |  `<TcOutTimecode/>`                                                                          |
 | ---------------------- | ----------------------------------------------------------------------------------------- |
 | **Definitie**          | Dit zijn de tijdscodes die overgenomen zijn van de analoge drager in de digitale kopie.   |
 | ---------------------- | ----------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                       |
 | ---------------------- | ----------------------------------------------------------------------------------------- |
 
-|----------------------|-------------------------------------------------------|
-| **Veld**             | ### Duur                                              |
+## Duur
 |======================|=======================================================|
-| **XML element**        | <DurationTimecode/>                                     |
+| **XML element**        |  `<DurationTimecode/>`                                     |
 | ---------------------- | ------------------------------------------------------- |
 | **Definitie**          | De totale duur van het digitale item.                   |
 | ---------------------- | ------------------------------------------------------- |
@@ -2365,13 +2321,12 @@ De technische metadata wordt automatisch uitgelezen uit de header van de archief
 | ---------------------- | ------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                     |
 | ---------------------- | ------------------------------------------------------- |
-| **Voorbeeld**          | <DurationTimecode>00:14:14.920</DurationTimecode>       |
+| **Voorbeeld**          |  `<DurationTimecode>00:14:14.920 `</DurationTimecode>       |
 | ---------------------- | ------------------------------------------------------- |
 
-|----------------------|--------------------------------------------------|
-| **Veld**             | ### Image size                                   |
+## Image size
 |======================|==================================================|
-| **XML element**        | <ImageSize/>                                       |
+| **XML element**        |  `<ImageSize/>`                                       |
 | ---------------------- | -------------------------------------------------- |
 | **Definitie**          | De dimensie van het beeld, uitgedrukt in pixels.   |
 | ---------------------- | -------------------------------------------------- |
@@ -2381,13 +2336,12 @@ De technische metadata wordt automatisch uitgelezen uit de header van de archief
 | ---------------------- | -------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                |
 | ---------------------- | -------------------------------------------------- |
-| **Voorbeeld**          | <ImageSize>1920x1080</ImageSize>                   |
+| **Voorbeeld**          |  `<ImageSize>1920x1080 `</ImageSize>                   |
 | ---------------------- | -------------------------------------------------- |
 
-|----------------------|--------------------------------------------------------------------------------------------------------------------------|
-| **Veld**             | ### MD5                                                                                                                  |
+## MD5
 |======================|==========================================================================================================================|
-| **XML element**        | <MD5/>                                                                                                                     |
+| **XML element**        |  `<MD5/>`                                                                                                                     |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **Definitie**          | MD5 (Message Digest Algorithm 5) is een veelgebruikte standaard om de integriteit van digitale bestanden te controleren.   |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
@@ -2395,10 +2349,10 @@ De technische metadata wordt automatisch uitgelezen uit de header van de archief
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | **Herhaalbaar**        | Nee                                                                                                                        |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **Voorbeeld**          | <MD5> 69c64bcb374c5dd7bd5fa0b3bb76758f </MD5>                                                                              |
+| **Voorbeeld**          |  `<MD5> 69c64bcb374c5dd7bd5fa0b3bb76758f  `</MD5>                                                                              |
 | ---------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 
-4.  Gecontroleerde lijsten
+1.  Gecontroleerde lijsten
     ======================
 
     r.  Lokale CP IDs
@@ -2747,7 +2701,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
     -   Implicatie: De browsekopie van het object mag gedeeld worden tussen de VIAA content partners. In sommige gevallen gelden hier uitzonderingen op, zie verder in dit document. Indien deze licentie gegeven wordt, zal ook de licentie VIAA-INTRA_CP-METADATA-ALL van toepassing worden.
 
-<!-- -->
+ `<!-- -->
 
 -   Metadata
 
@@ -2833,7 +2787,7 @@ Kan ik de licentie nog aanpassen?
 
 Licenties kunnen ten allen tijde aangepast worden. Tegelijkertijd wensen we er op te wijzen dat deze defaultsettings conform de afgesloten samenwerkingsovereenkomst zijn en er normaal gezien enkel wegens bepaalde redenen (zoals exclusieve rechten met derden, gevoelig materiaal, ...) aanpassingen nodig zijn.  
 
-Ontsluitingsplatformen zijn zo ontworpen dat ze rekening houden met de licentie en op basis hiervan een item al dan niet zullen gebruiken. Hou er wel rekening mee dat het even (typisch 24u, maar afhankelijk van platform tot platform) kan duren eer het ontsluitingsplatform aangepast is. Voor dringende gevallen kan een update gevraagd worden via <support@viaa.be>.
+Ontsluitingsplatformen zijn zo ontworpen dat ze rekening houden met de licentie en op basis hiervan een item al dan niet zullen gebruiken. Hou er wel rekening mee dat het even (typisch 24u, maar afhankelijk van platform tot platform) kan duren eer het ontsluitingsplatform aangepast is. Voor dringende gevallen kan een update gevraagd worden via  `<support@meemoo.be>.
 
 [^1]: V=verplicht; O=optioneel; V\*=verplicht onder bepaalde voorwaarden (bv. als een ander veld niet is ingevuld); VA=verplicht indien van toepassing.
 
@@ -2841,156 +2795,3 @@ Ontsluitingsplatformen zijn zo ontworpen dat ze rekening houden met de licentie 
 
 [^3]: [[https://nl.wikipedia.org/wiki/Lijst_van_ISO_639-codes]{.underline}]
 
-  [**[Inhoud 1]{.smallcaps}**]: #_heading=h.gjdgxs
-  [**[1.]{.smallcaps}**]: #tabel-basisannotatie-viaa-metadatamodel
-  [**a.**]: #administratieve-en-beschrijvende-metadata
-  [**[2.]{.smallcaps}**]: #tabel-uitgebreide-annotatie-viaa-metadatamodel
-  [1]: #administratieve-en-beschrijvende-metadata-1
-  [**b.**]: #kwaliteitscontrole-qc
-  [**c.**]: #technische-metadata
-  [**[3.]{.smallcaps}**]: #gedetailleerde-veldomschrijving-viaa-metadatamodel
-  [2]: #algemeen
-  [CP 15]: #cp
-  [CP naam 15]: #cp-naam
-  [CP ID 15]: #cp-id
-  [Sub CP naam 15]: #sub-cp-naam
-  [PID 16]: #pid
-  [Hoofd lokale CP ID 16]: #hoofd-lokale-cp-id
-  [Overige lokale CP ID 17]: #overige-lokale-cp-id
-  [3]: #relaties
-  [(Dit digitaal object) is deel van 18]: #dit-digitaal-object-is-deel-van
-  [(Dit digitaal object) bevat 18]: #dit-digitaal-object-bevat
-  [(Dit digitaal object) is verwant aan 18]: #dit-digitaal-object-is-verwant-aan
-  [(Dit digitaal object) is versie van 19]: #dit-digitaal-object-is-versie-van
-  [4]: #titels
-  [Hoofdtitel 19]: #hoofdtitel
-  [Secundaire titel: Serie 20]: #secundaire-titel-serie
-  [Secundaire titel: Episode 20]: #secundaire-titel-episode
-  [Secundaire titel: Aflevering 20]: #secundaire-titel-aflevering
-  [Secundaire titel: Alternatief 21]: #secundaire-titel-alternatief
-  [Secundaire titel: Programma 21]: #secundaire-titel-programma
-  [Secundaire titel: Serienummer 22]: #secundaire-titel-serienummer
-  [Secundaire titel: Seizoen 22]: #secundaire-titel-seizoen
-  [Secundaire titel: Seizoennummer 22]: #secundaire-titel-seizoennummer
-  [Secundaire titel: Archief 23]: #secundaire-titel-archief
-  [Secundaire titel: Deelarchief 23]: #secundaire-titel-deelarchief
-  [Secundaire titel: Reeks 23]: #secundaire-titel-reeks
-  [Secundaire titel: Deelreeks 24]: #secundaire-titel-deelreeks
-  [Secundaire titel: Registratie 24]: #secundaire-titel-registratie
-  [**d.**]: #datum
-  [Datum creatie 25]: #datum-creatie
-  [Datum uitgave / uitzending 26]: #datum-uitgave-uitzending
-  [**e.**]: #productie
-  [Maker 27]: #maker
-  [Bijdrager 28]: #bijdrager
-  [Publisher 29]: #publisher
-  [**f.**]: #inhoud
-  [Hoofdbeschrijving 29]: #hoofdbeschrijving
-  [Lange beschrijving 30]: #lange-beschrijving
-  [Programmabeschrijving 30]: #programmabeschrijving
-  [Cast 31]: #cast
-  [Ondertitels 31]: #ondertitels
-  [Transcriptie 32]: #transcriptie
-  [Genre 32]: #genre
-  [Coverage (ruimtelijk) 33]: #coverage-ruimtelijk
-  [Coverage (tijd) 33]: #coverage-tijd
-  [Trefwoorden 34]: #trefwoorden
-  [Taal 34]: #taal
-  [**g.**]: #rechten
-  [Licentie 35]: #licentie
-  [Auteursrechthouder 36]: #auteursrechthouder
-  [Licentiehouder 36]: #licentiehouder
-  [Credit 37]: #credit
-  [Opmerkingen rechten 37]: #opmerkingen-rechten
-  [**h.**]: #qc
-  [Resultaat manuele QC 37]: #resultaat-manuele-qc
-  [QC Audio 38]: #qc-audio
-  [QC Video 38]: #qc-video
-  [QC Opmerkingen 39]: #qc-opmerkingen
-  [**i.**]: #drager
-  [Bestandstype 39]: #bestandstype
-  [Formaat 39]: #formaat
-  [Barcode drager 40]: #barcode-drager
-  [Originele locatie 40]: #originele-locatie
-  [Merk 40]: #merk
-  [Productiedatum drager 41]: #productiedatum-drager
-  [Kern/Spoel 41]: #kernspoel
-  [OTC start 41]: #otc-start
-  [Duur 42]: #duur
-  [Recording speed 42]: #recording-speed
-  [Audio noise reduction 43]: #audio-noise-reduction
-  [Audio IEC type 43]: #audio-iec-type
-  [Audio tracks 43]: #audio-tracks
-  [Deterioratiefenomenen 43]: #deterioratiefenomenen
-  [**j.**]: #logistieke-info
-  [Registratiedatum drager 44]: #registratiedatum-drager
-  [Barcode verzameldoos 44]: #barcode-verzameldoos
-  [Batch ID 45]: #batch-id
-  [Shipment ID 45]: #shipment-id
-  [**k.**]: #events-digitalisatie
-  [Service Provider 45]: #service-provider
-  [Service Provider ID 46]: #service-provider-id
-  [Datum inspectie analoge drager 46]: #datum-inspectie-analoge-drager
-  [Uitkomst inspectie analoge drager 46]: #uitkomst-inspectie-analoge-drager
-  [Opmerking inspectie analoge drager 47]: #opmerking-inspectie-analoge-drager
-  [Datum herstel analoge dragger 47]: #datum-herstel-analoge-dragger
-  [Uitkomst herstel analoge drager 47]: #uitkomst-herstel-analoge-drager
-  [Opmerking herstel analoge drager 48]: #opmerking-herstel-analoge-drager
-  [Datum reiniging analoge drager 48]: #datum-reiniging-analoge-drager
-  [Uitkomst reiniging analoge drager 48]: #uitkomst-reiniging-analoge-drager
-  [Opmerking reiniging analoge drager 49]: #opmerking-reiniging-analoge-drager
-  [Datum bakken analoge drager 49]: #datum-bakken-analoge-drager
-  [Uitkomst bakken analoge drager 49]: #uitkomst-bakken-analoge-drager
-  [Digitaliseringsdatum 50]: #digitaliseringsdatum
-  [Tijdstip digitalisering 50]: #tijdstip-digitalisering
-  [Uitkomst digitalisering 50]: #uitkomst-digitalisering
-  [Opmerking digitalisatie 51]: #opmerking-digitalisatie
-  [Datum kwaliteitscontrole SP 51]: #datum-kwaliteitscontrole-sp
-  [Uitkomst kwaliteitscontrole SP 51]: #uitkomst-kwaliteitscontrole-sp
-  [Opmerking kwaliteitscontrole SP 52]: #opmerking-kwaliteitscontrole-sp
-  [Agent kwaliteitscontrole SP 52]: #agent-kwaliteitscontrole-sp
-  [Datum transfer naar LTO tape 52]: #datum-transfer-naar-lto-tape
-  [LTO ID 53]: #lto-id
-  [**l.**]: #digitaliseringsketen
-  [Digitaliseringsformaat 53]: #digitaliseringsformaat
-  [Player fabrikant 53]: #player-fabrikant
-  [Player serienummer 54]: #player-serienummer
-  [Player model 54]: #player-model
-  [Timebase corrector fabrikant 54]: #timebase-corrector-fabrikant
-  [Timebase corrector serienummer 55]: #timebase-corrector-serienummer
-  [Timebase corrector model 55]: #timebase-corrector-model
-  [AD fabrikant 56]: #ad-fabrikant
-  [AD serienummer 56]: #ad-serienummer
-  [AD model 56]: #ad-model
-  [Encoder fabrikant 56]: #encoder-fabrikant
-  [Encoder serienummer 57]: #encoder-serienummer
-  [Encoder model 57]: #encoder-model
-  [**m.**]: #technische-metadata-1
-  [Video formaat 58]: #video-formaat
-  [Video technisch 58]: #video-technisch
-  [Audio technisch 58]: #audio-technisch
-  [TC IN 59]: #tc-in
-  [TC OUT 59]: #tc-out
-  [Duur 59]: #duur-1
-  [Image size 59]: #image-size
-  [MD5 60]: #md5
-  [**[4.]{.smallcaps}**]: #gecontroleerde-lijsten
-  [5]: #lokale-cp-ids
-  [6]: #secondaire-titel
-  [7]: #maker-1
-  [8]: #bijdrager-1
-  [9]: #publisher-1
-  [10]: #genre-1
-  [11]: #taal-1
-  [12]: #licentie-1
-  [**[5.]{.smallcaps}**]: #viaa-licenties
-  [**Overzicht van de licenties 66**]: #overzicht-van-de-licenties
-  [**Default instelling van de licenties 68**]: #default-instelling-van-de-licenties
-  [**Overzicht standaardwaardes 68**]: #overzicht-standaardwaardes
-  [**Kan ik de licentie nog aanpassen? 68**]: #kan-ik-de-licentie-nog-aanpassen
-  [[VIAA- archiefhandleiding]{.underline}]: https://viaa.be/nl/portaal/support-category/item/handleiding-archiefsysteem
-  [[http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=40874]{.underline}]: http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=40874
-  [[https://www.loc.gov/standards/datetime/]{.underline}]: https://www.loc.gov/standards/datetime/
-  [[support\@viaa.be]{.underline}]: mailto:support@viaa.be
-  [[(zie AMS handleiding)]{.underline}]: https://viaa.be/nl/portaal/support-category/item/handleiding-voor-registratie-van-dragers-in-ams
-  [[https://nl.wikipedia.org/wiki/Lijst_van_ISO_639-codes]{.underline}]: https://nl.wikipedia.org/wiki/Lijst_van_ISO_639-codes
