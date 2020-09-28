@@ -160,12 +160,10 @@ De relatiemetadatavelden in het VIAA datamodel worden gebruikt om de formele rel
 
 "Is_deel_van" geeft aan van welk digitale object (parent file) het beschreven bestand deel uitmaakt.
 
+**Mapping:** [ebucore:part](), [dcterms:isPartOf]()
+
 |======================|==========================================|
 | **XML element** | `<dc_relations type="list"><is_deel_van/></dc_relations>` |
-| ---------------------- | -------------------------------------------------------------------------------------------------------- |
-| **Mapping**            | dcterms:isPartOf                                                                                         |
-|                        |                                                                                                          |
-|                        | ebucore:part                                                                                             |
 | ---------------------- | -------------------------------------------------------------------------------------------------------- |
 | **Datatype**           | ID (PID)                                                                                                 |
 | ---------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -178,12 +176,10 @@ De relatiemetadatavelden in het VIAA datamodel worden gebruikt om de formele rel
 
 "bevat" geeft aan welke digitale objecten deel uit maken van het beschreven bestand.
 
+**Mapping:** [ebucore:hasPart](), [dcterms:hasPart]()
+
 |======================|========================|
 | **XML element** |`<dc_relations type="list"><bevat/></dc_relations>` |
-| ---------------------- | -------------------------------------------------------------------------------------- |
-| **Mapping**            | ebucore:hasPart                                                                        |
-|                        |                                                                                        |
-|                        | dcterms:hasPart                                                                        |
 | ---------------------- | -------------------------------------------------------------------------------------- |
 | **Datatype**           | ID                                                                                     |
 | ---------------------- | -------------------------------------------------------------------------------------- |
@@ -226,14 +222,10 @@ In dit veld worden versies van digitale objecten (PIDs) aangegeven. (vb. Dubbele
 
 De algemene benaming of hoofdtitel.
 
+**Mapping:** [dc:title]() | [ebucore:title/dc:title]() | [pbcore:pbcoreTitle/title]()
+
 |==========================|======================================|
 | **XML element**            | `<title/>`                                                                                           |
-| -------------------------- | ---------------------------------------------------------------------------------------------------- |
-| **Mapping**                | dc:title                                                                                             |
-|                            |                                                                                                      |
-|                            | ebucore:title/dc:title                                                                               |
-|                            |                                                                                                      |
-|                            | pbcore:pbcoreTitle/title                                                                             |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
 | **Datatype**               | Vrije tekst                                                                                          |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -250,8 +242,6 @@ De algemene benaming of hoofdtitel.
 |                            | -   Itemtitel (titel van te beschrijven archiefitem)                                                 |
 | -------------------------- | ---------------------------------------------------------------------------------------------------- |
 
-### Voorbeeld 
-
 ```xml
 <title>nieuws 19-09-94</title>
 ```
@@ -260,14 +250,10 @@ De algemene benaming of hoofdtitel.
 
 De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.
 
+**Mapping:** [dc:title]() | [ebucore:title/dc:title]() | [pbcore:pbcoreTitle/title]()
+
 |======================|================|
 | **XML element** |`<dc_titles type="list"><serie/></dc_titles>`|
-| ---------------------- | ------------------------------------------------------------------------------ |
-| **Mapping**            | dcterms:alternative                                                            |
-|                        |                                                                                |
-|                        | ebucore:alternativeTitle/\@typeLabel                                           |
-|                        |                                                                                |
-|                        | pbcore:titleType                                                               |
 | ---------------------- | ------------------------------------------------------------------------------ |
 | **Datatype**           | Vrije tekst                                                                    |
 | ---------------------- | ------------------------------------------------------------------------------ |
@@ -275,8 +261,9 @@ De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.
 | ---------------------- | ------------------------------------------------------------------------------ |
 | **Herhaalbaar**        | Ja                                                                             |
 | ---------------------- | ------------------------------------------------------------------------------ |
- **Voorbeeld**
- 
+
+### Voorbeeld
+
  ```xml
  <dc_titles type="list"><serie>Het Journaal</serie></dc_titles>
  ```
@@ -285,18 +272,10 @@ De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.
 
 De titel van de episode waar het item deel van uitmaakt.
 
+**Mapping:** [dcterms:alternative]() | [ebucore:alternativeTitle/\@typeLabel]() | [pbcore:titleType]()
+
 |======================|==========================================================|
-| **XML element** |`<dc_titles type="list">                               |
-|                      |                                                          |
-|                      |`<episode/>`                                             |
-|                      |                                                          |
-|                        | `</dc_titles>                                              |
-| ---------------------- | ---------------------------------------------------------- |
-| **Mapping**            | dcterms:alternative                                        |
-|                        |                                                            |
-|                        | ebucore:alternativeTitle/\@typeLabel                       |
-|                        |                                                            |
-|                        | pbcore:titleType                                           |
+| **XML element** | `<dc_titles type="list"><episode/></dc_titles>` |
 | ---------------------- | ---------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                |
 | ---------------------- | ---------------------------------------------------------- |
@@ -304,27 +283,21 @@ De titel van de episode waar het item deel van uitmaakt.
 | ---------------------- | ---------------------------------------------------------- |
 | **Herhaalbaar**        | Ja                                                         |
 | ---------------------- | ---------------------------------------------------------- |
-| **Voorbeeld**          | `<dc_titles type="list">                                   |
-|                        |                                                            |
-|                        | `<epsiode>Het Journaal`</episode>                          |
-|                        |                                                            |
-|                        | `</dc_titles>                                              |
-| ---------------------- | ---------------------------------------------------------- |
+
+```xml
+<dc_titles type="list">
+    <epsiode>Het Journaal</episode>
+</dc_titles>
+```
 
 ## Secundaire titel: Aflevering
 
 Dit is de titel van de aflevering waar het item deel van uitmaakt.
 
+**Mapping:** [dcterms:alternative]() | [ebucore:alternativeTitle/\@typeLabel]() | [pbcore:titleType]()
+
 |======================|======|
-| **XML element** |`<dc_titles type="list">`                                         |
-|                      |`<aflevering/>`                                                    |
-|                        | `</dc_titles>`                                                       |
-| ---------------------- | -------------------------------------------------------------------- |
-| **Mapping**            | dcterms:alternative                                                  |
-|                        |                                                                      |
-|                        | ebucore:alternativeTitle/\@typeLabel                                 |
-|                        |                                                                      |
-|                        | pbcore:titleType                                                     |
+| **XML element**        |`<dc_titles type="list"><aflevering/></dc_titles>` |
 | ---------------------- | -------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                          |
 | ---------------------- | -------------------------------------------------------------------- |
@@ -337,16 +310,10 @@ Dit is de titel van de aflevering waar het item deel van uitmaakt.
 
 De alternatieve titel. Dit is een alternatieve titel voor het digitale object. Een alternatieve titel kan bijvoorbeeld een vertaling van de originele (hoofd)titel zijn.
 
+**Mapping:** [dcterms:alternative]() | [ebucore:alternativeTitle/\@typeLabel]() | [pbcore:titleType]()
+
 |======================|==============================================|
-| **XML element** |`<dc_titles type="list">`                                                            |
-|                      |`<alternatief/>`          |
-|                        | `</dc_titles>`                                              |
-| ---------------------- | ----------------------------------------------------------- |
-| **Mapping**           | dcterms:alternative                                         |
-|                        |                                                             |
-|                        | ebucore:alternativeTitle/\@typeLabel                        |
-|                        |                                                             |
-|                        | pbcore:titleType                                            |
+| **XML element** |`<dc_titles type="list"><alternatief/></dc_titles>`                                              |
 | ---------------------- | ----------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                 |
 | ---------------------- | ----------------------------------------------------------- |
@@ -359,16 +326,10 @@ De alternatieve titel. Dit is een alternatieve titel voor het digitale object. E
 
 De programmatitel. Dit is de titel van het programma waarvan het item deel uitmaakt. Hiermee wordt een specifieke aflevering of episode van een serie bedoeld.  
 
+**Mapping:** [dcterms:alternative]() | [ebucore:alternativeTitle/\@typeLabel]() | [pbcore:titleType]()
+
 |======================|====================================|
-| **XML element** |`<dc_titles type="list">`                                                  |
-|                      |`<programma/>`  |
-|                        | `</dc_titles>`                                    |
-| ---------------------- | ------------------------------------------------- |
-| **Mapping**            | dcterms:alternative                               |
-|                        |                                                   |
-|                        | ebucore:alternativeTitle/\@typeLabel              |
-|                        |                                                   |
-|                        | pbcore:titleType                                  |
+| **XML element** |`<dc_titles type="list"><programma/></dc_titles>`                                    |
 | ---------------------- | ------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                       |
 | ---------------------- | ------------------------------------------------- |
@@ -381,16 +342,10 @@ De programmatitel. Dit is de titel van het programma waarvan het item deel uitma
 
 Het nummer van de serie waarvan het item deel uitmaakt.
 
+**Mapping:** [dcterms:alternative]() | [ebucore:alternativeTitle/\@typeLabel]() | [pbcore:titleType]()
+
 |======================|=========================================================|
-| **XML element** |`<dc_titles type="list">`                              |
-|                      |`<serienummer/>`                                        |
-|                        | `</dc_titles>`                                            |
-| ---------------------- | --------------------------------------------------------- |
-| **Mapping**            | dcterms:alternative                                       |
-|                        |                                                           |
-|                        | ebucore:alternativeTitle/\@typeLabel                      |
-|                        |                                                           |
-|                        | pbcore:titleType                                          |
+| **XML element** |`<dc_titles type="list"><serienummer/></dc_titles>`                                            |
 | ---------------------- | --------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                               |
 | ---------------------- | --------------------------------------------------------- |
@@ -401,12 +356,10 @@ Het nummer van de serie waarvan het item deel uitmaakt.
 
 ## Secundaire titel: Seizoen
 
-Het seizoen/jaargang van de serie waarvan het item deel uitmaakt. 
+Het seizoen/jaargang van de serie waarvan het item deel uitmaakt.
 
 |======================|=====|
-| **XML element** |`<dc_titles type="list">`                                        |
-|                      |`<seizoen>`                                                       |
-|                        | `</dc_titles>`                                                      |
+| **XML element** |`<dc_titles type="list"><seizoen></dc_titles>` |
 | ---------------------- | ------------------------------------------------------------------- |
 | **Datatype**           | Vrije tekst                                                         |
 | ---------------------- | ------------------------------------------------------------------- |
