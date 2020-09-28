@@ -1,9 +1,8 @@
 ---
 layout: default
 title: Metadata fields
-nav_order: 2
-has_children: true
 ---
+
 
 
 1.  Tabel basisannotatie VIAA metadatamodel
@@ -11,6 +10,9 @@ has_children: true
 
     a.  Administratieve en beschrijvende metadata
         -----------------------------------------
+
+
+        V=verplicht; O=optioneel; V\*=verplicht onder bepaalde voorwaarden (bv. als een ander veld niet is ingevuld); VA=verplicht indien van toepassing.
 
 |----------------|--------------------|------------------------------------|-------------------------------------|-------------|------------------------------------------------------------------------------------|
 |                | **Veldnaam**       | **Herkomst metadata born digital** | **Herkomst metadata digitalisatie** | **V/O**[^1] | **Mapping**                                                                        |
@@ -31,11 +33,7 @@ has_children: true
 |                |                    |                                    |                                     |             |                                                                                    |
 |                |                    |                                    |                                     |             | pbcore:pbcoreIdentifier                                                            |
 |----------------|--------------------|------------------------------------|-------------------------------------|-------------|------------------------------------------------------------------------------------|
-| > **TITEL**    | Hoofdtitel         | Manueel / mapping                  | AMS                                 | V           | dc:title                                                                           |
-|                |                    |                                    |                                     |             |                                                                                    |
-|                |                    |                                    |                                     |             | ebucore:title/dc:title                                                             |
-|                |                    |                                    |                                     |             |                                                                                    |
-|                |                    |                                    |                                     |             | pbcore:pbcoreTitle/title                                                           |
+| > **TITEL**    | Hoofdtitel         | Manueel / mapping                  | AMS                                 | V           | [dc:title](); [ebucore:title/dc:title]();[pbcore:pbcoreTitle/title]()              |
 |----------------|--------------------|------------------------------------|-------------------------------------|-------------|------------------------------------------------------------------------------------|
 | **DATUM**      | Datum creatie      | Manueel / mapping                  | AMS                                 | V           | dcterms:created                                                                    |
 |                |                    |                                    |                                     |             |                                                                                    |
@@ -84,7 +82,7 @@ has_children: true
 |                |                    |                                    |                                     |             | plus:CopyrightOwnerName                                                            |
 |----------------|--------------------|------------------------------------|-------------------------------------|-------------|------------------------------------------------------------------------------------|
 
-2.  Tabel uitgebreide annotatie VIAA metadatamodel
+1.  Tabel uitgebreide annotatie VIAA metadatamodel
     ==============================================
 
     b.  Administratieve en beschrijvende metadata
@@ -97,7 +95,8 @@ has_children: true
 |-----------------------------|----------------------------|------------------------------------|-------------------------------------|-------------------|-------------------------------------------------------------------------------------------|--------------------------------------|
 |                             | CP ID                      | Automatisch                        | AMS                                 | V                 | /                                                                                         |                                      |
 |-----------------------------|----------------------------|------------------------------------|-------------------------------------|-------------------|-------------------------------------------------------------------------------------------|--------------------------------------|
-|                             | PID                        | Automatisch                        | Automatisch                         | V                 | dc:identifier                                                                             |                                      |
+|                             | PID                        | Automatisch                        | Automatisch                         | V                 | 
+Mogelijke mapping naar [dc:identifier](http://purl.org/dc/elements/1.1/identifier); [ebucore:hasIdentifier](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasIdentifier); [pbcore:pbcoreIdentifier](https://pbcore.org/elements/pbcoreidentifier.html)                                                                             |                                      |
 |                             |                            |                                    |                                     |                   |                                                                                           |                                      |
 |                             |                            |                                    |                                     |                   | ebucore:identifier                                                                        |                                      |
 |                             |                            |                                    |                                     |                   |                                                                                           |                                      |
