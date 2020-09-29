@@ -1,14 +1,16 @@
-
 ---
 layout: default
-title: Metadata model
+title: Datatypes
+parent: Metadata model
+nav_order: 2
 ---
 
 # Datatypes
 
-## Datum / tijd
+## Extended Date Time Format (EDTF)
+{: #edtf}
 
-Als basis gebruiken we ISO 8601 : **jjjj-mm-dd**
+Als basis gebruiken we ISO 8601 : **YYYY-MM-DD**
 ([[http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=40874]{.underline}])|
 
 Om verfijning en benaderende waarden toe te staat wordt EDTF gebruikt : [Extended Date Time Format (EDTF)](https://www.loc.gov/standards/datetime/)
@@ -91,6 +93,8 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 - Technischadviseur
 
 ## Lokale CP IDs
+
+{: #localid}
 
 - Acquisition_number
 - Adlib

@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Metadata fields
+title: Metadata model
+has_children: true
+nav_order: 1
 ---
 
 
-
-1.  Tabel basisannotatie VIAA metadatamodel
-    =======================================
+# Basisannotatie VIAA metadatamodel
 
     a.  Administratieve en beschrijvende metadata
         -----------------------------------------
@@ -82,8 +82,7 @@ title: Metadata fields
 |                |                    |                                    |                                     |             | plus:CopyrightOwnerName                                                            |
 |----------------|--------------------|------------------------------------|-------------------------------------|-------------|------------------------------------------------------------------------------------|
 
-1.  Tabel uitgebreide annotatie VIAA metadatamodel
-    ==============================================
+# Tabel uitgebreide annotatie VIAA metadatamodel
 
     b.  Administratieve en beschrijvende metadata
         -----------------------------------------

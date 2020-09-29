@@ -1,6 +1,8 @@
 ---
 layout: default
-title: Metadata model
+title: Licenties
+parent: Metadata model
+nav_order: 3
 ---
 
 # Licenties
