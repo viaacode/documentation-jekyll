@@ -1,0 +1,769 @@
+---
+layout: default
+title: Velden - Algemeen
+parent: Metadata model
+nav_order: 1
+---
+
+{:toc}
+
+# Algemeen
+
+## CP Naam
+
+De naam van de Content Partner (CP).
+
+| **XML element**        | `<CP>`                                 |
+| **Datatype**           | Vrije tekst                            |
+| **Verplichting**       | Verplicht                              |
+| **Herhaalbaar**        | Nee                                    |
+
+```xml
+<CP>MHKA</CP>
+```
+
+## CP ID
+
+De unieke identifier van de Content Partner.
+
+| **XML element**        | `<CP_id>`                                      |
+| **Datatype**           | ID                                             |
+| **Verplichting**       | Verplicht                                      |
+| **Herhaalbaar**        | Nee                                            |
+
+```xml
+<CP_id>OR-1245</CP_id>
+```
+
+## Sub CP naam
+
+De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing indien uw organisatie onderverdeeld is in suborganisaties)
+
+| **XML element**        | `<Sub_CP>`                           |
+| **Datatype**           | Vrije tekst                          |
+| **Verplichting**       | Verplicht indien van toepassing (VA) |
+| **Herhaalbaar**        | Nee                                  |
+
+```xml
+<Sub_CP>Faculteit Letterkunde</Sub_CP>
+```
+
+## PID
+
+{: #pid}
+
+De *Persistent Identifier*. Een door meemoo toegekende unieke naam.
+
+Elk digitaal object in het meemoo archief heeft een unieke PID.
+
+| **XML element**        | `<PID>`                                                             |
+| **Datatype**           | PID                                                                 |
+| **Verplichting**       | Verplicht (automatisch)                                             |
+| **Herhaalbaar**        | Nee                                                                 |
+
+```xml
+<PID>294805325</PID>
+```
+
+## Hoofd lokale CP ID
+
+De hoofd ID van de oorspronkelijke drager of het *born digital* item. Dit is de registratiecode die het meest courant wordt gebruikt door de CP binnen ***het eigen*** archief- of collectiemanagementsysteem.
+
+Dit is de unieke ID van de content partner die de linkt vormt naar het eigen collectiebeheerssysteem. Dit kan later gebruikt worden om metadata te koppelen in het meemoo archiefsysteem. Voor digitalisering door meemoo is deze ID al in Mediahaven aanwezig, indien deze mee wordt gegeven in [AMS](http://registratie.meemoo.be) `<original_carrier_id/>`.
+
+Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registratienummer bijhoudt (ook al raadt meemoo aan om vóór registratie in [AMS](http://registratie.meemoo.be) dit alsnog toe te kennen). In dat geval blijft dit veld leeg.
+
+| **XML element**            | `<dc_identifier_localid>`                                                                        |
+| **Data type**              | ID                                                                                               |
+| **Verplichting**           | Verplicht indien van toepassing (VA)                                                             |
+| **Herhaalbaar**            | Nee                                                                                              |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
+|                            | - Lokale ID('s)                                                                                  |
+
+
+```xml
+<dc_identifier_localid>audiocassette 365</dc_identifier_localid>
+```
+
+## Overige lokale CP ID
+
+Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* item, gebruikt door de CP binnen het eigen archief- of collectiebeheerssysteem.
+
+| **XML element**            | `<dc_identifier_localids type="list"><ARDOME/><priref/>...</dc_identifier_localids>`             |
+| **Data type**              | Gecontroleerde lijst: [Lokale ID]({{ site.baseurl }}{% link docs/metadata/datatypes.md %}#localid)                                                             |
+| **Verplichting**           | Optioneel                                                                                        |
+| **Herhaalbaar**            | Ja                                                                                               |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
+|                            | - Lokale ID('s)                                                                                  |
+
+**VRT:**
+
+```xml
+<dc_identifier_localids type="list">
+<ARDOME>ABC135</ARDOME>
+</dc_identifier_localids>
+```
+
+**AMSAB**:
+
+```xml
+<dc_identifier_localids type="list">
+<reproduction.reference>audiocassette_420</reproduction.reference>
+<acquisition.number>S/2005/051</acquisition.number>
+<alternative_number>MG/05/051-102/1</alternative_number>
+</dc_identifier_localids>
+```
+
+# Relaties
+
+De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele relaties aan te duiden tussen verschillende digitale objecten. De definitie van deze relaties beperkt zich tot 3 verschillende types (is deel van, bevat, is verwant aan).
+
+## (Dit digitaal object) is deel van
+
+\"Is_deel_van\" geeft aan van welk digitale object (parent file) het beschreven bestand deel uitmaakt.
+
+
+| **XML element**        | `<dc_relations type="list"><is_deel_van/></dc_relations>`                                                |
+| **Datatype**           | [PID](#pid)                                                                              |
+| **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                                    |
+| **Herhaalbaar**        | Ja                                                                                                       |
+
+## (Dit digitaal object) bevat
+
+\"bevat\" geeft aan welke digitale objecten deel uit maken van het beschreven bestand.
+
+
+| **XML element**        | `<dc_relations type="list"><bevat/></dc_relations>`                                    |
+| **Datatype**           | [PID](#pid)                                                                                     |
+| **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                  |
+| **Herhaalbaar**        | Ja                                                                                     |
+
+## (Dit digitaal object) is verwant aan
+
+In dit veld worden verwante digitale objecten (PIDs) aangegeven.
+
+
+| **XML element**        | `<dc_relations type="list"><is_verwant_aan/></dc_relations>`       |
+| **Datatype**           | [PID](#pid)                                                                 |
+| **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)              |
+| **Herhaalbaar**        | Ja                                                                 |
+
+## (Dit digitaal object) is versie van
+
+In dit veld worden versies van digitale objecten (PIDs) aangegeven. (vb. Dubbele kopieën)
+
+
+| **XML element**        | `<dc_relations type="list"><is_versie_van/></dc_relations>`                                 |
+| **Datatype**           | [PID](#pid)                                                                                          |
+| **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                       |
+| **Herhaalbaar**        | Ja                                                                                          |
+
+# Titels
+
+## Hoofdtitel
+
+De algemene benaming of hoofdtitel.
+
+_Voor andere versies (lange titels, vertalingen) kan het veld 'Alternatieve Titel' worden gebruikt._
+
+| **XML element**            | `<title/>`                                                                                           |
+| **Datatype**               | Vrije tekst                                                                                          |
+| **Verplichting**           | Verplicht                                                                                            |
+| **Herhaalbaar**            | Nee                                                                                                  |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :     |
+|                            | - Programma: reekstitel (indien materiaal deel is van reeks of coherent geheel van items)            |
+|                            | - Itemtitel (titel van te beschrijven archiefitem)                                                   |
+
+```xml
+<title>nieuws 19-09-94</title>
+```
+
+## Secundaire titel: Serie
+
+De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.
+
+| **XML element**        | `<dc_titles type="list"><serie/></dc_titles>`                                  |
+| **Datatype**           | Vrije tekst                                                                    |
+| **Verplichting**       | Optioneel                                                                      |
+| **Herhaalbaar**        | Ja                                                                             |
+
+ ```xml
+ <dc_titles type="list">
+<serie>Het Journaal</serie>
+</dc_titles>
+ ```
+
+## Secundaire titel: Episode
+
+De titel van de episode waar het item deel van uitmaakt.
+
+
+| **XML element**        | `<dc_titles type="list"><episode/></dc_titles>`            |
+| **Datatype**           | Vrije tekst                                                |
+| **Verplichting**       | Optioneel                                                  |
+| **Herhaalbaar**        | Ja                                                         |
+
+```xml
+<dc_titles type="list">
+    <epsiode>Het Journaal</episode>
+</dc_titles>
+```
+
+## Secundaire titel: Aflevering
+
+Dit is de titel van de aflevering waar het item deel van uitmaakt.
+
+| **XML element**        | `<dc_titles type="list"><aflevering/></dc_titles>`                   |
+| **Datatype**           | Vrije tekst                                                          |
+| **Verplichting**       | Optioneel                                                            |
+| **Herhaalbaar**        | Ja                                                                   |
+
+## Secundaire titel: Alternatief
+
+De alternatieve titel. Dit is een alternatieve titel voor het digitale object. Een alternatieve titel kan bijvoorbeeld een vertaling van de originele (hoofd)titel zijn.
+
+
+| **XML element**        | `<dc_titles type="list"><alternatief/></dc_titles>`         |
+| **Datatype**           | Vrije tekst                                                 |
+| **Verplichting**       | Optioneel                                                   |
+| **Herhaalbaar**        | Ja                                                          |
+
+## Secundaire titel: Programma
+
+De programmatitel. Dit is de titel van het programma waarvan het item deel uitmaakt. Hiermee wordt een specifieke aflevering of episode van een serie bedoeld.
+
+| **XML element**        | `<dc_titles type="list"><programma/></dc_titles>` |
+| **Datatype**           | Vrije tekst                                       |
+| **Verplichting**       | Optioneel                                         |
+| **Herhaalbaar**        | Ja                                                |
+
+## Secundaire titel: Serienummer
+
+Het nummer van de serie waarvan het item deel uitmaakt.
+
+
+| **XML element**        | `<dc_titles type="list"><serienummer/></dc_titles>`       |
+| **Datatype**           | Vrije tekst                                               |
+| **Verplichting**       | Optioneel                                                 |
+| **Herhaalbaar**        | Ja                                                        |
+
+## Secundaire titel: Seizoen
+
+Het seizoen/jaargang van de serie waarvan het item deel uitmaakt.
+
+
+| **XML element**        | `<dc_titles type="list"><seizoen></dc_titles>`                      |
+| **Datatype**           | Vrije tekst                                                         |
+| **Verplichting**       | Optioneel                                                           |
+| **Herhaalbaar**        | Ja                                                                  |
+
+## Secundaire titel: Seizoennummer
+
+Het nummer van het seizoen waarvan het item deel uitmaakt.
+
+
+| **XML element**        | `<dc_titles type="list"><seizoennummer></dc_titles>`         |
+| **Datatype**           | Vrije tekst                                                  |
+| **Verplichting**       | Optioneel                                                    |
+| **Herhaalbaar**        | Ja                                                           |
+
+## Secundaire titel: Archief
+
+Het hoogste beschrijvingsniveau: het archief waar het object deel van uitmaakt.
+
+
+| **XML element**        | `<dc_titles type="list"><archief/></dc_titles>`                                   |
+| **Datatype**           | Vrije tekst                                                                       |
+| **Verplichting**       | Optioneel                                                                         |
+| **Herhaalbaar**        | Ja                                                                                |
+
+```xml
+<dc_titles type="list">
+<archief>Archief Gezinsbond`</archief>
+</dc_titles>
+```
+
+## Secundaire titel: Deelarchief
+
+Een deel van een archief dat bestaat uit een geheel van onderling gerelateerde archiefstukken.
+
+| **XML element**        | `<dc_titles type="list"><deelarchief/></dc_titles>`                                             |
+| **Datatype**           | Vrije tekst                                                                                     |
+| **Verplichting**       | Optioneel                                                                                       |
+| **Herhaalbaar**        | Ja                                                                                              |
+
+```xml
+<deelarchief>Groene Omroep (deelarchief Agalev)</deelarchief>
+</dc_titles>
+```
+
+## Secundaire titel: Reeks
+
+Documenten gerangschikt volgens een ordeningsplan of beheerd als een eenheid omdat ze het resultaat zijn van een zelfde proces van archiefvorming of opslag, of van eenzelfde activiteit, of omdat ze een bepaalde vorm hebben, of wegens enige andere samenhang die voortkomt uit creatie, ontvangst of gebruik.
+
+| **XML element**        | `<dc_titles type="list"><reeks/></dc_titles>` |
+| **Datatype**           | Vrije tekst                                   |
+| **Verplichting**       | Optioneel                                     |
+| **Herhaalbaar**        | Ja                                            |
+
+```xml
+<dc_titles type="list">
+<reeks>Mondelinge Bronnen</reeks>
+</dc_titles>
+```
+
+## Secundaire titel: Deelreeks
+
+Een reeks, een onderdeel van een bovenliggende reeks zoals hierboven omschreven.
+
+| **XML element**        | `<dc_titles type="list"><deelreeks/></dc_titles>`                                  |
+| **Datatype**           | Vrije tekst                                                                        |
+| **Verplichting**       | Optioneel                                                                          |
+| **Herhaalbaar**        | Ja                                                                                 |
+
+```xml
+<dc_titles type="list">
+    <deelreeks>Over bloemetjes en bijtjes: seksuele voorlichting in en rond het socialistisch milieu</deelreeks>
+</dc_titles>
+```
+
+## Secundaire titel: Registratie
+
+Dit is de registratie-titel zoals ingegeven in [AMS](http://registratie.meemoo.be).
+
+_Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens de registratie werd ingegeven in de[AMS](http://registratie.meemoo.be) registratiesoftware opgeschoond dient te worden maar tegelijk ook interessante informatie bevat. Op dat moment kan de registratietitel bewaard worden onder de secundaire titel 'registratie' en kan de hoofdtitel vervangen worden door een opgeschoonde titel._
+
+| **XML element**        | `<dc_titles type="list"><registratie/></dc_titles>` |
+| **Datatype**           | Vrije tekst                                         |
+| **Verplichting**       | Optioneel                                           |
+| **Herhaalbaar**        | Ja                                                  |
+
+```xml
+<dc_titles type="list">
+<registratie>landbouwbeleid: interview Willy De Clercq; mensenrechten: interview Karel De Gucht; LVZ: interview Louis Bril; sfeerbeelden</registratie>
+</dc_titles>
+```
+
+# Datum
+
+## Datum creatie
+
+De datum waarop de inhoud van het object werd gecreëerd.
+
+| **XML element**            | `<dcterms_created/>`                                                                             |
+| **Datatype**               | [Extended Date Time Format (EDTF)]({{ site.baseurl }}{% link docs/metadata/datatypes.md %}#edtf)                                                             |
+| **Verplichting**           | Verplicht (indien 'datum uitgave' niet is ingevuld).                                             |
+| **Herhaalbaar**            | Nee                                                                                              |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
+|                            | - Productiedatum en/of gebruiksdatum (bijv. datum eerste uitzending).                            |
+
+
+```xml
+<dcterms_created>192u</dcterms_created>
+```
+
+Bij de mapping naar het meemoo datamodel wordt de creatiedatum ook gemapt naar het veld `<date>`. Dit metadataveld verwacht een exacte datum om zo ook een facet toe te kunnen voegen in de zoekinterface. Bijkomend wordt hierdoor het item ook zichtbaar op de tijdslijn in de meemoo archiefwebsite.
+
+Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht bij registratie in [AMS](http://registratie.meemoo.be)) gekozen, aangezien deze doorgaans met de datum van de creatie van de originele inhoud samenvalt of er toch dicht bij aansluit. Het is evenwel mogelijk dat de intellectuele inhoud ('content') vastgelegd op de drager een latere kopie is van een ouder origineel (bijvoorbeeld een kopie van een film op Umatic). In dit geval verschillen de datum van creatie van de datum van de originele drager. 
+ - precieze datum: `YYYY-MM-DD`
+
+## Datum uitgave / uitzending
+
+De datum waarop het item is uitgegeven of uitgezonden.
+
+
+| **XML element**            | `<dcterms_issued/>`                                                                             |
+| **Datatype**               | [Extended Date Time Format (EDTF)]({{ site.baseurl }}{% link docs/metadata/datatypes.md %}#edtf)                                                                      |
+| **Verplichting**           | Verplicht (indien 'datum creatie' niet is ingevuld).                                            |
+| **Herhaalbaar**            | Nee                                                                                             |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden: |
+|                            | - Productiedatum en/of gebruiksdatum (bijv. datum eerste uitzending).                           |
+
+```xml
+<dcterms_issued>2016-01-27T13:00</dcterms_issued>
+```
+
+# Productie
+
+## Maker
+
+De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie van de inhoud van het item.
+
+
+| **XML element**            | `<dc_creators type="list"><Maker /><Regisseur /></Archiefvormer>...</dc_creators>` |
+| **Datatype**               | Gecontroleerde lijst: [Maker](/docs/metadata/datatypes#Maker)                                                                                     |
+| **Verplichting**           | Verplicht indien gekend (VA)                                                                                                        |
+| **Herhaalbaar**            | Ja                                                                                                                                  |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                    |
+|                            | - Producent/Maker (indien gekend)                                                                                                   |
+
+```xml
+<dc_creators type="list">
+<maker>Paul de Vree</maker>
+<archiefvormer>Jef van Hoof</archiefvormer>
+</dc_creators>
+```
+
+## Bijdrager
+
+De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud van het item heeft geleverd.
+
+
+| **XML element**            | `<dc_contributors type="list"><Bijdrager /><Auteur \><Cameraman />...</dc_contributors\>` |
+| **Datatype**               | Gecontroleerde lijst: [Bijdrager](/docs/metadata/datatypes#Bijdrager)                                                                   |
+| **Verplichting**           | Optioneel                                                                                                                 |
+| **Herhaalbaar**            | Ja                                                                                                                        |
+
+## Publisher
+
+De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een item voor derden door omroep, verkoop, verhuur,...
+
+
+| **XML element**            | `<dc_publishers type="list"><Publisher /><Distributeur />...</dc_publishers>` |
+| **Datatype**               | Gecontroleerde lijst: [Publisher](/docs/metadata/datatypes#Bijdrager)                                                                  |
+| **Verplichting**           | Optioneel                                                                                                                |
+| **Herhaalbaar**            | Ja                                                                                                                       |
+
+```xml
+<dc_publishers type=list/>
+<Publisher>VRT</Publisher>
+</dc_publishers>
+```
+
+# Inhoud
+
+## Hoofdbeschrijving
+
+Een korte, algemene omschrijving van de intellectuele inhoud van een item.
+
+
+| **XML element**            | `<description/>`                                                                                                                                             |
+| **Datatype**               | Vrije tekst                                                                                                                                                  |
+| **Verplichting**           | Verplicht indien geen minimum van vijf trefwoorden.                                                                                                          |
+| **Herhaalbaar**            | Nee                                                                                                                                                          |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                             |
+|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) of een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
+
+```xml
+<dc_description>Deze interviews zijn ingericht door het Universiteitsarchief en vormen een basis voor een onderzoek. Het eindresultaat is de publicatie \'Meisjestudenten aan de RUG</dc_description>
+```
+
+## Lange beschrijving
+
+Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbeeld door puntsgewijs de voornaamste scènes, stock-shots, aparte items... te beschrijven. Voor ondertitels is een apart veld voorzien.
+
+
+| **XML element**            | `<dc_description_long/>`                                                                                                                                                       |
+| **Datatype**               | Vrije tekst                                                                                                                                                                    |
+| **Verplichting**           | Optioneel                                                                                                                                                                      |
+| **Herhaalbaar**            | Nee                                                                                                                                                                            |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                               |
+|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
+
+## Programmabeschrijving
+
+Een korte beschrijving van het programma waar het item een onderdeel van vormt.
+
+
+| **XML element**        | `<dc_description_programme/>`                                                     |
+| **Datatype**           | Vrije tekst                                                                       |
+| **Verplichting**       | Optioneel                                                                         |
+| **Herhaalbaar**        | Nee                                                                               |
+
+## Cast
+
+Een oplijsting van de voornaamste acteurs/performers en hun respectievelijke rol.
+
+
+| **XML element**        | `<dc_description_cast/>`                                                                                      |
+| **Datatype**           | Vrije tekst                                                                                                   |
+| **Verplichting**       | Optioneel                                                                                                     |
+| **Herhaalbaar**        | Ja                                                                                                            |
+
+```xml
+<dc_description_cast>Julien Schoenaert (Oedipus), Aafke Bruyninckx (Antigone)</dc_description_cast>
+```
+
+## Ondertitels
+
+Een weergave van de ondertitels die bij het digitale object horen.
+
+
+| **XML element**            | `<dc_description_ondertitels/>`                                                                                                                                                |
+| **Datatype**               | Vrije tekst                                                                                                                                                                    |
+| **Verplichting**           | Optioneel                                                                                                                                                                      |
+| **Herhaalbaar**            | Nee                                                                                                                                                                            |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                               |
+|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
+
+## Transcriptie
+
+Een weergave van de transcriptie van het digitale object.
+
+_De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden door een speech to text engine._
+
+
+| **XML element**            | `<dc_description_transcriptie/>`                                                                                                                                               |
+| **Datatype**               | Vrije tekst                                                                                                                                                                    |
+| **Verplichting**           | Optioneel                                                                                                                                                                      |
+| **Herhaalbaar**            | Nee                                                                                                                                                                            |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                               |
+|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
+
+## Genre
+
+Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door meemoo beheerd wordt.
+
+
+| **XML element**            | `<dc_types type="list"><genre/></dc_types>`                                                                   |
+| **Datatype**               | Gecontroleerde lijst: [Genre](/metadata/datatypes#Bijdrager)                                                           |
+| **Verplichting**           | Optioneel                                                                                                     |
+| **Herhaalbaar**            | Ja                                                                                                            |
+
+```xml
+<dc_types type="list">
+<genre>sportverslaggeving</genre>
+</dc_types>
+```
+
+## Coverage (ruimtelijk)
+
+Een beschrijvende afbakening van het geografisch gebied (straat, stad, land, continent) waar de inhoud van het item betrekking op heeft.
+
+| **XML element**        | `<dc_coverages type="list"><ruimte/></dc_coverages>` |
+| **Datatype**           | Vrije tekst                                          |
+| **Verplichting**       | Optioneel                                            |
+| **Herhaalbaar**        | Ja                                                   |
+
+```xml
+<dc_coverages type="list">
+<ruimte>Parijs</ruimte>
+<ruimte>provincie Antwerpen</ruimte>
+</dc_coverages>
+```
+
+## Coverage (tijd)
+
+Een beschrijvende afbakening van de tijdsperiode waar de inhoud van het item betrekking op heeft.
+
+Let wel: het betreft hier de tijdsperiode waar het item *inhoudelijk* betrekking op heeft, niet de datum van creatie. Een documentaire uit de jaren 1950 over de Gulden Sporenslag heeft dus bijvoorbeeld als temporele coverage 'middeleeuwen'.
+
+
+| **XML element**        | `<dc_coverages type="list"><tijd/></dc_coverages>`                  |
+| **Datatype**           | Vrije tekst                                                         |
+| **Verplichting**       | Optioneel                                                           |
+| **Herhaalbaar**        | Ja                                                                  |
+
+```xml
+<dc_coverages type="list">
+<tijd>interbellum`</tijd>
+<tijd>jaren 1920`</tijd>
+</dc_coverages>
+```
+
+## Trefwoorden
+
+Thematische trefwoorden met betrekking tot de inhoud van het item.
+
+| **XML element**            | `<dc_subjects type="list"><Trefwoord/></dc_subjects>`                                                                                                          |
+| **Datatype**               | Vrije tekst                                                                                                                                                      |
+| **Verplichting**           | Verplicht (minimaal 5 trefwoorden) indien geen (korte) beschrijving                                                                                              |
+| **Herhaalbaar**            | Ja                                                                                                                                                               |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                 |
+|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **of** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
+
+```xml
+<dc_subjects type="list\">
+    <trefwoord>seksuele voorlichting</trefwoord>
+    <trefwoord>socialistische beweging</trefwoord>
+</dc_subjects>
+```
+
+## Taal
+
+De (belangrijkste) taal/talen die in het item worden gesproken of gebruikt.
+
+Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitels. In het geval van een stomme film, is de taal van de eventuele tussentitels indicatief.
+
+| **XML element**            | `<dc_languages type="list"><multiselect/></dc_languages>`                                                                                                               |
+| **Datatype**               | [ISO 639-1](https://nl.wikipedia.org/wiki/Lijst_van_ISO_639-codes) ("nl" = Nederlands; "fr" = Frans; "de" = Duits; "it" = Italiaans; "en" = Engels; "es" = Spaans; ...) |
+| **Verplichting**           | Verplicht                                                                                                                                                               |
+| **Herhaalbaar**            | Ja                                                                                                                                                                      |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                        |
+|                            | Taal: taal van het item                                                                                                                                                 |
+
+```xml
+<dc_languages type="list">
+    <multiselect>nl</multiselect>
+    <multiselect>fr</multiselect>
+</dc_languages>
+```
+
+# Rechten
+
+## Licentie
+
+Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewerking) van het item wordt bepaald. De licenties zijn zo opgesteld dat er een onderscheid gemaakt kan worden tussen het hergebruik van het object en de metadata.
+
+| **XML element**            | `<dc_rights_licenses type="list"><licentie/></dc_rights_licences>`        |
+| **Datatype**               | Gecontroleerde lijst: [VIAA-licentie / Creative Commons](/docs/metadata/licenties.html) |
+| **Verplichting**           | Verplicht                                                                 |
+| **Herhaalbaar**            | Ja                                                                        |
+
+```xml
+<dc_rights_license>CC BY-SA-METADATA</dc_rights_licence>
+```
+
+## Auteursrechthouder
+
+De persoon of organisatie die de auteursrechten bezit. Dit kan de eigenlijke auteur zijn, zijn erfgenamen of een derde partij aan wie de rechten zijn overgedragen.
+
+| **XML element**            | `<dc_rights_rightsOwners type="list"><auteursrechthouder/></dc_rights_rightsOwners>`             |
+| **Datatype**               | Vrije tekst                                                                                      |
+| **Verplichting**           | Verplicht (indien gekend)                                                                        |
+| **Herhaalbaar**            | Ja                                                                                               |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
+|                            | - Rechthebbende (indien gekend)                                                                  |
+
+```xml
+<dc_rights_rightsOwner>Etienne Tordoir</dc_rights_rightsOwner>
+<dc_rights_rightsOwner>KADOC</dc_rights_rightsOwner>
+```
+
+## Licentiehouder
+
+De persoon of organisatie die eigenaar is van de resource of de rechten beheert.
+
+Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de inkomsten gegenereerd uit het gebruik van auteursrechtelijk beschermde werken uitbesteed aan een externe persoon of organisatie (een zogenaamd auteursrechtvennootschappen zoals SABAM, SEMU,\...).
+
+
+| **XML element**        | `<dc_rights_rightsHolders type="list"><licentiehouder/></dc_rights_rightsHolders>`                   |
+| **Datatype**           | Vrije tekst                                                                                          |
+| **Verplichting**       | Optioneel                                                                                            |
+| **Herhaalbaar**        | Ja                                                                                                   |
+
+```xml
+<dc_rights_rightsholder>SABAM</dc_rights_rightsholder>
+```
+
+## Credit
+
+Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.
+
+
+| **XML element**        | `<dc_rights_credit/>` |
+| **Datatype**           | Vrije tekst           |
+| **Verplichting**       | Optioneel             |
+| **Herhaalbaar**        | Ja                    |
+
+```xml
+<dc_rights_credit>Copyright AMSAB. Onder de licentie Creative Commons CC-PD</dc_rights_credit/>
+<dc_rights_credit/>Copyright SMAK. Alle rechten voorbehouden</dc_rights_credit>
+<dc_rights_credit>Alle rechten voorbehouden. Gelieve contact op te nemen met reproductie\@uu.be</dc_rights_credit>
+```
+
+## Opmerkingen rechten
+
+Hier kunnen bijkomende opmerkingen en voorwaarden met betrekking tot de gebruiksrechten van toepassing op het item worden vastgelegd.
+
+
+| **XML element**            | `<dc_rights_comment/>`                                                                                                                             |
+| **Datatype**               | Vrije tekst                                                                                                                                        |
+| **Verplichting**           | Optioneel                                                                                                                                          |
+| **Herhaalbaar**            | Ja                                                                                                                                                 |
+| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                   |
+|                            | - Gebruiksbeperkingen indien van toepassing (afwijking van de standaard policy: mag gebruikt worden voor meemoo doelgroepen conform de overeenkomst) |
+
+# Technische metadata
+
+De technische metadata wordt automatisch uitgelezen uit de header van de archiefmaster.
+
+## Video formaat
+
+Het videoformaat waarin de master copy van het digitale item bewaard wordt.
+
+
+| **XML element**        | `<VideoFormat/>`                                                              |
+| **Datatype**           | Vrije tekst                                                                   |
+| **Herhaalbaar**        | Nee                                                                           |
+
+```xml
+<VideoFormat>JPEG2000</VideoFormat>
+```
+
+## Video technisch
+
+Dit is de videotechnische metadata van de archiefmaster die uit de header van de mxf wordt opgehaald.
+
+| **XML element**        | `<VideoTechnical/>` |
+| **Datatype**           | Vrije tekst         |
+| **Herhaalbaar**        | Nee                 |
+
+```xml
+<VideoTechnical>jpeg2000 (JPEG 2000 codestream restriction 0) 720x288 50.0fps 122815000bps</VideoTechnical>
+```
+
+## Audio technisch
+
+Dit is de audiotechnische metadata van de archiefmaster die uit de header van de mxf wordt opgehaald.
+
+| **XML element**        | `<AudioTechnical/>`                                                                                     |
+| **Datatype**           | Vrije tekst                                                                                             |
+| **Herhaalbaar**        | Nee                                                                                                     |
+
+```xml
+<AudioTechnical>pcm_s24le 8ch 48000HZ 9216000bps</AudioTechnical>
+```
+
+## TC IN
+
+Dit zijn de tijdscodes die overgenomen zijn van de analoge drager in de digitale kopie.
+
+| **XML element**        | `<TcInTimecode/>`                                                                         |
+| **Herhaalbaar**        | Nee                                                                                       |
+
+## TC OUT
+
+Dit zijn de tijdscodes die overgenomen zijn van de analoge drager in de digitale kopie.
+
+
+| **XML element**        | `<TcOutTimecode/>`                                                                        |
+| **Herhaalbaar**        | Nee                                                                                       |
+
+## Duur
+
+De totale duur van het digitale item.
+
+| **XML element**        | `<DurationTimecode/>`                                                  |
+| **Datatype**           | Duur (`hh:mm:ss:sss`) |
+| **Herhaalbaar**        | Nee                                                                    |
+
+```xml
+<DurationTimecode>00:14:14.920</DurationTimecode>
+```
+
+## Image size
+
+De dimensie van het beeld, uitgedrukt in pixels.
+
+
+| **XML element**        | `<ImageSize/>`                                     |
+| **Datatype**           | Breedte x Hoogte (in pixels)                       |
+| **Herhaalbaar**        | Nee                                                |
+
+```xml
+<ImageSize>1920x1080</ImageSize>
+```
+
+## MD5
+
+MD5 (Message Digest Algorithm 5) is een veelgebruikte standaard om de integriteit van digitale bestanden te controleren.
+
+| **XML element**        | `<MD5/>`                                                      |
+| **Datatype**           | [MD5 Checksum] (https://nl.wikipedia.org/wiki/MD5#MD5-hashes) |
+| **Herhaalbaar**        | Nee                                                           |
+
+
+```xml
+<MD5>69c64bcb374c5dd7bd5fa0b3bb76758f</MD5>
+```

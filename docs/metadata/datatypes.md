@@ -2,7 +2,7 @@
 layout: default
 title: Datatypes
 parent: Metadata model
-nav_order: 2
+nav_order: 3
 ---
 
 # Datatypes
@@ -12,8 +12,7 @@ nav_order: 2
 
 Als basis gebruiken we [ISO 8601](http://www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm?csnumber=40874) : `YYYY-MM-DDThh:mm:ss`
 
-Om verfijning en benaderende waarden toe te staat wordt EDTF gebruikt : [Extended Date Time Format (EDTF)](https://www.loc.gov/standards/datetime/)
-
+Om verfijning en benaderende waarden toe te staat wordt [Extended Date Time Format (EDTF)](https://www.loc.gov/standards/datetime/) gebruikt. 
 EDTF laat verschillende vormen van verfijning, veralgemening en benaderende waarden toe.
 
 In MediaHaven worden volgende mogelijkheden aangeboden:
@@ -115,6 +114,8 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 
 ##  Secondaire titel
 
+{: #sectitel}
+
 - serie
 - episode
 - aflevering
@@ -130,6 +131,8 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 - registratie
 
 ## Licentie
+
+{: #licentie}
 
 - VIAA-ONDERWIJS
 - VIAA-ONDERZOEK
@@ -152,7 +155,11 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 - CC BY-NC-ND-METADATA
 - CC BY-NC-ND-CONTENT
 
+Voor meer info over de betekenis van de licenties: 
+
 ## Publisher
+
+{: #publisher}
 
 Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. 
 
@@ -164,6 +171,8 @@ Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worde
 - Publisher
 
 ## Genre
+
+{: #genre}
 
 - Actualiteit
 - Animatie

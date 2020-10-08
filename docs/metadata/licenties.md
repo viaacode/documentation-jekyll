@@ -9,13 +9,15 @@ nav_order: 3
 
 Op deze pagina vind je een overzicht van alle bestaande licenties in het VIAA-metadatamodel en meer informatie over het moment waarop welke licentie actief wordt.
 
+
+
 ## Overzicht van de licenties
 
 Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadatamodel. Per licentie wordt aangegeven wat de waarde is in het VIAA-archief en wat de waarde betekent.
 
 ### VIAA-licentie onderwijs
 
-- MAM-naam: VIAA-ONDERWIJS
+- MAM-naam: `VIAA-ONDERWIJS`
 
 - Defaultwaarde: AAN
 
@@ -23,7 +25,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
 ### VIAA-licentie onderzoek
 
-- MAM-naam: VIAA-ONDERZOEK
+- MAM-naam: `VIAA-ONDERZOEK`
 
 - Defaultwaarde: AAN
 
@@ -31,7 +33,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
 ### VIAA-licentie bibliotheken
 
-- MAM naam: VIAA-BIBLIOTHEKEN
+- MAM naam: `VIAA-BIBLIOTHEKEN`
 
 - Default waarde: UIT
 
@@ -39,7 +41,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
 ### VIAA-licentie intra-muros
 
-- MAM naam: VIAA-INTRAMUROS
+- MAM naam: `VIAA-INTRAMUROS`
 
 - Default waarde: UIT
 
@@ -49,7 +51,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
 - Content
 
-  - MAM-naam:  VIAA-INTRA_CP-CONTENT
+  - MAM-naam:  `VIAA-INTRA_CP-CONTENT`
 
   - Defaultwaarde: AAN
 
@@ -57,7 +59,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
 - Metadata
 
-  - MAM-naam : VIAA-INTRA_CP-METADATA-ALL
+  - MAM-naam : `VIAA-INTRA_CP-METADATA-ALL`
 
   - Defaultwaarde: AAN
 
@@ -68,8 +70,8 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 - Metadata
 
   - VIAA Restricted licentie
-
-    - MAM-naam: VIAA-PUBLIEK-METADATA-LTD
+`
+    - MAM-naam: `VIAA-PUBLIEK-METADATA-LTD`
 
     - Defaultwaarde: AAN
 
@@ -77,7 +79,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
   - VIAA Uitgebreide licentie
 
-    - MAM-naam : VIAA-PUBLIEK-METADATA-ALL
+    - MAM-naam : `VIAA-PUBLIEK-METADATA-ALL`
 
     - Defaultwaarde: UIT
 
@@ -85,7 +87,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
   - Andere licenties
 
-    - MAM-naam: CC-BY-SA-METADATA
+    - MAM-naam: `CC-BY-SA-METADATA`
 
     - Defaultwaarde: UIT
 
@@ -95,7 +97,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
   - VIAA content licentie
 
-    - MAM-naam: VIAA-PUBLIEK-CONTENT
+    - MAM-naam: `VIAA-PUBLIEK-CONTENT`
 
     - Defaultwaarde: UIT
 
@@ -103,7 +105,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
   - Andere licenties
 
-    - MAM-naam: CC-BY-SA-CONTENT
+    - MAM-naam: `CC-BY-SA-CONTENT`
 
     - Defaultwaarde: UIT
 
@@ -120,16 +122,15 @@ Voor bestanden uit digitale collecties worden de licenties meegegeven bij de aan
 
 Standaard zal VIAA op dit moment onderstaande licenties activeren:
 
-  VIAA-ONDERWIJS      AAN
-  ----------------------------- -----
-  VIAA-ONDERZOEK      AAN
-  VIAA-BIBLIOTHEKEN     UIT
-  VIAA-INTRAMUROS     UIT
-  VIAA-INTRA_CP-CONTENT    AAN
-  VIAA-INTRA_CP-METADATA-ALL AAN
-  VIAA-PUBLIEK-METADATA-LTD   AAN
-  VIAA-PUBLIEK-METADATA-ALL   UIT
-  Alle andere licenties   UIT
+  | VIAA-ONDERWIJS  |    AAN |
+  | VIAA-ONDERZOEK   |   AAN |
+  | VIAA-BIBLIOTHEKEN  |   UIT |
+  | VIAA-INTRAMUROS  |   UIT |
+  | VIAA-INTRA_CP-CONTENT  |  AAN |
+  | VIAA-INTRA_CP-METADATA-ALL | AAN |
+  | VIAA-PUBLIEK-METADATA-LTD  | AAN |
+  | VIAA-PUBLIEK-METADATA-ALL |  UIT |
+  | Alle andere licenties  | UIT |
 
 ## Kan ik de licentie nog aanpassen?
 

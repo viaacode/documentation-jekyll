@@ -20,7 +20,7 @@
 
 title: meemoo Technische documentatie
 email: support@meemoo.be
-#baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 #url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: meemoo_be
 #github_username:  jekyll
