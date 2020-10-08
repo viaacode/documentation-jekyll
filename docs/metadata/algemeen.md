@@ -87,6 +87,8 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 
 ## Overige lokale CP ID
 
+{: #localid}
+
 Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* item, gebruikt door de CP binnen het eigen archief- of collectiebeheerssysteem.
 
 | **XML element**            | `<dc_identifier_localids type="list"><ARDOME/><priref/>...</dc_identifier_localids>`             |
@@ -95,6 +97,28 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 | **Herhaalbaar**            | Ja                                                                                               |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
 |                            | - Lokale ID('s)                                                                                  |
+
+### Mogelijke sleutels
+
+- Acquisition_number
+- Adlib
+- Alternative_number
+- Analoge_drager
+- Ardome
+- Basis
+- Historical_carrier
+- Historical_record_number
+- MEDIA_ID
+- Object_number
+- Priref
+- Word_ID
+- WorkPID
+- DataPID
+- Bestandsnaam
+- Api
+- Pdf
+
+### Voorbeeld
 
 **VRT:**
 
@@ -397,10 +421,32 @@ De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie 
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                    |
 |                            | - Producent/Maker (indien gekend)                                                                                                   |
 
+Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
+
+- Maker
+- Archiefvormer
+- Auteur
+- Acteur
+- Cineast
+- Componist
+- Choreograaf
+- Danser
+- Documentairemaker
+- Fotograaf
+- Interviewer
+- Kunstenaar
+- Muzikant
+- Performer
+- Producer
+- Productiehuis
+- Regisseur
+- Schrijver
+- Opdrachtgever
+
 ```xml
 <dc_creators type="list">
-<maker>Paul de Vree</maker>
-<archiefvormer>Jef van Hoof</archiefvormer>
+    <Maker>Paul de Vree</Maker>
+    <Archiefvormer>Jef van Hoof</Archiefvormer>
 </dc_creators>
 ```
 
@@ -408,19 +454,64 @@ De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie 
 
 De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud van het item heeft geleverd.
 
-
-| **XML element**            | `<dc_contributors type="list"><Bijdrager /><Auteur \><Cameraman />...</dc_contributors\>` |
-| **Datatype**               | Gecontroleerde lijst: [Bijdrager](/docs/metadata/datatypes#Bijdrager)                                                                   |
+| **XML element**            | `<dc_contributors type="list"><Bijdrager /><Auteur /><Cameraman />...</dc_contributors>` |
+| **Datatype**               | Gecontroleerde lijst                                                                  |
 | **Verplichting**           | Optioneel                                                                                                                 |
 | **Herhaalbaar**            | Ja                                                                                                                        |
 
+```xml
+<dc_contributors type="list">
+    <Bijdrager />
+    <Auteur /> 
+    <Cameraman />
+</dc_contributors>
+```
+
+### Mogelijke sleutels
+
+Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan.
+
+- Bijdrager
+- Adviseur
+- Arrangeur
+- Assistent
+- Auteur
+- Belichting
+- Cameraman
+- Co-producer
+- Commentator
+- Componist
+- Dirigent
+- Fotografie
+- Geluid
+- Kunstenaar
+- Make-up
+- Muzikant
+- Nieuwsanker
+- Omroeper
+- Onderzoeker
+- Post-productie
+- Producer
+- Reporter
+- Scenarist
+- Soundtrack
+- Sponsor
+- Uitvoerder
+- Vertaler
+- Verteller
+- Artistiekdirecteur
+- Decorontwerper
+- Kostuumontwerper
+- Technischadviseur
+
 ## Publisher
+
+{: #publisher}
 
 De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk maken van een item voor derden door omroep, verkoop, verhuur,...
 
-
 | **XML element**            | `<dc_publishers type="list"><Publisher /><Distributeur />...</dc_publishers>` |
-| **Datatype**               | Gecontroleerde lijst: [Publisher](/docs/metadata/datatypes#Bijdrager)                                                                  |
+| **Datatype**               | Vrije tekst                                                                  |
 | **Verplichting**           | Optioneel                                                                                                                |
 | **Herhaalbaar**            | Ja                                                                                                                       |
 
@@ -429,6 +520,17 @@ De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk 
 <Publisher>VRT</Publisher>
 </dc_publishers>
 ```
+
+### Mogelijke sleutels
+
+Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. 
+
+Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
+
+- Distributeur
+- Exposant
+- Persagentschap
+- Publisher
 
 # Inhoud
 
@@ -512,11 +614,13 @@ _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden 
 
 ## Genre
 
+{: #genre}
+
 Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door meemoo beheerd wordt.
 
 
 | **XML element**            | `<dc_types type="list"><genre/></dc_types>`                                                                   |
-| **Datatype**               | Gecontroleerde lijst: [Genre](/metadata/datatypes#Bijdrager)                                                           |
+| **Datatype**               | Gecontroleerde lijst                                                           |
 | **Verplichting**           | Optioneel                                                                                                     |
 | **Herhaalbaar**            | Ja                                                                                                            |
 
@@ -525,6 +629,32 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 <genre>sportverslaggeving</genre>
 </dc_types>
 ```
+
+### Mogelijke waarden
+
+- Actualiteit
+- Animatie
+- Concert
+- Dans
+- Docudrama
+- Documentaire
+- Documentatie
+- Drama
+- Educatief
+- Entertainment
+- Fictie
+- Interview
+- Komedie
+- Kortfilm
+- Kunstwerk
+- Muziekopname
+- Nieuws
+- Non-fictie
+- Opera
+- Performance
+- Speelfilm
+- Sport
+- Wetenschap
 
 ## Coverage (ruimtelijk)
 
@@ -603,16 +733,43 @@ Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitel
 
 ## Licentie
 
+{: #licentie}
+
 Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewerking) van het item wordt bepaald. De licenties zijn zo opgesteld dat er een onderscheid gemaakt kan worden tussen het hergebruik van het object en de metadata.
 
 | **XML element**            | `<dc_rights_licenses type="list"><licentie/></dc_rights_licences>`        |
-| **Datatype**               | Gecontroleerde lijst: [VIAA-licentie / Creative Commons](/docs/metadata/licenties.html) |
+| **Datatype**               | Gecontroleerde lijst |
 | **Verplichting**           | Verplicht                                                                 |
 | **Herhaalbaar**            | Ja                                                                        |
 
 ```xml
 <dc_rights_license>CC BY-SA-METADATA</dc_rights_licence>
 ```
+
+### Mogelijke waarden
+
+- VIAA-ONDERWIJS
+- VIAA-ONDERZOEK
+- VIAA-BIBLIOTHEKEN
+- VIAA-INTRAMUROS
+- VIAA-INTRA_CP-CONTENT
+- VIAA-INTRA_CP-METADATA-ALL
+- VIAA-PUBLIEK-METADATA-LTD
+- VIAA-PUBLIEK-METADATA-ALL
+- VIAA-PUBLIEK-CONTENT
+- Publiek Domein
+- CC BY-SA-METADATA
+- CC BY-SA-CONTENT
+- CC BY-ND-METADATA
+- CC BY-ND-CONTENT
+- CC BY-NC-METADATA
+- CC BY-NC-CONTENT
+- CC BY-NC-SA-METADATA
+- CC BY-NC-SA-CONTENT
+- CC BY-NC-ND-METADATA
+- CC BY-NC-ND-CONTENT
+
+Zie de [detailpagina]({{ site.baseurl }}{% link docs/metadata/licenties.md %}) over licenties voor meer informatie over de betekenis van de verschillende waarden
 
 ## Auteursrechthouder
 
@@ -634,7 +791,7 @@ De persoon of organisatie die de auteursrechten bezit. Dit kan de eigenlijke aut
 
 De persoon of organisatie die eigenaar is van de resource of de rechten beheert.
 
-Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de inkomsten gegenereerd uit het gebruik van auteursrechtelijk beschermde werken uitbesteed aan een externe persoon of organisatie (een zogenaamd auteursrechtvennootschappen zoals SABAM, SEMU,\...).
+Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de inkomsten gegenereerd uit het gebruik van auteursrechtelijk beschermde werken uitbesteed aan een externe persoon of organisatie (een zogenaamd auteursrechtvennootschappen zoals SABAM, SEMU,...).
 
 
 | **XML element**        | `<dc_rights_rightsHolders type="list"><licentiehouder/></dc_rights_rightsHolders>`                   |
