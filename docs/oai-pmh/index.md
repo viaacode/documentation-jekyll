@@ -264,7 +264,7 @@ Een response is gepagineerd en geeft per default 25 records terug per request. I
 In dit voorbeeld zal de volgende request er dus als volgt uit moeten zien. De response hierop zal records 25 t.e.m. 49 bevatten:
 
 ``` shell
-https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&resumtionToken=UMDA6MDA6MDBaLCB1bnRpbD0yMTAwLTEyLTMwVDIzOjU5OjU5WiwgdG9rZW5TdGFydD0yNX0=
+https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&resumptionToken=UMDA6MDA6MDBaLCB1bnRpbD0yMTAwLTEyLTMwVDIzOjU5OjU5WiwgdG9rZW5TdGFydD0yNX0=
 ```
 
 Op deze manier kan de volledige lijst overlopen worden tot de ```resumptionToken``` leeg is. Dat wil zeggen dat je op de laatste pagina bent. In onderstaand voorbeeld zijn we aangekomen op de laatste pagina van in totaal 9 pagina's. We hebben reeds 200 reocrds opgehaald (8*25), de laatste pagina bevat dus nog 7 records.
