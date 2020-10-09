@@ -1,6 +1,7 @@
 ---
 layout: default
 title: OAI-PMH
+parent: OAI-PMH
 nav_order: 1
 ---
 
