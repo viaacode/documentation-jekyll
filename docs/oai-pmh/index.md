@@ -1,8 +1,7 @@
 ---
 layout: default
-title: OAI-PMH
-parent: OAI-PMH
-nav_order: 1
+title: OAI-PMH Documentatie
+nav_order: 10
 last_modified_date: 2020-10-08 12:03:00 +0200
 ---
 
