@@ -2,7 +2,7 @@
 layout: default
 title: OAI-PMH Documentatie
 nav_order: 10
-last_modified_date: 2020-10-08 12:03:00 +0200
+last_modified_date: 2020-10-08 12:30:00 +0200
 ---
 
 {:toc}
@@ -89,7 +89,11 @@ De use case wordt uitgewerkt in de volgende stappen:
 
 In deze stap worden alle records opgehaald. We kiezen ervoor om alle metadata van de records op te halen in mets formaat:
 
-**REQUEST:** https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets
+**REQUEST:**
+
+``` shell
+https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets
+```
 
 * we gebruiken ```listRecords```, waarmee we een lijst van alle metadata records opvragen uit het archief.
 * als metadataschema gebruiken we ```mets```, wat meteen alle metadata weergeeft, inclusief links naar de audio/foto of video bestanden.
@@ -279,7 +283,11 @@ Het is aan de harvestende applicatie om de response te verwerken en voor elke ``
 
 Om periodieke updates te realiseren kan gewerkt worden met ```from``` en ```until``` datumvelden als bijkomende query parameter. Stel dat je bijvoorbeeld alle records wil opvragen die sinds 1 januari 2018 om 10:00:00 toegevoegd of aangepast werden, dan gebruik je deze request:
 
-**REQUEST:** https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&from=2018-01-01T10:00:00Z
+**REQUEST:**
+
+``` shell
+https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&from=2018-01-01T10:00:00Z
+```
 
 Het formaat van de response zal identiek zijn aan deze uit stap 1 maar zal typisch minder records bevatten. Namelijk enkel de records die sinds de opgegeven datum toegevoegd of gewijzigd zijn. Ook hier wordt overigens gewerkt met paginering via een resumptionToken in het geval de complete lijst meer dan 25 records bevat.
 
@@ -287,7 +295,11 @@ Om de eigen data up-to-date te houden wordt dit type request best op gezette tij
 
 Wil je enkel de data van 1 bepaalde dag ophalen dan kan dat door ook een ```until``` parameter mee te sturen, bijvoorbeeld:
 
-**REQUEST:** https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&from=2018-01-01T00:00:00Z&until=2019-01-01T00:00:00Z
+**REQUEST:**
+
+``` shell
+https://archief.meemoo.be/mediahaven-oai/oai?verb=ListRecords&metadataPrefix=mets&from=2018-01-01T00:00:00Z&until=2019-01-01T00:00:00Z
+```
 
 # Geavanceerde concepten
 
