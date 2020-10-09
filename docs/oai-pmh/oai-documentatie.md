@@ -3,7 +3,7 @@ layout: default
 title: OAI-PMH
 parent: OAI-PMH
 nav_order: 1
-last_modified_date: 2020-10-08T12:03:00Z
+last_modified_date: 2020-10-08 12:03:00 +0200
 ---
 
 {:toc}
