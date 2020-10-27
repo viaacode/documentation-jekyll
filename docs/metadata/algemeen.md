@@ -7,7 +7,7 @@ nav_order: 1
 
 {:toc}
 
-# Algemeen
+# Administratieve en beschrijvende metadata
 
 ## CP Naam
 
@@ -374,6 +374,11 @@ _Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens d
 
 De datum waarop de inhoud van het object werd gecreëerd.
 
+_Bij de mapping naar het meemoo datamodel wordt de creatiedatum ook gemapt naar het veld `<date>`. Dit metadataveld verwacht een exacte datum om zo ook een facet toe te kunnen voegen in de zoekinterface. Bijkomend wordt hierdoor het item ook zichtbaar op de tijdslijn in de meemoo archiefwebsite._
+
+_Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht bij registratie in [AMS](http://registratie.meemoo.be)) gekozen, aangezien deze doorgaans met de datum van de creatie van de originele inhoud samenvalt of er toch dicht bij aansluit. Het is evenwel mogelijk dat de intellectuele inhoud ('content') vastgelegd op de drager een latere kopie is van een ouder origineel (bijvoorbeeld een kopie van een film op Umatic). In dit geval verschillen de datum van creatie van de datum van de originele drager._
+
+
 | **XML element**            | `<dcterms_created/>`                                                                             |
 | **Datatype**               | [Extended Date Time Format (EDTF)]({{ site.baseurl }}{% link docs/metadata/datatypes.md %}#edtf)                                                             |
 | **Verplichting**           | Verplicht (indien 'datum uitgave' niet is ingevuld).                                             |
@@ -385,11 +390,6 @@ De datum waarop de inhoud van het object werd gecreëerd.
 ```xml
 <dcterms_created>192u</dcterms_created>
 ```
-
-Bij de mapping naar het meemoo datamodel wordt de creatiedatum ook gemapt naar het veld `<date>`. Dit metadataveld verwacht een exacte datum om zo ook een facet toe te kunnen voegen in de zoekinterface. Bijkomend wordt hierdoor het item ook zichtbaar op de tijdslijn in de meemoo archiefwebsite.
-
-Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht bij registratie in [AMS](http://registratie.meemoo.be)) gekozen, aangezien deze doorgaans met de datum van de creatie van de originele inhoud samenvalt of er toch dicht bij aansluit. Het is evenwel mogelijk dat de intellectuele inhoud ('content') vastgelegd op de drager een latere kopie is van een ouder origineel (bijvoorbeeld een kopie van een film op Umatic). In dit geval verschillen de datum van creatie van de datum van de originele drager. 
- - precieze datum: `YYYY-MM-DD`
 
 ## Datum uitgave / uitzending
 
@@ -415,33 +415,11 @@ De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie 
 
 
 | **XML element**            | `<dc_creators type="list"><Maker /><Regisseur /></Archiefvormer>...</dc_creators>` |
-| **Datatype**               | Gecontroleerde lijst: [Maker](/docs/metadata/datatypes#Maker)                                                                                     |
+| **Datatype**               | Vrije tekst                                                                                     |
 | **Verplichting**           | Verplicht indien gekend (VA)                                                                                                        |
 | **Herhaalbaar**            | Ja                                                                                                                                  |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                    |
 |                            | - Producent/Maker (indien gekend)                                                                                                   |
-
-Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
-
-- Maker
-- Archiefvormer
-- Auteur
-- Acteur
-- Cineast
-- Componist
-- Choreograaf
-- Danser
-- Documentairemaker
-- Fotograaf
-- Interviewer
-- Kunstenaar
-- Muzikant
-- Performer
-- Producer
-- Productiehuis
-- Regisseur
-- Schrijver
-- Opdrachtgever
 
 ```xml
 <dc_creators type="list">
@@ -450,12 +428,36 @@ Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecif
 </dc_creators>
 ```
 
+### Mogelijke sleutels
+
+Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
+
+- `<Maker />`
+- `<Archiefvormer />`
+- `<Auteur />`
+- `<Acteur />`
+- `<Cineast />`
+- `<Componist />`
+- `<Choreograaf />`
+- `<Danser />`
+- `<Documentairemaker />`
+- `<Fotograaf />`
+- `<Interviewer />`
+- `<Kunstenaar />`
+- `<Muzikant />`
+- `<Performer />`
+- `<Producer />`
+- `<Productiehuis />`
+- `<Regisseur />`
+- `<Schrijver />`
+- `<Opdrachtgever />`
+
 ## Bijdrager
 
 De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud van het item heeft geleverd.
 
 | **XML element**            | `<dc_contributors type="list"><Bijdrager /><Auteur /><Cameraman />...</dc_contributors>` |
-| **Datatype**               | Gecontroleerde lijst                                                                  |
+| **Datatype**               | Vrije tekst                                                                  |
 | **Verplichting**           | Optioneel                                                                                                                 |
 | **Herhaalbaar**            | Ja                                                                                                                        |
 
@@ -471,38 +473,38 @@ De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud 
 
 Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan.
 
-- Bijdrager
-- Adviseur
-- Arrangeur
-- Assistent
-- Auteur
-- Belichting
-- Cameraman
-- Co-producer
-- Commentator
-- Componist
-- Dirigent
-- Fotografie
-- Geluid
-- Kunstenaar
-- Make-up
-- Muzikant
-- Nieuwsanker
-- Omroeper
-- Onderzoeker
-- Post-productie
-- Producer
-- Reporter
-- Scenarist
-- Soundtrack
-- Sponsor
-- Uitvoerder
-- Vertaler
-- Verteller
-- Artistiekdirecteur
-- Decorontwerper
-- Kostuumontwerper
-- Technischadviseur
+- `<Bijdrager />`
+- `<Adviseur />`
+- `<Arrangeur />`
+- `<Assistent />`
+- `<Auteur />`
+- `<Belichting />`
+- `<Cameraman />`
+- `<Co-producer />`
+- `<Commentator />`
+- `<Componist />`
+- `<Dirigent />`
+- `<Fotografie />`
+- `<Geluid />`
+- `<Kunstenaar />`
+- `<Make-up />`
+- `<Muzikant />`
+- `<Nieuwsanker />`
+- `<Omroeper />`
+- `<Onderzoeker />`
+- `<Post-productie />`
+- `<Producer />`
+- `<Reporter />`
+- `<Scenarist />`
+- `<Soundtrack />`
+- `<Sponsor />`
+- `<Uitvoerder />`
+- `<Vertaler />`
+- `<Verteller />`
+- `<Artistiekdirecteur />`
+- `<Decorontwerper />`
+- `<Kostuumontwerper />`
+- `<Technischadviseur />`
 
 ## Publisher
 
@@ -527,10 +529,10 @@ Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gesp
 
 Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
 
-- Distributeur
-- Exposant
-- Persagentschap
-- Publisher
+- `<Distributeur />`
+- `<Exposant />`
+- `<Persagentschap />`
+- `<Publisher />`
 
 # Inhoud
 
@@ -604,7 +606,6 @@ Een weergave van de transcriptie van het digitale object.
 
 _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden door een speech to text engine._
 
-
 | **XML element**            | `<dc_description_transcriptie/>`                                                                                                                                               |
 | **Datatype**               | Vrije tekst                                                                                                                                                                    |
 | **Verplichting**           | Optioneel                                                                                                                                                                      |
@@ -617,7 +618,6 @@ _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden 
 {: #genre}
 
 Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door meemoo beheerd wordt.
-
 
 | **XML element**            | `<dc_types type="list"><genre/></dc_types>`                                                                   |
 | **Datatype**               | Gecontroleerde lijst                                                           |

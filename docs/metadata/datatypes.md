@@ -17,8 +17,9 @@ EDTF laat verschillende vormen van verfijning, veralgemening en benaderende waar
 
 In MediaHaven worden volgende mogelijkheden aangeboden:
 
-- precieze tijd: `2001-02-03T09:30:01`
-- precieze tijd met tijdzone: `2004-01-01T10:10:10+05:00`
+- precieze datum: `YYYY-MM-DD`
+- precieze datum en tijd: `2001-02-03T09:30:01`
+- precieze datum en tijd met tijdzone: `2004-01-01T10:10:10+05:00`
 - eeuw: `19xx`
 - decennium: `196x`
 - onbekend jaar in eeuw: `19uu`
