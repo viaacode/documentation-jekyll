@@ -92,7 +92,7 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* item, gebruikt door de CP binnen het eigen archief- of collectiebeheerssysteem.
 
 | **XML element**            | `<dc_identifier_localids type="list"><ARDOME/><priref/>...</dc_identifier_localids>`             |
-| **Data type**              | Gecontroleerde lijst: [Lokale ID]({{ site.baseurl }}{% link docs/metadata/datatypes.md %}#localid)                                                             |
+| **Data type**              | Vrije tekst                                                             |
 | **Verplichting**           | Optioneel                                                                                        |
 | **Herhaalbaar**            | Ja                                                                                               |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
@@ -100,23 +100,23 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 
 ### Mogelijke sleutels
 
-- Acquisition_number
-- Adlib
-- Alternative_number
-- Analoge_drager
-- Ardome
-- Basis
-- Historical_carrier
-- Historical_record_number
-- MEDIA_ID
-- Object_number
-- Priref
-- Word_ID
-- WorkPID
-- DataPID
-- Bestandsnaam
-- Api
-- Pdf
+- `<Acquisition_number />`
+- `<Adlib />`
+- `<Alternative_number />`
+- `<Analoge_drager />`
+- `<Ardome />`
+- `<Basis />`
+- `<Historical_carrier />`
+- `<Historical_record_number />`
+- `<MEDIA_ID />`
+- `<Object_number />`
+- `<Priref />`
+- `<Word_ID />`
+- `<WorkPID />`
+- `<DataPID />`
+- `<Bestandsnaam />`
+- `<Api />`
+- `<Pdf />`
 
 ### Voorbeeld
 
@@ -190,7 +190,7 @@ De algemene benaming of hoofdtitel.
 
 _Voor andere versies (lange titels, vertalingen) kan het veld 'Alternatieve Titel' worden gebruikt._
 
-| **XML element**            | `<title/>`                                                                                           |
+| **XML element**            | `<dc_title/>`                                                                                           |
 | **Datatype**               | Vrije tekst                                                                                          |
 | **Verplichting**           | Verplicht                                                                                            |
 | **Herhaalbaar**            | Nee                                                                                                  |
@@ -199,7 +199,7 @@ _Voor andere versies (lange titels, vertalingen) kan het veld 'Alternatieve Tite
 |                            | - Itemtitel (titel van te beschrijven archiefitem)                                                   |
 
 ```xml
-<title>nieuws 19-09-94</title>
+<dc_title>nieuws 19-09-94</dc_title>
 ```
 
 ## Secundaire titel: Serie
