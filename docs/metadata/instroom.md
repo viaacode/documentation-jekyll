@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Digital intake
+title: Digitale instroom
 parent: Metadata model
 nav_order: 1
 ---
