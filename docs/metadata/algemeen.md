@@ -1,11 +1,22 @@
 ---
 layout: default
-title: Velden - Algemeen
+title:  Velden > Algemeen
 parent: Metadata model
 nav_order: 1
 ---
 
+{: .fw-300 }
+Deze velden zijn van toepassing op gedigitaliseerd als [digital born] materiaal.
+
+<details markdown="block">
+  <summary>
+    Inhoudstafel
+  </summary>
+  {: .text-delta }
+1. TOC
 {:toc}
+</details>
+
 
 # Administratieve en beschrijvende metadata
 
@@ -917,7 +928,6 @@ MD5 (Message Digest Algorithm 5) is een veelgebruikte standaard om de integritei
 | **XML element**        | `<MD5/>`                                                      |
 | **Datatype**           | [MD5 Checksum] (https://nl.wikipedia.org/wiki/MD5#MD5-hashes) |
 | **Herhaalbaar**        | Nee                                                           |
-
 
 ```xml
 <MD5>69c64bcb374c5dd7bd5fa0b3bb76758f</MD5>

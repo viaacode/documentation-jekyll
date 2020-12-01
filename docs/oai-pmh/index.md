@@ -1,11 +1,18 @@
 ---
 layout: default
-title: OAI-PMH Documentatie
-nav_order: 10
+title: OAI-PMH
+nav_order: 2
 last_modified_date: 2020-10-08 12:30:00 +0200
 ---
 
+<details markdown="block">
+  <summary>
+    Inhoudstafel
+  </summary>
+  {: .text-delta }
+1. TOC
 {:toc}
+</details>
 
 # Over OAI-PMH
 

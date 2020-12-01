@@ -2,10 +2,11 @@
 layout: default
 title: Digitale instroom
 parent: Metadata model
-nav_order: 3
+nav_order: 5
 ---
 
 # Metadata model for digital intake
+
 ***Work In Progress!***
 
 This guide gives the Content Partners (CPs) of VIAA more insight how metadata is structured inside VIAAs MAM and how they should deliver metadata for digital intake. CPs that have  borndigital or digitised material will need to deliver metadata about these essences. This is done by supplying a sidecar XML for every essence, e.g. test.xml + test.mxf. VIAAs ingest proces expects metadata that is already mapped to the VIAA metadata model that is explained below. In future work we would like to support standards like Dublin Core. If you have remarks, questions... let us know at support@viaa.be!

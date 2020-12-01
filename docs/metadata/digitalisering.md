@@ -1,13 +1,21 @@
 ---
 layout: default
-title: Velden - Digitalisering
+title: Velden > Digitalisering
 parent: Metadata model
 nav_order: 2
 ---
 
-Dit stuk in het meemoo datamodel is enkel van toepassing op materiaal afkomstig van digitaliseringsprojecten door meemoo.
+{: .fw-300 }
+Deze velden zijn enkel van toepassing op materiaal afkomstig van digitaliseringsprojecten uitgevoerd door meemoo.
 
+<details markdown="block">
+  <summary>
+    Inhoudstafel
+  </summary>
+  {: .text-delta }
+1. TOC
 {:toc}
+</details>
 
 # Quality Control (QC)
 
@@ -756,7 +764,6 @@ Het serienummer van de tijdens het digitalisatieproces gebruikte encoder.
 ## Encoder model
 
 Het specifieke model van de tijdens het digitalisatieproces gebruikte encoder.
-
 
 | **XML element**        | `<encoder_model/>`                                                                                                                             |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
