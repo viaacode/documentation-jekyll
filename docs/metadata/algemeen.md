@@ -91,7 +91,6 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
 |                            | - Lokale ID('s)                                                                                  |
 
-
 ```xml
 <dc_identifier_localid>audiocassette 365</dc_identifier_localid>
 ```
@@ -109,7 +108,28 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
 |                            | - Lokale ID('s)                                                                                  |
 
+
+**Voorbeeld VRT:**
+
+```xml
+<dc_identifier_localids type="list">
+    <ARDOME>ABC135</ARDOME>
+</dc_identifier_localids>
+```
+
+**Voorbeeld AMSAB**:
+
+```xml
+<dc_identifier_localids type="list">
+    <reproduction.reference>audiocassette_420</reproduction.reference>
+    <acquisition.number>S/2005/051</acquisition.number>
+    <alternative_number>MG/05/051-102/1</alternative_number>
+</dc_identifier_localids>
+```
+
 ### Mogelijke sleutels
+
+{: .no_toc }
 
 - `<Acquisition_number />`
 - `<Adlib />`
@@ -129,25 +149,8 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 - `<Api />`
 - `<Pdf />`
 
-### Voorbeeld
 
-**VRT:**
 
-```xml
-<dc_identifier_localids type="list">
-    <ARDOME>ABC135</ARDOME>
-</dc_identifier_localids>
-```
-
-**AMSAB**:
-
-```xml
-<dc_identifier_localids type="list">
-    <reproduction.reference>audiocassette_420</reproduction.reference>
-    <acquisition.number>S/2005/051</acquisition.number>
-    <alternative_number>MG/05/051-102/1</alternative_number>
-</dc_identifier_localids>
-```
 
 # Relaties
 
@@ -441,6 +444,8 @@ De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie 
 
 ### Mogelijke sleutels
 
+{: .no_toc }
+
 Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
 
 - `<Maker />`
@@ -481,6 +486,8 @@ De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud 
 ```
 
 ### Mogelijke sleutels
+
+{: .no_toc }
 
 Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan.
 
@@ -535,6 +542,8 @@ De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk 
 ```
 
 ### Mogelijke sleutels
+
+{: .no_toc }
 
 Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast.
 
@@ -642,6 +651,8 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 ```
 
 ### Mogelijke waarden
+
+{: .no_toc }
 
 - `<Actualiteit>`
 - `<Animatie>`
@@ -760,6 +771,8 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 ```
 
 ### Mogelijke waarden
+
+{: .no_toc }
 
 - VIAA-ONDERWIJS
 - VIAA-ONDERZOEK
