@@ -37,7 +37,7 @@ De unieke identifier van de Content Partner.
 
 ## Sub CP naam
 
-De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing indien uw organisatie onderverdeeld is in suborganisaties)
+De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing indien uw organisatie onderverdeeld is in suborganisaties).
 
 | **XML element**        | `<Sub_CP>`                           |
 | **Datatype**           | Vrije tekst                          |
@@ -124,7 +124,7 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 
 ```xml
 <dc_identifier_localids type="list">
-<ARDOME>ABC135</ARDOME>
+    <ARDOME>ABC135</ARDOME>
 </dc_identifier_localids>
 ```
 
@@ -132,9 +132,9 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 
 ```xml
 <dc_identifier_localids type="list">
-<reproduction.reference>audiocassette_420</reproduction.reference>
-<acquisition.number>S/2005/051</acquisition.number>
-<alternative_number>MG/05/051-102/1</alternative_number>
+    <reproduction.reference>audiocassette_420</reproduction.reference>
+    <acquisition.number>S/2005/051</acquisition.number>
+    <alternative_number>MG/05/051-102/1</alternative_number>
 </dc_identifier_localids>
 ```
 
@@ -213,7 +213,7 @@ De serietitel. Dit is de titel van de serie waar het item deel van uitmaakt.
 
  ```xml
  <dc_titles type="list">
-<serie>Het Journaal</serie>
+    <serie>Het Journaal</serie>
 </dc_titles>
  ```
 
@@ -464,7 +464,7 @@ De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud 
 ```xml
 <dc_contributors type="list">
     <Bijdrager />
-    <Auteur /> 
+    <Auteur />
     <Cameraman />
 </dc_contributors>
 ```
@@ -519,13 +519,13 @@ De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk 
 
 ```xml
 <dc_publishers type=list/>
-<Publisher>VRT</Publisher>
+    <Publisher>VRT</Publisher>
 </dc_publishers>
 ```
 
 ### Mogelijke sleutels
 
-Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. 
+Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast.
 
 Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
 
@@ -626,35 +626,35 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 ```xml
 <dc_types type="list">
-<genre>sportverslaggeving</genre>
+    <genre>sportverslaggeving</genre>
 </dc_types>
 ```
 
 ### Mogelijke waarden
 
-- Actualiteit
-- Animatie
-- Concert
-- Dans
-- Docudrama
-- Documentaire
-- Documentatie
-- Drama
-- Educatief
-- Entertainment
-- Fictie
-- Interview
-- Komedie
-- Kortfilm
-- Kunstwerk
-- Muziekopname
-- Nieuws
-- Non-fictie
-- Opera
-- Performance
-- Speelfilm
-- Sport
-- Wetenschap
+- `<Actualiteit>`
+- `<Animatie>`
+- `<Concert>`
+- `<Dans>`
+- `<Docudrama>`
+- `<Documentaire>`
+- `<Documentatie>`
+- `<Drama>`
+- `<Educatief>`
+- `<Entertainment>`
+- `<Fictie>`
+- `<Interview>`
+- `<Komedie>`
+- `<Kortfilm>`
+- `<Kunstwerk>`
+- `<Muziekopname>`
+- `<Nieuws>`
+- `<Non-fictie>`
+- `<Opera>`
+- `<Performance>`
+- `<Speelfilm>`
+- `<Sport>`
+- `<Wetenschap>`
 
 ## Coverage (ruimtelijk)
 
@@ -667,8 +667,8 @@ Een beschrijvende afbakening van het geografisch gebied (straat, stad, land, con
 
 ```xml
 <dc_coverages type="list">
-<ruimte>Parijs</ruimte>
-<ruimte>provincie Antwerpen</ruimte>
+    <ruimte>Parijs</ruimte>
+    <ruimte>provincie Antwerpen</ruimte>
 </dc_coverages>
 ```
 
@@ -686,8 +686,8 @@ Let wel: het betreft hier de tijdsperiode waar het item *inhoudelijk* betrekking
 
 ```xml
 <dc_coverages type="list">
-<tijd>interbellum`</tijd>
-<tijd>jaren 1920`</tijd>
+    <tijd>interbellum</tijd>
+    <tijd>jaren 1920</tijd>
 </dc_coverages>
 ```
 
@@ -703,9 +703,9 @@ Thematische trefwoorden met betrekking tot de inhoud van het item.
 |                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **of** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
 
 ```xml
-<dc_subjects type="list\">
-    <trefwoord>seksuele voorlichting</trefwoord>
-    <trefwoord>socialistische beweging</trefwoord>
+<dc_subjects type="list">
+    <Trefwoord>seksuele voorlichting</Trefwoord>
+    <Trefwoord>socialistische beweging</Trefwoord>
 </dc_subjects>
 ```
 
@@ -769,7 +769,7 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 - CC BY-NC-ND-METADATA
 - CC BY-NC-ND-CONTENT
 
-Zie de [detailpagina]({{ site.baseurl }}{% link docs/metadata/licenties.md %}) over licenties voor meer informatie over de betekenis van de verschillende waarden
+Zie de [detailpagina]({{ site.baseurl }}{% link docs/metadata/licenties.md %}) over licenties voor meer informatie over de betekenis van de verschillende waarden.
 
 ## Auteursrechthouder
 
@@ -807,15 +807,14 @@ Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de in
 
 Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.
 
-
 | **XML element**        | `<dc_rights_credit/>` |
 | **Datatype**           | Vrije tekst           |
 | **Verplichting**       | Optioneel             |
-| **Herhaalbaar**        | Ja                    |
+| **Herhaalbaar**        | Nee                    |
 
 ```xml
 <dc_rights_credit>Copyright AMSAB. Onder de licentie Creative Commons CC-PD</dc_rights_credit/>
-<dc_rights_credit/>Copyright SMAK. Alle rechten voorbehouden</dc_rights_credit>
+<dc_rights_credit>Copyright SMAK. Alle rechten voorbehouden</dc_rights_credit>
 <dc_rights_credit>Alle rechten voorbehouden. Gelieve contact op te nemen met reproductie\@uu.be</dc_rights_credit>
 ```
 
@@ -823,11 +822,10 @@ Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.
 
 Hier kunnen bijkomende opmerkingen en voorwaarden met betrekking tot de gebruiksrechten van toepassing op het item worden vastgelegd.
 
-
 | **XML element**            | `<dc_rights_comment/>`                                                                                                                             |
 | **Datatype**               | Vrije tekst                                                                                                                                        |
 | **Verplichting**           | Optioneel                                                                                                                                          |
-| **Herhaalbaar**            | Ja                                                                                                                                                 |
+| **Herhaalbaar**            | Nee                                                                                                                                                 |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                   |
 |                            | - Gebruiksbeperkingen indien van toepassing (afwijking van de standaard policy: mag gebruikt worden voor meemoo doelgroepen conform de overeenkomst) |
 

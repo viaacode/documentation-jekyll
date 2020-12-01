@@ -350,13 +350,12 @@ De datum waarop de materiële drager door de Service Provider werd geïnspecteer
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
-< inspection_date > 2015-04-21</ inspection_date >
+<inspection_date>2015-04-21</inspection_date>
 ```
 
 ## Uitkomst inspectie analoge drager
 
 De uitkomst van de inspectie van de drager door de Service Provider. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
-
 
 | **XML element**        | `<inspection_outcome />`                                                                                                                       |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
@@ -366,7 +365,6 @@ De uitkomst van de inspectie van de drager door de Service Provider. Met andere 
 ## Opmerking inspectie analoge drager
 
 Eventuele opmerkingen van de Service Provider naar aanleiding van de inspectie van de analoge drager (denk aan schade, ontbrekende elementen).
-
 
 | **XML element**        | `<inspection_note />`                                                                                                                          |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
@@ -380,7 +378,6 @@ Eventuele opmerkingen van de Service Provider naar aanleiding van de inspectie v
 ## Datum herstel analoge dragger
 
 De datum waarop de Service Provider herstellende ingrepen op de drager heeft toegepast.
-
 
 | **XML element**        | `<repair_date/>`                                                                                                                               |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYYY-MM-DD`)                                                                        |

@@ -2,14 +2,12 @@
 layout: default
 title: Licenties
 parent: Metadata model
-nav_order: 3
+nav_order: 4
 ---
 
 # Licenties
 
 Op deze pagina vind je een overzicht van alle bestaande licenties in het VIAA-metadatamodel en meer informatie over het moment waarop welke licentie actief wordt.
-
-
 
 ## Overzicht van de licenties
 
