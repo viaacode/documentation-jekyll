@@ -754,7 +754,9 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 | **Herhaalbaar**            | Ja                                                                        |
 
 ```xml
-<dc_rights_license>CC BY-SA-METADATA</dc_rights_licence>
+<dc_rights_licenses type="list">
+    <licentie>CC BY-SA-METADATA</licentie>
+</dc_rights_licenses type="list">
 ```
 
 ### Mogelijke waarden
@@ -786,7 +788,7 @@ Zie de [detailpagina]({{ site.baseurl }}{% link docs/metadata/licenties.md %}) o
 
 De persoon of organisatie die de auteursrechten bezit. Dit kan de eigenlijke auteur zijn, zijn erfgenamen of een derde partij aan wie de rechten zijn overgedragen.
 
-| **XML element**            | `<dc_rights_rightsOwners type="list"><auteursrechthouder/></dc_rights_rightsOwners>`             |
+| **XML element**            | `<dc_rights_rightsOwners type="list"><Auteursrechthouder/></dc_rights_rightsOwners>`             |
 | **Datatype**               | Vrije tekst                                                                                      |
 | **Verplichting**           | Verplicht (indien gekend)                                                                        |
 | **Herhaalbaar**            | Ja                                                                                               |
@@ -794,8 +796,10 @@ De persoon of organisatie die de auteursrechten bezit. Dit kan de eigenlijke aut
 |                            | - Rechthebbende (indien gekend)                                                                  |
 
 ```xml
-<dc_rights_rightsOwner>Etienne Tordoir</dc_rights_rightsOwner>
-<dc_rights_rightsOwner>KADOC</dc_rights_rightsOwner>
+<dc_rights_rightsOwners>
+    <Auteursrechthouder>Etienne Tordoir</Auteursrechthouder>
+    <Auteursrechthouder>KADOC</Auteursrechthouder>
+</dc_rights_rightsOwner>
 ```
 
 ## Licentiehouder
@@ -805,13 +809,15 @@ De persoon of organisatie die eigenaar is van de resource of de rechten beheert.
 Soms wordt de het toezicht op het correcte gebruik, evenals het beheer van de inkomsten gegenereerd uit het gebruik van auteursrechtelijk beschermde werken uitbesteed aan een externe persoon of organisatie (een zogenaamd auteursrechtvennootschappen zoals SABAM, SEMU,...).
 
 
-| **XML element**        | `<dc_rights_rightsHolders type="list"><licentiehouder/></dc_rights_rightsHolders>`                   |
+| **XML element**        | `<dc_rights_rightsHolders type="list"><Licentiehouder/></dc_rights_rightsHolders>`                   |
 | **Datatype**           | Vrije tekst                                                                                          |
 | **Verplichting**       | Optioneel                                                                                            |
 | **Herhaalbaar**        | Ja                                                                                                   |
 
 ```xml
-<dc_rights_rightsholder>SABAM</dc_rights_rightsholder>
+<dc_rights_rightsHolders>
+    <Licentiehouder>SABAM</Licentiehouder>
+</dc_rights_rightsHolders>
 ```
 
 ## Credit
@@ -839,6 +845,10 @@ Hier kunnen bijkomende opmerkingen en voorwaarden met betrekking tot de gebruiks
 | **Herhaalbaar**            | Nee                                                                                                                                                 |
 | **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                   |
 |                            | - Gebruiksbeperkingen indien van toepassing (afwijking van de standaard policy: mag gebruikt worden voor meemoo doelgroepen conform de overeenkomst) |
+
+```xml
+<dc_rights_comment>Gelieve contact op te nemen met reproductie\@uu.be</dc_rights_comment>
+```
 
 # Technische metadata
 
