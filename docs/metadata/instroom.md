@@ -3,6 +3,7 @@ layout: default
 title: Digitale instroom
 parent: Metadata model
 nav_order: 5
+nav_exclude: true
 ---
 
 # Metadata model for digital intake
