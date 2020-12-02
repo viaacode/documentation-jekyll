@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Datatypes
-parent: Metadata model
+parent: Metadatamodel
 nav_order: 3
 ---
 
