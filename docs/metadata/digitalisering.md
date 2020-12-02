@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Velden > Digitalisering
-parent: Metadata model
+parent: Metadatamodel
 nav_order: 2
 ---
 
@@ -317,7 +317,7 @@ De ID van de verzending waarin de drager van de content partner naar de service 
 <shipment_id>14314364782</shipment_id>
 ```
 
-# Events digitalisatie
+# Events digitalisering
 
 ## Service Provider
 

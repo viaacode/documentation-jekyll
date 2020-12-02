@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Metadata model
+title: Metadatamodel
 has_children: true
 nav_order: 1
 ---
