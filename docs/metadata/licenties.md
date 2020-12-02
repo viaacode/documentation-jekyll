@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Licenties
-parent: Metadata model
+parent: Metadatamodel
 nav_order: 4
 ---
 

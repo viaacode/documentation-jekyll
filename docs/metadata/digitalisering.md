@@ -496,7 +496,7 @@ Het tijdstip waarop de digitalisering van de analoge drager plaats vond.
 
 ## Uitkomst digitalisering
 
-De uitkomst van de digitalisatie. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
+De uitkomst van de digitalisering. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
 
 | **XML element**        | `<digitization_outcome/>`                                                                                                                      |
 | **Datatype**           | y/n                                                                                                                                            |
@@ -507,9 +507,9 @@ De uitkomst van de digitalisatie. Met andere woorden is deze geslaagd (y) of nie
 <digitization_outcome >y</digitization_outcome>
 ```
 
-## Opmerking digitalisatie
+## Opmerking digitalisering
 
-Een eventuele opmerking bij de digitalisatie van een analoge drager.
+Een eventuele opmerking bij de digitalisering van een analoge drager.
 
 | **XML element**        | `<digitization_note/>`                                                                                                                         |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
@@ -735,7 +735,7 @@ Het model van de AD omzetter.
 
 ## Encoder fabrikant
 
-De fabrikant van de tijdens het digitalisatieproces gebruikte encoder. Dit zijn de hardware of software die gebruikt worden voor het transcoderen van informatie van het ene formaat (of code) naar de andere.
+De fabrikant van de tijdens het digitaliseringproces gebruikte encoder. Dit zijn de hardware of software die gebruikt worden voor het transcoderen van informatie van het ene formaat (of code) naar de andere.
 
 
 | **XML element**        | `<encoder_manufacturer/>`                                                                                                                      |
@@ -749,7 +749,7 @@ De fabrikant van de tijdens het digitalisatieproces gebruikte encoder. Dit zijn 
 
 ## Encoder serienummer
 
-Het serienummer van de tijdens het digitalisatieproces gebruikte encoder.
+Het serienummer van de tijdens het digitaliseringproces gebruikte encoder.
 
 
 | **XML element**        | `<encoder_serial_number/>`                                                                                                                     |
@@ -763,7 +763,7 @@ Het serienummer van de tijdens het digitalisatieproces gebruikte encoder.
 
 ## Encoder model
 
-Het specifieke model van de tijdens het digitalisatieproces gebruikte encoder.
+Het specifieke model van de tijdens het digitaliseringproces gebruikte encoder.
 
 | **XML element**        | `<encoder_model/>`                                                                                                                             |
 | **Datatype**           | Vrije tekst                                                                                                                                    |

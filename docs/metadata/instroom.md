@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Digitale instroom
-parent: Metadata model
+parent: Metadatamodel
 nav_order: 5
 nav_exclude: true
 ---
