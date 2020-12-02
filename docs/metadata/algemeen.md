@@ -561,7 +561,7 @@ Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worde
 Een korte, algemene omschrijving van de intellectuele inhoud van een item.
 
 
-| **XML element**            | `<description/>`                                                                                                                                             |
+| **XML element**            | `<dc_description/>`                                                                                                                                             |
 | **Datatype**               | Vrije tekst                                                                                                                                                  |
 | **Verplichting**           | Verplicht indien geen minimum van vijf trefwoorden.                                                                                                          |
 | **Herhaalbaar**            | Nee                                                                                                                                                          |
