@@ -6,7 +6,7 @@ nav_order: 1
 ---
 
 {: .fw-300 }
-Deze velden zijn van toepassing op gedigitaliseerd als [digital born] materiaal.
+Deze velden zijn van toepassing op gedigitaliseerd als *digital born* materiaal.
 
 <details markdown="block">
   <summary>
