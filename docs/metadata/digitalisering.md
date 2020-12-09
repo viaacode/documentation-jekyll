@@ -89,6 +89,20 @@ Een omschrijving van het type materiële drager waarop het item oorspronkelijk i
 <format>Betacam SP</format>
 ```
 
+## Formaatversie
+
+Een specifieke formaatversie, die voor sommige dragerformaten wordt gevraagd, zoals voor VHS of DVCPRO.
+
+
+| **XML element**        | `<format_version/>`                                                                                                                                         |
+| **Datatype**           | Gecontroleerde lijst: zie [AMS handleiding](https://meemoo.be/storage/files/6dcd1d93-1840-4940-b57a-af069d80f51d/20180522-handleiding-annex-v5.pdf) |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be).                                   |
+| **Herhaalbaar**        | Nee                                                                                                                                                 |
+
+```xml
+<format_version>DVCPRO HD</format_version>
+```
+
 ## Barcode drager
 
 Dit is de barcode van meemoo die op de materiële drager werd aangebracht.
@@ -289,6 +303,20 @@ De barcode van meemoo die werd bevestigd op de verzameldoos waarin de drager zic
 <collection_box_barcode>BBMX_AMS_000007</collection_box_barcode>
 ```
 
+## Barcode transportbak
+
+De barcode van meemoo die werd bevestigd op de transportbak waarin de verzameldozen zich bevinden.
+
+
+| **XML element**        | `<transport_box_barcode/>`                                                                                       |
+| **Datatype**           | ID                                                                                                                |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be). |
+| **Herhaalbaar**        | Nee                                                                                                               |
+
+```xml
+<transport_box_barcode>VIAA-AKF-0022</transport_box_barcode>
+```
+
 ## Batch ID
 
 De ID van de batch waarin de drager van de contentpartner naar de Service Provider werd verstuurd. Deze is vooral van belang voor de Service Provider en meemoo.
@@ -344,7 +372,7 @@ De unieke ID van de Service Provider aan wie de digitalisering van de originele 
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
-<sp_id> OR-183420s</sp_id>
+<sp_id>OR-183420s</sp_id>
 ```
 
 ## Datum inspectie analoge drager
@@ -365,16 +393,20 @@ De datum waarop de materiële drager door de Service Provider visueel werd geïn
 
 De uitkomst van de visuele inspectie van de drager door de Service Provider. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
 
-| **XML element**        | `<inspection_outcome />`                                                                                                                       |
-| **Datatype**           | Vrije tekst                                                                                                                                    |
+| **XML element**        | `<inspection_outcome/>`                                                                                                                       |
+| **Datatype**           | y/n                                                                                                                                            |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
+
+```xml
+<inspection_outcome>y</inspection_outcome>
+```
 
 ## Opmerking inspectie analoge drager
 
 Eventuele opmerkingen van de Service Provider naar aanleiding van de visuele inspectie van de analoge drager (denk aan schade, ontbrekende elementen).
 
-| **XML element**        | `<inspection_note />`                                                                                                                          |
+| **XML element**        | `<inspection_note/>`                                                                                                                          |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
@@ -402,12 +434,12 @@ De uitkomst van de door de Service Provider ondernomen herstelacties. Met andere
 
 
 | **XML element**        | `<repair_outcome/>`                                                                                                                            |
-| **Datatype**           | Vrije tekst                                                                                                                                    |
+| **Datatype**           | y/n                                                                                                                                            |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
-<repair_outcome>geslaagd</repair_outcome>
+<repair_outcome>y</repair_outcome>
 ```
 
 ## Opmerking herstel analoge drager
@@ -433,12 +465,12 @@ De datum waarop de materiële drager werd gereinigd.
 De uitkomst van de reinigingsactie van de materiële drager. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
 
 | **XML element**        | `<cleaning_outcome/>`                                                                                                                          |
-| **Datatype**           | Vrije tekst                                                                                                                                    |
+| **Datatype**           | y/n                                                                                                                                            |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
-<cleaning_outcome>geslaagd</cleaning_outcome>
+<cleaning_outcome>y</cleaning_outcome>
 ```
 
 ## Opmerking reiniging analoge drager
@@ -461,15 +493,15 @@ De datum waarop de analoge drager werd gebakken.
 
 ## Uitkomst bakken analoge drager
 
-De uitkomst van het bakproces van de analoge drager.
+De uitkomst van het bakproces van de analoge drager. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
 
 | **XML element**        | `<baking_outcome/>`                                                                                                                            |
-| **Datatype**           | Vrije tekst                                                                                                                                    |
+| **Datatype**           | y/n                                                                                                                                            |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
-<baking_outcome>geslaagd</baking_outcome>
+<baking_outcome>y</baking_outcome>
 ```
 
 ## Digitaliseringsdatum
@@ -489,7 +521,7 @@ De datum waarop de digitalisering van de analoge drager plaatsvond.
 
 Het tijdstip waarop de digitalisering van de analoge drager plaatsvond.
 
-| **XML element**        | `<digitization_time />`                                                                                                                        |
+| **XML element**        | `<digitization_time/>`                                                                                                                        |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Tijd (`hh:mm:ss`)                                                                             |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
@@ -504,7 +536,7 @@ De uitkomst van de digitalisering. Met andere woorden is deze geslaagd (y) of ni
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
-<digitization_outcome >y</digitization_outcome>
+<digitization_outcome>y</digitization_outcome>
 ```
 
 ## Opmerking digitalisering
