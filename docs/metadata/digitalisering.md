@@ -21,7 +21,7 @@ Deze velden zijn enkel van toepassing op materiaal afkomstig van digitaliserings
 
 ## Resultaat manuele QC
 
-Na het uitvoeren van de manuele kwaliteitscontrole wordt de CP gevraagd de kwaliteit van het digitale bestand te beoordelen. Dit kan door aan te geven of de kwaliteit 'ok' is of 'not ok'. Hierbij kan de dropdownlijst onder het veld 'Resultaat manuele kwaliteitscontrole' geraadpleegd worden. De waarden in de lijst 'audio' en 'video' geven aan wat er visueel en auditief gedetecteerd kan worden. Deze lijsten zullen verder uitgebreid worden. Indien vragen of feedback kan dit steeds gemeld worden via [support@meemoo.be](mailto:support@meemoo.be)].
+Na het uitvoeren van de manuele kwaliteitscontrole wordt de contentpartner gevraagd de kwaliteit van het digitale bestand te beoordelen. Dit kan door aan te geven of de kwaliteit 'ok' is of 'not ok'. Hierbij kan de dropdownlijst onder het veld 'Resultaat manuele kwaliteitscontrole' geraadpleegd worden. De waarden in de lijst 'audio' en 'video' geven aan wat er visueel en auditief gedetecteerd kan worden. Deze lijsten zullen verder uitgebreid worden. Indien er vragen of feedback zijn, kan dit steeds gemeld worden via [support@meemoo.be](mailto:support@meemoo.be)].
 
 
 | **XML element**        | `<QCoutcome/>`                                                                                                                                       |
@@ -31,7 +31,7 @@ Na het uitvoeren van de manuele kwaliteitscontrole wordt de CP gevraagd de kwali
 
 ## QC Audio
 
-Indien de kwaliteit van de audio in het digitaal object niet ok is dan kan in deze dropdown list een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlist aanwezig is kan het opmerkingenveld gebruikt worden.
+Indien de kwaliteit van de audio in het digitaal object niet ok is dan kan in deze dropdownlijst een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlijst aanwezig is kan het opmerkingenveld gebruikt worden.
 
 
 | **XML element**        | `<QCaudio/>`                                                                                                                                       |
@@ -41,7 +41,7 @@ Indien de kwaliteit van de audio in het digitaal object niet ok is dan kan in de
 
 ## QC Video
 
-Indien de kwaliteit van de video in het digitaal object niet ok is dan kan in deze dropdown list een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlist aanwezig is kan het opmerkingenveld gebruikt worden.
+Indien de kwaliteit van de video in het digitaal object niet ok is dan kan in deze dropdownlijst een waarde geselcteerd worden die aangeeft wat de reden is voor het afkeuren van de kwaliteit. Indien de oorzaak niet in de dropdownlijst aanwezig is kan het opmerkingenveld gebruikt worden.
 
 
 | **XML element**        | `<QCvideo/>`                                                                                                                                       |
@@ -63,7 +63,7 @@ Dit is een vrij tekstveld dat gebruikt kan worden om alle bijkomende opmerkingen
 
 ## Bestandstype
 
-Type drager (onderverdeeld in audio, video, film, papier)
+Type drager (onderverdeeld in audio, video, film, papier).
 
 
 | **XML element**            | `<type/>`                                                                                                                                           |
@@ -91,7 +91,7 @@ Een omschrijving van het type materiële drager waarop het item oorspronkelijk i
 
 ## Barcode drager
 
-Dit is de barcode die op de materiële drager werd aangebracht.
+Dit is de barcode van meemoo die op de materiële drager werd aangebracht.
 
 
 | **XML element**        | `<carrier_barcode/>`                                                                                              |
@@ -149,7 +149,7 @@ Dit is de (geschatte) productiedatum van de materiële drager.
 
 ## Kern/Spoel
 
-In dit veld kan worden aangegeven of de tape op kern dan wel op open spoel is bevestigd.
+In dit veld kan worden aangegeven of de tape op een kern dan wel op een open spoel is bevestigd.
 
 
 | **XML element**        | `<core_reel/>`                                                                                                                                                        |
@@ -191,7 +191,7 @@ De gekende of geschatte duur van de inhoud van de originele drager.
 
 ## Recording speed
 
-De opnamesnelheid van de drager. Dit is hoofdzakelijk van toepassing voor open spoel audiotapes.
+De opnamesnelheid van de drager. Dit is hoofdzakelijk van toepassing voor openspoelaudiotapes.
 
 
 | **XML element**        | `<audio_carrier_speed/>`                                                                                          |
@@ -233,7 +233,7 @@ Het type magnetische coating gebruikt voor de tape van een audiocassette.
 
 ## Audio tracks
 
-Het aantal geluidssporen dat op de drager kan worden vastgelegd.
+Het aantal geluidssporen dat op de drager werd vastgelegd.
 
 
 | **XML element**        | `<audio_tracks/>`                                                                                                  |
@@ -277,7 +277,7 @@ De datum waarop de drager in AMS werd geregistreerd.
 
 ## Barcode verzameldoos
 
-De barcode die werd bevestigd op de verzameldoos waarin de drager werd geplaatst tijdens het digitaliseringsproces.
+De barcode van meemoo die werd bevestigd op de verzameldoos waarin de drager zich bevindt.
 
 
 | **XML element**        | `<collection_box_barcode/>`                                                                                       |
@@ -291,7 +291,7 @@ De barcode die werd bevestigd op de verzameldoos waarin de drager werd geplaatst
 
 ## Batch ID
 
-De ID van de batch waarin de drager van de content partner naar de service provider werd verstuurd. Deze is vooral van belang voor de service provider en meemoo.
+De ID van de batch waarin de drager van de contentpartner naar de Service Provider werd verstuurd. Deze is vooral van belang voor de Service Provider en meemoo.
 
 
 | **XML element**        | `<batch_id/>`                                                                                                     |
@@ -305,7 +305,7 @@ De ID van de batch waarin de drager van de content partner naar de service provi
 
 ## Shipment ID
 
-De ID van de verzending waarin de drager van de content partner naar de service provider werd verstuurd. Deze is vooral van belang voor de service provider en meemoo.
+De ID van de verzending waarin de drager van de contentpartner naar de Service Provider werd verstuurd. Deze is vooral van belang voor de Service Provider en meemoo.
 
 
 | **XML element**        | `<shipment_id/>`                                                                                                  |
@@ -321,12 +321,12 @@ De ID van de verzending waarin de drager van de content partner naar de service 
 
 ## Service Provider
 
-De naam van de service provider aan wie de digitalisering van de originele drager werd uitbesteed.
+De naam van de Service Provider aan wie de digitalisering van de originele drager werd uitbesteed.
 
 
 | **XML element**        | `<sp_name/>`                                                                                                                                   |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -335,12 +335,12 @@ De naam van de service provider aan wie de digitalisering van de originele drage
 
 ## Service Provider ID
 
-De unieke ID van de service provider aan wie de digitalisering van de originele drager werd uitbesteed.
+De unieke ID van de Service Provider aan wie de digitalisering van de originele drager werd uitbesteed.
 
 
 | **XML element**        | `<sp_id/>`                                                                                                                                     |
 | **Datatype**           | ID                                                                                                                                             |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -349,12 +349,12 @@ De unieke ID van de service provider aan wie de digitalisering van de originele 
 
 ## Datum inspectie analoge drager
 
-De datum waarop de materiële drager door de Service Provider werd geïnspecteerd.
+De datum waarop de materiële drager door de Service Provider visueel werd geïnspecteerd.
 
 
 | **XML element**        | `<inspection_date/>`                                                                                                                           |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYYY-MM-DD`)                                                                                                                                         |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -363,20 +363,20 @@ De datum waarop de materiële drager door de Service Provider werd geïnspecteer
 
 ## Uitkomst inspectie analoge drager
 
-De uitkomst van de inspectie van de drager door de Service Provider. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
+De uitkomst van de visuele inspectie van de drager door de Service Provider. Met andere woorden is deze geslaagd (y) of niet geslaagd (n).
 
 | **XML element**        | `<inspection_outcome />`                                                                                                                       |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ## Opmerking inspectie analoge drager
 
-Eventuele opmerkingen van de Service Provider naar aanleiding van de inspectie van de analoge drager (denk aan schade, ontbrekende elementen).
+Eventuele opmerkingen van de Service Provider naar aanleiding van de visuele inspectie van de analoge drager (denk aan schade, ontbrekende elementen).
 
 | **XML element**        | `<inspection_note />`                                                                                                                          |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -389,7 +389,7 @@ De datum waarop de Service Provider herstellende ingrepen op de drager heeft toe
 
 | **XML element**        | `<repair_date/>`                                                                                                                               |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYYY-MM-DD`)                                                                        |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -403,7 +403,7 @@ De uitkomst van de door de Service Provider ondernomen herstelacties. Met andere
 
 | **XML element**        | `<repair_outcome/>`                                                                                                                            |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -416,7 +416,7 @@ Bijkomende opmerkingen met betrekking tot de herstelactie.
 
 | **XML element**        | `<repair_note/>`                                                                                                                               |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ## Datum reiniging analoge drager
@@ -425,7 +425,7 @@ De datum waarop de materiële drager werd gereinigd.
 
 | **XML element**        | `<cleaning_date/>`                                                                                                                             |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYYY-MM-DD`)                                                                        |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ## Uitkomst reiniging analoge drager
@@ -434,7 +434,7 @@ De uitkomst van de reinigingsactie van de materiële drager. Met andere woorden 
 
 | **XML element**        | `<cleaning_outcome/>`                                                                                                                          |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -447,7 +447,7 @@ Eventuele opmerking m.b.t. de reiniging van de materiële drager.
 
 | **XML element**        | `<cleaning_note/>`                                                                                                                             |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ## Datum bakken analoge drager
@@ -456,7 +456,7 @@ De datum waarop de analoge drager werd gebakken.
 
 | **XML element**        | `<baking_date/>`                                                                                                                               |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYYY-MM-DD`)                                                                        |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ## Uitkomst bakken analoge drager
@@ -465,7 +465,7 @@ De uitkomst van het bakproces van de analoge drager.
 
 | **XML element**        | `<baking_outcome/>`                                                                                                                            |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -474,11 +474,11 @@ De uitkomst van het bakproces van de analoge drager.
 
 ## Digitaliseringsdatum
 
-De datum waarop de digitalisering van de analoge drager plaats vond.
+De datum waarop de digitalisering van de analoge drager plaatsvond.
 
 | **XML element**        | `<digitization_date/>`                                                                                                                         |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYY-MM-DD`)                                                                         |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -487,11 +487,11 @@ De datum waarop de digitalisering van de analoge drager plaats vond.
 
 ## Tijdstip digitalisering
 
-Het tijdstip waarop de digitalisering van de analoge drager plaats vond.
+Het tijdstip waarop de digitalisering van de analoge drager plaatsvond.
 
 | **XML element**        | `<digitization_time />`                                                                                                                        |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Tijd (`hh:mm:ss`)                                                                             |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ## Uitkomst digitalisering
@@ -500,7 +500,7 @@ De uitkomst van de digitalisering. Met andere woorden is deze geslaagd (y) of ni
 
 | **XML element**        | `<digitization_outcome/>`                                                                                                                      |
 | **Datatype**           | y/n                                                                                                                                            |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -513,7 +513,7 @@ Een eventuele opmerking bij de digitalisering van een analoge drager.
 
 | **XML element**        | `<digitization_note/>`                                                                                                                         |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ## Datum kwaliteitscontrole SP
@@ -523,7 +523,7 @@ De datum waarop door de Service Provider een kwaliteitscontrole van het digitale
 
 | **XML element**        | `<qc_date/>`                                                                                                                                   |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYY-MM-DD`)                                                                          |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ## Uitkomst kwaliteitscontrole SP
@@ -533,7 +533,7 @@ De uitkomst van de kwaliteitscontrole door de Service Provider. Is deze positief
 
 | **XML element**        | `<qc_outcome/>`                                                                                                                                |
 | **Datatype**           | "y" / "n"                                                                                                                                      |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -557,7 +557,7 @@ Dit is een verwijzing naar de persoon bij de Service Provider die de kwaliteitsc
 
 | **XML element**        | `<qc_by/>`                                                                                                                                     |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -566,12 +566,12 @@ Dit is een verwijzing naar de persoon bij de Service Provider die de kwaliteitsc
 
 ## Datum transfer naar LTO tape
 
-De datum waarop het digitale item bij de service provider naar LTO tape werd geschreven.
+De datum waarop het digitale item bij de Service Provider naar LTO tape werd geschreven.
 
 
 | **XML element**        | `<transfer_lto_date/>`                                                                                                                         |
 | **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYY-MM-DD`)                                                                          |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -585,7 +585,7 @@ De unieke ID van de LTO tape waarop het digitale item wordt aangeleverd door de 
 
 | **XML element**        | `<lto_id/>`                                                                                                                                    |
 | **Datatype**           | ID                                                                                                                                             |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -596,12 +596,12 @@ De unieke ID van de LTO tape waarop het digitale item wordt aangeleverd door de 
 
 ## Digitaliseringsformaat
 
-Het formaat waarin de master copy van het digitale item werd geproduceerd door de service provider.
+Het formaat waarin de archiefmaster van het digitale item werd geproduceerd door de Service Provider.
 
 
 | **XML element**        | `<digitization_format/>`                                                                                                                       |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -615,7 +615,7 @@ De fabrikant van de tijdens het digitaliseringsproces gebruikte afspeelapparatuu
 
 | **XML element**        | `<player_manufacturer/>`                                                                                                                       |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -629,7 +629,7 @@ Het serienummer van de tijdens het digitaliseringsproces gebruikte afspeelappara
 
 | **XML element**        | `<player_serial_number/>`                                                                                                                      |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -643,7 +643,7 @@ Het model van de tijdens het digitalliseringsproces gebruikte afspeelapparatuur.
 
 | **XML element**        | `<player_model/>`                                                                                                                              |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -656,7 +656,7 @@ Naam van de fabrikant van de timebase corrector (TBC). Dit is een toestel dat st
 
 | **XML element**        | `<timebase_corrector_manufacturer/>`                                                                                                           |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -665,12 +665,12 @@ Naam van de fabrikant van de timebase corrector (TBC). Dit is een toestel dat st
 
 ## Timebase corrector serienummer
 
-Het serienummer van de timebase corrector gebruikt om storingen in het beeldsignaal van een videotape te corrigeren.
+Het serienummer van de timebase corrector (TBC) gebruikt om storingen in het beeldsignaal van een videotape te corrigeren.
 
 
 | **XML element**        | `<timebase_corrector_serial_number/>`                                                                                                          |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -679,12 +679,12 @@ Het serienummer van de timebase corrector gebruikt om storingen in het beeldsign
 
 ## Timebase corrector model
 
-Het model van de timebase corrector gebruikt om storingen in het beeldsignaal van een videotape te corrigeren. 
+Het model van de timebase corrector (TBC) gebruikt om storingen in het beeldsignaal van een videotape te corrigeren. 
 
 
 | **XML element**        | `<timebase_corrector_model/>`                                                                                                                  |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -693,12 +693,12 @@ Het model van de timebase corrector gebruikt om storingen in het beeldsignaal va
 
 ## AD fabrikant
 
-Naam van de fabrikant van de analoog-digitaalomzetter. De AD omzetter zet een analoog signaal om in een digitaal.
+Naam van de fabrikant van de analoog-digitaalomzetter. De AD-omzetter zet een analoog signaal om in een digitaal.
 
 
 | **XML element**        | `<AD_manufacturer/>`                                                                                                                           |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -707,12 +707,12 @@ Naam van de fabrikant van de analoog-digitaalomzetter. De AD omzetter zet een an
 
 ## AD serienummer
 
-Het serienummer van de AD omzetter.
+Het serienummer van de AD-omzetter.
 
 
 | **XML element**        | `<AD_serial_number/>`                                                                                                                          |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -721,12 +721,12 @@ Het serienummer van de AD omzetter.
 
 ## AD model
 
-Het model van de AD omzetter.
+Het model van de AD-omzetter.
 
 
 | **XML element**        | `<AD_model/>`                                                                                                                                  |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -740,7 +740,7 @@ De fabrikant van de tijdens het digitaliseringproces gebruikte encoder. Dit zijn
 
 | **XML element**        | `<encoder_manufacturer/>`                                                                                                                      |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -754,7 +754,7 @@ Het serienummer van de tijdens het digitaliseringproces gebruikte encoder.
 
 | **XML element**        | `<encoder_serial_number/>`                                                                                                                     |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
@@ -767,7 +767,7 @@ Het specifieke model van de tijdens het digitaliseringproces gebruikte encoder.
 
 | **XML element**        | `<encoder_model/>`                                                                                                                             |
 | **Datatype**           | Vrije tekst                                                                                                                                    |
-| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de service provider wordt aangeleverd na digitalisering. |
+| **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
 ```xml
