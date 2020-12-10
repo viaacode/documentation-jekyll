@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  Velden > Algemeen
+title:  "Velden: Algemeen"
 parent: Metadatamodel
 nav_order: 1
 ---
