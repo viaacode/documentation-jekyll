@@ -78,6 +78,8 @@ Elk digitaal object in het meemoo archief heeft een unieke PID.
 
 ## Hoofd lokale CP ID
 
+{: #dc_identifier_localid}
+
 De hoofd ID van de oorspronkelijke drager of het *born digital* item. Dit is de registratiecode die het meest courant wordt gebruikt door de CP binnen ***het eigen*** archief- of collectiemanagementsysteem.
 
 Dit is de unieke ID van de content partner die de linkt vormt naar het eigen collectiebeheerssysteem. Dit kan later gebruikt worden om metadata te koppelen in het meemoo archiefsysteem. Voor digitalisering door meemoo is deze ID al in Mediahaven aanwezig, indien deze mee wordt gegeven in [AMS](http://registratie.meemoo.be) `<original_carrier_id/>`.
@@ -88,8 +90,6 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 | **Data type**              | ID                                                                                               |
 | **Verplichting**           | Verplicht indien van toepassing (VA)                                                             |
 | **Herhaalbaar**            | Nee                                                                                              |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
-|                            | - Lokale ID('s)                                                                                  |
 
 ```xml
 <dc_identifier_localid>audiocassette 365</dc_identifier_localid>
@@ -97,7 +97,7 @@ Het kan gebeuren dat voor sommige objecten de CP geen relevante ID of registrati
 
 ## Overige lokale CP ID
 
-{: #localid}
+{: #dc_identifier_localids}
 
 Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* item, gebruikt door de CP binnen het eigen archief- of collectiebeheerssysteem.
 
@@ -105,8 +105,6 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 | **Data type**              | Vrije tekst                                                             |
 | **Verplichting**           | Optioneel                                                                                        |
 | **Herhaalbaar**            | Ja                                                                                               |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
-|                            | - Lokale ID('s)                                                                                  |
 
 
 **Voorbeeld VRT:**
@@ -148,9 +146,6 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 - `<Bestandsnaam />`
 - `<Api />`
 - `<Pdf />`
-
-
-
 
 # Relaties
 
@@ -208,9 +203,6 @@ _Voor andere versies (lange titels, vertalingen) kan het veld 'Alternatieve Tite
 | **Datatype**               | Vrije tekst                                                                                          |
 | **Verplichting**           | Verplicht                                                                                            |
 | **Herhaalbaar**            | Nee                                                                                                  |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :     |
-|                            | - Programma: reekstitel (indien materiaal deel is van reeks of coherent geheel van items)            |
-|                            | - Itemtitel (titel van te beschrijven archiefitem)                                                   |
 
 ```xml
 <dc_title>nieuws 19-09-94</dc_title>
@@ -386,6 +378,8 @@ _Bij het verrijken van de metadata kan het voorvallen dat de titel die tijdens d
 
 ## Datum creatie
 
+{: #dcterms_created}
+
 De datum waarop de inhoud van het object werd gecreëerd.
 
 _Bij de mapping naar het meemoo datamodel wordt de creatiedatum ook gemapt naar het veld `<date>`. Dit metadataveld verwacht een exacte datum om zo ook een facet toe te kunnen voegen in de zoekinterface. Bijkomend wordt hierdoor het item ook zichtbaar op de tijdslijn in de meemoo archiefwebsite._
@@ -397,8 +391,6 @@ _Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht 
 | **Datatype**               | [Extended Date Time Format (EDTF)]({{ site.baseurl }}{% link docs/metadata/datatypes.md %}#edtf)                                                             |
 | **Verplichting**           | Verplicht (indien 'datum uitgave' niet is ingevuld).                                             |
 | **Herhaalbaar**            | Nee                                                                                              |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
-|                            | - Productiedatum en/of gebruiksdatum (bijv. datum eerste uitzending).                            |
 
 
 ```xml
@@ -407,6 +399,8 @@ _Indien onbekend wordt de datum van de creatie van de analoge drager (verplicht 
 
 ## Datum uitgave / uitzending
 
+{: #dcterms_issued}
+
 De datum waarop het item is uitgegeven of uitgezonden.
 
 
@@ -414,8 +408,6 @@ De datum waarop het item is uitgegeven of uitgezonden.
 | **Datatype**               | [Extended Date Time Format (EDTF)]({{ site.baseurl }}{% link docs/metadata/datatypes.md %}#edtf)                                                                      |
 | **Verplichting**           | Verplicht (indien 'datum creatie' niet is ingevuld).                                            |
 | **Herhaalbaar**            | Nee                                                                                             |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden: |
-|                            | - Productiedatum en/of gebruiksdatum (bijv. datum eerste uitzending).                           |
 
 ```xml
 <dcterms_issued>2016-01-27T13:00</dcterms_issued>
@@ -425,6 +417,8 @@ De datum waarop het item is uitgegeven of uitgezonden.
 
 ## Maker
 
+{: #dc_creators}
+
 De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie van de inhoud van het item.
 
 
@@ -432,8 +426,6 @@ De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie 
 | **Datatype**               | Vrije tekst                                                                                     |
 | **Verplichting**           | Verplicht indien gekend (VA)                                                                                                        |
 | **Herhaalbaar**            | Ja                                                                                                                                  |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                    |
-|                            | - Producent/Maker (indien gekend)                                                                                                   |
 
 ```xml
 <dc_creators type="list">
@@ -558,6 +550,8 @@ Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worde
 
 ## Hoofdbeschrijving
 
+{: #dc_description }
+
 Een korte, algemene omschrijving van de intellectuele inhoud van een item.
 
 
@@ -565,14 +559,14 @@ Een korte, algemene omschrijving van de intellectuele inhoud van een item.
 | **Datatype**               | Vrije tekst                                                                                                                                                  |
 | **Verplichting**           | Verplicht indien geen minimum van vijf trefwoorden.                                                                                                          |
 | **Herhaalbaar**            | Nee                                                                                                                                                          |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                             |
-|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) of een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
 
 ```xml
 <dc_description>Deze interviews zijn ingericht door het Universiteitsarchief en vormen een basis voor een onderzoek. Het eindresultaat is de publicatie \'Meisjestudenten aan de RUG</dc_description>
 ```
 
 ## Lange beschrijving
+
+{: #dc_description_long }
 
 Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbeeld door puntsgewijs de voornaamste scènes, stock-shots, aparte items... te beschrijven. Voor ondertitels is een apart veld voorzien.
 
@@ -581,10 +575,10 @@ Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbee
 | **Datatype**               | Vrije tekst                                                                                                                                                                    |
 | **Verplichting**           | Optioneel                                                                                                                                                                      |
 | **Herhaalbaar**            | Nee                                                                                                                                                                            |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                               |
-|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
 
 ## Programmabeschrijving
+
+{: #dc_description_programme }
 
 Een korte beschrijving van het programma waar het item een onderdeel van vormt.
 
@@ -595,6 +589,8 @@ Een korte beschrijving van het programma waar het item een onderdeel van vormt.
 | **Herhaalbaar**        | Nee                                                                               |
 
 ## Cast
+
+{: #dc_description_cast }
 
 Een oplijsting van de voornaamste acteurs/performers en hun respectievelijke rol.
 
@@ -612,13 +608,10 @@ Een oplijsting van de voornaamste acteurs/performers en hun respectievelijke rol
 
 Een weergave van de ondertitels die bij het digitale object horen.
 
-
 | **XML element**            | `<dc_description_ondertitels/>`                                                                                                                                                |
 | **Datatype**               | Vrije tekst                                                                                                                                                                    |
 | **Verplichting**           | Optioneel                                                                                                                                                                      |
 | **Herhaalbaar**            | Nee                                                                                                                                                                            |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                               |
-|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
 
 ## Transcriptie
 
@@ -630,8 +623,6 @@ _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden 
 | **Datatype**               | Vrije tekst                                                                                                                                                                    |
 | **Verplichting**           | Optioneel                                                                                                                                                                      |
 | **Herhaalbaar**            | Nee                                                                                                                                                                            |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                               |
-|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **[of]{.underline}** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
 
 ## Genre
 
@@ -715,14 +706,14 @@ Let wel: het betreft hier de tijdsperiode waar het item *inhoudelijk* betrekking
 
 ## Trefwoorden
 
+{: #dc_subjects}
+
 Thematische trefwoorden met betrekking tot de inhoud van het item.
 
 | **XML element**            | `<dc_subjects type="list"><Trefwoord/></dc_subjects>`                                                                                                          |
 | **Datatype**               | Vrije tekst                                                                                                                                                      |
 | **Verplichting**           | Verplicht (minimaal 5 trefwoorden) indien geen (korte) beschrijving                                                                                              |
 | **Herhaalbaar**            | Ja                                                                                                                                                               |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                 |
-|                            | - Beschrijving (summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) **of** een minimum van 5 trefwoorden die de inhoud van het item beschrijven |
 
 ```xml
 <dc_subjects type="list">
@@ -733,6 +724,8 @@ Thematische trefwoorden met betrekking tot de inhoud van het item.
 
 ## Taal
 
+{: #dc_languages }
+
 De (belangrijkste) taal/talen die in het item worden gesproken of gebruikt.
 
 Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitels. In het geval van een stomme film, is de taal van de eventuele tussentitels indicatief.
@@ -741,8 +734,6 @@ Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitel
 | **Datatype**               | [ISO 639-1](https://nl.wikipedia.org/wiki/Lijst_van_ISO_639-codes) ("nl" = Nederlands; "fr" = Frans; "de" = Duits; "it" = Italiaans; "en" = Engels; "es" = Spaans; ...) |
 | **Verplichting**           | Verplicht                                                                                                                                                               |
 | **Herhaalbaar**            | Ja                                                                                                                                                                      |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                                        |
-|                            | Taal: taal van het item                                                                                                                                                 |
 
 ```xml
 <dc_languages type="list">
@@ -799,14 +790,14 @@ Zie de [detailpagina]({{ site.baseurl }}{% link docs/metadata/licenties.md %}) o
 
 ## Auteursrechthouder
 
+{: #dc_rights_rightsOwners}
+
 De persoon of organisatie die de auteursrechten bezit. Dit kan de eigenlijke auteur zijn, zijn erfgenamen of een derde partij aan wie de rechten zijn overgedragen.
 
 | **XML element**            | `<dc_rights_rightsOwners type="list"><Auteursrechthouder/></dc_rights_rightsOwners>`             |
 | **Datatype**               | Vrije tekst                                                                                      |
 | **Verplichting**           | Verplicht (indien gekend)                                                                        |
 | **Herhaalbaar**            | Ja                                                                                               |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden : |
-|                            | - Rechthebbende (indien gekend)                                                                  |
 
 ```xml
 <dc_rights_rightsOwners>
@@ -850,14 +841,14 @@ Tekst van de attributie of kennisgeving die bij het beeld moet verschijnen.
 
 ## Opmerkingen rechten
 
+{: #dc_rights_comment}
+
 Hier kunnen bijkomende opmerkingen en voorwaarden met betrekking tot de gebruiksrechten van toepassing op het item worden vastgelegd.
 
 | **XML element**            | `<dc_rights_comment/>`                                                                                                                             |
 | **Datatype**               | Vrije tekst                                                                                                                                        |
 | **Verplichting**           | Optioneel                                                                                                                                          |
 | **Herhaalbaar**            | Nee                                                                                                                                                 |
-| **Gebruiksovereenkomst**   | In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden :                                                   |
-|                            | - Gebruiksbeperkingen indien van toepassing (afwijking van de standaard policy: mag gebruikt worden voor meemoo doelgroepen conform de overeenkomst) |
 
 ```xml
 <dc_rights_comment>Gelieve contact op te nemen met reproductie\@uu.be</dc_rights_comment>

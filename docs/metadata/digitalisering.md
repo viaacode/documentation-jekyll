@@ -6,7 +6,7 @@ nav_order: 3
 ---
 
 {: .fw-300 }
-Deze velden worden gebruikt door de digitaliseringspartners van meemoo tijdens het digitaliseringsproject.
+Deze velden worden gebruikt door de digitaliseringspartners van meemoo in kader van het digitaliseringsproject.
 
 <details markdown="block">
   <summary>

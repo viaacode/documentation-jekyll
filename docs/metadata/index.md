@@ -5,9 +5,26 @@ has_children: true
 has_toc: false
 nav_order: 1
 ---
+# Metadatamodel
 
+1. Velden in het metadatamodel:
+   1. [Algemeen]({{ site.baseurl }}{% link docs/metadata/algemeen.md %})
+   2. [Registratie van analoge dragers]({{ site.baseurl }}{% link docs/metadata/registratie.md %})
+   3. [Digitaliseringsproces]({{ site.baseurl }}{% link docs/metadata/digitalisering.md %})
+2. [Datatypes]({{ site.baseurl }}{% link docs/metadata/datatypes.md %})
+3. [Licenties]({{ site.baseurl }}{% link docs/metadata/licenties.md %})
 
-
+In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden:
+- [dc_identifier_localid]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#mainlocalid) of [dc_identifier_localids]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_identifier_localids): Lokale ID('s)
+- [dc_title]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_title)
+  - Programma: reekstitel (indien materiaal deel is van reeks of coherent geheel van items)
+  - Itemtitel: titel van te beschrijven archiefitem
+- [dcterms_created]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dcterms_created) (Productiedatum) en/of [dcterms_issued]]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dcterms_issued) gebruiksdatum (bijv. datum eerste uitzending)
+- [dc_creators]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_creators): Producent / Maker (indien gekend)
+- [dc_description]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_description) / [dc_subjects]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_subjects): Summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) of een minimum van 5 [trefwoorden]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_subjects) die de inhoud van het item beschrijven
+- [dc_languages]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_languages): taal van het item
+- [dc_rights_rightsOwners]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_rights_rightsOwners): Rechthebbende (indien gekend)
+- [dc_rights_comment]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_rights_comment): Gebruiksbeperkingen indien van toepassing (afwijking van de standaard policy: mag gebruikt worden voor meemoo doelgroepen conform de overeenkomst)
 
 <!-- # Basisannotatie VIAA metadatamodel
 
