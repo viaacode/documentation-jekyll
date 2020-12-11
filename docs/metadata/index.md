@@ -15,16 +15,16 @@ nav_order: 1
 3. [Licenties]({{ site.baseurl }}{% link docs/metadata/licenties.md %})
 
 In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden:
-- [dc_identifier_localid]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#mainlocalid) of [dc_identifier_localids]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_identifier_localids): Lokale ID('s)
+- [dc_identifier_localid]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#mainlocalid) of [dc_identifier_localids]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_identifier_localids): lokale ID('s)
 - [dc_title]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_title)
   - Programma: reekstitel (indien materiaal deel is van reeks of coherent geheel van items)
   - Itemtitel: titel van te beschrijven archiefitem
-- [dcterms_created]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dcterms_created) (Productiedatum) en/of [dcterms_issued]]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dcterms_issued) gebruiksdatum (bijv. datum eerste uitzending)
-- [dc_creators]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_creators): Producent / Maker (indien gekend)
-- [dc_description]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_description) / [dc_subjects]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_subjects): Summiere beschrijving in tekst; tijdsgebaseerde annotatie optioneel) of een minimum van 5 [trefwoorden]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_subjects) die de inhoud van het item beschrijven
+- Datering: productiedatum ([dcterms_created]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dcterms_created)) en/of gebruiksdatum (bv. datum eerste uitzending; [dcterms_issued]]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#datum-uitgave--uitzending)
+- [dc_creators]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_creators): producent / maker (indien gekend)
+- Beschrijving: summiere beschrijving in tekst (tijdsgebaseerde annotatie optioneel; [dc_description]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_description)) of een minimum van 5 trefwoorden die de inhoud van het item beschrijven (onder te brengen in [dc_subjects]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_subjects)) 
 - [dc_languages]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_languages): taal van het item
-- [dc_rights_rightsOwners]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_rights_rightsOwners): Rechthebbende (indien gekend)
-- [dc_rights_comment]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_rights_comment): Gebruiksbeperkingen indien van toepassing (afwijking van de standaard policy: mag gebruikt worden voor meemoo doelgroepen conform de overeenkomst)
+- [dc_rights_rightsOwners]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_rights_rightsOwners): rechthebbende (indien gekend)
+- [dc_rights_comment]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_rights_comment): gebruiksbeperkingen indien van toepassing (afwijking van de standaard policy: mag gebruikt worden voor meemoo doelgroepen conform de overeenkomst)
 
 <!-- # Basisannotatie VIAA metadatamodel
 
