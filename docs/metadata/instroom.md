@@ -6,7 +6,7 @@ nav_order: 5
 nav_exclude: true
 ---
 
-# Metadata model for digital intake
+# Metadatamodel voor digitale instroom
 
 ***Work In Progress!***
 
