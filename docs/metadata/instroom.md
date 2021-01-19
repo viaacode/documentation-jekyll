@@ -10,24 +10,22 @@ nav_exclude: true
 
 ***Work In Progress!***
 
-This guide gives the Content Partners (CPs) of VIAA more insight how metadata is structured inside VIAAs MAM and how they should deliver metadata for digital intake. CPs that have  borndigital or digitised material will need to deliver metadata about these essences. This is done by supplying a sidecar XML for every essence, e.g. test.xml + test.mxf. VIAAs ingest proces expects metadata that is already mapped to the VIAA metadata model that is explained below. In future work we would like to support standards like Dublin Core. If you have remarks, questions... let us know at support@viaa.be!
+Deze korte handleiding biedt contentpartners (CP's) van meemoo meer inzicht in hoe de metadata gestructureerd wordt in meemoo's MAM en hoe bijgevolg moet aangeleverd worden bij digitale intake. CP's die over born digital of gedigitaliseerd materiaal beschikken, zullen metadata over deze essence moeten aanleveren. Dit gebeurt in de vorm van een sidecar XML-bestand voor elke essence, bv. test.xml + test.mxf. Meemoo's ingestproces verwacht metadata die reeds gemapt werd naar meemoo's metadatamodel, zoals uitgelegd hieronder. Indien je vragen en/of opmerkingen zou hebben, horen we die graag via support@meemoo.be!
 
-Here you can find a XSD to validate your mapping, examples and explanation of all the metadata fields.
+Hier kan je een XSD vinden om je mapping te valideren, samen voorbeelden en een uitleg van alle metadatavelden.
 
-## Validation
+## Validatie
 
-You can validate your mapped metadata with our XSD `viaa_metadatamodel_xsd.xsd`.
-An easy way to do this is with xmllint, which is part of [libxml](http://xmlsoft.org/).
-Open a Terminal and run following command:
+Je kan je gemapte metadata valideren aan de hand van onze XSD `viaa_metadatamodel_xsd.xsd`. Een eenvoudige manier om dit te doen, is met xmllint (een deel van  [libxml](http://xmlsoft.org/)). Open een terminal en voer volgend commando uit:
 
 ```bash
 xmllint --noout --schema viaa_metadatamodel_voor_cp.xsd viaa_metadatamodel_voorbeeld_voor_cp.xml
 ```
 
-## Full metadata example
+## Voorbeeld van een volledig ingevuld metadatabestand
 
-See `viaa_metadatamodel_voorbeeld_voor_cp.xml` for a full metadata XML.
+Zie `viaa_metadatamodel_voorbeeld_voor_cp.xml` voor een voorbeeld van een volledig ingevuld metadatabestand.
 
 ## Metadata model
 
-See velden: [Algemeen]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}) | [Digitalisering]({{ site.baseurl }}{% link docs/metadata/digitalisering.md %}) 
+Zie velden: [Algemeen]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}) | [Digitalisering]({{ site.baseurl }}{% link docs/metadata/digitalisering.md %}) 
