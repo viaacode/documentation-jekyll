@@ -566,15 +566,23 @@ Een korte, algemene omschrijving van de intellectuele inhoud van een item.
 
 ## Lange beschrijving
 
-{: #dc_description_long }
+{: #dc_description_lang }
 
 Een gedetailleerde beschrijving van de inhoud van het object. Dit kan bijvoorbeeld door puntsgewijs de voornaamste scènes, stock-shots, aparte items... te beschrijven. Voor ondertitels is een apart veld voorzien.
 
 
-| **XML element**            | `<dc_description_long/>`                                                                                                                                                       |
+| **XML element**            | `<dc_description_lang/>`                                                                                                                                                       |
 | **Datatype**               | Vrije tekst                                                                                                                                                                    |
 | **Verplichting**           | Optioneel                                                                                                                                                                      |
 | **Herhaalbaar**            | Nee                                                                                                                                                                            |
+
+```xml
+<dc_description_lang>
+    Deze interviews zijn ingericht door het Universiteitsarchief en vormen een basis voor een onderzoek. 
+    
+    Het eindresultaat is de publicatie \'Meisjestudenten aan de RUG
+</dc_description_lang>
+```
 
 ## Programmabeschrijving
 
