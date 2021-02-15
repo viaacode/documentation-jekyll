@@ -493,6 +493,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 - `<Co-producer />`
 - `<Commentator />`
 - `<Componist />`
+- `<Digitaliseringspartner />`
 - `<Dirigent />`
 - `<Fotografie />`
 - `<Geluid />`
