@@ -129,24 +129,25 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 
 {: .no_toc }
 
-| `<Acquisition_number />`      | |
-| `<Alternative_number />`      | |
-| `<Analoge_drager />`          | |
-| `<Ardome />`                  | |
-| `<Basis />`                   | |
-| `<Historical_carrier />`      | |
+| `<Acquisition_number />`       | |
+| `<Alternative_number />`       | |
+| `<Analoge_drager />`           | |
+| `<Ardome />`                   | |
+| `<Basis />`                    | |
+| `<Historical_carrier />`       | |
 | `<Historical_record_number />` | |
-| `<MEDIA_ID />`                | |
-| `<Object_number />`           | Het Axiell Adlib object number.  |
-| `<Priref />`                  | |
-| `<Word_ID />`                 | |
-| `<WorkPID />`                 | |
-| `<DataPID />`                 | |
-| `<Bestandsnaam />`            | De orignele bestandsnaam van het item. |
-| `<Api />`                     | |
-| `<Pdf />`                     | |
-| `<PersistenteURI_Record />`   | Persistente URI die verwijst naar de lokale record bij de contentpartner. |
-| `<PersistenteURI_Werk />`     | Persistente URI die verwijst naar het werk dat wordt afgebeeld. |
+| `<MEDIA_ID />`                 | |
+| `<Object_number />`            | Het Axiell Adlib object number.  |
+| `<Priref />`                   | |
+| `<Word_ID />`                  | |
+| `<WorkPID />`                  | |
+| `<DataPID />`                  | |
+| `<Bestandsnaam />`             | De orignele bestandsnaam van het item. |
+| `<Api />`                      | |
+| `<Pdf />`                      | |
+| `<PersistenteURI_Record />`    | Persistente URI die verwijst naar de lokale record bij de contentpartner. |
+| `<PersistenteURI_Werk />`      | Persistente URI die verwijst naar het werk dat wordt afgebeeld. |
+
 # Relaties
 
 De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele relaties aan te duiden tussen verschillende digitale objecten. De definitie van deze relaties beperkt zich tot 3 verschillende types (is deel van, bevat, is verwant aan).
