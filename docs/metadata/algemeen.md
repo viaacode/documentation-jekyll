@@ -129,24 +129,24 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 
 {: .no_toc }
 
-- `<Acquisition_number />`
-- `<Adlib />`
-- `<Alternative_number />`
-- `<Analoge_drager />`
-- `<Ardome />`
-- `<Basis />`
-- `<Historical_carrier />`
-- `<Historical_record_number />`
-- `<MEDIA_ID />`
-- `<Object_number />`
-- `<Priref />`
-- `<Word_ID />`
-- `<WorkPID />`
-- `<DataPID />`
-- `<Bestandsnaam />`
-- `<Api />`
-- `<Pdf />`
-
+| `<Acquisition_number />`      | |
+| `<Alternative_number />`      | |
+| `<Analoge_drager />`          | |
+| `<Ardome />`                  | |
+| `<Basis />`                   | |
+| `<Historical_carrier />`      | |
+| `<Historical_record_number />` | |
+| `<MEDIA_ID />`                | |
+| `<Object_number />`           | Het Axiell Adlib object number.  |
+| `<Priref />`                  | |
+| `<Word_ID />`                 | |
+| `<WorkPID />`                 | |
+| `<DataPID />`                 | |
+| `<Bestandsnaam />`            | De orignele bestandsnaam van het item. |
+| `<Api />`                     | |
+| `<Pdf />`                     | |
+| `<PersistenteURI_Record />`   | Persistente URI die verwijst naar de lokale record bij de contentpartner. |
+| `<PersistenteURI_Werk />`     | Persistente URI die verwijst naar het werk dat wordt afgebeeld. |
 # Relaties
 
 De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele relaties aan te duiden tussen verschillende digitale objecten. De definitie van deze relaties beperkt zich tot 3 verschillende types (is deel van, bevat, is verwant aan).
@@ -440,25 +440,25 @@ De persoon of instelling die (in hoofdzaak) verantwoordelijk is voor de creatie 
 
 Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan. Deze kan afhankelijk van de partner worden aangepast. Indien geen van de rollen van toepassing is, kan het generieke 'maker' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
 
-- `<Maker />`
-- `<Archiefvormer />`
-- `<Auteur />`
-- `<Acteur />`
-- `<Cineast />`
-- `<Componist />`
-- `<Choreograaf />`
-- `<Danser />`
-- `<Documentairemaker />`
-- `<Fotograaf />`
-- `<Interviewer />`
-- `<Kunstenaar />`
-- `<Muzikant />`
-- `<Performer />`
-- `<Producer />`
-- `<Productiehuis />`
-- `<Regisseur />`
-- `<Schrijver />`
-- `<Opdrachtgever />`
+| `<Maker />` | |
+| `<Archiefvormer />` | |
+| `<Auteur />` | |
+| `<Acteur />` | |
+| `<Cineast />` | |
+| `<Componist />` | |
+| `<Choreograaf />` | |
+| `<Danser />` | |
+| `<Documentairemaker />` | |
+| `<Fotograaf />` | |
+| `<Interviewer />` | |
+| `<Kunstenaar />` | |
+| `<Muzikant />` | |
+| `<Performer />` | |
+| `<Producer />` | |
+| `<Productiehuis />` | |
+| `<Regisseur />` | |
+| `<Schrijver />` | |
+| `<Opdrachtgever />` | |
 
 ## Bijdrager
 
@@ -483,39 +483,39 @@ De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud 
 
 Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan.
 
-- `<Bijdrager />`
-- `<Adviseur />`
-- `<Arrangeur />`
-- `<Assistent />`
-- `<Auteur />`
-- `<Belichting />`
-- `<Cameraman />`
-- `<Co-producer />`
-- `<Commentator />`
-- `<Componist />`
-- `<Digitaliseringspartner />`
-- `<Dirigent />`
-- `<Fotografie />`
-- `<Geluid />`
-- `<Kunstenaar />`
-- `<Make-up />`
-- `<Muzikant />`
-- `<Nieuwsanker />`
-- `<Omroeper />`
-- `<Onderzoeker />`
-- `<Post-productie />`
-- `<Producer />`
-- `<Reporter />`
-- `<Scenarist />`
-- `<Soundtrack />`
-- `<Sponsor />`
-- `<Uitvoerder />`
-- `<Vertaler />`
-- `<Verteller />`
-- `<Artistiekdirecteur />`
-- `<Decorontwerper />`
-- `<Kostuumontwerper />`
-- `<Technischadviseur />`
+| `<Bijdrager />` | |
+| `<Adviseur />` | |
+| `<Arrangeur />` | |
+| `<Assistent />` | |
+| `<Auteur />` | |
+| `<Belichting />` | |
+| `<Cameraman />` | |
+| `<Co-producer />` | |
+| `<Commentator />` | |
+| `<Componist />` | |
+| `<Digitaliseringspartner />` | |
+| `<Dirigent />` | |
+| `<Fotografie />` | |
+| `<Geluid />` | |
+| `<Kunstenaar />` | |
+| `<Make-up />` | |
+| `<Muzikant />` | |
+| `<Nieuwsanker />` | |
+| `<Omroeper />` | |
+| `<Onderzoeker />` | |
+| `<Post-productie />` | |
+| `<Producer />` | |
+| `<Reporter />` | |
+| `<Scenarist />` | |
+| `<Soundtrack />` | |
+| `<Sponsor />` | |
+| `<Uitvoerder />` | |
+| `<Vertaler />` | |
+| `<Verteller />` | |
+| `<Artistiekdirecteur />` | |
+| `<Decorontwerper />` | |
+| `<Kostuumontwerper />` | |
+| `<Technischadviseur />` | |
 
 ## Publisher
 
@@ -542,10 +542,10 @@ Aan de hand van een gecontroleerde lijst kan de rol van de publisher worden gesp
 
 Indien geen van de rollen van toepassing is, kan het generieke 'Publisher' worden gebruikt, ofwel kan in overleg met meemoo de gecontroleerde lijst worden uitgebreid.
 
-- `<Distributeur />`
-- `<Exposant />`
-- `<Persagentschap />`
-- `<Publisher />`
+| `<Distributeur />` | |
+| `<Exposant />` | |
+| `<Persagentschap />` | |
+| `<Publisher />` | |
 
 # Inhoud
 
@@ -654,29 +654,29 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 {: .no_toc }
 
-- `<Actualiteit>`
-- `<Animatie>`
-- `<Concert>`
-- `<Dans>`
-- `<Docudrama>`
-- `<Documentaire>`
-- `<Documentatie>`
-- `<Drama>`
-- `<Educatief>`
-- `<Entertainment>`
-- `<Fictie>`
-- `<Interview>`
-- `<Komedie>`
-- `<Kortfilm>`
-- `<Kunstwerk>`
-- `<Muziekopname>`
-- `<Nieuws>`
-- `<Non-fictie>`
-- `<Opera>`
-- `<Performance>`
-- `<Speelfilm>`
-- `<Sport>`
-- `<Wetenschap>`
+| `<Actualiteit>` | |
+| `<Animatie>` | |
+| `<Concert>` | |
+| `<Dans>` | |
+| `<Docudrama>` | |
+| `<Documentaire>` | |
+| `<Documentatie>` | |
+| `<Drama>` | |
+| `<Educatief>` | |
+| `<Entertainment>` | |
+| `<Fictie>` | |
+| `<Interview>` | |
+| `<Komedie>` | |
+| `<Kortfilm>` | |
+| `<Kunstwerk>` | |
+| `<Muziekopname>` | |
+| `<Nieuws>` | |
+| `<Non-fictie>` | |
+| `<Opera>` | |
+| `<Performance>` | |
+| `<Speelfilm>` | |
+| `<Sport>` | |
+| `<Wetenschap>` | |
 
 ## Coverage (ruimtelijk)
 
