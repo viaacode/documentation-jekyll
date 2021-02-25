@@ -484,20 +484,29 @@ De persoon of instelling die een substantiële creatieve bijdrage tot de inhoud 
 
 Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gespecificeerd. meemoo biedt een standaard lijst van rollen aan.
 
-| `<Bijdrager />` | |
+| `<Aanwezig />` | |
 | `<Adviseur />` | |
+| `<Afwezig />` | |
+| `<Archivaris />` | |
 | `<Arrangeur />` | |
+| `<ArtistiekDirecteur />` | |
 | `<Assistent />` | |
 | `<Auteur />` | |
 | `<Belichting />` | |
+| `<Bijdrager />` | |
 | `<Cameraman />` | |
 | `<Co-producer />` | |
 | `<Commentator />` | |
 | `<Componist />` | |
+| `<DecorOntwerper />` | |
 | `<Digitaliseringspartner />` | |
 | `<Dirigent />` | |
+| `<Dramaturg />` | |
 | `<Fotografie />` | |
 | `<Geluid />` | |
+| `<Geluidsman />` | |
+| `<GrafischOntwerper />` | |
+| `<KostuumOntwerper />` | |
 | `<Kunstenaar />` | |
 | `<Make-up />` | |
 | `<Muzikant />` | |
@@ -510,13 +519,13 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 | `<Scenarist />` | |
 | `<Soundtrack />` | |
 | `<Sponsor />` | |
+| `<TechnischAdviseur />` | |
 | `<Uitvoerder />` | |
+| `<Verontschuldigd />` | |
 | `<Vertaler />` | |
 | `<Verteller />` | |
-| `<Artistiekdirecteur />` | |
-| `<Decorontwerper />` | |
-| `<Kostuumontwerper />` | |
-| `<Technischadviseur />` | |
+| `<Voorzitter />` | |
+
 
 ## Publisher
 
