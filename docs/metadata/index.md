@@ -19,7 +19,7 @@ In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal v
 - [dc_title]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_title)
   - Programma: reekstitel (indien materiaal deel is van reeks of coherent geheel van items)
   - Itemtitel: titel van te beschrijven archiefitem
-- Datering: productiedatum ([dcterms_created]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dcterms_created)) en/of gebruiksdatum (bv. datum eerste uitzending; [dcterms_issued]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#datum-uitgave--uitzending)
+- Datering: productiedatum ([dcterms_created]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dcterms_created)) en/of gebruiksdatum (bv. datum eerste uitzending; [dcterms_issued]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#datum-uitgave--uitzending))
 - [dc_creators]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_creators): producent / maker (indien gekend)
 - Beschrijving: summiere beschrijving in tekst (tijdsgebaseerde annotatie optioneel; [dc_description]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_description)) of een minimum van 5 trefwoorden die de inhoud van het item beschrijven (onder te brengen in [dc_subjects]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_subjects)) 
 - [dc_languages]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_languages): taal van het item
