@@ -1,4 +1,6 @@
-# meemoo public technical documentation
+# Meemoo public technical documentation
+
+This repository generates [https://developer.meemoo.be/](https://developer.meemoo.be/).
 
 ## Build the docs locally
 
