@@ -15,7 +15,7 @@ nav_order: 1
 3. [Licenties]({{ site.baseurl }}{% link docs/metadata/licenties.md %})
 
 In het kader van de overeenkomst wordt uitgegaan van het invullen van minimaal volgende velden:
-- [dc_identifier_localid]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#mainlocalid) of [dc_identifier_localids]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_identifier_localids): lokale ID('s)
+- [dc_identifier_localid]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_identifier_localid) of [dc_identifier_localids]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_identifier_localids): lokale ID('s)
 - [dc_title]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}#dc_title)
   - Programma: reekstitel (indien materiaal deel is van reeks of coherent geheel van items)
   - Itemtitel: titel van te beschrijven archiefitem
