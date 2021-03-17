@@ -692,7 +692,7 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 {: #ebu_objecttype }
 
-Het type van uitzending (programma of item).
+Het type uitzending (programma of item).
 
 | **XML element**            | `<ebu_objecttype/>`                                                                                                                                             |
 | **Datatype**               | Vrije tekst                                                                                                                                                  |
