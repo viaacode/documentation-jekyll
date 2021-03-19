@@ -539,7 +539,7 @@ De entiteit in hoofdzaak verantwoordelijk voor het verdelen en het toegankelijk 
 | **Herhaalbaar**            | Ja                                                                                                                       |
 
 ```xml
-<dc_publishers type=list/>
+<dc_publishers type="list"/>
     <Publisher>VRT</Publisher>
 </dc_publishers>
 ```
