@@ -19,9 +19,13 @@ nav_order: 3
 
 ## Introductie
 
-Content partners kunnen zelf aan de slag met onze API's en services om een
-integratie te bouwen. Hieronder vind je informatie om hier mee te kunnen
-starten.
+Contentpartners (verder gewoon "CP" genoemd) kunnen zelf aan de slag met onze
+API's en services om een integratie te bouwen. Hieronder vind je informatie om
+hier mee te kunnen starten.
+
+We leggen uit wat de verschillende software-omgevingen zijn en waarvoor ze
+dienen gebruikt te worden, en, welke publieke API's beschikbaar zijn en hoe
+daarmee te werken.
 
 ## De verschillende omgevingen en hun endpoints
 
@@ -29,7 +33,7 @@ Meemoo heeft twee - publieke - omgevingen:
 
 - QAS: of "staging", een omgeving die productie nabootst en waarin
   ontwikkelaars en CP's kunnen testen.
-- PRD: of "production", de werkelijke omgeving.
+- PRD: of "production", de werkelijke omgeving voor eindgebruikers.
 
 De gewoonlijke (en **sterk** aangeraden) procedure is om eerst in de
 QAS-omgeving te testen en pas als alles naar behoren werkt en uitvoerig is
@@ -89,6 +93,9 @@ De documentatie van beide versies is hier te vinden:
 Authenticatie op v1 is mogelijk via Basic Auth én via OAuth 2.0. Zie de
 documentatie voor meer info.
 
+De referentie-documentatie voor OAuth 2.0 vind je hier:
+[https://oauth.net/2/](https://oauth.net/2/).
+
 ### Authenicatie voor de MediaHaven REST API v2
 
 Authenicatie op v2 is **uitsluitend** mogelijk via OAuth 2.0!
@@ -111,7 +118,7 @@ De keuze voor een flow hangt af van de use-case:
 de "Client Credentials Grant Type". Deze is echter - nog - niet geïmplementeerd
 in de MediaHaven REST API).
 
-Om een applicatie via Oauth2 te laten authenticeren tegen MediaHaven, moet deze
+Om een applicatie via OAuth2 te laten authenticeren tegen MediaHaven, moet deze
 applicatie geregistreerd worden. We hebben dan van je nodig:
 
 - Organisatienaam
