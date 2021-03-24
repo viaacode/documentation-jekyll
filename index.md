@@ -14,3 +14,4 @@ Hier vind je alles over onze APIs en dataformaten.
 
 1. [Alles over het metadatamodel]({{ site.baseurl }}{% link docs/metadata/index.md %})
 2. [Alles over onze OAI-PMH API]({{ site.baseurl }}{% link docs/oai-pmh/index.md %})
+3. [Alles om te starten met het bouwen van een integratie]({{ site.baseurl }}{% link docs/development/index.md %})
