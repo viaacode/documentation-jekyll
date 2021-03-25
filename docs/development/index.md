@@ -4,6 +4,7 @@ title: Ontwikkeling van een integratie
 has_children: false
 has_toc: true
 nav_order: 3
+last_modified_date: 2021-03-25T06:33:08+0100
 ---
 
 <details markdown="block">
@@ -14,6 +15,9 @@ nav_order: 3
 1. TOC
 {:toc}
 </details>
+
+Status: WIP
+{: .label .label-yellow }
 
 # Ontwikkeling van een integratie
 
@@ -50,7 +54,8 @@ Hieronder vind je de verschillende netwerk locaties eigen aan elke omgeving.
 **Note**: de transitie naar het meemoo-domein is nog niet volledig afgerond.
 Voorlopig is het beter en veiliger om nog het viaa-domein te gebruiken. Sowieso
 is het goed om bovenstaande netwerk locaties als omgevingsvariabelen
-("_environment variables_") te configureren in je applicatie of integratie.
+("_environment variables_") te configureren in je applicatie of integratie. Op
+die manier kan er later triviaal geswitched worden naar het nieuwe domain.
 
 ### Netwerk paden
 
