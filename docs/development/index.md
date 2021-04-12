@@ -105,7 +105,7 @@ De referentie-documentatie voor OAuth 2.0 vind je hier:
 
 Authenicatie op v2 is **uitsluitend** mogelijk via OAuth 2.0!
 
-Voor de authorizatie zijn op de MediaHaven REST API v2 zijn momenteel twee
+Voor de authorizatie zijn op de MediaHaven REST API v2 momenteel twee
 OAuth2 flows geïmplementeerd:
 
 - “Authorization Code Grant Type”
