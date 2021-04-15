@@ -93,7 +93,7 @@ De documentatie van beide versies is hier te vinden:
 - REST API v2:
   [https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html)
 
-### Authenicatie voor de MediaHaven REST API v1
+### Authenticatie voor de MediaHaven REST API v1
 
 Authenticatie op v1 is mogelijk via Basic Auth én via OAuth 2.0. Zie de
 documentatie voor meer info.
@@ -101,11 +101,11 @@ documentatie voor meer info.
 De referentie-documentatie voor OAuth 2.0 vind je hier:
 [https://oauth.net/2/](https://oauth.net/2/).
 
-### Authenicatie voor de MediaHaven REST API v2
+### Authenticatie voor de MediaHaven REST API v2
 
-Authenicatie op v2 is **uitsluitend** mogelijk via OAuth 2.0!
+Authenticatie op v2 is **uitsluitend** mogelijk via OAuth 2.0!
 
-Voor de authorizatie zijn op de MediaHaven REST API v2 momenteel twee
+Voor de autorisatie zijn op de MediaHaven REST API v2 momenteel twee
 OAuth2 flows geïmplementeerd:
 
 - “Authorization Code Grant Type”
