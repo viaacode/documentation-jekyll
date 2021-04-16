@@ -16,8 +16,6 @@ last_modified_date: 2021-04-16T12:32:52+02:00
 {:toc}
 </details>
 
-Status: WIP
-{: .label .label-yellow }
 
 # REST API v1 vs v2
 
