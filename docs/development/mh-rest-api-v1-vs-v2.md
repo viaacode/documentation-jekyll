@@ -4,7 +4,7 @@ title: Verschillen tussen REST API v1 en v2
 has_children: false
 has_toc: true
 nav_order: 3
-last_modified_date: 2021-04-13T06:33:08+0100
+last_modified_date: 2021-04-16T12:32:52+02:00
 ---
 
 <details markdown="block">
@@ -62,8 +62,8 @@ dat concreet inhoudt.
 - de structuur van de JSON _response_ wijzigt
 - de _resource_ `/media` is nu `/records` geworden
 
-Voor een volledig overzicht van de verschillen verwijzen we je naar volgende
-pagina: [MediaHaven REST API > Rest V2 vs v1 changes](https://mediahaven.atlassian.net/wiki/spaces/CS/pages/2432303184/Rest+V2+vs+v1+changes).
+Voor een volledig overzicht van de verschillen verwijzen we je naar de links
+onderaan deze pagina.
 
 ### Authenticatie
 
@@ -91,8 +91,11 @@ het HTTP-protocol. Hierbij wordt gebruik gemaakt van _access tokens_ met een
 korte levensduur. Ook deze worden − gewoonlijk − meegegeven in de HTTP-requests
 via de `Authorization` _header_ maar met de  `Bearer` prefix, bijvoorbeeld:
 
-
     Authorization: Bearer RsT5OjbzRn430zqMLgV3Ia
+
+Op deze pagina vind je meer informatie over de OAuth2 authenticatie: [Alles om
+te starten met het bouwen van een integratie]({{ site.baseurl }}{% link
+docs/development/index.md %}).
 
 **Waarom is dit belangrijk?** Integraties gebaseerd op REST API v1 zullen niet
 meer werken aangezien ze niet meer geauthenticeerd zijn.
@@ -114,8 +117,8 @@ De nieuwere responseformaten in de REST API v1 (in de tabel hierboven: `JSON
 v2` en `XML v2`) worden de standaard in de REST API v2. Dit betekent dat de
 `Accept` _headers_ `application/vnd.mediahaven.v2+json` en
 `application/vnd.mediahaven.v2+xml` komen te vervallen. Het standaard formaat
-van de _response_ in de REST API v2 is nu gelijk aan het _custom_
-formaat in de REST API v1.
+van de _response_ in de REST API v2 is nu quasi gelijk aan het v2 formaat in
+de REST API v1.
 
 Naast een wijziging aan de structuur (i.e. op welk JSON-pad bepaalde data te
 vinden is) van de _response_, is ook de _casing_ gewijzigd:
@@ -123,14 +126,81 @@ vinden is) van de _response_, is ook de _casing_ gewijzigd:
 - de JSON _keys_ in het v1 formaat zijn camelCase (e.g., `totalNrOfResults`)
 - de JSON _keys_ in het v2 formaat zijn PascalCase (e.g., `TotalNrOfResults`)
 
+#### Voorbeelden
+
+- JSON responseformaat `application/json` in REST API v1
+
+```json
+{
+    "totalNrOfResults": 10,
+    "startIndex": 0,
+    "mediaDataList": [
+        {
+        ...
+        }
+    ]
+}
+```
+
+- JSON responseformaat `application/vnd.mediahaven.v2+json` in REST API v1
+
+```json
+{
+    "TotalNrOfResults": 10,
+    "StartIndex": 0,
+    "MediaDataList": [
+        {
+        ...
+        }
+      ]
+}
+```
+
+- JSON responseformaat `application/json` in REST API v2
+
+```json
+{
+    "NrOfResults" : 5
+    "TotalNrOfResults": 10,
+    "StartIndex": 0,
+    "Results": [
+        {
+        ...
+        }
+    ]
+}
+```
+
+Zo zien we hier ook dat de _array_ die de resultaten bevat in de REST API v2
+nu altijd `Results` is.
+
 **Waarom is dit belangrijk?** Integraties zijn meestal hoofdlettergevoelig en
 verwachten bepaalde data op een bepaalde plaats te vinden, deze assumpties
 zouden niet meer gelden in de REST API v2.
 
 ### Van `/media` resource naar `/records`
 
-**TODO**
+De belangrijkste resource, de mediaobjecten, heetten in de REST API v1 `media`.
+Dit is nu gewijzigd naar `records`.
+
+## Nieuwe _features_
+
+Zie [MediaHaven Customer Support > REST API > Rest V2 vs v1 changes >
+New-features](https://mediahaven.atlassian.net/wiki/spaces/CS/pages/2432303184/Rest+V2+vs+v1+changes#New-features)
 
 ## Links
 
-**TODO**
+### Documentatie
+
+De documentatie van beide versies is hier te vinden:
+
+- REST API v1:
+  [https://archief.viaa.be/mediahaven-rest-api](https://archief.viaa.be/mediahaven-rest-api)
+- REST API v2:
+  [https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html)
+
+MediaHaven documentatie over de verschillen tussen REST API v1 en v2:
+
+- [MediaHaven Customer Support > REST API > Rest V2 vs v1
+  changes](https://mediahaven.atlassian.net/wiki/spaces/CS/pages/2432303184/Rest+V2+vs+v1+changes)
+
