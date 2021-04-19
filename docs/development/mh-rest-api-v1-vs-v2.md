@@ -4,7 +4,7 @@ title: Verschillen tussen REST API v1 en v2
 has_children: false
 has_toc: true
 nav_order: 3
-last_modified_date: 2021-04-16T12:32:52+02:00
+last_modified_date: 2021-04-19T09:27:33+02:00
 ---
 
 <details markdown="block">
@@ -21,8 +21,9 @@ last_modified_date: 2021-04-16T12:32:52+02:00
 
 MediaHaven biedt sinds het begin een REST API aan om bewerkingen uit te kunnen
 voeren op mediaobjecten. Vanaf MediaHaven versie 21.1 (uitgebracht op 16 april
-2021) werd van deze REST API een nieuwe versie uitgerold. We zullen verder deze
-twee versies van elkaar onderscheiden met de aanduidingen "v1" en "v2".
+2021) werd van deze REST API een nieuwe versie uitgerold. We zullen verder in
+de tekst deze twee versies van elkaar onderscheiden met de aanduidingen "v1" en
+"v2".
 
 Hoewel veel van de basisfuncties in de nieuwe REST API (zoals het opvragen
 van een _resource_, het uitvoeren van een zoekopdracht,...) quasi onveranderd
@@ -65,9 +66,9 @@ onderaan deze pagina.
 
 ### Authenticatie
 
-- **Authenticatie**: is het proces waarbij waarbij gebruikers aantonen dat ze
-  werkelijk zijn wie ze beweren te zijn, of liever, dat ze de werkelijke
-  eigenaar zijn van de identiteit die ze beweren te hebben.
+- **Authenticatie** is het proces waarbij gebruikers aantonen dat ze werkelijk
+  zijn wie ze beweren te zijn, of liever: dat ze de werkelijke eigenaar zijn
+  van de identiteit die ze beweren te hebben.
 - **Autorisatie** is het proces waarbij een applicatie, op basis van de
   vastgestelde en geverifieerde identiteit, bepaalde acties toelaat of net
   weigert.
@@ -77,7 +78,7 @@ De REST API v1 liet twee manieren van authenticatie toe:
 - _basic authentication_
 - OAuth2
 
-_Basic authentication_ is een heel simpele vorm van authenticatie dat deel
+_Basic authentication_ is een heel simpele vorm van authenticatie die deel
 uitmaakt van het HTTP-protocol. Hierbij worden gebruikersnaam en wachtwoord met
 elke _call_ naar de API meegegeven in de HTTP `Authorization` _header_ met de
 `Basic` prefix, bijvoorbeeld:
@@ -114,7 +115,7 @@ _header_. In de REST API v1 waren volgende responseformaten mogelijk:
 De nieuwere responseformaten in de REST API v1 (in de tabel hierboven: `JSON
 v2` en `XML v2`) worden de standaard in de REST API v2. Dit betekent dat de
 `Accept` _headers_ `application/vnd.mediahaven.v2+json` en
-`application/vnd.mediahaven.v2+xml` komen te vervallen. Het standaard formaat
+`application/vnd.mediahaven.v2+xml` komen te vervallen. Het standaardformaat
 van de _response_ in de REST API v2 is nu quasi gelijk aan het v2 formaat in
 de REST API v1.
 
@@ -197,7 +198,8 @@ De documentatie van beide versies is hier te vinden:
 - REST API v2:
   [https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html)
 
-MediaHaven documentatie over de verschillen tussen REST API v1 en v2:
+Raadpleeg hier de MediaHaven-documentatie over de verschillen tussen REST API
+v1 en v2:
 
 - [MediaHaven Customer Support > REST API > Rest V2 vs v1
   changes](https://mediahaven.atlassian.net/wiki/spaces/CS/pages/2432303184/Rest+V2+vs+v1+changes)
