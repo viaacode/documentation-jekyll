@@ -451,6 +451,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecif
 | `<Danser />` | |
 | `<Documentairemaker />` | |
 | `<Fotograaf />` | |
+| `<Geïnterviewde />` | |
 | `<Interviewer />` | |
 | `<Kunstenaar />` | |
 | `<Muzikant />` | |
