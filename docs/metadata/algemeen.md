@@ -650,14 +650,14 @@ _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden 
 
 Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door meemoo beheerd wordt.
 
-| **XML element**            | `<dc_types type="list"><genre/></dc_types>`                                                                   |
+| **XML element**            | `<dc_types type="list"><multiselect/></dc_types>`                                                                   |
 | **Datatype**               | Gecontroleerde lijst                                                           |
 | **Verplichting**           | Optioneel                                                                                                     |
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
 <dc_types type="list">
-    <genre>sportverslaggeving</genre>
+    <multiselect>sportverslaggeving</multiselect>
 </dc_types>
 ```
 
