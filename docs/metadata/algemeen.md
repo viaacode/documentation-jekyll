@@ -657,7 +657,7 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 ```xml
 <dc_types type="list">
-    <multiselect>sportverslaggeving</multiselect>
+    <multiselect>Sport</multiselect>
 </dc_types>
 ```
 
@@ -665,29 +665,30 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 {: .no_toc }
 
-| `<Actualiteit>` | |
-| `<Animatie>` | |
-| `<Concert>` | |
-| `<Dans>` | |
-| `<Docudrama>` | |
-| `<Documentaire>` | |
-| `<Documentatie>` | |
-| `<Drama>` | |
-| `<Educatief>` | |
-| `<Entertainment>` | |
-| `<Fictie>` | |
-| `<Interview>` | |
-| `<Komedie>` | |
-| `<Kortfilm>` | |
-| `<Kunstwerk>` | |
-| `<Muziekopname>` | |
-| `<Nieuws>` | |
-| `<Non-fictie>` | |
-| `<Opera>` | |
-| `<Performance>` | |
-| `<Speelfilm>` | |
-| `<Sport>` | |
-| `<Wetenschap>` | |
+| `Actualiteit` | |
+| `Animatie` | |
+| `Concert` | |
+| `Dans` | |
+| `Docudrama` | |
+| `Documentaire` | |
+| `Documentatie` | |
+| `Drama` | |
+| `Educatief` | |
+| `Entertainment` | |
+| `Fictie` | |
+| `Interview` | |
+| `Komedie` | |
+| `Kortfilm` | |
+| `Kunstwerk` | |
+| `Muziekopname` | |
+| `Nieuws` | |
+| `Non-fictie` | |
+| `Opera` | |
+| `Performance` | |
+| `Speelfilm` | |
+| `Sport` | |
+| `Wetenschap` | |
+| `Praatprogramma` ||
 
 ## Coverage (ruimtelijk)
 
