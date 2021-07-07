@@ -688,7 +688,7 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 | `Speelfilm` | |
 | `Sport` | |
 | `Wetenschap` | |
-| `Praatprogramma` ||
+| `Praatprogramma` | Een televisieprogramma of radioprogramma waarbij het hoofdaandeel uit spreken bestaat; een talkshow. |
 
 ## Coverage (ruimtelijk)
 
