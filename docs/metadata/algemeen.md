@@ -650,14 +650,14 @@ _De transcriptie kan eventueel in de toekomst ook automatisch aangemaakt worden 
 
 Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst die door meemoo beheerd wordt.
 
-| **XML element**            | `<dc_types type="list"><genre/></dc_types>`                                                                   |
+| **XML element**            | `<dc_types type="list"><multiselect/></dc_types>`                                                                   |
 | **Datatype**               | Gecontroleerde lijst                                                           |
 | **Verplichting**           | Optioneel                                                                                                     |
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
 <dc_types type="list">
-    <genre>sportverslaggeving</genre>
+    <multiselect>Sport</multiselect>
 </dc_types>
 ```
 
@@ -665,29 +665,30 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 {: .no_toc }
 
-| `<Actualiteit>` | |
-| `<Animatie>` | |
-| `<Concert>` | |
-| `<Dans>` | |
-| `<Docudrama>` | |
-| `<Documentaire>` | |
-| `<Documentatie>` | |
-| `<Drama>` | |
-| `<Educatief>` | |
-| `<Entertainment>` | |
-| `<Fictie>` | |
-| `<Interview>` | |
-| `<Komedie>` | |
-| `<Kortfilm>` | |
-| `<Kunstwerk>` | |
-| `<Muziekopname>` | |
-| `<Nieuws>` | |
-| `<Non-fictie>` | |
-| `<Opera>` | |
-| `<Performance>` | |
-| `<Speelfilm>` | |
-| `<Sport>` | |
-| `<Wetenschap>` | |
+| `Actualiteit` | |
+| `Animatie` | |
+| `Concert` | |
+| `Dans` | |
+| `Docudrama` | |
+| `Documentaire` | |
+| `Documentatie` | |
+| `Drama` | |
+| `Educatief` | |
+| `Entertainment` | |
+| `Fictie` | |
+| `Interview` | |
+| `Komedie` | |
+| `Kortfilm` | |
+| `Kunstwerk` | |
+| `Muziekopname` | |
+| `Nieuws` | |
+| `Non-fictie` | |
+| `Opera` | |
+| `Performance` | |
+| `Speelfilm` | |
+| `Sport` | |
+| `Wetenschap` | |
+| `Praatprogramma` ||
 
 ## Coverage (ruimtelijk)
 
