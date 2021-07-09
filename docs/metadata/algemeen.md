@@ -48,7 +48,7 @@ De unieke identifier van de Content Partner.
 
 ## Sub CP naam
 
-{: .warn }
+{: .info }
 Dit veld is verouderd en wordt niet langer gebruikt.
 
 De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing indien uw organisatie onderverdeeld is in suborganisaties).
