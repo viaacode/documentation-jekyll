@@ -101,3 +101,13 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
 #ga_tracking: UA-5555555-55
+callouts:
+  highlight:
+    color: yellow
+    opacity: 0.5
+  important:
+    title: Important
+    color: green
+  note:
+    title: Note
+    color: blue
