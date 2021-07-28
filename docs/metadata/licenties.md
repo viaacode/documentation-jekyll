@@ -7,29 +7,29 @@ nav_order: 5
 
 # Licenties
 
-Op deze pagina vind je een overzicht van alle bestaande licenties in het VIAA-metadatamodel en meer informatie over het moment waarop welke licentie actief wordt.
+Op deze pagina vind je een overzicht van alle bestaande licenties in het _VIAA-metadatamodel_, het metadatamodel dat momenteel in gebruik is bij meemoo, en meer informatie over het moment waarop welke licentie actief wordt.
 
 ## Overzicht van de licenties
 
-Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadatamodel. Per licentie wordt aangegeven wat de waarde is in het VIAA-archief en wat de waarde betekent.
+Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metadatamodel_. Per licentie wordt aangegeven wat de waarde is in het meemoo archief en wat de waarde betekent.
 
-### VIAA-licentie onderwijs
+### Onderwijs
 
 - MAM-naam: `VIAA-ONDERWIJS`
 
 - Defaultwaarde: AAN
 
-- Implicatie: VIAA mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be.
+- Implicatie: meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be.
 
-### VIAA-licentie onderzoek
+### Onderzoek
 
 - MAM-naam: `VIAA-ONDERZOEK`
 
 - Defaultwaarde: AAN
 
-- Implicatie: VIAA mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar.
+- Implicatie: meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar.
 
-### VIAA-licentie bibliotheken
+### Bibliotheken
 
 - MAM naam: `VIAA-BIBLIOTHEKEN`
 
@@ -43,9 +43,9 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
 - Default waarde: UIT
 
-- Implicatie: wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de VIAA-muren ontsloten zou worden.
+- Implicatie: wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de meemoo-muren ontsloten zou worden.
 
-### VIAA-licentie intra content partners
+### Intra contentpartners
 
 - Content
 
@@ -53,7 +53,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
   - Defaultwaarde: AAN
 
-  - Implicatie: De browsekopie van het object mag gedeeld worden tussen de VIAA content partners. In sommige gevallen gelden hier uitzonderingen op, zie verder in dit document. Indien deze licentie gegeven wordt, zal ook de licentie VIAA-INTRA_CP-METADATA-ALL van toepassing worden.
+  - Implicatie: De browsekopie van het object mag gedeeld worden tussen de meemoo contentpartners. In sommige gevallen gelden hier uitzonderingen op, zie verder in dit document. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden.
 
 - Metadata
 
@@ -61,9 +61,9 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
   - Defaultwaarde: AAN
 
-  - Implicatie: Alle metadata van het object mag gedeeld worden tussen de VIAA content partners. In sommige gevallen gelden hier uitzonderingen op, zie verder in dit document.
+  - Implicatie: Alle metadata van het object mag gedeeld worden tussen de VIAA contentpartners. In sommige gevallen gelden hier uitzonderingen op, zie verder in dit document.
 
-### VIAA-licenties publiek
+### Licenties publiek
 
 - Metadata
 
@@ -75,7 +75,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
     - Implicatie: letterlijke vertaling uit de samenwerkingsovereenkomst: een beperkte set aan metadata ( "titel, korte omschrijving en/of trefwoorden, duurtijd" ) worden publiek beschikbaar gemaakt.
 
-  - VIAA Uitgebreide licentie
+  - meemoo Uitgebreide licentie
 
     - MAM-naam : `VIAA-PUBLIEK-METADATA-ALL`
 
@@ -89,17 +89,17 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
     - Defaultwaarde: UIT
 
-    - Implicatie: naamgeving in lijn met de licenties bij CC. Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door CC. Analoog voor andere licenties, bvb. CC-0 : CC-0-METADATA.
+    - Implicatie: naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). Analoog voor andere licenties, bvb. CC-0 : CC-0-METADATA.
 
 - Content
 
-  - VIAA content licentie
+  - meemoo content licentie
 
     - MAM-naam: `VIAA-PUBLIEK-CONTENT`
 
     - Defaultwaarde: UIT
 
-    - Implicatie: de browsekopie van het object mag beschikbaar gemaakt worden op publieke platformen van VIAA. Deze licentie impliceert dat ook de VIAA-PUBLIEK-METADATA-ALL gegeven wordt.
+    - Implicatie: de browsekopie van het object mag beschikbaar gemaakt worden op publieke platformen van VIAA. Deze licentie impliceert dat ook de `VIAA-PUBLIEK-METADATA-ALL` gegeven wordt.
 
   - Andere licenties
 
@@ -107,18 +107,18 @@ Hieronder vind je een overzicht van alle bestaande licenties in het VIAA-metadat
 
     - Defaultwaarde: UIT
 
-    - Implicatie: naamgeving in lijn met de licenties bij CC. Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door CC. Analoog voor andere licenties, bvb. CC-0 : CC-0-CONTENT.
+    - Implicatie: naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). Analoog voor andere licenties, bvb. CC-0 : CC-0-CONTENT.
 
 
 ## Wanneer worden de standaardwaardes ingevuld?
 
-Voor bestanden uit VIAA-digitaliseringsprojecten worden de standaardlicenties (zie tabel hierboven) automatisch actief op het moment van import in het archiefsysteem. Let wel: aangezien het materiaal zich op dat moment nog in de ingestruimte of workspace bevindt, zal het niet gebruikt worden. Content partners hebben zes maanden de tijd om het materiaal te publiceren en indien nodig de licenties aan te passen.  Pas na publicatie wordt de licentie echt actief en kan het materiaal dus ontsloten worden volgens de licenties.
+Voor bestanden uit meemoo-digitaliseringsprojecten worden de standaardlicenties (zie tabel hierboven) automatisch actief op het moment van import in het archiefsysteem. Let wel: aangezien het materiaal zich op dat moment nog in de ingestruimte of workspace bevindt, zal het niet gebruikt worden. Contentpartners hebben zes maanden de tijd om het materiaal te publiceren en indien nodig de licenties aan te passen.  Pas na publicatie wordt de licentie echt actief en kan het materiaal dus ontsloten worden volgens de licenties.
 
 Voor bestanden uit digitale collecties worden de licenties meegegeven bij de aanlevering van het materiaal. Indien geen licentie aangeleverd werd, zal VIAA de standaardlicenties activeren.
 
 ## Overzicht standaardwaardes
 
-Standaard zal VIAA op dit moment onderstaande licenties activeren:
+Standaard zal meemoo op dit moment onderstaande licenties activeren:
 
   | VIAA-ONDERWIJS  |    AAN |
   | VIAA-ONDERZOEK   |   AAN |

@@ -7,6 +7,8 @@ nav_order: 1
 ---
 # Metadatamodel
 
+Hier vind je alle informatie over het gebruiken van het _VIAA-metadatamodel_, het metadatamodel dat momenteel in gebruik is bij meemoo.
+
 1. Velden in het metadatamodel:
    1. [Algemeen]({{ site.baseurl }}{% link docs/metadata/algemeen.md %})
    2. [Registratie van analoge dragers]({{ site.baseurl }}{% link docs/metadata/registratie.md %})
