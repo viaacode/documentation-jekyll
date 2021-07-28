@@ -153,7 +153,7 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 
 # Relaties
 
-De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele relaties aan te duiden tussen verschillende digitale objecten. De definitie van deze relaties beperkt zich tot 3 verschillende types (is deel van, bevat, is verwant aan).
+De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele relaties aan te duiden tussen verschillende digitale objecten. De definitie van deze relaties beperkt zich tot 4 verschillende types (_is deel van_, _bevat_, _is verwant aan_ en _is versie van_).
 
 ## (Dit digitaal object) is deel van
 
