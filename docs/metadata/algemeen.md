@@ -150,6 +150,8 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 | `<Pdf />`                      | |
 | `<PersistenteURI_Record />`    | Persistente URI die verwijst naar de lokale record bij de contentpartner. |
 | `<PersistenteURI_Werk />`      | Persistente URI die verwijst naar het werk dat wordt afgebeeld. |
+| `<PersistenteURI_VKC_Record />`    | Persistente URI die verwijst naar de lokale record bij de Vlaamse Kunstencollectie. |
+| `<PersistenteURI_VKC_Werk />`      | Persistente URI die verwijst naar het werk dat wordt afgebeeld bij de Vlaamse Kunstencollectie. |
 
 # Relaties
 
