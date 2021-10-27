@@ -153,7 +153,7 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 | `<PersistenteURI_VKC_Record />`    | Persistente URI die verwijst naar de lokale record bij de Vlaamse Kunstencollectie. |
 | `<PersistenteURI_VKC_Werk />`      | Persistente URI die verwijst naar het werk dat wordt afgebeeld bij de Vlaamse Kunstencollectie. |
 
-# Relaties
+# Relaties 
 
 De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele relaties aan te duiden tussen verschillende digitale objecten. De definitie van deze relaties beperkt zich tot 4 verschillende types (_is deel van_, _bevat_, _is verwant aan_ en _is versie van_).
 
@@ -800,7 +800,7 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 ```xml
 <dc_rights_licenses type="list">
     <multiselect>CC BY-SA-METADATA</multiselect>
-</dc_rights_licenses type="list">
+</dc_rights_licenses>
 ```
 
 ### Mogelijke waarden
