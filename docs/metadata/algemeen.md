@@ -792,14 +792,14 @@ Het betreft de gesproken of gezongen taal, niet de taal van eventuele ondertitel
 
 Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewerking) van het item wordt bepaald. De licenties zijn zo opgesteld dat er een onderscheid gemaakt kan worden tussen het hergebruik van het object en de metadata.
 
-| **XML element**            | `<dc_rights_licenses type="list"><licentie/></dc_rights_licences>`        |
+| **XML element**            | `<dc_rights_licenses type="list"><multiselect/></dc_rights_licences>`        |
 | **Datatype**               | Gecontroleerde lijst |
 | **Verplichting**           | Verplicht                                                                 |
 | **Herhaalbaar**            | Ja                                                                        |
 
 ```xml
 <dc_rights_licenses type="list">
-    <licentie>CC BY-SA-METADATA</licentie>
+    <multiselect>CC BY-SA-METADATA</multiselect>
 </dc_rights_licenses type="list">
 ```
 
