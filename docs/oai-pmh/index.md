@@ -21,7 +21,7 @@ OAI-PMH is een gestandaardiseerd protocol dat werkt op basis van 'Providers' en 
 * De metadata van items of collecties aan te bieden op het web (als 'provider')
 * De metadata te verbruiken (als 'harvester')
 
-Het meemoo-archief gedraagt zich als data **provider** en kan dus jouw gearchiveerde collecties geheel of gedeeltelijk ter beschikking stellen via deze standaard. [Voor use cases verwijzen we door naar [de integratie pagina](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-bouw-ik-een-integratie-met-meemoo) op onze website.
+Het meemoo-archief gedraagt zich als data **provider** en kan dus jouw gearchiveerde collecties geheel of gedeeltelijk ter beschikking stellen via deze standaard. Voor use cases verwijzen we door naar [de integratie pagina](https://portaal.meemoo.be/nl/portaal/support-category/item/hoe-bouw-ik-een-integratie-met-meemoo) op onze website.
 
 OAI-PMH is een gestandaardiseerd protocol. De meemoo-implementatie voldoet aan versie 2 van deze standaard. Voor de technische documentatie verwijzen we dan ook naar de documentatie van de standaard zelf: [https://www.openarchives.org/OAI/openarchivesprotocol.html](https://www.openarchives.org/OAI/openarchivesprotocol.html).
 
