@@ -1,3 +1,22 @@
+---
+layout:       default
+title:        Submission  Information  Package  (SIP)  specification
+parent:       Intake
+nav_order:    5
+nav_exclude:  true
+---
+
+<details markdown="block">
+  <summary>
+    Index
+  </summary>
+  {: .text-delta }
+1. TOC
+{:toc}
+</details>
+
+{% include_relative _metadata.liquid  %}
+
 # meemoo SIP specification - version 0.1
 
 ## Abstract
