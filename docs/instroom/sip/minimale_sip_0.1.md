@@ -203,6 +203,8 @@ The _/data_ directory contains the content of the bag, i.e. the media file and i
 - The _/data_ directory MUST contain exactly one _mets.xml_ file.
 - The _/data_ directory MUST contain exactly one _/metadata_ directory.
 - The _/data_ directory MUST contain exactly one _/representations_ directory.
+- The _/data_ directory MAY contain exactly one _/documentation_ directory.
+- The _/data_ directory MAY contain exactly one _/schemas_ directory.
 
 **_Example_**
 
@@ -246,6 +248,12 @@ root_directory
 
 ### mets.xml (file)
 
+The _mets.xml_ file acts as an inventory of the files and directories at the package-level; it is therefore also known as the package mets.
+
+It is important to note that the package _mets.xml_ file does not record the internal structure of the different representations in the _/representations_ directory. It only references the different _mets.xml_ files contained in each _/representation_n_ directory (where _n_ is an integer indicating the number of different representations in the _/representation_ directory). Each of the _mets.xml_ files at the representation-level references its own internal structure.
+
+_**Overview of XML elements in the package mets with their possible attributes**_
+
 | Element            | Can contain                                                        | Possible Attributes                                    | Repeatability  | Obligation |
 |--------------------|--------------------------------------------------------------------|--------------------------------------------------------|----------------|------------|
 | \<mets:mets/>      | \<mets:metsHdr/><br><br>\<mets:fileSec/><br><br>\<mets:structMap/> | OBJID<br><br>TYPE<br><br>csip:OTHERTYPE<br><br>PROFILE | Not repeatable | Mandatory  |
@@ -261,27 +269,65 @@ root_directory
 
 #### mets:mets
 
-_**Example**_
+This is the root element of the package mets. It contains a number of XML schema namespaces together with a number of attributes to uniquely identify the package mets and the type of data it lists.
+
+**_Requirements_**
+
+- The &lt;mets/&gt; element MUST contain 
+
+**_Example_**
+
+```xml
+<mets:mets xmlns:mets="http://www.loc.gov/METS/"
+           xmlns:csip="https://DILCIS.eu/XML/ METS/CSIPExtensionMETS" 
+           xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xlink="http://www.w3. org/1999/xlink" 
+           OBJID="54c3a254-9c78-494d-a1f1-d07640989038"
+           TYPE="OTHER" 
+           csip:OTHERTYPE="Photographs – Digital" 
+           PROFILE="https://earksip .dilcis.eu/profile/E-ARK-SIP.xml" 
+           >
+
+<...>...</...>
+
+</mets:mets>
+```
 
 #### mets:metsHdr
 
 _**Example**_
 
+```xml
+```
+
 #### mets:fileSec
 
 _**Example**_
+
+```xml
+```
 
 #### mets:structMap
 
 _**Example**_
 
+```xml
+```
+
 #### mets:agent
 
 _**Example**_
 
+```xml
+```
+
 #### mets:name
 
 _**Example**_
+
+```xml
+```
 
 #### mets:note
 
@@ -352,9 +398,10 @@ root_directory
 
 #### /metadata (directory)
 
-##### /descriptive
+##### /descriptive (directory)
 
-##### /preservation
+###### descriptive_metadata.xml (file)
 
-### /representation_n (directory)
+##### /preservation (directory)
 
+###### preservation_metadata.xml (file)
