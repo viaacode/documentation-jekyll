@@ -172,18 +172,18 @@ root_folder
 
 ### mets.xml (file)
 
-| Element            	| Can contain                                                        	| Possible Attributes                                    	| Repeatability  	| Obligation 	|
-|--------------------	|--------------------------------------------------------------------	|--------------------------------------------------------	|----------------	|------------	|
-| \<mets:mets/>      	| \<mets:metsHdr/><br><br>\<mets:fileSec/><br><br>\<mets:structMap/> 	| OBJID<br><br>TYPE<br><br>csip:OTHERTYPE<br><br>PROFILE 	| Not repeatable 	| Mandatory  	|
-| \<mets:metsHdr/>   	| \<mets:agent/>                                                     	| CREATEDATE<br><br>csip:OAISPACKAGETYPE                 	| Not repeatable 	| Mandatory  	|
-| \<mets:fileSec/>   	| \<mets:fileGrp/>                                                   	| ID                                                     	| Not repeatable 	| Mandatory  	|
-| \<mets:structMap/> 	| \<div>                                                             	| ID<br><br>LABEL                                        	| Not repeatable 	| Mandatory  	|
-| \<mets:agent/>     	| \<mets:name/><br>\<mets:note/>                                     	| ROLE<br><br>TYPE<br><br>OTHERTYPE                      	| Repeatable     	| Mandatory  	|
-| \<mets:name/>      	| n/a                                                                	| n/a                                                    	| Not repeatable 	| Mandatory  	|
-| \<mets:note/>      	| n/a                                                                	| csip:NOTETYPE                                          	| Repeatable     	| Optional   	|
-| \<mets:fileGrp/>   	| \<mets:fileGrp/>                                                   	| USE<br><br>ID                                          	| Repeatable     	| Mandatory  	|
-| \<div>             	| \<mptr>                                                            	| ID<br><br>LABEL                                        	| Repeatable     	| Mandatory  	|
-| \<mptr>            	| n/a                                                                	| xlink:type<br><br>xlink:href<br><br>LOCTYPE            	| Not repeatable 	| Mandatory  	|
+| Element            | Can contain                                                        | Possible Attributes                                    | Repeatability  | Obligation |
+|--------------------|--------------------------------------------------------------------|--------------------------------------------------------|----------------|------------|
+| \<mets:mets/>      | \<mets:metsHdr/><br><br>\<mets:fileSec/><br><br>\<mets:structMap/> | OBJID<br><br>TYPE<br><br>csip:OTHERTYPE<br><br>PROFILE | Not repeatable | Mandatory  |
+| \<mets:metsHdr/>   | \<mets:agent/>                                                     | CREATEDATE<br><br>csip:OAISPACKAGETYPE                 | Not repeatable | Mandatory  |
+| \<mets:fileSec/>   | \<mets:fileGrp/>                                                   | ID                                                     | Not repeatable | Mandatory  |
+| \<mets:structMap/> | \<div>                                                             | ID<br><br>LABEL                                        | Not repeatable | Mandatory  |
+| \<mets:agent/>     | \<mets:name/><br>\<mets:note/>                                     | ROLE<br><br>TYPE<br><br>OTHERTYPE                      | Repeatable     | Mandatory  |
+| \<mets:name/>      | n/a                                                                | n/a                                                    | Not repeatable | Mandatory  |
+| \<mets:note/>      | n/a                                                                | csip:NOTETYPE                                          | Repeatable     | Optional   |
+| \<mets:fileGrp/>   | \<mets:fileGrp/>                                                   | USE<br><br>ID                                          | Repeatable     | Mandatory  |
+| \<div>             | \<mptr>                                                            | ID<br><br>LABEL                                        | Repeatable     | Mandatory  |
+| \<mptr>            | n/a                                                                | xlink:type<br><br>xlink:href<br><br>LOCTYPE            | Not repeatable | Mandatory  |
 
 #### mets:mets
 
