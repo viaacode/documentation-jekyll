@@ -21,7 +21,7 @@ nav_exclude:  true
 
 ## Abstract
 
-The meemoo Submission Information Package (henceforth SIP) specification describes how data and metadata should be packaged when delivered to meemoo for ingest. It can be used to create SIPs of simple (i.e. _enkelvoudige_; consisting of a single media file with accompanying metadata) objects. Furthermore, it establishes a common base for the development of so-called content profiles or SIP extensions for the ingest of specific use-cases (e.g. newspapers, 3D objects etc.).
+The meemoo Submission Information Package (henceforth SIP) specification describes how data and metadata should be packaged when delivered to meemoo for ingest. It can be used to create SIPs of simple (i.e. consisting of a single media file and accompanying metadata files) objects. Furthermore, it establishes a common base for the development of so-called content profiles or SIP extensions for the ingest of specific use-cases (e.g. newspapers, 3D objects etc.).
 
 ## Overview
 
@@ -79,14 +79,14 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 <mark>TO DO</mark>
 
-The meemoo SIP consists of a hierarchical folder structure with 3 levels: the root folder (henceforth bag-level), the data folder (henceforth package-level) and the representations folder (henceforth representation-level).
+The meemoo SIP consists of a hierarchical directory structure with 3 levels: the root directory (henceforth bag-level), the data directory (henceforth package-level) and the representations directory (henceforth representation-level).
 
 Nut/gebruik van de 3 levels; welke info zit er op welk niveau; 
 
 **_Example_**
 
 ```diff
-root_folder
+root_directory
 │   manifest-md5.txt
 │   bagit.txt
 │
@@ -96,10 +96,10 @@ root_folder
    └──metadata
    │  │
    │  └──descriptive
-   │  │  |   ...
+   │  │      ...
    │  │
    │  └──preservation
-   │     |   ... 
+   │         ... 
    │
    └──representations
       │
@@ -107,15 +107,15 @@ root_folder
       │  │   mets.xml
       │  │
       │  └──data
-      │  │  │   ...
+      │  │      ...
       │  │
       │  └──metadata
       │     │
       │     └──descriptive
-      │     │  │   ...
+      │     │      ...
       │     │
       │     └──preservation
-      │        │   ...
+      │            ...
       │
       │
       │
@@ -125,14 +125,25 @@ root_folder
 
 ## Structure of a meemoo SIP: bag-level
 
-test
+A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive. It conforms to the BagIt 1.0 specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)).
 
-Gebruik, files erin, conformance aan bagit spec, doel
+A bag only has a practical purpose as a transfer container between a CP's archive and meemoo's ingest space. The bag will be unpacked during ingest and will be deleted after processing. As such it will not appear in the meemoo archive as a separate entity.
+
+**_Requirements_**
+
+- A bag MUST be a compressed archive file.
+- A bag SHOULD be a ZIP or TAR file.
+- A bag MUST contain a _bagit.txt_ file.
+- A bag MUST contain a _manifest-md5.txt_ file.
+- A bag MUST contain content from only one particular CP and MUST NOT contain content from different CPs.
+- A bag MUST contain a _/data_ directory.
+- A bag MAY contain a _bag-info.txt_ file.
+- The contents of a bag MUST be character-encoded according to UTF-8.
 
 **_Example_**
 
 ```diff
-root_folder
+root_directory
 │   manifest-md5.txt
 │   bagit.txt
 │
@@ -142,9 +153,71 @@ root_folder
 
 ### manifest-md5.txt (file)
 
+The _manifest-md5.txt_ file lists all files in the bag across the different directories together with their corresponding checksums created with the MD5 message-digest algorithm. It is used during processing of the bag to allow for data integrity checking.
+
+**_Requirements_**
+
+- The _manifest-md5.txt_ file MUST list all files contained in the bag.
+- The _manifest-md5.txt_ file MUST NOT list any directories.
+- The _manifest-md5.txt_ file MUST NOT list any files outside of the bag.
+- Each line of the _manifest-md5.txt_ file MUST be of the form _checksum filepath_, where _filepath_ is the pathname of a file relative to the bag-lelvel directory, and _checksum_ is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
+- The slash ('/') character MUST be used as a path separator in _filepath_.
+- One or more linear whitespace characters (spaces or tabs) MUST separate each _checksum_ from each _filepath_.
+- Each line of the _manifest-md5.txt_ file MUST be terminated with an LF, a CR or a CRLF.
+
+**_Example_**
+
+```txt
+95d9ac203e0690b8e03fc087c5c68479  ./data/mets.xml
+1eb7ddc7c89c0855249afe8f0fd5e52a  ./data/representations/representation_1/mets.xml
+7e50bacc8fecabcb5a14cc6bdc080ca2  ./data/representations/representation_1/data/AWH12931330.tif
+49abb190b55d159adcd8ebc5dd73804b  ./data/representations/representation_1/metadata/preservation/AWH12931330.xml
+87433f675bcd1125819afa1f0968943e  ./data/representations/representation_1/metadata/descriptive/AWH12931330.xml
+eaa2c609ff6371712f623f5531945b44  ./bagit.txt
+3399c34bd1871445705fd0921e5f32d8  ./manifest-md5.txt
+```
+
 ### bagit.txt (file)
 
-### /data (folder)
+The _bagit.txt_ file contains exactly two lines in the exact order specified in the example below. The first line specifies to which version of the BagIt specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)) the bag conforms, while the second line identifies the character set encoding of the bag and its files.
+
+**_Requirements_**
+
+- The first line of the _bagit.txt_ file MUST specify the exact version of the BagIt standard.
+- The second line of the _bagit.txt_ file MUST specify the character set encoding of the bag and its files.
+
+**_Example_**
+
+```txt
+BagIt-Version: 1.0
+Tag-File-Character-Encoding: UTF-8
+```
+
+### /data (directory)
+
+The _/data_ directory contains the content of the bag, i.e. the media file and its accompanying metadata files, divided across a number of different files and directories. Each _/data_ directory contains a single so-called package, consisting of the combination of a _mets.xml_ file, a _/metadata_ directory and a _/representations_ directory.
+
+**_Requirements_**
+
+- The _/data_ directory MUST contain exactly one package.
+- The _/data_ directory MUST contain exactly one _mets.xml_ file.
+- The _/data_ directory MUST contain exactly one _/metadata_ directory.
+- The _/data_ directory MUST contain exactly one _/representations_ directory.
+
+**_Example_**
+
+```diff
+root_directory
+│   ...
+│
+└──data
+   │   mets.xml
+   │
+   └──metadata
+   │      ...
+   └──representations
+   │      ...
+```
 
 ## Structure of a meemoo SIP: package-level
 
@@ -153,7 +226,7 @@ test
 _**Example**_
 
 ```diff
-root_folder
+root_directory
 │   ...
 │
 └──data
@@ -226,13 +299,13 @@ _**Example**_
 
 _**Example**_
 
-### /metadata (folder)
+### /metadata (directory)
 
-#### /descriptive (folder)
+#### /descriptive (directory)
 
-#### /preservation (folder)
+#### /preservation (directory)
 
-### /representations (folder)
+### /representations (directory)
 
 ## Structure of a meemoo SIP: representation-level
 
@@ -243,7 +316,7 @@ test
 _**Example**_
 
 ```diff
-root_folder
+root_directory
 │   ...
 │
 └──data
@@ -271,17 +344,17 @@ root_folder
          │   ...
 ```
 
-### /representation_1 (folder)
+### /representation_1 (directory)
 
 #### mets.xml (file)
 
-#### /data (folder)
+#### /data (directory)
 
-#### /metadata (folder)
+#### /metadata (directory)
 
 ##### /descriptive
 
 ##### /preservation
 
-### /representation_n (folder)
+### /representation_n (directory)
 
