@@ -51,16 +51,17 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 <mark>TO DO</mark>
 
-- object
-- simple object
-- complex object
-- sidecar
-- essence
-- OAIS
-- intellectual entity
-- SIP
-- DIP
-- AIP
+| Term                	| Explanation 	|
+|---------------------	|-------------	|
+| object              	|             	|
+| simple object       	|             	|
+| sidecar             	|             	|
+| essence             	|             	|
+| OAIS                	|             	|
+| intellectual entity 	|             	|
+| SIP                 	|             	|
+| DIP                 	|             	|
+| AIP                 	|             	|
 
 ## Data Types
 
