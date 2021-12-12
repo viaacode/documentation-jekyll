@@ -299,6 +299,23 @@ This is the root element of the package mets. It contains a number of XML schema
 _**Example**_
 
 ```xml
+<mets:metsHdr CREATEDATE="2021-08-18T21:54:15.014+02:00"
+              csip:OAISPACKAGETYPE="SIP">
+ 
+<mets:agent ROLE="SIP CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
+    <mets:name>meemoo SIP creator</mets:name>
+    <mets:note csip:NOTETYPE="SOFTWARE VERSION">0.1.</mets:note>
+</mets:agent>
+
+<mets:agent ROLE="ARCHIVAL CREATOR" TYPE="ORGANIZATION">
+    <mets:name>Plantentuin Meise</mets:name>
+</mets:agent>
+
+<mets:agent ROLE="SUBMITTING AGENT" TYPE="ORGANIZATION">
+    <mets:name>Plantentuin Meise</mets:name>
+</mets:agent>
+
+</mets:metsHdr>
 ```
 
 #### mets:fileSec
@@ -306,6 +323,15 @@ _**Example**_
 _**Example**_
 
 ```xml
+<mets:fileSec ID="71f7a408-dfb9-427c-b29c-ba7983408016">
+    <mets:fileGrp USE="root" ID="19608ee9-53b0-4341-8e1c-33b410d64e30">
+        <mets:fileGrp USE="metadata" ID="1ab8905c-ff79-48a1-8c4d-9e306fdab4ba">
+            <mets:fileGrp USE="descriptive" ID="983c5556-56bf-42b9-a547-4f8b510429dc"/>
+            <mets:fileGrp USE="preservation" ID="aa12de3c-7648-4476-9dde-f7a899fb2f13"/>
+        </mets:fileGrp>
+        <mets:fileGrp USE="representations" ID="83de5a57-53ff-483f-8791-22dc32e29cdb"/>
+    </mets:fileGrp>
+</mets:fileSec>
 ```
 
 #### mets:structMap
@@ -313,6 +339,19 @@ _**Example**_
 _**Example**_
 
 ```xml
+<mets:structMap ID="5e0989eb-0e0e-4842-878d-fb879179a54b" TYPE="PHYSICAL" LABEL="CSIP">
+   <div ID="48e558da-8496-4bfe-a0d9-866969b188ee" LABEL="">
+      <div ID="f8f7af4b-b86d-47d3-b1c1-9a71f607d3cd" LABEL="metadata">
+         <div ID="ecb6a61f-ac00-4c9a-900d-1c6fa69f2385" LABEL="descriptive" />
+         <div ID="fe4eaf5c-497a-4d89-be5b-2110d092b1b0" LABEL="preservation" />
+      </div>
+      <div ID="48290144-7763-4543-979b-a5c1f9218fef" LABEL="representations">
+         <div ID="28d69419-c524-4688-9f4b-461bc351dd6d" LABEL="representation_1">
+            <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
+         </div>
+      </div>
+   </div>
+</mets:structMap>
 ```
 
 #### mets:agent
@@ -320,6 +359,18 @@ _**Example**_
 _**Example**_
 
 ```xml
+<mets:agent ROLE="SIP CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
+    <mets:name>meemoo SIP creator</mets:name>
+    <mets:note csip:NOTETYPE="SOFTWARE VERSION">0.1.</mets:note>
+</mets:agent>
+
+<mets:agent ROLE="ARCHIVAL CREATOR" TYPE="ORGANIZATION">
+    <mets:name>Plantentuin Meise</mets:name>
+</mets:agent>
+
+<mets:agent ROLE="SUBMITTING AGENT" TYPE="ORGANIZATION">
+    <mets:name>Plantentuin Meise</mets:name>
+</mets:agent>
 ```
 
 #### mets:name
