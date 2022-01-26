@@ -7,12 +7,12 @@ nav_exclude:  true
 ---
 
 <details markdown="block">
-  <summary>
-    Index
-  </summary>
-  {: .text-delta }
-1. TOC
-{:toc}
+   <summary>
+      Index
+   </summary>
+   {: .text-delta }
+   1. TOC
+   {:toc}
 </details>
 
 {% include_relative _metadata.liquid  %}
@@ -21,7 +21,9 @@ nav_exclude:  true
 
 ## Abstract
 
-The meemoo Submission Information Package (henceforth SIP) specification describes how data and metadata should be packaged when delivered to meemoo for ingest. It can be used to create SIPs of simple (i.e. consisting of a single media file and accompanying metadata files) objects. Furthermore, it establishes a common base for the development of so-called content profiles or SIP extensions for the ingest of specific use-cases (e.g. newspapers, 3D objects etc.).
+The meemoo Submission Information Package (henceforth SIP) specification describes how data and metadata should be packaged when delivered to meemoo for ingest.
+It can be used to create SIPs of simple (i.e. consisting of a single media file and accompanying metadata files) objects.
+Furthermore, it establishes a common base for the development of so-called content profiles or SIP extensions for the ingest of specific use-cases (e.g. newspapers, 3D objects etc.).
 
 ## Overview
 
@@ -79,9 +81,13 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 <mark>TO DO</mark>
 
-The meemoo SIP consists of a hierarchical directory structure with 3 levels: the root directory (henceforth bag-level), the data directory (henceforth package-level) and the representations directory (henceforth representation-level).
+The meemoo SIP consists of a hierarchical directory structure with 3 levels:
 
-Nut/gebruik van de 3 levels; welke info zit er op welk niveau; 
+- the root directory (henceforth bag-level);
+- the data directory (henceforth package-level);
+- the representations directory (henceforth representation-level).
+
+Nut/gebruik van de 3 levels; welke info zit er op welk niveau;
 
 **_Example_**
 
@@ -125,20 +131,22 @@ root_directory
 
 ## Structure of a meemoo SIP: bag-level
 
-A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive. It conforms to the BagIt 1.0 specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)).
-
-A bag only has a practical purpose as a transfer container between a CP's archive and meemoo's ingest space. The bag will be unpacked during ingest and will be deleted after processing. As such it will not appear in the meemoo archive as a separate entity.
+A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
+It conforms to the BagIt 1.0 specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)).
+A bag only has a practical purpose as a transfer container between a CP's archive and meemoo's ingest space.
+The bag will be unpacked during ingest and will be deleted after processing.
+As such it will not appear in the meemoo archive as a separate entity.
 
 **_Requirements_**
 
 - A bag MUST be a compressed archive file.
-- A bag SHOULD be a ZIP or TAR file.
 - A bag MUST contain a _bagit.txt_ file.
 - A bag MUST contain a _manifest-md5.txt_ file.
 - A bag MUST contain content from only one particular CP and MUST NOT contain content from different CPs.
 - A bag MUST contain a _/data_ directory.
-- A bag MAY contain a _bag-info.txt_ file.
 - The contents of a bag MUST be character-encoded according to UTF-8.
+- A bag SHOULD be a ZIP or TAR file.
+- A bag MAY contain a _bag-info.txt_ file.
 
 **_Example_**
 
@@ -153,7 +161,8 @@ root_directory
 
 ### manifest-md5.txt (file)
 
-The _manifest-md5.txt_ file lists all files in the bag across the different directories together with their corresponding checksums created with the MD5 message-digest algorithm. It is used during processing of the bag to allow for data integrity checking.
+The _manifest-md5.txt_ file lists all files in the bag across the different directories together with their corresponding checksums created with the MD5 message-digest algorithm.
+It is used during processing of the bag to allow for data integrity checking.
 
 **_Requirements_**
 
@@ -179,7 +188,8 @@ eaa2c609ff6371712f623f5531945b44  ./bagit.txt
 
 ### bagit.txt (file)
 
-The _bagit.txt_ file contains exactly two lines in the exact order specified in the example below. The first line specifies to which version of the BagIt specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)) the bag conforms, while the second line identifies the character set encoding of the bag and its files.
+The _bagit.txt_ file contains exactly two lines in the exact order specified in the example below.
+The first line specifies to which version of the BagIt specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)) the bag conforms, while the second line identifies the character set encoding of the bag and its files.
 
 **_Requirements_**
 
@@ -195,7 +205,8 @@ Tag-File-Character-Encoding: UTF-8
 
 ### /data (directory)
 
-The _/data_ directory contains the content of the bag, i.e. the media file and its accompanying metadata files, divided across a number of different files and directories. Each _/data_ directory contains a single so-called package, consisting of the combination of a _mets.xml_ file, a _/metadata_ directory and a _/representations_ directory.
+The _/data_ directory contains the content of the bag, i.e. the media file and its accompanying metadata files, divided across a number of different files and directories.
+Each _/data_ directory contains a single so-called package, consisting of the combination of a _mets.xml_ file, a _/metadata_ directory and a _/representations_ directory.
 
 **_Requirements_**
 
@@ -250,7 +261,9 @@ root_directory
 
 The _mets.xml_ file acts as an inventory of the files and directories at the package-level; it is therefore also known as the package mets.
 
-It is important to note that the package _mets.xml_ file does not record the internal structure of the different representations in the _/representations_ directory. It only references the different _mets.xml_ files contained in each _/representation_n_ directory (where _n_ is an integer indicating the number of different representations in the _/representation_ directory). Each of the _mets.xml_ files at the representation-level references its own internal structure.
+It is important to note that the package _mets.xml_ file does not record the internal structure of the different representations in the __/representations__ directory.
+It only references the different _mets.xml_ files contained in each __/representation_n__ directory (where __n__ is an integer indicating the number of different representations in the __/representation__ directory).
+Each of the __mets.xml__ files at the representation-level references its own internal structure.
 
 _**Overview of XML elements in the package mets with their possible attributes**_
 
@@ -269,7 +282,8 @@ _**Overview of XML elements in the package mets with their possible attributes**
 
 #### mets:mets
 
-This is the root element of the package mets. It contains a number of XML schema namespaces together with a number of attributes to uniquely identify the package mets and the type of data it lists.
+This is the root element of the package mets.
+It contains a number of XML schema namespaces together with a number of attributes to uniquely identify the package mets and the type of data it lists.
 
 **_Requirements_**
 
