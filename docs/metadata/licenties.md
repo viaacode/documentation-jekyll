@@ -67,7 +67,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 - Metadata
 
-  - VIAA Restricted licentie
+  - meemoo Restricted licentie
 `
     - MAM-naam: `VIAA-PUBLIEK-METADATA-LTD`
 
@@ -81,7 +81,15 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
     - Defaultwaarde: UIT
 
-    - Implicatie: alle metadata mag gedeeld worden op publieke platformen
+    - Implicatie: alle metadata mag gedeeld worden op publieke platformen.
+
+  - meemoo Bezoekertool licentie
+
+    - MAM-naam : `BEZOEKERTOOL-METADATA-ALL`
+
+    - Defaultwaarde: AAN
+
+    - Implicatie: alle metadata mag gedeeld worden op de bezoekertool.
 
   - Andere licenties
 
@@ -99,7 +107,15 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
     - Defaultwaarde: UIT
 
-    - Implicatie: de browsekopie van het object mag beschikbaar gemaakt worden op publieke platformen van VIAA. Deze licentie impliceert dat ook de `VIAA-PUBLIEK-METADATA-ALL` gegeven wordt.
+    - Implicatie: de browsekopie van het object mag beschikbaar gemaakt worden op publieke platformen van meemoo. Deze licentie impliceert dat ook de `VIAA-PUBLIEK-METADATA-ALL` gegeven wordt.
+
+  - meemoo Bezoekertool licentie
+
+    - MAM-naam : `BEZOEKERTOOL-CONTENT`
+
+    - Defaultwaarde: AAN
+
+    - Implicatie: de browsekopie van het object mag beschikbaar gemaakt worden op de bezoekertool.
 
   - Andere licenties
 
@@ -128,6 +144,8 @@ Standaard zal meemoo op dit moment onderstaande licenties activeren:
   | VIAA-INTRA_CP-METADATA-ALL | AAN |
   | VIAA-PUBLIEK-METADATA-LTD  | AAN |
   | VIAA-PUBLIEK-METADATA-ALL |  UIT |
+  | BEZOEKERTOOL-CONTENT | AAN |
+  | BEZOEKERTOOL-METADATA-ALL | AAN |
   | Alle andere licenties  | UIT |
 
 ## Kan ik de licentie nog aanpassen?
