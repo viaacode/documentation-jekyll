@@ -139,6 +139,7 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 | `<Basis />`                    | |
 | `<Historical_carrier />`       | |
 | `<Historical_record_number />` | |
+| `<Inventarisnummer />`         | Unieke identifier bij bv. musea die gelinkt is aan een fysiek object uit de collectie.|
 | `<MEDIA_ID />`                 | |
 | `<Object_number />`            | Het Axiell Adlib object number.  |
 | `<Priref />`                   | |
