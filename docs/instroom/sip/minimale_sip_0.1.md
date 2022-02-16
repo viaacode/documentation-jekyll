@@ -55,18 +55,14 @@ This specification adheres to a number of standards and metadata schemas referen
 
 <mark>TO DO</mark>
 
+Datatype                  |Value space                                                                                                             |
+--------------------------|------------------------------------------------------------------------------------------------------------------------|
+ Timestamp with EDTF      |Date and time, according to [Extended Date Time Format](https://www.loc.gov/standards/datetime/) (EDTF) level 0 and 1   |
+ uuid                     |Universally Unique Identifier generated using random numbers;  subtype of String datatype                               |
+ URI                      |Absolute or relative URIs and IRIs                                                                                      |
+ Integer                  |Arbitrary-size integer numbers                                                                                          |
+ String                   |Character strings                                                                                                       |
 
-Datatype | Value space  |
----------|----------    |
- A1      | B1           |
- A2      | B2           |
- A3      | B3           |
-
-- Timestamp with EDTF
-- uuid
-- URI
-- Integer
-- String
 ## Terminology
 
 <mark>TO DO</mark>
