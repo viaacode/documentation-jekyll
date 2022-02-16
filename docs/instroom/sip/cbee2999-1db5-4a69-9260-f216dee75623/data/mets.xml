@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<mets xmlns="http://www.loc.gov/METS/"
+           xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" 
+           xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xlink="http://www.w3.org/1999/xlink" 
+           OBJID="uuid-cbee2999-1db5-4a69-9260-f216dee75623"
+           TYPE="OTHER" 
+           csip:OTHERTYPE="Photographs – Digital" 
+           PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" 
+           >
+
+<metsHdr    CREATEDATE="2022-02-16T10:01:15.014+02:00"
+            csip:OAISPACKAGETYPE="SIP">
+
+<agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
+    <name>meemoo SIP creator</name>
+    <note csip:NOTETYPE="SOFTWARE VERSION">0.1.</note>
+</agent>
+
+<agent ROLE="ARCHIVIST" TYPE="ORGANIZATION">
+    <name>Flemish Cat Museum</name>
+    <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
+</agent>
+
+<agent ROLE="CREATOR" TYPE="ORGANIZATION">
+    <name>Flemish Cat Museum</name>
+    <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
+</agent>
+
+</metsHdr>
+
+<fileSec ID="uuid-d2e2327f-0157-44c1-9105-b785b8161701">
+    <fileGrp USE="root" ID="uuid-3b136403-9115-4acb-a644-6a455611eb6f">
+        <fileGrp USE="metadata" ID="uuid-20677681-9fa7-4507-a85e-0df155ec6ea7">
+            <fileGrp USE="descriptive" ID="uuid-c7df16b9-ab4a-4d78-88ad-37456485c527"/>
+            <fileGrp USE="preservation" ID="uuid-cccb0ece-ab35-435a-b296-72715a51e7d5"/>
+        </fileGrp>
+        <fileGrp USE="representations" ID="uuid-f111bfb3-55fd-4301-887e-0823c56ecfdd"/>
+    </fileGrp>
+</fileSec>
+
+<structMap ID="uuid-6e5e803a-6445-4386-88b1-e872b429c944" TYPE="PHYSICAL" LABEL="CSIP">
+    <!-- welk label moet de overkoepelende div krijgen? -->
+    <div ID="uuid-128e281f-c41f-493e-a252-70322ae62522" LABEL="">
+			<div ID="uuid-33c80512-d484-428e-9330-c4c1ab0b09a3" LABEL="metadata">
+				<div ID="uuid-b1047982-e859-4b1a-9f75-8f690d24e602" LABEL="descriptive" />
+				<div ID="uuid-0a7da6ae-a68a-42af-ac36-61db80e6fd78" LABEL="preservation" />
+			</div>
+			<div ID="uuid-ad311b11-ede5-4985-81b5-c4c2626a586e" LABEL="representations">
+				<div ID="uuid-cca7a8ba-1eec-4319-a458-8e67ccf082ed" LABEL="representation_1">
+					<mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
+				</div>
+			</div>
+    </div>
+</structMap>
+
+</mets>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<item
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+<dcterms:title>Felis Catus Flamens lying on couch</dcterms:title>
+<dcterms:identifier>1445</dcterms:identifier>
+<dcterms:created xsi:type="edtf">2022-01-07</dcterms:created>
+<dcterms:subject>Cat</dcterms:subject>
+<dcterms:subject>Felis Catus Flamens</dcterms:subject>
+</item>

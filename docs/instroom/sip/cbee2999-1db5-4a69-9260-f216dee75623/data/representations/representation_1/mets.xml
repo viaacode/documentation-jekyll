@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<mets xmlns="http://www.loc.gov/METS/"
+           xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" 
+           xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+           xmlns:xlink="http://www.w3.org/1999/xlink" 
+           OBJID="uuid-f1e670b8-aee2-4abf-b9e7-a55b53439e1a"
+           TYPE="OTHER" 
+           csip:OTHERTYPE="Photographs – Digital" 
+           PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" 
+           >
+    
+<metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00"/>
+
+<fileSec ID="uuid-4bc8ceec-1d6c-40be-bd1d-09e0c7ae100b">
+
+    <fileGrp USE="metadata" ID="uuid-58b2a383-2703-453c-abd8-ba38deebe523">
+        <fileGrp USE="descriptive" ID="uuid-1d46df5b-692e-45b5-bd8f-188aa9d25fd9">
+            <file ID="uuid-b0f4dc39-6950-4e2e-b8e2-be331a04c251" MIMETYPE="application/xml" SIZE="469" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="58ffc66be51816d0d4bb3126a0a8ad2a" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/1445.xml" />
+            </file>
+            <file ID="uuid-5c6d0e8d-20a2-464c-b8a9-7fbfb1ba90d1" MIMETYPE="application/xml" SIZE="469" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="dab460a47b05045bf480a94d53d1df40" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/1450.xml" />
+            </file>
+            <file ID="uuid-a687b74e-6f00-44af-9041-367b69b1d726" MIMETYPE="application/xml" SIZE="478" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="1aa03957debf83ede78e36286c993f27" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/D523F963.xml" />
+            </file>
+        </fileGrp>
+        <fileGrp USE="preservation" ID="uuid-eb35b9fa-10b0-4e31-b1d6-3a57ad9ba0b0">
+            <file ID="uuid-7a01a7cb-c6fa-489a-bca0-e86f9f8d075b" MIMETYPE="application/xml" SIZE="1158" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="51d24a3ce039f1ce1604e7097e56c5f8" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/1445.xml" />
+            </file>
+            <file ID="uuid-c44be3df-9fdd-401d-a457-403c16c4546a" MIMETYPE="application/xml" SIZE="1158" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="4f6f1640f5d11ca5723d44953278fe5c" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/1450.xml" />
+            </file>
+            <file ID="uuid-8445cc79-ce1e-4278-ad22-3ed6ba6c8ae6" MIMETYPE="application/xml" SIZE="1158" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="2f113dc6f9de372692a2057401bced5c" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/D523F963.xml" />
+            </file>
+        </fileGrp>
+    </fileGrp>
+    <fileGrp USE="data" ID="uuid-3cc00975-4e3e-4810-9a37-aafa09a93c62">
+        <file ID="uuid-1dc24bbb-b603-4d6a-8dcf-b153e7988ac9" MIMETYPE="image/jpeg" SIZE="721603" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="b7ae37f6094794e313402b9d064978e8" CHECKSUMTYPE="MD5">
+            <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/1445.jpeg" />
+        </file>
+        <file ID="uuid-a4fb6c97-4ad2-4eef-a446-134a456a47f7" MIMETYPE="image/jpeg" SIZE="738611" CREATED="2022-01-07T15:57:40.273+01:00" CHECKSUM="d4985ba4b67ff067a0e84c53b6d35355" CHECKSUMTYPE="MD5">
+            <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/1450.jpeg" />
+        </file>
+        <file ID="uuid-aa11b31e-14e0-44dc-93f6-c367333be556" MIMETYPE="image/jpeg" SIZE="1735648" CREATED="2022-01-06T14:17:08.340+01:00" CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+            <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/D523F963.jpg" />
+        </file>
+    </fileGrp>
+
+</fileSec>
+
+
+
+<structMap ID="uuid-0d2ee912-763f-4605-9ac3-89a7fa0c3d69" TYPE="PHYSICAL" LABEL="CSIP">
+    <div ID="uuid-58d03e35-6824-4004-b880-87885666d5e3" LABEL="">
+        <div ID="uuid-02477c48-2eb9-4bef-93b4-fa9bf89fd8b5" LABEL="metadata">
+            <div ID="uuid-1d46df5b-692e-45b5-bd8f-188aa9d25fd9" LABEL="descriptive">
+                <fptr FILEID="uuid-b0f4dc39-6950-4e2e-b8e2-be331a04c251" />
+                <fptr FILEID="uuid-5c6d0e8d-20a2-464c-b8a9-7fbfb1ba90d1" />
+                <fptr FILEID="uuid-a687b74e-6f00-44af-9041-367b69b1d726" />
+            </div>
+            <div ID="uuid-eb35b9fa-10b0-4e31-b1d6-3a57ad9ba0b0" LABEL="preservation">
+                <fptr FILEID="uuid-7a01a7cb-c6fa-489a-bca0-e86f9f8d075b" />
+                <fptr FILEID="uuid-c44be3df-9fdd-401d-a457-403c16c4546a" />
+                <fptr FILEID="uuid-8445cc79-ce1e-4278-ad22-3ed6ba6c8ae6" />
+            </div>
+        </div>
+        <div ID="uuid-3cc00975-4e3e-4810-9a37-aafa09a93c62" LABEL="data">
+            <fptr FILEID="uuid-1dc24bbb-b603-4d6a-8dcf-b153e7988ac9" />
+            <fptr FILEID="uuid-a4fb6c97-4ad2-4eef-a446-134a456a47f7" />
+            <fptr FILEID="uuid-aa11b31e-14e0-44dc-93f6-c367333be556" />
+        </div>
+    </div>
+</structMap>
+
+
+
+</mets>
