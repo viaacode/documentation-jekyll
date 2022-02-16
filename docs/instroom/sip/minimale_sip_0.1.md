@@ -16,22 +16,28 @@ nav_exclude:  true
 </details>
 
 {% include_relative _metadata.liquid  %}
-
-# meemoo SIP specification - version 0.1
-
-## Abstract
+# Abstract
 
 The meemoo Submission Information Package (henceforth SIP) specification describes how data and metadata should be packaged when delivered to meemoo for ingest.
-It can be used to create SIPs of simple (i.e. consisting of a single media file and accompanying metadata files) objects.
-Furthermore, it establishes a common base for the development of so-called content profiles or SIP extensions for the ingest of specific use-cases (e.g. newspapers, 3D objects etc.).
+It can be used to create SIPs consisting of a single media file and accompanying metadata files.
+Furthermore, it serves as a generic base for content-specific subprofiles for the ingest of specific use-cases (e.g. newspapers, 3D objects etc.).
 
-## Overview
+# Introduction
 
-<mark>TO DO</mark>
+Digital collections contain a wealth of content and information stored in various types of digital file formats accompanied by metadata defined in a variety of standards.
+This poses a challenge for digital archives seeking a scalable way to ingest and disseminate an ever-growing number of digital objects.
+As a digital archive for over 160 content partners, we at meemoo encounter this challenge on a daily basis.  
+This has led to the development of the current SIP specification, in an attempt to standardize the delivery of (media) content and metadata by meemoo's content partners.
 
-## Notations, Use of Standards/Schemas and Terminology
+In this introduction we include a high-level conformance section of standards and requirements for implementers.
+This is followed by a section of terminology definitions and a section about the data types in the meemoo SIP.
+In the final section we introduce a fictional use-case of meemoo's SIP specification that we will use as a running example throughout the text.
 
-### Standards
+## Conformance
+
+Except sections explicitly marked as non-normative, all guidelines, examples and notes in this specification are to be considered normative.
+
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
 
 This specification adheres to a number of standards and metadata schemas referenced below.
 
@@ -42,50 +48,89 @@ This specification adheres to a number of standards and metadata schemas referen
 
 - Metadata schemas
   - Metadata Encoding & Transmission Standard (henceforth [METS](https://www.loc.gov/standards/mets/mets.xsd));
-  - Dublin Core Metadata Initiative Metadata Terms (henceforth [DC](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/));
+  - Dublin Core Metadata Initiative Metadata Terms (henceforth [DC](http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd));
   - PREMIS for Preservation Metadata (henceforth [PREMIS](https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd)).
-
-### Notations
-
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](https://tools.ietf.org/html/rfc2119).
-
-### Terminology/Glossary
-
-<mark>TO DO</mark>
-
-| Term                	| Explanation 	|
-|---------------------	|-------------	|
-| object              	|             	|
-| simple object       	|             	|
-| sidecar             	|             	|
-| essence             	|             	|
-| OAIS                	|             	|
-| intellectual entity 	|             	|
-| SIP                 	|             	|
-| DIP                 	|             	|
-| AIP                 	|             	|
 
 ## Data Types
 
 <mark>TO DO</mark>
+
+
+Datatype | Value space  |
+---------|----------    |
+ A1      | B1           |
+ A2      | B2           |
+ A3      | B3           |
 
 - Timestamp with EDTF
 - uuid
 - URI
 - Integer
 - String
-
-## Structure of a meemoo SIP: core
-
-### Overview
+## Terminology
 
 <mark>TO DO</mark>
+
+| Term                	| Explanation 	|
+|---------------------	|-------------	|
+| bag                   |              |
+| content               |              |
+| content profile       |              |
+| object              	|             	|
+| simple object       	|             	|
+| sidecar             	|             	|
+| essence             	|             	|
+| OAIS                	|             	|
+| intellectual entity 	|             	|
+| package               |              |
+| SIP                 	|             	|
+| DIP                 	|             	|
+| AIP                 	|             	|
+
+
+## Running example
+
+One of meemoo's content partners, the (fictional) Flemish Cat Museum (henceforth FCM), wishes to archive a rare digitised picture of the Felis Catus Flamens (an extinct cat species originating in Flanders).
+Besides the picture, the FCM owns a small set of descriptive metadata about the Felis Catus Flamens.
+
+# meemoo SIP core concepts
+
+This section covers a number of theoretical concepts in meemoo's SIP specification which return throughout the remainder of this text.
+The first section defines the PREMIS concept of an intellectual entity and its relation to the so-called representation consisting of a number of files.
+The second section zooms in on the directory structure of meemoo's SIP and how it reflects the distinction between an intellectual entity, its representations and the actual files making up those representations.
+
+## Intellectual entities, representations and files
+
+One of the underlying ideas in this specification, is the notion of an intellectual entity (henceforth IE) consisting of one of more (digital) representations which, in turn, consist of a set of files.
+The [PREMIS Data Dictionary for Preservation Metadata](https://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf) defines an IE as 'a distinct intellectual or artistic creation that is considered to be relevant to a designated community in the context of digital preservation'.
+Each IE may have one or more (digital) representations, defined by PREMIS as 'a set of files (including metadata) needed for a complete rendition of an intellectual entity'.
+It is up to the content partner to decide what is viewed as an intellectual entity and of which/how many representations it is made up.
+
+This three-way distinction between an IE, a representation and a digital file allows for a flexible way to include (meta)data in the SIP.
+For example, it makes it possible to separate descriptive metadata about the content represented in a digital reproduction, from technical metadata purely about the digital reprodution itself.
+
+
+Consider the example of a digitised newspaper edition with 10 pages.
+Each page is digitised separately as a TIFF file and a JPEG file, resulting in 20 digital reproductions.
+In this example we view the newspaper edition as a whole as the IE.
+We can then discern between two representations of the newspaper: a TIFF representation for e.g. high-resolution reproduction, and a JPEG representation for e.g. low-resolution browse copies on the web.
+We can add descriptive metadata about both the newspaper edition (the IE) and the digital representations (the digital files contained in the TIFF and JPEG representations).
+
+In the case of our running example defined in the introduction. 
+
+## Hierarchical directory structure
 
 The meemoo SIP consists of a hierarchical directory structure with 3 levels:
 
 - the root directory (henceforth bag-level);
 - the data directory (henceforth package-level);
 - the representations directory (henceforth representation-level).
+
+Every level contains (meta)data about the IE of a SIP, but each level serves a specific purpose or describes a specfic (sub)set of the IE.
+
+The bag-level contains information for integrity checking in a manifest file listing every file in the SIP together with its checksum. The package-level 
+
+bag-level contains information for integrity checking, package-level contains metadata about the intellectual entity and preservation metadata about the SIP itself, representation-level contains different representations, each containing a different digital representation of the intellectual entity along with the preservation and descriptive metadata of the digital representation.
 
 Nut/gebruik van de 3 levels; welke info zit er op welk niveau;
 
@@ -123,12 +168,14 @@ root_directory
       │     └──preservation
       │            ...
       │
-      │
-      │
       └──representation_n
          │   ...
 ```
 
+# Structure of a meemoo SIP
+
+In this section we dissect meemoo's SIP package and discuss its requirements.
+We follow the hierarchical folder structure discussed in XX and traverse the different levels of the SIP.
 ## Structure of a meemoo SIP: bag-level
 
 A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
