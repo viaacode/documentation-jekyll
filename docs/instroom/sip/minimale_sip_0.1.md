@@ -33,7 +33,7 @@ In this introduction we include a high-level conformance section of standards an
 This is followed by a section of terminology definitions and a section about the data types in the meemoo SIP.
 In the final section we introduce a fictional use-case of meemoo's SIP specification that we will use as a running example throughout the text.
 
-## Conformance
+## Instructions for reading this specification
 
 Except sections explicitly marked as non-normative, all guidelines, examples and notes in this specification are to be considered normative.
 
@@ -41,23 +41,23 @@ The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "S
 
 This specification adheres to a number of standards and metadata schemas referenced below.
 
-- Standards
-  - BagIt File Packaging Format (henceforth [BagIt](https://www.rfc-editor.org/rfc/rfc8493.html));
-  - E-ARK Common Specification for Information Packages (henceforth [E-ARK CSIP](https://earkcsip.dilcis.eu/));
-  - E-ARK Specification for Submission Information Packages (henceforth [E-ARK SIP](https://earksip.dilcis.eu/)).
-
-- Metadata schemas
-  - Metadata Encoding & Transmission Standard (henceforth [METS](https://www.loc.gov/standards/mets/mets.xsd));
-  - Dublin Core Metadata Initiative Metadata Terms (henceforth [DC](http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd));
-  - PREMIS for Preservation Metadata (henceforth [PREMIS](https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd)).
+|Standards/schemas|Abbreviation|
+|  ---  |  ---  |
+|[BagIt File Packaging Format](https://www.rfc-editor.org/rfc/rfc8493.html)|BagIt|
+|[E-ARK Common Specification for Information Packages](https://earkcsip.dilcis.eu/)|E-ARK CSIP|
+|[E-ARK Specification for Submission Information Packages](https://earksip.dilcis.eu/)|E-ARK SIP|
+|[Metadata Encoding & Transmission Standard](https://www.loc.gov/standards/mets/mets.xsd)|METS|
+|[Dublin Core Metadata Initiative Metadata Terms](http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd)|DC|
+|[PREMIS for Preservation Metadata](https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd)|PREMIS|
+|    |    |
 
 ## Data Types
 
-<mark>TO DO</mark>
+<mark>TO DO: paragraaf vertaling naar XML met attributen `xsi:type`; URI-kolom</mark>
 
-Datatype                  |Value space                                                                                                             |
+Datatype                  |Definition                                                                                                             |
 --------------------------|------------------------------------------------------------------------------------------------------------------------|
- Timestamp with EDTF      |Date and time, according to [Extended Date Time Format](https://www.loc.gov/standards/datetime/) (EDTF) level 0 and 1   |
+ EDTF      |Date and time, according to [Extended Date Time Format](https://www.loc.gov/standards/datetime/) (EDTF) level 0 and 1   |
  uuid                     |Universally Unique Identifier generated using random numbers;  subtype of String datatype                               |
  URI                      |Absolute or relative URIs and IRIs                                                                                      |
  Integer                  |Arbitrary-size integer numbers                                                                                          |
@@ -86,6 +86,8 @@ Datatype                  |Value space                                          
 
 ## Running example
 
+<mark>to do:verschil informatief en normatief</mark>
+
 One of meemoo's content partners, the (fictional) Flemish Cat Museum (henceforth FCM), wishes to archive a rare digitised picture of the Felis Catus Flamens (an extinct cat species originating in Flanders).
 Besides the picture, the FCM owns a small set of descriptive metadata about the Felis Catus Flamens.
 
@@ -100,19 +102,22 @@ The second section zooms in on the directory structure of meemoo's SIP and how i
 One of the underlying ideas in this specification, is the notion of an intellectual entity (henceforth IE) consisting of one of more (digital) representations which, in turn, consist of a set of files.
 The [PREMIS Data Dictionary for Preservation Metadata](https://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf) defines an IE as 'a distinct intellectual or artistic creation that is considered to be relevant to a designated community in the context of digital preservation'.
 Each IE may have one or more (digital) representations, defined by PREMIS as 'a set of files (including metadata) needed for a complete rendition of an intellectual entity'.
-It is up to the content partner to decide what is viewed as an intellectual entity and of which/how many representations it is made up.
+It is up to the content partner to decide what is viewed as an intellectual entity, of how many representations it is made up and of which files each representation consists.
 
-This three-way distinction between an IE, a representation and a digital file allows for a flexible way to include (meta)data in the SIP.
-For example, it makes it possible to separate descriptive metadata about the content represented in a digital reproduction, from technical metadata purely about the digital reprodution itself.
+<mark>insert diagram PREMIS/Miel meemoo</mark>
 
+## Metadata in meemoo's SIP
+
+The metadata in meemoo's SIP can be divided into 4 categories: administrative, structural, descriptive and preservation metadata.
+
+The three-way distinction between an IE, a representation and a digital file allows for a flexible way to include descriptive and preservation metadata.
+It makes it possible to separate metadata about the content represented in a digital reproduction, from metadata purely about the digital reprodution itself.
 
 Consider the example of a digitised newspaper edition with 10 pages.
 Each page is digitised separately as a TIFF file and a JPEG file, resulting in 20 digital reproductions.
 In this example we view the newspaper edition as a whole as the IE.
-We can then discern between two representations of the newspaper: a TIFF representation for e.g. high-resolution reproduction, and a JPEG representation for e.g. low-resolution browse copies on the web.
+We can then discern between two representations of the newspaper: a high-resolution representation for e.g. high-resolution reproduction, and a JPEG representation for e.g. low-resolution browse copies on the web.
 We can add descriptive metadata about both the newspaper edition (the IE) and the digital representations (the digital files contained in the TIFF and JPEG representations).
-
-In the case of our running example defined in the introduction. 
 
 ## Hierarchical directory structure
 
@@ -124,7 +129,8 @@ The meemoo SIP consists of a hierarchical directory structure with 3 levels:
 
 Every level contains (meta)data about the IE of a SIP, but each level serves a specific purpose or describes a specfic (sub)set of the IE.
 
-The bag-level contains information for integrity checking in a manifest file listing every file in the SIP together with its checksum. The package-level 
+The bag-level contains information for integrity checking in a manifest file listing every file in the SIP together with its checksum.
+The package-level 
 
 bag-level contains information for integrity checking, package-level contains metadata about the intellectual entity and preservation metadata about the SIP itself, representation-level contains different representations, each containing a different digital representation of the intellectual entity along with the preservation and descriptive metadata of the digital representation.
 
@@ -172,6 +178,9 @@ root_directory
 
 In this section we dissect meemoo's SIP package and discuss its requirements.
 We follow the hierarchical folder structure discussed in XX and traverse the different levels of the SIP.
+<mark>verplaatsen naar boven</mark>Where possible, we include tables with the metadata elements, their attributes and the level of requirements.
+Further requirements are captured in plain text, using the [RFC 2119](https://tools.ietf.org/html/rfc2119) vocabulary.
+
 ## Structure of a meemoo SIP: bag-level
 
 A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
@@ -277,8 +286,6 @@ root_directory
 
 ## Structure of a meemoo SIP: package-level
 
-test
-
 _**Example**_
 
 ```diff
@@ -302,31 +309,36 @@ root_directory
 
 ### mets.xml (file)
 
-The _mets.xml_ file acts as an inventory of the files and directories at the package-level; it is therefore also known as the package mets.
+The [Metadata Encoding and Transmission Standard](https://www.loc.gov/standards/mets/mets-home.html) (henceforth METS) is a metadata standard for encoding descriptive, administrative and structural metadata.
+In the case of the meemoo SIP, the _mets.xml_ file merely acts as an inventory of the files and directories.
+Since it is situated at the package-level, it is also known as the package mets.
 
+It should not be confused with the _mets.xml_ files situated in their respective representation folders (cf. infra).
 It is important to note that the package _mets.xml_ file does not record the internal structure of the different representations in the __/representations__ directory.
 It only references the different _mets.xml_ files contained in each __/representation_n__ directory (where __n__ is an integer indicating the number of different representations in the __/representation__ directory).
 Each of the __mets.xml__ files at the representation-level references its own internal structure.
 
-_**Overview of XML elements in the package mets with their possible attributes**_
-
-| Element            | Can contain                                                        | Possible Attributes                                    | Repeatability  | Obligation |
-|--------------------|--------------------------------------------------------------------|--------------------------------------------------------|----------------|------------|
-| \<mets:mets/>      | \<mets:metsHdr/><br><br>\<mets:fileSec/><br><br>\<mets:structMap/> | OBJID<br><br>TYPE<br><br>csip:OTHERTYPE<br><br>PROFILE | Not repeatable | Mandatory  |
-| \<mets:metsHdr/>   | \<mets:agent/>                                                     | CREATEDATE<br><br>csip:OAISPACKAGETYPE                 | Not repeatable | Mandatory  |
-| \<mets:fileSec/>   | \<mets:fileGrp/>                                                   | ID                                                     | Not repeatable | Mandatory  |
-| \<mets:structMap/> | \<div>                                                             | ID<br><br>LABEL                                        | Not repeatable | Mandatory  |
-| \<mets:agent/>     | \<mets:name/><br>\<mets:note/>                                     | ROLE<br><br>TYPE<br><br>OTHERTYPE                      | Repeatable     | Mandatory  |
-| \<mets:name/>      | n/a                                                                | n/a                                                    | Not repeatable | Mandatory  |
-| \<mets:note/>      | n/a                                                                | csip:NOTETYPE                                          | Repeatable     | Optional   |
-| \<mets:fileGrp/>   | \<mets:fileGrp/>                                                   | USE<br><br>ID                                          | Repeatable     | Mandatory  |
-| \<div>             | \<mptr>                                                            | ID<br><br>LABEL                                        | Repeatable     | Mandatory  |
-| \<mptr>            | n/a                                                                | xlink:type<br><br>xlink:href<br><br>LOCTYPE            | Not repeatable | Mandatory  |
-
-#### mets:mets
+#### element mets
 
 This is the root element of the package mets.
 It contains a number of XML schema namespaces together with a number of attributes to uniquely identify the package mets and the type of data it lists.
+
+Name and XPATH
+Definition
+Rationale
+Data constraint
+Example
+Repeatability
+Obligation
+
+
+Name and XPATH                                    |Description   |Card and Level |
+--------------------------------------------------|--------------|---------------|
+ Package Identifier<br>`mets/@OBJID`              | B1 |1..1<br>MUST
+ Content Category<br>`mets/@TYPE`                 | B2 |1..1<br>MUST
+ METS Profile<br>`mets/@PROFILE`                  | B3 |
+ Other Content Category<br>`mets/@csip:OTHERTYPE` | B3 |0..1<br>SHOULD
+ 
 
 **_Requirements_**
 
