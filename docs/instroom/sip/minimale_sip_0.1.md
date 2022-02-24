@@ -19,6 +19,46 @@ nav_exclude:  true
 
 # meemoo SIP specification 0.1
 
+Table of contents
+
+- [meemoo SIP specification 0.1](#meemoo-sip-specification-01)
+  - [Abstract](#abstract)
+  - [Introduction](#introduction)
+    - [Instructions for reading this specification](#instructions-for-reading-this-specification)
+    - [Data Types](#data-types)
+    - [Terminology](#terminology)
+    - [Running example](#running-example)
+  - [meemoo SIP core concepts](#meemoo-sip-core-concepts)
+    - [Intellectual entities, representations and files](#intellectual-entities-representations-and-files)
+    - [Metadata in meemoo's SIP](#metadata-in-meemoos-sip)
+    - [Hierarchical directory structure](#hierarchical-directory-structure)
+  - [Structure of a meemoo SIP](#structure-of-a-meemoo-sip)
+    - [Structure of a meemoo SIP: bag-level](#structure-of-a-meemoo-sip-bag-level)
+      - [manifest-md5.txt (file)](#manifest-md5txt-file)
+      - [bagit.txt (file)](#bagittxt-file)
+      - [/data (directory)](#data-directory)
+    - [Structure of a meemoo SIP: package-level](#structure-of-a-meemoo-sip-package-level)
+      - [mets.xml (file)](#metsxml-file)
+        - [<code>mets</code> section](#mets-section)
+        - [<code>metsHdr</code> section](#metshdr-section)
+        - [<code>dmdSec</code> section](#dmdsec-section)
+        - [<code>amdSec</code> section](#amdsec-section)
+        - [<code>fileSec</code> section](#filesec-section)
+        - [<code>structMap</code> section](#structmap-section)
+      - [/metadata (directory)](#metadata-directory)
+        - [/descriptive (directory)](#descriptive-directory)
+        - [/preservation (directory)](#preservation-directory)
+      - [/representations (directory)](#representations-directory)
+    - [Structure of a meemoo SIP: representation-level](#structure-of-a-meemoo-sip-representation-level)
+      - [Overview](#overview)
+      - [/representation_1 (directory)](#representation_1-directory)
+        - [mets.xml (file)](#metsxml-file-1)
+        - [/data (directory)](#data-directory-1)
+        - [/metadata (directory)](#metadata-directory-1)
+          - [/descriptive (directory)](#descriptive-directory-1)
+          - [/preservation (directory)](#preservation-directory-1)
+
+
 ## Abstract
 
 The meemoo Submission Information Package (henceforth SIP) specification describes how data and metadata should be packaged when delivered to meemoo for ingest.
