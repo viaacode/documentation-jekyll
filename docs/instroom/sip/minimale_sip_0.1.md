@@ -662,8 +662,8 @@ Depending on the use-case and the content partner, these files can be digital pi
 
 ###### /descriptive (directory)
 
-####### descriptive_metadata.xml (file)
+####### dc.xml (file)
 
 ###### /preservation (directory)
 
-####### preservation_metadata.xml (file)
+####### premis.xml (file)
