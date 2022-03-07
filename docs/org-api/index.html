@@ -23,8 +23,10 @@
           <h5>Introduction</h5>
           <a href="#introduction">Welcome</a>
           <a data-traverse-ignore="" href="https://developer.meemoo.be">Back to meemoo developer documentation!</a>
-          <a href="#intro-item-1">Graphql API</a>
-          <a href="#intro-item-2">Authentication</a>
+          <a href="#intro-item-1">GET request</a>
+          <a href="#intro-item-2">POST request</a>
+          <a href="#intro-item-3">Testing</a>
+          <a href="#intro-item-4">Authentication</a>
           <h5>Operations</h5>
           <a href="#operation-contentpartners-Queries"> contentpartners </a>
           <a href="#operation-organizations-Queries"> organizations </a>
@@ -59,7 +61,9 @@
           <div id="introduction" data-traverse-target="introduction">
             <div class="doc-row">
               <div class="doc-copy">
-                <p>Documentatie voor meemoo&#39;s Organization API V2</p>
+                <p>Documentatie voor meemoo&#39;s Organization API V2. Deze API geeft je toegang tot informatie over organisaties en personen binnen de meemoo context, zoals contentpartners, educatieve partners, vestigingen, contact informatie, account managers, or personeelsleden van meemoo. Het is een
+                  <a href="https://graphql.org/">GraphQL API</a> die voldoet aan de
+                  <a href="https://spec.graphql.org/October2021/">specificatie</a>. Een GraphQL query kan zowel met <code>GET</code> of <code>POST</code> verstuurd worden. </p>
               </div>
               <div class="doc-examples">
                 <section>
@@ -86,18 +90,50 @@ https://services-qas.viaa.be/organisation_v2
             </div>
             <div id="intro-item-1" data-traverse-target="intro-item-1">
               <div class="doc-row">
-                <h5 class="doc-intro-item">Graphql API</h5>
+                <h5 class="doc-intro-item">GET request</h5>
                 <div class="doc-copy">
-                  <p>Send GraphQL query over <code>GET</code> or <code>POST</code>.</p>
+                  <p>Een GraphQL GET request bevat de query in de <code>query</code> query string.
+                    <br> <code>https://services-qas.viaa.be/organisation_v2?query=&lt;graphql_query&gt;</code></p>
                 </div>
                 <div class="doc-examples"> </div>
               </div>
             </div>
             <div id="intro-item-2" data-traverse-target="intro-item-2">
               <div class="doc-row">
+                <h5 class="doc-intro-item">POST request</h5>
+                <div class="doc-copy">
+                  <p>Een GraphQL POST request verwacht een JSON-gecodeerde payload. De request moet daarom de header <code>Content-Type: application/json</code> bevatten. De payload is als volgt gestructureerd:</p> <pre><code class="hljs">{
+  <span class="hljs-string">"query"</span>: <span class="hljs-string">"..."</span>,
+  <span class="hljs-string">"operationName"</span>: <span class="hljs-string">"..."</span>,
+  <span class="hljs-string">"variables"</span>: { <span class="hljs-string">"myVariable"</span>: <span class="hljs-string">"someValue"</span>, ... }
+}
+</code></pre> </div>
+                <div class="doc-examples"> </div>
+              </div>
+            </div>
+            <div id="intro-item-3" data-traverse-target="intro-item-3">
+              <div class="doc-row">
+                <h5 class="doc-intro-item">Testing</h5>
+                <div class="doc-copy">
+                  <p>De QAS API bevat ook een interactieve GraphiQL omgeving waar queries kunnen getest worden. Je kan deze vinden door
+                    <a href="https://services-qas.viaa.be/organisation_v2">https://services-qas.viaa.be/organisation_v2</a> in je browser te openen.</p>
+                </div>
+                <div class="doc-examples"> </div>
+              </div>
+            </div>
+            <div id="intro-item-4" data-traverse-target="intro-item-4">
+              <div class="doc-row">
                 <h5 class="doc-intro-item">Authentication</h5>
                 <div class="doc-copy">
-                  <p>Authenticate via JWT token</p>
+                  <p>Deze API gebruikt authenticatie via
+                    <a href="https://jwt.io/">JSON Web Tokens (JWT)</a>. Het JWT token kan je als volgt aanvragen met je meemoo gebruikersnaam en paswoord.</p>
+                  <ol>
+                    <li>Vraag een token aan via
+                      <a href="https://oas-qas.meemoo.be/token?grant_type=client_credentials&amp;expires_in=31536000"></a><pre><code class="hljs">curl -v -u '<span class="hljs-variable">&lt;username/email/...&gt;</span>:<span class="hljs-variable">&lt;password&gt;</span>' <span class="hljs-string">"https://oas-qas.meemoo.be/token?grant_type=client_credentials&amp;expires_in=31536000"</span>
+</code></pre> </li>
+                    <li>Gebruik het token in de authorization header (bearer) of uri parameter (jwauth):<pre><code class="hljs">curl -v https:<span class="hljs-regexp">//</span>services-qas.viaa.be<span class="hljs-regexp">/organisation_v2/</span>?jwtauth=<span class="hljs-string">"eyJ0eXAiOiJKV1......tbjz4-r4"</span>
+</code></pre> </li>
+                  </ol>
                 </div>
                 <div class="doc-examples"> </div>
               </div>
@@ -183,7 +219,7 @@ https://services-qas.viaa.be/organisation_v2
                   <h5>Variables</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -204,11 +240,11 @@ https://services-qas.viaa.be/organisation_v2
         <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"abc123"</span>,
-        <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"xyz789"</span>,
+        <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"abc123"</span>,
-        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"abc123"</span>,
+        <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"logo"</span>: <span class="hljs-string">Logo</span>,
-        <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">true</span>,
         <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">false</span>,
         <span class="hljs-attr">"account_manager"</span>: <span class="hljs-string">Person</span>,
         <span class="hljs-attr">"classification"</span>: <span class="hljs-string">Concept</span>,
@@ -306,7 +342,7 @@ https://services-qas.viaa.be/organisation_v2
                   <h5>Variables</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -332,7 +368,7 @@ https://services-qas.viaa.be/organisation_v2
         <span class="hljs-attr">"description"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"logo"</span>: <span class="hljs-string">Logo</span>,
         <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">false</span>,
-        <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">false</span>,
         <span class="hljs-attr">"account_manager"</span>: <span class="hljs-string">Person</span>,
         <span class="hljs-attr">"classification"</span>: <span class="hljs-string">Concept</span>,
         <span class="hljs-attr">"units"</span>: [<span class="hljs-string">OrganizationalUnit</span>],
@@ -413,7 +449,7 @@ https://services-qas.viaa.be/organisation_v2
                   <h5>Variables</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"given_name"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"family_name"</span>: <span class="hljs-string">"abc123"</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">"abc123"</span>, <span class="hljs-attr">"given_name"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"family_name"</span>: <span class="hljs-string">"abc123"</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -431,10 +467,10 @@ https://services-qas.viaa.be/organisation_v2
     <span class="hljs-attr">"persons"</span>: [
       {
         <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
-        <span class="hljs-attr">"given_name"</span>: <span class="hljs-string">"xyz789"</span>,
+        <span class="hljs-attr">"given_name"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"family_name"</span>: <span class="hljs-string">"abc123"</span>,
-        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"abc123"</span>,
-        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xyz789"</span>,
+        <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"xyz789"</span>,
+        <span class="hljs-attr">"email"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"holds"</span>: [<span class="hljs-string">Post</span>],
         <span class="hljs-attr">"account_manager_of"</span>: [<span class="hljs-string">Organization</span>]
       }
@@ -526,7 +562,7 @@ https://services-qas.viaa.be/organisation_v2
                   <h5>Variables</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -544,15 +580,15 @@ https://services-qas.viaa.be/organisation_v2
     <span class="hljs-attr">"schools"</span>: [
       {
         <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
-        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>,
+        <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"abc123"</span>,
         <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"xyz789"</span>,
-        <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"abc123"</span>,
+        <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
         <span class="hljs-attr">"logo"</span>: <span class="hljs-string">Logo</span>,
-        <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">true</span>,
-        <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">false</span>,
         <span class="hljs-attr">"account_manager"</span>: <span class="hljs-string">Person</span>,
         <span class="hljs-attr">"classification"</span>: <span class="hljs-string">Concept</span>,
         <span class="hljs-attr">"units"</span>: [<span class="hljs-string">OrganizationalUnit</span>],
@@ -637,7 +673,7 @@ https://services-qas.viaa.be/organisation_v2
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>, <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"xyz789"</span>}
+                  <body><pre><code class="hljs language-json">{<span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>, <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>, <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"abc123"</span>}
 </code></pre> </body>
                   </html>
                 </section>
@@ -694,8 +730,8 @@ https://services-qas.viaa.be/organisation_v2
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
-  <span class="hljs-attr">"contact_type"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"contact_type"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"email"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"abc123"</span>
 }
 </code></pre> </body>
@@ -844,12 +880,12 @@ https://services-qas.viaa.be/organisation_v2
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"logo"</span>: <span class="hljs-string">Logo</span>,
   <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">true</span>,
@@ -1095,13 +1131,13 @@ https://services-qas.viaa.be/organisation_v2
   <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
   <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"logo"</span>: <span class="hljs-string">Logo</span>,
-  <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"account_manager"</span>: <span class="hljs-string">Person</span>,
   <span class="hljs-attr">"classification"</span>: <span class="hljs-string">Concept</span>,
   <span class="hljs-attr">"units"</span>: [<span class="hljs-string">OrganizationalUnit</span>],
@@ -1299,12 +1335,12 @@ https://services-qas.viaa.be/organisation_v2
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"logo"</span>: <span class="hljs-string">Logo</span>,
   <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">true</span>,
@@ -1469,14 +1505,14 @@ https://services-qas.viaa.be/organisation_v2
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
   <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"logo"</span>: <span class="hljs-string">Logo</span>,
   <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">false</span>,
-  <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"account_manager"</span>: <span class="hljs-string">Person</span>,
   <span class="hljs-attr">"classification"</span>: <span class="hljs-string">Concept</span>,
   <span class="hljs-attr">"units"</span>: [<span class="hljs-string">OrganizationalUnit</span>],
@@ -1712,14 +1748,14 @@ https://services-qas.viaa.be/organisation_v2
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
-  <span class="hljs-attr">"contact_type"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"contact_type"</span>: <span class="hljs-string">"abc123"</span>,
   <span class="hljs-attr">"email"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"telephone"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"country"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"locality"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"region"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"locality"</span>: <span class="hljs-string">"xyz789"</span>,
+  <span class="hljs-attr">"region"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"post_office_box_number"</span>: <span class="hljs-string">"abc123"</span>,
-  <span class="hljs-attr">"postal_code"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"postal_code"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"street"</span>: <span class="hljs-string">"abc123"</span>
 }
 </code></pre> </body>
@@ -1868,14 +1904,14 @@ https://services-qas.viaa.be/organisation_v2
                   <head></head>
                   <body><pre><code class="hljs language-json">{
   <span class="hljs-attr">"iri"</span>: <span class="hljs-string">ID</span>,
-  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"id"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"label"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"alt_label"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"mam_label"</span>: <span class="hljs-string">"xyz789"</span>,
-  <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"abc123"</span>,
+  <span class="hljs-attr">"homepage"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"description"</span>: <span class="hljs-string">"xyz789"</span>,
   <span class="hljs-attr">"logo"</span>: <span class="hljs-string">Logo</span>,
-  <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"overlay"</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">"bzt"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"account_manager"</span>: <span class="hljs-string">Person</span>,
   <span class="hljs-attr">"classification"</span>: <span class="hljs-string">Concept</span>,
