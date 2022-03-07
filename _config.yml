@@ -112,12 +112,6 @@ callouts:
     title: Note
     color: blue
 
-just_the_docs:
-  collections:
-    org-api:
-      name: Organization API V2
-
-collections:
-  docs:
-    permalink: "/docs/org-api/"
-    output: true
+aux_links:
+  "Organizations API V2":
+    - "/docs/org-api"
