@@ -13,16 +13,17 @@
 <metsHdr    CREATEDATE="2022-02-16T10:01:15.014+02:00"
             csip:OAISPACKAGETYPE="SIP">
 
+<!-- information about the software -->
 <agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
     <name>meemoo SIP creator</name>
     <note csip:NOTETYPE="SOFTWARE VERSION">0.1.</note>
 </agent>
-
+<!-- information about the archival creator-->
 <agent ROLE="ARCHIVIST" TYPE="ORGANIZATION">
     <name>Flemish Cat Museum</name>
     <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
 </agent>
-
+<!-- information about the submitting organisation -->
 <agent ROLE="CREATOR" TYPE="ORGANIZATION">
     <name>Flemish Cat Museum</name>
     <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
@@ -30,29 +31,84 @@
 
 </metsHdr>
 
-<fileSec ID="uuid-d2e2327f-0157-44c1-9105-b785b8161701">
-    <fileGrp USE="root" ID="uuid-3b136403-9115-4acb-a644-6a455611eb6f">
-        <fileGrp USE="metadata" ID="uuid-20677681-9fa7-4507-a85e-0df155ec6ea7">
-            <fileGrp USE="descriptive" ID="uuid-c7df16b9-ab4a-4d78-88ad-37456485c527"/>
-            <fileGrp USE="preservation" ID="uuid-cccb0ece-ab35-435a-b296-72715a51e7d5"/>
+<!-- ref to descriptive metadata about IE -->
+<dmdSec ID="uuid-786829da-2ad8-4d77-8cf7-157f63227e6b">
+    <mdRef ID="uuid-88191f66-f7ae-42c7-9427-8af2a8e7557f" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml" MIMETYPE="text/xml" SIZE="647" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="968ebd5cb0283c086c333928eff6b85e" CHECKSUMTYPE="MD5" />
+</dmdSec>
+
+<!-- ref to descriptive metadata about subIE 1 -->
+<dmdSec ID="uuid-9f138ace-8ee0-4f13-a4da-353d989b6f29">
+    <mdRef ID="uuid-6e121ba5-7e96-4967-b776-c5f48d85f800" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_1.xml" MIMETYPE="text/xml" SIZE="710" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a" CHECKSUMTYPE="MD5" />
+</dmdSec>
+
+<!-- ref to descriptive metadata about subIE 2 -->
+<dmdSec ID="uuid-5d6085a1-d607-46a4-ad3a-24a06663661c">
+    <mdRef ID="uuid-f1ddd620-e535-4ae3-a959-1be8468caaa5" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_2.xml" MIMETYPE="text/xml" SIZE="723" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" CHECKSUMTYPE="MD5" />
+</dmdSec>
+
+<!-- ref to the PREMIS metadata about IE/subIE(s)/package -->
+<amdSec ID="b9143f83-2567-4122-a55c-87389e6263ec">
+    <digiprovMD ID="uuid-3f8709ad-2c02-48a2-9fb4-871df03cb929">
+        <mdRef ID="uuid-bf966b2c-c1a2-4c75-aae6-18877d2f58cc" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="6199" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="083a409c2627798e53e3ebbba90cc867" CHECKSUMTYPE="MD5" />
+    </digiprovMD>
+</amdSec>
+
+<!-- file section -->
+<fileSec ID="uuid-0c53fd9b-f640-4def-a872-2e4622f691d9">
+    <fileGrp USE="root" ID="uuid-6c78980c-bdfc-4e2e-b19a-579e5b285055">
+        <fileGrp USE="metadata" ID="uuid-bd087c44-ee3f-48e9-9031-9190a60c8e13">
+            <fileGrp USE="metadata/descriptive" ID="uuid-5194aca6-97b6-448c-b385-b892bc0c362c">
+                <file ID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911" MIMETYPE="text/xml" SIZE="647" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="968ebd5cb0283c086c333928eff6b85e" CHECKSUMTYPE="MD5">
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml"/>
+                </file>
+                <file ID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb" MIMETYPE="text/xml" SIZE="710" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a" CHECKSUMTYPE="MD5">
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_1.xml"/>
+                </file>
+                <file ID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5" MIMETYPE="text/xml" SIZE="723" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" CHECKSUMTYPE="MD5">
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_2.xml"/>
+                </file>
+            </fileGrp>
+            <fileGrp USE="metadata/preservation" ID="uuid-caea98b8-ae09-412d-8f25-dd50ba6a30cd">
+                <file ID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0" MIMETYPE="text/xml" SIZE="6199" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="083a409c2627798e53e3ebbba90cc867" CHECKSUMTYPE="MD5">
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml"/>
+                </file>
+            </fileGrp>
         </fileGrp>
-        <fileGrp USE="representations" ID="uuid-f111bfb3-55fd-4301-887e-0823c56ecfdd"/>
+        <fileGrp USE="representations" ID="uuid-779319d9-cc1f-41b3-a49e-28d169e0d066">
+            <fileGrp USE="representations/representation_1" ID="uuid-700c97da-3164-4863-9e58-d6d62156052e">
+                <file ID="uuid-0fe40ffc-b5f3-465e-af3a-d266d94453b7" MIMETYPE="text/xml" SIZE="4196" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="0e3033891343eb8bbb15454cd64a27ab" CHECKSUMTYPE="MD5">
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml"/>
+                </file>
+            </fileGrp>
+            <fileGrp USE="representations/representation_2" ID="uuid-c0fed1c6-96c8-4f15-9e82-abc7be2e981c">
+                <file ID="uuid-625629a4-e5f8-4087-9114-66e4a943bf50" MIMETYPE="text/xml" SIZE="3814" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="3d82bb35d526e4850551f2eca0678d0c" CHECKSUMTYPE="MD5">
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_2/mets.xml"/>
+                </file>
+            </fileGrp>
+        </fileGrp>
     </fileGrp>
 </fileSec>
 
-<structMap ID="uuid-6e5e803a-6445-4386-88b1-e872b429c944" TYPE="PHYSICAL" LABEL="CSIP">
-    <!-- welk label moet de overkoepelende div krijgen? -->
-    <div ID="uuid-128e281f-c41f-493e-a252-70322ae62522" LABEL="">
-			<div ID="uuid-33c80512-d484-428e-9330-c4c1ab0b09a3" LABEL="metadata">
-				<div ID="uuid-b1047982-e859-4b1a-9f75-8f690d24e602" LABEL="descriptive" />
-				<div ID="uuid-0a7da6ae-a68a-42af-ac36-61db80e6fd78" LABEL="preservation" />
-			</div>
-			<div ID="uuid-ad311b11-ede5-4985-81b5-c4c2626a586e" LABEL="representations">
-				<div ID="uuid-cca7a8ba-1eec-4319-a458-8e67ccf082ed" LABEL="representation_1">
+<structMap ID="uuid-1ce2cef4-cb9a-4649-8983-c916870cf2b4" TYPE="PHYSICAL" LABEL="CSIP">
+    <div ID="uuid-33cd69c8-b297-40e1-9491-1b5db58890bd" LABEL="">
+			<div ID="uuid-c0a73bbc-d6f3-42a0-b5e1-f53a4601101b" LABEL="metadata">
+				<div ID="uuid-9aae35c0-9d17-43c7-824a-4722ef3039cd" LABEL="descriptive">
+                    <fptr FILEID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"/>
+                    <fptr FILEID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"/>
+                    <fptr FILEID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"/>
+                </div>
+				<div ID="uuid-ee9ce21e-8264-45cc-b877-7e266647a335" LABEL="preservation">
+                    <fptr FILEID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"/>
+                </div>
+            </div>
+			<div ID="uuid-17ff6cea-cd84-46ad-b9a8-250809f9e2c7" LABEL="representations">
+				<div ID="uuid-c5cab13b-aced-4024-bbc3-d38c682602d2" LABEL="representation_1">
 					<mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
+				</div>
+                <div ID="uuid-daeba358-46ee-4363-b2a2-bd745c128f6f" LABEL="representation_2">
+					<mptr xlink:type="simple" xlink:href="./representations/representation_2/mets.xml" LOCTYPE="URL" />
 				</div>
 			</div>
     </div>
 </structMap>
-
 </mets>

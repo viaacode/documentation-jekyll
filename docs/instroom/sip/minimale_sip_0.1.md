@@ -530,6 +530,8 @@ The listing of other representation files (i.e. metadata files and media files) 
 
 ##### <code>structMap</code> section
 
+<mark>vraag: welk label moet de overkoepelende <div> krijgen?</mark>
+
 The <code>\<structMap></code> element outlines the hierarchical structure of the package level of the SIP.
 It provides links between elements and metadata files located elsewhere in the package level.
 
@@ -573,6 +575,8 @@ The */descriptive* directory contains descriptive metadata about the (sub-)IE(s)
 - The */descriptive* directory MUST contain exactly one file: *dc.xml*.
 
 ###### dc.xml
+
+<mark>vraag: waar aanduiden over welke IE/subIE een bepaalde descriptieve metadatafile gaat? In een soort PREMIS relatie 'describes' op basis van gedeelde/gerefereerde UUID?</mark>
 
 The *dc.xml* file at the package-level contains descriptive metadata about the (sub-)IE(s) of the SIP.
 It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schema in order to facilitate a basic description with a limited number of metadata.
