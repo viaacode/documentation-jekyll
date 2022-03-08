@@ -69,6 +69,7 @@ Table of contents
           - [/descriptive (directory)](#descriptive-directory-1)
           - [/preservation (directory)](#preservation-directory-1)
 
+
 ## Abstract
 
 The meemoo Submission Information Package (henceforth SIP) specification describes how data and metadata should be packaged when delivered to meemoo for ingest.
