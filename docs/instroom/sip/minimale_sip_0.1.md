@@ -60,7 +60,7 @@ Table of contents
           - [premis.xml](#premisxml)
       - [/representations (directory)](#representations-directory)
     - [Structure of a meemoo SIP: representation-level](#structure-of-a-meemoo-sip-representation-level)
-      - [/representation_n (directory)](#representation_n-directory)
+      - [/representation_* (directory)](#representation_-directory)
         - [mets.xml (file)](#metsxml-file-1)
         - [<code>mets</code> section](#mets-section-1)
         - [<code>metsHdr</code> section](#metshdr-section-1)
@@ -132,6 +132,7 @@ Datatype|Definition|
 ### Terminology
 
 <mark>to do: definities verzamelen uit spec. eenmaal af</mark>
+<mark>vraag: welke termen moeten hier zeker komen?</mark>
 
 | Term                 | Explanation  |
 |--------------------- |------------- |
@@ -255,7 +256,7 @@ root_directory
       │     └──preservation
       │            ...
       │
-      └──representation_n
+      └──representation_*
          │   ...
 ```
 
@@ -312,13 +313,22 @@ It is used during processing of the bag to allow for data integrity checking.
 ***Example***
 
 ```txt
-95d9ac203e0690b8e03fc087c5c68479  ./data/mets.xml
-1eb7ddc7c89c0855249afe8f0fd5e52a  ./data/representations/representation_1/mets.xml
-7e50bacc8fecabcb5a14cc6bdc080ca2  ./data/representations/representation_1/data/AWH12931330.tif
-49abb190b55d159adcd8ebc5dd73804b  ./data/representations/representation_1/metadata/preservation/AWH12931330.xml
-87433f675bcd1125819afa1f0968943e  ./data/representations/representation_1/metadata/descriptive/AWH12931330.xml
+6f0caf83f3c5427d7346b383f951a238  ./data/mets.xml
+3d82bb35d526e4850551f2eca0678d0c  ./data/representations/representation_2/mets.xml
+18513a8d61c6f2cbaaeeedd754b01d6b  ./data/representations/representation_2/data/D523F963.jpg
+7dcccd931cd6012db0d2557413049b7c  ./data/representations/representation_2/metadata/preservation/premis.xml
+e87fb1921d466725d2690420b803cf1f  ./data/representations/representation_2/metadata/descriptive/dc.xml
+0e3033891343eb8bbb15454cd64a27ab  ./data/representations/representation_1/mets.xml
+d4985ba4b67ff067a0e84c53b6d35355  ./data/representations/representation_1/data/1450.jpeg
+b7ae37f6094794e313402b9d064978e8  ./data/representations/representation_1/data/1445.jpeg
+53bf706904538e8e3204c68196be6b6d  ./data/representations/representation_1/metadata/preservation/premis.xml
+b031b5dc012e94ff90027613b11b0b22  ./data/representations/representation_1/metadata/descriptive/dc.xml
+083a409c2627798e53e3ebbba90cc867  ./data/metadata/preservation/premis.xml
+968ebd5cb0283c086c333928eff6b85e  ./data/metadata/descriptive/dc_ie.xml
+5bdf4aeb87b4027ef9ce309888de556a  ./data/metadata/descriptive/dc_subie_1.xml
+e470d7b12651d358d14d7f172ae2fad2  ./data/metadata/descriptive/dc_subie_2.xml
 eaa2c609ff6371712f623f5531945b44  ./bagit.txt
-3399c34bd1871445705fd0921e5f32d8  ./manifest-md5.txt
+0107c5bbfeca269ec99194cc7b9e2234  ./manifest-md5.txt
 ```
 
 #### bagit.txt (file)
@@ -398,7 +408,7 @@ Since it is situated at the package-level, it is also known as the package mets.
 
 It should not be confused with the *mets.xml* files situated in their respective representation folders (cf. infra).
 The package *mets.xml* file does not record the internal structure of the different representations in the */representations* directory.
-It only references the different *mets.xml* files contained in each */representation_n* directory (where *n* is an integer indicating the number of different representations in the */representation* directory).
+It only references the different *mets.xml* files contained in each */representation_\** directory (where *n* is an integer indicating the number of different representations in the */representation* directory).
 Each of the *mets.xml* files at the representation-level references its own internal structure.
 
 ##### <code>mets</code> section
@@ -418,12 +428,13 @@ The various requirements are listed in the table below.
 ***Example***
 
 ```xml
-<mets xmlns:mets="http://www.loc.gov/METS/"
+<?xml version='1.0' encoding='UTF-8'?>
+<mets xmlns="http://www.loc.gov/METS/"
            xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" 
            xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
            xmlns:xlink="http://www.w3.org/1999/xlink" 
-           OBJID="54c3a254-9c78-494d-a1f1-d07640989038"
+           OBJID="uuid-cbee2999-1db5-4a69-9260-f216dee75623"
            TYPE="OTHER" 
            csip:OTHERTYPE="Photographs – Digital" 
            PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" 
@@ -452,23 +463,23 @@ It does so by using separate <code>\<agent></code> tags for every role in the SI
 ***Example***
 
 ```xml
-<metsHdr CREATEDATE="2021-08-18T21:54:15.014+02:00"
-         csip:OAISPACKAGETYPE="SIP">
- 
-<agent ROLE="SIP CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
-   <name>meemoo SIP creator</name>
-   <note csip:NOTETYPE="SOFTWARE VERSION">0.1.</note>
-</agent>
-
-<agent ROLE="ARCHIVAL CREATOR" TYPE="ORGANIZATION">
-   <name>Plantentuin Meise</name>
-</agent>
-
-<agent ROLE="SUBMITTING AGENT" TYPE="ORGANIZATION">
-   <name>Plantentuin Meise</name>
-</agent>
-
-</metsHdr>
+<metsHdr CREATEDATE="2022-02-16T10:01:15.014+02:00" csip:OAISPACKAGETYPE="SIP">
+        <!-- information about the software -->
+        <agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
+            <name>meemoo SIP creator</name>
+            <note csip:NOTETYPE="SOFTWARE VERSION">0.1.</note>
+        </agent>
+        <!-- information about the archival creator-->
+        <agent ROLE="ARCHIVIST" TYPE="ORGANIZATION">
+            <name>Flemish Cat Museum</name>
+            <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
+        </agent>
+        <!-- information about the submitting organisation -->
+        <agent ROLE="CREATOR" TYPE="ORGANIZATION">
+            <name>Flemish Cat Museum</name>
+            <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
+        </agent>
+    </metsHdr>
 ```
 
 ##### <code>dmdSec</code> section
@@ -484,6 +495,25 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 
 <div class="tg-wrap"><table style="undefined;table-layout: fixed; width: 2414px"><colgroup><col style="width: 383.88333px"><col style="width: 609.88333px"><col style="width: 1419.88333px"></colgroup><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap</code></b></td></tr><tr><td></td><td>Name</td><td>Structural description of the package</td></tr><tr><td></td><td>Description/Rationale</td><td>The <code>\<structMap></code> describes the highest logical structure of the IP.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@TYPE='PHYSICAL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of structural description</td></tr><tr><td></td><td>Description/Rationale</td><td>The mets/structMap/@TYPE attribute MUST take the value “PHYSICAL”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']</code></b></td></tr><tr><td></td><td>Name</td><td>Name of the structural description</td></tr><tr><td></td><td>Description/Rationale</td><td>This requirement identifies the CSIP compliant structural map <code>\<structMap></code> element.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Structural description identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the structural description. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div</code></b></td></tr><tr><td></td><td>Name</td><td>Main structural division</td></tr><tr><td></td><td>Description/Rationale</td><td>The division element. Each <code>\<structMap></code> element MUST contain one <code>\<div></code> element that contains possible further <code>\<div></code> elements of the <code>\<structMap></code> elements.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Main structural division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the main <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division</td></tr><tr><td></td><td>Description/Rationale</td><td>The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.<br>When the transfer consists of only administrative and/or descriptive metadata this is the only sub division that occurs.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the metadata <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The metadata <code>\<div></code> element’s @LABEL attribute value MUST be “Metadata”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division references administrative metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>The administrative metadata division should reference all current administrative metadata sections.<br>All <code>\<amdSec></code> elements with @STATUS='CURRENT' SHOULD be referenced by their identifier, @ID. <br> The current <code>\<amdSec></code> elements' @IDs are recorded in the div[@LABEL='Metadata']/@ADMID attribute in a space delimited list.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division references descriptive metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>The descriptive metadata division should reference all current descriptive metadata sections.<br>All <code>\<dmdSec></code> elements with @STATUS='CURRENT' SHOULD be referenced by their identifier, @ID. <br> The current <code>\<dmdSec></code> elements' @IDs are recorded in the div[@LABEL='Metadata']/@DMDID attribute in a space delimited list.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division</td></tr><tr><td></td><td>Description/Rationale</td><td>The documentation referenced in the file section file groups is described in the structural map with one sub division.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the documentation <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The documentation <code>\<div></code> element’s @LABEL attribute value MUST be “Documentation”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation file references</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing documentation described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation file group reference pointer</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Documentation” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division</td></tr><tr><td></td><td>Description/Rationale</td><td>The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Schemas” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The schemas <code>\<div></code> element’s @LABEL attribute value MUST be “Schemas”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Schema file reference</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing schemas described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Schema file group reference</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Schemas” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</code></b></td></tr><tr><td></td><td>Name</td><td>Content division</td></tr><tr><td></td><td>Description/Rationale</td><td>When no representations are present the content referenced in the file section file group with @USE attribute value, “Representations” is described in the structural map as a single sub division.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Content division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Representations” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</code></b></td></tr><tr><td></td><td>Name</td><td>Content division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The representations <code>\<div></code> element’s @LABEL attribute value MUST be “Representations”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Content division file references</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing content described in the package are referenced via the relevant file group identifiers.<br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Content division file group references</td></tr><tr><td></td><td>Description/Rationale</td><td>The pointer to the identifier for the “Representations” file group.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div</code></b></td></tr><tr><td></td><td>Name</td><td>Representation division</td></tr><tr><td></td><td>Description/Rationale</td><td>When a package consists of multiple representations, each described by a representation level mets.xml file, there should be a discrete representation <code>\div</code> element for each representation. <br> Each representation <code>\<div></code> references the representation level mets.xml file, documenting the structure of the representation and its content.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier that can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/@LABEL</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The package’s representation division <code>\<div></code> element @LABEL attribute value must be the path to the representation level mets.xml file starting with the value “Representations” followed by the main folder name, e.g. Representations/representation_1.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division file references</td></tr><tr><td></td><td>Description/Rationale</td><td>The file group containing the files described in the package are referenced via the relevant file group identifier.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/mptr</code></b></td></tr><tr><td></td><td>Name</td><td>Representation METS pointer</td></tr><tr><td></td><td>Description/Rationale</td><td>The division <code>\<div></code> of the specific representation includes one occurrence of the METS pointer <code>\<mptr></code> element, pointing to the appropriate representation mets.xml file.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr/@xlink:href</code></b></td></tr><tr><td></td><td>Name</td><td>Resource location</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>As indicated by the @LOCTYPE attribute, this filepath MUST be a URL type filepath.<br>It is recommended to use the relative location of the file in this URL.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr[@xlink:type='simple']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of link</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr[@LOCTYPE='URL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of locator</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the representation mets.xml files of the different representation levels.<br>It MUST always be used with the value "URL".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr></tbody></table></div>
 
+***Example***
+
+```xml
+<!-- ref to descriptive metadata about IE -->
+    <dmdSec ID="uuid-786829da-2ad8-4d77-8cf7-157f63227e6b">
+        <mdRef ID="uuid-88191f66-f7ae-42c7-9427-8af2a8e7557f" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml" MIMETYPE="text/xml" SIZE="647" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="968ebd5cb0283c086c333928eff6b85e" CHECKSUMTYPE="MD5" />
+    </dmdSec>
+
+    <!-- ref to descriptive metadata about subIE 1 -->
+    <dmdSec ID="uuid-9f138ace-8ee0-4f13-a4da-353d989b6f29">
+        <mdRef ID="uuid-6e121ba5-7e96-4967-b776-c5f48d85f800" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_1.xml" MIMETYPE="text/xml" SIZE="710" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a" CHECKSUMTYPE="MD5" />
+    </dmdSec>
+
+    <!-- ref to descriptive metadata about subIE 2 -->
+    <dmdSec ID="uuid-5d6085a1-d607-46a4-ad3a-24a06663661c">
+        <mdRef ID="uuid-f1ddd620-e535-4ae3-a959-1be8468caaa5" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_2.xml" MIMETYPE="text/xml" SIZE="723" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" CHECKSUMTYPE="MD5" />
+    </dmdSec>
+```
+
 ##### <code>amdSec</code> section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
@@ -495,6 +525,17 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 ***Requirements***
 
 <div class="tg-wrap"><table style="undefined;table-layout: fixed; width: 2532px"><colgroup><col style="width: 401.88333px"><col style="width: 639.88333px"><col style="width: 1489.88333px"></colgroup><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec</code></b></td></tr><tr><td></td><td>Name</td><td>Administrative metadata section</td></tr><tr><td></td><td>Description/Rationale</td><td>Wrapper element that contains either embedded preservation metadata or a reference to (a) separate preservation metadata file(s) in the directory /metadata/preservation.<br>It MUST be used if preservation metadata for the package content is available.<br>All preservation metadata MUST be present in a single <code><amdSec></code> element.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD</code></b></td></tr><tr><td></td><td>Name</td><td>Digital provenance metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Wrapper element for including preservation information using the PREMIS standard.<br>Each piece of PREMIS metadata MUST be included in a separate <code><digiprovMD></code> element.<br>If preservation metadata in PREMIS is embedded within the mets.xml file, it is recommended to follow <a href="https://www.loc.gov/standards/premis/guidelines2017-premismets.pdf" target="_blank" rel="noopener noreferrer">the 2017 version of PREMIS in METS Guidelines</a>.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Digital provenance metadata identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier used for internal package references.<br>It MUST be unique within the SIP.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/@STATUS</code></b></td></tr><tr><td></td><td>Name</td><td>Status of the digital provenance metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Describes the status of the <code><digiprovMD></code> which is supported by the profile.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["CURRENT","SUPERSEDED"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef</code></b></td></tr><tr><td></td><td>Name</td><td>Reference to the document with the digital provenance metadata (when not embedded within the mets.xml file).</td></tr><tr><td></td><td>Description/Rationale</td><td>Reference to the preservation metadata file(s) when located in the /metadata/preservation directory.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef[@LOCTYPE='URL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of locator</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the preservation metadata file(s) in the /metadata/preservation directory.<br>It MUST always be used with the value "URL".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef[@xlink:type='simple']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of link</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@xlink:href</code></b></td></tr><tr><td></td><td>Name</td><td>Resource location</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the /metadata/preservation directory.<br>As indicated by the <code>@LOCTYPE</code> attribute, this filepath MUST be a URL type filepath.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@MDTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Type of preservation metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["MARC","MODS","EAD","DC","NISOIMG","LC-AV","VRA","TEIHDR","DDI","FGDC","LOM","PREMIS","PREMIS:OBJECT","PREMIS:AGENT","PREMIS:RIGHTS","PREMIS:EVENT","TEXTMD","METSRIGHTS","ISO 19115:2003 NAP","EAC-CPF","LIDO","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@MIMETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File mime type</td></tr><tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>IANA mime type</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@SIZE</code></b></td></tr><tr><td></td><td>Name</td><td>File size</td></tr><tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr><tr><td></td><td>Datatype</td><td>Integer</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@CREATED</code></b></td></tr><tr><td></td><td>Name</td><td>File creation datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@CHECKSUM</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum</td></tr><tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum type</td></tr><tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD</code></b></td></tr><tr><td></td><td>Name</td><td>Rights metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>A simple rights statement may be used to describe general permissions for the package.<br><br>Individual representations SHOULD state their specific rights in their representation mets.xml file.<br>Standards for rights metadata include <a href="http://rightsstatements.org/" target="_blank" rel="noopener noreferrer">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements" target="_blank" rel="noopener noreferrer">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema" target="_blank" rel="noopener noreferrer">METS Rights Schema</a> and PREMIS.<br></td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Rights metadata identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier used for internal package references.<br>It MUST be unique within the SIP.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/@STATUS</code></b></td></tr><tr><td></td><td>Name</td><td>Status of the rights metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Describes the status of the <code><digiprovMD></code> which is supported by the profile.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["CURRENT","SUPERSEDED"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef</code></b></td></tr><tr><td></td><td>Name</td><td>Reference to the document with the rights metadata (when not embedded within the mets.xml file).</td></tr><tr><td></td><td>Description/Rationale</td><td>Reference to the rights metadata file(s) when located in the /metadata/preservation directory.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef[@LOCTYPE='URL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of locator</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the rights metadata file(s) in the /metadata/preservation directory.<br>It MUST always be used with the value "URL".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef[@xlink:type='simple']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of link</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@xlink:href</code></b></td></tr><tr><td></td><td>Name</td><td>Resource location</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the /metadata/preservation directory.<br>As indicated by the <code>@LOCTYPE</code> attribute, this filepath MUST be a URL type filepath.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@MDTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Type of preservation metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["MARC","MODS","EAD","DC","NISOIMG","LC-AV","VRA","TEIHDR","DDI","FGDC","LOM","PREMIS","PREMIS:OBJECT","PREMIS:AGENT","PREMIS:RIGHTS","PREMIS:EVENT","TEXTMD","METSRIGHTS","ISO 19115:2003 NAP","EAC-CPF","LIDO","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@MIMETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File mime type</td></tr><tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>IANA mime type</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@SIZE</code></b></td></tr><tr><td></td><td>Name</td><td>File size</td></tr><tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr><tr><td></td><td>Datatype</td><td>Integer</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@CREATED</code></b></td></tr><tr><td></td><td>Name</td><td>File creation datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@CHECKSUM</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum</td></tr><tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum type</td></tr><tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr></tbody></table></div>
+
+***Example***
+
+```xml
+<!-- ref to the PREMIS metadata about IE/subIE(s)/package -->
+    <amdSec ID="b9143f83-2567-4122-a55c-87389e6263ec">
+        <digiprovMD ID="uuid-3f8709ad-2c02-48a2-9fb4-871df03cb929">
+            <mdRef ID="uuid-bf966b2c-c1a2-4c75-aae6-18877d2f58cc" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="6199" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="083a409c2627798e53e3ebbba90cc867" CHECKSUMTYPE="MD5" />
+        </digiprovMD>
+    </amdSec>
+```
 
 ##### <code>fileSec</code> section
 
@@ -517,15 +558,40 @@ The listing of other representation files (i.e. metadata files and media files) 
 ***Example***
 
 ```xml
-<fileSec ID="71f7a408-dfb9-427c-b29c-ba7983408016">
-   <fileGrp USE="root" ID="19608ee9-53b0-4341-8e1c-33b410d64e30">
-      <fileGrp USE="metadata" ID="1ab8905c-ff79-48a1-8c4d-9e306fdab4ba">
-         <fileGrp USE="descriptive" ID="983c5556-56bf-42b9-a547-4f8b510429dc"/>
-         <fileGrp USE="preservation" ID="aa12de3c-7648-4476-9dde-f7a899fb2f13"/>
-      </fileGrp>
-      <fileGrp USE="representations" ID="83de5a57-53ff-483f-8791-22dc32e29cdb"/>
-   </fileGrp>
-</fileSec>
+<fileSec ID="uuid-0c53fd9b-f640-4def-a872-2e4622f691d9">
+        <fileGrp USE="root" ID="uuid-6c78980c-bdfc-4e2e-b19a-579e5b285055">
+            <fileGrp USE="metadata" ID="uuid-bd087c44-ee3f-48e9-9031-9190a60c8e13">
+                <fileGrp USE="metadata/descriptive" ID="uuid-5194aca6-97b6-448c-b385-b892bc0c362c">
+                    <file ID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911" MIMETYPE="text/xml" SIZE="647" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="968ebd5cb0283c086c333928eff6b85e" CHECKSUMTYPE="MD5">
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml"/>
+                    </file>
+                    <file ID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb" MIMETYPE="text/xml" SIZE="710" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a" CHECKSUMTYPE="MD5">
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_1.xml"/>
+                    </file>
+                    <file ID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5" MIMETYPE="text/xml" SIZE="723" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" CHECKSUMTYPE="MD5">
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_2.xml"/>
+                    </file>
+                </fileGrp>
+                <fileGrp USE="metadata/preservation" ID="uuid-caea98b8-ae09-412d-8f25-dd50ba6a30cd">
+                    <file ID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0" MIMETYPE="text/xml" SIZE="6199" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="083a409c2627798e53e3ebbba90cc867" CHECKSUMTYPE="MD5">
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml"/>
+                    </file>
+                </fileGrp>
+            </fileGrp>
+            <fileGrp USE="representations" ID="uuid-779319d9-cc1f-41b3-a49e-28d169e0d066">
+                <fileGrp USE="representations/representation_1" ID="uuid-700c97da-3164-4863-9e58-d6d62156052e">
+                    <file ID="uuid-0fe40ffc-b5f3-465e-af3a-d266d94453b7" MIMETYPE="text/xml" SIZE="4196" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="0e3033891343eb8bbb15454cd64a27ab" CHECKSUMTYPE="MD5">
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml"/>
+                    </file>
+                </fileGrp>
+                <fileGrp USE="representations/representation_2" ID="uuid-c0fed1c6-96c8-4f15-9e82-abc7be2e981c">
+                    <file ID="uuid-625629a4-e5f8-4087-9114-66e4a943bf50" MIMETYPE="text/xml" SIZE="3814" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="3d82bb35d526e4850551f2eca0678d0c" CHECKSUMTYPE="MD5">
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_2/mets.xml"/>
+                    </file>
+                </fileGrp>
+            </fileGrp>
+        </fileGrp>
+    </fileSec>
 ```
 
 ##### <code>structMap</code> section
@@ -542,19 +608,28 @@ It provides links between elements and metadata files located elsewhere in the p
 ***Example***
 
 ```xml
-<structMap ID="5e0989eb-0e0e-4842-878d-fb879179a54b" TYPE="PHYSICAL" LABEL="CSIP">
-   <div ID="48e558da-8496-4bfe-a0d9-866969b188ee" LABEL="">
-      <div ID="f8f7af4b-b86d-47d3-b1c1-9a71f607d3cd" LABEL="metadata">
-         <div ID="ecb6a61f-ac00-4c9a-900d-1c6fa69f2385" LABEL="descriptive" />
-         <div ID="fe4eaf5c-497a-4d89-be5b-2110d092b1b0" LABEL="preservation" />
-      </div>
-      <div ID="48290144-7763-4543-979b-a5c1f9218fef" LABEL="representations">
-         <div ID="28d69419-c524-4688-9f4b-461bc351dd6d" LABEL="representation_1">
-            <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
-         </div>
-      </div>
-   </div>
-</structMap>
+<structMap ID="uuid-1ce2cef4-cb9a-4649-8983-c916870cf2b4" TYPE="PHYSICAL" LABEL="CSIP">
+        <div ID="uuid-33cd69c8-b297-40e1-9491-1b5db58890bd" LABEL="">
+            <div ID="uuid-c0a73bbc-d6f3-42a0-b5e1-f53a4601101b" LABEL="metadata">
+                <div ID="uuid-9aae35c0-9d17-43c7-824a-4722ef3039cd" LABEL="descriptive">
+                    <fptr FILEID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"/>
+                    <fptr FILEID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"/>
+                    <fptr FILEID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"/>
+                </div>
+                <div ID="uuid-ee9ce21e-8264-45cc-b877-7e266647a335" LABEL="preservation">
+                    <fptr FILEID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"/>
+                </div>
+            </div>
+            <div ID="uuid-17ff6cea-cd84-46ad-b9a8-250809f9e2c7" LABEL="representations">
+                <div ID="uuid-c5cab13b-aced-4024-bbc3-d38c682602d2" LABEL="representation_1">
+                    <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
+                </div>
+                <div ID="uuid-daeba358-46ee-4363-b2a2-bd745c128f6f" LABEL="representation_2">
+                    <mptr xlink:type="simple" xlink:href="./representations/representation_2/mets.xml" LOCTYPE="URL" />
+                </div>
+            </div>
+        </div>
+    </structMap>
 ```
 
 #### /metadata (directory)
@@ -591,6 +666,31 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 
 <div class="tg-wrap"><table style="undefined;table-layout: fixed; width: 2414px"><colgroup><col style="width: 383.88333px"><col style="width: 609.88333px"><col style="width: 1419.88333px"></colgroup><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource</code></b></td></tr><tr><td></td><td>Name</td><td>DC root element</td></tr><tr><td></td><td>Description/Rationale</td><td>This root element MUST contain the XML schema namespace of DCMI Metadata Terms (https://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd).<br>It MUST NOT contain any other XML schema namespaces besides DCMI Metadata Terms.<br>It MUST NOT contain any attributes.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/identifier</code></b></td></tr><tr><td></td><td>Name</td><td>Identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>An unambiguous and unique reference to the Intellectual Entity/Entities and/or Representation(s) present in the SIP.<br>This identifier stems from the local identification system of the content partner.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/created</code></b></td></tr><tr><td></td><td>Name</td><td>Creation date</td></tr><tr><td></td><td>Description/Rationale</td><td>Creation date of the resource.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/submitted</code></b></td></tr><tr><td></td><td>Name</td><td>Date submitted</td></tr><tr><td></td><td>Description/Rationale</td><td>Date of submission of the resource.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/description</code></b></td></tr><tr><td></td><td>Name</td><td>Description</td></tr><tr><td></td><td>Description/Rationale</td><td>An account of the resource.<br>The <code><description></code> term MAY be used multiple times when it uses a different language.<br>The language of the description MUST be provided by a <code>@XML:LANG</code> attribute. This attribute MUST use a controlled vocabulary such as <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank" rel="noopener noreferrer">ISO 639-2</a> or <a href="https://www.iso.org/standard/39534.html" target="_blank" rel="noopener noreferrer">ISO 639-3</a>.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/issued</code></b></td></tr><tr><td></td><td>Name</td><td>Date issued</td></tr><tr><td></td><td>Description/Rationale</td><td>Date of formal issuance of the resource.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/title</code></b></td></tr><tr><td></td><td>Name</td><td>Title</td></tr><tr><td></td><td>Description/Rationale</td><td>A name given to the resource.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr></tbody></table></div>
 
+***Example***
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<resource xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+
+  <!-- general title for the resource -->
+  <dcterms:title>Felis Catus Flamens</dcterms:title>
+
+  <!-- id for the FCF in an imaginary cat database -->
+  <dcterms:identifier>FCatus_FelisCatusFlamens_01</dcterms:identifier>
+
+  <!-- date unknown -->
+  <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
+
+  <!-- multiple keywords about the resource -->
+  <dcterms:subject>Cat</dcterms:subject>
+  <dcterms:subject>Felis Catus Flamens</dcterms:subject>
+
+</resource> 
+
+```
+
 ##### /preservation (directory)
 
 The */preservation* directory contains preservation metadata about the (sub-)IE(s) at package level.
@@ -613,14 +713,106 @@ More detailed preservation information can also be described using PREMIS events
 - Each PREMIS object MUST contain a checksum.
 - The *premis.xml* file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the SIP as a whole.
 
+***Example***
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<premis:premis version="3.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:premis="http://www.loc.gov/premis/v3">
+
+  <!-- IE about the Felis Catus Flamens -->
+  <premis:object xsi:type="premis:intellectualEntity">
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <!-- relationship between the main IE and its subIEs -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen">generalizes</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-01d59d41-f523-4d06-a549-4bf6f7cef853</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+  </premis:object>
+
+  <!-- subIE about the Felis Catus Flamens lying on the sofa -->
+  <premis:object xsi:type="premis:intellectualEntity">
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <!-- relationship between the subIE and the main IE -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe">specializes</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+    <!-- relationship between the subIE and its representation -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr">is represented by</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+  </premis:object>
+
+  <!-- subIE about the Felis Catus Flamens sitting on its cat tree -->
+  <premis:object xsi:type="premis:intellectualEntity">
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-01d59d41-f523-4d06-a549-4bf6f7cef853</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <!-- relationship between the subIE and the main IE -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe">specializes</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+    <!-- relationship between the subIE and its representation -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr">is represented by</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-de83045d-3b0f-4161-9f96-40079af0d480</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+  </premis:object>
+
+</premis:premis>
+```
+
 #### /representations (directory)
 
-The */representations* directory contains a separate */representation_n* directory (where n is a positive integer) for each representation of the (sub)IE(s) of the package level. 
+The */representations* directory contains a separate */representation_\** directory (where n is a positive integer) for each representation of the (sub)IE(s) of the package level. 
 
 ***Requirements***
 
-- The */representations* directory MUST at least contain one */representation_n* directory.
-- The different subdirectories in the */representations* directory MUST be named */representation_n*, with *n* being a positive integer that increases by 1 for each additional representation in the */representations* directory.
+- The */representations* directory MUST at least contain one */representation_\** directory.
+- The different subdirectories in the */representations* directory MUST be named */representation_\**, with *n* being a positive integer that increases by 1 for each additional representation in the */representations* directory.
 
 ### Structure of a meemoo SIP: representation-level
 
@@ -654,23 +846,23 @@ root_directory
       │
       │
       │
-      └──representation_n
+      └──representation_*
          │   ...
 ```
 
-#### /representation_n (directory)
+#### /representation_* (directory)
 
-The */representation_n* directory contains all information about a certain representation of the (sub)IE(s) of the SIP.
+The */representation_\** directory contains all information about a certain representation of the (sub)IE(s) of the SIP.
 It contains both descriptive and preservation metadata, as well as the actual media files making up the representation.
-Each */representation_n* directory contains its own *mets.xml* file which acts similarly as the package *mets.xml* and serves as an inventory of the files and directories of the representation level.
+Each */representation_\** directory contains its own *mets.xml* file which acts similarly as the package *mets.xml* and serves as an inventory of the files and directories of the representation level.
 
 ***Requirements***
 
-- A */representation_n* directory MUST contain exactly one mets.xml file.
-- A */representation_n* directory MUST contain exactly one */metadata* directory.
-- A */representation_n* directory MUST contain exactly one */data* directory.
-- A */representation_n* directory MAY contain exactly one */documentation* directory.
-- A */representation_n* directory MAY contain exactly one */schemas* directory.
+- A */representation_\** directory MUST contain exactly one mets.xml file.
+- A */representation_\** directory MUST contain exactly one */metadata* directory.
+- A */representation_\** directory MUST contain exactly one */data* directory.
+- A */representation_\** directory MAY contain exactly one */documentation* directory.
+- A */representation_\** directory MAY contain exactly one */schemas* directory.
 
 ##### mets.xml (file)
 
@@ -683,11 +875,35 @@ Since the <code>\<dmdSec></code>, <code>\<amdSec></code>, <code>\<fileSec></code
 
 <div class="tg-wrap"><table style="undefined;table-layout: fixed; width: 2438px"><colgroup><col style="width: 387.88333px"><col style="width: 615.88333px"><col style="width: 1433.88333px"></colgroup><tbody><tr><td><b>Element/Attribute</b></td><td><b><code>mets</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>METS root element</td></tr><tr><td></td><td>Description/Rationale</td><td>This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@OBJID</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Representation identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>This is a UUID identifier for the METS document. For the representation METS, this MUST be the same UUID as the one used for the corresponding representation directory.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@TYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Content category</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute MUST be set to declare the category of the content held in the SIP.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["Textual works - Print","Textual works - Digital","Textual works - Electronic Serials","Digital Musical Composition (score-based representations)","Photographs - Print","Photographs - Digital","Other Graphic Images - Print","Other Graphic Images - Digital","Audio - On Tangible Medium (digital or analog)","Audio - Media-independent (digital)","Motion Pictures – Digital and Physical Media","Video – File-based and Physical Media","Software","Datasets","Geospatial Data","Databases","Websites","Collection","Event","Interactive resource","Physical object","Service","Mixed","Other"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets[@TYPE="OTHER"]/@csip:OTHERTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Other content category</td></tr><tr><td></td><td>Description/Rationale</td><td>When the <code>mets/@TYPE</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERTYPE</code> attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the <code>@TYPE</code> attribute.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@csip:CONTENTINFORMATIONTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Content information type specification</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute is used to declare the Content Information Type Specification used when creating the SIP.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["ERMS","SIARD1","SIARD2","SIARDDK","GeoData","citscarchival_v1_0","citserms_v2_1","citspremis_v1_0","citsehpj_v1_0",<br>"citsehcr_v1_0","citssiard_v1_0","citsgeospatial_v3_0","MIXED","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Other content information type specification</td></tr><tr><td></td><td>Description/Rationale</td><td>When the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERCONTENTINFORMATIONTYPE</code> attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@PROFILE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>METS profile</td></tr><tr><td></td><td>Description/Rationale</td><td>The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to “https://earksip.dilcis.eu/profile/E-ARK-SIP.xml”.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@LABEL</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Package name</td></tr><tr><td></td><td>Description/Rationale</td><td>An optional short text describing the contents of the package.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr></tbody></table></div>
 
+***Example***
+
+```xml
+<?xml version="1.0"?>
+<mets xmlns="http://www.loc.gov/METS/"
+    xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+    xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" 
+    TYPE="OTHER" csip:OTHERTYPE="Photographs – Digital" 
+    PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">
+
+<...>...</...>
+
+</mets>
+```
+
 ##### <code>metsHdr</code> section
 
 ***Requirements***
 
 <div class="tg-wrap"><table style="undefined;table-layout: fixed; width: 2054px"><colgroup><col style="width: 326.88333px"><col style="width: 518.88333px"><col style="width: 1207.88333px"></colgroup><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr</code></b></td></tr><tr><td></td><td>Name</td><td>Representation header</td></tr><tr><td></td><td>Description/Rationale</td><td>General element that contains descriptive information about the representation.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@CREATEDATE</code></b></td></tr><tr><td></td><td>Name</td><td>Representation creation datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute records the date and time the representation was created.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@LASTMODDATE</code></b></td></tr><tr><td></td><td>Name</td><td>Representation last modification datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the representation has been modified since its creation datetime.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@RECORDSTATUS</code></b></td></tr><tr><td></td><td>Name</td><td>Representation status</td></tr><tr><td></td><td>Description/Rationale</td><td>A way of indicating the status of the representation and to instruct the archive on how to properly handle it.<br>If not set, the expected value is "NEW".</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["NEW","SUPPLEMENT","REPLACEMENT","TEST","VERSION","DELETE","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent</code></b></td></tr><tr><td></td><td>Name</td><td>Agent</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@ROLE</code></b></td></tr><tr><td></td><td>Name</td><td>Agent role</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@TYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Agent type</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@OTHERTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Agent other type</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute MUST be used if the attribute agent/@TYPE is set to "OTHER". It is used to specify the exact other type that is being used.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/name</code></b></td></tr><tr><td></td><td>Name</td><td>Agent name</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note</code></b></td></tr><tr><td></td><td>Name</td><td>Agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr></tbody></table></div>
+
+***Example***
+
+```xml
+<metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00"/>
+```
 
 ##### /data (directory)
 
@@ -719,6 +935,31 @@ The */descriptive* directory contains descriptive metadata about the representat
 
 The *dc.xml* file of the representation level follows the same requirements of the *dc.xml* file of the package level discussed in section [dc.xml](#dcxml).
 
+***Example***
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<resource xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+
+  <!-- general title for the representation -->
+  <dcterms:title>Colour representation of the Felis Catus Flamens lying on a sofa</dcterms:title>
+
+  <!-- id for the FCF in an imaginary cat database -->
+  <dcterms:identifier>FCatus_FelisCatusFlamens_Sofa_01_001</dcterms:identifier>
+
+  <!-- date when representation was created -->
+  <dcterms:created xsi:type="edtf">2022-01~</dcterms:created>
+
+  <!-- multiple keywords about the representation -->
+  <dcterms:subject>Cat</dcterms:subject>
+  <dcterms:subject>Felis Catus Flamens</dcterms:subject>
+  <dcterms:subject>Sofa</dcterms:subject>
+
+</resource> 
+```
+
 ###### /preservation (directory)
 
 The */preservation* directory contains preservation metadata about the representation and the media files of the representation level.
@@ -742,3 +983,108 @@ More detailed preservation information can also be described using PREMIS events
 - Each PREMIS object MUST contain a unique identifier.
 - Each PREMIS object MUST contain a checksum (when applicable).
 - The *premis.xml* file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the representation and the media files.
+  
+***Example***
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<premis:premis version="3.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:premis="http://www.loc.gov/premis/v3">
+
+  <premis:object xsi:type="premis:representation">
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <premis:objectCategory>representation</premis:objectCategory>
+
+    <!-- relationship between representation and its files -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc">includes</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+
+    <!-- relationship between representation and its IE/subIE -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep">represents</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+  </premis:object>
+
+  <premis:object xsi:type="premis:file">
+    <premis:originalName>data/1445.jpeg</premis:originalName>
+
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <premis:objectCategory>file</premis:objectCategory>
+
+    <premis:objectCharacteristics>
+      <premis:fixity>
+        <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
+                MD5
+        </premis:messageDigestAlgorithm>
+        <premis:messageDigest>b7ae37f6094794e313402b9d064978e8</premis:messageDigest>
+        <premis:fixity>
+          <premis:objectCharacteristics>
+
+            <!-- relationship between file and its representation -->
+            <premis:relationship>
+              <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+              <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
+              <premis:relatedObjectIdentifier>
+                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+                <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
+              </premis:relatedObjectIdentifier>
+            </premis:relationship>
+
+          </premis:object>
+
+          <premis:object xsi:type="premis:file">
+            <premis:originalName>data/1450.jpeg</premis:originalName>
+            <premis:objectIdentifier>
+              <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+              <premis:objectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:objectIdentifierValue>
+            </premis:objectIdentifier>
+
+            <premis:objectCategory>file</premis:objectCategory>
+
+            <premis:objectCharacteristics>
+              <premis:fixity>
+                <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
+                MD5
+                </premis:messageDigestAlgorithm>
+                <premis:messageDigest>d4985ba4b67ff067a0e84c53b6d35355</premis:messageDigest>
+                <premis:fixity>
+                  <premis:objectCharacteristics>
+
+                    <!-- relationship between file and its representation -->
+                    <premis:relationship>
+                      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+                      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
+                      <premis:relatedObjectIdentifier>
+                        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+                        <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
+                      </premis:relatedObjectIdentifier>
+                    </premis:relationship>
+
+                  </premis:object>
+
+                </premis:premis>
+```
