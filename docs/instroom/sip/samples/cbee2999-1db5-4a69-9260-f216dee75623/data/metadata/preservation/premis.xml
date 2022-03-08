@@ -1,17 +1,15 @@
- <?xml version="1.0" encoding="UTF-8"?>
-<premis:premis 
-    version="3.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"     
-    xmlns:premis="http://www.loc.gov/premis/v3"
-    >
+<?xml version="1.0" encoding="UTF-8"?>
+<premis:premis version="3.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:premis="http://www.loc.gov/premis/v3">
 
-<!-- IE about the Felis Catus Flamens -->
-<premis:object xsi:type="premis:intellectualEntity">
+  <!-- IE about the Felis Catus Flamens -->
+  <premis:object xsi:type="premis:intellectualEntity">
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:objectIdentifierValue>
     </premis:objectIdentifier>
-    
+
     <!-- relationship between the main IE and its subIEs -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
@@ -26,15 +24,15 @@
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
-</premis:object>
+  </premis:object>
 
-<!-- subIE about the Felis Catus Flamens lying on the sofa -->
-<premis:object xsi:type="premis:intellectualEntity">
+  <!-- subIE about the Felis Catus Flamens lying on the sofa -->
+  <premis:object xsi:type="premis:intellectualEntity">
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:objectIdentifierValue>
     </premis:objectIdentifier>
-    
+
     <!-- relationship between the subIE and the main IE -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
@@ -44,7 +42,7 @@
         <premis:relatedObjectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
-    
+
     <!-- relationship between the subIE and its representation -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
@@ -55,15 +53,15 @@
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
-</premis:object>
+  </premis:object>
 
-<!-- subIE about the Felis Catus Flamens sitting on its cat tree -->
-<premis:object xsi:type="premis:intellectualEntity">
+  <!-- subIE about the Felis Catus Flamens sitting on its cat tree -->
+  <premis:object xsi:type="premis:intellectualEntity">
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>uuid-01d59d41-f523-4d06-a549-4bf6f7cef853</premis:objectIdentifierValue>
     </premis:objectIdentifier>
-    
+
     <!-- relationship between the subIE and the main IE -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
@@ -73,7 +71,7 @@
         <premis:relatedObjectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
-    
+
     <!-- relationship between the subIE and its representation -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
@@ -84,7 +82,7 @@
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
-</premis:object>
+  </premis:object>
 
 </premis:premis>
  
