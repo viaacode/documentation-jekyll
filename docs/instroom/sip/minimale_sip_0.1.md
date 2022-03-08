@@ -313,22 +313,22 @@ It is used during processing of the bag to allow for data integrity checking.
 ***Example***
 
 ```txt
-6f0caf83f3c5427d7346b383f951a238  ./data/mets.xml
-3d82bb35d526e4850551f2eca0678d0c  ./data/representations/representation_2/mets.xml
+9675dc6350af621ebd4b3ddd05b33eeb  ./data/mets.xml
+3d800edcf9c5535c52ec8e0d6a160ccb  ./data/representations/representation_2/mets.xml
 18513a8d61c6f2cbaaeeedd754b01d6b  ./data/representations/representation_2/data/D523F963.jpg
-7dcccd931cd6012db0d2557413049b7c  ./data/representations/representation_2/metadata/preservation/premis.xml
-e87fb1921d466725d2690420b803cf1f  ./data/representations/representation_2/metadata/descriptive/dc.xml
-0e3033891343eb8bbb15454cd64a27ab  ./data/representations/representation_1/mets.xml
+d59060b8b471627a74b12bacca878543  ./data/representations/representation_2/metadata/preservation/premis.xml
+ed2d03c274c9ce0521531d6d2c269e94  ./data/representations/representation_2/metadata/descriptive/dc.xml
+158dd1571df41274b0a349a0e54b5f81  ./data/representations/representation_1/mets.xml
 d4985ba4b67ff067a0e84c53b6d35355  ./data/representations/representation_1/data/1450.jpeg
 b7ae37f6094794e313402b9d064978e8  ./data/representations/representation_1/data/1445.jpeg
-53bf706904538e8e3204c68196be6b6d  ./data/representations/representation_1/metadata/preservation/premis.xml
-b031b5dc012e94ff90027613b11b0b22  ./data/representations/representation_1/metadata/descriptive/dc.xml
-083a409c2627798e53e3ebbba90cc867  ./data/metadata/preservation/premis.xml
-968ebd5cb0283c086c333928eff6b85e  ./data/metadata/descriptive/dc_ie.xml
-5bdf4aeb87b4027ef9ce309888de556a  ./data/metadata/descriptive/dc_subie_1.xml
-e470d7b12651d358d14d7f172ae2fad2  ./data/metadata/descriptive/dc_subie_2.xml
+d49ec67f6cf9194e3cee47f125e2b0fb  ./data/representations/representation_1/metadata/preservation/premis.xml
+05bfa303741e01fee4d151464c933e29  ./data/representations/representation_1/metadata/descriptive/dc.xml
+f95e7df37dfdfa5174388598aa901164  ./data/metadata/preservation/premis.xml
+409e895924d354ef4ace1330a962ebbf  ./data/metadata/descriptive/dc_ie.xml
+5ade81b44c26f1020d1f6fcc8ec0b420  ./data/metadata/descriptive/dc_subie_1.xml
+1f263443332dcd49ae428c067d180ebe  ./data/metadata/descriptive/dc_subie_2.xml
 eaa2c609ff6371712f623f5531945b44  ./bagit.txt
-0107c5bbfeca269ec99194cc7b9e2234  ./manifest-md5.txt
+2ec9403539086d7447dd91361d3c5456  ./manifest-md5.txt
 ```
 
 #### bagit.txt (file)
