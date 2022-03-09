@@ -2,8 +2,6 @@
 layout:       default
 title:        SIP Specification 0.1 - core concepts
 parent:       Intake
-has_children: true
-has_toc: true
 nav_order:    5
 nav_exclude:  true
 ---
