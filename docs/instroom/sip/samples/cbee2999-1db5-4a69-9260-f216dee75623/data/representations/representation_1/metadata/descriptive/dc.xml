@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resource xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+
+  <!-- general title for the representation -->
+  <dcterms:title>Colour representation of the Felis Catus Flamens lying on a sofa</dcterms:title>
+
+  <!-- id for the FCF in an imaginary cat database -->
+  <dcterms:identifier>FCatus_FelisCatusFlamens_Sofa_01_001</dcterms:identifier>
+
+  <!-- date when representation was created -->
+  <dcterms:created xsi:type="edtf">2022-01~</dcterms:created>
+
+  <!-- multiple keywords about the representation -->
+  <dcterms:subject>Cat</dcterms:subject>
+  <dcterms:subject>Felis Catus Flamens</dcterms:subject>
+  <dcterms:subject>Sofa</dcterms:subject>
+
+</resource> 
+ 
