@@ -1,9 +1,9 @@
 ---
 layout:       default
-title:        SIP Specification 0.1
-parent:       Intake
-nav_order:    5
-nav_exclude:  true
+title:        Terminology
+parent:       SIP Specification 0.1
+nav_order:    2
+nav_exclude:  false
 ---
 
 # Terminology

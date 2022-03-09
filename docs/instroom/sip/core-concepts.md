@@ -1,9 +1,9 @@
 ---
 layout:       default
-title:        SIP Specification 0.1 - core concepts
-parent:       Intake
-nav_order:    5
-nav_exclude:  true
+title:        Core concepts
+parent:       SIP Specification 0.1
+nav_order:    3
+nav_exclude:  false
 ---
 
 # Core concepts

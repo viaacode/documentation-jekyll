@@ -1,10 +1,8 @@
 ---
 layout:       default
-title:        Submission Information Package (SIP) Specification 0.1
-parent:       Intake
+title:        SIP Specification 0.1
 has_children: true
-has_toc: true
-nav_order:    5
+nav_order:    1
 nav_exclude:  false
 ---
 # meemoo Submission Information Package (SIP) Specification 0.1

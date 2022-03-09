@@ -1,9 +1,9 @@
 ---
 layout:       default
-title:        SIP Specification 0.1 - structure
-parent:       Intake
-nav_order:    5
-nav_exclude:  true
+title:        SIP structure
+parent:       SIP Specification 0.1
+nav_order:    4
+nav_exclude:  false
 ---
 
 # Structure of a meemoo SIP
