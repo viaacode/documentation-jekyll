@@ -45,7 +45,7 @@ As such it will not appear in the meemoo archive as a separate entity.
 
 ***Example***
 
-```
+```plaintext
 root_directory
 │── manifest-md5.txt
 │── bagit.txt
@@ -102,7 +102,7 @@ The first line specifies to which version of the BagIt specification ([RFC 8493]
 
 ***Example***
 
-```txt
+```plaintxt
 BagIt-Version: 1.0
 Tag-File-Character-Encoding: UTF-8
 ```
@@ -183,9 +183,57 @@ The various requirements are listed in the table below.
 ***Requirements***
 
 <table>
-<tbody>
-<tr>
-<th>Element/Attribute</th><th colspan="2"><b><code>mets</code></b></th></tr><tr><td>Name</td><td>METS root element</td></tr><tr><td></td><td>Description/Rationale</td><td>This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@OBJID</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Package identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>This is a UUID identifier for the METS document. For the package METS, this MUST be the same UUID as the one used for the entire bag.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@TYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Content category</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute MUST be set to declare the category of the content held in the SIP.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["Textual works - Print","Textual works - Digital","Textual works - Electronic Serials","Digital Musical Composition (score-based representations)","Photographs - Print","Photographs - Digital","Other Graphic Images - Print","Other Graphic Images - Digital","Audio - On Tangible Medium (digital or analog)","Audio - Media-independent (digital)","Motion Pictures – Digital and Physical Media","Video – File-based and Physical Media","Software","Datasets","Geospatial Data","Databases","Websites","Collection","Event","Interactive resource","Physical object","Service","Mixed","Other"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets[@TYPE="OTHER"]/@csip:OTHERTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Other content category</td></tr><tr><td></td><td>Description/Rationale</td><td>When the <code>mets/@TYPE</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERTYPE</code> attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the <code>@TYPE</code> attribute.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@csip:CONTENTINFORMATIONTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Content information type specification</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute is used to declare the Content Information Type Specification used when creating the SIP.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["ERMS","SIARD1","SIARD2","SIARDDK","GeoData","citscarchival_v1_0","citserms_v2_1","citspremis_v1_0","citsehpj_v1_0",<br>"citsehcr_v1_0","citssiard_v1_0","citsgeospatial_v3_0","MIXED","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Other content information type specification</td></tr><tr><td></td><td>Description/Rationale</td><td>When the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERCONTENTINFORMATIONTYPE</code> attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@PROFILE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>METS profile</td></tr><tr><td></td><td>Description/Rationale</td><td>The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to “https://earksip.dilcis.eu/profile/E-ARK-SIP.xml”.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@LABEL</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Package name</td></tr><tr><td></td><td>Description/Rationale</td><td>An optional short text describing the contents of the package.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr></tbody></table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets</code></th></tr>
+<tr><td></td><td>Name</td><td>METS root element</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@OBJID</code></th></tr>
+<tr><td></td><td>Name</td><td>Package identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This is a UUID identifier for the METS document. For the package METS, this MUST be the same UUID as the one used for the entire bag.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@TYPE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Content category</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute MUST be set to declare the category of the content held in the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["Textual works - Print","Textual works - Digital","Textual works - Electronic Serials","Digital Musical Composition (score-based representations)","Photographs - Print","Photographs - Digital","Other Graphic Images - Print","Other Graphic Images - Digital","Audio - On Tangible Medium (digital or analog)","Audio - Media-independent (digital)","Motion Pictures – Digital and Physical Media","Video – File-based and Physical Media","Software","Datasets","Geospatial Data","Databases","Websites","Collection","Event","Interactive resource","Physical object","Service","Mixed","Other"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets[@TYPE="OTHER"]/@csip:OTHERTYPE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Other content category</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>When the <code>mets/@TYPE</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERTYPE</code> attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the <code>@TYPE</code> attribute.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@csip:CONTENTINFORMATIONTYPE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Content information type specification</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute is used to declare the Content Information Type Specification used when creating the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["ERMS","SIARD1","SIARD2","SIARDDK","GeoData","citscarchival_v1_0","citserms_v2_1","citspremis_v1_0","citsehpj_v1_0",<br>"citsehcr_v1_0","citssiard_v1_0","citsgeospatial_v3_0","MIXED","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Other content information type specification</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>When the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERCONTENTINFORMATIONTYPE</code> attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@PROFILE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>METS profile</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to “https://earksip.dilcis.eu/profile/E-ARK-SIP.xml”.</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@LABEL</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Package name</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>An optional short text describing the contents of the package.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+</table>
 
 ***Example***
 
@@ -214,13 +262,251 @@ The various requirements are listed in the table below.
 <mark>vraag: geen idee, maar volgens EARK zijn naam/ID niet verplicht bij archival creator, maar dit lijkt me eerder van wel? Hoe kan je die anders identificeren?</mark>
 <mark>vraag: zogezegd kan je als contactpersoon enkel een type individu hebben, maar ik kan me hier an sich ook wel een generiek mailadres van een organisatie inbeelden? Mss. zelfs duurzamer dan bv. individu die weggaat ergens?</mark>
 
-
 This element contains administrative metadata about the SIP such as its creator and its creation software.
 It does so by using separate `<agent>` tags for every role in the SIPs creation and submission process.
 
 ***Requirements***
 
-<div class="tg-wrap"><table style="undefined;table-layout: fixed; width: 2054px"><colgroup><col style="width: 326.88333px"><col style="width: 518.88333px"><col style="width: 1207.88333px"></colgroup><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr</code></b></td></tr><tr><td></td><td>Name</td><td>Package header</td></tr><tr><td></td><td>Description/Rationale</td><td>General element that contains descriptive information about the SIP.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@CREATEDATE</code></b></td></tr><tr><td></td><td>Name</td><td>Package creation datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute records the date and time the SIP was created.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@LASTMODDATE</code></b></td></tr><tr><td></td><td>Name</td><td>Package last modification datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>In case the SIP was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the SIP has been modified since its creation datetime.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@RECORDSTATUS</code></b></td></tr><tr><td></td><td>Name</td><td>Package status</td></tr><tr><td></td><td>Description/Rationale</td><td>A way of indicating the status of the SIP and to instruct the archive on how to properly handle it.<br>If not set, the expected value is "NEW".</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["NEW","SUPPLEMENT","REPLACEMENT","TEST","VERSION","DELETE","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@csip:OAISPACKAGETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>OAIS Package type information</td></tr><tr><td></td><td>Description/Rationale</td><td>The value of <code>@csip:OAISPACKAGETYPE</code> MUST be set to "SIP".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent</code></b></td></tr><tr><td></td><td>Name</td><td>SIP creator software agent</td></tr><tr><td></td><td>Description/Rationale</td><td>A mandatory agent element records the software used to create the package.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@ROLE</code></b></td></tr><tr><td></td><td>Name</td><td>SIP creator software agent role</td></tr><tr><td></td><td>Description/Rationale</td><td>The role of the SIP creator software agent.<br>This value MUST be set to "CREATOR".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@TYPE</code></b></td></tr><tr><td></td><td>Name</td><td>SIP creator software agent type</td></tr><tr><td></td><td>Description/Rationale</td><td>The type of the SIP creator software agent.<br>This value MUST be set to "OTHER".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@OTHERTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>SIP creator software agent other type</td></tr><tr><td></td><td>Description/Rationale</td><td>A specification of the type of the SIP creator software agent, indicating it being software.<br>This value MUST be set to "SOFTWARE".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/name</code></b></td></tr><tr><td></td><td>Name</td><td>SIP creator software agent name</td></tr><tr><td></td><td>Description/Rationale</td><td>This element records the name of the software tool used to create the SIP.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note</code></b></td></tr><tr><td></td><td>Name</td><td>SIP creator software agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>The mandatory note element records the version of the software tool used to create the IP.<br>It MUST have a <code>@csip:NOTETYPE='SOFTWARE VERSION'</code> attribute.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note[@csip:NOTETYPE='SOFTWARE VERSION']</code></b></td></tr><tr><td></td><td>Name</td><td>Classification of the SIP creator software agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>The value of this attribute MUST be set to "SOFTWARE VERSION"</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent</code></b></td></tr><tr><td></td><td>Name</td><td>Archival creator agent</td></tr><tr><td></td><td>Description/Rationale</td><td>A wrapper element that enables to encode the name of the organisation or person that originally created the data being transferred. This can be different from the organisation tasked with preparing and sending the SIP to the archive (cf. 'submitting agent' below).</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@ROLE</code></b></td></tr><tr><td></td><td>Name</td><td>Archival creator agent role</td></tr><tr><td></td><td>Description/Rationale</td><td>The role of the person(s) or institution(s) responsible for the document/collection.<br>This value MUST be set to "CREATOR".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@TYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Archival creator agent type</td></tr><tr><td></td><td>Description/Rationale</td><td>The type of the archival creator agent.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["ORGANIZATION","INDIVIDUAL","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/name</code></b></td></tr><tr><td></td><td>Name</td><td>Archival creator agent name</td></tr><tr><td></td><td>Description/Rationale</td><td>The name of the organisation(s) that originally created the data being transferred.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note</code></b></td></tr><tr><td></td><td>Name</td><td>Archival creator agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>The archival creator agent MAY have a note providing a unique identification code for the archival creator.</td></tr><tr><td></td><td>Datatype</td><td>OR-id</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note/@csip:NOTETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Classification of the archival creator agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>The archival creator agent note MUST be set to “IDENTIFICATIONCODE”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent</code></b></td></tr><tr><td></td><td>Name</td><td>Submitting agent</td></tr><tr><td></td><td>Description/Rationale</td><td>The name of the organisation or person submitting the package to the archive.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@ROLE</code></b></td></tr><tr><td></td><td>Name</td><td>Submitting agent role</td></tr><tr><td></td><td>Description/Rationale</td><td>The role of the person(s) or institution(s) responsible for creating and/or submitting the package.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["ARCHIVIST","CREATOR","CUSTODIAN","DISSEMINATOR","EDITOR","IPOWNER","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@TYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Submitting agent type</td></tr><tr><td></td><td>Description/Rationale</td><td>The type of the submitting agent.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["ORGANIZATION","INDIVIDUAL","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/name</code></b></td></tr><tr><td></td><td>Name</td><td>Submitting agent name</td></tr><tr><td></td><td>Description/Rationale</td><td>Name of the organization or individual submitting the SIP to the archive.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note</code></b></td></tr><tr><td></td><td>Name</td><td>Submitting agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>The submitting agent MAY have a note providing a unique identification code for the submitter.</td></tr><tr><td></td><td>Datatype</td><td>OR-id</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note/@csip:NOTETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Classification of the submitting agent agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>This submitting agent note attribute MUST be set to “IDENTIFICATIONCODE”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent</code></b></td></tr><tr><td></td><td>Name</td><td>Contact person agent</td></tr><tr><td></td><td>Description/Rationale</td><td>Contact person for the submission of the SIP.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@ROLE</code></b></td></tr><tr><td></td><td>Name</td><td>Contact person agent role</td></tr><tr><td></td><td>Description/Rationale</td><td>The role of the contact person agent MUST be set to “CREATOR”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@TYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Contact person agent type</td></tr><tr><td></td><td>Description/Rationale</td><td>The type of the contact person agent MUST be set to "INDIVIDUAL".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/name</code></b></td></tr><tr><td></td><td>Name</td><td>Contact person agent name</td></tr><tr><td></td><td>Description/Rationale</td><td>Name of the contact person.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note</code></b></td></tr><tr><td></td><td>Name</td><td>Contact person agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>The contact person agent MAY have one or more note providing the actual contact information, such as an address, e-mail, telephone number...</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent</code></b></td></tr><tr><td></td><td>Name</td><td>Preservation agent</td></tr><tr><td></td><td>Description/Rationale</td><td>The organisation or person that preserves the package.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@ROLE</code></b></td></tr><tr><td></td><td>Name</td><td>Preservation agent role</td></tr><tr><td></td><td>Description/Rationale</td><td>The role of the perservation agent MUST be set to “PRESERVATION”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@TYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Preservation agent type</td></tr><tr><td></td><td>Description/Rationale</td><td>The type of the contact person agent MUST be set to "ORGANIZATION".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/name</code></b></td></tr><tr><td></td><td>Name</td><td>Preservation agent name</td></tr><tr><td></td><td>Description/Rationale</td><td>Name of the organisation preserving the SIP.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note</code></b></td></tr><tr><td></td><td>Name</td><td>Preservation agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>The preservation agent MAY have one note providing a unique identification code for the preserver.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note/@csip:NOTETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Classification of the preservation agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>This perservation agent note attribute MUST be set to “IDENTIFICATIONCODE”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/altRecordID[@TYPE='SUBMISSIONAGREEMENT']</code></b></td></tr><tr><td></td><td>Name</td><td>Submission agreement</td></tr><tr><td></td><td>Description/Rationale</td><td>An optional reference to the submission agreement associated with the SIP.<br>When used, this attribute MUST be set to "SUBMISSIONAGREEMENT".</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/altRecordID[@TYPE='PREVIOUSSUBMISSIONAGREEMENT']</code></b></td></tr><tr><td></td><td>Name</td><td>Previous submission agreement</td></tr><tr><td></td><td>Description/Rationale</td><td>An optional reference to a previous submission agreement associated with the SIP.<br>When used, this attribute MUST be set to "PREVIOUSSUBMISSIONAGREEMENT".</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/altRecordID[@TYPE='REFERENCECODE']</code></b></td></tr><tr><td></td><td>Name</td><td>Archival reference code</td></tr><tr><td></td><td>Description/Rationale</td><td>An optional reference to indicate where in the archival hierarchy the package shall be placed in the archive.<br>When used, this attribute MUST be set to "REFERENCECODE".</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/altRecordID[@TYPE='PREVIOUSREFERENCECODE']</code></b></td></tr><tr><td></td><td>Name</td><td>Previous archival reference code</td></tr><tr><td></td><td>Description/Rationale</td><td>In cases where the SIP originates from other institutions maintaining a reference code structure, this element can be used to record these reference codes and therefore support the provenance of the package when a whole archival description is not submitted with the submission.<br>When used, this attribute MUST be set to "PREVIOUSREFERENCECODE".</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr></tbody></table></div>
+<table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr</code></th></tr>
+<tr><td></td><td>Name</td><td>Package header</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>General element that contains descriptive information about the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@CREATEDATE</code></th></tr>
+<tr><td></td><td>Name</td><td>Package creation datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute records the date and time the SIP was created.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@LASTMODDATE</code></th></tr>
+<tr><td></td><td>Name</td><td>Package last modification datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>In case the SIP was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the SIP has been modified since its creation datetime.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@RECORDSTATUS</code></th></tr>
+<tr><td></td><td>Name</td><td>Package status</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A way of indicating the status of the SIP and to instruct the archive on how to properly handle it.<br>If not set, the expected value is "NEW".</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["NEW","SUPPLEMENT","REPLACEMENT","TEST","VERSION","DELETE","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@csip:OAISPACKAGETYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>OAIS Package type information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The value of <code>@csip:OAISPACKAGETYPE</code> MUST be set to "SIP".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent</code></th></tr>
+<tr><td></td><td>Name</td><td>SIP creator software agent</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A mandatory agent element records the software used to create the package.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@ROLE</code></th></tr>
+<tr><td></td><td>Name</td><td>SIP creator software agent role</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The role of the SIP creator software agent.<br>This value MUST be set to "CREATOR".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@TYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>SIP creator software agent type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The type of the SIP creator software agent.<br>This value MUST be set to "OTHER".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@OTHERTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>SIP creator software agent other type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A specification of the type of the SIP creator software agent, indicating it being software.<br>This value MUST be set to "SOFTWARE".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/name</code></th></tr>
+<tr><td></td><td>Name</td><td>SIP creator software agent name</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This element records the name of the software tool used to create the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note</code></th></tr>
+<tr><td></td><td>Name</td><td>SIP creator software agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The mandatory note element records the version of the software tool used to create the IP.<br>It MUST have a <code>@csip:NOTETYPE='SOFTWARE VERSION'</code> attribute.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note[@csip:NOTETYPE='SOFTWARE VERSION']</code></th></tr>
+<tr><td></td><td>Name</td><td>Classification of the SIP creator software agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The value of this attribute MUST be set to "SOFTWARE VERSION"</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent</code></th></tr>
+<tr><td></td><td>Name</td><td>Archival creator agent</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A wrapper element that enables to encode the name of the organisation or person that originally created the data being transferred. This can be different from the organisation tasked with preparing and sending the SIP to the archive (cf. 'submitting agent' below).</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@ROLE</code></th></tr>
+<tr><td></td><td>Name</td><td>Archival creator agent role</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The role of the person(s) or institution(s) responsible for the document/collection.<br>This value MUST be set to "CREATOR".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@TYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Archival creator agent type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The type of the archival creator agent.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["ORGANIZATION","INDIVIDUAL","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/name</code></th></tr>
+<tr><td></td><td>Name</td><td>Archival creator agent name</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The name of the organisation(s) that originally created the data being transferred.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note</code></th></tr>
+<tr><td></td><td>Name</td><td>Archival creator agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The archival creator agent MAY have a note providing a unique identification code for the archival creator.</td></tr>
+<tr><td></td><td>Datatype</td><td>OR-id</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note/@csip:NOTETYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Classification of the archival creator agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The archival creator agent note MUST be set to “IDENTIFICATIONCODE”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent</code></th></tr>
+<tr><td></td><td>Name</td><td>Submitting agent</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The name of the organisation or person submitting the package to the archive.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@ROLE</code></th></tr>
+<tr><td></td><td>Name</td><td>Submitting agent role</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The role of the person(s) or institution(s) responsible for creating and/or submitting the package.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["ARCHIVIST","CREATOR","CUSTODIAN","DISSEMINATOR","EDITOR","IPOWNER","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@TYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Submitting agent type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The type of the submitting agent.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["ORGANIZATION","INDIVIDUAL","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/name</code></th></tr>
+<tr><td></td><td>Name</td><td>Submitting agent name</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Name of the organization or individual submitting the SIP to the archive.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note</code></th></tr>
+<tr><td></td><td>Name</td><td>Submitting agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The submitting agent MAY have a note providing a unique identification code for the submitter.</td></tr>
+<tr><td></td><td>Datatype</td><td>OR-id</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note/@csip:NOTETYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Classification of the submitting agent agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This submitting agent note attribute MUST be set to “IDENTIFICATIONCODE”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent</code></th></tr>
+<tr><td></td><td>Name</td><td>Contact person agent</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Contact person for the submission of the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@ROLE</code></th></tr>
+<tr><td></td><td>Name</td><td>Contact person agent role</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The role of the contact person agent MUST be set to “CREATOR”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@TYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Contact person agent type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The type of the contact person agent MUST be set to "INDIVIDUAL".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/name</code></th></tr>
+<tr><td></td><td>Name</td><td>Contact person agent name</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Name of the contact person.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note</code></th></tr>
+<tr><td></td><td>Name</td><td>Contact person agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The contact person agent MAY have one or more note providing the actual contact information, such as an address, e-mail, telephone number...</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent</code></th></tr>
+<tr><td></td><td>Name</td><td>Preservation agent</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The organisation or person that preserves the package.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@ROLE</code></th></tr>
+<tr><td></td><td>Name</td><td>Preservation agent role</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The role of the perservation agent MUST be set to “PRESERVATION”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@TYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Preservation agent type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The type of the contact person agent MUST be set to "ORGANIZATION".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/name</code></th></tr>
+<tr><td></td><td>Name</td><td>Preservation agent name</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Name of the organisation preserving the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note</code></th></tr>
+<tr><td></td><td>Name</td><td>Preservation agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The preservation agent MAY have one note providing a unique identification code for the preserver.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note/@csip:NOTETYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Classification of the preservation agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This perservation agent note attribute MUST be set to “IDENTIFICATIONCODE”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/altRecordID[@TYPE='SUBMISSIONAGREEMENT']</code></th></tr>
+<tr><td></td><td>Name</td><td>Submission agreement</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>An optional reference to the submission agreement associated with the SIP.<br>When used, this attribute MUST be set to "SUBMISSIONAGREEMENT".</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/altRecordID[@TYPE='PREVIOUSSUBMISSIONAGREEMENT']</code></th></tr>
+<tr><td></td><td>Name</td><td>Previous submission agreement</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>An optional reference to a previous submission agreement associated with the SIP.<br>When used, this attribute MUST be set to "PREVIOUSSUBMISSIONAGREEMENT".</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/altRecordID[@TYPE='REFERENCECODE']</code></th></tr>
+<tr><td></td><td>Name</td><td>Archival reference code</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>An optional reference to indicate where in the archival hierarchy the package shall be placed in the archive.<br>When used, this attribute MUST be set to "REFERENCECODE".</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/altRecordID[@TYPE='PREVIOUSREFERENCECODE']</code></th></tr>
+<tr><td></td><td>Name</td><td>Previous archival reference code</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>In cases where the SIP originates from other institutions maintaining a reference code structure, this element can be used to record these reference codes and therefore support the provenance of the package when a whole archival description is not submitted with the submission.<br>When used, this attribute MUST be set to "PREVIOUSREFERENCECODE".</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+</table>
 
 ***Example***
 
@@ -255,25 +541,113 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 
 ***Requirements***
 
-<table><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap</code></b></td></tr><tr><td></td><td>Name</td><td>Structural description of the package</td></tr><tr><td></td><td>Description/Rationale</td><td>The <code>\<structMap></code> describes the highest logical structure of the IP.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@TYPE='PHYSICAL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of structural description</td></tr><tr><td></td><td>Description/Rationale</td><td>The mets/structMap/@TYPE attribute MUST take the value “PHYSICAL”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']</code></b></td></tr><tr><td></td><td>Name</td><td>Name of the structural description</td></tr><tr><td></td><td>Description/Rationale</td><td>This requirement identifies the CSIP compliant structural map <code>\<structMap></code> element.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Structural description identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the structural description. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div</code></b></td></tr><tr><td></td><td>Name</td><td>Main structural division</td></tr><tr><td></td><td>Description/Rationale</td><td>The division element. Each <code>\<structMap></code> element MUST contain one <code>\<div></code> element that contains possible further <code>\<div></code> elements of the <code>\<structMap></code> elements.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Main structural division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the main <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division</td></tr><tr><td></td><td>Description/Rationale</td><td>The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.<br>When the transfer consists of only administrative and/or descriptive metadata this is the only sub division that occurs.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the metadata <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The metadata <code>\<div></code> element’s @LABEL attribute value MUST be “Metadata”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division references administrative metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>The administrative metadata division should reference all current administrative metadata sections.<br>All <code>\<amdSec></code> elements with @STATUS='CURRENT' SHOULD be referenced by their identifier, @ID. <br> The current <code>\<amdSec></code> elements' @IDs are recorded in the div[@LABEL='Metadata']/@ADMID attribute in a space delimited list.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division references descriptive metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>The descriptive metadata division should reference all current descriptive metadata sections.<br>All <code>\<dmdSec></code> elements with @STATUS='CURRENT' SHOULD be referenced by their identifier, @ID. <br> The current <code>\<dmdSec></code> elements' @IDs are recorded in the div[@LABEL='Metadata']/@DMDID attribute in a space delimited list.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division</td></tr><tr><td></td><td>Description/Rationale</td><td>The documentation referenced in the file section file groups is described in the structural map with one sub division.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the documentation <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The documentation <code>\<div></code> element’s @LABEL attribute value MUST be “Documentation”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation file references</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing documentation described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation file group reference pointer</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Documentation” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division</td></tr><tr><td></td><td>Description/Rationale</td><td>The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Schemas” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The schemas <code>\<div></code> element’s @LABEL attribute value MUST be “Schemas”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Schema file reference</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing schemas described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Schema file group reference</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Schemas” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</code></b></td></tr><tr><td></td><td>Name</td><td>Content division</td></tr><tr><td></td><td>Description/Rationale</td><td>When no representations are present the content referenced in the file section file group with @USE attribute value, “Representations” is described in the structural map as a single sub division.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Content division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Representations” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</code></b></td></tr><tr><td></td><td>Name</td><td>Content division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The representations <code>\<div></code> element’s @LABEL attribute value MUST be “Representations”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Content division file references</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing content described in the package are referenced via the relevant file group identifiers.<br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Content division file group references</td></tr><tr><td></td><td>Description/Rationale</td><td>The pointer to the identifier for the “Representations” file group.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div</code></b></td></tr><tr><td></td><td>Name</td><td>Representation division</td></tr><tr><td></td><td>Description/Rationale</td><td>When a package consists of multiple representations, each described by a representation level mets.xml file, there should be a discrete representation <code>\div</code> element for each representation. <br> Each representation <code>\<div></code> references the representation level mets.xml file, documenting the structure of the representation and its content.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier that can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/@LABEL</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The package’s representation division <code>\<div></code> element @LABEL attribute value must be the path to the representation level mets.xml file starting with the value “Representations” followed by the main folder name, e.g. Representations/representation_1.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division file references</td></tr><tr><td></td><td>Description/Rationale</td><td>The file group containing the files described in the package are referenced via the relevant file group identifier.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/mptr</code></b></td></tr><tr><td></td><td>Name</td><td>Representation METS pointer</td></tr><tr><td></td><td>Description/Rationale</td><td>The division <code>\<div></code> of the specific representation includes one occurrence of the METS pointer <code>\<mptr></code> element, pointing to the appropriate representation mets.xml file.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr/@xlink:href</code></b></td></tr><tr><td></td><td>Name</td><td>Resource location</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>As indicated by the @LOCTYPE attribute, this filepath MUST be a URL type filepath.<br>It is recommended to use the relative location of the file in this URL.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr[@xlink:type='simple']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of link</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr[@LOCTYPE='URL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of locator</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the representation mets.xml files of the different representation levels.<br>It MUST always be used with the value "URL".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr></tbody></table>
+<table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec</code></th></tr>
+<tr><td></td><td>Name</td><td>Descriptive metadata section</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Wrapper element that contains either embedded descriptive metadata or a reference to (a) separate descriptive metadata file(s) in the directory /metadata/descriptive.<br>It MUST be used if descriptive metadata for the package content is available. <br>Each descriptive metadata section (<code>dmdsec</code>) contains a single description and MUST be repeated for multiple descriptions, when available.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Descriptive metadata section identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier for the <code>dmdSec</code> used for internal package references.<br>It MUST be unique within the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/@CREATED</code></th></tr>
+<tr><td></td><td>Name</td><td>Descriptive metadata creation datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Creation date and time of the descriptive metadata in this section.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/@STATUS</code></th></tr>
+<tr><td></td><td>Name</td><td>Status of the descriptive metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Describes the status of the <code>dmdSec</code> which is supported by the profile.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["CURRENT","SUPERSEDED"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef</code></th></tr>
+<tr><td></td><td>Name</td><td>Reference to the document with the descriptive metadata (when not embedded within the <code>dmdSec</code>)</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Reference to the descriptive metadata file(s) when located in the /metadata/descriptive directory.<br></td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef[@LOCTYPE='URL']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of locator</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the descriptive metadata file(s) in the /metadata/descriptive directory.<br>It MUST always be used with the value "URL".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef[@xlink:type='simple']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of link</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef/@xlink:href</code></th></tr>
+<tr><td></td><td>Name</td><td>Resource location</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the /metadata/descriptive directory.<br> <br>As indicated by the <code>@LOCTYPE</code> attribute, this filepath MUST be a URL type filepath. </td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef/@MDTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of descriptive metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Specification of the type of metadata that is used in the externally located descriptive metadata file(s) in the /metadata/descriptive directory.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["MARC","MODS","EAD","DC","NISOIMG","LC-AV","VRA","TEIHDR","DDI","FGDC","LOM","PREMIS","PREMIS:OBJECT","PREMIS:AGENT","PREMIS:RIGHTS","PREMIS:EVENT","TEXTMD","METSRIGHTS","ISO 19115:2003 NAP","EAC-CPF","LIDO","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef/@MIMETYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>File mime type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>IANA mime type</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef/@SIZE</code></th></tr>
+<tr><td></td><td>Name</td><td>File size</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr>
+<tr><td></td><td>Datatype</td><td>Integer</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef/@CREATED</code></th></tr>
+<tr><td></td><td>Name</td><td>File creation datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef/@CHECKSUM</code></th></tr>
+<tr><td></td><td>Name</td><td>File checksum</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/dmdSec/mdRef/@CHECKSUMTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>File checksum type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+</table>
 
 ***Example***
 
 ```xml
-<!-- ref to descriptive metadata about IE -->
-    <dmdSec ID="uuid-786829da-2ad8-4d77-8cf7-157f63227e6b">
-        <mdRef ID="uuid-88191f66-f7ae-42c7-9427-8af2a8e7557f" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml" MIMETYPE="text/xml" SIZE="647" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="968ebd5cb0283c086c333928eff6b85e" CHECKSUMTYPE="MD5" />
-    </dmdSec>
+<!-- ref to descriptive metadata about the main IE -->
+<dmdSec ID="uuid-786829da-2ad8-4d77-8cf7-157f63227e6b">
+  <mdRef ID="uuid-88191f66-f7ae-42c7-9427-8af2a8e7557f" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml" MIMETYPE="text/xml" SIZE="647" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="968ebd5cb0283c086c333928eff6b85e" CHECKSUMTYPE="MD5" />
+</dmdSec>
 
-    <!-- ref to descriptive metadata about subIE 1 -->
-    <dmdSec ID="uuid-9f138ace-8ee0-4f13-a4da-353d989b6f29">
-        <mdRef ID="uuid-6e121ba5-7e96-4967-b776-c5f48d85f800" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_1.xml" MIMETYPE="text/xml" SIZE="710" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a" CHECKSUMTYPE="MD5" />
-    </dmdSec>
+<!-- ref to descriptive metadata about subIE 1 -->
+<dmdSec ID="uuid-9f138ace-8ee0-4f13-a4da-353d989b6f29">
+  <mdRef ID="uuid-6e121ba5-7e96-4967-b776-c5f48d85f800" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_1.xml" MIMETYPE="text/xml" SIZE="710" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a" CHECKSUMTYPE="MD5" />
+</dmdSec>
 
-    <!-- ref to descriptive metadata about subIE 2 -->
-    <dmdSec ID="uuid-5d6085a1-d607-46a4-ad3a-24a06663661c">
-        <mdRef ID="uuid-f1ddd620-e535-4ae3-a959-1be8468caaa5" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_2.xml" MIMETYPE="text/xml" SIZE="723" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" CHECKSUMTYPE="MD5" />
-    </dmdSec>
+<!-- ref to descriptive metadata about subIE 2 -->
+<dmdSec ID="uuid-5d6085a1-d607-46a4-ad3a-24a06663661c">
+  <mdRef ID="uuid-f1ddd620-e535-4ae3-a959-1be8468caaa5" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_2.xml" MIMETYPE="text/xml" SIZE="723" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" CHECKSUMTYPE="MD5" />
+</dmdSec>
 ```
 
 #### amdSec section
@@ -282,11 +656,180 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 
 The `<amdSec>` element (short for 'administrative metadata section') contains preservation metadata about the (sub)IE(s) in the SIP and the SIP as a whole.
 The `<amdSec>` can either embed metadata (with the use of `<digiprovMD>` elements) or contain pointers to the location of preservation metadata files located in the */metadata/preservation* directory of the package level.
-In order to maintain the readability of the *mets.xml* file, it is recommended to store the preservation metadata in dedicated files.
+In order to maintain the readability of the *mets.xml* file, it is recommended to store the preservation metadata in separate/dedicated files.
 
 ***Requirements***
 
-<table style="undefined;table-layout: fixed; width: 2532px"><colgroup><col style="width: 401.88333px"><col style="width: 639.88333px"><col style="width: 1489.88333px"></colgroup><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec</code></b></td></tr><tr><td></td><td>Name</td><td>Administrative metadata section</td></tr><tr><td></td><td>Description/Rationale</td><td>Wrapper element that contains either embedded preservation metadata or a reference to (a) separate preservation metadata file(s) in the directory /metadata/preservation.<br>It MUST be used if preservation metadata for the package content is available.<br>All preservation metadata MUST be present in a single <code><amdSec></code> element.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD</code></b></td></tr><tr><td></td><td>Name</td><td>Digital provenance metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Wrapper element for including preservation information using the PREMIS standard.<br>Each piece of PREMIS metadata MUST be included in a separate <code><digiprovMD></code> element.<br>If preservation metadata in PREMIS is embedded within the mets.xml file, it is recommended to follow <a href="https://www.loc.gov/standards/premis/guidelines2017-premismets.pdf" target="_blank" rel="noopener noreferrer">the 2017 version of PREMIS in METS Guidelines</a>.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Digital provenance metadata identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier used for internal package references.<br>It MUST be unique within the SIP.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/@STATUS</code></b></td></tr><tr><td></td><td>Name</td><td>Status of the digital provenance metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Describes the status of the <code><digiprovMD></code> which is supported by the profile.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["CURRENT","SUPERSEDED"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef</code></b></td></tr><tr><td></td><td>Name</td><td>Reference to the document with the digital provenance metadata (when not embedded within the mets.xml file).</td></tr><tr><td></td><td>Description/Rationale</td><td>Reference to the preservation metadata file(s) when located in the /metadata/preservation directory.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef[@LOCTYPE='URL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of locator</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the preservation metadata file(s) in the /metadata/preservation directory.<br>It MUST always be used with the value "URL".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef[@xlink:type='simple']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of link</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@xlink:href</code></b></td></tr><tr><td></td><td>Name</td><td>Resource location</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the /metadata/preservation directory.<br>As indicated by the <code>@LOCTYPE</code> attribute, this filepath MUST be a URL type filepath.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@MDTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Type of preservation metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["MARC","MODS","EAD","DC","NISOIMG","LC-AV","VRA","TEIHDR","DDI","FGDC","LOM","PREMIS","PREMIS:OBJECT","PREMIS:AGENT","PREMIS:RIGHTS","PREMIS:EVENT","TEXTMD","METSRIGHTS","ISO 19115:2003 NAP","EAC-CPF","LIDO","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@MIMETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File mime type</td></tr><tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>IANA mime type</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@SIZE</code></b></td></tr><tr><td></td><td>Name</td><td>File size</td></tr><tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr><tr><td></td><td>Datatype</td><td>Integer</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@CREATED</code></b></td></tr><tr><td></td><td>Name</td><td>File creation datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@CHECKSUM</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum</td></tr><tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum type</td></tr><tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD</code></b></td></tr><tr><td></td><td>Name</td><td>Rights metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>A simple rights statement may be used to describe general permissions for the package.<br><br>Individual representations SHOULD state their specific rights in their representation mets.xml file.<br>Standards for rights metadata include <a href="http://rightsstatements.org/" target="_blank" rel="noopener noreferrer">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements" target="_blank" rel="noopener noreferrer">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema" target="_blank" rel="noopener noreferrer">METS Rights Schema</a> and PREMIS.<br></td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Rights metadata identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier used for internal package references.<br>It MUST be unique within the SIP.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/@STATUS</code></b></td></tr><tr><td></td><td>Name</td><td>Status of the rights metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Describes the status of the <code><digiprovMD></code> which is supported by the profile.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["CURRENT","SUPERSEDED"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef</code></b></td></tr><tr><td></td><td>Name</td><td>Reference to the document with the rights metadata (when not embedded within the mets.xml file).</td></tr><tr><td></td><td>Description/Rationale</td><td>Reference to the rights metadata file(s) when located in the /metadata/preservation directory.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef[@LOCTYPE='URL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of locator</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the rights metadata file(s) in the /metadata/preservation directory.<br>It MUST always be used with the value "URL".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef[@xlink:type='simple']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of link</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@xlink:href</code></b></td></tr><tr><td></td><td>Name</td><td>Resource location</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the /metadata/preservation directory.<br>As indicated by the <code>@LOCTYPE</code> attribute, this filepath MUST be a URL type filepath.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@MDTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Type of preservation metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["MARC","MODS","EAD","DC","NISOIMG","LC-AV","VRA","TEIHDR","DDI","FGDC","LOM","PREMIS","PREMIS:OBJECT","PREMIS:AGENT","PREMIS:RIGHTS","PREMIS:EVENT","TEXTMD","METSRIGHTS","ISO 19115:2003 NAP","EAC-CPF","LIDO","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@MIMETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File mime type</td></tr><tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>IANA mime type</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@SIZE</code></b></td></tr><tr><td></td><td>Name</td><td>File size</td></tr><tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr><tr><td></td><td>Datatype</td><td>Integer</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@CREATED</code></b></td></tr><tr><td></td><td>Name</td><td>File creation datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@CHECKSUM</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum</td></tr><tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum type</td></tr><tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr></tbody></table>
+<table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec</code></th></tr>
+<tr><td></td><td>Name</td><td>Administrative metadata section</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Wrapper element that contains either embedded preservation metadata or a reference to (a) separate preservation metadata file(s) in the directory /metadata/preservation.<br>It MUST be used if preservation metadata for the package content is available.<br>All preservation metadata MUST be present in a single <code>amdSec</code> element.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD</code></th></tr>
+<tr><td></td><td>Name</td><td>Digital provenance metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Wrapper element for including preservation information using the PREMIS standard.<br>Each piece of PREMIS metadata MUST be included in a separate <code>digiprovMD</code> element.<br>If preservation metadata in PREMIS is embedded within the mets.xml file, it is recommended to follow <a href="https://www.loc.gov/standards/premis/guidelines2017-premismets.pdf" target="_blank" rel="noopener noreferrer">the 2017 version of PREMIS in METS Guidelines</a>.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Digital provenance metadata identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier used for internal package references.<br>It MUST be unique within the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/@STATUS</code></th></tr>
+<tr><td></td><td>Name</td><td>Status of the digital provenance metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Describes the status of the <code>digiprovMD</code> which is supported by the profile.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["CURRENT","SUPERSEDED"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef</code></th></tr>
+<tr><td></td><td>Name</td><td>Reference to the document with the digital provenance metadata (when not embedded within the mets.xml file).</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Reference to the preservation metadata file(s) when located in the /metadata/preservation directory.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef[@LOCTYPE='URL']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of locator</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the preservation metadata file(s) in the /metadata/preservation directory.<br>It MUST always be used with the value "URL".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef[@xlink:type='simple']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of link</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef/@xlink:href</code></th></tr>
+<tr><td></td><td>Name</td><td>Resource location</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the /metadata/preservation directory.<br>As indicated by the <code>@LOCTYPE</code> attribute, this filepath MUST be a URL type filepath.</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef/@MDTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of preservation metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["MARC","MODS","EAD","DC","NISOIMG","LC-AV","VRA","TEIHDR","DDI","FGDC","LOM","PREMIS","PREMIS:OBJECT","PREMIS:AGENT","PREMIS:RIGHTS","PREMIS:EVENT","TEXTMD","METSRIGHTS","ISO 19115:2003 NAP","EAC-CPF","LIDO","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef/@MIMETYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>File mime type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>IANA mime type</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef/@SIZE</code></th></tr>
+<tr><td></td><td>Name</td><td>File size</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr>
+<tr><td></td><td>Datatype</td><td>Integer</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef/@CREATED</code></th></tr>
+<tr><td></td><td>Name</td><td>File creation datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef/@CHECKSUM</code></th></tr>
+<tr><td></td><td>Name</td><td>File checksum</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>File checksum type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD</code></th></tr>
+<tr><td></td><td>Name</td><td>Rights metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A simple rights statement may be used to describe general permissions for the package.<br><br>Individual representations SHOULD state their specific rights in their representation mets.xml file.<br>Standards for rights metadata include <a href="http://rightsstatements.org/" target="_blank" rel="noopener noreferrer">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements" target="_blank" rel="noopener noreferrer">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema" target="_blank" rel="noopener noreferrer">METS Rights Schema</a> and PREMIS.<br></td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Rights metadata identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier used for internal package references.<br>It MUST be unique within the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/@STATUS</code></th></tr>
+<tr><td></td><td>Name</td><td>Status of the rights metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Describes the status of the <code>digiprovMD</code> which is supported by the profile.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["CURRENT","SUPERSEDED"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef</code></th></tr>
+<tr><td></td><td>Name</td><td>Reference to the document with the rights metadata (when not embedded within the mets.xml file).</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Reference to the rights metadata file(s) when located in the /metadata/preservation directory.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef[@LOCTYPE='URL']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of locator</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the rights metadata file(s) in the /metadata/preservation directory.<br>It MUST always be used with the value "URL".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef[@xlink:type='simple']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of link</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef/@xlink:href</code></th></tr>
+<tr><td></td><td>Name</td><td>Resource location</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the /metadata/preservation directory.<br>As indicated by the <code>@LOCTYPE</code> attribute, this filepath MUST be a URL type filepath.</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef/@MDTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of preservation metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["MARC","MODS","EAD","DC","NISOIMG","LC-AV","VRA","TEIHDR","DDI","FGDC","LOM","PREMIS","PREMIS:OBJECT","PREMIS:AGENT","PREMIS:RIGHTS","PREMIS:EVENT","TEXTMD","METSRIGHTS","ISO 19115:2003 NAP","EAC-CPF","LIDO","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef/@MIMETYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>File mime type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>IANA mime type</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef/@SIZE</code></th></tr>
+<tr><td></td><td>Name</td><td>File size</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr>
+<tr><td></td><td>Datatype</td><td>Integer</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef/@CREATED</code></th></tr>
+<tr><td></td><td>Name</td><td>File creation datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef/@CHECKSUM</code></th></tr>
+<tr><td></td><td>Name</td><td>File checksum</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>File checksum type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+</table>
 
 ***Example***
 
@@ -315,8 +858,152 @@ The listing of other representation files (i.e. metadata files and media files) 
 - The `<fileSec>` element of the package *mets.xml* file MUST NOT reference anything from the different representation levels, EXCEPT the representation *mets.xml* files.
 - Each representation *mets.xml* MUST be referenced within its own `<fileGrp>` element within the `<fileSec>` element of the package *mets.xml*.
 
-<table><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec</code></b></td></tr><tr><td></td><td>Name</td><td>mets/fileSec</td></tr><tr><td></td><td>Description/Rationale</td><td>Wrapper element for the file section of the METS which contains different <code>\<fileGrp></code> elements which acts as a manifest/an inventory of the package level and its content.<br>Only a single `<fileSec>` element should be present.<br>In the case that a package only contains metadata updates, i.e. exclusively metadata files, then no file references need to be added to this section.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>File section identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the file section used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp[@USE='Documentation']</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation file group</td></tr><tr><td></td><td>Description/Rationale</td><td>All documentation pertaining to the transferred content is placed in one or more file group elements with mets/fileSec/fileGrp/@USE attribute value “Documentation”.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..n</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp[@USE='Schemas']</code></b></td></tr><tr><td></td><td>Name</td><td>Schema file group</td></tr><tr><td></td><td>Description/Rationale</td><td>All XML schemas used in the information package must be referenced from one or more file groups with mets/fileSec/fileGrp/@USE attribute value “Schemas”.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..n</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]</code></b></td></tr><tr><td></td><td>Name</td><td>Representations file group</td></tr><tr><td></td><td>Description/Rationale</td><td>A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with mets/fileSec/fileGrp/@USE attribute value starting with “Representations” followed by the path to the folder where the representation level mets.xml file is placed.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..n</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/@ADMID</code></b></td></tr><tr><td></td><td>Name</td><td>Reference to administrative metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>Reference to the ID of the corresponding administrative metadata section, in case an <code>\<amdSec></code> was used.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/@csip:CONTENTINFORMATIONTYPE="MIXED"|mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]/@csip:CONTENTINFORMATIONTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Content Information Type Specification</td></tr><tr><td></td><td>Description/Rationale</td><td></td></tr><tr><td></td><td>Datatype</td><td></td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Other Content Information Type Specification</td></tr><tr><td></td><td>Description/Rationale</td><td>When the mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE attribute has the value “OTHER” the mets/fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE must state a value for the Content Information Type Specification used.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/@USE</code></b></td></tr><tr><td></td><td>Name</td><td>Description of the use of the file group</td></tr><tr><td></td><td>Description/Rationale</td><td>The value in the mets/fileSec/fileGrp/@USE is the name of the whole folder structure to the data, e.g. "representations/representation_1" or "documentation".</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>File group identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the file group. This is used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file</code></b></td></tr><tr><td></td><td>Name</td><td>File</td></tr><tr><td></td><td>Description/Rationale</td><td>The <code>\<file></code> elements contain descriptions of the actual media file objects.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..n</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>File identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the file. This is used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@MIMETYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File mimetype</td></tr><tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>IANA mime type</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@SIZE</code></b></td></tr><tr><td></td><td>Name</td><td>File size</td></tr><tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr><tr><td></td><td>Datatype</td><td>Integer</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@CREATED</code></b></td></tr><tr><td></td><td>Name</td><td>File creation datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@CHECKSUM</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum</td></tr><tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@CHECKSUMTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>File checksum type</td></tr><tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@OWNERID</code></b></td></tr><tr><td></td><td>Name</td><td>File original identification</td></tr><tr><td></td><td>Description/Rationale</td><td>If an identifier for the file was supplied by the owner it can be recorded in this attribute.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@ADMID</code></b></td></tr><tr><td></td><td>Name</td><td>File reference to administrative metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>If a <code>\<amdSec></code> (with @ID attribute) was provided, this attribute allows to reference it.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/@DMDID</code></b></td></tr><tr><td></td><td>Name</td><td>File reference to descriptive metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>If a <code>\<dmdSec></code> (with @ID attribute) was provided, this attribute allows to reference it.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/FLocat</code></b></td></tr><tr><td></td><td>Name</td><td>File locator reference</td></tr><tr><td></td><td>Description/Rationale</td><td>Element that allows for referencing the location of each external file.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/FLocat[@LOCTYPE='URL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of locator</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/FLocat[@xlink:type='simple']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of link</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/fileSec/fileGrp/file/FLocat/@xlink:href</code></b></td></tr><tr><td></td><td>Name</td><td>Resource location</td></tr><tr><td></td><td>Description/Rationale</td><td>It is recommended to use the relative location of the file in this URL.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr>
-</tbody>
+<table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec</code></th></tr>
+<tr><td></td><td>Name</td><td>mets/fileSec</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Wrapper element for the file section of the METS which contains different <code>fileGrp</code> elements which acts as a manifest/an inventory of the package level and its content.<br>Only a single <code>fileSec</code> element should be present.<br>In the case that a package only contains metadata updates, i.e. exclusively metadata files, then no file references need to be added to this section.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>File section identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier for the file section used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp[@USE='Documentation']</code></th></tr>
+<tr><td></td><td>Name</td><td>Documentation file group</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>All documentation pertaining to the transferred content is placed in one or more file group elements with mets/fileSec/fileGrp/@USE attribute value “Documentation”.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..n</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp[@USE='Schemas']</code></th></tr>
+<tr><td></td><td>Name</td><td>Schema file group</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>All XML schemas used in the information package must be referenced from one or more file groups with mets/fileSec/fileGrp/@USE attribute value “Schemas”.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..n</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]</code></th></tr>
+<tr><td></td><td>Name</td><td>Representations file group</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with mets/fileSec/fileGrp/@USE attribute value starting with “Representations” followed by the path to the folder where the representation level mets.xml file is placed.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..n</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/@ADMID</code></th></tr>
+<tr><td></td><td>Name</td><td>Reference to administrative metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Reference to the ID of the corresponding administrative metadata section, in case an <code>amdSec</code> was used.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@csip:CONTENTINFORMATIONTYPE="MIXED"|mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]/@csip:CONTENTINFORMATIONTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Content Information Type Specification</td></tr>
+<tr><td></td><td>Description/Rationale</td><td></td></tr>
+<tr><td></td><td>Datatype</td><td></td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Other Content Information Type Specification</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>When the mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE attribute has the value “OTHER” the mets/fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE must state a value for the Content Information Type Specification used.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/@USE</code></th></tr>
+<tr><td></td><td>Name</td><td>Description of the use of the file group</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The value in the mets/fileSec/fileGrp/@USE is the name of the whole folder structure to the data, e.g. "representations/representation_1" or "documentation".</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>File group identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier for the file group. This is used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file</code></th></tr>
+<tr><td></td><td>Name</td><td>File</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The <code>file</code> elements contain descriptions of the actual media file objects.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..n</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>File identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier for the file. This is used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@MIMETYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>File mimetype</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The media/mime type of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>IANA mime type</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@SIZE</code></th></tr>
+<tr><td></td><td>Name</td><td>File size</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Size of the referenced file; this MUST be in bytes.</td></tr>
+<tr><td></td><td>Datatype</td><td>Integer</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@CREATED</code></th></tr>
+<tr><td></td><td>Name</td><td>File creation datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The creation date and time of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@CHECKSUM</code></th></tr>
+<tr><td></td><td>Name</td><td>File checksum</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The checksum of the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@CHECKSUMTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>File checksum type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["HAVAL","MD5","SHA-1","SHA-256","SHA-384","SHA-512","TIGER","WHIRLPOOL"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@OWNERID</code></th></tr>
+<tr><td></td><td>Name</td><td>File original identification</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>If an identifier for the file was supplied by the owner it can be recorded in this attribute.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@ADMID</code></th></tr>
+<tr><td></td><td>Name</td><td>File reference to administrative metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>If a <code>amdSec</code> (with @ID attribute) was provided, this attribute allows to reference it.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/@DMDID</code></th></tr>
+<tr><td></td><td>Name</td><td>File reference to descriptive metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>If a <code>dmdSec</code> (with @ID attribute) was provided, this attribute allows to reference it.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/FLocat</code></th></tr>
+<tr><td></td><td>Name</td><td>File locator reference</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Element that allows for referencing the location of each external file.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/FLocat[@LOCTYPE='URL']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of locator</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/FLocat[@xlink:type='simple']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of link</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec/fileGrp/file/FLocat/@xlink:href</code></th></tr>
+<tr><td></td><td>Name</td><td>Resource location</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>It is recommended to use the relative location of the file in this URL.</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
 </table>
 
 ***Example***
@@ -367,7 +1054,211 @@ It provides links between elements and metadata files located elsewhere in the p
 
 ***Requirements***
 
-<table><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap</code></b></td></tr><tr><td></td><td>Name</td><td>Structural description of the package</td></tr><tr><td></td><td>Description/Rationale</td><td>The <code>\<structMap></code> describes the highest logical structure of the IP.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@TYPE='PHYSICAL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of structural description</td></tr><tr><td></td><td>Description/Rationale</td><td>The mets/structMap/@TYPE attribute MUST take the value “PHYSICAL”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']</code></b></td></tr><tr><td></td><td>Name</td><td>Name of the structural description</td></tr><tr><td></td><td>Description/Rationale</td><td>This requirement identifies the CSIP compliant structural map <code>\<structMap></code> element.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Structural description identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the structural description. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div</code></b></td></tr><tr><td></td><td>Name</td><td>Main structural division</td></tr><tr><td></td><td>Description/Rationale</td><td>The division element. Each <code>\<structMap></code> element MUST contain one <code>\<div></code> element that contains possible further <code>\<div></code> elements of the <code>\<structMap></code> elements.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Main structural division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the main <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division</td></tr><tr><td></td><td>Description/Rationale</td><td>The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.<br>When the transfer consists of only administrative and/or descriptive metadata this is the only sub division that occurs.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the metadata <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The metadata <code>\<div></code> element’s @LABEL attribute value MUST be “Metadata”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division references administrative metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>The administrative metadata division should reference all current administrative metadata sections.<br>All <code>\<amdSec></code> elements with @STATUS='CURRENT' SHOULD be referenced by their identifier, @ID. <br> The current <code>\<amdSec></code> elements' @IDs are recorded in the div[@LABEL='Metadata']/@ADMID attribute in a space delimited list.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID</code></b></td></tr><tr><td></td><td>Name</td><td>Metadata division references descriptive metadata</td></tr><tr><td></td><td>Description/Rationale</td><td>The descriptive metadata division should reference all current descriptive metadata sections.<br>All <code>\<dmdSec></code> elements with @STATUS='CURRENT' SHOULD be referenced by their identifier, @ID. <br> The current <code>\<dmdSec></code> elements' @IDs are recorded in the div[@LABEL='Metadata']/@DMDID attribute in a space delimited list.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division</td></tr><tr><td></td><td>Description/Rationale</td><td>The documentation referenced in the file section file groups is described in the structural map with one sub division.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier for the documentation <code>\<div></code> element. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The documentation <code>\<div></code> element’s @LABEL attribute value MUST be “Documentation”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation file references</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing documentation described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Documentation file group reference pointer</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Documentation” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division</td></tr><tr><td></td><td>Description/Rationale</td><td>The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Schemas” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</code></b></td></tr><tr><td></td><td>Name</td><td>Schema division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The schemas <code>\<div></code> element’s @LABEL attribute value MUST be “Schemas”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Schema file reference</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing schemas described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Schema file group reference</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Schemas” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</code></b></td></tr><tr><td></td><td>Name</td><td>Content division</td></tr><tr><td></td><td>Description/Rationale</td><td>When no representations are present the content referenced in the file section file group with @USE attribute value, “Representations” is described in the structural map as a single sub division.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Content division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Representations” file group. This can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</code></b></td></tr><tr><td></td><td>Name</td><td>Content division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The representations <code>\<div></code> element’s @LABEL attribute value MUST be “Representations”.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</code></b></td></tr><tr><td></td><td>Name</td><td>Content division file references</td></tr><tr><td></td><td>Description/Rationale</td><td>All file groups containing content described in the package are referenced via the relevant file group identifiers.<br>There MUST be one file group reference per <code>\<fptr></code> element.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID</code></b></td></tr><tr><td></td><td>Name</td><td>Content division file group references</td></tr><tr><td></td><td>Description/Rationale</td><td>The pointer to the identifier for the “Representations” file group.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div</code></b></td></tr><tr><td></td><td>Name</td><td>Representation division</td></tr><tr><td></td><td>Description/Rationale</td><td>When a package consists of multiple representations, each described by a representation level mets.xml file, there should be a discrete representation <code>\div</code> element for each representation. <br> Each representation <code>\<div></code> references the representation level mets.xml file, documenting the structure of the representation and its content.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>0..*</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/@ID</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>A unique identifier that can be used for internal package references.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/@LABEL</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division label</td></tr><tr><td></td><td>Description/Rationale</td><td>The package’s representation division <code>\<div></code> element @LABEL attribute value must be the path to the representation level mets.xml file starting with the value “Representations” followed by the main folder name, e.g. Representations/representation_1.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title</code></b></td></tr><tr><td></td><td>Name</td><td>Representations division file references</td></tr><tr><td></td><td>Description/Rationale</td><td>The file group containing the files described in the package are referenced via the relevant file group identifier.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap[@LABEL='CSIP']/div/div/mptr</code></b></td></tr><tr><td></td><td>Name</td><td>Representation METS pointer</td></tr><tr><td></td><td>Description/Rationale</td><td>The division <code>\<div></code> of the specific representation includes one occurrence of the METS pointer <code>\<mptr></code> element, pointing to the appropriate representation mets.xml file.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr/@xlink:href</code></b></td></tr><tr><td></td><td>Name</td><td>Resource location</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>As indicated by the @LOCTYPE attribute, this filepath MUST be a URL type filepath.<br>It is recommended to use the relative location of the file in this URL.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr[@xlink:type='simple']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of link</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/structMap/div/div/mptr[@LOCTYPE='URL']</code></b></td></tr><tr><td></td><td>Name</td><td>Type of locator</td></tr><tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the representation mets.xml files of the different representation levels.<br>It MUST always be used with the value "URL".</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr></tbody></table>
+<table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap</code></th></tr>
+<tr><td></td><td>Name</td><td>Structural description of the package</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The <code>structMap</code> describes the highest logical structure of the IP.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@TYPE='PHYSICAL']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of structural description</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The mets/structMap/@TYPE attribute MUST take the value “PHYSICAL”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']</code></th></tr>
+<tr><td></td><td>Name</td><td>Name of the structural description</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This requirement identifies the CSIP compliant structural map <code>structMap</code> element.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Structural description identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier for the structural description. This can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div</code></th></tr>
+<tr><td></td><td>Name</td><td>Main structural division</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The division element. Each <code>structMap</code> element MUST contain one <code>div</code> element that contains possible further <code>div</code> elements of the <code>structMap</code> elements.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Main structural division identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier for the main <code>div</code> element. This can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</code></th></tr>
+<tr><td></td><td>Name</td><td>Metadata division</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.<br>When the transfer consists of only administrative and/or descriptive metadata this is the only sub division that occurs.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Metadata division identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier for the metadata <code>div</code> element. This can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']</code></th></tr>
+<tr><td></td><td>Name</td><td>Metadata division label</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The metadata <code>div</code> element’s @LABEL attribute value MUST be “Metadata”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID</code></th></tr>
+<tr><td></td><td>Name</td><td>Metadata division references administrative metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The administrative metadata division should reference all current administrative metadata sections.<br>All <code>amdSec</code> elements with @STATUS='CURRENT' SHOULD be referenced by their identifier, @ID. <br> The current <code>amdSec</code> elements' @IDs are recorded in the div[@LABEL='Metadata']/@ADMID attribute in a space delimited list.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID</code></th></tr>
+<tr><td></td><td>Name</td><td>Metadata division references descriptive metadata</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The descriptive metadata division should reference all current descriptive metadata sections.<br>All <code>dmdSec</code> elements with @STATUS='CURRENT' SHOULD be referenced by their identifier, @ID. <br> The current <code>dmdSec</code> elements' @IDs are recorded in the div[@LABEL='Metadata']/@DMDID attribute in a space delimited list.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</code></th></tr>
+<tr><td></td><td>Name</td><td>Documentation division</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The documentation referenced in the file section file groups is described in the structural map with one sub division.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Documentation division identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier for the documentation <code>div</code> element. This can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']</code></th></tr>
+<tr><td></td><td>Name</td><td>Documentation division label</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The documentation <code>div</code> element’s @LABEL attribute value MUST be “Documentation”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr</code></th></tr>
+<tr><td></td><td>Name</td><td>Documentation file references</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>All file groups containing documentation described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per <code>fptr</code> element.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID</code></th></tr>
+<tr><td></td><td>Name</td><td>Documentation file group reference pointer</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Documentation” file group. This can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</code></th></tr>
+<tr><td></td><td>Name</td><td>Schema division</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The schemas referenced in the file section file groups are described in the structural map within a single sub-division.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Schema division identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Schemas” file group. This can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']</code></th></tr>
+<tr><td></td><td>Name</td><td>Schema division label</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The schemas <code>div</code> element’s @LABEL attribute value MUST be “Schemas”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr</code></th></tr>
+<tr><td></td><td>Name</td><td>Schema file reference</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>All file groups containing schemas described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per <code>fptr</code> element.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID</code></th></tr>
+<tr><td></td><td>Name</td><td>Schema file group reference</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Schemas” file group. This can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</code></th></tr>
+<tr><td></td><td>Name</td><td>Content division</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>When no representations are present the content referenced in the file section file group with @USE attribute value, “Representations” is described in the structural map as a single sub division.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Content division identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier to the “Representations” file group. This can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']</code></th></tr>
+<tr><td></td><td>Name</td><td>Content division label</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The representations <code>div</code> element’s @LABEL attribute value MUST be “Representations”.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr</code></th></tr>
+<tr><td></td><td>Name</td><td>Content division file references</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>All file groups containing content described in the package are referenced via the relevant file group identifiers.<br>There MUST be one file group reference per <code>fptr</code> element.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID</code></th></tr>
+<tr><td></td><td>Name</td><td>Content division file group references</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The pointer to the identifier for the “Representations” file group.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div</code></th></tr>
+<tr><td></td><td>Name</td><td>Representation division</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>When a package consists of multiple representations, each described by a representation level mets.xml file, there should be a discrete representation <code>\div</code> element for each representation. <br> Each representation <code>div</code> references the representation level mets.xml file, documenting the structure of the representation and its content.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..*</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div/@ID</code></th></tr>
+<tr><td></td><td>Name</td><td>Representations division identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A unique identifier that can be used for internal package references.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div/@LABEL</code></th></tr>
+<tr><td></td><td>Name</td><td>Representations division label</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The package’s representation division <code>div</code> element @LABEL attribute value must be the path to the representation level mets.xml file starting with the value “Representations” followed by the main folder name, e.g. Representations/representation_1.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title</code></th></tr>
+<tr><td></td><td>Name</td><td>Representations division file references</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The file group containing the files described in the package are referenced via the relevant file group identifier.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap[@LABEL='CSIP']/div/div/mptr</code></th></tr>
+<tr><td></td><td>Name</td><td>Representation METS pointer</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The division <code>div</code> of the specific representation includes one occurrence of the METS pointer <code>mptr</code> element, pointing to the appropriate representation mets.xml file.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap/div/div/mptr/@xlink:href</code></th></tr>
+<tr><td></td><td>Name</td><td>Resource location</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Indication of the actual location of the resource.<br>As indicated by the @LOCTYPE attribute, this filepath MUST be a URL type filepath.<br>It is recommended to use the relative location of the file in this URL.</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap/div/div/mptr[@xlink:type='simple']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of link</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/structMap/div/div/mptr[@LOCTYPE='URL']</code></th></tr>
+<tr><td></td><td>Name</td><td>Type of locator</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Indication of the locator type used to refer to the representation mets.xml files of the different representation levels.<br>It MUST always be used with the value "URL".</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr></table>
 
 ***Example***
 
@@ -428,7 +1319,50 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 - The *dc.xml* file MUST include the DC Terms elements outlined in the table below; besides these mandatory elements it MAY use all other terms from the DC Terms schema.
 - The *dc.xml* file MUST adhere to the restrictions on cardinality of terms outlined in the table below; if a term is not listed with a restriction on cardinality, it MAY be used multiple times.
 
-<table><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource</code></b></td></tr><tr><td></td><td>Name</td><td>DC root element</td></tr><tr><td></td><td>Description/Rationale</td><td>This root element MUST contain the XML schema namespace of DCMI Metadata Terms (https://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd).<br>It MUST NOT contain any other XML schema namespaces besides DCMI Metadata Terms.<br>It MUST NOT contain any attributes.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/identifier</code></b></td></tr><tr><td></td><td>Name</td><td>Identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>An unambiguous and unique reference to the Intellectual Entity/Entities and/or Representation(s) present in the SIP.<br>This identifier stems from the local identification system of the content partner.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/created</code></b></td></tr><tr><td></td><td>Name</td><td>Creation date</td></tr><tr><td></td><td>Description/Rationale</td><td>Creation date of the resource.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/submitted</code></b></td></tr><tr><td></td><td>Name</td><td>Date submitted</td></tr><tr><td></td><td>Description/Rationale</td><td>Date of submission of the resource.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/description</code></b></td></tr><tr><td></td><td>Name</td><td>Description</td></tr><tr><td></td><td>Description/Rationale</td><td>An account of the resource.<br>The <code><description></code> term MAY be used multiple times when it uses a different language.<br>The language of the description MUST be provided by a <code>@XML:LANG</code> attribute. This attribute MUST use a controlled vocabulary such as <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank" rel="noopener noreferrer">ISO 639-2</a> or <a href="https://www.iso.org/standard/39534.html" target="_blank" rel="noopener noreferrer">ISO 639-3</a>.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/issued</code></b></td></tr><tr><td></td><td>Name</td><td>Date issued</td></tr><tr><td></td><td>Description/Rationale</td><td>Date of formal issuance of the resource.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>resource/title</code></b></td></tr><tr><td></td><td>Name</td><td>Title</td></tr><tr><td></td><td>Description/Rationale</td><td>A name given to the resource.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr></tbody></table>
+<table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>resource</code></th></tr>
+<tr><td></td><td>Name</td><td>DC root element</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This root element MUST contain <a href="https://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd" target="_blank" rel="noopener noreferrer">the XML schema namespace of DCMI Metadata Terms</a>.<br>It MUST NOT contain any other XML schema namespaces besides DCMI Metadata Terms.<br>It MUST NOT contain any attributes.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>resource/identifier</code></th></tr>
+<tr><td></td><td>Name</td><td>Identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>An unambiguous and unique reference to the Intellectual Entity/Entities and/or Representation(s) present in the SIP.<br>This identifier stems from the local identification system of the content partner.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>resource/created</code></th></tr>
+<tr><td></td><td>Name</td><td>Creation date</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Creation date of the resource.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>resource/submitted</code></th></tr>
+<tr><td></td><td>Name</td><td>Date submitted</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Date of submission of the resource.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>resource/description</code></th></tr>
+<tr><td></td><td>Name</td><td>Description</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>An account of the resource.<br>The <code>description</code> term MAY be used multiple times when it uses a different language.<br>The language of the description MUST be provided by a <code>@XML:LANG</code> attribute. This attribute MUST use a controlled vocabulary such as <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank" rel="noopener noreferrer">ISO 639-2</a> or <a href="https://www.iso.org/standard/39534.html" target="_blank" rel="noopener noreferrer">ISO 639-3</a>.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>resource/issued</code></th></tr>
+<tr><td></td><td>Name</td><td>Date issued</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>Date of formal issuance of the resource.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>resource/title</code></th></tr>
+<tr><td></td><td>Name</td><td>Title</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A name given to the resource.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+</table>
 
 ***Example***
 
@@ -637,7 +1571,58 @@ Since the `<dmdSec>`, `<amdSec>`, `<fileSec>` and `<structMap>` sections follow 
 
 ***Requirements***
 
-<table><tbody><tr><td><b>Element/Attribute</b></td><td><b><code>mets</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>METS root element</td></tr><tr><td></td><td>Description/Rationale</td><td>This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@OBJID</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Representation identifier</td></tr><tr><td></td><td>Description/Rationale</td><td>This is a UUID identifier for the METS document. For the representation METS, this MUST be the same UUID as the one used for the corresponding representation directory.</td></tr><tr><td></td><td>Datatype</td><td>UUID</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@TYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Content category</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute MUST be set to declare the category of the content held in the SIP.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["Textual works - Print","Textual works - Digital","Textual works - Electronic Serials","Digital Musical Composition (score-based representations)","Photographs - Print","Photographs - Digital","Other Graphic Images - Print","Other Graphic Images - Digital","Audio - On Tangible Medium (digital or analog)","Audio - Media-independent (digital)","Motion Pictures – Digital and Physical Media","Video – File-based and Physical Media","Software","Datasets","Geospatial Data","Databases","Websites","Collection","Event","Interactive resource","Physical object","Service","Mixed","Other"]</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets[@TYPE="OTHER"]/@csip:OTHERTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Other content category</td></tr><tr><td></td><td>Description/Rationale</td><td>When the <code>mets/@TYPE</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERTYPE</code> attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the <code>@TYPE</code> attribute.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@csip:CONTENTINFORMATIONTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Content information type specification</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute is used to declare the Content Information Type Specification used when creating the SIP.</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["ERMS","SIARD1","SIARD2","SIARDDK","GeoData","citscarchival_v1_0","citserms_v2_1","citspremis_v1_0","citsehpj_v1_0",<br>"citsehcr_v1_0","citssiard_v1_0","citsgeospatial_v3_0","MIXED","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Other content information type specification</td></tr><tr><td></td><td>Description/Rationale</td><td>When the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERCONTENTINFORMATIONTYPE</code> attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@PROFILE</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>METS profile</td></tr><tr><td></td><td>Description/Rationale</td><td>The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to “https://earksip.dilcis.eu/profile/E-ARK-SIP.xml”.</td></tr><tr><td></td><td>Datatype</td><td>URL</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td><b><code>mets/@LABEL</code></b></td><td></td></tr><tr><td></td><td>Name</td><td>Package name</td></tr><tr><td></td><td>Description/Rationale</td><td>An optional short text describing the contents of the package.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr></tbody></table></div>
+<table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets</code></th></tr>
+<tr><td></td><td>Name</td><td>METS root element</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@OBJID</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Representation identifier</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This is a UUID identifier for the METS document. For the representation METS, this MUST be the same UUID as the one used for the corresponding representation directory.</td></tr>
+<tr><td></td><td>Datatype</td><td>UUID</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@TYPE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Content category</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute MUST be set to declare the category of the content held in the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["Textual works - Print","Textual works - Digital","Textual works - Electronic Serials","Digital Musical Composition (score-based representations)","Photographs - Print","Photographs - Digital","Other Graphic Images - Print","Other Graphic Images - Digital","Audio - On Tangible Medium (digital or analog)","Audio - Media-independent (digital)","Motion Pictures – Digital and Physical Media","Video – File-based and Physical Media","Software","Datasets","Geospatial Data","Databases","Websites","Collection","Event","Interactive resource","Physical object","Service","Mixed","Other"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets[@TYPE="OTHER"]/@csip:OTHERTYPE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Other content category</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>When the <code>mets/@TYPE</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERTYPE</code> attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the <code>@TYPE</code> attribute.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@csip:CONTENTINFORMATIONTYPE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Content information type specification</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute is used to declare the Content Information Type Specification used when creating the SIP.</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["ERMS","SIARD1","SIARD2","SIARDDK","GeoData","citscarchival_v1_0","citserms_v2_1","citspremis_v1_0","citsehpj_v1_0",<br>"citsehcr_v1_0","citssiard_v1_0","citsgeospatial_v3_0","MIXED","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Other content information type specification</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>When the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERCONTENTINFORMATIONTYPE</code> attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@PROFILE</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>METS profile</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to “https://earksip.dilcis.eu/profile/E-ARK-SIP.xml”.</td></tr>
+<tr><td></td><td>Datatype</td><td>URL</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@LABEL</code></th><td></td></tr>
+<tr><td></td><td>Name</td><td>Package name</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>An optional short text describing the contents of the package.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+</table>
 
 ***Example***
 
@@ -661,7 +1646,69 @@ Since the `<dmdSec>`, `<amdSec>`, `<fileSec>` and `<structMap>` sections follow 
 
 ***Requirements***
 
-<div><tbody><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr</code></b></td></tr><tr><td></td><td>Name</td><td>Representation header</td></tr><tr><td></td><td>Description/Rationale</td><td>General element that contains descriptive information about the representation.</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@CREATEDATE</code></b></td></tr><tr><td></td><td>Name</td><td>Representation creation datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute records the date and time the representation was created.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@LASTMODDATE</code></b></td></tr><tr><td></td><td>Name</td><td>Representation last modification datetime</td></tr><tr><td></td><td>Description/Rationale</td><td>In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the representation has been modified since its creation datetime.</td></tr><tr><td></td><td>Datatype</td><td>EDTF</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>SHOULD</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/@RECORDSTATUS</code></b></td></tr><tr><td></td><td>Name</td><td>Representation status</td></tr><tr><td></td><td>Description/Rationale</td><td>A way of indicating the status of the representation and to instruct the archive on how to properly handle it.<br>If not set, the expected value is "NEW".</td></tr><tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr><tr><td></td><td>Vocabulary</td><td>["NEW","SUPPLEMENT","REPLACEMENT","TEST","VERSION","DELETE","OTHER"]</td></tr><tr><td></td><td>Cardinality</td><td>0..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent</code></b></td></tr><tr><td></td><td>Name</td><td>Agent</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>/</td></tr><tr><td></td><td>Cardinality</td><td>1..*</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@ROLE</code></b></td></tr><tr><td></td><td>Name</td><td>Agent role</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@TYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Agent type</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/@OTHERTYPE</code></b></td></tr><tr><td></td><td>Name</td><td>Agent other type</td></tr><tr><td></td><td>Description/Rationale</td><td>This attribute MUST be used if the attribute agent/@TYPE is set to "OTHER". It is used to specify the exact other type that is being used.</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/name</code></b></td></tr><tr><td></td><td>Name</td><td>Agent name</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MUST</td></tr><tr><td><b>Element/Attribute</b></td><td colspan="2"><b><code>mets/metsHdr/agent/note</code></b></td></tr><tr><td></td><td>Name</td><td>Agent additional information</td></tr><tr><td></td><td>Description/Rationale</td><td>/</td></tr><tr><td></td><td>Datatype</td><td>String</td></tr><tr><td></td><td>Cardinality</td><td>1..1</td></tr><tr><td></td><td>Obligation</td><td>MAY</td></tr></tbody></table></div>
+<table>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr</code></th></tr>
+<tr><td></td><td>Name</td><td>Representation header</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>General element that contains descriptive information about the representation.</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@CREATEDATE</code></th></tr>
+<tr><td></td><td>Name</td><td>Representation creation datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute records the date and time the representation was created.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@LASTMODDATE</code></th></tr>
+<tr><td></td><td>Name</td><td>Representation last modification datetime</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the representation has been modified since its creation datetime.</td></tr>
+<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@RECORDSTATUS</code></th></tr>
+<tr><td></td><td>Name</td><td>Representation status</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>A way of indicating the status of the representation and to instruct the archive on how to properly handle it.<br>If not set, the expected value is "NEW".</td></tr>
+<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
+<tr><td></td><td>Vocabulary</td><td>["NEW","SUPPLEMENT","REPLACEMENT","TEST","VERSION","DELETE","OTHER"]</td></tr>
+<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent</code></th></tr>
+<tr><td></td><td>Name</td><td>Agent</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
+<tr><td></td><td>Datatype</td><td>/</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..*</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@ROLE</code></th></tr>
+<tr><td></td><td>Name</td><td>Agent role</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@TYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Agent type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@OTHERTYPE</code></th></tr>
+<tr><td></td><td>Name</td><td>Agent other type</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>This attribute MUST be used if the attribute agent/@TYPE is set to "OTHER". It is used to specify the exact other type that is being used.</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/name</code></th></tr>
+<tr><td></td><td>Name</td><td>Agent name</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MUST</td></tr>
+<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note</code></th></tr>
+<tr><td></td><td>Name</td><td>Agent additional information</td></tr>
+<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
+<tr><td></td><td>Datatype</td><td>String</td></tr>
+<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
+<tr><td></td><td>Obligation</td><td>MAY</td></tr>
+</table>
 
 ***Example***
 
