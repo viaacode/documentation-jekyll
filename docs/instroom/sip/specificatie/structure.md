@@ -170,7 +170,7 @@ The package *mets.xml* file does not record the internal structure of the differ
 It only references the different *mets.xml* files contained in each */representation_\** directory (where *n* is an integer indicating the number of different representations in the */representation* directory).
 Each of the *mets.xml* files at the representation-level references its own internal structure.
 
-#### <code>mets</code> section
+#### mets section
 
 <mark>vraag: meemoo namespace toevoegen, cf. RDF?</mark>
 <mark>vraag: dekken de content categories van EARK al onze use-cases?</mark>
@@ -276,11 +276,11 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
     </dmdSec>
 ```
 
-#### `amdSec` section
+#### amdSec section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
 
-The `<amdSec>` element (short for 'descriptive metadata section') contains preservation metadata about the (sub)IE(s) in the SIP and the SIP as a whole.
+The `<amdSec>` element (short for 'administrative metadata section') contains preservation metadata about the (sub)IE(s) in the SIP and the SIP as a whole.
 The `<amdSec>` can either embed metadata (with the use of `<digiprovMD>` elements) or contain pointers to the location of preservation metadata files located in the */metadata/preservation* directory of the package level.
 In order to maintain the readability of the *mets.xml* file, it is recommended to store the preservation metadata in dedicated files.
 
@@ -299,7 +299,7 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 </amdSec>
 ```
 
-#### `fileSec` section
+#### fileSec section
 
 <mark>vraag: die DOCUMENTATION en SCHEMAS directories lijken mij niet zinvol te houden als MUST?</mark>
 <mark>vraag: gaan we de checksum behouden hier als attribuut? Dat zit ook al in de manifest-md5.txt van de bag en ook al in de verschillende PREMIS objecten</mark>
@@ -358,11 +358,11 @@ The listing of other representation files (i.e. metadata files and media files) 
     </fileSec>
 ```
 
-#### <code>structMap</code> section
+#### structMap section
 
-<mark>vraag: welk label moet de overkoepelende <code><div></code> krijgen?</mark>
+<mark>vraag: welk label moet de overkoepelende `<div>` krijgen?</mark>
 
-The <code>\<structMap></code> element outlines the hierarchical structure of the package level of the SIP.
+The `<structMap>` element outlines the hierarchical structure of the package level of the SIP.
 It provides links between elements and metadata files located elsewhere in the package level.
 
 ***Requirements***
@@ -633,7 +633,7 @@ Each */representation_\** directory contains its own *mets.xml* file which acts 
 The *mets.xml* file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in [the section package mets.xml](#metsxml-file).
 Since the `<dmdSec>`, `<amdSec>`, `<fileSec>` and `<structMap>` sections follow the same requirements, where possible, as the package *mets.xml* file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `<mets>` and `<metsHdr>` sections.
 
-#### <code>mets</code> section
+#### mets section
 
 ***Requirements***
 
@@ -657,7 +657,7 @@ Since the `<dmdSec>`, `<amdSec>`, `<fileSec>` and `<structMap>` sections follow 
 </mets>
 ```
 
-#### <code>metsHdr</code> section
+#### metsHdr section
 
 ***Requirements***
 
