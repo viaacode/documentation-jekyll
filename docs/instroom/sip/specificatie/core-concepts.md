@@ -69,7 +69,7 @@ Finally, each representation level contains preservation information about the e
 
 ***Example***
 
-```
+```plaintext
 root_directory
 │──manifest-md5.txt
 │──bagit.txt

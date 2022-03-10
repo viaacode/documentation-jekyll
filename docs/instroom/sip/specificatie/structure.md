@@ -123,7 +123,7 @@ Each */data* directory contains a single so-called package, consisting of the co
 
 ***Example***
 
-```
+```plaintext
 root_directory
 │   ...
 │
@@ -140,7 +140,7 @@ root_directory
 
 ***Example***
 
-```
+```plaintext
 root_directory
 │   ...
 │
@@ -585,7 +585,7 @@ As before, we follow the hierarchical folder structure discussed in the section 
 
 _**Example**_
 
-```
+```plaintext
 root_directory
 │   ...
 │
