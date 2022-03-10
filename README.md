@@ -4,11 +4,17 @@ This repository generates [https://developer.meemoo.be/](https://developer.meemo
 
 ## Build the docs locally
 
-First, [install Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+First, [install Ruby 2.7.](https://www.ruby-lang.org/en/documentation/installation/)
 
-Next, install [Jekyll](https://jekyllrb.com/) and other dependencies from the `Gemfile`
-```
+Next, install [Jekyll](https://jekyllrb.com/) and other dependencies from the `Gemfile` with 
+
+```bash
 bundle install
+```
+
+Finally, run
+
+```bash
 bundle exec jekyll serve
 ```
 
