@@ -1,8 +1,9 @@
 ---
 layout:       default
-title:        SIP structure {:} package level
-parent:       SIP Specification 0.1
-nav_order:    5
+title:        Package level
+parent:       Structure
+grand_parent: SIP Specification 0.1
+nav_order:    2
 nav_exclude:  false
 ---
 
