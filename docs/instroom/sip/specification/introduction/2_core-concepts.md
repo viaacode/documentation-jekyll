@@ -6,8 +6,7 @@ grand_parent: SIP Specification 0.1
 nav_order:    2
 nav_exclude:  false
 ---
-
-# Core concepts
+# Core Concepts
 
 This section covers a number of theoretical concepts in meemoo's SIP specification which return throughout the remainder of this text.
 The first section defines the PREMIS concept of an intellectual entity and its relation to the so-called representation consisting of a number of files.
@@ -20,7 +19,7 @@ The [PREMIS Data Dictionary for Preservation Metadata](https://www.loc.gov/stand
 Each IE can be subdivided into other IEs (also known as subIEs) or can be represented by one or more (digital) representations, defined by PREMIS as 'a set of files (including metadata) needed for a complete rendition of an intellectual entity'.
 
 <figure class="mx-auto">
-  <img src="../images/premis_objects.png" alt="Premis Object Diagram" /> 
+  <img src="../../../../../assets/images_spec/premis_objects.png" alt="Premis Object Diagram" /> 
   <figcaption>PREMIS Object Diagram (adapted to exclude bitstreams)</figcaption>
 </figure>
 

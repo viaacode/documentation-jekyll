@@ -1,13 +1,12 @@
 ---
 layout:       default
 title:        Representation level
-parent:       Structure
+parent:       StructureSection
 grand_parent: SIP Specification 0.1
 nav_order:    3
 nav_exclude:  false
 ---
-
-## Representation-level
+# Structure of a meemoo SIP: representation level
 
 In this section we dissect a distinct representation contained in a SIP package, and discuss its requirements.
 As before, we follow the hierarchical folder structure discussed in the section [Hierarchical directory structure](#hierarchical-directory-structure)(repeated below, from the representation level onwards), and traverse the different components of a representation.
@@ -43,7 +42,7 @@ root_directory
          │   ...
 ```
 
-### /representation_* (directory)
+## /representation_* (directory)
 
 The */representation_\** directory contains all information about a certain representation of the (sub)IE(s) of the SIP.
 It contains both descriptive and preservation metadata, as well as the actual media files making up the representation.
@@ -57,7 +56,7 @@ Each */representation_\** directory contains its own *mets.xml* file which acts 
 - A */representation_\** directory MAY contain exactly one */documentation* directory.
 - A */representation_\** directory MAY contain exactly one */schemas* directory.
 
-#### mets.xml (file)
+### mets.xml (file)
 
 The *mets.xml* file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in [the section package mets.xml](#metsxml-file).
 Since the `<dmdSec>`, `<amdSec>`, `<fileSec>` and `<structMap>` sections follow the same requirements, where possible, as the package *mets.xml* file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `<mets>` and `<metsHdr>` sections.
@@ -211,7 +210,7 @@ Since the `<dmdSec>`, `<amdSec>`, `<fileSec>` and `<structMap>` sections follow 
 <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00"/>
 ```
 
-#### /data (directory)
+### /data (directory)
 
 The */data* directory contains the payload files of the SIP, also known as the media files or the essence.
 Depending on the use-case and the content partner, these files can be digital pictures, videos, audio... 
@@ -221,7 +220,7 @@ Depending on the use-case and the content partner, these files can be digital pi
 - The */data* directory MUST NOT contain any subdirectories.
 - All files in the */data* directory MUST be referenced in the corresponding representation mets.
 
-#### /metadata (directory)
+### /metadata (directory)
 
 The */metadata* directory contains both descriptive and preservation metadata about the representation and the media files at the representation level.
 
@@ -229,7 +228,7 @@ The */metadata* directory contains both descriptive and preservation metadata ab
 
 - The */metadata* directory MUST contain exactly two subdirectories: */descriptive* and */preservation*.
 
-##### /descriptive (directory)
+#### /descriptive (directory)
 
 The */descriptive* directory contains descriptive metadata about the representation of the representation level.
 
@@ -237,7 +236,7 @@ The */descriptive* directory contains descriptive metadata about the representat
 
 - The */descriptive* directory MUST contain exactly one file: *dc.xml*.
 
-####### dc.xml (file)
+##### dc.xml (file)
 
 The *dc.xml* file of the representation level follows the same requirements of the *dc.xml* file of the package level discussed in section [dc.xml](#dcxml).
 
@@ -266,7 +265,7 @@ The *dc.xml* file of the representation level follows the same requirements of t
 </resource> 
 ```
 
-##### /preservation (directory)
+#### /preservation (directory)
 
 The */preservation* directory contains preservation metadata about the representation and the media files of the representation level.
 
@@ -274,7 +273,7 @@ The */preservation* directory contains preservation metadata about the represent
 
 - The */preservation* directory MUST contain exactly one file: *premis.xml*.
 
-###### premis.xml (file)
+##### premis.xml (file)
 
 <mark>vraag: hier nog een soort tabel bij, zoals bij de METS of de DC?</mark>
 

@@ -1,13 +1,12 @@
 ---
 layout:       default
 title:        Package level
-parent:       Structure
+parent:       StructureSection
 grand_parent: SIP Specification 0.1
 nav_order:    2
 nav_exclude:  false
 ---
-
-### Structure of a meemoo SIP: package-level
+# Structure of a meemoo SIP: package level
 
 ***Example***
 
@@ -30,7 +29,7 @@ root_directory
       │   ...
 ```
 
-### mets.xml (file)
+## mets.xml (file)
 
 [Metadata Encoding and Transmission Standard](https://www.loc.gov/standards/mets/mets-home.html) (henceforth METS) is a metadata standard for encoding descriptive, administrative and structural metadata.
 In the case of the meemoo SIP, the *mets.xml* file's main purpose it to act as an inventory of the files and directories contained within.
@@ -41,7 +40,7 @@ The package *mets.xml* file does not record the internal structure of the differ
 It only references the different *mets.xml* files contained in each */representation_\** directory (where *n* is an integer indicating the number of different representations in the */representation* directory).
 Each of the *mets.xml* files at the representation-level references its own internal structure.
 
-#### mets section
+### mets section
 
 <mark>vraag: meemoo namespace toevoegen, cf. RDF?</mark>
 <mark>vraag: dekken de content categories van EARK al onze use-cases?</mark>
@@ -126,7 +125,7 @@ The various requirements are listed in the table below.
 </mets>
 ```
 
-#### metsHdr section
+### metsHdr section
 
 <mark>vraag: @RECORDSTATUS attribuut kan handig zijn om bv. metadataupdate mee aan te duiden, als type supplement?</mark>
 <mark>vraag: ik weet niet of die SIP creator agent bij ons verplicht moet zijn? Eerder SHOULD?</mark>
@@ -401,7 +400,7 @@ It does so by using separate `<agent>` tags for every role in the SIPs creation 
     </metsHdr>
 ```
 
-#### dmdSec section
+### dmdSec section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
 <mark>vraag: dmdSec/@STATUS kan handig zijn om bv. iets als metadataupdate mee aan te duiden, waarbij geen essence moet instromen</mark>
@@ -521,7 +520,7 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 </dmdSec>
 ```
 
-#### amdSec section
+### amdSec section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
 
@@ -713,7 +712,7 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 </amdSec>
 ```
 
-#### fileSec section
+### fileSec section
 
 <mark>vraag: die DOCUMENTATION en SCHEMAS directories lijken mij niet zinvol te houden als MUST?</mark>
 <mark>vraag: gaan we de checksum behouden hier als attribuut? Dat zit ook al in de manifest-md5.txt van de bag en ook al in de verschillende PREMIS objecten</mark>
@@ -916,7 +915,7 @@ The listing of other representation files (i.e. metadata files and media files) 
     </fileSec>
 ```
 
-#### structMap section
+### structMap section
 
 <mark>vraag: welk label moet de overkoepelende `<div>` krijgen?</mark>
 
@@ -1158,7 +1157,7 @@ It provides links between elements and metadata files located elsewhere in the p
     </structMap>
 ```
 
-### /metadata (directory)
+## /metadata (directory)
 
 The */metadata* directory contains both descriptive and preservation metadata about the (sub-)IE(s) at the package level.
 It also contains preservation metadata about the SIP as a whole.
@@ -1167,7 +1166,7 @@ It also contains preservation metadata about the SIP as a whole.
 
 - The */metadata* directory MUST contain exactly two subdirectories: */descriptive* and */preservation*.
 
-#### /descriptive (directory)
+### /descriptive (directory)
 
 - The */descriptive* directory contains descriptive metadata about the (sub-)IE(s) at the package level.
 
@@ -1175,7 +1174,7 @@ It also contains preservation metadata about the SIP as a whole.
 
 - The */descriptive* directory MUST contain exactly one file: *dc.xml*.
 
-##### dc.xml
+#### dc.xml
 
 <mark>vraag: waar aanduiden over welke IE/subIE een bepaalde descriptieve metadatafile gaat? In een soort PREMIS relatie 'describes' op basis van gedeelde/gerefereerde UUID?</mark>
 
@@ -1260,7 +1259,7 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 
 ```
 
-#### /preservation (directory)
+### /preservation (directory)
 
 The */preservation* directory contains preservation metadata about the (sub-)IE(s) at package level.
 
@@ -1268,7 +1267,7 @@ The */preservation* directory contains preservation metadata about the (sub-)IE(
 
 - The */preservation* directory MUST contain exactly one file: *premis.xml*.
 
-##### premis.xml
+#### premis.xml
 
 The *premis.xml* file at the package-level contains preservation metadata about the (sub-)IE(s) of the SIP, and about the SIP as a whole.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.
@@ -1374,7 +1373,7 @@ More detailed preservation information can also be described using PREMIS events
 </premis:premis>
 ```
 
-### /representations (directory)
+## /representations (directory)
 
 The */representations* directory contains a separate */representation_\** directory (where n is a positive integer) for each representation of the (sub)IE(s) of the package level. 
 

@@ -1,31 +1,12 @@
 ---
 layout:       default
 title:        Bag level
-parent:       Structure
+parent:       StructureSection
 grand_parent: SIP Specification 0.1
 nav_order:    1
 nav_exclude:  false
 ---
-
-# Structure of a meemoo SIP
-
-In this section we dissect meemoo's SIP package and discuss its requirements.
-We follow the hierarchical folder structure discussed in the section [Hierarchical directory structure](#hierarchical-directory-structure), and traverse the different levels of the SIP.
-
-## Running example
-
-{: .note }
-This section and the examples throughout this specification based on it, are to be considered informative.
-
-One of meemoo's content partners, the (fictional) Flemish Cat Museum (henceforth FCM), wishes to archive a number of rare digitised pictures of the Felis Catus Flamens (a cat species originating in Flanders and threatened with extinction).
-More specifically, the FCM owns two pictures of the Felis Catus Flamens lying on a sofa and one picture of the Felis Catus Flamens on its cat tree.
-
-The FCM views the Felis Catus Flamens itself as the IE of the SIP.
-They furthermore consider the two different environments in which the cat appears, as two separate representations of subIEs (i.e. lying on a sofa and sitting on a cat tree) since they have different metadata about both environments available.
-This therefore results in one main IE (i.e. the Felis Catus Flamens), two subIEs (i.e. the cat lying on a sofa and sitting on a cat tree) and two representations, each representing one of the subIEs.
-One representation then consists of two pictures, while the other consists of one picture.
-
-## Bag level
+# Structure of a meemoo SIP: bag level
 
 A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
 It conforms to the BagIt 1.0 specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)).
@@ -55,7 +36,7 @@ root_directory
    │   ...
 ```
 
-### manifest-md5.txt (file)
+## manifest-md5.txt (file)
 
 The *manifest-md5.txt* file lists all files in the bag across the different directories together with their corresponding checksums created with the MD5 message-digest algorithm.
 It is used during processing of the bag to allow for data integrity checking.
@@ -91,7 +72,7 @@ eaa2c609ff6371712f623f5531945b44  ./bagit.txt
 2ec9403539086d7447dd91361d3c5456  ./manifest-md5.txt
 ```
 
-### bagit.txt (file)
+## bagit.txt (file)
 
 The *bagit.txt* file contains exactly two lines in the exact order specified in the example below.
 The first line specifies to which version of the BagIt specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)) the bag conforms, while the second line identifies the character set encoding of the bag and its files.
@@ -108,7 +89,7 @@ BagIt-Version: 1.0
 Tag-File-Character-Encoding: UTF-8
 ```
 
-### /data (directory)
+## /data (directory)
 
 The */data* directory contains the content of the bag divided across a number of different files and directories.
 Each */data* directory contains a single so-called package, consisting of the combination of a *mets.xml* file, a */metadata* directory and a */representations* directory.
