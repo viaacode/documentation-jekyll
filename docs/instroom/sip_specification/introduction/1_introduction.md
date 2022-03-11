@@ -6,6 +6,8 @@ grand_parent: SIP Specification 0.1
 nav_order:    1
 nav_exclude:  false
 ---
+Status: WIP
+{: .label .label-yellow }
 # Introduction
 
 Digital collections contain a wealth of content and information stored in various types of digital file formats accompanied by metadata defined in a variety of standards.

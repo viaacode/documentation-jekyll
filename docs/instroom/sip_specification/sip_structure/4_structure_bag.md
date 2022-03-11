@@ -6,6 +6,8 @@ grand_parent: SIP Specification 0.1
 nav_order:    1
 nav_exclude:  false
 ---
+Status: WIP
+{: .label .label-yellow }
 # Structure of a meemoo SIP: bag level
 
 A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.

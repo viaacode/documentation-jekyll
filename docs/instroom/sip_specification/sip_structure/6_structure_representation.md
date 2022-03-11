@@ -6,6 +6,8 @@ grand_parent: SIP Specification 0.1
 nav_order:    3
 nav_exclude:  false
 ---
+Status: WIP
+{: .label .label-yellow }
 # Structure of a meemoo SIP: representation level
 
 The representation level consists of a *mets.xml* file, a */metadata* directory and a */data* directory.

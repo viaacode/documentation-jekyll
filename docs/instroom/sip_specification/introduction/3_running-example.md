@@ -6,6 +6,8 @@ grand_parent: SIP Specification 0.1
 nav_order:    3
 nav_exclude:  false
 ---
+Status: WIP
+{: .label .label-yellow }
 # Running example
 
 {: .note }

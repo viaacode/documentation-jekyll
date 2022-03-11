@@ -5,6 +5,8 @@ has_children: true
 nav_order:    1
 nav_exclude:  false
 ---
+Status: WIP
+{: .label .label-yellow }
 # meemoo Submission Information Package (SIP) Specification 0.1
 
 {% include_relative _metadata.liquid  %}

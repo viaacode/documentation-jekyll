@@ -6,6 +6,8 @@ has_children: true
 nav_order:    3
 nav_exclude:  false
 ---
+Status: WIP
+{: .label .label-yellow }
 # Structure of a meemoo SIP
 
 In this section we dissect meemoo's SIP package and discuss its requirements.

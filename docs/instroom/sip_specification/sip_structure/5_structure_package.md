@@ -6,6 +6,8 @@ grand_parent: SIP Specification 0.1
 nav_order:    2
 nav_exclude:  false
 ---
+Status: WIP
+{: .label .label-yellow }
 # Structure of a meemoo SIP: package level
 
 The package level consists of a *mets.xml* file, a */metadata* directory and a */representations* directory.
