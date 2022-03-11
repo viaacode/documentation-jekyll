@@ -1,7 +1,7 @@
 ---
 layout:       default
 title:        Introduction
-parent:       IntroSection
+parent:       General
 grand_parent: SIP Specification 0.1
 nav_order:    1
 nav_exclude:  false
@@ -29,14 +29,14 @@ This document is a detailed specification of the Submission Information Package 
 
 To fully understand the basics of this specification, it is advised to be familiar with the [XML](https://www.w3.org/XML/) format, as well as the following standards and metadata schemas this specification adheres to:
 
-| Abbreviation | Standard/schema                                                                                                 |
-| ------------ | --------------------------------------------------------------------------------------------------------------- |
-| BagIt        | [BagIt File Packaging Format](https://www.rfc-editor.org/rfc/rfc8493.html)                                      |
-| E-ARK CSIP   | [E-ARK Common Specification for Information Packages](https://earkcsip.dilcis.eu/)                              |
-| E-ARK SIP    | [E-ARK Specification for Submission Information Packages](https://earksip.dilcis.eu/)                           |
-| METS         | [Metadata Encoding & Transmission Standard](https://www.loc.gov/standards/mets/mets.xsd)                        |
-| DC           | [Dublin Core Metadata Initiative Metadata Terms](http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd) |
-| PREMIS       | [PREMIS for Preservation Metadata](https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd)                     |
+| Abbreviation | Standard/schema|
+| ------------ | -------------- |
+| BagIt        | [BagIt File Packaging Format](https://www.rfc-editor.org/rfc/rfc8493.html)|
+| E-ARK CSIP   | [E-ARK Common Specification for Information Packages](https://earkcsip.dilcis.eu/)|
+| E-ARK SIP    | [E-ARK Specification for Submission Information Packages](https://earksip.dilcis.eu/)|
+| METS         | [Metadata Encoding & Transmission Standard](https://www.loc.gov/standards/mets/mets.xsd)|
+| DC           | [Dublin Core Metadata Initiative Metadata Terms](http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd)|
+| PREMIS       | [PREMIS for Preservation Metadata](https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd)|
 
 Except sections explicitly marked as informative, all guidelines, examples and notes in this specification are to be considered normative.
 To indicate if and how often a metadata element can occur, this specification uses syntax for cardinality from the [Unified Modeling Language](https://www.omg.org/spec/UML/2.5.1/PDF).
@@ -73,12 +73,12 @@ This is outlined in the table below.
 
 <mark>TODO: introductie paragraaf</mark>
 
-| Datatype       | Definition                                                                                                                                                                                |
-| -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| EDTF           | Date and time, following the [Extended Date Time Format](https://www.loc.gov/standards/datetime/) level 0 and 1.                                                                          |
-| IANA mime type | Media types defined by the [Internet Assigned Numbers Authority](https://www.iana.org/assignments/media-types/media-types.xhtml)                                                          |
-| Integer        | An arbitrary-size non negative integer number as defined in [XML Schema Part 2:Datatypes Second Edition](https://www.w3.org/TR/xmlschema-2/#nonNegativeInteger).                          |
+| Datatype       | Definition |
+| -------------- | ---------- |
+| EDTF           | Date and time, following the [Extended Date Time Format](https://www.loc.gov/standards/datetime/) level 0 and 1. |
+| IANA mime type | Media types defined by the [Internet Assigned Numbers Authority](https://www.iana.org/assignments/media-types/media-types.xhtml) |
+| Integer        | An arbitrary-size non negative integer number as defined in [XML Schema Part 2:Datatypes Second Edition](https://www.w3.org/TR/xmlschema-2/#nonNegativeInteger). |
 | String         | A sequence of zero or more Unicode (UTF-8) characters, usually wrapped in double quotes, using backslash escapes (if necessary). A character is represented as a single character string. |
-| UUID           | A Universally Unique Identifier as defined in [RFC4122](https://datatracker.ietf.org/doc/html/rfc4122).                                                                                   |
-| IRI            | An Internationalized Resource Identifier as defined in [RFC3987](https://datatracker.ietf.org/doc/html/rfc3987).                                                                          |
-| URL            | A Uniform Resource Locator as defined in [RFC1738](https://datatracker.ietf.org/doc/html/rfc1738).                                                                                        |
+| UUID           | A Universally Unique Identifier as defined in [RFC4122](https://datatracker.ietf.org/doc/html/rfc4122). |
+| IRI            | An Internationalized Resource Identifier as defined in [RFC3987](https://datatracker.ietf.org/doc/html/rfc3987). |
+| URL            | A Uniform Resource Locator as defined in [RFC1738](https://datatracker.ietf.org/doc/html/rfc1738). |

@@ -1,12 +1,15 @@
 ---
 layout:       default
 title:        Package level
-parent:       StructureSection
+parent:       Structure
 grand_parent: SIP Specification 0.1
 nav_order:    2
 nav_exclude:  false
 ---
 # Structure of a meemoo SIP: package level
+
+The package level consists of a *mets.xml* file, a */metadata* directory and a */representations* directory.
+It contains information about the (sub)IE(s) of the SIP and the SIP as a whole.
 
 ***Example***
 
@@ -15,7 +18,7 @@ root_directory
 │   ...
 │
 └──data
-   │   mets.xml
+   │  mets.xml
    │
    └──metadata
    │  │
@@ -110,17 +113,20 @@ The various requirements are listed in the table below.
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <mets xmlns="http://www.loc.gov/METS/"
-           xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" 
-           xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-           xmlns:xlink="http://www.w3.org/1999/xlink" 
-           OBJID="uuid-cbee2999-1db5-4a69-9260-f216dee75623"
-           TYPE="OTHER" 
-           csip:OTHERTYPE="Photographs – Digital" 
-           PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" 
-           >
+      xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" 
+      xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      OBJID="uuid-cbee2999-1db5-4a69-9260-f216dee75623"
+      TYPE="OTHER" 
+      csip:OTHERTYPE="Photographs – Digital" 
+      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
 
-<...>...</...>
+<metsHdr>etc.</metsHdr>
+<dmdSec>etc.</dmdSec>
+<amdSec>etc.</amdSec>
+<fileSec>etc.</fileSec>
+<structMap>etc.</structMap>
 
 </mets>
 ```
@@ -133,7 +139,7 @@ The various requirements are listed in the table below.
 <mark>vraag: zogezegd kan je als contactpersoon enkel een type individu hebben, maar ik kan me hier an sich ook wel een generiek mailadres van een organisatie inbeelden? Mss. zelfs duurzamer dan bv. individu die weggaat ergens?</mark>
 
 This element contains administrative metadata about the SIP such as its creator and its creation software.
-It does so by using separate `<agent>` tags for every role in the SIPs creation and submission process.
+It does so by using separate `agent` tags for every role in the SIPs creation and submission process.
 
 ***Requirements***
 
@@ -382,22 +388,22 @@ It does so by using separate `<agent>` tags for every role in the SIPs creation 
 
 ```xml
 <metsHdr CREATEDATE="2022-02-16T10:01:15.014+02:00" csip:OAISPACKAGETYPE="SIP">
-        <!-- information about the software -->
-        <agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
-            <name>meemoo SIP creator</name>
-            <note csip:NOTETYPE="SOFTWARE VERSION">0.1.</note>
-        </agent>
-        <!-- information about the archival creator-->
-        <agent ROLE="ARCHIVIST" TYPE="ORGANIZATION">
-            <name>Flemish Cat Museum</name>
-            <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
-        </agent>
-        <!-- information about the submitting organisation -->
-        <agent ROLE="CREATOR" TYPE="ORGANIZATION">
-            <name>Flemish Cat Museum</name>
-            <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
-        </agent>
-    </metsHdr>
+  <!-- information about the software -->
+  <agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
+    <name>meemoo SIP creator</name>
+    <note csip:NOTETYPE="SOFTWARE VERSION">0.1.</note>
+  </agent>
+  <!-- information about the archival creator-->
+  <agent ROLE="ARCHIVIST" TYPE="ORGANIZATION">
+    <name>Flemish Cat Museum</name>
+    <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
+  </agent>
+  <!-- information about the submitting organisation -->
+  <agent ROLE="CREATOR" TYPE="ORGANIZATION">
+    <name>Flemish Cat Museum</name>
+    <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
+  </agent>
+</metsHdr>
 ```
 
 ### dmdSec section
@@ -405,8 +411,8 @@ It does so by using separate `<agent>` tags for every role in the SIPs creation 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
 <mark>vraag: dmdSec/@STATUS kan handig zijn om bv. iets als metadataupdate mee aan te duiden, waarbij geen essence moet instromen</mark>
 
-The `<dmdSec>` element (short for 'descriptive metadata section') contains descriptive metadata about the (sub)IE(s) in the SIP.
-The `<dmdSec>` can either embed metadata within the element itself or contain pointers to the location of descriptive metadata files located in the */metadata/descriptive* directory of the package level.
+The `dmdSec` element (short for 'descriptive metadata section') contains descriptive metadata about the (sub)IE(s) in the SIP.
+The `dmdSec` can either embed metadata within the element itself or contain pointers to the location of descriptive metadata files located in the */metadata/descriptive* directory of the package level.
 In order to maintain the readability of the *mets.xml* file, it is recommended to store the descriptive metadata in dedicated files.
 
 ***Requirements***
@@ -506,17 +512,44 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 ```xml
 <!-- ref to descriptive metadata about the main IE -->
 <dmdSec ID="uuid-786829da-2ad8-4d77-8cf7-157f63227e6b">
-  <mdRef ID="uuid-88191f66-f7ae-42c7-9427-8af2a8e7557f" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml" MIMETYPE="text/xml" SIZE="647" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="968ebd5cb0283c086c333928eff6b85e" CHECKSUMTYPE="MD5" />
+  <mdRef  ID="uuid-88191f66-f7ae-42c7-9427-8af2a8e7557f"
+          LOCTYPE="URL"
+          MDTYPE="DC"
+          xlink:type="simple"
+          xlink:href="./metadata/descriptive/dc_ie.xml"
+          MIMETYPE="text/xml"
+          SIZE="647"
+          CREATED="2022-02-16T10:01:15.014+02:00"
+          CHECKSUM="968ebd5cb0283c086c333928eff6b85e"
+          CHECKSUMTYPE="MD5" />
 </dmdSec>
 
 <!-- ref to descriptive metadata about subIE 1 -->
 <dmdSec ID="uuid-9f138ace-8ee0-4f13-a4da-353d989b6f29">
-  <mdRef ID="uuid-6e121ba5-7e96-4967-b776-c5f48d85f800" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_1.xml" MIMETYPE="text/xml" SIZE="710" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a" CHECKSUMTYPE="MD5" />
+  <mdRef  ID="uuid-6e121ba5-7e96-4967-b776-c5f48d85f800"
+          LOCTYPE="URL" 
+          MDTYPE="DC"
+          xlink:type="simple"
+          xlink:href="./metadata/descriptive/dc_subie_1.xml"
+          MIMETYPE="text/xml"
+          SIZE="710"
+          CREATED="2022-02-16T10:01:15.014+02:00"
+          CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a"
+          CHECKSUMTYPE="MD5" />
 </dmdSec>
 
 <!-- ref to descriptive metadata about subIE 2 -->
 <dmdSec ID="uuid-5d6085a1-d607-46a4-ad3a-24a06663661c">
-  <mdRef ID="uuid-f1ddd620-e535-4ae3-a959-1be8468caaa5" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_2.xml" MIMETYPE="text/xml" SIZE="723" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" CHECKSUMTYPE="MD5" />
+  <mdRef  ID="uuid-f1ddd620-e535-4ae3-a959-1be8468caaa5"
+          LOCTYPE="URL"
+          MDTYPE="DC"
+          xlink:type="simple"
+          xlink:href="./metadata/descriptive/dc_subie_2.xml"
+          MIMETYPE="text/xml"
+          SIZE="723"
+          CREATED="2022-02-16T10:01:15.014+02:00"
+          CHECKSUM="e470d7b12651d358d14d7f172ae2fad2"
+          CHECKSUMTYPE="MD5" />
 </dmdSec>
 ```
 
@@ -524,8 +557,8 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
 
-The `<amdSec>` element (short for 'administrative metadata section') contains preservation metadata about the (sub)IE(s) in the SIP and the SIP as a whole.
-The `<amdSec>` can either embed metadata (with the use of `<digiprovMD>` elements) or contain pointers to the location of preservation metadata files located in the */metadata/preservation* directory of the package level.
+The `amdSec` element (short for 'administrative metadata section') contains preservation metadata about the (sub)IE(s) in the SIP and the SIP as a whole.
+The `amdSec` can either embed metadata (with the use of `digiprovMD` elements) or contain pointers to the location of preservation metadata files located in the */metadata/preservation* directory of the package level.
 In order to maintain the readability of the *mets.xml* file, it is recommended to store the preservation metadata in separate/dedicated files.
 
 ***Requirements***
@@ -706,9 +739,18 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 ```xml
 <!-- ref to the PREMIS metadata about IE/subIE(s)/package -->
 <amdSec ID="b9143f83-2567-4122-a55c-87389e6263ec">
-    <digiprovMD ID="uuid-3f8709ad-2c02-48a2-9fb4-871df03cb929">
-        <mdRef ID="uuid-bf966b2c-c1a2-4c75-aae6-18877d2f58cc" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="6199" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="083a409c2627798e53e3ebbba90cc867" CHECKSUMTYPE="MD5" />
-    </digiprovMD>
+  <digiprovMD ID="uuid-3f8709ad-2c02-48a2-9fb4-871df03cb929">
+    <mdRef  ID="uuid-bf966b2c-c1a2-4c75-aae6-18877d2f58cc"
+            LOCTYPE="URL"
+            MDTYPE="PREMIS"
+            xlink:type="simple"
+            xlink:href="./metadata/preservation/premis.xml"
+            MIMETYPE="text/xml"
+            SIZE="6199"
+            CREATED="2022-02-16T10:01:15.014+02:00"
+            CHECKSUM="083a409c2627798e53e3ebbba90cc867"
+            CHECKSUMTYPE="MD5" />
+  </digiprovMD>
 </amdSec>
 ```
 
@@ -718,15 +760,15 @@ In order to maintain the readability of the *mets.xml* file, it is recommended t
 <mark>vraag: gaan we de checksum behouden hier als attribuut? Dat zit ook al in de manifest-md5.txt van de bag en ook al in de verschillende PREMIS objecten</mark>
 <mark>vraag/opm: het idee van de fileSec is eigenlijk dat je er alles insteekt dat nog niet in de dmdSec of amdSec zit (dus eigenlijk louter media files). Dus bij een metadataupdate is de fileSec bv. leeg. Maar we kunnen ook enkel de fileSec houden en de dmd/amdSec weglaten?</mark>
 
-The `<fileSec>` element (short for 'file section') lists all files of the package level in the SIP.
+The `fileSec` element (short for 'file section') lists all files of the package level in the SIP.
 It contains references to the representation *mets.xml* files of the different representations, but does not list other files of those representations.
 The listing of other representation files (i.e. metadata files and media files) is left to the respective representation *mets.xml* files.
 
 ***Requirements***
 
-- There MUST NOT be more than one `<fileSec>` element in the *mets.xml* file.
-- The `<fileSec>` element of the package *mets.xml* file MUST NOT reference anything from the different representation levels, EXCEPT the representation *mets.xml* files.
-- Each representation *mets.xml* MUST be referenced within its own `<fileGrp>` element within the `<fileSec>` element of the package *mets.xml*.
+- There MUST NOT be more than one `fileSec` element in the *mets.xml* file.
+- The `fileSec` element of the package *mets.xml* file MUST NOT reference anything from the different representation levels, EXCEPT the representation *mets.xml* files.
+- Each representation *mets.xml* MUST be referenced within its own `fileGrp` element within the `fileSec` element of the package *mets.xml*.
 
 <table>
 <tr><th>Element/Attribute</th><th colspan="2"><code>mets/fileSec</code></th></tr>
@@ -880,46 +922,88 @@ The listing of other representation files (i.e. metadata files and media files) 
 
 ```xml
 <fileSec ID="uuid-0c53fd9b-f640-4def-a872-2e4622f691d9">
-        <fileGrp USE="root" ID="uuid-6c78980c-bdfc-4e2e-b19a-579e5b285055">
-            <fileGrp USE="metadata" ID="uuid-bd087c44-ee3f-48e9-9031-9190a60c8e13">
-                <fileGrp USE="metadata/descriptive" ID="uuid-5194aca6-97b6-448c-b385-b892bc0c362c">
-                    <file ID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911" MIMETYPE="text/xml" SIZE="647" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="968ebd5cb0283c086c333928eff6b85e" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml"/>
-                    </file>
-                    <file ID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb" MIMETYPE="text/xml" SIZE="710" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_1.xml"/>
-                    </file>
-                    <file ID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5" MIMETYPE="text/xml" SIZE="723" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_subie_2.xml"/>
-                    </file>
-                </fileGrp>
-                <fileGrp USE="metadata/preservation" ID="uuid-caea98b8-ae09-412d-8f25-dd50ba6a30cd">
-                    <file ID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0" MIMETYPE="text/xml" SIZE="6199" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="083a409c2627798e53e3ebbba90cc867" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml"/>
-                    </file>
-                </fileGrp>
-            </fileGrp>
-            <fileGrp USE="representations" ID="uuid-779319d9-cc1f-41b3-a49e-28d169e0d066">
-                <fileGrp USE="representations/representation_1" ID="uuid-700c97da-3164-4863-9e58-d6d62156052e">
-                    <file ID="uuid-0fe40ffc-b5f3-465e-af3a-d266d94453b7" MIMETYPE="text/xml" SIZE="4196" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="0e3033891343eb8bbb15454cd64a27ab" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml"/>
-                    </file>
-                </fileGrp>
-                <fileGrp USE="representations/representation_2" ID="uuid-c0fed1c6-96c8-4f15-9e82-abc7be2e981c">
-                    <file ID="uuid-625629a4-e5f8-4087-9114-66e4a943bf50" MIMETYPE="text/xml" SIZE="3814" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="3d82bb35d526e4850551f2eca0678d0c" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_2/mets.xml"/>
-                    </file>
-                </fileGrp>
-            </fileGrp>
-        </fileGrp>
-    </fileSec>
+  <fileGrp USE="root" ID="uuid-6c78980c-bdfc-4e2e-b19a-579e5b285055">
+    <fileGrp USE="metadata" ID="uuid-bd087c44-ee3f-48e9-9031-9190a60c8e13">
+      <fileGrp USE="metadata/descriptive" ID="uuid-5194aca6-97b6-448c-b385-b892bc0c362c">
+        <file ID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"
+              MIMETYPE="text/xml"
+              SIZE="647"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="968ebd5cb0283c086c333928eff6b85e"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./metadata/descriptive/dc_ie.xml" />
+        </file>
+        <file ID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"
+              MIMETYPE="text/xml"
+              SIZE="710"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./metadata/descriptive/dc_subie_1.xml" />
+        </file>
+        <file ID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"
+                MIMETYPE="text/xml"
+                SIZE="723"
+                CREATED="2022-02-16T10:01:15.014+02:00"
+                CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" 
+                CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./metadata/descriptive/dc_subie_2.xml" />
+        </file>
+      </fileGrp>
+      <fileGrp USE="metadata/preservation" ID="uuid-caea98b8-ae09-412d-8f25-dd50ba6a30cd">
+        <file ID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"
+              MIMETYPE="text/xml"
+              SIZE="6199"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="083a409c2627798e53e3ebbba90cc867"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./metadata/preservation/premis.xml" />
+        </file>
+      </fileGrp>
+    </fileGrp>
+    <fileGrp USE="representations" ID="uuid-779319d9-cc1f-41b3-a49e-28d169e0d066">
+      <fileGrp USE="representations/representation_1" ID="uuid-700c97da-3164-4863-9e58-d6d62156052e">
+        <file ID="uuid-0fe40ffc-b5f3-465e-af3a-d266d94453b7"
+              MIMETYPE="text/xml"
+              SIZE="4196"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="0e3033891343eb8bbb15454cd64a27ab"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./representations/representation_1/mets.xml" />
+        </file>
+      </fileGrp>
+      <fileGrp USE="representations/representation_2" ID="uuid-c0fed1c6-96c8-4f15-9e82-abc7be2e981c">
+        <file ID="uuid-625629a4-e5f8-4087-9114-66e4a943bf50"
+              MIMETYPE="text/xml"
+              SIZE="3814"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="3d82bb35d526e4850551f2eca0678d0c"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple" 
+                  xlink:href="./representations/representation_2/mets.xml" />
+        </file>  
+      </fileGrp>
+    </fileGrp>
+  </fileGrp>
+</fileSec>
 ```
 
 ### structMap section
 
 <mark>vraag: welk label moet de overkoepelende `<div>` krijgen?</mark>
 
-The `<structMap>` element outlines the hierarchical structure of the package level of the SIP.
+The `structMap` element outlines the hierarchical structure of the package level of the SIP.
 It provides links between elements and metadata files located elsewhere in the package level.
 
 ***Requirements***
@@ -1134,27 +1218,31 @@ It provides links between elements and metadata files located elsewhere in the p
 
 ```xml
 <structMap ID="uuid-1ce2cef4-cb9a-4649-8983-c916870cf2b4" TYPE="PHYSICAL" LABEL="CSIP">
-        <div ID="uuid-33cd69c8-b297-40e1-9491-1b5db58890bd" LABEL="">
-            <div ID="uuid-c0a73bbc-d6f3-42a0-b5e1-f53a4601101b" LABEL="metadata">
-                <div ID="uuid-9aae35c0-9d17-43c7-824a-4722ef3039cd" LABEL="descriptive">
-                    <fptr FILEID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"/>
-                    <fptr FILEID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"/>
-                    <fptr FILEID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"/>
-                </div>
-                <div ID="uuid-ee9ce21e-8264-45cc-b877-7e266647a335" LABEL="preservation">
-                    <fptr FILEID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"/>
-                </div>
-            </div>
-            <div ID="uuid-17ff6cea-cd84-46ad-b9a8-250809f9e2c7" LABEL="representations">
-                <div ID="uuid-c5cab13b-aced-4024-bbc3-d38c682602d2" LABEL="representation_1">
-                    <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
-                </div>
-                <div ID="uuid-daeba358-46ee-4363-b2a2-bd745c128f6f" LABEL="representation_2">
-                    <mptr xlink:type="simple" xlink:href="./representations/representation_2/mets.xml" LOCTYPE="URL" />
-                </div>
-            </div>
-        </div>
-    </structMap>
+  <div ID="uuid-33cd69c8-b297-40e1-9491-1b5db58890bd" LABEL="">
+    <div ID="uuid-c0a73bbc-d6f3-42a0-b5e1-f53a4601101b" LABEL="metadata">
+      <div ID="uuid-9aae35c0-9d17-43c7-824a-4722ef3039cd" LABEL="descriptive">
+        <fptr FILEID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"/>
+        <fptr FILEID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"/>
+        <fptr FILEID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"/>
+      </div>
+      <div ID="uuid-ee9ce21e-8264-45cc-b877-7e266647a335" LABEL="preservation">
+        <fptr FILEID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"/>
+      </div>
+    </div>
+    <div ID="uuid-17ff6cea-cd84-46ad-b9a8-250809f9e2c7" LABEL="representations">
+      <div ID="uuid-c5cab13b-aced-4024-bbc3-d38c682602d2" LABEL="representation_1">
+        <mptr xlink:type="simple"
+              xlink:href="./representations/representation_1/mets.xml"
+              LOCTYPE="URL" />
+      </div>
+      <div ID="uuid-daeba358-46ee-4363-b2a2-bd745c128f6f" LABEL="representation_2">
+        <mptr xlink:type="simple"
+              xlink:href="./representations/representation_2/mets.xml"
+              LOCTYPE="URL" />
+      </div>
+    </div>
+  </div>
+</structMap>
 ```
 
 ## /metadata (directory)
@@ -1239,8 +1327,8 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <resource xmlns:dcterms="http://purl.org/dc/terms/"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema/"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+          xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/" >
 
   <!-- general title for the resource -->
   <dcterms:title>Felis Catus Flamens</dcterms:title>
@@ -1256,7 +1344,6 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
   <dcterms:subject>Felis Catus Flamens</dcterms:subject>
 
 </resource> 
-
 ```
 
 ### /preservation (directory)
@@ -1287,19 +1374,15 @@ More detailed preservation information can also be described using PREMIS events
 <?xml version="1.0" encoding="UTF-8"?>
 <premis:premis version="3.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:premis="http://www.loc.gov/premis/v3">
-
-  <!-- IE about the Felis Catus Flamens -->
+  xmlns:premis="http://www.loc.gov/premis/v3">  <!-- IE about the Felis Catus Flamens -->
   <premis:object xsi:type="premis:intellectualEntity">
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
-
-    <!-- relationship between the main IE and its subIEs -->
+    </premis:objectIdentifier>    <!-- relationship between the main IE and its subIEs -->
     <premis:relationship>
-      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen">generalizes</premis:relationshipSubType>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">        logical      </premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen">          generalizes        </premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:relatedObjectIdentifierValue>
@@ -1309,46 +1392,34 @@ More detailed preservation information can also be described using PREMIS events
         <premis:relatedObjectIdentifierValue>uuid-01d59d41-f523-4d06-a549-4bf6f7cef853</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
-
-  </premis:object>
-
-  <!-- subIE about the Felis Catus Flamens lying on the sofa -->
+  </premis:object>  <!-- subIE about the Felis Catus Flamens lying on the sofa -->
   <premis:object xsi:type="premis:intellectualEntity">
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
-
-    <!-- relationship between the subIE and the main IE -->
+    </premis:objectIdentifier>    <!-- relationship between the subIE and the main IE -->
     <premis:relationship>
-      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe">specializes</premis:relationshipSubType>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">        logical      </premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe">        specializes      </premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
-    </premis:relationship>
-
-    <!-- relationship between the subIE and its representation -->
+    </premis:relationship>    <!-- relationship between the subIE and its representation -->
     <premis:relationship>
-      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">        structural      </premis:relationshipType>
       <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr">is represented by</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
-
-  </premis:object>
-
-  <!-- subIE about the Felis Catus Flamens sitting on its cat tree -->
+  </premis:object>  <!-- subIE about the Felis Catus Flamens sitting on its cat tree -->
   <premis:object xsi:type="premis:intellectualEntity">
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>uuid-01d59d41-f523-4d06-a549-4bf6f7cef853</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
-
-    <!-- relationship between the subIE and the main IE -->
+    </premis:objectIdentifier>    <!-- relationship between the subIE and the main IE -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
       <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe">specializes</premis:relationshipSubType>
@@ -1356,9 +1427,7 @@ More detailed preservation information can also be described using PREMIS events
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
-    </premis:relationship>
-
-    <!-- relationship between the subIE and its representation -->
+    </premis:relationship>    <!-- relationship between the subIE and its representation -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
       <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr">is represented by</premis:relationshipSubType>
@@ -1367,9 +1436,7 @@ More detailed preservation information can also be described using PREMIS events
         <premis:relatedObjectIdentifierValue>uuid-de83045d-3b0f-4161-9f96-40079af0d480</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
-
   </premis:object>
-
 </premis:premis>
 ```
 

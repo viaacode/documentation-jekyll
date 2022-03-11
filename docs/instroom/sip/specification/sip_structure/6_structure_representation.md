@@ -1,17 +1,17 @@
 ---
 layout:       default
 title:        Representation level
-parent:       StructureSection
+parent:       Structure
 grand_parent: SIP Specification 0.1
 nav_order:    3
 nav_exclude:  false
 ---
 # Structure of a meemoo SIP: representation level
 
-In this section we dissect a distinct representation contained in a SIP package, and discuss its requirements.
-As before, we follow the hierarchical folder structure discussed in the section [Hierarchical directory structure](#hierarchical-directory-structure)(repeated below, from the representation level onwards), and traverse the different components of a representation.
+The representation level consists of a *mets.xml* file, a */metadata* directory and a */data* directory.
+It contains information about the representation of (one of) the (sub)IE(s) of the package level, together with the media files making up the representation.
 
-_**Example**_
+***Example***
 
 ```plaintext
 root_directory
@@ -59,7 +59,7 @@ Each */representation_\** directory contains its own *mets.xml* file which acts 
 ### mets.xml (file)
 
 The *mets.xml* file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in [the section package mets.xml](#metsxml-file).
-Since the `<dmdSec>`, `<amdSec>`, `<fileSec>` and `<structMap>` sections follow the same requirements, where possible, as the package *mets.xml* file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `<mets>` and `<metsHdr>` sections.
+Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same requirements, where possible, as the package *mets.xml* file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `mets` and `metsHdr` sections.
 
 #### mets section
 
@@ -123,15 +123,20 @@ Since the `<dmdSec>`, `<amdSec>`, `<fileSec>` and `<structMap>` sections follow 
 ```xml
 <?xml version="1.0"?>
 <mets xmlns="http://www.loc.gov/METS/"
-    xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-    xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xlink="http://www.w3.org/1999/xlink" 
-    OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" 
-    TYPE="OTHER" csip:OTHERTYPE="Photographs – Digital" 
-    PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">
+      xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+      xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" 
+      TYPE="OTHER" 
+      csip:OTHERTYPE="Photographs – Digital" 
+      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
 
-<...>...</...>
+<metsHdr>etc.</metsHdr>
+<dmdSec>etc.</dmdSec>
+<amdSec>etc.</amdSec>
+<fileSec>etc.</fileSec>
+<structMap>etc.</structMap>
 
 </mets>
 ```
@@ -245,8 +250,8 @@ The *dc.xml* file of the representation level follows the same requirements of t
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <resource xmlns:dcterms="http://purl.org/dc/terms/"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema/"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+          xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/" >
 
   <!-- general title for the representation -->
   <dcterms:title>Colour representation of the Felis Catus Flamens lying on a sofa</dcterms:title>
@@ -294,102 +299,102 @@ More detailed preservation information can also be described using PREMIS events
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <premis:premis version="3.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:premis="http://www.loc.gov/premis/v3">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:premis="http://www.loc.gov/premis/v3">
 
-  <premis:object xsi:type="premis:representation">
-    <premis:objectIdentifier>
-      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
+    <premis:object xsi:type="premis:representation">
+        <premis:objectIdentifier>
+            <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+            <premis:objectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:objectIdentifierValue>
+        </premis:objectIdentifier>
 
-    <premis:objectCategory>representation</premis:objectCategory>
+        <premis:objectCategory>representation</premis:objectCategory>
 
-    <!-- relationship between representation and its files -->
-    <premis:relationship>
-      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc">includes</premis:relationshipSubType>
-      <premis:relatedObjectIdentifier>
-        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:relatedObjectIdentifierValue>
-      </premis:relatedObjectIdentifier>
-      <premis:relatedObjectIdentifier>
-        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:relatedObjectIdentifierValue>
-      </premis:relatedObjectIdentifier>
-    </premis:relationship>
+        <!-- relationship between representation and its files -->
+        <premis:relationship>
+            <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+            <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc">includes</premis:relationshipSubType>
+            <premis:relatedObjectIdentifier>
+                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+                <premis:relatedObjectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:relatedObjectIdentifierValue>
+            </premis:relatedObjectIdentifier>
+            <premis:relatedObjectIdentifier>
+                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+                <premis:relatedObjectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:relatedObjectIdentifierValue>
+            </premis:relatedObjectIdentifier>
+        </premis:relationship>
 
-    <!-- relationship between representation and its IE/subIE -->
-    <premis:relationship>
-      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep">represents</premis:relationshipSubType>
-      <premis:relatedObjectIdentifier>
-        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:relatedObjectIdentifierValue>
-      </premis:relatedObjectIdentifier>
-    </premis:relationship>
-  </premis:object>
+        <!-- relationship between representation and its IE/subIE -->
+        <premis:relationship>
+            <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+            <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep">represents</premis:relationshipSubType>
+            <premis:relatedObjectIdentifier>
+                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+                <premis:relatedObjectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:relatedObjectIdentifierValue>
+            </premis:relatedObjectIdentifier>
+        </premis:relationship>
+    </premis:object>
 
-  <premis:object xsi:type="premis:file">
-    <premis:originalName>data/1445.jpeg</premis:originalName>
+    <premis:object xsi:type="premis:file">
+        <premis:originalName>data/1445.jpeg</premis:originalName>
 
-    <premis:objectIdentifier>
-      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
+        <premis:objectIdentifier>
+            <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+            <premis:objectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:objectIdentifierValue>
+        </premis:objectIdentifier>
 
-    <premis:objectCategory>file</premis:objectCategory>
+        <premis:objectCategory>file</premis:objectCategory>
 
-    <premis:objectCharacteristics>
-      <premis:fixity>
-        <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
+        <premis:objectCharacteristics>
+            <premis:fixity>
+                <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
                 MD5
-        </premis:messageDigestAlgorithm>
-        <premis:messageDigest>b7ae37f6094794e313402b9d064978e8</premis:messageDigest>
-        <premis:fixity>
-          <premis:objectCharacteristics>
+                </premis:messageDigestAlgorithm>
+                <premis:messageDigest>b7ae37f6094794e313402b9d064978e8</premis:messageDigest>
+            </premis:fixity>
+        </premis:objectCharacteristics>
 
-            <!-- relationship between file and its representation -->
-            <premis:relationship>
-              <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-              <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
-              <premis:relatedObjectIdentifier>
+        <!-- relationship between file and its representation -->
+        <premis:relationship>
+            <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+            <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
+            <premis:relatedObjectIdentifier>
                 <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
                 <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
-              </premis:relatedObjectIdentifier>
-            </premis:relationship>
+            </premis:relatedObjectIdentifier>
+        </premis:relationship>
 
-          </premis:object>
+    </premis:object>
 
-          <premis:object xsi:type="premis:file">
-            <premis:originalName>data/1450.jpeg</premis:originalName>
-            <premis:objectIdentifier>
-              <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-              <premis:objectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:objectIdentifierValue>
-            </premis:objectIdentifier>
+    <premis:object xsi:type="premis:file">
+        <premis:originalName>data/1450.jpeg</premis:originalName>
+        <premis:objectIdentifier>
+            <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+            <premis:objectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:objectIdentifierValue>
+        </premis:objectIdentifier>
 
-            <premis:objectCategory>file</premis:objectCategory>
+        <premis:objectCategory>file</premis:objectCategory>
 
-            <premis:objectCharacteristics>
-              <premis:fixity>
+        <premis:objectCharacteristics>
+            <premis:fixity>
                 <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
                 MD5
                 </premis:messageDigestAlgorithm>
                 <premis:messageDigest>d4985ba4b67ff067a0e84c53b6d35355</premis:messageDigest>
-                <premis:fixity>
-                  <premis:objectCharacteristics>
+            </premis:fixity>
+        </premis:objectCharacteristics>
 
-                    <!-- relationship between file and its representation -->
-                    <premis:relationship>
-                      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-                      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
-                      <premis:relatedObjectIdentifier>
-                        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-                        <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
-                      </premis:relatedObjectIdentifier>
-                    </premis:relationship>
+        <!-- relationship between file and its representation -->
+        <premis:relationship>
+            <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+            <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
+            <premis:relatedObjectIdentifier>
+                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+                <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
+            </premis:relatedObjectIdentifier>
+        </premis:relationship>
 
-                  </premis:object>
+    </premis:object>
 
-                </premis:premis>
+</premis:premis>
 ```

@@ -1,6 +1,6 @@
 ---
 layout:       default
-title:        StructureSection
+title:        Structure
 parent:       SIP Specification 0.1
 has_children: true
 nav_order:    3
