@@ -17,10 +17,10 @@ last_modified_date: 2022-03-14T11:40:08+0100
 
 # Over IIIF 
 
-[Image Interoperability Framework](https://iiif.io) (IIIF) is een set van open standaarden om gedigitaliseerde archieven online beschikbaar te stellen. Het zorgt voor een gebruiksvriendelijke toegang tot de objecten uit een archief.  
+Het [Image Interoperability Framework](https://iiif.io) (IIIF) is een set van open standaarden om gedigitaliseerde archieven online beschikbaar te stellen. Het zorgt voor een gebruiksvriendelijke toegang tot de objecten uit een archief.  
 Het IIIF-protocol maakt gebruik van een stabiel manifest, en voorziet een duurzame URL voor elk object in het archief. Hierdoor kunnen er later eventueel andere versies van eenzelfde object worden toegevoegd aan een collectie (bijvoorbeeld in een hogere resolutie) zonder dat de URL van dit object wijzigt. 
 
-Het IIIF-protocal bestaat uit 6 API's, die onafhankelijk van elkaar kunnen worden gebruikt. Momenteel wordt er enkel gebruik gemaakt van de Image API, wat de gebruiker in staat stelt om (delen van) afbeeldingen te bekijken, herschalen, roteren,... op een performante manier. 
+Het IIIF-protocal bestaat uit 6 API's, die onafhankelijk van elkaar kunnen worden gebruikt. Momenteel wordt er enkel gebruik gemaakt van de Image API, wat de gebruiker in staat stelt om op een performante manier (delen van) afbeeldingen te bekijken, te herschalen, te roteren,... 
 
 ## Authenticatie
 
@@ -30,7 +30,7 @@ De door meemoo voorziene IIIF-endpoints zijn publiek beschikbaar; er is dus geen
 
 Er wordt gebruik gemaakt van de de Image API versie 3.0. 
 Het meemoo Image API endpoint voldoet aan het hoogste IIIF-compliance level, nl. 2. 
-Meer info over IIIF en de Image API kan teruggevonden worden op de iiif.io [website](https://iiif.io/api/image/3.0/). 
+Meer info over IIIF en de Image API kan teruggevonden worden op de [iiif.io website](https://iiif.io/api/image/3.0/). 
 
 ### Omgevingen
 
@@ -46,7 +46,7 @@ https://{DOMEIN}/iiif/{IDENTIFIER}.jp2/{REGIO}/{GROOTTE}/{ROTATIE}/{KWALITEIT}.{
 ```
 
 Hieronder volgt een beknopte samenvatting van de mogelijkheden van het endpoint waarbij elke parameter afzonderlijk wordt toegelicht.  
-Voor een uitgebreide beschrijving van de URL-samenstelling, zie de iiif.io [documentatie](https://iiif.io/api/image/3.0/#21-image-request-uri-syntax).
+Voor een uitgebreide beschrijving van de URL-samenstelling, zie de [iiif.io documentatie](https://iiif.io/api/image/3.0/#21-image-request-uri-syntax).
 
 #### Domein
 
