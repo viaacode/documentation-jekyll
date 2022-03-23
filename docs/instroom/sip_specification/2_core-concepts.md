@@ -1,14 +1,20 @@
 ---
 layout:       default
 title:        Core concepts
-parent:       General
-grand_parent: SIP Specification 0.1
-nav_order:    2
+parent: SIP Specification 0.1
+nav_order:    3
 nav_exclude:  false
 ---
 Status: WIP
 {: .label .label-yellow }
 # Core Concepts
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 This section covers a number of theoretical concepts in meemoo's SIP specification which return throughout the remainder of this text.
 The first section defines the PREMIS concept of an intellectual entity and its relation to the so-called representation consisting of a number of files.

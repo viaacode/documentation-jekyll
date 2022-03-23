@@ -1,14 +1,20 @@
 ---
 layout:       default
 title:        Representation level
-parent:       Structure
-grand_parent: SIP Specification 0.1
-nav_order:    3
+parent: SIP Specification 0.1
+nav_order:    7
 nav_exclude:  false
 ---
 Status: WIP
 {: .label .label-yellow }
 # Structure of a meemoo SIP: representation level
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 The representation level consists of a *mets.xml* file, a */metadata* directory and a */data* directory.
 It contains information about the representation of (one of) the (sub)IE(s) of the package level, together with the media files making up the representation.

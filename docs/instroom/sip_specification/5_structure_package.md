@@ -1,14 +1,20 @@
 ---
 layout:       default
 title:        Package level
-parent:       Structure
-grand_parent: SIP Specification 0.1
-nav_order:    2
+parent: SIP Specification 0.1
+nav_order:    6
 nav_exclude:  false
 ---
 Status: WIP
 {: .label .label-yellow }
 # Structure of a meemoo SIP: package level
+{: .no_toc }
+
+## Table of contents
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
 
 The package level consists of a *mets.xml* file, a */metadata* directory and a */representations* directory.
 It contains information about the (sub)IE(s) of the SIP and the SIP as a whole.

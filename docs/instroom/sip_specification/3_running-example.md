@@ -1,9 +1,8 @@
 ---
 layout:       default
 title:        Running example
-parent:       General
-grand_parent: SIP Specification 0.1
-nav_order:    3
+parent: SIP Specification 0.1
+nav_order:    4
 nav_exclude:  false
 ---
 Status: WIP
