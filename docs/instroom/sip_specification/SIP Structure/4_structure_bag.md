@@ -109,7 +109,7 @@ Tag-File-Character-Encoding: UTF-8
 
 The `/data` directory contains the content of the bag divided across a number of different files and directories.
 Each `/data` directory MUST contain exactly one package, consisting of the combination of a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
-See the [package level](/5_structure_package) for more information and the requirements of the `/data` directory.
+See the [package level](../5_structure_package) for more information and the requirements of the `/data` directory.
 
 ***Example***
 

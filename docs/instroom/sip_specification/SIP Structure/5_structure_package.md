@@ -60,7 +60,7 @@ The package `mets.xml` file does not record the internal structure of the differ
 It only references the different `mets.xml` files contained in each `/representation_*` directory (where `*` is an integer indicating the number of different representations in the `/representation` directory).
 Each of the `mets.xml` files at the representation-level references its own internal structure.
 
-### mets section
+### \<mets\> section
 
 <mark class="miel">Tabellen hier ogekuist. Overal nog Element/Attribute vervangen door Element of Attribute. Waarden of tags die nu tussen "" staan tussen \`\` zetten.HTML links mogen terug markdown worden.</mark>
 
@@ -68,11 +68,23 @@ Each of the `mets.xml` files at the representation-level references its own inte
 <mark class="miel">Enkel als die gebruikt wordt!</mark>
 
 <mark>vraag: dekken de content categories van EARK al onze use-cases?</mark>
+<mark class="miel">Checken met team digi</mark>
+
 <mark>vraag: @CONTENTINFORMATIONTYPE, eigen voc definiëren? Of deze steeds op OTHER zetten en dan eigen types/voc gebruiken bij @OTHERCONTENTINFORMATIONTYPE?</mark>
+<mark class="miel">eigen types/voc gebruiken bij @OTHERCONTENTINFORMATIONTYPE</mark>
 
 This is the root element of the package mets.
 It contains a number of XML schema namespaces together with a number of attributes to uniquely identify the package mets and the type of data it lists.
 The various requirements are listed in the table below.
+
+<mark class="miel">Hier zou je ook al iets moeten zeggen over de  metsHdr
+dmdSec
+amdSec
+fileSec
+structMap
+Want zou komen nogal onverwacht in het voorbeeld onderaan.
+</mark>
+
 
 ***Requirements***
 
@@ -168,12 +180,19 @@ The various requirements are listed in the table below.
 </mets>
 ```
 
-### metsHdr section
+### \<metsHdr\> section
 
 <mark>vraag: @RECORDSTATUS attribuut kan handig zijn om bv. metadataupdate mee aan te duiden, als type supplement?</mark>
+<mark class="miel">Absoluut. Ik mis zulke meemoo specifieke context bij de beschrijving van de elementen/attributen. Het is nog te veel generieke EARK en te weinig meemoo. </mark>
+
 <mark>vraag: ik weet niet of die SIP creator agent bij ons verplicht moet zijn? Eerder SHOULD?</mark>
+<mark class="miel">Dit relaxen breekt EARK compatibility, dus houden op MUST. Lijkt mij ook niet moeilijk om aan te leveren</mark>
+
 <mark>vraag: geen idee, maar volgens EARK zijn naam/ID niet verplicht bij archival creator, maar dit lijkt me eerder van wel? Hoe kan je die anders identificeren?</mark>
+<mark class="miel">Lijkt mij niet cruciaal, want wordt bij ons in de metadata duidelijk gemaakt.</mark>
+
 <mark>vraag: zogezegd kan je als contactpersoon enkel een type individu hebben, maar ik kan me hier an sich ook wel een generiek mailadres van een organisatie inbeelden? Mss. zelfs duurzamer dan bv. individu die weggaat ergens?</mark>
+<mark class="miel">ja, maar dan ga je naar de submitting agent. De contactpersoon isa optioneel en ik vermoed dat we daar in de praktijk niet zoveel mee gaan doen.</mark>
 
 This element contains administrative metadata about the SIP such as its creator and its creation software.
 It does so by using separate `agent` tags for every role in the SIPs creation and submission process.
@@ -518,10 +537,14 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 </metsHdr>
 ```
 
-### dmdSec section
+### \<dmdSec\> section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
+<mark class="miel">ja, maar dan ga je naar de submitting agent. De contactpersoon isa optioneel en ik vermoed dat we daar in de praktijk niet zoveel mee gaan doen.</mark>
+
 <mark>vraag: dmdSec/@STATUS kan handig zijn om bv. iets als metadataupdate mee aan te duiden, waarbij geen essence moet instromen</mark>
+
+<mark class="miel">Klopt, maar gaat dit met het huidige vocab? Dit mag je er zeker bij vermelden. </mark>
 
 The `dmdSec` element (short for 'descriptive metadata section') contains descriptive metadata about the (sub)IE(s) in the SIP.
 The `dmdSec` can either embed metadata within the element itself or contain pointers to the location of descriptive metadata files located in the `/metadata/descriptive` directory of the package level.
@@ -637,6 +660,8 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
+<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
+
 | Element/Attribute | `mets/dmdSec/mdRef/@CHECKSUMTYPE` |
 |-----------------------|-----------|
 | Name | File checksum type |
@@ -692,7 +717,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 </dmdSec>
 ```
 
-### amdSec section
+### \<amdSec\> section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
 
@@ -766,6 +791,8 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Datatype | URL |
 | Cardinality | 1..1 |
 | Obligation | MUST |
+
+<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
 
 | Element/Attribute | `mets/amdSec/digiprovMD/mdRef/@MDTYPE` |
 |-----------------------|-----------|
@@ -944,7 +971,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 </amdSec>
 ```
 
-### fileSec section
+### \<fileSec\> section
 
 <mark>vraag: die DOCUMENTATION en SCHEMAS directories lijken mij niet zinvol te houden als MUST?</mark>
 <mark>vraag: gaan we de checksum behouden hier als attribuut? Dat zit ook al in de manifest-md5.txt van de bag en ook al in de verschillende PREMIS objecten</mark>
@@ -1234,9 +1261,10 @@ The listing of other representation files (i.e. metadata files and media files) 
 </fileSec>
 ```
 
-### structMap section
+### \<structMap\> section
 
 <mark>vraag: welk label moet de overkoepelende `<div>` krijgen?</mark>
+<mark class="miel">Wat is de impact hiervan? Lijkt mij niet relevant</mark>
 
 The `structMap` element outlines the hierarchical structure of the package level of the SIP.
 It provides links between elements and metadata files located elsewhere in the package level.
@@ -1510,10 +1538,10 @@ It provides links between elements and metadata files located elsewhere in the p
 | Element/Attribute | `mets/structMap/div/div/mptr[@LOCTYPE='URL']` |
 |-----------------------|-----------|
 | Name | Type of locator |
-| Description | Indication of the locator type used to refer to the representation mets.xml files of the different representation levels.<br>It MUST always be used with the value "URL". |
+| Description | Indication of the locator type used to refer to the representation mets.xml files of the different representation levels.<br>It MUST always be used with the value `URL`. |
 | Datatype | String |
 | Cardinality | 1..1 |
-| Obligation | MUST |</table>
+| Obligation | MUST |
 
 ***Example***
 
@@ -1566,6 +1594,7 @@ It also contains preservation metadata about the SIP as a whole.
 #### dc.xml
 
 <mark>vraag: waar aanduiden over welke IE/subIE een bepaalde descriptieve metadatafile gaat? In een soort PREMIS relatie 'describes' op basis van gedeelde/gerefereerde UUID?</mark>
+<mark class="miel">Zoiets..., nog te bekijken.</mark>
 
 The `dc.xml` file at the package-level contains descriptive metadata about the (sub-)IE(s) of the SIP.
 It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schema in order to facilitate a basic description with a limited number of metadata.
