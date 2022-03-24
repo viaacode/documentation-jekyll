@@ -17,8 +17,10 @@ Status: WIP
 1. TOC
 {:toc}
 
+<mark class="miel">Afkorting CP is nog niet geintroduceerd?</mark>
+
 A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
-It conforms to the BagIt 1.0 specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)).
+It conforms to the [BagIt 1.0 specification (RFC 8493)](https://www.rfc-editor.org/rfc/rfc8493.html).
 A bag only has a practical purpose as a transfer container between a CP's archive and meemoo's ingest space.
 The bag will be unpacked during ingest and will be deleted after processing.
 As such it will not appear in the meemoo archive as a separate entity.
@@ -26,13 +28,16 @@ As such it will not appear in the meemoo archive as a separate entity.
 ***Requirements***
 
 - A bag MUST be a compressed archive file.
-- A bag MUST contain a *bagit.txt* file.
-- A bag MUST contain a *manifest-md5.txt* file.
+- A bag MUST contain a `bagit.txt` file.
+- A bag MUST contain a `manifest-md5.txt` file.
+
+<mark class="miel">Deze hieronder is zinloos als requirement, of toch hier, want je kan dat toch niet controleren. Beperk je tot wat software wel of niet nodig heeft. Hard constrainst dus. En gaat dit niet over de SIP ipv de Bag? Lijkt mij wel nuttig om informatief te vermelden, bv. in de intro of de directory structure. </mark>
+
 - A bag MUST contain content from only one particular CP and MUST NOT contain content from different CPs.
-- A bag MUST contain a */data* directory.
+- A bag MUST contain a `/data` directory.
 - The contents of a bag MUST be character-encoded according to UTF-8.
 - A bag SHOULD be a ZIP or TAR file.
-- A bag MAY contain a *bag-info.txt* file.
+- A bag MAY contain a `bag-info.txt` file.
 
 ***Example***
 
@@ -47,18 +52,18 @@ root_directory
 
 ## manifest-md5.txt (file)
 
-The *manifest-md5.txt* file lists all files in the bag across the different directories together with their corresponding checksums created with the MD5 message-digest algorithm.
+The `manifest-md5.txt` file lists all files in the bag across the different directories together with their corresponding checksums created with the MD5 message-digest algorithm.
 It is used during processing of the bag to allow for data integrity checking.
 
 ***Requirements***
 
-- The *manifest-md5.txt* file MUST list all files contained in the bag.
-- The *manifest-md5.txt* file MUST NOT list any directories.
-- The *manifest-md5.txt* file MUST NOT list any files outside of the bag.
-- Each line of the *manifest-md5.txt* file MUST be of the form *checksum filepath*, where *filepath* is the pathname of a file relative to the bag-lelvel directory, and *checksum* is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
+- The `manifest-md5.txt` file MUST list all files contained in the bag.
+- The `manifest-md5.txt` file MUST NOT list any directories.
+- The `manifest-md5.txt` file MUST NOT list any files outside of the bag.
+- Each line of the `manifest-md5.txt` file MUST be of the form *checksum filepath*, where *filepath* is the pathname of a file relative to the bag-lelvel directory, and *checksum* is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
 - The slash ('/') character MUST be used as a path separator in *filepath*.
 - One or more linear whitespace characters (spaces or tabs) MUST separate each *checksum* from each *filepath*.
-- Each line of the *manifest-md5.txt* file MUST be terminated with an LF, a CR or a CRLF.
+- Each line of the `manifest-md5.txt` file MUST be terminated with an LF, a CR or a CRLF.
 
 ***Example***
 
@@ -83,34 +88,28 @@ eaa2c609ff6371712f623f5531945b44  ./bagit.txt
 
 ## bagit.txt (file)
 
-The *bagit.txt* file contains exactly two lines in the exact order specified in the example below.
-The first line specifies to which version of the BagIt specification ([RFC 8493](https://www.rfc-editor.org/rfc/rfc8493.html)) the bag conforms, while the second line identifies the character set encoding of the bag and its files.
+The `bagit.txt` file contains exactly two lines in the exact order specified in the example below.
+The first line specifies to which version of the [BagIt specification](https://www.rfc-editor.org/rfc/rfc8493.html) the bag conforms, while the second line identifies the character set encoding of the bag and its files.
 
 ***Requirements***
 
-- The first line of the *bagit.txt* file MUST specify the exact version of the BagIt standard.
-- The second line of the *bagit.txt* file MUST specify the character set encoding of the bag and its files.
+- The first line of the `bagit.txt` file MUST specify the exact version of the BagIt standard.
+- The second line of the `bagit.txt` file MUST specify the character set encoding of the bag and its files.
 
 ***Example***
 
-```plaintxt
+```plaintext
 BagIt-Version: 1.0
 Tag-File-Character-Encoding: UTF-8
 ```
 
 ## /data (directory)
 
-The */data* directory contains the content of the bag divided across a number of different files and directories.
-Each */data* directory contains a single so-called package, consisting of the combination of a *mets.xml* file, a */metadata* directory and a */representations* directory.
+<mark class="miel">Ga je hier niet te diep? De requirements lijken mij al grotendeels over het package level te gaan, dus ik heb ze naar daar verhuisd.</mark>
 
-***Requirements***
-
-- The */data* directory MUST contain exactly one package.
-- The */data* directory MUST contain exactly one *mets.xml* file.
-- The */data* directory MUST contain exactly one */metadata* directory.
-- The */data* directory MUST contain exactly one */representations* directory.
-- The */data* directory MAY contain exactly one */documentation* directory.
-- The */data* directory MAY contain exactly one */schemas* directory.
+The `/data` directory contains the content of the bag divided across a number of different files and directories.
+Each `/data` directory MUST contain exactly one package, consisting of the combination of a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
+See the [package level](/5_structure_package) for more information and the requirements of the `/data` directory.
 
 ***Example***
 

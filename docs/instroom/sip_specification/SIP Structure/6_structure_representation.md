@@ -17,7 +17,7 @@ Status: WIP
 1. TOC
 {:toc}
 
-The representation level consists of a *mets.xml* file, a */metadata* directory and a */data* directory.
+The representation level consists of a `mets.xml` file, a `/metadata` directory and a `/data` directory.
 It contains information about the representation of (one of) the (sub)IE(s) of the package level, together with the media files making up the representation.
 
 ***Example***
@@ -53,79 +53,95 @@ root_directory
 
 ## /representation_* (directory)
 
-The */representation_\** directory contains all information about a certain representation of the (sub)IE(s) of the SIP.
+The `/representation_*`  directory contains all information about a certain representation of the (sub)IE(s) of the SIP.
 It contains both descriptive and preservation metadata, as well as the actual media files making up the representation.
-Each */representation_\** directory contains its own *mets.xml* file which acts similarly as the package *mets.xml* and serves as an inventory of the files and directories of the representation level.
+Each `/representation_*` directory contains its own `mets.xml` file which acts similarly as the package `mets.xml` and serves as an inventory of the files and directories of the representation level.
 
 ***Requirements***
 
-- A */representation_\** directory MUST contain exactly one mets.xml file.
-- A */representation_\** directory MUST contain exactly one */metadata* directory.
-- A */representation_\** directory MUST contain exactly one */data* directory.
-- A */representation_\** directory MAY contain exactly one */documentation* directory.
-- A */representation_\** directory MAY contain exactly one */schemas* directory.
+- A `/representation_*` directory MUST contain exactly one mets.xml file.
+- A `/representation_*` directory MUST contain exactly one `/metadata` directory.
+- A `/representation_*` directory MUST contain exactly one `/data` directory.
+- A `/representation_*` directory MAY contain exactly one `/documentation` directory.
+- A `/representation_*` directory MAY contain exactly one `/schemas` directory.
 
 ### mets.xml (file)
 
-The *mets.xml* file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in [the section package mets.xml](#metsxml-file).
-Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same requirements, where possible, as the package *mets.xml* file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `mets` and `metsHdr` sections.
+The `mets.xml` file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in [the section package mets.xml](#metsxml-file).
+Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same requirements, where possible, as the package `mets.xml` file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `mets` and `metsHdr` sections.
 
 #### mets section
 
 ***Requirements***
 
-<table>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets</code></th></tr>
-<tr><td></td><td>Name</td><td>METS root element</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>.</td></tr>
-<tr><td></td><td>Datatype</td><td>/</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@OBJID</code></th><td></td></tr>
-<tr><td></td><td>Name</td><td>Representation identifier</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>This is a UUID identifier for the METS document. For the representation METS, this MUST be the same UUID as the one used for the corresponding representation directory.</td></tr>
-<tr><td></td><td>Datatype</td><td>UUID</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@TYPE</code></th><td></td></tr>
-<tr><td></td><td>Name</td><td>Content category</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>This attribute MUST be set to declare the category of the content held in the SIP.</td></tr>
-<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
-<tr><td></td><td>Vocabulary</td><td>["Textual works - Print","Textual works - Digital","Textual works - Electronic Serials","Digital Musical Composition (score-based representations)","Photographs - Print","Photographs - Digital","Other Graphic Images - Print","Other Graphic Images - Digital","Audio - On Tangible Medium (digital or analog)","Audio - Media-independent (digital)","Motion Pictures – Digital and Physical Media","Video – File-based and Physical Media","Software","Datasets","Geospatial Data","Databases","Websites","Collection","Event","Interactive resource","Physical object","Service","Mixed","Other"]</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets[@TYPE="OTHER"]/@csip:OTHERTYPE</code></th><td></td></tr>
-<tr><td></td><td>Name</td><td>Other content category</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>When the <code>mets/@TYPE</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERTYPE</code> attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the <code>@TYPE</code> attribute.</td></tr>
-<tr><td></td><td>Datatype</td><td>String</td></tr>
-<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
-<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@csip:CONTENTINFORMATIONTYPE</code></th><td></td></tr>
-<tr><td></td><td>Name</td><td>Content information type specification</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>This attribute is used to declare the Content Information Type Specification used when creating the SIP.</td></tr>
-<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
-<tr><td></td><td>Vocabulary</td><td>["ERMS","SIARD1","SIARD2","SIARDDK","GeoData","citscarchival_v1_0","citserms_v2_1","citspremis_v1_0","citsehpj_v1_0",<br>"citsehcr_v1_0","citssiard_v1_0","citsgeospatial_v3_0","MIXED","OTHER"]</td></tr>
-<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
-<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE</code></th><td></td></tr>
-<tr><td></td><td>Name</td><td>Other content information type specification</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>When the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute is set to "OTHER", the <code>mets/@csip:OTHERCONTENTINFORMATIONTYPE</code> attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the <code>mets[@csip:CONTENTINFORMATIONTYPE]</code> attribute.</td></tr>
-<tr><td></td><td>Datatype</td><td>String</td></tr>
-<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
-<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@PROFILE</code></th><td></td></tr>
-<tr><td></td><td>Name</td><td>METS profile</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to “https://earksip.dilcis.eu/profile/E-ARK-SIP.xml”.</td></tr>
-<tr><td></td><td>Datatype</td><td>URL</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/@LABEL</code></th><td></td></tr>
-<tr><td></td><td>Name</td><td>Package name</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>An optional short text describing the contents of the package.</td></tr>
-<tr><td></td><td>Datatype</td><td>String</td></tr>
-<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MAY</td></tr>
-</table>
+
+
+| Element/Attribute | `mets` |
+|-----------------------|-----------|
+| Name | METS root element |
+| Description | This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>. |
+| Datatype | / |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/@OBJID` |
+|-----------------------|-----------|
+| Name | Representation identifier |
+| Description | This is a UUID identifier for the METS document. For the representation METS, this MUST be the same UUID as the one used for the corresponding representation directory. |
+| Datatype | UUID |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/@TYPE` |
+|-----------------------|-----------|
+| Name | Content category |
+| Description | This attribute MUST be set to declare the category of the content held in the SIP. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `Textual works - Print`<br>`Textual works - Digital`<br>`Textual works - Electronic Serials`<br>`Digital Musical Composition (score-based representations)`<br>`Photographs - Print`<br>`Photographs - Digital`<br>`Other Graphic Images - Print`<br>`Other Graphic Images - Digital`<br>`Audio - On Tangible Medium (digital or analog)`<br>`Audio - Media-independent (digital)`<br>`Motion Pictures – Digital and Physical Media`<br>`Video – File-based and Physical Media`<br>`Software`<br>`Datasets`<br>`Geospatial Data`<br>`Databases`<br>`Websites`<br>`Collection`<br>`Event`<br>`Interactive resource`<br>`Physical object`<br>`Service`<br>`Mixed`<br>`Other` |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets[@TYPE="OTHER"]/@csip:OTHERTYPE` |
+|-----------------------|-----------|
+| Name | Other content category |
+| Description | When the `mets/@TYPE` attribute is set to "OTHER", the `mets/@csip:OTHERTYPE` attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the `@TYPE` attribute. |
+| Datatype | String |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element/Attribute | `mets/@csip:CONTENTINFORMATIONTYPE` |
+|-----------------------|-----------|
+| Name | Content information type specification |
+| Description | This attribute is used to declare the Content Information Type Specification used when creating the SIP. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `ERMS`<br>`SIARD1`<br>`SIARD2`<br>`SIARDDK`<br>`GeoData`<br>`citscarchival_v1_0`<br>`citserms_v2_1`<br>`citspremis_v1_0`<br>`citsehpj_v1_0",<br>"citsehcr_v1_0`<br>`citssiard_v1_0`<br>`citsgeospatial_v3_0`<br>`MIXED`<br>`OTHER` |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element/Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
+|-----------------------|-----------|
+| Name | Other content information type specification |
+| Description | When the `mets[@csip:CONTENTINFORMATIONTYPE]` attribute is set to `OTHER`, the `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the `mets[@csip:CONTENTINFORMATIONTYPE]` attribute. |
+| Datatype | String |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element/Attribute | `mets/@PROFILE` |
+|-----------------------|-----------|
+| Name | METS profile |
+| Description | The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to [`https://earksip.dilcis.eu/profile/E-ARK-SIP.xml`](https://earksip.dilcis.eu/profile/E-ARK-SIP.xml). |
+| Datatype | URL |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/@LABEL` |
+|-----------------------|-----------|
+| Name | Package name |
+| Description | An optional short text describing the contents of the package. |
+| Datatype | String |
+| Cardinality | 0..1 |
+| Obligation | MAY |
+
 
 ***Example***
 
@@ -154,69 +170,87 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 
 ***Requirements***
 
-<table>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr</code></th></tr>
-<tr><td></td><td>Name</td><td>Representation header</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>General element that contains descriptive information about the representation.</td></tr>
-<tr><td></td><td>Datatype</td><td>/</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@CREATEDATE</code></th></tr>
-<tr><td></td><td>Name</td><td>Representation creation datetime</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>This attribute records the date and time the representation was created.</td></tr>
-<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@LASTMODDATE</code></th></tr>
-<tr><td></td><td>Name</td><td>Representation last modification datetime</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the representation has been modified since its creation datetime.</td></tr>
-<tr><td></td><td>Datatype</td><td>EDTF</td></tr>
-<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
-<tr><td></td><td>Obligation</td><td>SHOULD</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/@RECORDSTATUS</code></th></tr>
-<tr><td></td><td>Name</td><td>Representation status</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>A way of indicating the status of the representation and to instruct the archive on how to properly handle it.<br>If not set, the expected value is "NEW".</td></tr>
-<tr><td></td><td>Datatype</td><td>String; fixed vocabulary</td></tr>
-<tr><td></td><td>Vocabulary</td><td>["NEW","SUPPLEMENT","REPLACEMENT","TEST","VERSION","DELETE","OTHER"]</td></tr>
-<tr><td></td><td>Cardinality</td><td>0..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MAY</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent</code></th></tr>
-<tr><td></td><td>Name</td><td>Agent</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
-<tr><td></td><td>Datatype</td><td>/</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..*</td></tr>
-<tr><td></td><td>Obligation</td><td>MAY</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@ROLE</code></th></tr>
-<tr><td></td><td>Name</td><td>Agent role</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
-<tr><td></td><td>Datatype</td><td>String</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@TYPE</code></th></tr>
-<tr><td></td><td>Name</td><td>Agent type</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
-<tr><td></td><td>Datatype</td><td>String</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/@OTHERTYPE</code></th></tr>
-<tr><td></td><td>Name</td><td>Agent other type</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>This attribute MUST be used if the attribute agent/@TYPE is set to "OTHER". It is used to specify the exact other type that is being used.</td></tr>
-<tr><td></td><td>Datatype</td><td>String</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/name</code></th></tr>
-<tr><td></td><td>Name</td><td>Agent name</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
-<tr><td></td><td>Datatype</td><td>String</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MUST</td></tr>
-<tr><th>Element/Attribute</th><th colspan="2"><code>mets/metsHdr/agent/note</code></th></tr>
-<tr><td></td><td>Name</td><td>Agent additional information</td></tr>
-<tr><td></td><td>Description/Rationale</td><td>/</td></tr>
-<tr><td></td><td>Datatype</td><td>String</td></tr>
-<tr><td></td><td>Cardinality</td><td>1..1</td></tr>
-<tr><td></td><td>Obligation</td><td>MAY</td></tr>
-</table>
+| Element/Attribute | `mets/metsHdr` |
+|-----------------------|-----------|
+| Name | Representation header |
+| Description | General element that contains descriptive information about the representation. |
+| Datatype | / |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/metsHdr/@CREATEDATE` |
+|-----------------------|-----------|
+| Name | Representation creation datetime |
+| Description | This attribute records the date and time the representation was created. |
+| Datatype | EDTF |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/metsHdr/@LASTMODDATE` |
+|-----------------------|-----------|
+| Name | Representation last modification datetime |
+| Description | In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the representation has been modified since its creation datetime. |
+| Datatype | EDTF |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element/Attribute | `mets/metsHdr/@RECORDSTATUS` |
+|-----------------------|-----------|
+| Name | Representation status |
+| Description | A way of indicating the status of the representation and to instruct the archive on how to properly handle it.<br>If not set, the expected value is `NEW`. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `NEW`<br>`SUPPLEMENT`<br>`REPLACEMENT`<br>`TEST`<br>`VERSION`<br>`DELETE`<br>`OTHER` |
+| Cardinality | 0..1 |
+| Obligation | MAY |
+
+| Element/Attribute | `mets/metsHdr/agent` |
+|-----------------------|-----------|
+| Name | Agent |
+| Description | / |
+| Datatype | / |
+| Cardinality | 1..* |
+| Obligation | MAY |
+
+| Element/Attribute | `mets/metsHdr/agent/@ROLE` |
+|-----------------------|-----------|
+| Name | Agent role |
+| Description | / |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/metsHdr/agent/@TYPE` |
+|-----------------------|-----------|
+| Name | Agent type |
+| Description | / |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/metsHdr/agent/@OTHERTYPE` |
+|-----------------------|-----------|
+| Name | Agent other type |
+| Description | This attribute MUST be used if the attribute `agent/@TYPE` is set to `OTHER`. It is used to specify the exact other type that is being used. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/metsHdr/agent/name` |
+|-----------------------|-----------|
+| Name | Agent name |
+| Description | / |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element/Attribute | `mets/metsHdr/agent/note` |
+|-----------------------|-----------|
+| Name | Agent additional information |
+| Description | / |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MAY |
+
 
 ***Example***
 
@@ -226,33 +260,33 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 
 ### /data (directory)
 
-The */data* directory contains the payload files of the SIP, also known as the media files or the essence.
+The `/data` directory contains the payload files of the SIP, also known as the media files or the essence.
 Depending on the use-case and the content partner, these files can be digital pictures, videos, audio... 
 
 ***Requirements***
 
-- The */data* directory MUST NOT contain any subdirectories.
-- All files in the */data* directory MUST be referenced in the corresponding representation mets.
+- The `/data` directory MUST NOT contain any subdirectories.
+- All files in the `/data` directory MUST be referenced in the corresponding representation mets.
 
 ### /metadata (directory)
 
-The */metadata* directory contains both descriptive and preservation metadata about the representation and the media files at the representation level.
+The `/metadata` directory contains both descriptive and preservation metadata about the representation and the media files at the representation level.
 
 ***Requirements***
 
-- The */metadata* directory MUST contain exactly two subdirectories: */descriptive* and */preservation*.
+- The `/metadata` directory MUST contain exactly two subdirectories: `/descriptive` and `/preservation`.
 
 #### /descriptive (directory)
 
-The */descriptive* directory contains descriptive metadata about the representation of the representation level.
+The `/descriptive` directory contains descriptive metadata about the representation of the representation level.
 
 ***Requirements***
 
-- The */descriptive* directory MUST contain exactly one file: *dc.xml*.
+- The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
 
 ##### dc.xml (file)
 
-The *dc.xml* file of the representation level follows the same requirements of the *dc.xml* file of the package level discussed in section [dc.xml](#dcxml).
+The `dc.xml` file of the representation level follows the same requirements of the `dc.xml` file of the package level discussed in section [dc.xml](#dcxml).
 
 ***Example***
 
@@ -281,27 +315,27 @@ The *dc.xml* file of the representation level follows the same requirements of t
 
 #### /preservation (directory)
 
-The */preservation* directory contains preservation metadata about the representation and the media files of the representation level.
+The `/preservation` directory contains preservation metadata about the representation and the media files of the representation level.
 
 ***Requirements***
 
-- The */preservation* directory MUST contain exactly one file: *premis.xml*.
+- The `/preservation` directory MUST contain exactly one file: `premis.xml`.
 
 ##### premis.xml (file)
 
 <mark>vraag: hier nog een soort tabel bij, zoals bij de METS of de DC?</mark>
 
-The *premis.xml* file of the representation level contains preservation metadata about the representation and the media files of the representation level.
+The `premis.xml` file of the representation level contains preservation metadata about the representation and the media files of the representation level.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.
 More detailed preservation information can also be described using PREMIS events and PREMIS agents.
 
 ***Requirements***
 
-- The *premis.xml* file MUST contain a PREMIS object for the representation.
-- The *premis.xml* file MUST contain a PREMIS object for each media file in the */data* directory.
+- The `premis.xml` file MUST contain a PREMIS object for the representation.
+- The `premis.xml` file MUST contain a PREMIS object for each media file in the `/data` directory.
 - Each PREMIS object MUST contain a unique identifier.
 - Each PREMIS object MUST contain a checksum (when applicable).
-- The *premis.xml* file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the representation and the media files.
+- The `premis.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the representation and the media files.
   
 ***Example***
 
