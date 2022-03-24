@@ -38,6 +38,11 @@ nav_exclude:  false
     <dd></dd>
     <dt>XML</dt>
     <dd></dd>
+    <dt>_Package METS_</dt>
+    <dd></dd>
+    <dt>_Representation METS_</dt>
+    <dd></dd>
+    
 </dl>
 
 ## Datatypes
@@ -53,3 +58,4 @@ In the context of noting metadata values, the following datatypes are mentioned 
 | UUID           | A Universally Unique Identifier as defined in [RFC4122](https://datatracker.ietf.org/doc/html/rfc4122). |
 | IRI            | An Internationalized Resource Identifier as defined in [RFC3987](https://datatracker.ietf.org/doc/html/rfc3987). |
 | URL            | A Uniform Resource Locator as defined in [RFC1738](https://datatracker.ietf.org/doc/html/rfc1738). |
+| OR-id            | <mark class="miel">TODO</mark> |

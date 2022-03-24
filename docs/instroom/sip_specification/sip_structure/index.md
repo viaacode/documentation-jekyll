@@ -11,25 +11,25 @@ has_children: true
 
 The meemoo SIP consists of a hierarchical directory structure with 3 levels:
 
-- the root directory (henceforth bag level);
-- the data directory (henceforth package level);
-- the representations directory (henceforth representation level).
+- the root directory `/` or the _bag level_;
+- the `/data` directory inside the root directory or _package level_;
+- the `/representations` directory inside the `/data` directory or _representation level_.
 
 <figure class="mx-auto">
   <img src="../../../../../assets/images_spec/sip_structure.png" alt="meemoo SIP structure" /> 
   <figcaption>The directory structure of a meemoo SIP.</figcaption>
 </figure>
 
-The [bag level](/4_structure_bag) is a transport layer and contains information that is essential for checking the integrity of all files in the SIP.
+The [_bag level_](/4_structure_bag) is a transport layer and contains essential information for checking the integrity of all files in the SIP.
 It uses a manifest file listing every file in the SIP together with its checksum.
 
-The [package level](/5_structure_package) contains descriptive and preservation information about the (sub)IE(s) of the SIP, together with a *mets.xml* file that contains administrative information about the submission of the SIP (e.g. the organization that submits the SIP).
-The package level also contains preservation information about the SIP as a whole (e.g. the software used to create the SIP).
+The [_package level_](/5_structure_package) contains descriptive and preservation information about the SIP's main subject, namely the different (sub)IE(s) of which digital representations are being delivered, and preservation information about the SIP as a whole (e.g. the software used to create the SIP).
+In addition, a `mets.xml` file supplies information about the SIP's structure and administrative information about the SIP's submission (e.g. the organization that submits the SIP).
 
 <mark class="miel">De terminologie moet consistenter ("payload files, also known as the essence or the media files"). Kies een term, definieer die en gebruik die consequent over het hele document.</mark>
 
-The [representation level](/6_structure_representation) contains the actual payload files, also known as the essence or the media files, grouped in representation folders.
-Each representation folder also contains descriptive and preservation information about a specific representation of the (sub)IE(s) of the SIP situated at the package-level (cf. supra) and preservation information about the essence or media files.
+The [_representation level_](/6_structure_representation) contains the actual payload files, also known as the essence or the media files, grouped in representation folders.
+Each representation folder also contains descriptive and preservation information about a specific representation of the (sub)IE(s) of the SIP situated at the _package level_ (cf. supra) and preservation information about the essence or media files.
 
 ***Example***
 
@@ -73,7 +73,7 @@ root_directory
 
 {: .note }
 This section introduces a fictional scenario as a running example and is to be considered informative.
-The examples in the upcoming sections based on this scenario.
+The examples in the upcoming sections are based on this scenario.
 
 One of meemoo's content partners, the (fictional) Flemish Cat Museum (henceforth FCM), wishes to archive a number of rare digitised pictures of the Felis Catus Flamens (a cat species originating in Flanders and threatened with extinction).
 More specifically, the FCM owns two pictures of the Felis Catus Flamens lying on a sofa and one picture of the Felis Catus Flamens on its cat tree.

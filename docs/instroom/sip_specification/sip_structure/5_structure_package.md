@@ -17,7 +17,7 @@ Status: WIP
 1. TOC
 {:toc}
 
-The package level is stored in the `/data` directory of the bag and consists of a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
+The package level is stored in the `/data` directory of the [bag](4_structure_bag) and consists at least of a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
 It contains information about the (sub)IE(s) of the SIP and the SIP as a whole.
 
 ***Requirements***
@@ -51,14 +51,14 @@ root_directory
 
 ## mets.xml (file)
 
-[Metadata Encoding and Transmission Standard](https://www.loc.gov/standards/mets/mets-home.html) (henceforth METS) is a metadata standard for encoding descriptive, administrative and structural metadata.
+[Metadata Encoding and Transmission Standard](https://www.loc.gov/standards/mets/mets-home.html) (METS) is a metadata standard for encoding descriptive, administrative and structural metadata.
 In the case of the meemoo SIP, the `mets.xml` file's main purpose it to act as an inventory of the files and directories contained within.
-Since it is situated at the package-level, it is also known as the package mets.
+Since it is situated at the package-level, it is also known as the _package METS file_.
 
 It should not be confused with the `mets.xml` files situated in their respective representation folders (cf. infra).
 The package `mets.xml` file does not record the internal structure of the different representations in the `/representations` directory.
 It only references the different `mets.xml` files contained in each `/representation_*` directory (where `*` is an integer indicating the number of different representations in the `/representation` directory).
-Each of the `mets.xml` files at the representation-level references its own internal structure.
+Each of the `mets.xml` files at the [representation level](6_structure_representation) references its own internal structure.
 
 ### \<mets\> section
 
@@ -73,8 +73,8 @@ Each of the `mets.xml` files at the representation-level references its own inte
 <mark>vraag: @CONTENTINFORMATIONTYPE, eigen voc definiëren? Of deze steeds op OTHER zetten en dan eigen types/voc gebruiken bij @OTHERCONTENTINFORMATIONTYPE?</mark>
 <mark class="miel">eigen types/voc gebruiken bij @OTHERCONTENTINFORMATIONTYPE</mark>
 
-This is the root element of the package mets.
-It contains a number of XML schema namespaces together with a number of attributes to uniquely identify the package mets and the type of data it lists.
+This is the root element of the package METS file.
+It contains a number of XML schema namespaces together with a number of attributes to uniquely identify the package METS file and the type of data it lists.
 The various requirements are listed in the table below.
 
 <mark class="miel">Hier zou je ook al iets moeten zeggen over de  metsHdr
@@ -85,13 +85,18 @@ structMap
 Want zou komen nogal onverwacht in het voorbeeld onderaan.
 </mark>
 
+<mark class="miel">Veel van onderstaande komen niet voor het voorbeeld. Ik zou mss een minimaal (MUST + SHOULD) en een maximaal (met alle MAY) voorbeeld doen.</mark>
 
 ***Requirements***
+
+<mark class="miel">Ik mis meemoo specifieke context bij de beschrijving van de elementen/attributen. Het is nog te veel generieke EARK en te weinig "wat betekent dit bij meemoo."</mark>
+
+<mark class="miel">Namespaces onderaan voluit schrijven en niet als link (eerste als vb).  Letterlijk zeggen wat moet toegevoegd worden. Prefixes zijn indicatief. </mark>
 
 | Element | `mets` |
 |-----------------------|-----------|
 | Name | METS root element |
-| Description | This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>. |
+| Description | This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces:<br>[`mets: http://www.loc.gov/METS/`](http://www.loc.gov/METS/)<br><a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a><br> <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a><br><a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a><br><a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>. |
 | Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -171,11 +176,11 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
       csip:OTHERTYPE="Photographs – Digital" 
       PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
 
-<metsHdr>etc.</metsHdr>
-<dmdSec>etc.</dmdSec>
-<amdSec>etc.</amdSec>
-<fileSec>etc.</fileSec>
-<structMap>etc.</structMap>
+  <metsHdr>etc.</metsHdr>
+  <dmdSec>etc.</dmdSec>
+  <amdSec>etc.</amdSec>
+  <fileSec>etc.</fileSec>
+  <structMap>etc.</structMap>
 
 </mets>
 ```
@@ -183,7 +188,7 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 ### \<metsHdr\> section
 
 <mark>vraag: @RECORDSTATUS attribuut kan handig zijn om bv. metadataupdate mee aan te duiden, als type supplement?</mark>
-<mark class="miel">Absoluut. Ik mis zulke meemoo specifieke context bij de beschrijving van de elementen/attributen. Het is nog te veel generieke EARK en te weinig meemoo. </mark>
+<mark class="miel">Absoluut, als het vocab dit toelaat? Zeker toevoegen aan de beschrijving.</mark>
 
 <mark>vraag: ik weet niet of die SIP creator agent bij ons verplicht moet zijn? Eerder SHOULD?</mark>
 <mark class="miel">Dit relaxen breekt EARK compatibility, dus houden op MUST. Lijkt mij ook niet moeilijk om aan te leveren</mark>
@@ -198,6 +203,8 @@ This element contains administrative metadata about the SIP such as its creator 
 It does so by using separate `agent` tags for every role in the SIPs creation and submission process.
 
 ***Requirements***
+
+<mark class="miel">De lijst met elementen/ attributen is vrij lang. Ik zou na elk element + attributen een klein voorbeeld toevoegen. </mark>
 
 | Element | `mets/metsHdr` |
 |-----------------------|-----------|
@@ -267,7 +274,7 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Attribute | `mets/metsHdr/agent/@OTHERTYPE` |
 |-----------------------|-----------|
 | Name | SIP creator software agent other type |
-| Description | A specification of the type of the SIP creator software agent, indicating it being software.<br>This value MUST be set to "SOFTWARE". |
+| Description | A specification of the type of the SIP creator software agent, indicating it being software.<br>This value MUST be set to `SOFTWARE`. |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -291,7 +298,7 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Attribute | `mets/metsHdr/agent/note[@csip:NOTETYPE='SOFTWARE VERSION']` |
 |-----------------------|-----------|
 | Name | Classification of the SIP creator software agent additional information |
-| Description | The value of this attribute MUST be set to "SOFTWARE VERSION" |
+| Description | The value of this attribute MUST be set to `SOFTWARE VERSION` |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -307,7 +314,7 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Attribute | `mets/metsHdr/agent/@ROLE` |
 |-----------------------|-----------|
 | Name | Archival creator agent role |
-| Description | The role of the person(s) or institution(s) responsible for the document/collection.<br>This value MUST be set to "CREATOR". |
+| Description | The role of the person(s) or institution(s) responsible for the document/collection.<br>This value MUST be set to `CREATOR`. |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -317,7 +324,7 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Name | Archival creator agent type |
 | Description | The type of the archival creator agent. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | ["ORGANIZATION`<br>`INDIVIDUAL`<br>`OTHER"] |
+| Vocabulary | `ORGANIZATION`<br>`INDIVIDUAL`<br>`OTHER` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -367,7 +374,7 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Name | Submitting agent type |
 | Description | The type of the submitting agent. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | ["ORGANIZATION`<br>`INDIVIDUAL`<br>`OTHER"] |
+| Vocabulary | `ORGANIZATION`<br>`INDIVIDUAL`<br>`OTHER` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -434,6 +441,10 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Datatype | String |
 | Cardinality | 0..* |
 | Obligation | MAY |
+
+<mark class="miel">Het onderstaande element mets/metsHdr/agent is al eens gedefineerd?</mark>
+
+<mark class="miel">Als iets geen datatype kan hebben, laat het dan weg</mark>
 
 | Element | `mets/metsHdr/agent` |
 |-----------------------|-----------|
@@ -540,7 +551,7 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 ### \<dmdSec\> section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
-<mark class="miel">ja, maar dan ga je naar de submitting agent. De contactpersoon isa optioneel en ik vermoed dat we daar in de praktijk niet zoveel mee gaan doen.</mark>
+<mark class="miel">Ik begrijp de suggestie niet goed. Ik vind de MAY/SHOULD/MUST van de secties met o.a. dmdSec niet zo duidelijk. Herhaal dit nog eens in de intro van de mets section </mark>
 
 <mark>vraag: dmdSec/@STATUS kan handig zijn om bv. iets als metadataupdate mee aan te duiden, waarbij geen essence moet instromen</mark>
 
@@ -720,10 +731,13 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 ### \<amdSec\> section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
+<mark class="miel">Begrijp ik niet goed.</mark>
 
 The `amdSec` element (short for 'administrative metadata section') contains preservation metadata about the (sub)IE(s) in the SIP and the SIP as a whole.
 The `amdSec` can either embed metadata (with the use of `digiprovMD` elements) or contain pointers to the location of preservation metadata files located in the `/metadata/preservation` directory of the package level.
-In order to maintain the readability of the `mets.xml` file, it is recommended to store the preservation metadata in separate/dedicated files.
+In order to maintain the readability of the `mets.xml` file, it is recommended to store the preservation metadata in the dedicated `premis.xml` file.
+
+<mark class="miel">Ik heb het einde van bovenstaande zin aangepast. Klopt dit?</mark>
 
 ***Requirements***
 
@@ -763,7 +777,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Element/Attribute | `mets/amdSec/digiprovMD/mdRef` |
 |-----------------------|-----------|
 | Name | Reference to the document with the digital provenance metadata (when not embedded within the `mets.xml` file). |
-| Description | Reference to the preservation metadata file(s) when located in the /metadata/preservation directory. |
+| Description | Reference to the preservation metadata file(s) when located in the `/metadata/preservation` directory. |
 | Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
@@ -865,7 +879,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Name | Status of the rights metadata |
 | Description | Describes the status of the `digiprovMD` which is supported by the profile. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | ["CURRENT`<br>`SUPERSEDED"] |
+| Vocabulary | `CURRENT`<br>`SUPERSEDED` |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -880,7 +894,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Element/Attribute | `mets/amdSec/rightsMD/mdRef[@LOCTYPE='URL']` |
 |-----------------------|-----------|
 | Name | Type of locator |
-| Description | Indication of the locator type used to refer to the rights metadata file(s) in the /metadata/preservation directory.<br>It MUST always be used with the value "URL". |
+| Description | Indication of the locator type used to refer to the rights metadata file(s) in the `/metadata/preservation` directory.<br>It MUST always be used with the value `URL`. |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -896,7 +910,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Element/Attribute | `mets/amdSec/rightsMD/mdRef/@xlink:href` |
 |-----------------------|-----------|
 | Name | Resource location |
-| Description | Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the /metadata/preservation directory.<br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath. |
+| Description | Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the `/metadata/preservation` directory.<br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath. |
 | Datatype | URL |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -904,7 +918,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Element/Attribute | `mets/amdSec/rightsMD/mdRef/@MDTYPE` |
 |-----------------------|-----------|
 | Name | Type of preservation metadata |
-| Description | Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory. |
+| Description | Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the `/metadata/preservation` directory. |
 | Datatype | String; fixed vocabulary |
 | Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
 | Cardinality | 1..1 |
@@ -974,8 +988,14 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 ### \<fileSec\> section
 
 <mark>vraag: die DOCUMENTATION en SCHEMAS directories lijken mij niet zinvol te houden als MUST?</mark>
+<mark class="miel">Zijn ze niet, dus MAY.</mark>
+
+
 <mark>vraag: gaan we de checksum behouden hier als attribuut? Dat zit ook al in de manifest-md5.txt van de bag en ook al in de verschillende PREMIS objecten</mark>
+<mark class="miel">EARK volgen</mark>
+
 <mark>vraag/opm: het idee van de fileSec is eigenlijk dat je er alles insteekt dat nog niet in de dmdSec of amdSec zit (dus eigenlijk louter media files). Dus bij een metadataupdate is de fileSec bv. leeg. Maar we kunnen ook enkel de fileSec houden en de dmd/amdSec weglaten?</mark>
+<mark class="miel">Ik vind het momenteel goed. De fileSec is verplicht, maar de dmdSec of amdSec zijn een optie als je geen dc.xml of premis.xml wil gebruiken. Correct?</mark>
 
 The `fileSec` element (short for 'file section') lists all files of the package level in the SIP.
 It contains references to the representation `mets.xml` files of the different representations, but does not list other files of those representations.
@@ -1003,10 +1023,12 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
+<mark class="miel">Wat is n in onderstaande?</mark>
+
 | Element/Attribute | `mets/fileSec/fileGrp[@USE='Documentation']` |
 |-----------------------|-----------|
 | Name | Documentation file group |
-| Description | All documentation pertaining to the transferred content is placed in one or more file group elements with mets/fileSec/fileGrp/@USE attribute value “Documentation”. |
+| Description | All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value “Documentation”. |
 | Datatype | / |
 | Cardinality | 1..n |
 | Obligation | MUST |
@@ -1014,7 +1036,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Element/Attribute | `mets/fileSec/fileGrp[@USE='Schemas']` |
 |-----------------------|-----------|
 | Name | Schema file group |
-| Description | All XML schemas used in the information package must be referenced from one or more file groups with mets/fileSec/fileGrp/@USE attribute value “Schemas”. |
+| Description | All XML schemas used in the information package must be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value “Schemas”. |
 | Datatype | / |
 | Cardinality | 1..n |
 | Obligation | MUST |
@@ -1022,7 +1044,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Element/Attribute | `mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]` |
 |-----------------------|-----------|
 | Name | Representations file group |
-| Description | A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with mets/fileSec/fileGrp/@USE attribute value starting with “Representations” followed by the path to the folder where the representation level mets.xml file is placed. |
+| Description | A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value starting with `Representations` followed by the path to the folder where the _representation level_ `mets.xml` file is placed. |
 | Datatype | / |
 | Cardinality | 1..n |
 | Obligation | MUST |
@@ -1043,15 +1065,15 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/fileSec/fileGrp[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
+| Attribute | `mets/fileSec/fileGrp[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Other Content Information Type Specification |
-| Description | When the mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE attribute has the value “OTHER” the mets/fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE must state a value for the Content Information Type Specification used. |
+| Description | When the `mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE` attribute has the value `OTHER` the attribute `mets/fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE` must state a value for the Content Information Type Specification used. |
 | Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element/Attribute | `mets/fileSec/fileGrp/@USE` |
+| Attribute | `mets/fileSec/fileGrp/@USE` |
 |-----------------------|-----------|
 | Name | Description of the use of the file group |
 | Description | The value in the mets/fileSec/fileGrp/@USE is the name of the whole folder structure to the data, e.g. "representations/representation_1" or "documentation". |
@@ -1059,7 +1081,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/@ID` |
+| Attribute | `mets/fileSec/fileGrp/@ID` |
 |-----------------------|-----------|
 | Name | File group identifier |
 | Description | A unique identifier for the file group. This is used for internal package references. |
@@ -1067,7 +1089,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file` |
+| Element | `mets/fileSec/fileGrp/file` |
 |-----------------------|-----------|
 | Name | File |
 | Description | The `file` elements contain descriptions of the actual media file objects. |
@@ -1075,7 +1097,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..n |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@ID` |
+| Attribute | `mets/fileSec/fileGrp/file/@ID` |
 |-----------------------|-----------|
 | Name | File identifier |
 | Description | A unique identifier for the file. This is used for internal package references. |
@@ -1083,7 +1105,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@MIMETYPE` |
+| Attribute | `mets/fileSec/fileGrp/file/@MIMETYPE` |
 |-----------------------|-----------|
 | Name | File mimetype |
 | Description | The media/mime type of the referenced file. |
@@ -1091,7 +1113,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@SIZE` |
+| Attribute | `mets/fileSec/fileGrp/file/@SIZE` |
 |-----------------------|-----------|
 | Name | File size |
 | Description | Size of the referenced file; this MUST be in bytes. |
@@ -1099,7 +1121,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@CREATED` |
+| Attribute | `mets/fileSec/fileGrp/file/@CREATED` |
 |-----------------------|-----------|
 | Name | File creation datetime |
 | Description | The creation date and time of the referenced file. |
@@ -1107,7 +1129,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@CHECKSUM` |
+| Attribute | `mets/fileSec/fileGrp/file/@CHECKSUM` |
 |-----------------------|-----------|
 | Name | File checksum |
 | Description | The checksum of the referenced file. |
@@ -1119,7 +1141,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Name | File checksum type |
 | Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | ["HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL"] |
+| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -1282,10 +1304,12 @@ It provides links between elements and metadata files located elsewhere in the p
 | Element/Attribute | `mets/structMap[@TYPE='PHYSICAL']` |
 |-----------------------|-----------|
 | Name | Type of structural description |
-| Description | The mets/structMap/@TYPE attribute MUST take the value “PHYSICAL”. |
+| Description | The `mets/structMap/@TYPE` attribute MUST take the value `PHYSICAL`. |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
+
+<mark class="miel">Ik zou de lezer in de beschrijving niet verwarren met de afkorting CSIP; het is al moeilijk genoeg. Ik zou eerder zeggen dat dit nodig is om duidelijk te maken dat het over compliance met E-ARK Common Specification for Information Packages gaat.</mark>
 
 | Element/Attribute | `mets/structMap[@LABEL='CSIP']` |
 |-----------------------|-----------|
@@ -1338,7 +1362,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']` |
 |-----------------------|-----------|
 | Name | Metadata division label |
-| Description | The metadata `div` element’s @LABEL attribute value MUST be “Metadata”. |
+| Description | The metadata `div` element’s `@LABEL` attribute value MUST be `Metadata`. |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1543,6 +1567,8 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
+<mark class="miel">Ik zou overwegen om een example voor de lijst van elementen/attributen te plaatsen, want anders is het vrij abstract.
+
 ***Example***
 
 ```xml
@@ -1590,6 +1616,8 @@ It also contains preservation metadata about the SIP as a whole.
 ***Requirements***
 
 - The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
+
+<mark class="miel">Onderstaande header lijkt mij overbodig.</mark>
 
 #### dc.xml
 
@@ -1695,6 +1723,8 @@ The `/preservation` directory contains preservation metadata about the (sub-)IE(
 
 - The `/preservation` directory MUST contain exactly one file: `premis.xml`.
 
+<mark class="miel">Onderstaande header lijkt mij overbodig.</mark>
+
 #### premis.xml
 
 The `premis.xml` file at the package-level contains preservation metadata about the (sub-)IE(s) of the SIP, and about the SIP as a whole.
@@ -1705,8 +1735,8 @@ More detailed preservation information can also be described using PREMIS events
 ***Requirements***
 
 - The `premis.xml` file MUST contain a PREMIS object for each IE and sub-IE in the SIP.
-- Each PREMIS object MUST contain a unique identifier.
-- Each PREMIS object MUST contain a checksum.
+- Each PREMIS object in the `premis.xml` MUST contain a unique identifier.
+- Each PREMIS object in the `premis.xml` MUST contain a checksum.
 - The `premis.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the SIP as a whole.
 
 ***Example***

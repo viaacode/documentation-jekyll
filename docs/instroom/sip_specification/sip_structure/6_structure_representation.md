@@ -57,20 +57,22 @@ The `/representation_*`  directory contains all information about a certain repr
 It contains both descriptive and preservation metadata, as well as the actual media files making up the representation.
 Each `/representation_*` directory contains its own `mets.xml` file which acts similarly as the package `mets.xml` and serves as an inventory of the files and directories of the representation level.
 
+<mark class="miel">documentation en schemas directories moeten uitgelegd worden, ook al zijn ze optioneel. Mag kort.</mark>
+
 ***Requirements***
 
-- A `/representation_*` directory MUST contain exactly one mets.xml file.
+- A `/representation_*` directory MUST contain exactly one `mets.xml` file.
 - A `/representation_*` directory MUST contain exactly one `/metadata` directory.
 - A `/representation_*` directory MUST contain exactly one `/data` directory.
 - A `/representation_*` directory MAY contain exactly one `/documentation` directory.
 - A `/representation_*` directory MAY contain exactly one `/schemas` directory.
 
-### mets.xml (file)
+## mets.xml (file)
 
 The `mets.xml` file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in [the section package mets.xml](#metsxml-file).
 Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same requirements, where possible, as the package `mets.xml` file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `mets` and `metsHdr` sections.
 
-#### mets section
+### \<mets\> section
 
 ***Requirements***
 
@@ -166,7 +168,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 </mets>
 ```
 
-#### metsHdr section
+### \<metsHdr\> section
 
 ***Requirements***
 
@@ -258,7 +260,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00"/>
 ```
 
-### /data (directory)
+## /data (directory)
 
 The `/data` directory contains the payload files of the SIP, also known as the media files or the essence.
 Depending on the use-case and the content partner, these files can be digital pictures, videos, audio... 
@@ -268,7 +270,7 @@ Depending on the use-case and the content partner, these files can be digital pi
 - The `/data` directory MUST NOT contain any subdirectories.
 - All files in the `/data` directory MUST be referenced in the corresponding representation mets.
 
-### /metadata (directory)
+## /metadata (directory)
 
 The `/metadata` directory contains both descriptive and preservation metadata about the representation and the media files at the representation level.
 
@@ -276,7 +278,7 @@ The `/metadata` directory contains both descriptive and preservation metadata ab
 
 - The `/metadata` directory MUST contain exactly two subdirectories: `/descriptive` and `/preservation`.
 
-#### /descriptive (directory)
+### /descriptive (directory)
 
 The `/descriptive` directory contains descriptive metadata about the representation of the representation level.
 
@@ -284,7 +286,6 @@ The `/descriptive` directory contains descriptive metadata about the representat
 
 - The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
 
-##### dc.xml (file)
 
 The `dc.xml` file of the representation level follows the same requirements of the `dc.xml` file of the package level discussed in section [dc.xml](#dcxml).
 
@@ -313,7 +314,7 @@ The `dc.xml` file of the representation level follows the same requirements of t
 </resource> 
 ```
 
-#### /preservation (directory)
+### /preservation (directory)
 
 The `/preservation` directory contains preservation metadata about the representation and the media files of the representation level.
 
@@ -321,9 +322,9 @@ The `/preservation` directory contains preservation metadata about the represent
 
 - The `/preservation` directory MUST contain exactly one file: `premis.xml`.
 
-##### premis.xml (file)
-
 <mark>vraag: hier nog een soort tabel bij, zoals bij de METS of de DC?</mark>
+<mark class="miel">Ik denk dat het kwa data model en XML ok is. Er wordt gerefereerd naar de PREMIS standaard en er is een voorbeeld.</mark>
+<mark class="miel">Het voorbeeld  roept wel wat vragen op rond IDs en relatie met de rest van de spec. Dit moet wel goed uitgelegd worden</mark>
 
 The `premis.xml` file of the representation level contains preservation metadata about the representation and the media files of the representation level.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.

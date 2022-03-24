@@ -19,10 +19,11 @@ Status: WIP
 
 <mark class="miel">Afkorting CP is nog niet geintroduceerd?</mark>
 
-A bag is a compressed directory that serves as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
-It conforms to the [BagIt 1.0 specification (RFC 8493)](https://www.rfc-editor.org/rfc/rfc8493.html).
-A bag only has a practical purpose as a transfer container between a CP's archive and meemoo's ingest space.
-The bag will be unpacked during ingest and will be deleted after processing.
+The bag is the top level of the meemoo SIP and is in essence as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
+It is a compressed directory that conforms to the [BagIt 1.0 specification (RFC 8493)](https://www.rfc-editor.org/rfc/rfc8493.html).
+
+A bag has a sole practical purpose as a transfer container between a CP's archive and meemoo's ingest space.
+Therefore, it will be unpacked during ingest and is deleted after processing.
 As such it will not appear in the meemoo archive as a separate entity.
 
 ***Requirements***
