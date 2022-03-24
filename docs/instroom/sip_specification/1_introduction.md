@@ -9,20 +9,26 @@ Status: WIP
 {: .label .label-yellow }
 # Introduction
 
-Digital collections contain a wealth of content and information stored in various types of digital file formats accompanied by metadata defined in a variety of standards.
-This poses a challenge for digital archives seeking a scalable way to ingest and disseminate an ever-growing number of digital objects.
-As a digital archive for over 160 content partners, we at meemoo encounter this challenge on a daily basis.  
-This has led to the development of the current SIP specification, in an attempt to standardize the delivery of (media) content and metadata by meemoo's content partners.
+This document specifies the meemoo Submission Information Package (SIP), which describes how data and metadata should be packaged when delivered to meemoo for ingest.
+As a digital archive for over 160 content partners, meemoo ingests and disseminates an ever-growing number of digital objects.
+These collections contain a wealth of content and information stored in various types of digital file formats.
+They are accompanied by metadata that is described in a variety of formats.
+Therefore, the current SIP specification was developed to standardize the delivery of (media) content and metadata by meemoo's content partners and increase scalability and sustainability.
 
-This introduction includes a high-level conformance section of standards and requirements for implementers.
-This is followed by a section of terminology definitions and a section about the data types in the meemoo SIP.
-In the final section we introduce a fictional use-case of meemoo's SIP specification that we will use as a running example throughout the text.
+The meemoo SIP uses a three-level hierarchical directory structure (_bag - package - representation_) to aggregate and describe media assets, including video, audio, images, captions, and text files.
+A meemoo SIP is a valid [BagIt bag](https://www.rfc-editor.org/rfc/rfc8493.html) that contains a valid [E-ARK SIP](https://earksip.dilcis.eu/). 
+
+At the lowest directory level, the _representation level_, these assets are described in aggregate as digital representations.
+One level higher, the _package_ directory level, embodies the represented content or [_intellectual entity_](/2_core-concepts#ie), such as the work that is being depicted.
+Finally, the _bag_ directory level bundles everything together for transport. 
+
+Metadata can occur at every SIP level to add administrative, structural, descriptive, and preservation information about the data and its context.
+Examples are the author of a representation, the author of what the representation represents (ie. the intellectual entity), or the creation date of a reprentation.
+Metadata are written down in XML files using the common vocabularies [METS](https://www.loc.gov/standards/mets), [DCMI Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/), and [PREMIS](https://www.loc.gov/standards/premis/).
 
 ## How to Read this Specification
 
-<mark>vraag: hoe verder zinvol onderverdelen? subsecties rond typography/keywords?</mark>
-
-This document is a detailed specification of the Submission Information Package for ingestion into the meemoo archive. The document is primarily intended for the following audiences:
+This document is primarily intended for the following audiences:
 
 - Archivists delivering media resources with accompanying metadata to meemoo for long-term preservation.
 - Service providers such as digitization companies that integrate with the ingestion flow of meemoo.
@@ -43,11 +49,13 @@ Except sections explicitly marked as informative, all guidelines, examples and n
 To indicate if and how often a metadata element can occur, this specification uses syntax for cardinality from the [Unified Modeling Language](https://www.omg.org/spec/UML/2.5.1/PDF).
 This is outlined in the table below.
 
+<mark class="miel">Gebruiken wij alle onderstaande?</mark>
+
 | UML Syntax | Cardinality                                                                      |
 | ---------- | -------------------------------------------------------------------------------- |
-| 0..1       | The element can either not occur or occur at most exactly once.                  |
-| 1..1       | The element must occur exactly once.                                             |
-| 1..2       | The element must occur at least once but cannot occur more than twice.           |
-| 2..4       | The element must occur at least twice but cannot occur more than four times.     |
-| 1..*       | The element must occur at least once and can occur an unlimited number of times. |
-| m..n       | At least m but no more than n instances.                                         |
+| `0..1`       | The element can either not occur or occur at most exactly once.                  |
+| `1..1`       | The element must occur exactly once.                                             |
+| `1..2`       | The element must occur at least once but cannot occur more than twice.           |
+| `2..4`       | The element must occur at least twice but cannot occur more than four times.     |
+| `1..*`       | The element must occur at least once and can occur an unlimited number of times. |
+| `m..n`       | At least m but no more than n instances.                                         |

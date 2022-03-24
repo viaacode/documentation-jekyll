@@ -11,22 +11,38 @@ nav_exclude:  false
 <mark>to do: definities verzamelen uit spec. eenmaal af</mark>
 <mark>vraag: welke termen moeten hier zeker komen?</mark>
 
-| Term                | Explanation |
-| ------------------- | ----------- |
-| content partner     |             |
-| bag                 |             |
-| content             |             |
-| content profile     |             |
-| sidecar             |             |
-| essence             |             |
-| OAIS                |             |
-| intellectual entity |             |
-| package             |             |
-| SIP                 |             |
+<dl>
+    <dt>Content partner</dt>
+    <dd></dd>
+    <dt>Bag</dt>
+    <dd></dd>
+    <dt>Content</dt>
+    <dd></dd>
+    <dt>Content Profile</dt>
+    <dd></dd>
+    <dt>Sidecar</dt>
+    <dd></dd>
+    <dt>Essence</dt>
+    <dd></dd>
+    <dt>OAIS</dt>
+    <dd></dd>
+    <dt>Intellectual Entity</dt>
+    <dd></dd>
+    <dt>Package</dt>
+    <dd></dd>
+    <dt>SIP</dt>
+    <dd></dd>
+    <dt>Respresentation</dt>
+    <dd></dd>
+    <dt>Unicode</dt>
+    <dd></dd>
+    <dt>XML</dt>
+    <dd></dd>
+</dl>
 
-## Used Datatypes
+## Datatypes
 
-<mark>TODO: introductie paragraaf</mark>
+In the context of noting metadata values, the following datatypes are mentioned throughout this specification:
 
 | Datatype       | Definition |
 | -------------- | ---------- |
