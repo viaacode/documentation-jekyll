@@ -112,6 +112,3 @@ callouts:
     title: Note
     color: blue
 
-aux_links:
-  "Organizations API V2":
-    - "/docs/org-api"
