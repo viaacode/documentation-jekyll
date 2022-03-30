@@ -49,13 +49,10 @@ Except sections explicitly marked as informative, all guidelines, examples and n
 To indicate if and how often a metadata element can occur, this specification uses syntax for cardinality from the [Unified Modeling Language](https://www.omg.org/spec/UML/2.5.1/PDF).
 This is outlined in the table below.
 
-<mark class="miel">Gebruiken wij alle onderstaande?</mark>
-
 | UML Syntax | Cardinality                                                                      |
 | ---------- | -------------------------------------------------------------------------------- |
 | `0..1`       | The element can either not occur or occur at most exactly once.                  |
+| `0..*`       | The element can either not occur or can occur an unlimited number of times.      |
 | `1..1`       | The element must occur exactly once.                                             |
-| `1..2`       | The element must occur at least once but cannot occur more than twice.           |
-| `2..4`       | The element must occur at least twice but cannot occur more than four times.     |
 | `1..*`       | The element must occur at least once and can occur an unlimited number of times. |
 | `m..n`       | At least m but no more than n instances.                                         |
