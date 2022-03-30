@@ -1030,7 +1030,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Name | Documentation file group |
 | Description | All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value “Documentation”. |
 | Datatype | / |
-| Cardinality | 1..n |
+| Cardinality | 1..* |
 | Obligation | MUST |
 
 | Element/Attribute | `mets/fileSec/fileGrp[@USE='Schemas']` |
@@ -1038,7 +1038,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Name | Schema file group |
 | Description | All XML schemas used in the information package must be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value “Schemas”. |
 | Datatype | / |
-| Cardinality | 1..n |
+| Cardinality | 1..* |
 | Obligation | MUST |
 
 | Element/Attribute | `mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]` |
@@ -1046,7 +1046,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Name | Representations file group |
 | Description | A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value starting with `Representations` followed by the path to the folder where the _representation level_ `mets.xml` file is placed. |
 | Datatype | / |
-| Cardinality | 1..n |
+| Cardinality | 1..* |
 | Obligation | MUST |
 
 | Element/Attribute | `mets/fileSec/fileGrp/@ADMID` |
@@ -1094,7 +1094,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Name | File |
 | Description | The `file` elements contain descriptions of the actual media file objects. |
 | Datatype | / |
-| Cardinality | 1..n |
+| Cardinality | 1..* |
 | Obligation | MUST |
 
 | Attribute | `mets/fileSec/fileGrp/file/@ID` |
