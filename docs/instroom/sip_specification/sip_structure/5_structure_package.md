@@ -20,14 +20,6 @@ Status: WIP
 The package level is stored in the `/data` directory of the [bag](4_structure_bag) and consists at least of a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
 It contains information about the (sub)IE(s) of the SIP and the SIP as a whole.
 
-***Requirements***
-
-- The `/data` directory MUST contain exactly one `mets.xml` file.
-- The `/data` directory MUST contain exactly one `/metadata` directory.
-- The `/data` directory MUST contain exactly one `/representations` directory.
-- The `/data` directory MAY contain exactly one `/documentation` directory.
-- The `/data` directory MAY contain exactly one `/schemas` directory.
-
 ***Example***
 
 ```plaintext
@@ -48,6 +40,14 @@ root_directory
    └──representations
       │   ...
 ```
+
+***Requirements***
+
+- The `/data` directory MUST contain exactly one `mets.xml` file.
+- The `/data` directory MUST contain exactly one `/metadata` directory.
+- The `/data` directory MUST contain exactly one `/representations` directory.
+- The `/data` directory MAY contain exactly one `/documentation` directory.
+- The `/data` directory MAY contain exactly one `/schemas` directory.
 
 ## mets.xml (file)
 
@@ -86,6 +86,29 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 </mark>
 
 <mark class="miel">Veel van onderstaande komen niet voor het voorbeeld. Ik zou mss een minimaal (MUST + SHOULD) en een maximaal (met alle MAY) voorbeeld doen.</mark>
+
+***Example***
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<mets xmlns="http://www.loc.gov/METS/"
+      xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" 
+      xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      OBJID="uuid-cbee2999-1db5-4a69-9260-f216dee75623"
+      TYPE="OTHER" 
+      csip:OTHERTYPE="Photographs – Digital" 
+      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
+
+  <metsHdr>...</metsHdr>
+  <dmdSec>...</dmdSec>
+  <amdSec>...</amdSec>
+  <fileSec>...</fileSec>
+  <structMap>...</structMap>
+
+</mets>
+```
 
 ***Requirements***
 
@@ -152,37 +175,13 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/@LABEL` |
+| Attribute | `mets/@LABEL` |
 |-----------------------|-----------|
 | Name | Package name |
 | Description | An optional short text describing the contents of the package. |
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | MAY |
-
-
-***Example***
-
-```xml
-<?xml version='1.0' encoding='UTF-8'?>
-<mets xmlns="http://www.loc.gov/METS/"
-      xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" 
-      xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-      xmlns:xlink="http://www.w3.org/1999/xlink" 
-      OBJID="uuid-cbee2999-1db5-4a69-9260-f216dee75623"
-      TYPE="OTHER" 
-      csip:OTHERTYPE="Photographs – Digital" 
-      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
-
-  <metsHdr>etc.</metsHdr>
-  <dmdSec>etc.</dmdSec>
-  <amdSec>etc.</amdSec>
-  <fileSec>etc.</fileSec>
-  <structMap>etc.</structMap>
-
-</mets>
-```
 
 ### \<metsHdr\> section
 
@@ -200,6 +199,28 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 
 This element contains administrative metadata about the SIP such as its creator and its creation software.
 It does so by using separate `agent` tags for every role in the SIPs creation and submission process.
+
+***Example***
+
+```xml
+<metsHdr CREATEDATE="2022-02-16T10:01:15.014+02:00" csip:OAISPACKAGETYPE="SIP">
+  <!-- information about the software -->
+  <agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
+    <name>meemoo SIP creator</name>
+    <note csip:NOTETYPE="SOFTWARE VERSION">0.1.</note>
+  </agent>
+  <!-- information about the archival creator-->
+  <agent ROLE="ARCHIVIST" TYPE="ORGANIZATION">
+    <name>Flemish Cat Museum</name>
+    <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
+  </agent>
+  <!-- information about the submitting organisation -->
+  <agent ROLE="CREATOR" TYPE="ORGANIZATION">
+    <name>Flemish Cat Museum</name>
+    <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
+  </agent>
+</metsHdr>
+```
 
 ***Requirements***
 
@@ -438,8 +459,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 
 <mark class="miel">Het onderstaande element mets/metsHdr/agent is al eens gedefineerd?</mark>
 
-<mark class="miel">Als iets geen datatype kan hebben, laat het dan weg</mark>
-
 | Element | `mets/metsHdr/agent` |
 |-----------------------|-----------|
 | Name | Preservation agent |
@@ -519,28 +538,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Cardinality | 0..* |
 | Obligation | MAY |
 
-***Example***
-
-```xml
-<metsHdr CREATEDATE="2022-02-16T10:01:15.014+02:00" csip:OAISPACKAGETYPE="SIP">
-  <!-- information about the software -->
-  <agent ROLE="CREATOR" TYPE="OTHER" OTHERTYPE="SOFTWARE">
-    <name>meemoo SIP creator</name>
-    <note csip:NOTETYPE="SOFTWARE VERSION">0.1.</note>
-  </agent>
-  <!-- information about the archival creator-->
-  <agent ROLE="ARCHIVIST" TYPE="ORGANIZATION">
-    <name>Flemish Cat Museum</name>
-    <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
-  </agent>
-  <!-- information about the submitting organisation -->
-  <agent ROLE="CREATOR" TYPE="ORGANIZATION">
-    <name>Flemish Cat Museum</name>
-    <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-m30wc4t</note>
-  </agent>
-</metsHdr>
-```
-
 ### \<dmdSec\> section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
@@ -553,125 +550,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 The `dmdSec` element (short for 'descriptive metadata section') contains descriptive metadata about the (sub)IE(s) in the SIP.
 The `dmdSec` can either embed metadata within the element itself or contain pointers to the location of descriptive metadata files located in the `/metadata/descriptive` directory of the package level.
 In order to maintain the readability of the `mets.xml` file, it is recommended to store the descriptive metadata in dedicated files.
-
-***Requirements***
-
-| Element/Attribute | `mets/dmdSec` |
-|-----------------------|-----------|
-| Name | Descriptive metadata section |
-| Description | Wrapper element that contains either embedded descriptive metadata or a reference to (a) separate descriptive metadata file(s) in the directory /metadata/descriptive.<br>It MUST be used if descriptive metadata for the package content is available. <br>Each descriptive metadata section (`dmdsec`) contains a single description and MUST be repeated for multiple descriptions, when available.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. |
-| Cardinality | 0..* |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/dmdSec/@ID` |
-|-----------------------|-----------|
-| Name | Descriptive metadata section identifier |
-| Description | A unique identifier for the `dmdSec` used for internal package references.<br>It MUST be unique within the SIP. |
-| Datatype | UUID |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/dmdSec/@CREATED` |
-|-----------------------|-----------|
-| Name | Descriptive metadata creation datetime |
-| Description | Creation date and time of the descriptive metadata in this section. |
-| Datatype | EDTF |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/dmdSec/@STATUS` |
-|-----------------------|-----------|
-| Name | Status of the descriptive metadata |
-| Description | Describes the status of the `dmdSec` which is supported by the profile. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `CURRENT`<br>`SUPERSEDED` |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/dmdSec/mdRef` 
-|-----------------------|-----------|
-| Name | Reference to the document with the descriptive metadata (when not embedded within the `dmdSec`) |
-| Description | Reference to the descriptive metadata file(s) when located in the /metadata/descriptive directory.<br> |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/dmdSec/mdRef[@LOCTYPE='URL']` |
-|-----------------------|-----------|
-| Name | Type of locator |
-| Description | Indication of the locator type used to refer to the descriptive metadata file(s) in the /metadata/descriptive directory.<br>It MUST always be used with the value "URL". |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/dmdSec/mdRef[@xlink:type='simple']` |
-|-----------------------|-----------|
-| Name | Type of link |
-| Description | This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link. |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/dmdSec/mdRef/@xlink:href` |
-|-----------------------|-----------|
-| Name | Resource location |
-| Description | Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the `/metadata/descriptive` directory.<br> <br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath.  |
-| Datatype | URL |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
-
-| Element/Attribute | `mets/dmdSec/mdRef/@MDTYPE` |
-|-----------------------|-----------|
-| Name | Type of descriptive metadata |
-| Description | Specification of the type of metadata that is used in the externally located descriptive metadata file(s) in the `/metadata/descriptive` directory. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/dmdSec/mdRef/@MIMETYPE` |
-|-----------------------|-----------|
-| Name | File mime type |
-| Description | The media/mime type of the referenced file. |
-| Datatype | IANA mime type |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/dmdSec/mdRef/@SIZE` |
-|-----------------------|-----------|
-| Name | File size |
-| Description | Size of the referenced file; this MUST be in bytes. |
-| Datatype | Integer |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/dmdSec/mdRef/@CREATED` |
-|-----------------------|-----------|
-| Name | File creation datetime |
-| Description | The creation date and time of the referenced file. |
-| Datatype | EDTF |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/dmdSec/mdRef/@CHECKSUM` |
-|-----------------------|-----------|
-| Name | File checksum |
-| Description | The checksum of the referenced file. |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
-
-| Element/Attribute | `mets/dmdSec/mdRef/@CHECKSUMTYPE` |
-|-----------------------|-----------|
-| Name | File checksum type |
-| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
-| Cardinality | 1..1 |
-| Obligation | MUST |
 
 ***Example***
 
@@ -719,6 +597,125 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 </dmdSec>
 ```
 
+***Requirements***
+
+| Element | `mets/dmdSec` |
+|-----------------------|-----------|
+| Name | Descriptive metadata section |
+| Description | Wrapper element that contains either embedded descriptive metadata or a reference to (a) separate descriptive metadata file(s) in the directory /metadata/descriptive.<br>It MUST be used if descriptive metadata for the package content is available. <br>Each descriptive metadata section (`dmdsec`) contains a single description and MUST be repeated for multiple descriptions, when available.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. |
+| Cardinality | 0..* |
+| Obligation | SHOULD |
+
+| Attribute | `mets/dmdSec/@ID` |
+|-----------------------|-----------|
+| Name | Descriptive metadata section identifier |
+| Description | A unique identifier for the `dmdSec` used for internal package references.<br>It MUST be unique within the SIP. |
+| Datatype | UUID |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/dmdSec/@CREATED` |
+|-----------------------|-----------|
+| Name | Descriptive metadata creation datetime |
+| Description | Creation date and time of the descriptive metadata in this section. |
+| Datatype | EDTF |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/dmdSec/@STATUS` |
+|-----------------------|-----------|
+| Name | Status of the descriptive metadata |
+| Description | Describes the status of the `dmdSec` which is supported by the profile. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `CURRENT`<br>`SUPERSEDED` |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element | `mets/dmdSec/mdRef` 
+|-----------------------|-----------|
+| Name | Reference to the document with the descriptive metadata (when not embedded within the `dmdSec`) |
+| Description | Reference to the descriptive metadata file(s) when located in the /metadata/descriptive directory.<br> |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Attribute | `mets/dmdSec/mdRef[@LOCTYPE='URL']` |
+|-----------------------|-----------|
+| Name | Type of locator |
+| Description | Indication of the locator type used to refer to the descriptive metadata file(s) in the /metadata/descriptive directory.<br>It MUST always be used with the value "URL". |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/dmdSec/mdRef[@xlink:type='simple']` |
+|-----------------------|-----------|
+| Name | Type of link |
+| Description | This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/dmdSec/mdRef/@xlink:href` |
+|-----------------------|-----------|
+| Name | Resource location |
+| Description | Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the `/metadata/descriptive` directory.<br> <br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath.  |
+| Datatype | URL |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
+
+| Attribute | `mets/dmdSec/mdRef/@MDTYPE` |
+|-----------------------|-----------|
+| Name | Type of descriptive metadata |
+| Description | Specification of the type of metadata that is used in the externally located descriptive metadata file(s) in the `/metadata/descriptive` directory. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/dmdSec/mdRef/@MIMETYPE` |
+|-----------------------|-----------|
+| Name | File mime type |
+| Description | The media/mime type of the referenced file. |
+| Datatype | IANA mime type |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/dmdSec/mdRef/@SIZE` |
+|-----------------------|-----------|
+| Name | File size |
+| Description | Size of the referenced file; this MUST be in bytes. |
+| Datatype | Integer |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/dmdSec/mdRef/@CREATED` |
+|-----------------------|-----------|
+| Name | File creation datetime |
+| Description | The creation date and time of the referenced file. |
+| Datatype | EDTF |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/dmdSec/mdRef/@CHECKSUM` |
+|-----------------------|-----------|
+| Name | File checksum |
+| Description | The checksum of the referenced file. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
+
+| Attribute | `mets/dmdSec/mdRef/@CHECKSUMTYPE` |
+|-----------------------|-----------|
+| Name | File checksum type |
+| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
 ### \<amdSec\> section
 
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
@@ -729,227 +726,6 @@ The `amdSec` can either embed metadata (with the use of `digiprovMD` elements) o
 In order to maintain the readability of the `mets.xml` file, it is recommended to store the preservation metadata in the dedicated `premis.xml` file.
 
 <mark class="miel">Ik heb het einde van bovenstaande zin aangepast. Klopt dit?</mark>
-
-***Requirements***
-
-| Element/Attribute | `mets/amdSec` |
-|-----------------------|-----------|
-| Name | Administrative metadata section |
-| Description | Wrapper element that contains either embedded preservation metadata or a reference to (a) separate preservation metadata file(s) in the directory /metadata/preservation.<br>It MUST be used if preservation metadata for the package content is available.<br>All preservation metadata MUST be present in a single `amdSec` element.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/amdSec/digiprovMD` |
-|-----------------------|-----------|
-| Name | Digital provenance metadata |
-| Description | Wrapper element for including preservation information using the PREMIS standard.<br>Each piece of PREMIS metadata MUST be included in a separate `digiprovMD` element.<br>If preservation metadata in PREMIS is embedded within the mets.xml file, it is recommended to follow <a href="https://www.loc.gov/standards/premis/guidelines2017-premismets.pdf" target="_blank" rel="noopener noreferrer">the 2017 version of PREMIS in METS Guidelines</a>. |
-| Cardinality | 0..* |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/@ID` |
-|-----------------------|-----------|
-| Name | Digital provenance metadata identifier |
-| Description | A unique identifier used for internal package references.<br>It MUST be unique within the SIP. |
-| Datatype | UUID |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/@STATUS` |
-|-----------------------|-----------|
-| Name | Status of the digital provenance metadata |
-| Description | Describes the status of the `digiprovMD` which is supported by the profile. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | ["CURRENT`<br>`SUPERSEDED"] |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef` |
-|-----------------------|-----------|
-| Name | Reference to the document with the digital provenance metadata (when not embedded within the `mets.xml` file). |
-| Description | Reference to the preservation metadata file(s) when located in the `/metadata/preservation` directory. |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef[@LOCTYPE='URL']` |
-|-----------------------|-----------|
-| Name | Type of locator |
-| Description | Indication of the locator type used to refer to the preservation metadata file(s) in the `/metadata/preservation` directory.<br>It MUST always be used with the value "URL". |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef[@xlink:type='simple']` |
-|-----------------------|-----------|
-| Name | Type of link |
-| Description | This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link. |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef/@xlink:href` |
-|-----------------------|-----------|
-| Name | Resource location |
-| Description | Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the `/metadata/preservation` directory.<br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath. |
-| Datatype | URL |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef/@MDTYPE` |
-|-----------------------|-----------|
-| Name | Type of preservation metadata |
-| Description | Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef/@MIMETYPE` |
-|-----------------------|-----------|
-| Name | File mime type |
-| Description | The media/mime type of the referenced file. |
-| Datatype | IANA mime type |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef/@SIZE` |
-|-----------------------|-----------|
-| Name | File size |
-| Description | Size of the referenced file; this MUST be in bytes. |
-| Datatype | Integer |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef/@CREATED` |
-|-----------------------|-----------|
-| Name | File creation datetime |
-| Description | The creation date and time of the referenced file. |
-| Datatype | EDTF |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef/@CHECKSUM` |
-|-----------------------|-----------|
-| Name | File checksum |
-| Description | The checksum of the referenced file. |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE` |
-|-----------------------|-----------|
-| Name | File checksum type |
-| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD` |
-|-----------------------|-----------|
-| Name | Rights metadata |
-| Description | A simple rights statement may be used to describe general permissions for the package.<br><br>Individual representations SHOULD state their specific rights in their representation mets.xml file.<br>Standards for rights metadata include <a href="http://rightsstatements.org/" target="_blank" rel="noopener noreferrer">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements" target="_blank" rel="noopener noreferrer">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema" target="_blank" rel="noopener noreferrer">METS Rights Schema</a> and PREMIS.<br> |
-| Cardinality | 0..* |
-| Obligation | MAY |
-
-| Element/Attribute | `mets/amdSec/rightsMD/@ID` |
-|-----------------------|-----------|
-| Name | Rights metadata identifier |
-| Description | A unique identifier used for internal package references.<br>It MUST be unique within the SIP. |
-| Datatype | UUID |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/@STATUS` |
-|-----------------------|-----------|
-| Name | Status of the rights metadata |
-| Description | Describes the status of the `digiprovMD` which is supported by the profile. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `CURRENT`<br>`SUPERSEDED` |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef` |
-|-----------------------|-----------|
-| Name | Reference to the document with the rights metadata (when not embedded within the mets.xml file). |
-| Description | Reference to the rights metadata file(s) when located in the /metadata/preservation directory. |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef[@LOCTYPE='URL']` |
-|-----------------------|-----------|
-| Name | Type of locator |
-| Description | Indication of the locator type used to refer to the rights metadata file(s) in the `/metadata/preservation` directory.<br>It MUST always be used with the value `URL`. |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef[@xlink:type='simple']` |
-|-----------------------|-----------|
-| Name | Type of link |
-| Description | This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link. |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef/@xlink:href` |
-|-----------------------|-----------|
-| Name | Resource location |
-| Description | Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the `/metadata/preservation` directory.<br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath. |
-| Datatype | URL |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef/@MDTYPE` |
-|-----------------------|-----------|
-| Name | Type of preservation metadata |
-| Description | Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the `/metadata/preservation` directory. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef/@MIMETYPE` |
-|-----------------------|-----------|
-| Name | File mime type |
-| Description | The media/mime type of the referenced file. |
-| Datatype | IANA mime type |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef/@SIZE` |
-|-----------------------|-----------|
-| Name | File size |
-| Description | Size of the referenced file; this MUST be in bytes. |
-| Datatype | Integer |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef/@CREATED` |
-|-----------------------|-----------|
-| Name | File creation datetime |
-| Description | The creation date and time of the referenced file. |
-| Datatype | EDTF |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef/@CHECKSUM` |
-|-----------------------|-----------|
-| Name | File checksum |
-| Description | The checksum of the referenced file. |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Element/Attribute | `mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE` |
-|-----------------------|-----------|
-| Name | File checksum type |
-| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
-| Cardinality | 1..1 |
-| Obligation | MUST |
 
 ***Example***
 
@@ -971,6 +747,227 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 </amdSec>
 ```
 
+***Requirements***
+
+| Element | `mets/amdSec` |
+|-----------------------|-----------|
+| Name | Administrative metadata section |
+| Description | Wrapper element that contains either embedded preservation metadata or a reference to (a) separate preservation metadata file(s) in the directory /metadata/preservation.<br>It MUST be used if preservation metadata for the package content is available.<br>All preservation metadata MUST be present in a single `amdSec` element.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element | `mets/amdSec/digiprovMD` |
+|-----------------------|-----------|
+| Name | Digital provenance metadata |
+| Description | Wrapper element for including preservation information using the PREMIS standard.<br>Each piece of PREMIS metadata MUST be included in a separate `digiprovMD` element.<br>If preservation metadata in PREMIS is embedded within the mets.xml file, it is recommended to follow <a href="https://www.loc.gov/standards/premis/guidelines2017-premismets.pdf" target="_blank" rel="noopener noreferrer">the 2017 version of PREMIS in METS Guidelines</a>. |
+| Cardinality | 0..* |
+| Obligation | SHOULD |
+
+| Attribute | `mets/amdSec/digiprovMD/@ID` |
+|-----------------------|-----------|
+| Name | Digital provenance metadata identifier |
+| Description | A unique identifier used for internal package references.<br>It MUST be unique within the SIP. |
+| Datatype | UUID |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/digiprovMD/@STATUS` |
+|-----------------------|-----------|
+| Name | Status of the digital provenance metadata |
+| Description | Describes the status of the `digiprovMD` which is supported by the profile. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | ["CURRENT`<br>`SUPERSEDED"] |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element | `mets/amdSec/digiprovMD/mdRef` |
+|-----------------------|-----------|
+| Name | Reference to the document with the digital provenance metadata (when not embedded within the `mets.xml` file). |
+| Description | Reference to the preservation metadata file(s) when located in the `/metadata/preservation` directory. |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef[@LOCTYPE='URL']` |
+|-----------------------|-----------|
+| Name | Type of locator |
+| Description | Indication of the locator type used to refer to the preservation metadata file(s) in the `/metadata/preservation` directory.<br>It MUST always be used with the value "URL". |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef[@xlink:type='simple']` |
+|-----------------------|-----------|
+| Name | Type of link |
+| Description | This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef/@xlink:href` |
+|-----------------------|-----------|
+| Name | Resource location |
+| Description | Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the `/metadata/preservation` directory.<br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath. |
+| Datatype | URL |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef/@MDTYPE` |
+|-----------------------|-----------|
+| Name | Type of preservation metadata |
+| Description | Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef/@MIMETYPE` |
+|-----------------------|-----------|
+| Name | File mime type |
+| Description | The media/mime type of the referenced file. |
+| Datatype | IANA mime type |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef/@SIZE` |
+|-----------------------|-----------|
+| Name | File size |
+| Description | Size of the referenced file; this MUST be in bytes. |
+| Datatype | Integer |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef/@CREATED` |
+|-----------------------|-----------|
+| Name | File creation datetime |
+| Description | The creation date and time of the referenced file. |
+| Datatype | EDTF |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef/@CHECKSUM` |
+|-----------------------|-----------|
+| Name | File checksum |
+| Description | The checksum of the referenced file. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE` |
+|-----------------------|-----------|
+| Name | File checksum type |
+| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Element | `mets/amdSec/rightsMD` |
+|-----------------------|-----------|
+| Name | Rights metadata |
+| Description | A simple rights statement may be used to describe general permissions for the package.<br><br>Individual representations SHOULD state their specific rights in their representation mets.xml file.<br>Standards for rights metadata include <a href="http://rightsstatements.org/" target="_blank" rel="noopener noreferrer">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements" target="_blank" rel="noopener noreferrer">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema" target="_blank" rel="noopener noreferrer">METS Rights Schema</a> and PREMIS.<br> |
+| Cardinality | 0..* |
+| Obligation | MAY |
+
+| Attribute | `mets/amdSec/rightsMD/@ID` |
+|-----------------------|-----------|
+| Name | Rights metadata identifier |
+| Description | A unique identifier used for internal package references.<br>It MUST be unique within the SIP. |
+| Datatype | UUID |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/@STATUS` |
+|-----------------------|-----------|
+| Name | Status of the rights metadata |
+| Description | Describes the status of the `digiprovMD` which is supported by the profile. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `CURRENT`<br>`SUPERSEDED` |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Element | `mets/amdSec/rightsMD/mdRef` |
+|-----------------------|-----------|
+| Name | Reference to the document with the rights metadata (when not embedded within the mets.xml file). |
+| Description | Reference to the rights metadata file(s) when located in the /metadata/preservation directory. |
+| Cardinality | 0..1 |
+| Obligation | SHOULD |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef[@LOCTYPE='URL']` |
+|-----------------------|-----------|
+| Name | Type of locator |
+| Description | Indication of the locator type used to refer to the rights metadata file(s) in the `/metadata/preservation` directory.<br>It MUST always be used with the value `URL`. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef[@xlink:type='simple']` |
+|-----------------------|-----------|
+| Name | Type of link |
+| Description | This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef/@xlink:href` |
+|-----------------------|-----------|
+| Name | Resource location |
+| Description | Indication of the actual location of the resource.<br>This is only used if the metadata is externally located in the `/metadata/preservation` directory.<br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath. |
+| Datatype | URL |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef/@MDTYPE` |
+|-----------------------|-----------|
+| Name | Type of preservation metadata |
+| Description | Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the `/metadata/preservation` directory. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef/@MIMETYPE` |
+|-----------------------|-----------|
+| Name | File mime type |
+| Description | The media/mime type of the referenced file. |
+| Datatype | IANA mime type |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef/@SIZE` |
+|-----------------------|-----------|
+| Name | File size |
+| Description | Size of the referenced file; this MUST be in bytes. |
+| Datatype | Integer |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef/@CREATED` |
+|-----------------------|-----------|
+| Name | File creation datetime |
+| Description | The creation date and time of the referenced file. |
+| Datatype | EDTF |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef/@CHECKSUM` |
+|-----------------------|-----------|
+| Name | File checksum |
+| Description | The checksum of the referenced file. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
+| Attribute | `mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE` |
+|-----------------------|-----------|
+| Name | File checksum type |
+| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
+| Datatype | String; fixed vocabulary |
+| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
+| Cardinality | 1..1 |
+| Obligation | MUST |
+
 ### \<fileSec\> section
 
 <mark>vraag: die DOCUMENTATION en SCHEMAS directories lijken mij niet zinvol te houden als MUST?</mark>
@@ -987,20 +984,101 @@ The `fileSec` element (short for 'file section') lists all files of the package 
 It contains references to the representation `mets.xml` files of the different representations, but does not list other files of those representations.
 The listing of other representation files (i.e. metadata files and media files) is left to the respective representation `mets.xml` files.
 
+***Example***
+
+```xml
+<fileSec ID="uuid-0c53fd9b-f640-4def-a872-2e4622f691d9">
+  <fileGrp USE="root" ID="uuid-6c78980c-bdfc-4e2e-b19a-579e5b285055">
+    <fileGrp USE="metadata" ID="uuid-bd087c44-ee3f-48e9-9031-9190a60c8e13">
+      <fileGrp USE="metadata/descriptive" ID="uuid-5194aca6-97b6-448c-b385-b892bc0c362c">
+        <file ID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"
+              MIMETYPE="text/xml"
+              SIZE="647"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="968ebd5cb0283c086c333928eff6b85e"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./metadata/descriptive/dc_ie.xml" />
+        </file>
+        <file ID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"
+              MIMETYPE="text/xml"
+              SIZE="710"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./metadata/descriptive/dc_subie_1.xml" />
+        </file>
+        <file ID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"
+                MIMETYPE="text/xml"
+                SIZE="723"
+                CREATED="2022-02-16T10:01:15.014+02:00"
+                CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" 
+                CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./metadata/descriptive/dc_subie_2.xml" />
+        </file>
+      </fileGrp>
+      <fileGrp USE="metadata/preservation" ID="uuid-caea98b8-ae09-412d-8f25-dd50ba6a30cd">
+        <file ID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"
+              MIMETYPE="text/xml"
+              SIZE="6199"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="083a409c2627798e53e3ebbba90cc867"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./metadata/preservation/premis.xml" />
+        </file>
+      </fileGrp>
+    </fileGrp>
+    <fileGrp USE="representations" ID="uuid-779319d9-cc1f-41b3-a49e-28d169e0d066">
+      <fileGrp USE="representations/representation_1" ID="uuid-700c97da-3164-4863-9e58-d6d62156052e">
+        <file ID="uuid-0fe40ffc-b5f3-465e-af3a-d266d94453b7"
+              MIMETYPE="text/xml"
+              SIZE="4196"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="0e3033891343eb8bbb15454cd64a27ab"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple"
+                  xlink:href="./representations/representation_1/mets.xml" />
+        </file>
+      </fileGrp>
+      <fileGrp USE="representations/representation_2" ID="uuid-c0fed1c6-96c8-4f15-9e82-abc7be2e981c">
+        <file ID="uuid-625629a4-e5f8-4087-9114-66e4a943bf50"
+              MIMETYPE="text/xml"
+              SIZE="3814"
+              CREATED="2022-02-16T10:01:15.014+02:00"
+              CHECKSUM="3d82bb35d526e4850551f2eca0678d0c"
+              CHECKSUMTYPE="MD5" >
+          <FLocat LOCTYPE="URL"
+                  xlink:type="simple" 
+                  xlink:href="./representations/representation_2/mets.xml" />
+        </file>  
+      </fileGrp>
+    </fileGrp>
+  </fileGrp>
+</fileSec>
+```
+
 ***Requirements***
 
 - There MUST NOT be more than one `fileSec` element in the `mets.xml` file.
 - The `fileSec` element of the package `mets.xml` file MUST NOT reference anything from the different representation levels, EXCEPT the representation `mets.xml` files.
 - Each representation `mets.xml` MUST be referenced within its own `fileGrp` element within the `fileSec` element of the package `mets.xml`.
 
-| Element/Attribute | `mets/fileSec` |
+| Element | `mets/fileSec` |
 |-----------------------|-----------|
 | Name | mets/fileSec |
 | Description | Wrapper element for the file section of the METS which contains different `fileGrp` elements which acts as a manifest/an inventory of the package level and its content.<br>Only a single `fileSec` element should be present.<br>In the case that a package only contains metadata updates, i.e. exclusively metadata files, then no file references need to be added to this section. |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/fileSec/@ID` |
+| Attribute | `mets/fileSec/@ID` |
 |-----------------------|-----------|
 | Name | File section identifier |
 | Description | A unique identifier for the file section used for internal package references. |
@@ -1008,30 +1086,28 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-<mark class="miel">Wat is n in onderstaande?</mark>
-
-| Element/Attribute | `mets/fileSec/fileGrp[@USE='Documentation']` |
+| Attribute | `mets/fileSec/fileGrp[@USE='Documentation']` |
 |-----------------------|-----------|
 | Name | Documentation file group |
 | Description | All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value “Documentation”. |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp[@USE='Schemas']` |
+| Attribute | `mets/fileSec/fileGrp[@USE='Schemas']` |
 |-----------------------|-----------|
 | Name | Schema file group |
 | Description | All XML schemas used in the information package must be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value “Schemas”. |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]` |
+| Attribute | `mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]` |
 |-----------------------|-----------|
 | Name | Representations file group |
 | Description | A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value starting with `Representations` followed by the path to the folder where the _representation level_ `mets.xml` file is placed. |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/@ADMID` |
+| Attribute | `mets/fileSec/fileGrp/@ADMID` |
 |-----------------------|-----------|
 | Name | Reference to administrative metadata |
 | Description | Reference to the ID of the corresponding administrative metadata section, in case an `amdSec` was used. |
@@ -1039,7 +1115,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element/Attribute | `mets/@csip:CONTENTINFORMATIONTYPE="MIXED"|mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]/@csip:CONTENTINFORMATIONTYPE` |
+| Attribute | `mets/@csip:CONTENTINFORMATIONTYPE="MIXED"|mets/fileSec/fileGrp[@USE=[starts-with('Representations')]]/@csip:CONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Content Information Type Specification |
 | Description |
@@ -1180,88 +1256,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-
-***Example***
-
-```xml
-<fileSec ID="uuid-0c53fd9b-f640-4def-a872-2e4622f691d9">
-  <fileGrp USE="root" ID="uuid-6c78980c-bdfc-4e2e-b19a-579e5b285055">
-    <fileGrp USE="metadata" ID="uuid-bd087c44-ee3f-48e9-9031-9190a60c8e13">
-      <fileGrp USE="metadata/descriptive" ID="uuid-5194aca6-97b6-448c-b385-b892bc0c362c">
-        <file ID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"
-              MIMETYPE="text/xml"
-              SIZE="647"
-              CREATED="2022-02-16T10:01:15.014+02:00"
-              CHECKSUM="968ebd5cb0283c086c333928eff6b85e"
-              CHECKSUMTYPE="MD5" >
-          <FLocat LOCTYPE="URL"
-                  xlink:type="simple"
-                  xlink:href="./metadata/descriptive/dc_ie.xml" />
-        </file>
-        <file ID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"
-              MIMETYPE="text/xml"
-              SIZE="710"
-              CREATED="2022-02-16T10:01:15.014+02:00"
-              CHECKSUM="5bdf4aeb87b4027ef9ce309888de556a"
-              CHECKSUMTYPE="MD5" >
-          <FLocat LOCTYPE="URL"
-                  xlink:type="simple"
-                  xlink:href="./metadata/descriptive/dc_subie_1.xml" />
-        </file>
-        <file ID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"
-                MIMETYPE="text/xml"
-                SIZE="723"
-                CREATED="2022-02-16T10:01:15.014+02:00"
-                CHECKSUM="e470d7b12651d358d14d7f172ae2fad2" 
-                CHECKSUMTYPE="MD5" >
-          <FLocat LOCTYPE="URL"
-                  xlink:type="simple"
-                  xlink:href="./metadata/descriptive/dc_subie_2.xml" />
-        </file>
-      </fileGrp>
-      <fileGrp USE="metadata/preservation" ID="uuid-caea98b8-ae09-412d-8f25-dd50ba6a30cd">
-        <file ID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"
-              MIMETYPE="text/xml"
-              SIZE="6199"
-              CREATED="2022-02-16T10:01:15.014+02:00"
-              CHECKSUM="083a409c2627798e53e3ebbba90cc867"
-              CHECKSUMTYPE="MD5" >
-          <FLocat LOCTYPE="URL"
-                  xlink:type="simple"
-                  xlink:href="./metadata/preservation/premis.xml" />
-        </file>
-      </fileGrp>
-    </fileGrp>
-    <fileGrp USE="representations" ID="uuid-779319d9-cc1f-41b3-a49e-28d169e0d066">
-      <fileGrp USE="representations/representation_1" ID="uuid-700c97da-3164-4863-9e58-d6d62156052e">
-        <file ID="uuid-0fe40ffc-b5f3-465e-af3a-d266d94453b7"
-              MIMETYPE="text/xml"
-              SIZE="4196"
-              CREATED="2022-02-16T10:01:15.014+02:00"
-              CHECKSUM="0e3033891343eb8bbb15454cd64a27ab"
-              CHECKSUMTYPE="MD5" >
-          <FLocat LOCTYPE="URL"
-                  xlink:type="simple"
-                  xlink:href="./representations/representation_1/mets.xml" />
-        </file>
-      </fileGrp>
-      <fileGrp USE="representations/representation_2" ID="uuid-c0fed1c6-96c8-4f15-9e82-abc7be2e981c">
-        <file ID="uuid-625629a4-e5f8-4087-9114-66e4a943bf50"
-              MIMETYPE="text/xml"
-              SIZE="3814"
-              CREATED="2022-02-16T10:01:15.014+02:00"
-              CHECKSUM="3d82bb35d526e4850551f2eca0678d0c"
-              CHECKSUMTYPE="MD5" >
-          <FLocat LOCTYPE="URL"
-                  xlink:type="simple" 
-                  xlink:href="./representations/representation_2/mets.xml" />
-        </file>  
-      </fileGrp>
-    </fileGrp>
-  </fileGrp>
-</fileSec>
-```
-
 ### \<structMap\> section
 
 <mark>vraag: welk label moet de overkoepelende `<div>` krijgen?</mark>
@@ -1269,6 +1263,37 @@ The listing of other representation files (i.e. metadata files and media files) 
 
 The `structMap` element outlines the hierarchical structure of the package level of the SIP.
 It provides links between elements and metadata files located elsewhere in the package level.
+
+***Example***
+
+```xml
+<structMap ID="uuid-1ce2cef4-cb9a-4649-8983-c916870cf2b4" TYPE="PHYSICAL" LABEL="CSIP">
+  <div ID="uuid-33cd69c8-b297-40e1-9491-1b5db58890bd" LABEL="">
+    <div ID="uuid-c0a73bbc-d6f3-42a0-b5e1-f53a4601101b" LABEL="metadata">
+      <div ID="uuid-9aae35c0-9d17-43c7-824a-4722ef3039cd" LABEL="descriptive">
+        <fptr FILEID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"/>
+        <fptr FILEID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"/>
+        <fptr FILEID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"/>
+      </div>
+      <div ID="uuid-ee9ce21e-8264-45cc-b877-7e266647a335" LABEL="preservation">
+        <fptr FILEID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"/>
+      </div>
+    </div>
+    <div ID="uuid-17ff6cea-cd84-46ad-b9a8-250809f9e2c7" LABEL="representations">
+      <div ID="uuid-c5cab13b-aced-4024-bbc3-d38c682602d2" LABEL="representation_1">
+        <mptr xlink:type="simple"
+              xlink:href="./representations/representation_1/mets.xml"
+              LOCTYPE="URL" />
+      </div>
+      <div ID="uuid-daeba358-46ee-4363-b2a2-bd745c128f6f" LABEL="representation_2">
+        <mptr xlink:type="simple"
+              xlink:href="./representations/representation_2/mets.xml"
+              LOCTYPE="URL" />
+      </div>
+    </div>
+  </div>
+</structMap>
+```
 
 ***Requirements***
 
@@ -1538,39 +1563,6 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-<mark class="miel">Ik zou overwegen om een example voor de lijst van elementen/attributen te plaatsen, want anders is het vrij abstract.
-
-***Example***
-
-```xml
-<structMap ID="uuid-1ce2cef4-cb9a-4649-8983-c916870cf2b4" TYPE="PHYSICAL" LABEL="CSIP">
-  <div ID="uuid-33cd69c8-b297-40e1-9491-1b5db58890bd" LABEL="">
-    <div ID="uuid-c0a73bbc-d6f3-42a0-b5e1-f53a4601101b" LABEL="metadata">
-      <div ID="uuid-9aae35c0-9d17-43c7-824a-4722ef3039cd" LABEL="descriptive">
-        <fptr FILEID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911"/>
-        <fptr FILEID="uuid-2a9fec8f-e28c-4bf0-a709-3e12d5e22dfb"/>
-        <fptr FILEID="uuid-b9a83999-f058-4aeb-a81a-b311613016c5"/>
-      </div>
-      <div ID="uuid-ee9ce21e-8264-45cc-b877-7e266647a335" LABEL="preservation">
-        <fptr FILEID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0"/>
-      </div>
-    </div>
-    <div ID="uuid-17ff6cea-cd84-46ad-b9a8-250809f9e2c7" LABEL="representations">
-      <div ID="uuid-c5cab13b-aced-4024-bbc3-d38c682602d2" LABEL="representation_1">
-        <mptr xlink:type="simple"
-              xlink:href="./representations/representation_1/mets.xml"
-              LOCTYPE="URL" />
-      </div>
-      <div ID="uuid-daeba358-46ee-4363-b2a2-bd745c128f6f" LABEL="representation_2">
-        <mptr xlink:type="simple"
-              xlink:href="./representations/representation_2/mets.xml"
-              LOCTYPE="URL" />
-      </div>
-    </div>
-  </div>
-</structMap>
-```
-
 ## /metadata (directory)
 
 The `/metadata` directory contains both descriptive and preservation metadata about the (sub-)IE(s) at the package level.
@@ -1597,6 +1589,30 @@ It also contains preservation metadata about the SIP as a whole.
 
 The `dc.xml` file at the package-level contains descriptive metadata about the (sub-)IE(s) of the SIP.
 It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schema in order to facilitate a basic description with a limited number of metadata.
+
+***Example***
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<resource xmlns:dcterms="http://purl.org/dc/terms/"
+          xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/" >
+
+  <!-- general title for the resource -->
+  <dcterms:title>Felis Catus Flamens</dcterms:title>
+
+  <!-- id for the FCF in an imaginary cat database -->
+  <dcterms:identifier>FCatus_FelisCatusFlamens_01</dcterms:identifier>
+
+  <!-- date unknown -->
+  <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
+
+  <!-- multiple keywords about the resource -->
+  <dcterms:subject>Cat</dcterms:subject>
+  <dcterms:subject>Felis Catus Flamens</dcterms:subject>
+
+</resource> 
+```
 
 ***Requirements***
 
@@ -1661,30 +1677,6 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-***Example***
-
-```xml
-<?xml version='1.0' encoding='UTF-8'?>
-<resource xmlns:dcterms="http://purl.org/dc/terms/"
-          xmlns:xs="http://www.w3.org/2001/XMLSchema/"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/" >
-
-  <!-- general title for the resource -->
-  <dcterms:title>Felis Catus Flamens</dcterms:title>
-
-  <!-- id for the FCF in an imaginary cat database -->
-  <dcterms:identifier>FCatus_FelisCatusFlamens_01</dcterms:identifier>
-
-  <!-- date unknown -->
-  <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
-
-  <!-- multiple keywords about the resource -->
-  <dcterms:subject>Cat</dcterms:subject>
-  <dcterms:subject>Felis Catus Flamens</dcterms:subject>
-
-</resource> 
-```
-
 ### /preservation (directory)
 
 The `/preservation` directory contains preservation metadata about the (sub-)IE(s) at package level.
@@ -1700,14 +1692,6 @@ The `/preservation` directory contains preservation metadata about the (sub-)IE(
 The `premis.xml` file at the package-level contains preservation metadata about the (sub-)IE(s) of the SIP, and about the SIP as a whole.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.
 More detailed preservation information can also be described using PREMIS events and PREMIS agents.
-
-
-***Requirements***
-
-- The `premis.xml` file MUST contain a PREMIS object for each IE and sub-IE in the SIP.
-- Each PREMIS object in the `premis.xml` MUST contain a unique identifier.
-- Each PREMIS object in the `premis.xml` MUST contain a checksum.
-- The `premis.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the SIP as a whole.
 
 ***Example***
 
@@ -1780,6 +1764,13 @@ More detailed preservation information can also be described using PREMIS events
   </premis:object>
 </premis:premis>
 ```
+
+***Requirements***
+
+- The `premis.xml` file MUST contain a PREMIS object for each IE and sub-IE in the SIP.
+- Each PREMIS object in the `premis.xml` MUST contain a unique identifier.
+- Each PREMIS object in the `premis.xml` MUST contain a checksum.
+- The `premis.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the SIP as a whole.
 
 ## /representations (directory)
 

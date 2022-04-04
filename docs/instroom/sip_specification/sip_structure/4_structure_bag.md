@@ -26,6 +26,17 @@ A bag has a sole practical purpose as a transfer container between a CP's archiv
 Therefore, it will be unpacked during ingest and is deleted after processing.
 As such it will not appear in the meemoo archive as a separate entity.
 
+***Example***
+
+```plaintext
+root_directory
+│── manifest-md5.txt
+│── bagit.txt
+│
+└──data
+   │   ...
+```
+
 ***Requirements***
 
 - A bag MUST be a compressed archive file.
@@ -40,31 +51,10 @@ As such it will not appear in the meemoo archive as a separate entity.
 - A bag SHOULD be a ZIP or TAR file.
 - A bag MAY contain a `bag-info.txt` file.
 
-***Example***
-
-```plaintext
-root_directory
-│── manifest-md5.txt
-│── bagit.txt
-│
-└──data
-   │   ...
-```
-
 ## manifest-md5.txt (file)
 
 The `manifest-md5.txt` file lists all files in the bag across the different directories together with their corresponding checksums created with the MD5 message-digest algorithm.
 It is used during processing of the bag to allow for data integrity checking.
-
-***Requirements***
-
-- The `manifest-md5.txt` file MUST list all files contained in the bag.
-- The `manifest-md5.txt` file MUST NOT list any directories.
-- The `manifest-md5.txt` file MUST NOT list any files outside of the bag.
-- Each line of the `manifest-md5.txt` file MUST be of the form *checksum filepath*, where *filepath* is the pathname of a file relative to the bag-lelvel directory, and *checksum* is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
-- The slash ('/') character MUST be used as a path separator in *filepath*.
-- One or more linear whitespace characters (spaces or tabs) MUST separate each *checksum* from each *filepath*.
-- Each line of the `manifest-md5.txt` file MUST be terminated with an LF, a CR or a CRLF.
 
 ***Example***
 
@@ -87,15 +77,20 @@ eaa2c609ff6371712f623f5531945b44  ./bagit.txt
 2ec9403539086d7447dd91361d3c5456  ./manifest-md5.txt
 ```
 
+***Requirements***
+
+- The `manifest-md5.txt` file MUST list all files contained in the bag.
+- The `manifest-md5.txt` file MUST NOT list any directories.
+- The `manifest-md5.txt` file MUST NOT list any files outside of the bag.
+- Each line of the `manifest-md5.txt` file MUST be of the form *checksum filepath*, where *filepath* is the pathname of a file relative to the bag-lelvel directory, and *checksum* is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
+- The slash ('/') character MUST be used as a path separator in *filepath*.
+- One or more linear whitespace characters (spaces or tabs) MUST separate each *checksum* from each *filepath*.
+- Each line of the `manifest-md5.txt` file MUST be terminated with an LF, a CR or a CRLF.
+
 ## bagit.txt (file)
 
 The `bagit.txt` file contains exactly two lines in the exact order specified in the example below.
 The first line specifies to which version of the [BagIt specification](https://www.rfc-editor.org/rfc/rfc8493.html) the bag conforms, while the second line identifies the character set encoding of the bag and its files.
-
-***Requirements***
-
-- The first line of the `bagit.txt` file MUST specify the exact version of the BagIt standard.
-- The second line of the `bagit.txt` file MUST specify the character set encoding of the bag and its files.
 
 ***Example***
 
@@ -103,6 +98,11 @@ The first line specifies to which version of the [BagIt specification](https://w
 BagIt-Version: 1.0
 Tag-File-Character-Encoding: UTF-8
 ```
+
+***Requirements***
+
+- The first line of the `bagit.txt` file MUST specify the exact version of the BagIt standard.
+- The second line of the `bagit.txt` file MUST specify the character set encoding of the bag and its files.
 
 ## /data (directory)
 

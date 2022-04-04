@@ -74,6 +74,29 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 
 ### \<mets\> section
 
+***Example***
+
+```xml
+<?xml version="1.0"?>
+<mets xmlns="http://www.loc.gov/METS/"
+      xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
+      xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" 
+      TYPE="OTHER" 
+      csip:OTHERTYPE="Photographs – Digital" 
+      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
+
+<metsHdr>...</metsHdr>
+<dmdSec>...</dmdSec>
+<amdSec>...</amdSec>
+<fileSec>...</fileSec>
+<structMap>...</structMap>
+
+</mets>
+```
+
 ***Requirements***
 
 | Element | `mets` |
@@ -141,31 +164,13 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
+### \<metsHdr\> section
 
 ***Example***
 
 ```xml
-<?xml version="1.0"?>
-<mets xmlns="http://www.loc.gov/METS/"
-      xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-      xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:xlink="http://www.w3.org/1999/xlink" 
-      OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" 
-      TYPE="OTHER" 
-      csip:OTHERTYPE="Photographs – Digital" 
-      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
-
-<metsHdr>etc.</metsHdr>
-<dmdSec>etc.</dmdSec>
-<amdSec>etc.</amdSec>
-<fileSec>etc.</fileSec>
-<structMap>etc.</structMap>
-
-</mets>
+<metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00"/>
 ```
-
-### \<metsHdr\> section
 
 ***Requirements***
 
@@ -248,12 +253,6 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MAY |
 
-***Example***
-
-```xml
-<metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00"/>
-```
-
 ## /data (directory)
 
 The `/data` directory contains the media files of the SIP.
@@ -275,13 +274,6 @@ The `/metadata` directory contains both descriptive and preservation metadata ab
 ### /descriptive (directory)
 
 The `/descriptive` directory contains descriptive metadata about the representation of the representation level.
-
-***Requirements***
-
-- The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
-
-
-The `dc.xml` file of the representation level follows the same requirements of the `dc.xml` file of the package level discussed in section [dc.xml](#dcxml).
 
 ***Example***
 
@@ -308,6 +300,12 @@ The `dc.xml` file of the representation level follows the same requirements of t
 </resource> 
 ```
 
+***Requirements***
+
+- The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
+
+The `dc.xml` file of the representation level follows the same requirements of the `dc.xml` file of the package level discussed in section [dc.xml](#dcxml).
+
 ### /preservation (directory)
 
 The `/preservation` directory contains preservation metadata about the representation and the media files of the representation level.
@@ -324,14 +322,6 @@ The `premis.xml` file of the representation level contains preservation metadata
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.
 More detailed preservation information can also be described using PREMIS events and PREMIS agents.
 
-***Requirements***
-
-- The `premis.xml` file MUST contain a PREMIS object for the representation.
-- The `premis.xml` file MUST contain a PREMIS object for each media file in the `/data` directory.
-- Each PREMIS object MUST contain a unique identifier.
-- Each PREMIS object MUST contain a checksum (when applicable).
-- The `premis.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the representation and the media files.
-  
 ***Example***
 
 ```xml
@@ -436,3 +426,11 @@ More detailed preservation information can also be described using PREMIS events
 
 </premis:premis>
 ```
+
+***Requirements***
+
+- The `premis.xml` file MUST contain a PREMIS object for the representation.
+- The `premis.xml` file MUST contain a PREMIS object for each media file in the `/data` directory.
+- Each PREMIS object MUST contain a unique identifier.
+- Each PREMIS object MUST contain a checksum (when applicable).
+- The `premis.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the representation and the media files.
