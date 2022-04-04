@@ -76,17 +76,14 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 
 ***Requirements***
 
-
-
-| Element/Attribute | `mets` |
+| Element | `mets` |
 |-----------------------|-----------|
 | Name | METS root element |
 | Description | This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces: <a href="http://www.loc.gov/METS/" target="_blank" rel="noopener noreferrer">mets</a>, <a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a>, <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a>, <a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a>, <a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/@OBJID` |
+| Attribute | `mets/@OBJID` |
 |-----------------------|-----------|
 | Name | Representation identifier |
 | Description | This is a UUID identifier for the METS document. For the representation METS, this MUST be the same UUID as the one used for the corresponding representation directory. |
@@ -94,7 +91,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/@TYPE` |
+| Attribute | `mets/@TYPE` |
 |-----------------------|-----------|
 | Name | Content category |
 | Description | This attribute MUST be set to declare the category of the content held in the SIP. |
@@ -103,7 +100,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets[@TYPE="OTHER"]/@csip:OTHERTYPE` |
+| Attribute | `mets[@TYPE="OTHER"]/@csip:OTHERTYPE` |
 |-----------------------|-----------|
 | Name | Other content category |
 | Description | When the `mets/@TYPE` attribute is set to "OTHER", the `mets/@csip:OTHERTYPE` attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the `@TYPE` attribute. |
@@ -111,7 +108,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/@csip:CONTENTINFORMATIONTYPE` |
+| Attribute | `mets/@csip:CONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Content information type specification |
 | Description | This attribute is used to declare the Content Information Type Specification used when creating the SIP. |
@@ -120,7 +117,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
+| Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Other content information type specification |
 | Description | When the `mets[@csip:CONTENTINFORMATIONTYPE]` attribute is set to `OTHER`, the `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the `mets[@csip:CONTENTINFORMATIONTYPE]` attribute. |
@@ -128,7 +125,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/@PROFILE` |
+| Attribute | `mets/@PROFILE` |
 |-----------------------|-----------|
 | Name | METS profile |
 | Description | The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to [`https://earksip.dilcis.eu/profile/E-ARK-SIP.xml`](https://earksip.dilcis.eu/profile/E-ARK-SIP.xml). |
@@ -136,7 +133,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/@LABEL` |
+| Attribute | `mets/@LABEL` |
 |-----------------------|-----------|
 | Name | Package name |
 | Description | An optional short text describing the contents of the package. |
@@ -172,15 +169,14 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 
 ***Requirements***
 
-| Element/Attribute | `mets/metsHdr` |
+| Element | `mets/metsHdr` |
 |-----------------------|-----------|
 | Name | Representation header |
 | Description | General element that contains descriptive information about the representation. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/metsHdr/@CREATEDATE` |
+| Attribute | `mets/metsHdr/@CREATEDATE` |
 |-----------------------|-----------|
 | Name | Representation creation datetime |
 | Description | This attribute records the date and time the representation was created. |
@@ -188,7 +184,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/metsHdr/@LASTMODDATE` |
+| Attribute | `mets/metsHdr/@LASTMODDATE` |
 |-----------------------|-----------|
 | Name | Representation last modification datetime |
 | Description | In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the representation has been modified since its creation datetime. |
@@ -196,7 +192,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/metsHdr/@RECORDSTATUS` |
+| Attribute | `mets/metsHdr/@RECORDSTATUS` |
 |-----------------------|-----------|
 | Name | Representation status |
 | Description | A way of indicating the status of the representation and to instruct the archive on how to properly handle it.<br>If not set, the expected value is `NEW`. |
@@ -205,15 +201,14 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element/Attribute | `mets/metsHdr/agent` |
+| Element | `mets/metsHdr/agent` |
 |-----------------------|-----------|
 | Name | Agent |
 | Description | / |
-| Datatype | / |
 | Cardinality | 1..* |
 | Obligation | MAY |
 
-| Element/Attribute | `mets/metsHdr/agent/@ROLE` |
+| Attribute | `mets/metsHdr/agent/@ROLE` |
 |-----------------------|-----------|
 | Name | Agent role |
 | Description | / |
@@ -221,7 +216,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/metsHdr/agent/@TYPE` |
+| Attribute | `mets/metsHdr/agent/@TYPE` |
 |-----------------------|-----------|
 | Name | Agent type |
 | Description | / |
@@ -229,7 +224,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/metsHdr/agent/@OTHERTYPE` |
+| Attribute | `mets/metsHdr/agent/@OTHERTYPE` |
 |-----------------------|-----------|
 | Name | Agent other type |
 | Description | This attribute MUST be used if the attribute `agent/@TYPE` is set to `OTHER`. It is used to specify the exact other type that is being used. |
@@ -237,7 +232,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/metsHdr/agent/name` |
+| Element | `mets/metsHdr/agent/name` |
 |-----------------------|-----------|
 | Name | Agent name |
 | Description | / |
@@ -245,14 +240,13 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/metsHdr/agent/note` |
+| Element | `mets/metsHdr/agent/note` |
 |-----------------------|-----------|
 | Name | Agent additional information |
 | Description | / |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MAY |
-
 
 ***Example***
 

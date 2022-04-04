@@ -97,7 +97,6 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 |-----------------------|-----------|
 | Name | METS root element |
 | Description | This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces:<br>[`mets: http://www.loc.gov/METS/`](http://www.loc.gov/METS/)<br><a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a><br> <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a><br><a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a><br><a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -210,7 +209,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 |-----------------------|-----------|
 | Name | Package header |
 | Description | General element that contains descriptive information about the SIP. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -251,7 +249,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 |-----------------------|-----------|
 | Name | SIP creator software agent |
 | Description | A mandatory agent element records the software used to create the package. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -307,7 +304,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 |-----------------------|-----------|
 | Name | Archival creator agent |
 | Description | A wrapper element that enables to encode the name of the organisation or person that originally created the data being transferred. This can be different from the organisation tasked with preparing and sending the SIP to the archive (cf. 'submitting agent' below). |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
@@ -356,7 +352,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 |-----------------------|-----------|
 | Name | Submitting agent |
 | Description | The name of the organisation or person submitting the package to the archive. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -406,7 +401,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 |-----------------------|-----------|
 | Name | Contact person agent |
 | Description | Contact person for the submission of the SIP. |
-| Datatype | / |
 | Cardinality | 0..* |
 | Obligation | MAY |
 
@@ -450,7 +444,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 |-----------------------|-----------|
 | Name | Preservation agent |
 | Description | The organisation or person that preserves the package. |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
@@ -567,7 +560,6 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 |-----------------------|-----------|
 | Name | Descriptive metadata section |
 | Description | Wrapper element that contains either embedded descriptive metadata or a reference to (a) separate descriptive metadata file(s) in the directory /metadata/descriptive.<br>It MUST be used if descriptive metadata for the package content is available. <br>Each descriptive metadata section (`dmdsec`) contains a single description and MUST be repeated for multiple descriptions, when available.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. |
-| Datatype | / |
 | Cardinality | 0..* |
 | Obligation | SHOULD |
 
@@ -600,7 +592,6 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 |-----------------------|-----------|
 | Name | Reference to the document with the descriptive metadata (when not embedded within the `dmdSec`) |
 | Description | Reference to the descriptive metadata file(s) when located in the /metadata/descriptive directory.<br> |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -745,7 +736,6 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 |-----------------------|-----------|
 | Name | Administrative metadata section |
 | Description | Wrapper element that contains either embedded preservation metadata or a reference to (a) separate preservation metadata file(s) in the directory /metadata/preservation.<br>It MUST be used if preservation metadata for the package content is available.<br>All preservation metadata MUST be present in a single `amdSec` element.<br>It is possible to transfer metadata in a package using just the descriptive metadata section and/or administrative metadata section. |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -753,7 +743,6 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 |-----------------------|-----------|
 | Name | Digital provenance metadata |
 | Description | Wrapper element for including preservation information using the PREMIS standard.<br>Each piece of PREMIS metadata MUST be included in a separate `digiprovMD` element.<br>If preservation metadata in PREMIS is embedded within the mets.xml file, it is recommended to follow <a href="https://www.loc.gov/standards/premis/guidelines2017-premismets.pdf" target="_blank" rel="noopener noreferrer">the 2017 version of PREMIS in METS Guidelines</a>. |
-| Datatype | / |
 | Cardinality | 0..* |
 | Obligation | SHOULD |
 
@@ -778,7 +767,6 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 |-----------------------|-----------|
 | Name | Reference to the document with the digital provenance metadata (when not embedded within the `mets.xml` file). |
 | Description | Reference to the preservation metadata file(s) when located in the `/metadata/preservation` directory. |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -862,7 +850,6 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 |-----------------------|-----------|
 | Name | Rights metadata |
 | Description | A simple rights statement may be used to describe general permissions for the package.<br><br>Individual representations SHOULD state their specific rights in their representation mets.xml file.<br>Standards for rights metadata include <a href="http://rightsstatements.org/" target="_blank" rel="noopener noreferrer">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements" target="_blank" rel="noopener noreferrer">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema" target="_blank" rel="noopener noreferrer">METS Rights Schema</a> and PREMIS.<br> |
-| Datatype | / |
 | Cardinality | 0..* |
 | Obligation | MAY |
 
@@ -887,7 +874,6 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 |-----------------------|-----------|
 | Name | Reference to the document with the rights metadata (when not embedded within the mets.xml file). |
 | Description | Reference to the rights metadata file(s) when located in the /metadata/preservation directory. |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -1011,7 +997,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 |-----------------------|-----------|
 | Name | mets/fileSec |
 | Description | Wrapper element for the file section of the METS which contains different `fileGrp` elements which acts as a manifest/an inventory of the package level and its content.<br>Only a single `fileSec` element should be present.<br>In the case that a package only contains metadata updates, i.e. exclusively metadata files, then no file references need to be added to this section. |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -1029,7 +1014,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 |-----------------------|-----------|
 | Name | Documentation file group |
 | Description | All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value “Documentation”. |
-| Datatype | / |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
@@ -1037,7 +1021,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 |-----------------------|-----------|
 | Name | Schema file group |
 | Description | All XML schemas used in the information package must be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value “Schemas”. |
-| Datatype | / |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
@@ -1045,7 +1028,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 |-----------------------|-----------|
 | Name | Representations file group |
 | Description | A pointer to the METS document describing the representation or pointers to the content being transferred must be present in one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value starting with `Representations` followed by the path to the folder where the _representation level_ `mets.xml` file is placed. |
-| Datatype | / |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
@@ -1069,7 +1051,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 |-----------------------|-----------|
 | Name | Other Content Information Type Specification |
 | Description | When the `mets/fileSec/fileGrp/@csip:CONTENTINFORMATIONTYPE` attribute has the value `OTHER` the attribute `mets/fileSec/fileGrp/@csip:OTHERCONTENTINFORMATIONTYPE` must state a value for the Content Information Type Specification used. |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
@@ -1093,7 +1074,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 |-----------------------|-----------|
 | Name | File |
 | Description | The `file` elements contain descriptions of the media files. |
-| Datatype | / |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
@@ -1137,7 +1117,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@CHECKSUMTYPE` |
+| Attribute | `mets/fileSec/fileGrp/file/@CHECKSUMTYPE` |
 | Name | File checksum type |
 | Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
 | Datatype | String; fixed vocabulary |
@@ -1145,7 +1125,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@OWNERID` |
+| Attribute | `mets/fileSec/fileGrp/file/@OWNERID` |
 |-----------------------|-----------|
 | Name | File original identification |
 | Description | If an identifier for the file was supplied by the owner it can be recorded in this attribute. |
@@ -1153,7 +1133,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@ADMID` |
+| Attribute | `mets/fileSec/fileGrp/file/@ADMID` |
 |-----------------------|-----------|
 | Name | File reference to administrative metadata |
 | Description | If a `amdSec` (with @ID attribute) was provided, this attribute allows to reference it. |
@@ -1161,7 +1141,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/@DMDID` |
+| Attribute | `mets/fileSec/fileGrp/file/@DMDID` |
 |-----------------------|-----------|
 | Name | File reference to descriptive metadata |
 | Description | If a `dmdSec` (with @ID attribute) was provided, this attribute allows to reference it. |
@@ -1169,15 +1149,14 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/FLocat` |
+| Element | `mets/fileSec/fileGrp/file/FLocat` |
 |-----------------------|-----------|
 | Name | File locator reference |
 | Description | Element that allows for referencing the location of each external file. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/FLocat[@LOCTYPE='URL']` |
+| Attribute | `mets/fileSec/fileGrp/file/FLocat[@LOCTYPE='URL']` |
 |-----------------------|-----------|
 | Name | Type of locator |
 | Description | / |
@@ -1185,7 +1164,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/FLocat[@xlink:type='simple']` |
+| Attribute | `mets/fileSec/fileGrp/file/FLocat[@xlink:type='simple']` |
 |-----------------------|-----------|
 | Name | Type of link |
 | Description | / |
@@ -1193,7 +1172,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/fileSec/fileGrp/file/FLocat/@xlink:href` |
+| Attribute | `mets/fileSec/fileGrp/file/FLocat/@xlink:href` |
 |-----------------------|-----------|
 | Name | Resource location |
 | Description | It is recommended to use the relative location of the file in this URL. |
@@ -1293,15 +1272,14 @@ It provides links between elements and metadata files located elsewhere in the p
 
 ***Requirements***
 
-| Element/Attribute | `mets/structMap` |
+| Element | `mets/structMap` |
 |-----------------------|-----------|
 | Name | Structural description of the package |
 | Description | The `structMap` describes the highest logical structure of the IP. |
-| Datatype | / |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@TYPE='PHYSICAL']` |
+| Attribute | `mets/structMap[@TYPE='PHYSICAL']` |
 |-----------------------|-----------|
 | Name | Type of structural description |
 | Description | The `mets/structMap/@TYPE` attribute MUST take the value `PHYSICAL`. |
@@ -1311,7 +1289,7 @@ It provides links between elements and metadata files located elsewhere in the p
 
 <mark class="miel">Ik zou de lezer in de beschrijving niet verwarren met de afkorting CSIP; het is al moeilijk genoeg. Ik zou eerder zeggen dat dit nodig is om duidelijk te maken dat het over compliance met E-ARK Common Specification for Information Packages gaat.</mark>
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']` |
 |-----------------------|-----------|
 | Name | Name of the structural description |
 | Description | This requirement identifies the CSIP compliant structural map `structMap` element. |
@@ -1319,7 +1297,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/@ID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/@ID` |
 |-----------------------|-----------|
 | Name | Structural description identifier |
 | Description | A unique identifier for the structural description. This can be used for internal package references. |
@@ -1327,15 +1305,14 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div` |
+| Element | `mets/structMap[@LABEL='CSIP']/div` |
 |-----------------------|-----------|
 | Name | Main structural division |
 | Description | The division element. Each `structMap` element MUST contain one `div` element that contains possible further `div` elements of the `structMap` elements. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/@ID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/@ID` |
 |-----------------------|-----------|
 | Name | Main structural division identifier |
 | Description | A unique identifier for the main `div` element. This can be used for internal package references. |
@@ -1343,7 +1320,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']` |
 |-----------------------|-----------|
 | Name | Metadata division |
 | Description | The metadata referenced in the administrative and/or descriptive metadata section is described in the structural map with one sub division.<br>When the transfer consists of only administrative and/or descriptive metadata this is the only sub division that occurs. |
@@ -1351,7 +1328,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ID` |
 |-----------------------|-----------|
 | Name | Metadata division identifier |
 | Description | A unique identifier for the metadata `div` element. This can be used for internal package references. |
@@ -1359,7 +1336,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']` |
 |-----------------------|-----------|
 | Name | Metadata division label |
 | Description | The metadata `div` element’s `@LABEL` attribute value MUST be `Metadata`. |
@@ -1367,7 +1344,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@ADMID` |
 |-----------------------|-----------|
 | Name | Metadata division references administrative metadata |
 | Description | The administrative metadata division should reference all current administrative metadata sections.<br>All `amdSec` elements with `@STATUS='CURRENT'` SHOULD be referenced by their identifier, @ID. <br> The current `amdSec` elements' @IDs are recorded in the `div[@LABEL='Metadata']/@ADMID` attribute in a space delimited list. |
@@ -1375,7 +1352,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Metadata']/@DMDID` |
 |-----------------------|-----------|
 | Name | Metadata division references descriptive metadata |
 | Description | The descriptive metadata division should reference all current descriptive metadata sections.<br>All `dmdSec` elements with `@STATUS='CURRENT'` SHOULD be referenced by their identifier, @ID. <br> The current `dmdSec` elements' @IDs are recorded in the `div[@LABEL='Metadata']/@DMDID` attribute in a space delimited list. |
@@ -1383,7 +1360,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']` |
 |-----------------------|-----------|
 | Name | Documentation division |
 | Description | The documentation referenced in the file section file groups is described in the structural map with one sub division. |
@@ -1391,7 +1368,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/@ID` |
 |-----------------------|-----------|
 | Name | Documentation division identifier |
 | Description | A unique identifier for the documentation `div` element. This can be used for internal package references. |
@@ -1399,7 +1376,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']` |
 |-----------------------|-----------|
 | Name | Documentation division label |
 | Description | The documentation `div` element’s @LABEL attribute value MUST be “Documentation”. |
@@ -1407,15 +1384,14 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr` |
+| Element | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr` |
 |-----------------------|-----------|
 | Name | Documentation file references |
 | Description | All file groups containing documentation described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per `fptr` element. |
-| Datatype | / |
 | Cardinality | 0..* |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Documentation']/fptr/@FILEID` |
 |-----------------------|-----------|
 | Name | Documentation file group reference pointer |
 | Description | A unique identifier to the “Documentation” file group. This can be used for internal package references. |
@@ -1423,7 +1399,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']` |
 |-----------------------|-----------|
 | Name | Schema division |
 | Description | The schemas referenced in the file section file groups are described in the structural map within a single sub-division. |
@@ -1431,7 +1407,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/@ID` |
 |-----------------------|-----------|
 | Name | Schema division identifier |
 | Description | A unique identifier to the “Schemas” file group. This can be used for internal package references. |
@@ -1439,7 +1415,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']` |
 |-----------------------|-----------|
 | Name | Schema division label |
 | Description | The schemas `div` element’s @LABEL attribute value MUST be “Schemas”. |
@@ -1447,15 +1423,14 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr` |
+| Element | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr` |
 |-----------------------|-----------|
 | Name | Schema file reference |
 | Description | All file groups containing schemas described in the package are referenced via the relevant file group identifiers. <br>There MUST be one file group reference per `fptr` element. |
-| Datatype | / |
 | Cardinality | 0..* |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Schemas']/fptr/@FILEID` |
 |-----------------------|-----------|
 | Name | Schema file group reference |
 | Description | A unique identifier to the “Schemas” file group. This can be used for internal package references. |
@@ -1463,15 +1438,14 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']` |
 |-----------------------|-----------|
 | Name | Content division |
 | Description | When no representations are present the content referenced in the file section file group with @USE attribute value, “Representations” is described in the structural map as a single sub division. |
-| Datatype | / |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/@ID` |
 |-----------------------|-----------|
 | Name | Content division identifier |
 | Description | A unique identifier to the “Representations” file group. This can be used for internal package references. |
@@ -1479,7 +1453,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']` |
 |-----------------------|-----------|
 | Name | Content division label |
 | Description | The representations `div` element’s @LABEL attribute value MUST be “Representations”. |
@@ -1487,15 +1461,14 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr` |
+| Element | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr` |
 |-----------------------|-----------|
 | Name | Content division file references |
 | Description | All file groups containing content described in the package are referenced via the relevant file group identifiers.<br>There MUST be one file group reference per `fptr` element. |
-| Datatype | / |
 | Cardinality | 0..* |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']/fptr/@FILEID` |
 |-----------------------|-----------|
 | Name | Content division file group references |
 | Description | The pointer to the identifier for the “Representations” file group. |
@@ -1503,15 +1476,14 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div` |
+| Element | `mets/structMap[@LABEL='CSIP']/div/div` |
 |-----------------------|-----------|
 | Name | Representation division |
 | Description | When a package consists of multiple representations, each described by a representation level mets.xml file, there should be a discrete representation `\div` element for each representation. <br> Each representation `div` references the representation level mets.xml file, documenting the structure of the representation and its content. |
-| Datatype | / |
 | Cardinality | 0..* |
 | Obligation | SHOULD |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div/@ID` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div/@ID` |
 |-----------------------|-----------|
 | Name | Representations division identifier |
 | Description | A unique identifier that can be used for internal package references. |
@@ -1519,7 +1491,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div/@LABEL` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div/@LABEL` |
 |-----------------------|-----------|
 | Name | Representations division label |
 | Description | The package’s representation division `div` element @LABEL attribute value must be the path to the representation level mets.xml file starting with the value “Representations” followed by the main folder name, e.g. Representations/representation_1. |
@@ -1527,7 +1499,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title` |
+| Attribute | `mets/structMap[@LABEL='CSIP']/div/div/mptr/@xlink:title` |
 |-----------------------|-----------|
 | Name | Representations division file references |
 | Description | The file group containing the files described in the package are referenced via the relevant file group identifier. |
@@ -1535,15 +1507,14 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap[@LABEL='CSIP']/div/div/mptr` |
+| Element | `mets/structMap[@LABEL='CSIP']/div/div/mptr` |
 |-----------------------|-----------|
 | Name | Representation METS pointer |
 | Description | The division `div` of the specific representation includes one occurrence of the METS pointer `mptr` element, pointing to the appropriate representation mets.xml file. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap/div/div/mptr/@xlink:href` |
+| Attribute | `mets/structMap/div/div/mptr/@xlink:href` |
 |-----------------------|-----------|
 | Name | Resource location |
 | Description | Indication of the actual location of the resource.<br>As indicated by the @LOCTYPE attribute, this filepath MUST be a URL type filepath.<br>It is recommended to use the relative location of the file in this URL. |
@@ -1551,7 +1522,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap/div/div/mptr[@xlink:type='simple']` |
+| Attribute | `mets/structMap/div/div/mptr[@xlink:type='simple']` |
 |-----------------------|-----------|
 | Name | Type of link |
 | Description | This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link. |
@@ -1559,7 +1530,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `mets/structMap/div/div/mptr[@LOCTYPE='URL']` |
+| Attribute | `mets/structMap/div/div/mptr[@LOCTYPE='URL']` |
 |-----------------------|-----------|
 | Name | Type of locator |
 | Description | Indication of the locator type used to refer to the representation mets.xml files of the different representation levels.<br>It MUST always be used with the value `URL`. |
@@ -1635,15 +1606,14 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 - The `dc.xml` file MUST include the DC Terms elements outlined in the table below; besides these mandatory elements it MAY use all other terms from the DC Terms schema.
 - The `dc.xml` file MUST adhere to the restrictions on cardinality of terms outlined in the table below; if a term is not listed with a restriction on cardinality, it MAY be used multiple times.
 
-| Element/Attribute | `resource` |
+| Element | `resource` |
 |-----------------------|-----------|
 | Name | DC root element |
 | Description | This root element MUST contain <a href="https://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd" target="_blank" rel="noopener noreferrer">the XML schema namespace of DCMI Metadata Terms</a>.<br>It MUST NOT contain any other XML schema namespaces besides DCMI Metadata Terms.<br>It MUST NOT contain any attributes. |
-| Datatype | / |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `resource/identifier` |
+| Element | `resource/identifier` |
 |-----------------------|-----------|
 | Name | Identifier |
 | Description | An unambiguous and unique reference to the Intellectual Entity/Entities and/or Representation(s) present in the SIP.<br>This identifier stems from the local identification system of the content partner. |
@@ -1651,7 +1621,7 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `resource/created` |
+| Element | `resource/created` |
 |-----------------------|-----------|
 | Name | Creation date |
 | Description | Creation date of the resource. |
@@ -1659,7 +1629,7 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `resource/submitted` |
+| Element | `resource/submitted` |
 |-----------------------|-----------|
 | Name | Date submitted |
 | Description | Date of submission of the resource. |
@@ -1667,7 +1637,7 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element/Attribute | `resource/description` |
+| Element | `resource/description` |
 |-----------------------|-----------|
 | Name | Description |
 | Description | An account of the resource.<br>The `description` term MAY be used multiple times when it uses a different language.<br>The language of the description MUST be provided by a `@XML:LANG` attribute. This attribute MUST use a controlled vocabulary such as <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank" rel="noopener noreferrer">ISO 639-2</a> or <a href="https://www.iso.org/standard/39534.html" target="_blank" rel="noopener noreferrer">ISO 639-3</a>. |
@@ -1675,7 +1645,7 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Element/Attribute | `resource/issued` |
+| Element | `resource/issued` |
 |-----------------------|-----------|
 | Name | Date issued |
 | Description | Date of formal issuance of the resource. |
@@ -1683,7 +1653,7 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
-| Element/Attribute | `resource/title` |
+| Element | `resource/title` |
 |-----------------------|-----------|
 | Name | Title |
 | Description | A name given to the resource. |
