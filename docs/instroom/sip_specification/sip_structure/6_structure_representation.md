@@ -262,7 +262,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 
 ## /data (directory)
 
-The `/data` directory contains the payload files of the SIP, also known as the media files or the essence.
+The `/data` directory contains the media files of the SIP.
 Depending on the use-case and the content partner, these files can be digital pictures, videos, audio... 
 
 ***Requirements***

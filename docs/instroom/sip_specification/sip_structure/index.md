@@ -26,10 +26,8 @@ It uses a manifest file listing every file in the SIP together with its checksum
 The [_package level_](/5_structure_package) contains descriptive and preservation information about the SIP's main subject, namely the different (sub)IE(s) of which digital representations are being delivered, and preservation information about the SIP as a whole (e.g. the software used to create the SIP).
 In addition, a `mets.xml` file supplies information about the SIP's structure and administrative information about the SIP's submission (e.g. the organization that submits the SIP).
 
-<mark class="miel">De terminologie moet consistenter ("payload files, also known as the essence or the media files"). Kies een term, definieer die en gebruik die consequent over het hele document.</mark>
-
-The [_representation level_](/6_structure_representation) contains the actual payload files, also known as the essence or the media files, grouped in representation folders.
-Each representation folder also contains descriptive and preservation information about a specific representation of the (sub)IE(s) of the SIP situated at the _package level_ (cf. supra) and preservation information about the essence or media files.
+The [_representation level_](/6_structure_representation) contains the media files, grouped in representation folders.
+Each representation folder also contains descriptive and preservation information about a specific representation of the (sub)IE(s) of the SIP situated at the _package level_ (cf. supra) and preservation information about the media files.
 
 ***Example***
 

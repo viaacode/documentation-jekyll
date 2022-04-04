@@ -1092,7 +1092,7 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Element | `mets/fileSec/fileGrp/file` |
 |-----------------------|-----------|
 | Name | File |
-| Description | The `file` elements contain descriptions of the actual media file objects. |
+| Description | The `file` elements contain descriptions of the media files. |
 | Datatype | / |
 | Cardinality | 1..* |
 | Obligation | MUST |
