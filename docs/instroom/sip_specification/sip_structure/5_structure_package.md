@@ -716,8 +716,6 @@ The `amdSec` element (short for 'administrative metadata section') contains pres
 The `amdSec` can either embed metadata (with the use of `digiprovMD` elements) or contain pointers to the location of preservation metadata files located in the `/metadata/preservation` directory of the package level.
 In order to maintain the readability of the `mets.xml` file, it is recommended to store the preservation metadata in the dedicated `premis.xml` file.
 
-<mark class="miel">Ik heb het einde van bovenstaande zin aangepast. Klopt dit?</mark>
-
 ***Example***
 
 ```xml
@@ -750,7 +748,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Element | `mets/amdSec/digiprovMD` |
 |-----------------------|-----------|
 | Name | Digital provenance metadata |
-| Description | Wrapper element for including preservation information using the PREMIS standard.<br>Each piece of PREMIS metadata MUST be included in a separate `digiprovMD` element.<br>If preservation metadata in PREMIS is embedded within the mets.xml file, it is recommended to follow <a href="https://www.loc.gov/standards/premis/guidelines2017-premismets.pdf" target="_blank" rel="noopener noreferrer">the 2017 version of PREMIS in METS Guidelines</a>. |
+| Description | Wrapper element for including preservation information using the PREMIS standard.<br>Each piece of PREMIS metadata MUST be included in a separate `digiprovMD` element.<br>If preservation metadata in PREMIS is embedded within the mets.xml file, it is recommended to follow [the 2017 version of PREMIS in METS Guidelines](https://www.loc.gov/standards/premis/guidelines2017-premismets.pdf).|
 | Cardinality | 0..* |
 | Obligation | SHOULD |
 
@@ -857,7 +855,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Element | `mets/amdSec/rightsMD` |
 |-----------------------|-----------|
 | Name | Rights metadata |
-| Description | A simple rights statement may be used to describe general permissions for the package.<br><br>Individual representations SHOULD state their specific rights in their representation mets.xml file.<br>Standards for rights metadata include <a href="http://rightsstatements.org/" target="_blank" rel="noopener noreferrer">RightsStatements.org</a>, <a href="https://pro.europeana.eu/page/available-rights-statements" target="_blank" rel="noopener noreferrer">Europeana rights statements info</a>, <a href="https://github.com/mets/METS-Rights-Schema" target="_blank" rel="noopener noreferrer">METS Rights Schema</a> and PREMIS.<br> |
+| Description | A simple rights statement may be used to describe general permissions for the package.<br><br>Individual representations SHOULD state their specific rights in their representation mets.xml file.<br>Standards for rights metadata include [RightsStatements.org](http://rightsstatements.org/), [Europeana rights statements info](https://pro.europeana.eu/page/available-rights-statements), [METS Rights Schema](https://github.com/mets/METS-Rights-Schema) and [PREMIS Rights Entities](https://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf#page=188).|
 | Cardinality | 0..* |
 | Obligation | MAY |
 
@@ -1616,7 +1614,7 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 | Element | `resource` |
 |-----------------------|-----------|
 | Name | DC root element |
-| Description | This root element MUST contain <a href="https://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd" target="_blank" rel="noopener noreferrer">the XML schema namespace of DCMI Metadata Terms</a>.<br>It MUST NOT contain any other XML schema namespaces besides DCMI Metadata Terms.<br>It MUST NOT contain any attributes. |
+| Description | This root element MUST contain [the XML schema namespace of DCMI Metadata Terms](https://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd).<br>It MUST NOT contain any other XML schema namespaces besides DCMI Metadata Terms.<br>It MUST NOT contain any attributes. |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -1647,7 +1645,7 @@ It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.du
 | Element | `resource/description` |
 |-----------------------|-----------|
 | Name | Description |
-| Description | An account of the resource.<br>The `description` term MAY be used multiple times when it uses a different language.<br>The language of the description MUST be provided by a `@XML:LANG` attribute. This attribute MUST use a controlled vocabulary such as <a href="https://www.loc.gov/standards/iso639-2/php/code_list.php" target="_blank" rel="noopener noreferrer">ISO 639-2</a> or <a href="https://www.iso.org/standard/39534.html" target="_blank" rel="noopener noreferrer">ISO 639-3</a>. |
+| Description | An account of the resource.<br>The `description` term MAY be used multiple times when it uses a different language.<br>The language of the description MUST be provided by a `@XML:LANG` attribute. This attribute MUST use a controlled vocabulary such as [ISO 639-2](https://www.loc.gov/standards/iso639-2/php/code_list.php) or [ISO 639-3](https://www.iso.org/standard/39534.html). |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1765,7 +1763,7 @@ More detailed preservation information can also be described using PREMIS events
 
 ## /representations (directory)
 
-The `/representations` directory contains a separate `/representation_*` (where `*` is a positive integer) directory for each representation of the (sub)IE(s) of the package level. 
+The `/representations` directory contains a separate `/representation_*` (where `*` is a positive integer) directory for each representation of the (sub)IE(s) of the package level.
 
 ***Requirements***
 
