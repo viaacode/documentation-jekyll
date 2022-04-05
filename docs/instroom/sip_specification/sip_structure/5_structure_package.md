@@ -62,11 +62,6 @@ Each of the `mets.xml` files at the [representation level](6_structure_represent
 
 ### \<mets\> section
 
-<mark class="miel">Tabellen hier ogekuist. Overal nog Element/Attribute vervangen door Element of Attribute. Waarden of tags die nu tussen "" staan tussen \`\` zetten.HTML links mogen terug markdown worden.</mark>
-
-<mark>vraag: meemoo namespace toevoegen, cf. RDF?</mark>
-<mark class="miel">Enkel als die gebruikt wordt!</mark>
-
 <mark>vraag: dekken de content categories van EARK al onze use-cases?</mark>
 <mark class="miel">Checken met team digi</mark>
 
@@ -114,12 +109,10 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 
 <mark class="miel">Ik mis meemoo specifieke context bij de beschrijving van de elementen/attributen. Het is nog te veel generieke EARK en te weinig "wat betekent dit bij meemoo."</mark>
 
-<mark class="miel">Namespaces onderaan voluit schrijven en niet als link (eerste als vb).  Letterlijk zeggen wat moet toegevoegd worden. Prefixes zijn indicatief. </mark>
-
 | Element | `mets` |
 |-----------------------|-----------|
 | Name | METS root element |
-| Description | This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces:<br>[`mets: http://www.loc.gov/METS/`](http://www.loc.gov/METS/)<br><a href="https://dilcis.eu/XML/METS/CSIPExtensionMETS" target="_blank" rel="noopener noreferrer">csip</a><br> <a href="https://dilcis.eu/XML/METS/SIPExtensionMETS" target="_blank" rel="noopener noreferrer">sip</a><br><a href="http://www.w3.org/2001/XMLSchema-instance" target="_blank" rel="noopener noreferrer">xsi</a><br><a href="http://www.w3.org/1999/xlink" target="_blank" rel="noopener noreferrer">xlink</a>. |
+| Description | This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces:<br>[`mets: http://www.loc.gov/METS/`](http://www.loc.gov/METS/)<br>[`csip: https://dilcis.eu/XML/METS/CSIPExtensionMETS`](https://dilcis.eu/XML/METS/CSIPExtensionMETS)<br>[`sip: https://dilcis.eu/XML/METS/SIPExtensionMETS`](https://dilcis.eu/XML/METS/SIPExtensionMETS)<br>[`xsi: http://www.w3.org/2001/XMLSchema-instance`](http://www.w3.org/2001/XMLSchema-instance)<br>[`xlink: http://www.w3.org/1999/xlink`](http://www.w3.org/1999/xlink)|
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -223,8 +216,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 ```
 
 ***Requirements***
-
-<mark class="miel">De lijst met elementen/ attributen is vrij lang. Ik zou na elk element + attributen een klein voorbeeld toevoegen. </mark>
 
 | Element | `mets/metsHdr` |
 |-----------------------|-----------|
