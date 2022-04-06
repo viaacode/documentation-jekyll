@@ -984,7 +984,7 @@ De dimensie van het beeld, uitgedrukt in pixels.
 MD5 (Message Digest Algorithm 5) is een veelgebruikte standaard om de integriteit van digitale bestanden te controleren.
 
 | **XML element**        | `<md5/>`                                                      |
-| **Datatype**           | [MD5 Checksum] (https://nl.wikipedia.org/wiki/MD5#MD5-hashes) |
+| **Datatype**           | [MD5 Checksum](https://nl.wikipedia.org/wiki/MD5#MD5-hashes) |
 | **Herhaalbaar**        | Nee                                                           |
 
 ```xml
