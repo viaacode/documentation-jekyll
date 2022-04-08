@@ -1,0 +1,7 @@
+57b80737cf73277db0529db6dad6f118  ./data/mets.xml
+e805e77f45817306acad7faac5c3a121  ./data/representations/representation_1/mets.xml
+b7ae37f6094794e313402b9d064978e8  ./data/representations/representation_1/data/1445.jpeg
+b44d9763eed77f397a7167d0a04b3981  ./data/representations/representation_1/metadata/preservation/premis.xml
+c7b23c92781548fadd2e7336c506a2bf  ./data/metadata/descriptive/dc_ie.xml
+d784fa8b6d98d27699781bd9a7cf19f0  ./bagit.txt
+be5fdba37b47c6c1cabe15cae84b2fd4  ./manifest-md5.txt
