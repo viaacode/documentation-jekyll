@@ -167,9 +167,9 @@
     <schema:partOfSeries>
       <schema:CreativeWorkSeries>VIAA.dc_titles.reeks + VIAA.dc_titles.serie</schema:CreativeWorkSeries>
     </schema:partOfSeries>
-    <schema:partOfSeries>
+    <schema:partOfSeason>
       <schema:CreativeWorkSeason>VIAA.dc_titles.seizoen</schema:CreativeWorkSeason>
-    </schema:partOfSeries>
+    </schema:partOfSeason>
     <schema:seasonNumber>VIAA.dc_titles.seizoennummer</schema:seasonNumber>
   </premis:object>
 </premis:premis> 
