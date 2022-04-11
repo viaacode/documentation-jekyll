@@ -14,8 +14,8 @@
         </agent>
         <!-- information about the submitting organisation -->
         <agent ROLE="CREATOR" TYPE="ORGANIZATION">
-            <name>meemoo</name>
-            <note csip:NOTETYPE="IDENTIFICATIONCODE">OR-w66976m</note>
+            <name>VIAA.CP</name>
+            <note csip:NOTETYPE="IDENTIFICATIONCODE">VIAA.CP_id</note>
         </agent>
     </metsHdr>
 
