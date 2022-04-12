@@ -3,7 +3,7 @@ layout:       default
 title:        SIP Specification 0.1
 has_children: true
 nav_order:    1
-nav_exclude:  false
+nav_exclude:  true
 ---
 Status: WIP
 {: .label .label-yellow }
