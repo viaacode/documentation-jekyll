@@ -17,8 +17,6 @@ Status: WIP
 1. TOC
 {:toc}
 
-<mark class="miel">Afkorting CP is nog niet geintroduceerd?</mark>
-
 The bag is the top level of the meemoo SIP and is in essence as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
 It is a compressed directory that conforms to the [BagIt 1.0 specification (RFC 8493)](https://www.rfc-editor.org/rfc/rfc8493.html).
 
@@ -42,10 +40,6 @@ root_directory
 - A bag MUST be a compressed archive file.
 - A bag MUST contain a `bagit.txt` file.
 - A bag MUST contain a `manifest-md5.txt` file.
-
-<mark class="miel">Deze hieronder is zinloos als requirement, of toch hier, want je kan dat toch niet controleren. Beperk je tot wat software wel of niet nodig heeft. Hard constrainst dus. En gaat dit niet over de SIP ipv de Bag? Lijkt mij wel nuttig om informatief te vermelden, bv. in de intro of de directory structure. </mark>
-
-- A bag MUST contain content from only one particular CP and MUST NOT contain content from different CPs.
 - A bag MUST contain a `/data` directory.
 - The contents of a bag MUST be character-encoded according to UTF-8.
 - A bag SHOULD be a ZIP or TAR file.
@@ -105,8 +99,6 @@ Tag-File-Character-Encoding: UTF-8
 - The second line of the `bagit.txt` file MUST specify the character set encoding of the bag and its files.
 
 ## /data (directory)
-
-<mark class="miel">Ga je hier niet te diep? De requirements lijken mij al grotendeels over het package level te gaan, dus ik heb ze naar daar verhuisd.</mark>
 
 The `/data` directory contains the content of the bag divided across a number of different files and directories.
 Each `/data` directory MUST contain exactly one package, consisting of the combination of a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
