@@ -13,7 +13,6 @@ Welkom op meemoo's documentatie voor ontwikkelaars!
 Hier vind je alles over ons metadatamodel (incl. dataformaten), onze SIP-specificatie en onze APIs.
 
 1. [Alles over het metadatamodel]({{ site.baseurl }}{% link docs/metadata/index.md %})
-2. [Alles over onze SIP-specificatie]({{ site.baseurl }}{% link docs/instroom/sip_specification/index.md %})
-3. [Alles over onze OAI-PMH API]({{ site.baseurl }}{% link docs/oai-pmh/index.md %})
-4. [Alles om te starten met het bouwen van een integratie]({{ site.baseurl }}{% link docs/development/index.md %})
-5. [Alles over de verschillen tussen de Mediahaven REST API v1 en v2]({{ site.baseurl }}{% link docs/development/mh-rest-api-v1-vs-v2.md %})
+2. [Alles over onze OAI-PMH API]({{ site.baseurl }}{% link docs/oai-pmh/index.md %})
+3. [Alles om te starten met het bouwen van een integratie]({{ site.baseurl }}{% link docs/development/index.md %})
+4. [Alles over de verschillen tussen de Mediahaven REST API v1 en v2]({{ site.baseurl }}{% link docs/development/mh-rest-api-v1-vs-v2.md %})
