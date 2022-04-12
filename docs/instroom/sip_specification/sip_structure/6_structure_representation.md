@@ -119,7 +119,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Name | Content category |
 | Description | This attribute MUST be set to declare the category of the content held in the SIP. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | `Textual works - Print`<br>`Textual works - Digital`<br>`Textual works - Electronic Serials`<br>`Digital Musical Composition (score-based representations)`<br>`Photographs - Print`<br>`Photographs - Digital`<br>`Other Graphic Images - Print`<br>`Other Graphic Images - Digital`<br>`Audio - On Tangible Medium (digital or analog)`<br>`Audio - Media-independent (digital)`<br>`Motion Pictures – Digital and Physical Media`<br>`Video – File-based and Physical Media`<br>`Software`<br>`Datasets`<br>`Geospatial Data`<br>`Databases`<br>`Websites`<br>`Collection`<br>`Event`<br>`Interactive resource`<br>`Physical object`<br>`Service`<br>`Mixed`<br>`Other` |
+| Vocabulary | `Textual works - Print`<br>`Textual works - Digital`<br>`Textual works - Electronic Serials`<br>`Photographs - Print`<br>`Photographs - Digital`<br>`Other Graphic Images - Print`<br>`Other Graphic Images - Digital`<br>`Audio - On Tangible Medium (digital or analog)`<br>`Audio - Media-independent (digital)`<br>`Motion Pictures – Digital and Physical Media`<br>`Video – File-based and Physical Media`<br>`Collection`<br>`Physical object`<br>`Mixed`<br>`OTHER` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -134,16 +134,15 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets/@csip:CONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Content information type specification |
-| Description | This attribute is used to declare the Content Information Type Specification used when creating the SIP. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `ERMS`<br>`SIARD1`<br>`SIARD2`<br>`SIARDDK`<br>`GeoData`<br>`citscarchival_v1_0`<br>`citserms_v2_1`<br>`citspremis_v1_0`<br>`citsehpj_v1_0",<br>"citsehcr_v1_0`<br>`citssiard_v1_0`<br>`citsgeospatial_v3_0`<br>`MIXED`<br>`OTHER` |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
+| Description | This attribute is used to declare the Content Information Type Specification used when creating the SIP. Its value MUST be set to `OTHER`. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
 
 | Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Other content information type specification |
-| Description | When the `mets[@csip:CONTENTINFORMATIONTYPE]` attribute is set to `OTHER`, the `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the `mets[@csip:CONTENTINFORMATIONTYPE]` attribute. |
+| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type. |
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
@@ -313,10 +312,6 @@ The `/preservation` directory contains preservation metadata about the represent
 ***Requirements***
 
 - The `/preservation` directory MUST contain exactly one file: `premis.xml`.
-
-<mark>vraag: hier nog een soort tabel bij, zoals bij de METS of de DC?</mark>
-<mark class="miel">Ik denk dat het kwa data model en XML ok is. Er wordt gerefereerd naar de PREMIS standaard en er is een voorbeeld.</mark>
-<mark class="miel">Het voorbeeld  roept wel wat vragen op rond IDs en relatie met de rest van de spec. Dit moet wel goed uitgelegd worden</mark>
 
 The `premis.xml` file of the representation level contains preservation metadata about the representation and the media files of the representation level.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.

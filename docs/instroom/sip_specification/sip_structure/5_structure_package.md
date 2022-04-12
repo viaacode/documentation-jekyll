@@ -152,7 +152,7 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 | Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Other content information type specification |
-| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type. |attribute. |
+| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type. |
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
