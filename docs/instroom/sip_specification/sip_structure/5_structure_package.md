@@ -129,11 +129,9 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 | Name | Content category |
 | Description | This attribute MUST be set to declare the category of the content held in the SIP. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | `Textual works - Print`<br>`Textual works - Digital`<br>`Textual works - Electronic Serials`<br>`Digital Musical Composition (score-based representations)`<br>`Photographs - Print`<br>`Photographs - Digital`<br>`Other Graphic Images - Print`<br>`Other Graphic Images - Digital`<br>`Audio - On Tangible Medium (digital or analog)`<br>`Audio - Media-independent (digital)`<br>`Motion Pictures – Digital and Physical Media`<br>`Video – File-based and Physical Media`<br>`Software`<br>`Datasets`<br>`Geospatial Data`<br>`Databases`<br>`Websites`<br>`Collection`<br>`Event`<br>`Interactive resource`<br>`Physical object`<br>`Service`<br>`Mixed`<br>`Other` |
+| Vocabulary | `Textual works - Print`<br>`Textual works - Digital`<br>`Textual works - Electronic Serials`<br>`Photographs - Print`<br>`Photographs - Digital`<br>`Other Graphic Images - Print`<br>`Other Graphic Images - Digital`<br>`Audio - On Tangible Medium (digital or analog)`<br>`Audio - Media-independent (digital)`<br>`Motion Pictures – Digital and Physical Media`<br>`Video – File-based and Physical Media`<br>`Collection`<br>`Physical object`<br>`Mixed`<br>`OTHER` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
-
-<mark class="miel">Is het OTHER of Other? Bovenstaande beweert het laatste.</mark>
 
 | Attribute | `mets[@TYPE="OTHER"]/@csip:OTHERTYPE` |
 |-----------------------|-----------|
@@ -146,16 +144,15 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 | Attribute | `mets/@csip:CONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Content information type specification |
-| Description | This attribute is used to declare the Content Information Type Specification used when creating the SIP. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `ERMS`<br>`SIARD1`<br>`SIARD2`<br>`SIARDDK`<br>`GeoData`<br>`citscarchival_v1_0`<br>`citserms_v2_1`<br>`citspremis_v1_0`<br>`citsehpj_v1_0`<br>`citsehcr_v1_0`<br>`citssiard_v1_0`<br>`citsgeospatial_v3_0`<br>`MIXED`<br>`OTHER` |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
+| Description | This attribute is used to declare the Content Information Type Specification used when creating the SIP. Its value MUST be set to `OTHER`. |
+| Datatype | String |
+| Cardinality | 1..1 |
+| Obligation | MUST |
 
 | Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Other content information type specification |
-| Description | When the `mets[@csip:CONTENTINFORMATIONTYPE]` attribute is set to `OTHER`, the `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to declare the content information type not contained in the fixed vocabulary of the `mets[@csip:CONTENTINFORMATIONTYPE]` attribute. |
+| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type. |attribute. |
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
@@ -177,18 +174,6 @@ Want zou komen nogal onverwacht in het voorbeeld onderaan.
 | Obligation | MAY |
 
 ### \<metsHdr\> section
-
-<mark>vraag: @RECORDSTATUS attribuut kan handig zijn om bv. metadataupdate mee aan te duiden, als type supplement?</mark>
-<mark class="miel">Absoluut, als het vocab dit toelaat? Zeker toevoegen aan de beschrijving.</mark>
-
-<mark>vraag: ik weet niet of die SIP creator agent bij ons verplicht moet zijn? Eerder SHOULD?</mark>
-<mark class="miel">Dit relaxen breekt EARK compatibility, dus houden op MUST. Lijkt mij ook niet moeilijk om aan te leveren</mark>
-
-<mark>vraag: geen idee, maar volgens EARK zijn naam/ID niet verplicht bij archival creator, maar dit lijkt me eerder van wel? Hoe kan je die anders identificeren?</mark>
-<mark class="miel">Lijkt mij niet cruciaal, want wordt bij ons in de metadata duidelijk gemaakt.</mark>
-
-<mark>vraag: zogezegd kan je als contactpersoon enkel een type individu hebben, maar ik kan me hier an sich ook wel een generiek mailadres van een organisatie inbeelden? Mss. zelfs duurzamer dan bv. individu die weggaat ergens?</mark>
-<mark class="miel">ja, maar dan ga je naar de submitting agent. De contactpersoon isa optioneel en ik vermoed dat we daar in de praktijk niet zoveel mee gaan doen.</mark>
 
 This element contains administrative metadata about the SIP such as its creator and its creation software.
 It does so by using separate `agent` tags for every role in the SIPs creation and submission process.
@@ -243,7 +228,7 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Attribute | `mets/metsHdr/@RECORDSTATUS` |
 |-----------------------|-----------|
 | Name | Package status |
-| Description | A way of indicating the status of the SIP and to instruct the archive on how to properly handle it.<br>If not set, the expected value is "NEW". |
+| Description | A way of indicating the status of the SIP and to instruct the archive on how to properly handle it.<br>If not set, the expected value is "NEW".<br>Meemoo investigates the use of the `@RECORDSTATUS` attribute for future use cases such as e.g. a metadata update (i.e. ingest of metadata only with the goal of updating, adding or deleting existing metadata in the archive system.). |
 | Datatype | String; fixed vocabulary |
 | Vocabulary | `NEW`<br>`SUPPLEMENT`<br>`REPLACEMENT`<br>`TEST`<br>`VERSION`<br>`DELETE`<br>`OTHER`|
 | Cardinality | 0..1 |
@@ -448,8 +433,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 | Cardinality | 0..* |
 | Obligation | MAY |
 
-<mark class="miel">Het onderstaande element mets/metsHdr/agent is al eens gedefineerd?</mark>
-
 | Element | `mets/metsHdr/agent` |
 |-----------------------|-----------|
 | Name | Preservation agent |
@@ -534,10 +517,6 @@ It does so by using separate `agent` tags for every role in the SIPs creation an
 <mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
 <mark class="miel">Ik begrijp de suggestie niet goed. Ik vind de MAY/SHOULD/MUST van de secties met o.a. dmdSec niet zo duidelijk. Herhaal dit nog eens in de intro van de mets section </mark>
 
-<mark>vraag: dmdSec/@STATUS kan handig zijn om bv. iets als metadataupdate mee aan te duiden, waarbij geen essence moet instromen</mark>
-
-<mark class="miel">Klopt, maar gaat dit met het huidige vocab? Dit mag je er zeker bij vermelden. </mark>
-
 The `dmdSec` element (short for 'descriptive metadata section') contains descriptive metadata about the (sub)IE(s) in the SIP.
 The `dmdSec` can either embed metadata within the element itself or contain pointers to the location of descriptive metadata files located in the `/metadata/descriptive` directory of the package level.
 In order to maintain the readability of the `mets.xml` file, it is recommended to store the descriptive metadata in dedicated files.
@@ -616,16 +595,16 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Attribute | `mets/dmdSec/@STATUS` |
 |-----------------------|-----------|
 | Name | Status of the descriptive metadata |
-| Description | Describes the status of the `dmdSec` which is supported by the profile. |
+| Description | Describes the status of the `dmdSec` which is supported by the profile.<br>Meemoo investigates the use of the `@STATUS` attribute for future use cases such as e.g. a descriptive metadata update (i.e. ingest of metadata only with the goal of updating, adding or deleting existing metadata in the archive system.). |
 | Datatype | String; fixed vocabulary |
 | Vocabulary | `CURRENT`<br>`SUPERSEDED` |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Element | `mets/dmdSec/mdRef` 
+| Element | `mets/dmdSec/mdRef`
 |-----------------------|-----------|
 | Name | Reference to the document with the descriptive metadata (when not embedded within the `dmdSec`) |
-| Description | Reference to the descriptive metadata file(s) when located in the /metadata/descriptive directory.<br> |
+| Description | Reference to the descriptive metadata file(s) when located in the /metadata/descriptive directory. |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -640,7 +619,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Attribute | `mets/dmdSec/mdRef[@xlink:type='simple']` |
 |-----------------------|-----------|
 | Name | Type of link |
-| Description | This attribute's value MUST be set to "simple", in order to indicate a simple 'HTML-like' link. |
+| Description | This attribute's value MUST be set to `simple`, in order to indicate a simple 'HTML-like' link. |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -653,14 +632,12 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
-
 | Attribute | `mets/dmdSec/mdRef/@MDTYPE` |
 |-----------------------|-----------|
 | Name | Type of descriptive metadata |
 | Description | Specification of the type of metadata that is used in the externally located descriptive metadata file(s) in the `/metadata/descriptive` directory. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
+| Vocabulary | `MODS`<br>`DC`<br>`PREMIS`<br>`METSRIGHTS`<br>`OTHER` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -696,21 +673,15 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
-
 | Attribute | `mets/dmdSec/mdRef/@CHECKSUMTYPE` |
 |-----------------------|-----------|
 | Name | File checksum type |
-| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
+| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. This MUST be set to `MD5`. |
+| Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 ### \<amdSec\> section
-
-<mark>vraag: ik weet niet of we deze sectie als SHOULD moeten zetten? Als we de METS echt enkel als inventaris nemen, kunnen we alles hiervan ook onder de fileSec en structMap onderbrengen denk ik.</mark>
-<mark class="miel">Begrijp ik niet goed.</mark>
 
 The `amdSec` element (short for 'administrative metadata section') contains preservation metadata about the (sub)IE(s) in the SIP and the SIP as a whole.
 The `amdSec` can either embed metadata (with the use of `digiprovMD` elements) or contain pointers to the location of preservation metadata files located in the `/metadata/preservation` directory of the package level.
@@ -763,9 +734,9 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Attribute | `mets/amdSec/digiprovMD/@STATUS` |
 |-----------------------|-----------|
 | Name | Status of the digital provenance metadata |
-| Description | Describes the status of the `digiprovMD` which is supported by the profile. |
+| Description | Describes the status of the `digiprovMD` which is supported by the profile.<br>Meemoo investigates the use of the `@STATUS` attribute for future use cases such as e.g. an administrative metadata update (i.e. ingest of metadata only with the goal of updating, adding or deleting existing metadata in the archive system.). |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | ["CURRENT`<br>`SUPERSEDED"] |
+| Vocabulary | `CURRENT`<br>`SUPERSEDED` |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -800,14 +771,12 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-<mark class="miel">Gebruiken wij die gehele vocabulary? Indien niet, alles uitgooien wat bij ons niet voorkomt!</mark>
-
 | Attribute | `mets/amdSec/digiprovMD/mdRef/@MDTYPE` |
 |-----------------------|-----------|
 | Name | Type of preservation metadata |
 | Description | Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the /metadata/preservation directory. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
+| Vocabulary | `MODS`<br>`DC`<br>`PREMIS`<br>`METSRIGHTS`<br>`OTHER` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -846,9 +815,8 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Attribute | `mets/amdSec/digiprovMD/mdRef/@CHECKSUMTYPE` |
 |-----------------------|-----------|
 | Name | File checksum type |
-| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
+| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. This MUST be set to `MD5`. |
+| Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -912,7 +880,7 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Name | Type of preservation metadata |
 | Description | Specification of the type of metadata that is used in the externally located preservation metadata file(s) in the `/metadata/preservation` directory. |
 | Datatype | String; fixed vocabulary |
-| Vocabulary | `MARC`<br>`MODS`<br>`EAD`<br>`DC`<br>`NISOIMG`<br>`LC-AV`<br>`VRA`<br>`TEIHDR`<br>`DDI`<br>`FGDC`<br>`LOM`<br>`PREMIS`<br>`PREMIS:OBJECT`<br>`PREMIS:AGENT`<br>`PREMIS:RIGHTS`<br>`PREMIS:EVENT`<br>`TEXTMD`<br>`METSRIGHTS`<br>`ISO 19115:2003 NAP`<br>`EAC-CPF`<br>`LIDO`<br>`OTHER` |
+| Vocabulary | `MODS`<br>`DC`<br>`PREMIS`<br>`METSRIGHTS`<br>`OTHER` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -951,23 +919,12 @@ In order to maintain the readability of the `mets.xml` file, it is recommended t
 | Attribute | `mets/amdSec/rightsMD/mdRef/@CHECKSUMTYPE` |
 |-----------------------|-----------|
 | Name | File checksum type |
-| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
+| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. This MUST be set to `MD5`. |
+| Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 ### \<fileSec\> section
-
-<mark>vraag: die DOCUMENTATION en SCHEMAS directories lijken mij niet zinvol te houden als MUST?</mark>
-<mark class="miel">Zijn ze niet, dus MAY.</mark>
-
-
-<mark>vraag: gaan we de checksum behouden hier als attribuut? Dat zit ook al in de manifest-md5.txt van de bag en ook al in de verschillende PREMIS objecten</mark>
-<mark class="miel">EARK volgen</mark>
-
-<mark>vraag/opm: het idee van de fileSec is eigenlijk dat je er alles insteekt dat nog niet in de dmdSec of amdSec zit (dus eigenlijk louter media files). Dus bij een metadataupdate is de fileSec bv. leeg. Maar we kunnen ook enkel de fileSec houden en de dmd/amdSec weglaten?</mark>
-<mark class="miel">Ik vind het momenteel goed. De fileSec is verplicht, maar de dmdSec of amdSec zijn een optie als je geen dc.xml of premis.xml wil gebruiken. Correct?</mark>
 
 The `fileSec` element (short for 'file section') lists all files of the package level in the SIP.
 It contains references to the representation `mets.xml` files of the different representations, but does not list other files of those representations.
@@ -1078,14 +1035,14 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Attribute | `mets/fileSec/fileGrp[@USE='Documentation']` |
 |-----------------------|-----------|
 | Name | Documentation file group |
-| Description | All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value “Documentation”. |
+| Description | All documentation pertaining to the transferred content is placed in one or more file group elements with `mets/fileSec/fileGrp/@USE` attribute value “Documentation”. The content of this element MAY be empty. |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
 | Attribute | `mets/fileSec/fileGrp[@USE='Schemas']` |
 |-----------------------|-----------|
 | Name | Schema file group |
-| Description | All XML schemas used in the information package must be referenced from one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value “Schemas”. |
+| Description | XML schemas used in the information package can be included in one or more file groups with `mets/fileSec/fileGrp/@USE` attribute value “Schemas”. The content of this element MAY be empty. |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
@@ -1184,9 +1141,8 @@ The listing of other representation files (i.e. metadata files and media files) 
 
 | Attribute | `mets/fileSec/fileGrp/file/@CHECKSUMTYPE` |
 | Name | File checksum type |
-| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. |
-| Datatype | String; fixed vocabulary |
-| Vocabulary | `HAVAL`<br>`MD5`<br>`SHA-1`<br>`SHA-256`<br>`SHA-384`<br>`SHA-512`<br>`TIGER`<br>`WHIRLPOOL` |
+| Description | A value from the METS-standard which identifies the algorithm used to calculate the checksum for the referenced file. This MUST be set to `MD5`. |
+| Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -1224,7 +1180,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Attribute | `mets/fileSec/fileGrp/file/FLocat[@LOCTYPE='URL']` |
 |-----------------------|-----------|
 | Name | Type of locator |
-| Description | / |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1232,7 +1187,6 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Attribute | `mets/fileSec/fileGrp/file/FLocat[@xlink:type='simple']` |
 |-----------------------|-----------|
 | Name | Type of link |
-| Description | / |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1240,15 +1194,12 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Attribute | `mets/fileSec/fileGrp/file/FLocat/@xlink:href` |
 |-----------------------|-----------|
 | Name | Resource location |
-| Description | It is recommended to use the relative location of the file in this URL. |
+| Description | One SHOULD use the relative location of the file in this URL. |
 | Datatype | URL |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 ### \<structMap\> section
-
-<mark>vraag: welk label moet de overkoepelende `<div>` krijgen?</mark>
-<mark class="miel">Wat is de impact hiervan? Lijkt mij niet relevant</mark>
 
 The `structMap` element outlines the hierarchical structure of the package level of the SIP.
 It provides links between elements and metadata files located elsewhere in the package level.
@@ -1301,12 +1252,10 @@ It provides links between elements and metadata files located elsewhere in the p
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-<mark class="miel">Ik zou de lezer in de beschrijving niet verwarren met de afkorting CSIP; het is al moeilijk genoeg. Ik zou eerder zeggen dat dit nodig is om duidelijk te maken dat het over compliance met E-ARK Common Specification for Information Packages gaat.</mark>
-
 | Attribute | `mets/structMap[@LABEL='CSIP']` |
 |-----------------------|-----------|
 | Name | Name of the structural description |
-| Description | This requirement identifies the CSIP compliant structural map `structMap` element. |
+| Description | This value MUST be set to `CSIP` in order to be compliant with the E-ARK Common Specification for Information Packages. |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1455,7 +1404,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']` |
 |-----------------------|-----------|
 | Name | Content division |
-| Description | When no representations are present the content referenced in the file section file group with @USE attribute value, “Representations” is described in the structural map as a single sub division. |
+| Description | When no representations are present the content referenced in the file section file group with `@USE` attribute value, “Representations” is described in the structural map as a single sub division. |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -1470,7 +1419,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Attribute | `mets/structMap[@LABEL='CSIP']/div/div[@LABEL='Representations']` |
 |-----------------------|-----------|
 | Name | Content division label |
-| Description | The representations `div` element’s @LABEL attribute value MUST be “Representations”. |
+| Description | The representations `div` element’s `@LABEL` attribute value MUST be “Representations”. |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1531,7 +1480,7 @@ It provides links between elements and metadata files located elsewhere in the p
 | Attribute | `mets/structMap/div/div/mptr/@xlink:href` |
 |-----------------------|-----------|
 | Name | Resource location |
-| Description | Indication of the actual location of the resource.<br>As indicated by the @LOCTYPE attribute, this filepath MUST be a URL type filepath.<br>It is recommended to use the relative location of the file in this URL. |
+| Description | Indication of the actual location of the resource.<br>As indicated by the `@LOCTYPE` attribute, this filepath MUST be a URL type filepath.<br>One SHOULD use the relative location of the file in this URL. |
 | Datatype | URL |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1568,13 +1517,6 @@ It also contains preservation metadata about the SIP as a whole.
 ***Requirements***
 
 - The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
-
-<mark class="miel">Onderstaande header lijkt mij overbodig.</mark>
-
-#### dc.xml
-
-<mark>vraag: waar aanduiden over welke IE/subIE een bepaalde descriptieve metadatafile gaat? In een soort PREMIS relatie 'describes' op basis van gedeelde/gerefereerde UUID?</mark>
-<mark class="miel">Zoiets..., nog te bekijken.</mark>
 
 The `dc.xml` file at the package-level contains descriptive metadata about the (sub-)IE(s) of the SIP.
 It relies on the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schema in order to facilitate a basic description with a limited number of metadata.
@@ -1673,10 +1615,6 @@ The `/preservation` directory contains preservation metadata about the (sub-)IE(
 ***Requirements***
 
 - The `/preservation` directory MUST contain exactly one file: `premis.xml`.
-
-<mark class="miel">Onderstaande header lijkt mij overbodig.</mark>
-
-#### premis.xml
 
 The `premis.xml` file at the package-level contains preservation metadata about the (sub-)IE(s) of the SIP, and about the SIP as a whole.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.
