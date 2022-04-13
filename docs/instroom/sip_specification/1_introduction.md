@@ -16,14 +16,14 @@ They are accompanied by metadata that is described in a variety of formats.
 Therefore, the current SIP specification was developed to standardize the delivery of (media) content and metadata by meemoo's content partners and increase scalability and sustainability.
 
 The meemoo SIP uses a three-level hierarchical directory structure (_bag - package - representation_) to aggregate and describe media assets, including video, audio, images, captions, and text files.
-A meemoo SIP is a valid [BagIt bag](https://www.rfc-editor.org/rfc/rfc8493.html) that contains a valid [E-ARK SIP](https://earksip.dilcis.eu/). 
+A meemoo SIP is a valid [BagIt bag](https://www.rfc-editor.org/rfc/rfc8493.html) that contains a valid [E-ARK SIP](https://earksip.dilcis.eu/).
 
 At the lowest directory level, the _representation level_, these assets are described in aggregate as digital representations.
 One level higher, the _package_ directory level, embodies the represented content or [_intellectual entity_](/2_core-concepts#ie), such as the work that is being depicted.
-Finally, the _bag_ directory level bundles everything together for transport. 
+Finally, the _bag_ directory level bundles everything together for transport.
 
 Metadata can occur at every SIP level to add administrative, structural, descriptive, and preservation information about the data and its context.
-Examples are the author of a representation, the author of what the representation represents (ie. the intellectual entity), or the creation date of a reprentation.
+Examples are the author of a representation, the author of what the representation represents (i.e. the intellectual entity), or the creation date of a reprentation.
 Metadata are written down in XML files using the common vocabularies [METS](https://www.loc.gov/standards/mets), [DCMI Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/), and [PREMIS](https://www.loc.gov/standards/premis/).
 
 ## How to Read this Specification
@@ -45,9 +45,27 @@ To fully understand the basics of this specification, it is advised to be famili
 | DC           | [Dublin Core Metadata Initiative Metadata Terms](http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd)|
 | PREMIS       | [PREMIS for Preservation Metadata](https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd)|
 
-Except sections explicitly marked as informative, all guidelines, examples and notes in this specification are to be considered normative.
-To indicate if and how often a metadata element can occur, this specification uses syntax for cardinality from the [Unified Modeling Language](https://www.omg.org/spec/UML/2.5.1/PDF).
-This is outlined in the table below.
+Metadata elements from these standards are described throughout this specification using tables such as the one below. Each table may contain the following information about a metadata element:
+
+- whether the tag is an XML element or an XML attribute;
+- an XPath expression to select the relevant element from the relevant file;
+- the name of the metadata element;
+- a description of the metadata element (including relevant requirements about its value);
+- the datatype of the metadata element (if applicable);
+- vocabularies of possible values (if applicable);
+- the cardinality of the metadata element (i.e. if and how often it can occur);
+- whether the metadata element may/should/must be used.
+
+| Element/Attribute | `Metadata/element/XPath` |
+|-----------------------|-----------|
+| Name | Metadata element name |
+| Description | Metadata element description |
+| Datatype | Metadata element datatype |
+| Vocabulary | `Vocabulary term 1`<br>`Vocabulary term 2`<br>`...` |
+| Cardinality | `Metadata element cardinality` |
+| Obligation | MAY/SHOULD/MUST |
+
+The cardinality is expressed with syntax from the [Unified Modeling Language](https://www.omg.org/spec/UML/2.5.1/PDF), outlined in the table below.
 
 | UML Syntax | Cardinality                                                                      |
 | ---------- | -------------------------------------------------------------------------------- |
