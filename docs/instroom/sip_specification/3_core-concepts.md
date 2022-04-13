@@ -38,7 +38,7 @@ It is up to the content partner to decide:
 
 {: .important }
 This decision may have an impact on the dissemination of the SIP's content and, in particular, on how its content is rendered on e.g. meemoo's dissemination platforms.
-Typically, something that has an individual descriptive metadata at the source (eg. an entry in a collection registration or asset management system) and is expected to be distinguisable in search, should be classified as IE. 
+Typically, something that has an individual descriptive metadata at the source (eg. an entry in a collection registration or asset management system) and is expected to be distinguisable in search, should be classified as IE.
 
 Consider the example of a digitised newspaper edition with 10 pages.
 Each page is digitised separately as a TIFF file and a JPEG file, resulting in 20 digital reproductions.
