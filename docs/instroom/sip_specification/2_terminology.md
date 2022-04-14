@@ -47,6 +47,8 @@ nav_exclude:  false
     <dd>The [Unicode Standard](http://www.unicode.org/versions/latest/) is a standard for the consistent encoding, representation and handling of text. It can be implemented by different character encodings, with [UTF-8](https://datatracker.ietf.org/doc/html/rfc3629) being the dominant encoding for the World Wide Web and internet technologies in general.</dd>
     <dt>XML</dt>
     <dd>The [Extensible Markup Language](http://www.w3.org/TR/xml/) (i.e. XML) is a markup language and file format for storing, transmitting and reconstructing arbitrary data. At meemoo it is used to store administrative, descriptive, preservation and structural metadata about media files in meemoo's digital archive.</dd>
+    <dt>XSD</dt>
+    <dd>[XML Schema Definition](https://www.w3.org/XML/Schema) is a way to formally describe the elements in a XML document. It can be used for validation against existing metadata schemas and standards.</dt>
 </dl>
 
 ## Datatypes
