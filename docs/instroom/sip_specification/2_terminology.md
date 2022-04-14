@@ -48,7 +48,7 @@ nav_exclude:  false
     <dt>XML</dt>
     <dd>The [Extensible Markup Language](http://www.w3.org/TR/xml/) (i.e. XML) is a markup language and file format for storing, transmitting and reconstructing arbitrary data. At meemoo it is used to store administrative, descriptive, preservation and structural metadata about media files in meemoo's digital archive.</dd>
     <dt>XSD</dt>
-    <dd>[XML Schema Definition](https://www.w3.org/XML/Schema) is a way to formally describe the elements in a XML document. It can be used for validation against existing metadata schemas and standards.</dt>
+    <dd>[XML Schema Definition](https://www.w3.org/XML/Schema) is a way to formally describe the elements in a XML document. It can be used for validation against existing metadata schemas and standards.</dd>
 </dl>
 
 ## Datatypes
