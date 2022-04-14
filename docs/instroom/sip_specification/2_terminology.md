@@ -8,41 +8,37 @@ nav_exclude:  false
 
 # Terminology
 
-<mark>to do: definities verzamelen uit spec. eenmaal af</mark>
-<mark>vraag: welke termen moeten hier zeker komen?</mark>
-
 <dl>
-    <dt>Content partner</dt>
-    <dd></dd>
     <dt>Bag</dt>
-    <dd></dd>
+    <dd>The topmost layer of the meemoo SIP. It serves as a wrapper around the SIP for transport and follows the [BagIt standard](https://www.rfc-editor.org/rfc/rfc8493.html).</dd>
     <dt>Content</dt>
-    <dd></dd>
+    <dd>Digital content such as media files and metadata files.</dd>
+    <dt>Content Partner (CP)</dt>
+    <dd>Content Partners are organisations that store digital content with meemoo, with associated agreements for accessing the content online.</dd>
     <dt>Content Profile</dt>
-    <dd></dd>
-    <dt>Sidecar</dt>
-    <dd></dd>
+    <dd>A Content Profile is an extension of meemoo's SIP specification for the ingest of specific types of media files, e.g. newspapers, 3D objects, collection items with extensive metadata... A Content Profile boils down to additional requirements on top of the current specification.</dd>
     <dt>Essence</dt>
-    <dd></dd>
+    <dd>An alternative term for a media file (without additional metadata), such as a digital picture, a digital audio file...</dd>
+    <dt>Intellectual Entity (IE)</dt>
+    <dd>A distinct intellectual or artistic creation that is considered to be relevant to a designated community in the context of digital preservation.</dd>
     <dt>OAIS</dt>
-    <dd></dd>
-    <dt>Intellectual Entity</dt>
-    <dd></dd>
+    <dd>This term refers to the ISO OAIS Reference Model for an Open Archival Information System. This model is defined by recommendation [CCSDS 650.0-B-2](https://public.ccsds.org/Pubs/650x0m2.pdf) of the Consultative Committee for Space Data Systems.</dd>
     <dt>Package</dt>
-    <dd></dd>
-    <dt>SIP</dt>
-    <dd></dd>
-    <dt>Respresentation</dt>
-    <dd></dd>
+    <dd>The middle layer of the meemoo SIP. It consists of a number of directories and metadata files, containing the lowest (i.e. representation) layer of the meemoo SIP.</dd>
+    <dt>Package METS</dt>
+    <dd>The metadata file conforming to the [METS standard](https://www.loc.gov/standards/mets/mets.xsd) situated at the package level of the SIP (i.e. at `/data/mets.xml`)</dd>
+    <dt>Representation</dt>
+    <dd>A set of files (including metadata) needed for a complete rendition of an IE. Note that an IE can be represented by multiple representations (e.g. a high quality representation and a low quality representation).</dd>
+    <dt>Representation METS</dt>
+    <dd>The metadata file conforming to the [METS standard](https://www.loc.gov/standards/mets/mets.xsd) situated at one of the different representation directories of the representation level of the SIP (e.g. at `/data/representation/representation_1/mets.xml`)</dd>
+    <dt>Sidecar</dt>
+    <dd>An alternative term for a file exclusively containing metadata.</dd>
+    <dt>Submission Information Package (SIP)</dt>
+    <dd>The information package (containing media and metadata files) sent by the Content Partner to meemoo for ingest.</dd>
     <dt>Unicode</dt>
-    <dd></dd>
+    <dd>The [Unicode Standard](http://www.unicode.org/versions/latest/) is a standard for the consistent encoding, representation and handling of text. It can be implemented by different character encodings, with [UTF-8](https://datatracker.ietf.org/doc/html/rfc3629) being the dominant encoding for the World Wide Web and internet technologies in general.</dd>
     <dt>XML</dt>
-    <dd></dd>
-    <dt>_Package METS_</dt>
-    <dd></dd>
-    <dt>_Representation METS_</dt>
-    <dd></dd>
-    
+    <dd>The [Extensible Markup Language](http://www.w3.org/TR/xml/) (i.e. XML) is a markup language and file format for storing, transmitting and reconstructing arbitrary data. At meemoo it is used to store administrative, descriptive, preservation and structural metadata about media files in meemoo's digital archive.</dd>
 </dl>
 
 ## Datatypes
