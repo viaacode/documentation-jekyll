@@ -8,7 +8,7 @@ nav_exclude:  false
 ---
 Status: WIP
 {: .label .label-yellow }
-# Structure of a meemoo SIP: bag level
+# Bag level
 {: .no_toc }
 
 ## Table of contents
@@ -17,12 +17,10 @@ Status: WIP
 1. TOC
 {:toc}
 
-<mark class="miel">Afkorting CP is nog niet geintroduceerd?</mark>
-
-The bag is the top level of the meemoo SIP and is in essence as a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
+The bag is the top level of the meemoo SIP and is essentially a wrapper around a SIP submitted by a CP for ingest in the meemoo archive.
 It is a compressed directory that conforms to the [BagIt 1.0 specification (RFC 8493)](https://www.rfc-editor.org/rfc/rfc8493.html).
 
-A bag has a sole practical purpose as a transfer container between a CP's archive and meemoo's ingest space.
+A bag serves a purely practical purpose as a transfer container between a CP's archive and meemoo's ingest space.
 Therefore, it will be unpacked during ingest and is deleted after processing.
 As such it will not appear in the meemoo archive as a separate entity.
 
@@ -55,22 +53,20 @@ It is used during processing of the bag to allow for data integrity checking.
 ***Example***
 
 ```plaintext
-9675dc6350af621ebd4b3ddd05b33eeb  ./data/mets.xml
-3d800edcf9c5535c52ec8e0d6a160ccb  ./data/representations/representation_2/mets.xml
+04bebae64ef96c9dede6366cacecb6d2  ./data/mets.xml
+26b5231d41ceb95ee4f031f309430206  ./data/representations/representation_2/mets.xml
 18513a8d61c6f2cbaaeeedd754b01d6b  ./data/representations/representation_2/data/D523F963.jpg
-d59060b8b471627a74b12bacca878543  ./data/representations/representation_2/metadata/preservation/premis.xml
-ed2d03c274c9ce0521531d6d2c269e94  ./data/representations/representation_2/metadata/descriptive/dc.xml
-158dd1571df41274b0a349a0e54b5f81  ./data/representations/representation_1/mets.xml
+f5c0aede495689b8c88c2e5f25166532  ./data/representations/representation_2/metadata/preservation/premis.xml
+bcb7a509d68156d2c5f349da4d46b757  ./data/representations/representation_2/metadata/descriptive/dc.xml
+b670f7ccf8e467251bb5ef57b00a4242  ./data/representations/representation_1/mets.xml
 d4985ba4b67ff067a0e84c53b6d35355  ./data/representations/representation_1/data/1450.jpeg
 b7ae37f6094794e313402b9d064978e8  ./data/representations/representation_1/data/1445.jpeg
-d49ec67f6cf9194e3cee47f125e2b0fb  ./data/representations/representation_1/metadata/preservation/premis.xml
-05bfa303741e01fee4d151464c933e29  ./data/representations/representation_1/metadata/descriptive/dc.xml
-f95e7df37dfdfa5174388598aa901164  ./data/metadata/preservation/premis.xml
-409e895924d354ef4ace1330a962ebbf  ./data/metadata/descriptive/dc_ie.xml
-5ade81b44c26f1020d1f6fcc8ec0b420  ./data/metadata/descriptive/dc_subie_1.xml
-1f263443332dcd49ae428c067d180ebe  ./data/metadata/descriptive/dc_subie_2.xml
+d3fd0971073b4d408e73731f901bf73e  ./data/representations/representation_1/metadata/preservation/premis.xml
+254acb652404702061d8552b658eb46a  ./data/representations/representation_1/metadata/descriptive/dc.xml
+8c2914e1df1e2827c9c4059804075120  ./data/metadata/preservation/premis.xml
+7c513b9cb8848860ddcb4d4b680171bc  ./data/metadata/descriptive/dc.xml
 eaa2c609ff6371712f623f5531945b44  ./bagit.txt
-2ec9403539086d7447dd91361d3c5456  ./manifest-md5.txt
+0932acc300b325ef61cbc47f87e7d10a  ./manifest-md5.txt
 ```
 
 ***Requirements***
@@ -98,7 +94,7 @@ Tag-File-Character-Encoding: UTF-8
 ***Requirements***
 
 - The first line of the `bagit.txt` file MUST specify the exact version of the BagIt standard.
-- The second line of the `bagit.txt` file MUST specify the character set encoding of the bag and its files.
+- The second line of the `bagit.txt` file MUST specify the character set encoding of the bag and its files. This encoding MUST be UTF-8.
 
 ## /data (directory)
 
@@ -120,3 +116,7 @@ root_directory
    └──representations
    │      ...
 ```
+
+<small>
+Continue to [Package Level](5_structure_package).
+</small>

@@ -11,12 +11,6 @@ Status: WIP
 
 {% include_relative _metadata.liquid  %}
 
-<mark>vraag: veel te veel te veel secties?</mark>
-
-<mark>vraag: gebruik van metadata terms/metadata elements/metadata tags?</mark>
-
-<mark>vraag: voorzetsels bij 'level'? e.g. the files at/in/of/? the package/representation level</mark>
-
 ## Abstract
 
 The meemoo Submission Information Package (henceforth SIP) specification describes how data and metadata should be packaged when delivered to meemoo for ingest.

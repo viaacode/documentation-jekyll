@@ -1,19 +1,15 @@
 <?xml version="1.0"?>
-<mets xmlns="http://www.loc.gov/METS/"
-    xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
-    xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" TYPE="OTHER" csip:OTHERTYPE="Photographs – Digital" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">
+<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" TYPE="OTHER" csip:OTHERTYPE="Photographs – Digital" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">
 
-    <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00"/>
+    <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00" />
 
     <dmdSec ID="uuid-9ade6abd-c7f9-450d-9c50-9c313af54d02">
-        <mdRef ID="uuid-8052dfce-00e3-46f6-a7e9-df46a19c5773" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc.xml" MIMETYPE="text/xml" SIZE="783" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="b031b5dc012e94ff90027613b11b0b22" CHECKSUMTYPE="MD5" />
+        <mdRef ID="uuid-8052dfce-00e3-46f6-a7e9-df46a19c5773" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc.xml" MIMETYPE="text/xml" SIZE="1147" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="254acb652404702061d8552b658eb46a" CHECKSUMTYPE="MD5" />
     </dmdSec>
 
     <amdSec ID="uuid-13f57158-7c3f-40b5-86ef-d190ec968742">
         <digiprovMD ID="uuid-fca97f11-e8cb-40df-9021-5f2af44140a0">
-            <mdRef ID="uuid-bcffe55d-bbf6-498e-acc7-447e16898a23" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="6544" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="53bf706904538e8e3204c68196be6b6d" CHECKSUMTYPE="MD5" />
+            <mdRef ID="uuid-bcffe55d-bbf6-498e-acc7-447e16898a23" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="6294" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d3fd0971073b4d408e73731f901bf73e" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 
@@ -21,12 +17,12 @@
         <fileGrp USE="representation_1" ID="uuid-668cae9f-8f5d-42c4-b470-1ec5168e583b">
             <fileGrp USE="metadata" ID="uuid-f8a3a63f-9ede-42eb-b380-506aa0cd5d4f">
                 <fileGrp USE="metadata/descriptive" ID="uuid-d5ec7853-beb1-498e-99b9-f0052b0cadff">
-                    <file ID="uuid-15465af7-a269-47ed-9e28-6870357d25b7" MIMETYPE="application/xml" SIZE="783" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="b031b5dc012e94ff90027613b11b0b22" CHECKSUMTYPE="MD5">
+                    <file ID="uuid-15465af7-a269-47ed-9e28-6870357d25b7" MIMETYPE="application/xml" SIZE="1147" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="254acb652404702061d8552b658eb46a" CHECKSUMTYPE="MD5">
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc.xml" />
                     </file>
                 </fileGrp>
                 <fileGrp USE="metadata/preservation" ID="uuid-341e759f-48f7-4eb5-8732-8ad908e9f8fc">
-                    <file ID="uuid-3c9b17af-41c8-45b2-88c2-b489c4744334" MIMETYPE="application/xml" SIZE="6544" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="53bf706904538e8e3204c68196be6b6d" CHECKSUMTYPE="MD5">
+                    <file ID="uuid-3c9b17af-41c8-45b2-88c2-b489c4744334" MIMETYPE="application/xml" SIZE="6294" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d3fd0971073b4d408e73731f901bf73e" CHECKSUMTYPE="MD5">
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" />
                     </file>
                 </fileGrp>
