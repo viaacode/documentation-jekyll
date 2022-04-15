@@ -15,12 +15,12 @@ These collections contain a wealth of content and information stored in various 
 They are accompanied by metadata that is described in a variety of formats.
 Therefore, the current SIP specification was developed to standardize the delivery of (media) content and metadata by meemoo's content partners and increase scalability and sustainability.
 
-The meemoo SIP uses a three-level hierarchical directory structure (_bag - package - representation_) to aggregate and describe media assets, including video, audio, images, captions, and text files.
+The meemoo SIP uses a three-level hierarchical directory structure (_bag - package - representation_) to aggregate and describe media assets, including video, audio, images, captions...
 A meemoo SIP is a valid [BagIt bag](https://www.rfc-editor.org/rfc/rfc8493.html) that contains a valid [E-ARK SIP](https://earksip.dilcis.eu/).
 
 At the lowest directory level, the _representation level_, these assets are described in aggregate as digital representations.
-One level higher, the _package_ directory level, embodies the represented content or [_intellectual entity_](/2_core-concepts#ie), such as the work that is being depicted.
-Finally, the _bag_ directory level bundles everything together for transport.
+One level higher, the _package_ directory _level_, embodies the represented content or [_intellectual entity_](/2_core-concepts#ie), such as the work that is being depicted.
+Finally, the _bag_ directory _level_ bundles everything together for transport.
 
 Metadata can occur at every SIP level to add administrative, structural, descriptive, and preservation information about the data and its context.
 Examples are the author of a representation, the author of what the representation represents (i.e. the intellectual entity), or the creation date of a reprentation.
@@ -30,9 +30,9 @@ Metadata are written down in XML files using the common vocabularies [METS](http
 
 This document is primarily intended for the following audiences:
 
-- Archivists delivering media resources with accompanying metadata to meemoo for long-term preservation.
-- Service providers such as digitization companies that integrate with the ingestion flow of meemoo.
-- Partners of meemoo publishing software tenders that aim at integrating with the meemoo ingestion flow.
+- Archivists delivering media resources with accompanying metadata to meemoo for long-term preservation;
+- Service providers such as digitization companies that integrate with the ingest flow of meemoo;
+- Partners of meemoo publishing software tenders that aim at integrating with the meemoo ingest flow.
 
 To fully understand the basics of this specification, it is advised to be familiar with the [XML](https://www.w3.org/XML/) format, as well as the following standards and metadata schemas this specification adheres to:
 
@@ -74,3 +74,7 @@ The cardinality is expressed with syntax from the [Unified Modeling Language](ht
 | `1..1`       | The element must occur exactly once.                                             |
 | `1..*`       | The element must occur at least once and can occur an unlimited number of times. |
 | `m..n`       | At least m but no more than n instances.                                         |
+
+<small>
+Continue to [Terminology](2_terminology).
+</small>

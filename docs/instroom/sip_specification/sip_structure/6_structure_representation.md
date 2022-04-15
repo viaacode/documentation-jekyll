@@ -8,7 +8,7 @@ nav_exclude:  false
 ---
 Status: WIP
 {: .label .label-yellow }
-# Structure of a meemoo SIP: representation level
+# Representation level
 {: .no_toc }
 
 ## Table of contents
@@ -17,8 +17,8 @@ Status: WIP
 1. TOC
 {:toc}
 
-The representation level consists of a `mets.xml` file, a `/metadata` directory and a `/data` directory.
-It contains information about the representation of (one of) the (sub)IE(s) of the package level, together with the media files making up the representation.
+The representation level consists of at least one `/representation_*` directory (where `*` is a positive integer).
+Each `/representation_*` directory contains information about the representation of (one of) the (sub-)IE(s) of the package level, together with the media files making up the representation.
 
 ***Example***
 
@@ -53,11 +53,14 @@ root_directory
 
 ## /representation_* (directory)
 
-The `/representation_*`  directory contains all information about a certain representation of the (sub)IE(s) of the SIP.
-It contains both descriptive and preservation metadata, as well as the actual media files making up the representation.
+A `/representation_*` directory consists of at least a `mets.xml` file, a `/data` directory and a `/metadata` directory.
+It contains both descriptive and preservation metadata, as well as the actual media files making up a certain representation of the (sub-)IE(s) of the SIP.
+
 Each `/representation_*` directory contains its own `mets.xml` file which acts similarly as the package `mets.xml` and serves as an inventory of the files and directories of the representation level.
 
-<mark class="miel">documentation en schemas directories moeten uitgelegd worden, ook al zijn ze optioneel. Mag kort.</mark>
+A `/representation_*` directory may contain a `/documentation` and a `/schemas` directory. 
+The former may contain additional information aiding the interpretation of the representation, while the latter may contain XML Schema Definition (XSD) files of the metadata schemas used in the representation.
+These two directories are ignored during ingest and will therefore not be archived.
 
 ***Requirements***
 
@@ -69,7 +72,7 @@ Each `/representation_*` directory contains its own `mets.xml` file which acts s
 
 ## mets.xml (file)
 
-The `mets.xml` file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in [the section package mets.xml](#metsxml-file).
+The `mets.xml` file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in the section [package mets.xml](5_structure_package#metsxml-file).
 Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same requirements, where possible, as the package `mets.xml` file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `mets` and `metsHdr` sections.
 
 ### \<mets\> section
@@ -102,22 +105,22 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Element | `mets` |
 |-----------------------|-----------|
 | Name | METS root element |
-| Description | This is the root element of the package METS.<br>It MUST contain the following XML schema namespaces:<br>[`mets: http://www.loc.gov/METS/`](http://www.loc.gov/METS/)<br>[`csip: https://dilcis.eu/XML/METS/CSIPExtensionMETS`](https://dilcis.eu/XML/METS/CSIPExtensionMETS)<br>[`sip: https://dilcis.eu/XML/METS/SIPExtensionMETS`](https://dilcis.eu/XML/METS/SIPExtensionMETS)<br>[`xsi: http://www.w3.org/2001/XMLSchema-instance`](http://www.w3.org/2001/XMLSchema-instance)<br>[`xlink: http://www.w3.org/1999/xlink`](http://www.w3.org/1999/xlink)|
+| Description | This is the root element of the representation METS.<br>It MUST contain the following XML schema namespaces:<br>[`mets: http://www.loc.gov/METS/`](http://www.loc.gov/METS/)<br>[`csip: https://dilcis.eu/XML/METS/CSIPExtensionMETS`](https://dilcis.eu/XML/METS/CSIPExtensionMETS)<br>[`sip: https://dilcis.eu/XML/METS/SIPExtensionMETS`](https://dilcis.eu/XML/METS/SIPExtensionMETS)<br>[`xsi: http://www.w3.org/2001/XMLSchema-instance`](http://www.w3.org/2001/XMLSchema-instance)<br>[`xlink: http://www.w3.org/1999/xlink`](http://www.w3.org/1999/xlink)|
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Attribute | `mets/@OBJID` |
 |-----------------------|-----------|
 | Name | Representation identifier |
-| Description | This is a UUID identifier for the METS document. For the representation METS, this MUST be the same UUID as the one used for the corresponding representation directory. |
-| Datatype | UUID |
+| Description | This is an identifier for the METS document. For the representation METS, this MUST be the same name as the one used for the corresponding representation directory. |
+| Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Attribute | `mets/@TYPE` |
 |-----------------------|-----------|
 | Name | Content category |
-| Description | This attribute MUST be set to declare the category of the content held in the SIP. |
+| Description | This attribute MUST be set to declare the category of the content held in the representation directory. |
 | Datatype | String; fixed vocabulary |
 | Vocabulary | `Textual works - Print`<br>`Textual works - Digital`<br>`Textual works - Electronic Serials`<br>`Photographs - Print`<br>`Photographs - Digital`<br>`Other Graphic Images - Print`<br>`Other Graphic Images - Digital`<br>`Audio - On Tangible Medium (digital or analog)`<br>`Audio - Media-independent (digital)`<br>`Motion Pictures – Digital and Physical Media`<br>`Video – File-based and Physical Media`<br>`Collection`<br>`Physical object`<br>`Mixed`<br>`OTHER` |
 | Cardinality | 1..1 |
@@ -126,7 +129,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets[@TYPE="OTHER"]/@csip:OTHERTYPE` |
 |-----------------------|-----------|
 | Name | Other content category |
-| Description | When the `mets/@TYPE` attribute is set to "OTHER", the `mets/@csip:OTHERTYPE` attribute SHOULD be used to declare the content category of the package representation not contained in the fixed vocabulary of the `@TYPE` attribute. |
+| Description | When the `mets/@TYPE` attribute is set to `OTHER`, the `mets/@csip:OTHERTYPE` attribute SHOULD be used to declare the content category of the representation not contained in the fixed vocabulary of the `@TYPE` attribute. |
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
@@ -142,7 +145,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Other content information type specification |
-| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type. |
+| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type.<br>Meemoo investigates the use of a controlled vocabulary containing all of the allowed content types for ingest. |
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
@@ -150,7 +153,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets/@PROFILE` |
 |-----------------------|-----------|
 | Name | METS profile |
-| Description | The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to [`https://earksip.dilcis.eu/profile/E-ARK-SIP.xml`](https://earksip.dilcis.eu/profile/E-ARK-SIP.xml). |
+| Description | The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to [`https://earksip.dilcis.eu/profile/E-ARK-SIP.xml`](https://earksip.dilcis.eu/profile/E-ARK-SIP.xml) to indicate conformance with the E-ARK specification. |
 | Datatype | URL |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -158,7 +161,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets/@LABEL` |
 |-----------------------|-----------|
 | Name | Package name |
-| Description | An optional short text describing the contents of the package. |
+| Description | An optional short text describing the contents of the representation. |
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | MAY |
@@ -191,7 +194,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets/metsHdr/@LASTMODDATE` |
 |-----------------------|-----------|
 | Name | Representation last modification datetime |
-| Description | In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and filled in when the representation has been modified since its creation datetime. |
+| Description | In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and used when the representation has been modified since its creation datetime. |
 | Datatype | EDTF |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
@@ -199,7 +202,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets/metsHdr/@RECORDSTATUS` |
 |-----------------------|-----------|
 | Name | Representation status |
-| Description | A way of indicating the status of the representation and to instruct the archive on how to properly handle it.<br>If not set, the expected value is `NEW`. |
+| Description | A way of indicating the status of the representation and to instruct meemoo on how to properly handle it.<br>If not set, the expected value is `NEW`.<br>Meemoo investigates the use of the `@RECORDSTATUS` attribute for future use cases such as e.g. a metadata update (i.e. ingest of metadata only with the goal of updating, adding or deleting existing metadata in meemoo's archive system). |
 | Datatype | String; fixed vocabulary |
 | Vocabulary | `NEW`<br>`SUPPLEMENT`<br>`REPLACEMENT`<br>`TEST`<br>`VERSION`<br>`DELETE`<br>`OTHER` |
 | Cardinality | 0..1 |
@@ -208,14 +211,12 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Element | `mets/metsHdr/agent` |
 |-----------------------|-----------|
 | Name | Agent |
-| Description | / |
-| Cardinality | 1..* |
+| Cardinality | 0..* |
 | Obligation | MAY |
 
 | Attribute | `mets/metsHdr/agent/@ROLE` |
 |-----------------------|-----------|
 | Name | Agent role |
-| Description | / |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -223,7 +224,6 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets/metsHdr/agent/@TYPE` |
 |-----------------------|-----------|
 | Name | Agent type |
-| Description | / |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -239,7 +239,6 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Element | `mets/metsHdr/agent/name` |
 |-----------------------|-----------|
 | Name | Agent name |
-| Description | / |
 | Datatype | String |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -247,20 +246,19 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Element | `mets/metsHdr/agent/note` |
 |-----------------------|-----------|
 | Name | Agent additional information |
-| Description | / |
 | Datatype | String |
-| Cardinality | 1..1 |
+| Cardinality | 0..1 |
 | Obligation | MAY |
 
 ## /data (directory)
 
-The `/data` directory contains the media files of the SIP.
-Depending on the use-case and the content partner, these files can be digital pictures, videos, audio... 
+The `/data` directory contains the media files of a specific representation of the SIP.
+Depending on the use-case and the CP, these files can be digital pictures, video, audio...
 
 ***Requirements***
 
 - The `/data` directory MUST NOT contain any subdirectories.
-- All files in the `/data` directory MUST be referenced in the corresponding representation mets.
+- All files in the `/data` directory MUST be referenced in the corresponding representation `mets.xml` file.
 
 ## /metadata (directory)
 
@@ -272,42 +270,56 @@ The `/metadata` directory contains both descriptive and preservation metadata ab
 
 ### /descriptive (directory)
 
-The `/descriptive` directory contains descriptive metadata about the representation of the representation level.
-
-***Example***
-
-```xml
-<?xml version='1.0' encoding='UTF-8'?>
-<resource xmlns:dcterms="http://purl.org/dc/terms/"
-          xmlns:xs="http://www.w3.org/2001/XMLSchema/"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/" >
-
-  <!-- general title for the representation -->
-  <dcterms:title>Colour representation of the Felis Catus Flamens lying on a sofa</dcterms:title>
-
-  <!-- id for the FCF in an imaginary cat database -->
-  <dcterms:identifier>FCatus_FelisCatusFlamens_Sofa_01_001</dcterms:identifier>
-
-  <!-- date when representation was created -->
-  <dcterms:created xsi:type="edtf">2022-01~</dcterms:created>
-
-  <!-- multiple keywords about the representation -->
-  <dcterms:subject>Cat</dcterms:subject>
-  <dcterms:subject>Felis Catus Flamens</dcterms:subject>
-  <dcterms:subject>Sofa</dcterms:subject>
-
-</resource> 
-```
+The `/descriptive` directory contains descriptive metadata about the representation.
 
 ***Requirements***
 
 - The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
 
-The `dc.xml` file of the representation level follows the same requirements of the `dc.xml` file of the package level discussed in section [dc.xml](#dcxml).
+The `dc.xml` file at the representation level contains descriptive metadata about a specific representation of the SIP.
+
+Descriptive metadata about the representation is put into a separate `<premis:object>` element with a unique identifier.
+The link between the `<premis:object>` element in the descriptive metadata and the `<premis:object>` element in the preservation metadata (in the `premis.xml` in `/data/representations/representation_*/metadata/preservation`) is made using a shared UUID in the `<premis:objectIdentifier>` elements of both files.
+
+***Example***
+
+```xml
+<?xml version='1.0' encoding='UTF-8'?>
+<premis:premis xmlns:dcterms="http://purl.org/dc/terms/" xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+
+  <premis:object>
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+    <!-- general title for the representation -->
+    <dcterms:title>Colour representation of the Felis Catus Flamens lying on a sofa</dcterms:title>
+
+    <!-- id for the FCF in an imaginary cat database -->
+    <dcterms:identifier>FCatus_FelisCatusFlamens_Sofa_01_001</dcterms:identifier>
+
+    <!-- date when representation was created -->
+    <dcterms:created xsi:type="edtf">2022-01~</dcterms:created>
+
+    <!-- multiple keywords about the representation -->
+    <dcterms:subject>Cat</dcterms:subject>
+    <dcterms:subject>Felis Catus Flamens</dcterms:subject>
+    <dcterms:subject>Sofa</dcterms:subject>
+  </premis:object>
+
+</premis:premis> 
+```
+
+***Requirements***
+
+The `dc.xml` of the representation level follows the same requirements regarding metadata elements of the `dc.xml` file discussed in the [/descriptive section](5_structure_package.html#descriptive-directory) of the package level.
+Additional requirements are discussed below:
+
+- The `dc.xml` file MUST embed the descriptive metadata about the representation in a `<premis:object/>` element.
 
 ### /preservation (directory)
 
-The `/preservation` directory contains preservation metadata about the representation and the media files of the representation level.
+The `/preservation` directory contains preservation metadata about the representation and the media files.
 
 ***Requirements***
 
@@ -315,109 +327,108 @@ The `/preservation` directory contains preservation metadata about the represent
 
 The `premis.xml` file of the representation level contains preservation metadata about the representation and the media files of the representation level.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.
-More detailed preservation information can also be described using PREMIS events and PREMIS agents.
+More detailed preservation information can be described using PREMIS events and PREMIS agents.
 
 ***Example***
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<premis:premis version="3.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:premis="http://www.loc.gov/premis/v3">
+<premis:premis version="3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:premis="http://www.loc.gov/premis/v3">
 
-    <premis:object xsi:type="premis:representation">
-        <premis:objectIdentifier>
-            <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-            <premis:objectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:objectIdentifierValue>
-        </premis:objectIdentifier>
+  <premis:object>
+    <premis:objectCategory>representation</premis:objectCategory>
 
-        <premis:objectCategory>representation</premis:objectCategory>
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
 
-        <!-- relationship between representation and its files -->
-        <premis:relationship>
-            <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-            <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc">includes</premis:relationshipSubType>
-            <premis:relatedObjectIdentifier>
-                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-                <premis:relatedObjectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:relatedObjectIdentifierValue>
-            </premis:relatedObjectIdentifier>
-            <premis:relatedObjectIdentifier>
-                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-                <premis:relatedObjectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:relatedObjectIdentifierValue>
-            </premis:relatedObjectIdentifier>
-        </premis:relationship>
+    <!-- relationship between representation and its files -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc">includes</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
 
-        <!-- relationship between representation and its IE/subIE -->
-        <premis:relationship>
-            <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-            <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep">represents</premis:relationshipSubType>
-            <premis:relatedObjectIdentifier>
-                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-                <premis:relatedObjectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:relatedObjectIdentifierValue>
-            </premis:relatedObjectIdentifier>
-        </premis:relationship>
-    </premis:object>
+    <!-- relationship between representation and its IE/subIE -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep">represents</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
+  </premis:object>
 
-    <premis:object xsi:type="premis:file">
-        <premis:originalName>data/1445.jpeg</premis:originalName>
+  <premis:object>
+    <premis:objectCategory>file</premis:objectCategory>
 
-        <premis:objectIdentifier>
-            <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-            <premis:objectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:objectIdentifierValue>
-        </premis:objectIdentifier>
+    <premis:originalName>data/1445.jpeg</premis:originalName>
 
-        <premis:objectCategory>file</premis:objectCategory>
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-bd610fa4-077c-40cc-a278-74220df0a0c1</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
 
-        <premis:objectCharacteristics>
-            <premis:fixity>
-                <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
+    <premis:objectCharacteristics>
+      <premis:fixity>
+        <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
                 MD5
-                </premis:messageDigestAlgorithm>
-                <premis:messageDigest>b7ae37f6094794e313402b9d064978e8</premis:messageDigest>
-            </premis:fixity>
-        </premis:objectCharacteristics>
+        </premis:messageDigestAlgorithm>
+        <premis:messageDigest>b7ae37f6094794e313402b9d064978e8</premis:messageDigest>
+      </premis:fixity>
+    </premis:objectCharacteristics>
 
-        <!-- relationship between file and its representation -->
-        <premis:relationship>
-            <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-            <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
-            <premis:relatedObjectIdentifier>
-                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-                <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
-            </premis:relatedObjectIdentifier>
-        </premis:relationship>
+    <!-- relationship between file and its representation -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
 
-    </premis:object>
+  </premis:object>
 
-    <premis:object xsi:type="premis:file">
-        <premis:originalName>data/1450.jpeg</premis:originalName>
-        <premis:objectIdentifier>
-            <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-            <premis:objectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:objectIdentifierValue>
-        </premis:objectIdentifier>
+  <premis:object>
+    <premis:objectCategory>file</premis:objectCategory>
 
-        <premis:objectCategory>file</premis:objectCategory>
+    <premis:originalName>data/1450.jpeg</premis:originalName>
 
-        <premis:objectCharacteristics>
-            <premis:fixity>
-                <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-950ea040-5e79-4223-b804-b76660ec7e85</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
+
+    <premis:objectCharacteristics>
+      <premis:fixity>
+        <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
                 MD5
-                </premis:messageDigestAlgorithm>
-                <premis:messageDigest>d4985ba4b67ff067a0e84c53b6d35355</premis:messageDigest>
-            </premis:fixity>
-        </premis:objectCharacteristics>
+        </premis:messageDigestAlgorithm>
+        <premis:messageDigest>d4985ba4b67ff067a0e84c53b6d35355</premis:messageDigest>
+      </premis:fixity>
+    </premis:objectCharacteristics>
 
-        <!-- relationship between file and its representation -->
-        <premis:relationship>
-            <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
-            <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
-            <premis:relatedObjectIdentifier>
-                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-                <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
-            </premis:relatedObjectIdentifier>
-        </premis:relationship>
+    <!-- relationship between file and its representation -->
+    <premis:relationship>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+    </premis:relationship>
 
-    </premis:object>
+  </premis:object>
 
 </premis:premis>
 ```

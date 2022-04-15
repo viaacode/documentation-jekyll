@@ -65,3 +65,7 @@ In the context of noting metadata values, the following datatypes are mentioned 
 | String         | A sequence of zero or more Unicode (UTF-8) characters, usually wrapped in double quotes, using backslash escapes (if necessary). A character is represented as a single character string. |
 | URL            | A Uniform Resource Locator as defined in [RFC1738](https://datatracker.ietf.org/doc/html/rfc1738). |
 | UUID           | A Universally Unique Identifier as defined in [RFC4122](https://datatracker.ietf.org/doc/html/rfc4122). |
+
+<small>
+Continue to [Core Concepts](3_core-concepts).
+</small>
