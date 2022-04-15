@@ -1,21 +1,27 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<resource xmlns:dcterms="http://purl.org/dc/terms/"
-  xmlns:xs="http://www.w3.org/2001/XMLSchema/"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+<premis:premis xmlns:dcterms="http://purl.org/dc/terms/" xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
 
-  <!-- general title for the representation -->
-  <dcterms:title>Colour representation of the Felis Catus Flamens sitting on a cat tree</dcterms:title>
+  <premis:object>
+    <premis:objectIdentifier>
+      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+      <premis:objectIdentifierValue>uuid-de83045d-3b0f-4161-9f96-40079af0d480</premis:objectIdentifierValue>
+    </premis:objectIdentifier>
 
-  <!-- id for the FCF in an imaginary cat database -->
-  <dcterms:identifier>FCatus_FelisCatusFlamens_CatTree_01_001</dcterms:identifier>
+    <!-- general title for the representation -->
+    <dcterms:title>Colour representation of the Felis Catus Flamens sitting on a cat tree</dcterms:title>
 
-  <!-- date when representation was created -->
-  <dcterms:created xsi:type="edtf">2022-01~</dcterms:created>
+    <!-- id for the FCF in an imaginary cat database -->
+    <dcterms:identifier>FCatus_FelisCatusFlamens_CatTree_01_001</dcterms:identifier>
 
-  <!-- multiple keywords about the representation -->
-  <dcterms:subject>Cat</dcterms:subject>
-  <dcterms:subject>Felis Catus Flamens</dcterms:subject>
-  <dcterms:subject>Cat tree</dcterms:subject>
+    <!-- date when representation was created -->
+    <dcterms:created xsi:type="edtf">2022-01~</dcterms:created>
 
-</resource> 
+    <!-- multiple keywords about the representation -->
+    <dcterms:subject>Cat</dcterms:subject>
+    <dcterms:subject>Felis Catus Flamens</dcterms:subject>
+    <dcterms:subject>Cat tree</dcterms:subject>
+
+  </premis:object>
+
+</premis:premis> 
  
