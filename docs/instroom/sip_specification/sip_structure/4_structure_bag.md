@@ -42,7 +42,7 @@ root_directory
 - A bag MUST contain a `manifest-md5.txt` file.
 - A bag MUST contain a `/data` directory.
 - The contents of a bag MUST be character-encoded according to UTF-8.
-- A bag SHOULD be a ZIP or TAR file.
+- A bag MUST be a ZIP file.
 - A bag MAY contain a `bag-info.txt` file.
 
 ## manifest-md5.txt (file)
@@ -74,7 +74,7 @@ eaa2c609ff6371712f623f5531945b44  ./bagit.txt
 - The `manifest-md5.txt` file MUST list all files contained in the bag.
 - The `manifest-md5.txt` file MUST NOT list any directories.
 - The `manifest-md5.txt` file MUST NOT list any files outside of the bag.
-- Each line of the `manifest-md5.txt` file MUST be of the form *checksum filepath*, where *filepath* is the pathname of a file relative to the bag-lelvel directory, and *checksum* is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
+- Each line of the `manifest-md5.txt` file MUST be of the form *checksum filepath*, where *filepath* is the pathname of a file relative to the bag-level directory, and *checksum* is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
 - The slash ('/') character MUST be used as a path separator in *filepath*.
 - One or more linear whitespace characters (spaces or tabs) MUST separate each *checksum* from each *filepath*.
 - Each line of the `manifest-md5.txt` file MUST be terminated with an LF, a CR or a CRLF.
@@ -100,7 +100,7 @@ Tag-File-Character-Encoding: UTF-8
 
 The `/data` directory contains the content of the bag divided across a number of different files and directories.
 Each `/data` directory MUST contain exactly one package, consisting of the combination of a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
-See the [package level](../5_structure_package) for more information and the requirements of the `/data` directory.
+See the [package level](5_structure_package) for more information and the requirements of the `/data` directory.
 
 ***Example***
 
@@ -109,11 +109,11 @@ root_directory
 │   ...
 │
 └──data
-   │   mets.xml
+   │──mets.xml
    │
-   └──metadata
+   │──metadata
    │      ...
-   └──representations
+   │──representations
    │      ...
 ```
 
