@@ -1,7 +1,7 @@
 ---
 layout:       default
 title:        Terminology
-parent: SIP Specification 0.1
+parent:       SIP Specification
 nav_order:    2
 nav_exclude:  false
 ---

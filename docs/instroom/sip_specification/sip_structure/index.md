@@ -1,8 +1,8 @@
 ---
 layout:       default
 title:        SIP Structure
-parent: SIP Specification 0.1
-nav_order:    5
+parent:       SIP Specification
+nav_order:    4
 nav_exclude:  false
 has_children: true
 ---

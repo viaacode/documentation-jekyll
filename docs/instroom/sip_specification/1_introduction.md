@@ -1,7 +1,7 @@
 ---
 layout:       default
 title:        Introduction
-parent: SIP Specification 0.1
+parent:       SIP Specification
 nav_order:    1
 nav_exclude:  false
 ---
