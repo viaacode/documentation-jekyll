@@ -13,7 +13,8 @@ Status: WIP
 {: .no_toc }
 
 This section introduces the core concepts of the PREMIS data model, which are fundamental to the meemoo SIP.
-In essence, digital content is delivered as an intellectual entity (henceforth IE) consisting of one of more (digital) representations which, in turn, consist of a set of files.
+In essence, digital content is delivered as one of more (digital) _representations_ of an _intellectual entity_ (henceforth IE). 
+In turn, a representation is comprised of one or more files.
 These concepts are used throughout the remainder of this specification, and are reflected in the SIP's directory structure.
 
 <figure class="mx-auto">
