@@ -17,7 +17,7 @@ Status: WIP
     <dt>Content</dt>
     <dd>Digital content such as media files and metadata files.</dd>
     <dt>Content Partner (CP)</dt>
-    <dd>Content Partners are organisations that store digital content with meemoo, with associated agreements for accessing the content online.</dd>
+    <dd>Organisations that have a collaboration agreement with meemoo for storing their digital or digitized content.</dd>
     <dt>Content Profile</dt>
     <dd>A Content Profile is an extension of meemoo's SIP specification for the ingest of specific types of media files, e.g. newspapers, 3D objects, collection items with extensive metadata... A Content Profile boils down to additional requirements on top of the current specification.</dd>
     <dt>Descriptive metadata</dt>
