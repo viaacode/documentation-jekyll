@@ -72,7 +72,7 @@ These two directories are ignored during ingest and will therefore not be archiv
 
 ## mets.xml (file)
 
-The `mets.xml` file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in the section [package mets.xml](5_structure_package#metsxml-file).
+The `mets.xml` file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in the section [package mets.xml](/docs/instroom/sip_specification/sip_structure/5_structure_package#metsxml-file).
 Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same requirements, where possible, as the package `mets.xml` file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `mets` and `metsHdr` sections.
 
 ### \<mets\> section
@@ -87,8 +87,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xmlns:xlink="http://www.w3.org/1999/xlink" 
       OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" 
-      TYPE="OTHER" 
-      csip:OTHERTYPE="Photographs – Digital" 
+      TYPE="Photographs – Digital" 
       PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
 
 <metsHdr>...</metsHdr>
@@ -130,22 +129,6 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Other content category |
 | Description | When the `mets/@TYPE` attribute is set to `OTHER`, the `mets/@csip:OTHERTYPE` attribute SHOULD be used to declare the content category of the representation not contained in the fixed vocabulary of the `@TYPE` attribute. |
-| Datatype | String |
-| Cardinality | 0..1 |
-| Obligation | SHOULD |
-
-| Attribute | `mets/@csip:CONTENTINFORMATIONTYPE` |
-|-----------------------|-----------|
-| Name | Content information type specification |
-| Description | This attribute is used to declare the Content Information Type Specification used when creating the SIP. Its value MUST be set to `OTHER`. |
-| Datatype | String |
-| Cardinality | 1..1 |
-| Obligation | MUST |
-
-| Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
-|-----------------------|-----------|
-| Name | Other content information type specification |
-| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type.<br>Meemoo investigates the use of a controlled vocabulary containing all of the allowed content types for ingest. |
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
@@ -274,12 +257,12 @@ The `/descriptive` directory contains descriptive metadata about the representat
 
 ***Requirements***
 
-- The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
+- The `/descriptive` directory SHOULD contain exactly one file: `descriptive.xml`.
 
-The `dc.xml` file at the representation level contains descriptive metadata about a specific representation of the SIP.
+The `descriptive.xml` file at the representation level contains descriptive metadata about a specific representation of the SIP.
 
 Descriptive metadata about the representation is put into a separate `<premis:object>` element with a unique identifier.
-The link between the `<premis:object>` element in the descriptive metadata and the `<premis:object>` element in the preservation metadata (in the `premis.xml` in `/data/representations/representation_*/metadata/preservation`) is made using a shared UUID in the `<premis:objectIdentifier>` elements of both files.
+The link between the `<premis:object>` element in the descriptive metadata and the `<premis:object>` element in the preservation metadata (in the `preservation.xml` in `/data/representations/representation_*/metadata/preservation`) is made using a shared UUID in the `<premis:objectIdentifier>` elements of both files.
 
 ***Example***
 
@@ -312,10 +295,10 @@ The link between the `<premis:object>` element in the descriptive metadata and t
 
 ***Requirements***
 
-The `dc.xml` of the representation level follows the same requirements regarding metadata elements of the `dc.xml` file discussed in the [/descriptive section](5_structure_package.html#descriptive-directory) of the package level.
+The `descriptive.xml` of the representation level follows the same requirements regarding metadata elements of the `descriptive.xml` file discussed in the [/descriptive section](/docs/instroom/sip_specification/sip_structure/5_structure_package#descriptive-directory) of the package level.
 Additional requirements are discussed below:
 
-- The `dc.xml` file MUST embed the descriptive metadata about the representation in a `<premis:object/>` element.
+- The `descriptive.xml` file MUST embed the descriptive metadata about the representation in a `<premis:object/>` element.
 
 ### /preservation (directory)
 
@@ -323,9 +306,9 @@ The `/preservation` directory contains preservation metadata about the represent
 
 ***Requirements***
 
-- The `/preservation` directory MUST contain exactly one file: `premis.xml`.
+- The `/preservation` directory MUST contain exactly one file: `preservation.xml`.
 
-The `premis.xml` file of the representation level contains preservation metadata about the representation and the media files of the representation level.
+The `preservation.xml` file of the representation level contains preservation metadata about the representation and the media files of the representation level.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.
 More detailed preservation information can be described using PREMIS events and PREMIS agents.
 
@@ -435,8 +418,8 @@ More detailed preservation information can be described using PREMIS events and 
 
 ***Requirements***
 
-- The `premis.xml` file MUST contain a PREMIS object for the representation.
-- The `premis.xml` file MUST contain a PREMIS object for each media file in the `/data` directory.
+- The `preservation.xml` file MUST contain a PREMIS object for the representation.
+- The `preservation.xml` file MUST contain a PREMIS object for each media file in the `/data` directory.
 - Each PREMIS object MUST contain a unique identifier.
-- Each PREMIS object MUST contain a checksum (when applicable).
-- The `premis.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the representation and the media files.
+- Each PREMIS object with the value set to `FILE` MUST contain a checksum.
+- The `preservation.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the representation and the media files.
