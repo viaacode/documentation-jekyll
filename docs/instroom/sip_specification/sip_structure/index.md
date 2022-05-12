@@ -29,44 +29,6 @@ In addition, a `mets.xml` file supplies information about the SIP's structure an
 The [_representation level_](6_structure_representation.md) contains the media files, grouped in representation folders.
 Each representation folder also contains its own `mets.xml` file, together with descriptive and preservation information about a specific representation of the (sub-)IE(s) of the SIP situated at the _package level_ and preservation information about the media files.
 
-**_Example_**
-
-```plaintext
-root_directory
-│──manifest-md5.txt
-│──bagit.txt
-│
-└──data
-   │--mets.xml
-   │
-   └──metadata
-   │  │
-   │  └──descriptive
-   │  │      ...
-   │  │
-   │  └──preservation
-   │         ... 
-   │
-   └──representations
-      │
-      └──representation_1
-      │  │──mets.xml
-      │  │
-      │  └──data
-      │  │      ...
-      │  │
-      │  └──metadata
-      │     │
-      │     └──descriptive
-      │     │      ...
-      │     │
-      │     └──preservation
-      │            ...
-      │
-      └──representation_*
-         │   ...
-```
-
 ## Running example
 
 {: .note }
