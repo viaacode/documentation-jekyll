@@ -2,8 +2,8 @@
 layout:       default
 title:        SIP Specification
 has_children: true
+parent:       Digitale instroom
 nav_order:    1
-nav_exclude:  false
 ---
 Status: WIP
 {: .label .label-yellow }

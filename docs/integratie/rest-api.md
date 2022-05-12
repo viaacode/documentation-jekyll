@@ -1,9 +1,10 @@
 ---
 layout: default
-title: Verschillen tussen REST API v1 en v2
+title: REST API v1 en v2
+parent: Een integratie ontwikkelen
 has_children: false
 has_toc: true
-nav_order: 3
+nav_order: 1
 last_modified_date: 2021-04-19T09:27:33+02:00
 ---
 
@@ -49,7 +50,7 @@ de v2 van de REST API te bereiken. Concreet:
 **Note**: Dit zijn de _endpoints_ voor de productieomgeving! Voor een
 beschrijving van de verschillende omgevingen en hun _endpoints_, zie [Alles om te
 starten met het bouwen van een integratie]({{ site.baseurl }}{% link
-docs/development/index.md %}).
+docs/integratie/index.md %}).
 
 ## Verschillen tussen REST API v1 en v2
 
@@ -94,7 +95,7 @@ via de `Authorization` _header_ maar met de  `Bearer` prefix, bijvoorbeeld:
 
 Op deze pagina vind je meer informatie over de OAuth2 authenticatie: [Alles om
 te starten met het bouwen van een integratie]({{ site.baseurl }}{% link
-docs/development/index.md %}).
+docs/integratie/index.md %}).
 
 **Waarom is dit belangrijk?** Integraties gebaseerd op REST API v1 zullen niet
 meer werken aangezien ze niet meer geauthenticeerd zijn.

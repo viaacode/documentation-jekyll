@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Ontwikkeling van een integratie
-has_children: false
+title: Een integratie ontwikkelen
+has_children: true
 has_toc: true
 nav_order: 3
 last_modified_date: 2021-03-25T06:33:08+0100
@@ -63,13 +63,15 @@ Dit zijn de paden waarop de verschillende API's bereikbaar zijn. Onderstaande
 paden, gecombineerd met de netwerk locaties van hierboven, geven je de
 volledige URL waarop de API kan worden aangesproken.
 
-| API            | Pad                      | Documentatie                                                                                                         |
-|----------------|--------------------------|----------------------------------------------------------------------------------------------------------------------|
-| OAI-PMH API    | /mediahaven-oai/oai/     | [https://developer.meemoo.be/docs/oai-pmh/]({{ site.baseurl }}{% link docs/oai-pmh/index.md %})                      |
-| MH REST API v1 | /mediahaven-rest-api/    | [https://archief.viaa.be/mediahaven-rest-api/](https://archief.viaa.be/mediahaven-rest-api/)                         |
-| MH REST API v2 | /mediahaven-rest-api/v2/ | [https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/) |
+| Documentatie            | Pad                      |
+|----------------|--------------------------|
+| [OAI-PMH API]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %})     | /mediahaven-oai/oai/     |
+| [MH REST API v1](https://archief.viaa.be/mediahaven-rest-api/) | /mediahaven-rest-api/    | 
+| [MH REST API v2](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/) | /mediahaven-rest-api/v2/ |
+| [IIIF 3.0 Image API]({{ site.baseurl }}{% link docs/integratie/iiif.md %}) |                      | 
+| [Organizations API v2]({{ site.baseurl }}{% link docs/integratie/org-api/index.md %}) |                       | 
 
-# API's
+# Mediahaven API's
 
 Twee grote API's zijn beschikbaar voor de content partners:
 
@@ -140,4 +142,4 @@ persoonlijke account zijn of een "technische" account (bv. `mediahaven.api@<org>
 
 ## OAI-PMH API
 
-Zie [https://developer.meemoo.be/docs/oai-pmh/]({{ site.baseurl }}{% link docs/oai-pmh/index.md %}) voor meer informatie.
+Zie [https://developer.meemoo.be/docs/integratie/oai-pmh]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %}) voor meer informatie.
