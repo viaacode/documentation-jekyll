@@ -27,7 +27,7 @@ twitter_username: meemoo_be
 
 #remote_theme: pmarsceill/just-the-docs
 # TEMP: use pdmosses template until his PR is merged
-remote_theme: pdmosses/just-the-docs@callouts
+remote_theme: pdmosses/just-the-docs@combination-rec-nav
 
 # Build settings
 #theme: "just-the-docs"

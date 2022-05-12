@@ -2,6 +2,7 @@
 layout:       default
 title:        Terminology
 parent:       SIP Specification
+grand_parent:  Digitale instroom
 nav_order:    2
 nav_exclude:  false
 ---

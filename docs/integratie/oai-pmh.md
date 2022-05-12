@@ -1,6 +1,9 @@
 ---
 layout: default
 title: OAI-PMH
+parent: Een integratie ontwikkelen
+has_children: false
+has_toc: true
 nav_order: 2
 last_modified_date: 2020-10-08 12:30:00 +0200
 ---

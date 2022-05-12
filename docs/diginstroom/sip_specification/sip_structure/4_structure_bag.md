@@ -2,7 +2,6 @@
 layout:       default
 title:        Bag level
 parent:       SIP Structure
-grand_parent: SIP Specification
 nav_order:    5
 nav_exclude:  false
 ---

@@ -1,8 +1,9 @@
 ---
 layout: default
-title: IIIF
+title: IIIF 3.0 Image API
+parent: Een integratie ontwikkelen
 has_children: false
-nav_order: 5
+nav_order: 3
 last_modified_date: 2022-03-14T11:40:08+0100
 ---
 
