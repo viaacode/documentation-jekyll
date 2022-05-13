@@ -20,27 +20,27 @@
         </div>
         <nav id="nav" role="navigation">
           <div class="nav-group">
-            <h4 class="nav-group-title">Introduction</h5>
-              <ul class="nav-group-items">
-                <li>
-                  <a href="#introduction">Welcome</a>
-                </li>
-                <li>
-                  <a href="#introduction-item-0">Authentication</a>
-                </li>
-                <li>
-                  <a href="#introduction-item-1">GET request</a>
-                </li>
-                <li>
-                  <a href="#introduction-item-2">POST request</a>
-                </li>
-                <li>
-                  <a href="#introduction-item-3">Testing</a>
-                </li>
-                <li>
-                  <a data-traverse-ignore="" href="https://developer.meemoo.be">Back to docs</a>
-                </li>
-              </ul>
+            <h4 class="nav-group-title">Introduction</h4>
+            <ul class="nav-group-items">
+              <li>
+                <a href="#introduction">Welcome</a>
+              </li>
+              <li>
+                <a href="#introduction-item-0">Authentication</a>
+              </li>
+              <li>
+                <a href="#introduction-item-1">GET request</a>
+              </li>
+              <li>
+                <a href="#introduction-item-2">POST request</a>
+              </li>
+              <li>
+                <a href="#introduction-item-3">Testing</a>
+              </li>
+              <li>
+                <a data-traverse-ignore="" href="https://developer.meemoo.be">Back to docs</a>
+              </li>
+            </ul>
           </div>
           <div class="nav-group">
             <h4 class="nav-group-title">Operations</h4>
@@ -155,7 +155,10 @@
                   </p>
                 </div>
                 <div class="example-section welcome-api-endpoints-section example-section-is-code">
-                  <h5>API Endpoints</h5> <pre><code>https://services-prd.viaa.be/organisation_v2</code></pre> </div>
+                  <h5>API Endpoints</h5> <pre><code>https://services.viaa.be/organisation_v2</code></pre> </div>
+                <div class="example-section welcome-api-endpoints-section example-section-is-code">
+                  <h5>Headers</h5> <pre><code>// Your JWT token. Must be included in all API calls or supplied by &#x60;jwtauth&#x60; query parameter.
+Authorization: Bearer &lt;YOUR_TOKEN_HERE&gt;</code></pre> </div>
                 <div class="example-section welcome-version-section">
                   <h5>Version</h5>
                   <p>2.0.0</p>
@@ -163,57 +166,57 @@
               </div>
             </div>
             <div id="introduction-item-0" class="introduction-item" data-traverse-target="introduction-item-0">
-              <h2 class="introduction-item-title">Authentication</h5>
-                <div class="doc-row">
-                  <div class="doc-copy">
-                    <p>This API uses authentication via
-                      <a href="https://jwt.io/">JSON Web Tokens (JWT)</a>. You can request the JWT token as follows using your meemoo username and password.</p>
-                    <ol>
-                      <li>Request a token via
-                        <a href="https://oas-qas.meemoo.be/token">https://oas-qas.meemoo.be/token</a> or
-                        <a href="https://oas-prd.meemoo.be/token">https://oas-prd.meemoo.be/token</a>.<pre><code class="hljs language-bash">curl -v -u <span class="hljs-string">&#x27;&lt;username/email/...&gt;:&lt;password&gt;&#x27;</span> <span class="hljs-string">&quot;https://oas-qas.meemoo.be/token?grant_type=client_credentials&amp;expires_in=31536000&quot;</span>
-curl -v -u <span class="hljs-string">&#x27;&lt;username/email/...&gt;:&lt;password&gt;&#x27;</span> <span class="hljs-string">&quot;https://oas-prd.meemoo.be/token?grant_type=client_credentials&amp;expires_in=31536000&quot;</span> <span class="hljs-comment"># for PRD</span>
+              <h2 class="introduction-item-title">Authentication</h2>
+              <div class="doc-row">
+                <div class="doc-copy">
+                  <p>This API uses authentication via
+                    <a href="https://jwt.io/">JSON Web Tokens (JWT)</a>. You can request the JWT token as follows using your meemoo username and password.</p>
+                  <ol>
+                    <li>Request a token via
+                      <a href="https://oas-qas.meemoo.be/token">https://oas-qas.meemoo.be/token</a> or
+                      <a href="https://oas.meemoo.be/token">https://oas.meemoo.be/token</a>.<pre><code class="hljs language-bash">curl -v -u <span class="hljs-string">&#x27;&lt;username/email/...&gt;:&lt;password&gt;&#x27;</span> <span class="hljs-string">&quot;https://oas-qas.meemoo.be/token?grant_type=client_credentials&amp;expires_in=31536000&quot;</span>
+curl -v -u <span class="hljs-string">&#x27;&lt;username/email/...&gt;:&lt;password&gt;&#x27;</span> <span class="hljs-string">&quot;https://oas.meemoo.be/token?grant_type=client_credentials&amp;expires_in=31536000&quot;</span> <span class="hljs-comment"># for PRD</span>
 </code></pre> </li>
-                      <li>Use the token in the authorization header (bearer) or as a URI parameter (jwauth):<pre><code class="hljs language-bash">curl -v https://services-qas.viaa.be/organisation_v2/?jwtauth=<span class="hljs-string">&quot;eyJ0eXAiOiJKV1......tbjz4-r4&quot;</span>
-curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-string">&quot;eyJ0eXAiOiJKV1......tbjz4-r4&quot;</span> <span class="hljs-comment"># for PRD</span>
+                    <li>Use the token in the authorization header (bearer) or as a URI parameter (jwauth):<pre><code class="hljs language-bash">curl -v https://services-qas.viaa.be/organisation_v2/?jwtauth=<span class="hljs-string">&quot;eyJ0eXAiOiJKV1......tbjz4-r4&quot;</span>
+curl -v https://services.viaa.be/organisation_v2/?jwtauth=<span class="hljs-string">&quot;eyJ0eXAiOiJKV1......tbjz4-r4&quot;</span> <span class="hljs-comment"># for PRD</span>
 </code></pre> </li>
-                    </ol>
-                  </div>
-                  <div class="doc-examples"> </div>
+                  </ol>
                 </div>
+                <div class="doc-examples"> </div>
+              </div>
             </div>
             <div id="introduction-item-1" class="introduction-item" data-traverse-target="introduction-item-1">
-              <h2 class="introduction-item-title">GET request</h5>
-                <div class="doc-row">
-                  <div class="doc-copy">
-                    <p>Een GraphQL GET request contains the GraphQL query in the <code>query</code> query string. <code>curl -v https://services-qas.viaa.be/organisation_v2?query=&lt;graphql_query&gt; curl -v https://services-prd.viaa.be/organisation_v2?query=&lt;graphql_query&gt; # for PRD</code></p>
-                  </div>
-                  <div class="doc-examples"> </div>
+              <h2 class="introduction-item-title">GET request</h2>
+              <div class="doc-row">
+                <div class="doc-copy">
+                  <p>Een GraphQL GET request contains the GraphQL query in the <code>query</code> query string. <code>curl -v https://services-qas.viaa.be/organisation_v2?query=&lt;graphql_query&gt; curl -v https://services.viaa.be/organisation_v2?query=&lt;graphql_query&gt; # for PRD</code></p>
                 </div>
+                <div class="doc-examples"> </div>
+              </div>
             </div>
             <div id="introduction-item-2" class="introduction-item" data-traverse-target="introduction-item-2">
-              <h2 class="introduction-item-title">POST request</h5>
-                <div class="doc-row">
-                  <div class="doc-copy">
-                    <p>A GraphQL POST request expects a JSON-encoded payload, hence the <code>Content-Type: application/json</code> header must be included in the request. The request payload is structured as follows:</p> <pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
+              <h2 class="introduction-item-title">POST request</h2>
+              <div class="doc-row">
+                <div class="doc-copy">
+                  <p>A GraphQL POST request expects a JSON-encoded payload, hence the <code>Content-Type: application/json</code> header must be included in the request. The request payload is structured as follows:</p> <pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">&quot;query&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">&quot;operationName&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;...&quot;</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">&quot;variables&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span> <span class="hljs-attr">&quot;myVariable&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;someValue&quot;</span><span class="hljs-punctuation">,</span> ... <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </div>
-                  <div class="doc-examples"> </div>
-                </div>
+                <div class="doc-examples"> </div>
+              </div>
             </div>
             <div id="introduction-item-3" class="introduction-item" data-traverse-target="introduction-item-3">
-              <h2 class="introduction-item-title">Testing</h5>
-                <div class="doc-row">
-                  <div class="doc-copy">
-                    <p>The QAS environment API also serves the
-                      <a href="https://github.com/graphql/graphql-playground">GraphQL Playground</a> where queries can be tested in an interactive way. You can open the playground by directing your webbroweser towards
-                      <a href="https://services-qas.viaa.be/organisation_v2">https://services-qas.viaa.be/organisation_v2</a>. Note that you need to be authenticated in order to access the playground.</p>
-                  </div>
-                  <div class="doc-examples"> </div>
+              <h2 class="introduction-item-title">Testing</h2>
+              <div class="doc-row">
+                <div class="doc-copy">
+                  <p>The QAS environment API also serves the
+                    <a href="https://github.com/graphql/graphql-playground">GraphQL Playground</a> where queries can be tested in an interactive way. You can open the playground by directing your webbroweser towards
+                    <a href="https://services-qas.viaa.be/organisation_v2">https://services-qas.viaa.be/organisation_v2</a>. Note that you need to be authenticated in order to access the playground.</p>
                 </div>
+                <div class="doc-examples"> </div>
+              </div>
             </div>
           </div>
           <h1 id="group-Operations-Queries" class="group-heading" data-traverse-target="group-Operations-Queries">Queries</h1>
@@ -348,10 +351,10 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"offset"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">987</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"limit"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span>
+  <span class="hljs-attr">"limit"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">987</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -362,27 +365,29 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"data"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"contentpartners"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-      <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"contact_point"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">ContactPoint</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"primary_site"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Site</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"sites"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Site</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"posts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span>
-    <span class="hljs-punctuation">}</span>
+    <span class="hljs-attr">"contentpartners"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"contact_point"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">ContactPoint</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"primary_site"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Site</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"sites"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Site</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"posts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
   <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
@@ -529,7 +534,7 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"offset"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"limit"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span>
+  <span class="hljs-attr">"limit"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">987</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -540,28 +545,30 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"data"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"organizations"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-      <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"contact_point"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">ContactPoint</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"primary_site"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Site</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"sites"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Site</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"posts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"category"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
-    <span class="hljs-punctuation">}</span>
+    <span class="hljs-attr">"organizations"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"contact_point"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">ContactPoint</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"primary_site"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Site</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"sites"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Site</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"posts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"category"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
   <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
@@ -692,10 +699,10 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"given_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"given_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"family_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"offset"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">987</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"limit"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">987</span>
+  <span class="hljs-attr">"limit"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -706,15 +713,17 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"data"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"persons"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-      <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"given_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"family_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"telephone"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"email"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"holds"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"account_manager_of"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Organization</span><span class="hljs-punctuation">]</span>
-    <span class="hljs-punctuation">}</span>
+    <span class="hljs-attr">"persons"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"given_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"family_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"telephone"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"email"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"holds"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"account_manager_of"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Organization</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
   <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
@@ -858,7 +867,7 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"offset"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">987</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"limit"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">123</span>
 <span class="hljs-punctuation">}</span>
@@ -871,27 +880,29 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"data"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">"schools"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>
-      <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"contact_point"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">ContactPoint</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"primary_site"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Site</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"sites"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Site</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-      <span class="hljs-attr">"posts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span>
-    <span class="hljs-punctuation">}</span>
+    <span class="hljs-attr">"schools"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+      <span class="hljs-punctuation">{</span>
+        <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"contact_point"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">ContactPoint</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"primary_site"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Site</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"sites"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Site</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-attr">"posts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span>
+      <span class="hljs-punctuation">}</span>
+    <span class="hljs-punctuation">]</span>
   <span class="hljs-punctuation">}</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
@@ -910,7 +921,16 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <p>The <code>Boolean</code> scalar type represents <code>true</code> or <code>false</code>.</p>
                 </div>
               </div>
-              <div class="doc-examples"> </div>
+              <div class="doc-examples">
+                <div class="example-section example-section-is-code">
+                  <h5>Example</h5>
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json"><span class="hljs-keyword">true</span>
+</code></pre> </body>
+                  </html>
+                </div>
+              </div>
             </div>
           </section>
           <section id="definition-Concept" class="definition definition-object" data-traverse-target="definition-Concept">
@@ -990,7 +1010,7 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"broader"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Concept</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"narrower"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Concept</span><span class="hljs-punctuation">]</span>
@@ -1069,7 +1089,7 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"contact_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"contact_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"email"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"telephone"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span>
 <span class="hljs-punctuation">}</span>
@@ -1283,16 +1303,16 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
@@ -1324,7 +1344,7 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json"><span class="hljs-number">4</span>
+                  <body><pre><code class="hljs language-gql"><span class="hljs-symbol">"4"</span>
 </code></pre> </body>
                   </html>
                 </div>
@@ -1573,17 +1593,17 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
@@ -1671,10 +1691,7 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <h5>Example</h5>
                   <html>
                   <head></head>
-                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span>
-<span class="hljs-punctuation">}</span>
+                  <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span><span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span> <span class="hljs-attr">"type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
                 </div>
@@ -1892,18 +1909,18 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
@@ -1911,7 +1928,7 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
   <span class="hljs-attr">"primary_site"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Site</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"sites"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Site</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"posts"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"category"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
+  <span class="hljs-attr">"category"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
                   </html>
@@ -2131,17 +2148,17 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
@@ -2251,11 +2268,11 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <html>
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
-  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"4"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"given_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"family_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"family_name"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"telephone"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"email"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"email"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"holds"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Post</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"account_manager_of"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">Organization</span><span class="hljs-punctuation">]</span>
 <span class="hljs-punctuation">}</span>
@@ -2457,12 +2474,12 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"contact_type"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"email"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"telephone"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"telephone"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"country"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"locality"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"region"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"post_office_box_number"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"postal_code"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"post_office_box_number"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"postal_code"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"street"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span>
 <span class="hljs-punctuation">}</span>
 </code></pre> </body>
@@ -2674,17 +2691,17 @@ curl -v https://services-prd.viaa.be/organisation_v2/?jwtauth=<span class="hljs-
                   <head></head>
                   <body><pre><code class="hljs language-json"><span class="hljs-punctuation">{</span>
   <span class="hljs-attr">"iri"</span><span class="hljs-punctuation">:</span> <span class="hljs-number">4</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"id"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"alt_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"mam_label"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"homepage"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"description"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"logo"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Logo</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"overlay"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">false</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
-  <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"abc123"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"bzt"</span><span class="hljs-punctuation">:</span> <span class="hljs-keyword">true</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"form_url"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
+  <span class="hljs-attr">"sector"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">"xyz789"</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"account_manager"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Person</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"classification"</span><span class="hljs-punctuation">:</span> <span class="hljs-string">Concept</span><span class="hljs-punctuation">,</span>
   <span class="hljs-attr">"units"</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span><span class="hljs-string">OrganizationalUnit</span><span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
