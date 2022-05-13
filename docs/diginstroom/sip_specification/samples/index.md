@@ -1,9 +1,9 @@
 ---
 layout:       default
-title:        Sample
-parent:       SIP Specification 0.1
-has_children: false
-nav_order:    8
+title:        Samples
+parent:       SIP Specification
+has_children: true
+nav_order:    10
 nav_exclude:  false
 ---
 Status: WIP

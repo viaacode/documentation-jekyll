@@ -1,8 +1,7 @@
 ---
 layout:       default
 title:        Bag level
-parent:         SIP Structure
-grand_parent: SIP Specification 0.1
+parent:       SIP Structure
 nav_order:    5
 nav_exclude:  false
 ---
@@ -42,7 +41,7 @@ root_directory
 - A bag MUST contain a `manifest-md5.txt` file.
 - A bag MUST contain a `/data` directory.
 - The contents of a bag MUST be character-encoded according to UTF-8.
-- A bag SHOULD be a ZIP or TAR file.
+- A bag MUST be a ZIP file.
 - A bag MAY contain a `bag-info.txt` file.
 
 ## manifest-md5.txt (file)
@@ -53,20 +52,20 @@ It is used during processing of the bag to allow for data integrity checking.
 ***Example***
 
 ```plaintext
-04bebae64ef96c9dede6366cacecb6d2  ./data/mets.xml
-26b5231d41ceb95ee4f031f309430206  ./data/representations/representation_2/mets.xml
+b5ab2782919f67d4779de9825c538f01  ./data/mets.xml
+2f3f71fadf038f86ba512c16702af864  ./data/representations/representation_2/mets.xml
 18513a8d61c6f2cbaaeeedd754b01d6b  ./data/representations/representation_2/data/D523F963.jpg
-f5c0aede495689b8c88c2e5f25166532  ./data/representations/representation_2/metadata/preservation/premis.xml
-bcb7a509d68156d2c5f349da4d46b757  ./data/representations/representation_2/metadata/descriptive/dc.xml
-b670f7ccf8e467251bb5ef57b00a4242  ./data/representations/representation_1/mets.xml
+d890aedac3b9d8620b4ead534c774e6c  ./data/representations/representation_2/metadata/preservation/preservation.xml
+bcb7a509d68156d2c5f349da4d46b757  ./data/representations/representation_2/metadata/descriptive/descriptive.xml
+b31b2224cef22b22d29f62a03f30aaa3  ./data/representations/representation_1/mets.xml
 d4985ba4b67ff067a0e84c53b6d35355  ./data/representations/representation_1/data/1450.jpeg
 b7ae37f6094794e313402b9d064978e8  ./data/representations/representation_1/data/1445.jpeg
-d3fd0971073b4d408e73731f901bf73e  ./data/representations/representation_1/metadata/preservation/premis.xml
-254acb652404702061d8552b658eb46a  ./data/representations/representation_1/metadata/descriptive/dc.xml
-8c2914e1df1e2827c9c4059804075120  ./data/metadata/preservation/premis.xml
-7c513b9cb8848860ddcb4d4b680171bc  ./data/metadata/descriptive/dc.xml
+ee4a938670222a8aab7a03dd4e64cb1d  ./data/representations/representation_1/metadata/preservation/preservation.xml
+254acb652404702061d8552b658eb46a  ./data/representations/representation_1/metadata/descriptive/descriptive.xml
+8c2914e1df1e2827c9c4059804075120  ./data/metadata/preservation/preservation.xml
+7c513b9cb8848860ddcb4d4b680171bc  ./data/metadata/descriptive/descriptive.xml
 eaa2c609ff6371712f623f5531945b44  ./bagit.txt
-0932acc300b325ef61cbc47f87e7d10a  ./manifest-md5.txt
+b87cd3b7924b79f2d60f8abc6a94a95e  ./manifest-md5.txt
 ```
 
 ***Requirements***
@@ -74,7 +73,7 @@ eaa2c609ff6371712f623f5531945b44  ./bagit.txt
 - The `manifest-md5.txt` file MUST list all files contained in the bag.
 - The `manifest-md5.txt` file MUST NOT list any directories.
 - The `manifest-md5.txt` file MUST NOT list any files outside of the bag.
-- Each line of the `manifest-md5.txt` file MUST be of the form *checksum filepath*, where *filepath* is the pathname of a file relative to the bag-lelvel directory, and *checksum* is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
+- Each line of the `manifest-md5.txt` file MUST be of the form *checksum filepath*, where *filepath* is the pathname of a file relative to the bag-level directory, and *checksum* is a hex-encoded checksum calculated by the MD5 message-digest algorithm.
 - The slash ('/') character MUST be used as a path separator in *filepath*.
 - One or more linear whitespace characters (spaces or tabs) MUST separate each *checksum* from each *filepath*.
 - Each line of the `manifest-md5.txt` file MUST be terminated with an LF, a CR or a CRLF.
@@ -100,7 +99,7 @@ Tag-File-Character-Encoding: UTF-8
 
 The `/data` directory contains the content of the bag divided across a number of different files and directories.
 Each `/data` directory MUST contain exactly one package, consisting of the combination of a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
-See the [package level](../5_structure_package) for more information and the requirements of the `/data` directory.
+See the [package level](./5_structure_package.html) for more information and the requirements of the `/data` directory.
 
 ***Example***
 
@@ -109,14 +108,14 @@ root_directory
 │   ...
 │
 └──data
-   │   mets.xml
+   │──mets.xml
    │
-   └──metadata
+   │──metadata
    │      ...
-   └──representations
+   │──representations
    │      ...
 ```
 
 <small>
-Continue to [Package Level](5_structure_package).
+Continue to [Package Level](./5_structure_package.html).
 </small>

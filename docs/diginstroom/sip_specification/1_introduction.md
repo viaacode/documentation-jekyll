@@ -1,7 +1,8 @@
 ---
 layout:       default
 title:        Introduction
-parent: SIP Specification 0.1
+parent:       SIP Specification
+grand_parent:  Digitale instroom
 nav_order:    1
 nav_exclude:  false
 ---
@@ -19,7 +20,7 @@ The meemoo SIP uses a three-level hierarchical directory structure (_bag - packa
 A meemoo SIP is a valid [BagIt bag](https://www.rfc-editor.org/rfc/rfc8493.html) that contains a valid [E-ARK SIP](https://earksip.dilcis.eu/).
 
 At the lowest directory level, the _representation level_, these assets are described in aggregate as digital representations.
-One level higher, the _package_ directory _level_, embodies the represented content or [_intellectual entity_](/2_core-concepts#ie), such as the work that is being depicted.
+One level higher, the _package_ directory _level_, embodies the represented content or [_intellectual entity_](./3_core-concepts.html), such as the work that is being depicted.
 Finally, the _bag_ directory _level_ bundles everything together for transport.
 
 Metadata can occur at every SIP level to add administrative, structural, descriptive, and preservation information about the data and its context.
@@ -45,16 +46,7 @@ To fully understand the basics of this specification, it is advised to be famili
 | DC           | [Dublin Core Metadata Initiative Metadata Terms](http://dublincore.org/schemas/xmls/qdc/2008/02/11/dcterms.xsd)|
 | PREMIS       | [PREMIS for Preservation Metadata](https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd)|
 
-Metadata elements from these standards are described throughout this specification using tables such as the one below. Each table may contain the following information about a metadata element:
-
-- whether the tag is an XML element or an XML attribute;
-- an XPath expression to select the relevant element from the relevant file;
-- the name of the metadata element;
-- a description of the metadata element (including relevant requirements about its value);
-- the datatype of the metadata element (if applicable);
-- vocabularies of possible values (if applicable);
-- the cardinality of the metadata element (i.e. if and how often it can occur);
-- whether the metadata element may/should/must be used.
+Metadata elements from these standards are described throughout this specification using tables such as the one below. 
 
 | Element/Attribute | `Metadata/element/XPath` |
 |-----------------------|-----------|
@@ -64,6 +56,17 @@ Metadata elements from these standards are described throughout this specificati
 | Vocabulary | `Vocabulary term 1`<br>`Vocabulary term 2`<br>`...` |
 | Cardinality | `Metadata element cardinality` |
 | Obligation | MAY/SHOULD/MUST |
+
+Each table contains the following information about a metadata element:
+
+- whether the tag is an XML element or an XML attribute;
+- an XPath expression to select the relevant element from the relevant file;
+- the name of the metadata element;
+- a description of the metadata element (including relevant requirements about its value);
+- the expected datatype of the value for this metadata element (if applicable);
+- vocabularies of possible values (if applicable);
+- the cardinality of the metadata element, i.e. if and how many times the element is allowed to occur;
+- whether the metadata element may/should/must be used.
 
 The cardinality is expressed with syntax from the [Unified Modeling Language](https://www.omg.org/spec/UML/2.5.1/PDF), outlined in the table below.
 
@@ -76,5 +79,5 @@ The cardinality is expressed with syntax from the [Unified Modeling Language](ht
 | `m..n`       | At least m but no more than n instances.                                         |
 
 <small>
-Continue to [Terminology](2_terminology).
+Continue to [Terminology](./2_terminology.html).
 </small>

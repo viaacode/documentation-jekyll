@@ -1,8 +1,7 @@
 ---
 layout:       default
 title:        Package level
-parent:         SIP Structure
-grand_parent: SIP Specification 0.1
+parent:       SIP Structure
 nav_order:    6
 nav_exclude:  false
 ---
@@ -17,7 +16,7 @@ Status: WIP
 1. TOC
 {:toc}
 
-The package level is stored in the `/data` directory of the [bag](4_structure_bag) and consists of at least a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
+The package level is stored in the `/data` directory of the [bag](./4_structure_bag.html) and consists of at least a `mets.xml` file, a `/metadata` directory and a `/representations` directory.
 It contains information about the (sub-)IE(s) of the SIP and the SIP as a whole.
 
 The package level may contain a `/documentation` and a `/schemas` directory.
@@ -56,13 +55,13 @@ root_directory
 ## mets.xml (file)
 
 [Metadata Encoding and Transmission Standard](https://www.loc.gov/standards/mets/mets-home.html) (METS) is a metadata standard for encoding descriptive, administrative and structural metadata.
-In the case of the meemoo SIP, the `mets.xml` file's main purpose it to act as an inventory of the files and directories contained within.
+In the case of the meemoo SIP, the `mets.xml` file's main purpose is to act as an inventory of the files and directories contained within.
 Since it is situated at the package-level, it is also known as the _package METS file_.
 
-It should not be confused with the `mets.xml` files situated in their respective [representation folders](6_structure_representation.md).
+It should not be confused with the `mets.xml` files situated in their respective [representation folders](./6_structure_representation.html).
 The package `mets.xml` file does not record the internal structure of the different representations in the `/representations` directory.
 It only references the different `mets.xml` files contained in each `/representation_*` directory (where `*` is an integer indicating the number of different representations in the `/representation` directory).
-Each of the `mets.xml` files at the [representation level](6_structure_representation) references its own internal structure.
+Each of the `mets.xml` files at the [representation level](./6_structure_representation.html) references its own internal structure.
 
 A `mets.xml` file typically consists of a number of fixed elements, outlined below.
 This section covers each of these elements below in a dedicated subsection.
@@ -85,14 +84,15 @@ The various requirements are listed in the table below.
 ```xml
 <?xml version='1.0' encoding='UTF-8'?>
 <mets xmlns="http://www.loc.gov/METS/"
-      xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" 
+      xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
       xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-      xmlns:xlink="http://www.w3.org/1999/xlink" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
       OBJID="uuid-cbee2999-1db5-4a69-9260-f216dee75623"
-      TYPE="OTHER" 
-      csip:OTHERTYPE="Photographs – Digital" 
-      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
+      TYPE="Photographs – Digital"
+      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml"
+      csip:CONTENTINFORMATIONTYPE="OTHER"
+      csip:OTHERCONTENTINFORMATIONTYPE="">
 
   <metsHdr>...</metsHdr>
   <dmdSec>...</dmdSec>
@@ -148,7 +148,7 @@ The various requirements are listed in the table below.
 | Attribute | `mets[@csip:CONTENTINFORMATIONTYPE='OTHER']/@csip:OTHERCONTENTINFORMATIONTYPE` |
 |-----------------------|-----------|
 | Name | Other content information type specification |
-| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type.<br>Meemoo investigates the use of a controlled vocabulary containing all of the allowed content types for ingest.|
+| Description | The `mets/@csip:OTHERCONTENTINFORMATIONTYPE` attribute SHOULD be used to further declare the content information type.<br>Meemoo investigates the use of a controlled vocabulary containing all of the allowed content types (corresponding to the different content [profiles](./../profiles/index.html)) for ingest.|
 | Datatype | String |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
@@ -519,11 +519,11 @@ This means that the `dmdSec` MUST use `<mdRef>` elements to reference the extern
 ```xml
 <!-- ref to descriptive metadata about IE -->
 <dmdSec ID="uuid-786829da-2ad8-4d77-8cf7-157f63227e6b">
-  <mdRef  ID="uuid-88191f66-f7ae-42c7-9427-8af2a8e7557f" 
+  <mdRef  ID="uuid-88191f66-f7ae-42c7-9427-8af2a8e7557f"
           LOCTYPE="URL"
-          MDTYPE="DC"
+          MDTYPE="OTHER"
           xlink:type="simple"
-          xlink:href="./metadata/descriptive/dc_ie.xml"
+          xlink:href="./metadata/descriptive/descriptive.xml"
           MIMETYPE="text/xml"
           SIZE="2655"
           CREATED="2022-02-16T10:01:15.014+02:00"
@@ -661,7 +661,7 @@ Preservation data in the meemoo SIP MUST be contained in dedicated metadata file
             LOCTYPE="URL"
             MDTYPE="PREMIS"
             xlink:type="simple"
-            xlink:href="./metadata/preservation/premis.xml"
+            xlink:href="./metadata/preservation/preservation.xml"
             MIMETYPE="text/xml"
             SIZE="6277"
             CREATED="2022-02-16T10:01:15.014+02:00"
@@ -902,23 +902,23 @@ The listing of other representation files (i.e. metadata files and media files) 
         <fileGrp USE="metadata" ID="uuid-bd087c44-ee3f-48e9-9031-9190a60c8e13">
             <fileGrp USE="metadata/descriptive" ID="uuid-5194aca6-97b6-448c-b385-b892bc0c362c">
                 <file ID="uuid-c6a678a7-b4b0-45af-a7d4-33123d9f0911" MIMETYPE="text/xml" SIZE="2655" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="7c513b9cb8848860ddcb4d4b680171bc" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_ie.xml" />
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/descriptive.xml" />
                 </file>
             </fileGrp>
             <fileGrp USE="metadata/preservation" ID="uuid-caea98b8-ae09-412d-8f25-dd50ba6a30cd">
                 <file ID="uuid-4ac13924-fe19-4711-b51f-6b5acc692ec0" MIMETYPE="text/xml" SIZE="6277" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="8c2914e1df1e2827c9c4059804075120" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" />
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/preservation.xml" />
                 </file>
             </fileGrp>
         </fileGrp>
         <fileGrp USE="representations" ID="uuid-779319d9-cc1f-41b3-a49e-28d169e0d066">
             <fileGrp USE="representations/representation_1" ID="uuid-700c97da-3164-4863-9e58-d6d62156052e">
-                <file ID="uuid-0fe40ffc-b5f3-465e-af3a-d266d94453b7" MIMETYPE="text/xml" SIZE="4285" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="b670f7ccf8e467251bb5ef57b00a4242" CHECKSUMTYPE="MD5">
+                <file ID="uuid-0fe40ffc-b5f3-465e-af3a-d266d94453b7" MIMETYPE="text/xml" SIZE="4295" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="b31b2224cef22b22d29f62a03f30aaa3" CHECKSUMTYPE="MD5">
                     <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" />
                 </file>
             </fileGrp>
             <fileGrp USE="representations/representation_2" ID="uuid-c0fed1c6-96c8-4f15-9e82-abc7be2e981c">
-                <file ID="uuid-625629a4-e5f8-4087-9114-66e4a943bf50" MIMETYPE="text/xml" SIZE="3886" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="26b5231d41ceb95ee4f031f309430206" CHECKSUMTYPE="MD5">
+                <file ID="uuid-625629a4-e5f8-4087-9114-66e4a943bf50" MIMETYPE="text/xml" SIZE="3896" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="2f3f71fadf038f86ba512c16702af864" CHECKSUMTYPE="MD5">
                     <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_2/mets.xml" />
                 </file>
             </fileGrp>
@@ -1424,14 +1424,14 @@ The `/descriptive` directory contains descriptive metadata about the (sub-)IE(s)
 
 ***Requirements***
 
-- The `/descriptive` directory MUST contain exactly one file: `dc.xml`.
+- The `/descriptive` directory MUST contain exactly one file: `descriptive.xml`.
 
-The `dc.xml` file at the package-level contains descriptive metadata about the (sub-)IE(s) of the SIP.
+The `descriptive.xml` file at the package-level contains descriptive metadata about the (sub-)IE(s) of the SIP.
 It relies on the [PREMIS for Preservation Metadata](https://www.loc.gov/standards/premis/v3/) schema and the [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schema in order to facilitate a basic description with a limited number of descriptive metadata elements.
 
 Descriptive metadata about one or more (sub-)IEs is divided into separate `<premis:object>` elements with unique identifiers.
 This allows for describing all (sub-)IEs in one and the same descriptive metadata file, using multiple `<premis:object>` elements.
-The link between the `<premis:object>` elements in the descriptive metadata and the `<premis:object>` elements in the preservation metadata (in the `premis.xml` in `/data/metadata/preservation`) is made using shared UUIDs in the `<premis:objectIdentifier>` elements of both files.
+The link between the `<premis:object>` elements in the descriptive metadata and the `<premis:object>` elements in the preservation metadata (in the `preservation.xml` in `/data/metadata/preservation`) is made using shared UUIDs in the `<premis:objectIdentifier>` elements of both files.
 
 ***Example***
 
@@ -1512,12 +1512,13 @@ The link between the `<premis:object>` elements in the descriptive metadata and 
 
 ***Requirements***
 
-- The `dc.xml` file MUST only use the [PREMIS for Preservation Metadata](https://www.loc.gov/standards/premis/v3/) and [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schemas and MUST NOT use any other metadata schemas.
-- The `dc.xml` file MUST declare the PREMIS and DC Terms namespace in its root element.
-- The `dc.xml` file MUST use the `<premis:premis/>` tag as its root element.
-- The `dc.xml` file MUST use `<premis:object/>` elements for each separate (sub-)IE that is described.
-- The `dc.xml` file MUST include the DC Terms elements outlined in the table below; besides these mandatory elements it MAY use all other terms from the DC Terms schema.
-- The `dc.xml` file MUST adhere to the restrictions on cardinality of terms outlined in the table below; if a term is not listed with a restriction on cardinality, it MAY be used multiple times.
+- The `descriptive.xml` file MUST only use the [PREMIS for Preservation Metadata](https://www.loc.gov/standards/premis/v3/) and [Dublin Core Metadata Initiative Metadata Terms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schemas and MUST NOT use any other metadata schemas.
+- The `descriptive.xml` file MUST declare the PREMIS and DC Terms namespaces in its root element.
+- The `descriptive.xml` file MUST use the `<premis:premis/>` tag as its root element.
+- The `descriptive.xml` file MUST use `<premis:object/>` elements for each separate (sub-)IE that is described.
+- All descriptive metadata in the `descriptive.xml` file MUST be embedded in `<premis:object/>` elements.
+- The `descriptive.xml` file MUST include the DC Terms elements outlined in the table below; besides these mandatory elements it MAY use all other terms from the DC Terms schema.
+- The `descriptive.xml` file MUST adhere to the restrictions on cardinality of terms outlined in the table below; if a term is not listed with a restriction on cardinality, it MAY be used multiple times.
 
 | Element | `premis:premis` |
 |-----------------------|-----------|
@@ -1572,10 +1573,10 @@ The `/preservation` directory contains preservation metadata about the (sub-)IE(
 
 ***Requirements***
 
-- The `/preservation` directory MUST contain exactly one file: `premis.xml`.
+- The `/preservation` directory MUST contain exactly one file: `preservation.xml`.
 
-The `premis.xml` file at the package-level contains preservation metadata about the (sub-)IE(s) of the SIP, and about the SIP as a whole.
-It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information such as checksums.
+The `preservation.xml` file at the package-level contains preservation metadata about the (sub-)IE(s) of the SIP, and about the SIP as a whole.
+It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information.
 More detailed preservation information can be described using PREMIS events and PREMIS agents.
 
 ***Example***
@@ -1676,10 +1677,9 @@ More detailed preservation information can be described using PREMIS events and 
 
 ***Requirements***
 
-- The `premis.xml` file MUST contain a PREMIS object for each IE and sub-IE in the SIP.
-- Each PREMIS object in the `premis.xml` MUST contain a unique identifier.
-- Each PREMIS object in the `premis.xml` MUST contain a checksum.
-- The `premis.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the SIP as a whole.
+- The `preservation.xml` file MUST contain a PREMIS object for each IE and sub-IE in the SIP.
+- Each PREMIS object in the `preservation.xml` MUST contain a unique identifier.
+- The `preservation.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the SIP as a whole.
 
 ## /representations (directory)
 
@@ -1691,5 +1691,5 @@ The `/representations` directory contains a separate `/representation_*` (where 
 - The different subdirectories in the `/representations` directory MUST be named `/representation_*`, with `*` being a positive integer that is incremented by 1 for each additional representation in the `/representations` directory.
 
 <small>
-Continue to [Representation Level](6_structure_representation).
+Continue to [Representation Level](./6_structure_representation.html).
 </small>
