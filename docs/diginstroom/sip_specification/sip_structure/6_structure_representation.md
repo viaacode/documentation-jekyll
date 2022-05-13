@@ -71,8 +71,8 @@ These two directories are ignored during ingest and will therefore not be archiv
 
 ## mets.xml (file)
 
-The `mets.xml` file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in the section [package mets.xml](/docs/instroom/sip_specification/sip_structure/5_structure_package#metsxml-file).
-Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same requirements, where possible, as the package `mets.xml` file (cf. [supra](#metsxml-file)), this section only lists requirements regarding the `mets` and `metsHdr` sections.
+The `mets.xml` file at the representation level (also known as the representation mets) generally follows the same structure and requirements as the package mets discussed in the section [package mets.xml](./5_structure_package.html#metsxml-file).
+Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same requirements, where possible, as the package `mets.xml` file, this section only lists requirements regarding the `mets` and `metsHdr` sections.
 
 ### \<mets\> section
 
@@ -84,10 +84,10 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
       xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
       xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:xlink="http://www.w3.org/1999/xlink" 
-      OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" 
-      TYPE="Photographs – Digital" 
-      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" >
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f"
+      TYPE="Photographs – Digital"
+      PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">
 
 <metsHdr>...</metsHdr>
 <dmdSec>...</dmdSec>
@@ -256,7 +256,7 @@ The `/descriptive` directory contains descriptive metadata about the representat
 
 ***Requirements***
 
-- The `/descriptive` directory SHOULD contain exactly one file: `descriptive.xml`.
+- The `/descriptive` directory MAY contain exactly one file: `descriptive.xml`.
 
 The `descriptive.xml` file at the representation level contains descriptive metadata about a specific representation of the SIP.
 
@@ -294,7 +294,7 @@ The link between the `<premis:object>` element in the descriptive metadata and t
 
 ***Requirements***
 
-The `descriptive.xml` of the representation level follows the same requirements regarding metadata elements of the `descriptive.xml` file discussed in the [/descriptive section](/docs/instroom/sip_specification/sip_structure/5_structure_package#descriptive-directory) of the package level.
+The `descriptive.xml` of the representation level follows the same requirements regarding metadata elements of the `descriptive.xml` file discussed in the [/descriptive section](./5_structure_package.html#descriptive-directory) of the package level.
 Additional requirements are discussed below:
 
 - The `descriptive.xml` file MUST embed the descriptive metadata about the representation in a `<premis:object/>` element.

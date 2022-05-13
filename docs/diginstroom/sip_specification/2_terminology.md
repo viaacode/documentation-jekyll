@@ -69,5 +69,5 @@ In the context of noting metadata values, the following datatypes are mentioned 
 | UUID           | A Universally Unique Identifier as defined in [RFC4122](https://datatracker.ietf.org/doc/html/rfc4122). |
 
 <small>
-Continue to [Core Concepts](3_core-concepts).
+Continue to [Core Concepts](./3_core-concepts.html).
 </small>

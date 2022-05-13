@@ -60,5 +60,5 @@ The three-way distinction between an IE, a representation and a file also allows
 For example, metadata about the content represented in a digital reproduction (which would be situated at the package level, since it covers the IE) can be separated from metadata purely about the digital reprodution itself (which would be situated at the representation level, since it covers (one of) the representation(s) of the IE).
 
 <small>
-Continue to [SIP Structure](sip_structure).
+Continue to [SIP Structure](./sip_structure/index.html).
 </small>
