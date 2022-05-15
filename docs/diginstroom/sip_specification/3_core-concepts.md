@@ -22,6 +22,8 @@ These concepts are used throughout the remainder of this specification, and are 
   <figcaption>The PREMIS Object data model as adopted by the meemoo SIP.</figcaption>
 </figure>
 
+## Intellectual Entities, Representations and Files
+
 The [PREMIS Data Dictionary for Preservation Metadata](https://www.loc.gov/standards/premis/v3/premis-3-0-final.pdf) defines an **Intellectual Entity** (henceforth IE) as 'a distinct intellectual or artistic creation that is considered to be relevant to a designated community in the context of digital preservation'.
 At meemoo, the IE embodies the intangible subject matter of the digital content; it is what users search for on the meemoo dissemination platforms.
 
@@ -42,7 +44,9 @@ Examples of these three concepts are given in the table below.
 | an episode of a certain TV series | a browse copy of the episode | the `.mov` file and accompagnying `.srt` subtitle file | 
 | a newspaper edition of a certain date | an OCR rendition of the newspaper edition | the ALTO `.xml` files containing the newspaper's edition's textual content |
 
-This generic model is necessary to ensure a scalable SIP design to current and future use cases. 
+## Content profiles
+
+A generic data model is necessary to ensure a scalable SIP design to current and future use cases. 
 However, not every utilization of this model is allowed at ingest in the meemoo archive.
 Depending on the type of content, a specific mapping is required, which is captured in the different [Content profiles]({{ site.baseurl }}{% link docs/diginstroom/sip_specification/profiles/index.md %}). 
 A content profile determines 
@@ -58,7 +62,9 @@ Generally speaking, it is up to the content partner to decide what aspect of its
 Note that this decision may have an impact on the expressivity of the metadata (eg. the basic profile only supports descriptive metadata in the Dublin Core vocabulary), the dissemination of the SIP's content and, in particular, on how its content is rendered on e.g. meemoo's dissemination platforms.
 Typically, something that has individual descriptive metadata at the source (e.g. an entry in a collection registration or asset management system) and is expected to be distinguishable in search, should be viewed as an IE.
 
-Consider the example of a digitised newspaper edition with 10 pages.
+## Example
+
+Consider a digitised newspaper edition with 10 pages.
 Each page is digitised separately as a TIFF file and a JPEG file, resulting in 20 digital reproductions.
 Finally, OCR is applied to each TIFF file, resulting in yet another 10 ALTO XML files (containing the textual representation of each newspaper page).
 Using the concepts defined above, it is possible to approach this example from two perspectives: either we view the newspaper edition as a whole as the IE, or we view each separate newspaper page as a separate IE.
