@@ -422,3 +422,7 @@ More detailed preservation information can be described using PREMIS events and 
 - Each PREMIS object MUST contain a unique identifier.
 - Each PREMIS object with the value set to `FILE` MUST contain a checksum.
 - The `preservation.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the representation and the media files.
+
+<small>
+Continue to [Content Profiles]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/profiles/index.md %}).
+</small>

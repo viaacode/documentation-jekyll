@@ -19,4 +19,4 @@ Hier vind je alles over ons metadatamodel (incl. dataformaten), onze SIP-specifi
    3. [De IIIF 3.0 Image API]({{ site.baseurl }}{% link docs/integratie/iiif.md %})
    4. [De Organization API]({{ site.baseurl }}{% link docs/integratie/org-api/index.md %})
 3. [Alles over digitale instroom]({{ site.baseurl }}{% link docs/diginstroom/index.md %})
-   1. [De SIP-specificatie]({{ site.baseurl }}{% link docs/diginstroom/sip_specification/index.md %})
+   1. [De SIP-specificatie]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %})

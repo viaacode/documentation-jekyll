@@ -117,5 +117,5 @@ root_directory
 ```
 
 <small>
-Continue to [Package Level](./5_structure_package.html).
+Continue to [Package Level]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/sip_structure/5_structure_package.md %}).
 </small>

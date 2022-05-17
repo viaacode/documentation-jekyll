@@ -42,3 +42,7 @@ The FCM views the Felis Catus Flamens itself as the IE of the SIP.
 They consider the two different environments in which the cat appears, as two separate representations of subIEs (i.e. lying on a sofa and sitting on a cat tree) since they have different metadata about both environments available.
 This approach results in one main IE (i.e. the Felis Catus Flamens), two sub-IEs (i.e. the cat lying on a sofa and sitting on a cat tree) and two representations, each representing one of the sub-IEs.
 One representation then consists of two pictures, while the other consists of one picture.
+
+<small>
+Continue to [Bag Level]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/sip_structure/4_structure_bag.md %}).
+</small>

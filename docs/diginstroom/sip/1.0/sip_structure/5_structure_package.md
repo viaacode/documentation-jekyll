@@ -1691,5 +1691,5 @@ The `/representations` directory contains a separate `/representation_*` (where 
 - The different subdirectories in the `/representations` directory MUST be named `/representation_*`, with `*` being a positive integer that is incremented by 1 for each additional representation in the `/representations` directory.
 
 <small>
-Continue to [Representation Level](./6_structure_representation.html).
+Continue to [Representation Level]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/sip_structure/6_structure_representation.md %}).
 </small>

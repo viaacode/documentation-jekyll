@@ -8,3 +8,7 @@ has_children: true
 ---
 Status: WIP
 {: .label .label-yellow }
+
+<small>
+Continue to [Use Cases]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/usecases/index.md %}).
+</small>

@@ -48,7 +48,7 @@ Examples of these three concepts are given in the table below.
 
 A generic data model is necessary to ensure a scalable SIP design to current and future use cases. 
 However, not every utilization of this model is allowed at ingest in the meemoo archive.
-Depending on the type of content, a specific mapping is required, which is captured in the different [Content profiles]({{ site.baseurl }}{% link docs/diginstroom/sip_specification/profiles/index.md %}). 
+Depending on the type of content, a specific mapping is required, which is captured in the different [Content profiles]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/profiles/index.md %}). 
 A content profile determines 
 - whether an IE is subdivided further into sub-IEs;
 - what the representations of any IE or sub-IEs are;
@@ -69,7 +69,7 @@ Each page is digitised separately as a TIFF file and a JPEG file, resulting in 2
 Finally, OCR is applied to each TIFF file, resulting in yet another 10 ALTO XML files (containing the textual representation of each newspaper page).
 Using the concepts defined above, it is possible to approach this example from two perspectives: either we view the newspaper edition as a whole as the IE, or we view each separate newspaper page as a separate IE.
 
-Using the [Newspaper Content Profile]({{ site.baseurl }}{% link docs/diginstroom/sip_specification/profiles/newspaper.md %}), we have one IE (i.e. the newspaper edition) and we can discern between three representations of that IE: a high-resolution representation containing the TIFF files for e.g. reproduction, a low-resolution representation containing the JPEG files for e.g. browse copies on the web and a textual representation containing the ALTO XML files for e.g. searching through the actual textual content of the newspaper pages.
+Using the [Newspaper Content Profile]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/profiles/newspaper.md %}), we have one IE (i.e. the newspaper edition) and we can discern between three representations of that IE: a high-resolution representation containing the TIFF files for e.g. reproduction, a low-resolution representation containing the JPEG files for e.g. browse copies on the web and a textual representation containing the ALTO XML files for e.g. searching through the actual textual content of the newspaper pages.
 
 <figure class="mx-auto">
   <img src="../../../../../assets/images_spec/newspaper_situation_1.png" alt="Newspaper example" /> 
@@ -77,5 +77,5 @@ Using the [Newspaper Content Profile]({{ site.baseurl }}{% link docs/diginstroom
 </figure>
 
 <small>
-Continue to [SIP Structure](./sip_structure/index.html).
+Continue to [SIP Structure]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/sip_structure/index.md %}).
 </small>

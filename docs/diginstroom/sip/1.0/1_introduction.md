@@ -79,5 +79,5 @@ The cardinality is expressed with syntax from the [Unified Modeling Language](ht
 | `m..n`       | At least m but no more than n instances.                                         |
 
 <small>
-Continue to [Terminology](./2_terminology.html).
+Continue to [Terminology]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}).
 </small>
