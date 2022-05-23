@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-08dd6a01-19a3-44e2-88fa-702a97f8b83f" TYPE="Photographs – Digital" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">
+<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-b4e6213d-7a32-482c-8631-7dcc5f0a7681" TYPE="Photographs – Digital" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">
 
     <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00" />
 
