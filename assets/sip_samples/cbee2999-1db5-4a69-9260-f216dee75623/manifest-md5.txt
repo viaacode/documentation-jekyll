@@ -1,0 +1,16 @@
+3de0c3aab128eba983e2a5df447613bc  ./data/mets.xml
+5cb34d5bbc3abb73faaca2961d7b6650  ./data/representations/representation_2/mets.xml
+18513a8d61c6f2cbaaeeedd754b01d6b  ./data/representations/representation_2/data/D523F963.jpg
+7bf54e1641b22ec8dcd8d9f4f4a51ede  ./data/representations/representation_2/metadata/preservation/premis.xml
+31d402b829f673afe24f698dc462bbde  ./data/representations/representation_2/metadata/descriptive/dc_1.xml
+4acfd90e6300efb9fd0010c8055ec220  ./data/representations/representation_1/mets.xml
+d4985ba4b67ff067a0e84c53b6d35355  ./data/representations/representation_1/data/1450.jpeg
+b7ae37f6094794e313402b9d064978e8  ./data/representations/representation_1/data/1445.jpeg
+883a5f0eb2cc6de84d022c156dd78e77  ./data/representations/representation_1/metadata/preservation/premis.xml
+e45622b2b8536d312203e1cb7d5548c7  ./data/representations/representation_1/metadata/descriptive/dc_1.xml
+01de8b0a874407472a183aeece47505d  ./data/metadata/preservation/premis.xml
+9d55815152e83db76a32f74990d79cd3  ./data/metadata/descriptive/dc_3.xml
+cd17cbb2153946c8462e10b337e0e9c1  ./data/metadata/descriptive/dc_1.xml
+fbab574560f2d548fd84c6c1fd1cb7f2  ./data/metadata/descriptive/dc_2.xml
+eaa2c609ff6371712f623f5531945b44  ./bagit.txt
+711a5625d0eed77bca4b0dff813f1fa2  ./manifest-md5.txt
