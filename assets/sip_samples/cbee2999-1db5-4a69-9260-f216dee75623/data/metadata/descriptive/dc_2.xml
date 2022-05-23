@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+
+    <!-- general title for the resource -->
+    <dcterms:title>Felis Catus Flamens lying on a sofa</dcterms:title>
+
+    <!-- linking id between dc and premis -->
+    <dcterms:identifier>uuid-948e2213-ca54-459c-8c87-5818adeb9444</dcterms:identifier>
+
+    <!-- date unknown -->
+    <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
+
+    <!-- multiple keywords about the resource -->
+    <dcterms:subject>Cat</dcterms:subject>
+    <dcterms:subject>Felis Catus Flamens</dcterms:subject>
+    <dcterms:subject>Sofa</dcterms:subject>
+
+</metadata>
