@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-ffa977de-92ec-4aae-bd10-ded467f34148" TYPE="Photographs – Digital" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" csip:CONTENTINFORMATIONTYPE="OTHER" csip:OTHERCONTENTINFORMATIONTYPE="">
+<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-de61d4af-d19c-4cc7-864d-55573875b438" TYPE="Photographs – Digital" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" csip:CONTENTINFORMATIONTYPE="https://data.hetarchief.be/id/sip/1.0/basic">
 
     <metsHdr CREATEDATE="2022-02-16T10:01:15.014+02:00" csip:OAISPACKAGETYPE="SIP">
         <!-- information about the software -->
@@ -48,7 +48,7 @@
             </fileGrp>
             <fileGrp USE="representations" ID="uuid-2512bf0c-cf14-4fba-8f55-0be181ce01c8">
                 <fileGrp USE="representations/representation_1" ID="uuid-6ec1cf49-0d4a-413d-9170-4dcb4bd09473">
-                    <file ID="uuid-ba89c101-109a-4fe3-a4ed-0c276b20e14c" MIMETYPE="text/xml" SIZE="3017" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="c6da069a90bc14786532e16b4e9f62d2" CHECKSUMTYPE="MD5">
+                    <file ID="uuid-ba89c101-109a-4fe3-a4ed-0c276b20e14c" MIMETYPE="text/xml" SIZE="3017" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="a932f3cd97405514a79a18fef4b34bbc" CHECKSUMTYPE="MD5">
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" />
                     </file>
                 </fileGrp>
