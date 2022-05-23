@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+
+  <dcterms:title></dcterms:title>
+
+  <!-- linking id between dc and premis -->
+  <dcterms:identifier>uuid-f58ece94-f050-4b5b-b383-bba83393eaff</dcterms:identifier>
+
+  <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
+
+  <dcterms:subject></dcterms:subject>
+
+</metadata> 
