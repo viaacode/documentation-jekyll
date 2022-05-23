@@ -5,67 +5,17 @@
 
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:objectIdentifierValue>
+      <premis:objectIdentifierValue>uuid-f58ece94-f050-4b5b-b383-bba83393eaff</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
-    <!-- general title for the resource -->
-    <dcterms:title>Felis Catus Flamens</dcterms:title>
 
-    <!-- id for the FCF in an imaginary cat database -->
-    <dcterms:identifier>FCatus_FelisCatusFlamens_01</dcterms:identifier>
+    <dcterms:title></dcterms:title>
 
-    <!-- date unknown -->
+    <dcterms:identifier></dcterms:identifier>
+
     <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
 
-    <!-- multiple keywords about the resource -->
-    <dcterms:subject>Cat</dcterms:subject>
-    <dcterms:subject>Felis Catus Flamens</dcterms:subject>
-
-  </premis:object>
-
-  <premis:object>
-
-    <premis:objectIdentifier>
-      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
-
-    <!-- general title for the resource -->
-    <dcterms:title>Felis Catus Flamens lying on a sofa</dcterms:title>
-
-    <!-- id for the FCF in an imaginary cat database -->
-    <dcterms:identifier>FCatus_FelisCatusFlamens_Sofa_01</dcterms:identifier>
-
-    <!-- date unknown -->
-    <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
-
-    <!-- multiple keywords about the resource -->
-    <dcterms:subject>Cat</dcterms:subject>
-    <dcterms:subject>Felis Catus Flamens</dcterms:subject>
-    <dcterms:subject>Sofa</dcterms:subject>
-
-  </premis:object>
-
-  <premis:object>
-
-    <premis:objectIdentifier>
-      <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-01d59d41-f523-4d06-a549-4bf6f7cef853</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
-
-    <!-- general title for the resource -->
-    <dcterms:title>Felis Catus Flamens sitting on a cat tree</dcterms:title>
-
-    <!-- id for the FCF in an imaginary cat database -->
-    <dcterms:identifier>FCatus_FelisCatusFlamens_CatTree_01</dcterms:identifier>
-
-    <!-- date unknown -->
-    <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
-
-    <!-- multiple keywords about the resource -->
-    <dcterms:subject>Cat</dcterms:subject>
-    <dcterms:subject>Felis Catus Flamens</dcterms:subject>
-    <dcterms:subject>Cat tree</dcterms:subject>
+    <dcterms:subject></dcterms:subject>
 
   </premis:object>
 
