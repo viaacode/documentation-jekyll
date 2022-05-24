@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <premis:premis version="3.0" xmlns:premis="http://www.loc.gov/premis/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-  <premis:object xsi:type="premis:representation">
+  <premis:object>
     <premis:objectCategory>representation</premis:objectCategory>
 
     <premis:objectIdentifier>
@@ -29,7 +29,7 @@
 
   </premis:object>
 
-  <premis:object xsi:type="premis:file">
+  <premis:object>
     <premis:originalName>1445.jpeg</premis:originalName>
 
     <premis:objectCategory>file</premis:objectCategory>
