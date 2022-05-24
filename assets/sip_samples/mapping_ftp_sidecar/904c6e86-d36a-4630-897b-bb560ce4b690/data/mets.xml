@@ -20,7 +20,7 @@
     </metsHdr>
 
     <dmdSec ID="uuid-25c076a4-39e5-429b-a495-1c0a7dff5b04">
-        <mdRef ID="uuid-fc5130de-22bf-4389-af24-0c6b37a9513e" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="9176" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="a7bc3ea80f292979fdaefbabb04a0d23" CHECKSUMTYPE="MD5" />
+        <mdRef ID="uuid-fc5130de-22bf-4389-af24-0c6b37a9513e" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="9505" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="8f7835a06bec15b4038cc6089ef1e655" CHECKSUMTYPE="MD5" />
     </dmdSec>
 
     <amdSec ID="uuid-b1c393da-7bc1-4178-967f-9f32c3fe4f14">
@@ -33,7 +33,7 @@
         <fileGrp USE="root" ID="uuid-029b2801-6542-4b40-a11d-2ed6680fe014">
             <fileGrp USE="metadata" ID="uuid-046f09f9-e537-4212-8277-0f902b3a2903">
                 <fileGrp USE="metadata/descriptive" ID="uuid-a11d0d9f-6bd5-4168-ba2c-c7c55e2132b4">
-                    <file ID="uuid-8e6b050d-93a4-429a-b2c7-570dfe2fe68d" MIMETYPE="text/xml" SIZE="9176" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="a7bc3ea80f292979fdaefbabb04a0d23" CHECKSUMTYPE="MD5">
+                    <file ID="uuid-8e6b050d-93a4-429a-b2c7-570dfe2fe68d" MIMETYPE="text/xml" SIZE="9505" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="8f7835a06bec15b4038cc6089ef1e655" CHECKSUMTYPE="MD5">
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" />
                     </file>
                 </fileGrp>

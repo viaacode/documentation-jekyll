@@ -87,6 +87,12 @@
   <!-- alles mbt. rechtenhouder -->
   <dcterms:rightsHolder schema:roleName="auteursrechthouder">VIAA.dc_rights_rightsOwners.Auteursrechthouder</dcterms:rightsHolder>
   <dcterms:rightsHolder schema:roleName="licentiehouder">VIAA.dc_rights_rightsHolders.Licentiehouder</dcterms:rightsHolder>
+  <!-- alles mbt. de VIAA licenses -->
+  <dcterms:license>VIAA-PUBLIEK-METADATA-LTD</dcterms:license>
+  <dcterms:license>VIAA-INTRA_CP-METADATA-ALL</dcterms:license>
+  <dcterms:license>VIAA-INTRA_CP-CONTENT</dcterms:license>
+  <dcterms:license>VIAA-ONDERZOEK</dcterms:license>
+  <dcterms:license>VIAA-ONDERWIJS</dcterms:license>
 
   <!-- alles mbt. VIAA.dc_titles -->
   <dcterms:isPartOf xsi:type="schema:CreativeWorkSeries">
