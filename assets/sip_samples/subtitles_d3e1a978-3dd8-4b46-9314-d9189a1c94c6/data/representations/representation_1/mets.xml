@@ -21,12 +21,12 @@
             </fileGrp>
             <fileGrp USE="data" ID="uuid-fe597cdb-3aa5-4cd1-8437-494cfed0f24d">
                 <!-- dummy txt file filling in for video file -->
-                <file ID="uuid-f27d5cc4-ff5b-4875-b216-7dfa9b0c198d" MIMETYPE="text/plain" SIZE="23" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="22502b5dc38e893d99e9368c6ff70229" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/sample_video.mxf.txt" />
+                <file ID="uuid-f27d5cc4-ff5b-4875-b216-7dfa9b0c198d" MIMETYPE="video/mp4" SIZE="5" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="22502b5dc38e893d99e9368c6ff70229" CHECKSUMTYPE="MD5">
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/broadcaster_news_20220525.mp4" />
                 </file>
                 <!-- dummy txt file filling in for subtitles file -->
-                <file ID="uuid-5a4b5c03-267b-4c85-9e59-ff0074388466" MIMETYPE="text/plain" SIZE="23" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="daefffb93e6c3be7136ba40edae4f2f1" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/sample_video.srt.txt" />
+                <file ID="uuid-5a4b5c03-267b-4c85-9e59-ff0074388466" MIMETYPE="text/plain" SIZE="3" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="daefffb93e6c3be7136ba40edae4f2f1" CHECKSUMTYPE="MD5">
+                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/broadcaster_news_20220525.srt" />
                 </file>
             </fileGrp>
         </fileGrp>

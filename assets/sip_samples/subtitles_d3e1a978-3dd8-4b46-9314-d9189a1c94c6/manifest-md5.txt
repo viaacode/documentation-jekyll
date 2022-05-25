@@ -1,9 +1,9 @@
-3ce9653017179c94d2895c1571148b8a  ./data/mets.xml
-e57dcc5ae22decd8c96dfb74eb153686  ./data/representations/representation_1/mets.xml
-daefffb93e6c3be7136ba40edae4f2f1  ./data/representations/representation_1/data/sample_video.srt.txt
-22502b5dc38e893d99e9368c6ff70229  ./data/representations/representation_1/data/sample_video.mxf.txt
+8abdfca2d29233202f676d079b004a39  ./data/mets.xml
+073ef49d1bc69b7bd6981725cfaf252f  ./data/representations/representation_1/mets.xml
+22502b5dc38e893d99e9368c6ff70229  ./data/representations/representation_1/data/broadcaster_news_20220525.mp4
+daefffb93e6c3be7136ba40edae4f2f1  ./data/representations/representation_1/data/broadcaster_news_20220525.srt
 eb9d3a8c5854867eae6efc0c6ff4db25  ./data/representations/representation_1/metadata/preservation/premis.xml
 60b20fc75476eaaf5715ff9962e7107f  ./data/metadata/preservation/premis.xml
 c23b06d63fd44e66483b5fd51d0ab67f  ./data/metadata/descriptive/dc_1.xml
 eaa2c609ff6371712f623f5531945b44  ./bagit.txt
-9c90a2f4884b56c0021967f6e78a4c29  ./manifest-md5.txt
+cdc0c9132c80a5c86b4e961edefa3333  ./manifest-md5.txt
