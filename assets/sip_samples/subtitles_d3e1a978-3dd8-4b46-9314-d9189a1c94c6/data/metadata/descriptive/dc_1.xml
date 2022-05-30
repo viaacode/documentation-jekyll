@@ -1,13 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<metadata xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
+<metadata xmlns:dcterms="http://purl.org/dc/terms/" xmlns:schema="https://schema.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/">
 
-  <dcterms:title></dcterms:title>
+  <dcterms:title>the title of the episode</dcterms:title>
+
+  <dcterms:description>the description of the episode</dcterms:description>
 
   <!-- linking id between dc and premis -->
+  <!-- matches the identifier of the premis:object defined in the preservation/premis.xml -->
   <dcterms:identifier>uuid-f58ece94-f050-4b5b-b383-bba83393eaff</dcterms:identifier>
 
-  <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
+  <dcterms:created xsi:type="edtf">the date the episode was created</dcterms:created>
+  <dcterms:issued xsi:type="edtf">the date the episode was aired</dcterms:issued>
 
-  <dcterms:subject></dcterms:subject>
+  <dcterms:license>VIAA-PUBLIEK-METADATA-LTD</dcterms:license>
+  <dcterms:publisher>the publisher of the episode</dcterms:publisher>
+
+  <dcterms:subject>Keyword 1</dcterms:subject>
+  <dcterms:subject>Keyword 2</dcterms:subject>
 
 </metadata> 
