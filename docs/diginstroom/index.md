@@ -25,7 +25,7 @@ Dit gebeurt in de vorm van een sidecar XML-bestand voor elke essence, bv. test.x
 Hier kan je een XSD vinden om je mapping te valideren, samen voorbeelden en een uitleg van alle metadatavelden.
 
 {: .info }
-Momenteel werken wij aan een uniforme meemoo SIP voor toekomstige projecten. Lees de specificatie [hier]({{ site.baseurl }}{% link docs/diginstroom/sip_specification/index.md %}).
+Momenteel werken wij aan een uniforme meemoo SIP voor toekomstige projecten. Lees de specificatie [hier]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %}).
 
 ## Validatie
 
