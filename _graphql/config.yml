@@ -1,6 +1,7 @@
 spectaql:
   logoFile: ./../assets/meemoo-logo_lockup-pos-rgb.svg
   faviconFile: ./../favicon.ico
+  displayAllServers: true  
 
 introspection:
   removeTrailingPeriodFromDescriptions: false
@@ -11,7 +12,7 @@ info:
     Documentation for meemoo's Organization API V2.
     This API provides access to information about organizations and persons within the meemoo context, such as content partners, educational partners, address sites, contact information, account managers, or personnel of meemoo. 
     It is a [GraphQL API](https://graphql.org/) that is conform the [2021 specification](https://spec.graphql.org/October2021/). 
-  version: 2.0.0
+  version: 0.1.3
   title: meemoo Organization API V2
   contact:
     name: meemoo
