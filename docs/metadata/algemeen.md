@@ -699,18 +699,18 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 ## Object type
 
-{: #ebu_objecttype }
+{: #ebu_objectType }
 
 Het type uitzending (programma of item).
 
-| **XML element**            | `<ebu_objecttype/>`                                                                                                                                             |
+| **XML element**            | `<ebu_objectType/>`                                                                                                                                             |
 | **Datatype**               | Vrije tekst                                                                                                                                                  |
 | **Verplichting**           | Nee                                                                                                                                                            |
 | **Herhaalbaar**            | Nee                                                                                                                                                          |
 
 ```xml
-<ebu_objecttype>item</ebu_objecttype>
-<ebu_objecttype>programma</ebu_objecttype>
+<ebu_objectType>item</ebu_objectType>
+<ebu_objectType>programma</ebu_objectType>
 ```
 
 ## Coverage (ruimtelijk)
