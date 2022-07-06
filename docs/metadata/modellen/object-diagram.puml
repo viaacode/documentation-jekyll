@@ -11,17 +11,17 @@ skinparam shadowing false
 skinparam ArrowMessageAlignment left
 
 
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3Aobject]]
-class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3Aintellectualentity]]
-class "<b>Fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haobj%3Aphysicalrepresentation]]
-class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haobj%3Adigitalrepresentation]]
-class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3Afile]]
-class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3Afixity]]
-class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3Astoragelocation]]
-class "<b>Lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haobj%3Alocalidentifier]]
-class "<b>Opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3Astoragemedium]]
-class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3Arepresentation]]
-class "<b>Bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3Afileformat]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
+class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
+class "<b>Opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
+class "<b>Bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 
 
 
@@ -105,9 +105,9 @@ haObj_LocalIdentifier : waarde : <i>xsd:string</i> [1..1]
 
 
 
+
+
 premis_Representation --|> premis_Object #blue;line.dotted;text:blue
-
-
 
 
 

@@ -11,29 +11,30 @@ skinparam shadowing false
 skinparam ArrowMessageAlignment left
 
 
-class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3Aorganization]]
-class "<b>Organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3Aorganizationalunit]]
-class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haorg%3Acontentpartner]]
-class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haorg%3Aserviceprovider]]
-class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haorg%3Aserviceconsumer]]
-class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haorg%3Aeducationalorganization]]
-class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haorg%3Aeducationalpartner]]
-class "<b>Educatieve uitgeverij</b> (haOrg:EducationalPublisher)" as haOrg_EducationalPublisher [[#haorg%3Aeducationalpublisher]]
-class "<b>School</b> (haOrg:School)" as haOrg_School [[#haorg%3Aschool]]
-class "<b>Vestiging</b> (org:Site)" as org_Site [[#org%3Asite]]
-class "<b>Positie</b> (org:Post)" as org_Post [[#org%3Apost]]
-class "<b>Rol</b> (org:Role)" as org_Role [[#org%3Arole]]
-class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3Aperson]]
-class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3Apostaladdress]]
-class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3Acontactpoint]]
-class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haorg%3Alogo]]
-class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haorg%3Aorganizationtype]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Educatieve uitgeverij</b> (haOrg:EducationalPublisher)" as haOrg_EducationalPublisher [[#haOrg%3AEducationalPublisher]]
+class "<b>School</b> (haOrg:School)" as haOrg_School [[#haOrg%3ASchool]]
+class "<b>Vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
+class "<b>Positie</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Rol</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
 
 
 
 org_Organization --> "[0..n]" schema_ContactPoint : aanspreekpunt >
 org_Organization : alternatieve naam/label : <i>xsd:string</i> [0..n]
 
+org_Organization : beschrijving : <i>xsd:string</i> [0..1]
 
 
 org_Organization --> "[0..n]" haOrg_OrganizationType : classificatie >
