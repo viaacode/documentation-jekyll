@@ -1,0 +1,119 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3Aobject]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3Aintellectualentity]]
+class "<b>Fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haobj%3Aphysicalrepresentation]]
+class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haobj%3Adigitalrepresentation]]
+class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3Afile]]
+class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3Afixity]]
+class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3Astoragelocation]]
+class "<b>Lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haobj%3Alocalidentifier]]
+class "<b>Opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3Astoragemedium]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3Arepresentation]]
+class "<b>Bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3Afileformat]]
+
+
+
+premis_Object --> "[0..n]" premis_Object : heeft een relatie >
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+
+premis_IntellectualEntity --> "[0..1]" haObj_DigitalRepresentation : heeft archiefmaster >
+
+premis_IntellectualEntity --> "[0..1]" haObj_DigitalRepresentation : heeft mezzanineformaat >
+
+premis_IntellectualEntity --> "[0..n]" premis_IntellectualEntity : heeft onderdeel >
+
+premis_IntellectualEntity --> "[0..n]" haObj_DigitalRepresentation : heeft toegangskopie >
+
+premis_IntellectualEntity --> "[0..n]" haObj_LocalIdentifier : lokale identifier >
+
+premis_IntellectualEntity --> "[0..n]" premis_IntellectualEntity : maakt onderdeel uit van >
+
+premis_IntellectualEntity --> "[0..n]" premis_Representation : wordt gerepresenteerd door >
+
+haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+
+haObj_PhysicalRepresentation --> "[0..n]" premis_StorageMedium : heeft als medium >
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+
+haObj_DigitalRepresentation --> "[1..n]" premis_File : bevat >
+
+haObj_DigitalRepresentation --> "[0..n]" haObj_PhysicalRepresentation : heeft een bron >
+
+haObj_DigitalRepresentation --> "[1..n]" premis_IntellectualEntity : is archiefmaster van >
+
+haObj_DigitalRepresentation --> "[0..1]" premis_IntellectualEntity : is mezzanineformaat van >
+
+haObj_DigitalRepresentation --> "[0..1]" premis_IntellectualEntity : is toegangskopie van >
+
+haObj_DigitalRepresentation --> "[0..n]" premis_File : ligt aan de basis van >
+
+haObj_DigitalRepresentation --> "[1..n]" premis_IntellectualEntity : representeert >
+
+premis_File --|> premis_Object #blue;line.dotted;text:blue
+
+
+premis_File --> "[1..1]" dct_FileFormat : Formaat >
+
+premis_File --> "[0..1]" premis_File : Is de volgende in de reeks van >
+
+premis_File --> "[0..n]" premis_File : documenteert >
+
+premis_File --> "[0..n]" haObj_DigitalRepresentation : heeft (media)fragment >
+
+premis_File --> "[1..1]" premis_Fixity : heeft fixity >
+
+premis_File --> "[1..n]" haObj_DigitalRepresentation : is inbegrepen in >
+premis_File : mime type : <i>xsd:string</i> [0..1]
+
+
+premis_File --> "[1..n]" premis_StorageLocation : opgeslagen te >
+
+premis_File --> "[0..n]" premis_File : vervangt >
+
+
+premis_Fixity : fixity checksum : <i>xsd:string</i> [1..n]
+
+premis_Fixity : maker : <i>xsd:string</i> [0..n]
+
+
+
+
+premis_StorageLocation --> "[0..n]" premis_StorageMedium : heeft als medium >
+premis_StorageLocation : opslagpad : <i>xsd:string</i> [1..n]
+
+
+
+haObj_LocalIdentifier : waarde : <i>xsd:string</i> [1..1]
+
+
+
+
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
