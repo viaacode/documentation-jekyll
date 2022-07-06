@@ -20,8 +20,8 @@ class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue

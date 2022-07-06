@@ -86,11 +86,11 @@ Datamodel voor het beschrijven van organisaties.
 
 
 **Subclasses:** 
-[haOrg:ContentPartner](#haOrg%3AContentPartner)
-, [haOrg:ServiceConsumer](#haOrg%3AServiceConsumer)
-, [haOrg:ServiceProvider](#haOrg%3AServiceProvider)
-, [haOrg:EducationalOrganization](#haOrg%3AEducationalOrganization)
-, [org:OrganizationalUnit](#org%3AOrganizationalUnit)
+[Contentpartner](#haOrg%3AContentPartner)
+, [Dienstenafnemer](#haOrg%3AServiceConsumer)
+, [Dienstenleverancier](#haOrg%3AServiceProvider)
+, [Educatieve organisatie](#haOrg%3AEducationalOrganization)
+, [Organisatie-eenheid](#org%3AOrganizationalUnit)
 
 Stelt een groep personen voor, georganiseerd in een gemeenschap of een andere sociale, commerciële of politieke structuur. De groep heeft een gemeenschappelijk doel of reden van bestaan dat verder gaat dan de som van de mensen die ertoe behoren en kan handelen als `Agent`. De organisaties zijn vaak onder te verdelen in hiërarchische structuren. Het wordt aanbevolen om SKOS labels te gebruiken om de organisatie te benoemen. In het bijzonder `skos:prefLabel` voor de primaire (mogelijks juridisch geldende) naam, `skos:altLabel` voor alternatieve namen (handelsnamen, colloquialismen) en `skos:notation` om een code aan te duiden uit een codelijst.
 
@@ -114,7 +114,7 @@ Stelt een groep personen voor, georganiseerd in een gemeenschap of een andere so
 
 
 **Subclass of:** 
-[org:Organization](#org%3AOrganization)
+[Organisatie](#org%3AOrganization)
 
 Een organisatie zoals een afdeling of dienst die deel uitmaakt van de grotere organisatie en zijn bestaansreden daaraan ontleent. Heeft geen juridische status op zich.
 
@@ -127,7 +127,7 @@ _Properties from [Organisatie](#org%3AOrganization):_  [aanspreekpunt](#schema%3
 
 
 **Subclass of:** 
-[org:Organization](#org%3AOrganization)
+[Organisatie](#org%3AOrganization)
 
 Een contentpartner is een organisatie dat een samenwerkingovereenkomst heeft ondertekend met meemoo voor de lange-termijn preservatie en ontsluiting van hun materiaal.
 
@@ -140,7 +140,7 @@ _Properties from [Organisatie](#org%3AOrganization):_  [aanspreekpunt](#schema%3
 
 
 **Subclass of:** 
-[org:Organization](#org%3AOrganization)
+[Organisatie](#org%3AOrganization)
 
 Een organisatie die aan meemoo diensten of goederen levert: kan zowel gaan over IT, digitalisering, ...
 
@@ -150,7 +150,7 @@ _Properties from [Organisatie](#org%3AOrganization):_  [aanspreekpunt](#schema%3
 
 
 **Subclass of:** 
-[org:Organization](#org%3AOrganization)
+[Organisatie](#org%3AOrganization)
 
 Een organisatie die diensten bij meemoo afneemt, met contractuele relatie met meemoo. Het gaat hier niet over een contentpartner, maar ever een private organisatie die digitale opslag doet bij meemoo (bv. Plantentuin Meise).
 
@@ -160,12 +160,12 @@ _Properties from [Organisatie](#org%3AOrganization):_  [aanspreekpunt](#schema%3
 
 
 **Subclass of:** 
-[org:Organization](#org%3AOrganization)
+[Organisatie](#org%3AOrganization)
 
 **Subclasses:** 
-[haOrg:EducationalPartner](#haOrg%3AEducationalPartner)
-, [haOrg:EducationalPublisher](#haOrg%3AEducationalPublisher)
-, [haOrg:School](#haOrg%3ASchool)
+[Educatieve partner](#haOrg%3AEducationalPartner)
+, [Educatieve uitgeverij](#haOrg%3AEducationalPublisher)
+, [School](#haOrg%3ASchool)
 
 Een educatieve organisatie is een organisatie of een bedrijf dat educatie en opleiding aanbiedt buiten een schoolcontext.
 
@@ -175,7 +175,7 @@ _Properties from [Organisatie](#org%3AOrganization):_  [aanspreekpunt](#schema%3
 
 
 **Subclass of:** 
-[haOrg:EducationalOrganization](#haOrg%3AEducationalOrganization)
+[Educatieve organisatie](#haOrg%3AEducationalOrganization)
 
 Een educatieve partner is een organisatie die content aanbiedt op het Archief voor Onderwijs platform en de samenwerkingsovereenkomst educatieve partner heeft ondertekend (vb educatieve uitgeverij, KlasCement, Mediawijs, ed.).
 
@@ -188,7 +188,7 @@ Een educatieve partner is een organisatie die content aanbiedt op het Archief vo
 
 
 **Subclass of:** 
-[haOrg:EducationalOrganization](#haOrg%3AEducationalOrganization)
+[Educatieve organisatie](#haOrg%3AEducationalOrganization)
 
 Een educatieve uitgeverij is een bedrijf die educatieve content publiceert.
 
@@ -198,7 +198,7 @@ Een educatieve uitgeverij is een bedrijf die educatieve content publiceert.
 
 
 **Subclass of:** 
-[haOrg:EducationalOrganization](#haOrg%3AEducationalOrganization)
+[Educatieve organisatie](#haOrg%3AEducationalOrganization)
 
 Een door de Vlaamse overheid erkende onderwijsinstelling in het basis, secundair or hoger onderwijs.
 
@@ -253,7 +253,7 @@ Een persoon (levend, dood, ondood, of fictief).
 
 
 **Subclass of:** 
-[schema:ContactPoint](#schema%3AContactPoint)
+[Aanspreek-/meldpunt](#schema%3AContactPoint)
 
 Het postadres.
 
@@ -271,7 +271,7 @@ _Properties from [Aanspreek-/meldpunt](#schema%3AContactPoint):_  [contacttype](
 
 
 **Subclasses:** 
-[schema:PostalAddress](#schema%3APostalAddress)
+[Postadres](#schema%3APostalAddress)
 
 Een aanspreekpunt&#x2014;bijvoorbeeld, een afdeling voor klachten van klanten.
 
