@@ -293,7 +293,7 @@ Een contentpartner is een organisatie dat een samenwerkingovereenkomst heeft ond
 
 
 <style>
-svg {
+.zoom > svg {
     width: 100%;
     height: auto;
     background-color: #fff;
