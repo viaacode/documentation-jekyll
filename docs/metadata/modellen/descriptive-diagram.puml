@@ -20,9 +20,10 @@ class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
-class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
@@ -172,11 +173,24 @@ schema_Person : naam : <i>xsd:string</i> [1..1]
 schema_Person : voornaam : <i>xsd:string</i> [0..n]
 
 
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : aantal items : <i>xsd:integer</i> [0..n]
+
+schema_Collection : identifier : <i>xsd:string</i> [1..1]
+
+
+schema_Collection --> "[0..n]" premis_IntellectualEntity : is deel van >
+schema_Collection : naam : <i>xsd:string</i> [1..1]
+
+schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
 
 
 
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
 
 
 
