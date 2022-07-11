@@ -9,7 +9,7 @@
 
     <amdSec ID="uuid-1fe0281c-51d5-4ae6-bdb3-6f260f6291e1">
         <digiprovMD ID="uuid-9976a799-e974-4fc5-94d0-fe0e98bff923">
-            <mdRef ID="uuid-8ac56a1f-bc3e-48c5-a4f4-1a74014abff4" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="4173" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="7bf54e1641b22ec8dcd8d9f4f4a51ede" CHECKSUMTYPE="MD5" />
+            <mdRef ID="uuid-8ac56a1f-bc3e-48c5-a4f4-1a74014abff4" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="4776" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="fde6c913b4105cc06174fba8cd3b864e" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 
@@ -22,7 +22,7 @@
                     </file>
                 </fileGrp>
                 <fileGrp USE="metadata/preservation" ID="uuid-3945b397-d100-4676-b498-7194ac308c9c">
-                    <file ID="uuid-8cbd3c48-539d-4dfc-908c-137b73f861ef" MIMETYPE="application/xml" SIZE="4173" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="7bf54e1641b22ec8dcd8d9f4f4a51ede" CHECKSUMTYPE="MD5">
+                    <file ID="uuid-8cbd3c48-539d-4dfc-908c-137b73f861ef" MIMETYPE="application/xml" SIZE="4776" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="fde6c913b4105cc06174fba8cd3b864e" CHECKSUMTYPE="MD5">
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" />
                     </file>
                 </fileGrp>
