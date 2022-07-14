@@ -100,34 +100,34 @@ Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met al
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3AdateCreated'></a>aangemaakt op <br> <small>[(schema:dateCreated)](https://schema.org/dateCreated)</small> | De datum waarin het CreativeWork werd gemaakt. | `[0..1]` | [`edtf:EDTF-level1`](http://id.loc.gov/datatypes/edtf/EDTF-level1) |
-| <a id='schema%3AalternateName'></a>alternatieve naam <br> <small>[(schema:alternateName)](https://schema.org/alternateName)</small> | Een alias voor het item | `[0..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Aauthor'></a>auteur <br> <small>[(schema:author)](https://schema.org/author)</small> | De auteur van deze inhoud of beoordeling. | `[0..n]` | [Rol](#schema%3ARole) |
-| <a id='schema%3AcopyrightHolder'></a>auteur van de copyright <br> <small>[(schema:copyrightHolder)](https://schema.org/copyrightHolder)</small> | De partij die de auteursrechten heeft op het CreativeWork. | `[0..n]` | [Persoon](#schema%3APerson) _or_ [Organisatie](#org%3AOrganization) |
-| <a id='schema%3Amaintainer'></a>beheerder <br> <small>[(schema:maintainer)](https://schema.org/maintainer)</small> | Een beheerder is een Persoon of Organisatie die bijdragen beheert aan, en/of publicatie van, een (meestal complex) artefact. | `[1..1]` | [Contentpartner](#haOrg%3AContentPartner) |
-| <a id='dcterms%3Aavailable'></a>beschikbaar op <br> <small>[(dcterms:available)](http://purl.org/dc/terms/available)</small> | Datum waarop de bron beschikbaar is of zal zijn . | `[0..n]` | [`xsd:dateTime`](http://www.w3.org/2001/XMLSchema#dateTime) |
-| <a id='schema%3Acontributor'></a>bijdrager <br> <small>[(schema:contributor)](https://schema.org/contributor)</small> | Een tweede bijdrager aan het CreativeWork of Event. | `[0..n]` | [Rol](#schema%3ARole) |
-| <a id='schema%3AcopyrightYear'></a>copyright jaar <br> <small>[(schema:copyrightYear)](https://schema.org/copyrightYear)</small> | Het jaar waarin het auteursrecht voor het CreativeWork voor het eerst gold/geldend gemaakt werd. | `[0..n]` | [`xsd:integer`](http://www.w3.org/2001/XMLSchema#integer) |
-| <a id='schema%3AcopyrightNotice'></a>copyright melding <br> <small>[(schema:copyrightNotice)](https://schema.org/copyrightNotice)</small> | Tekst van een mededeling die geschikt is om de auteursrechtelijke aspecten van dit CreativeWork te beschrijven, idealiter met vermelding van de auteursrechthouder van het werk. | `[0..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3AcreditText'></a>credit tekst <br> <small>[(schema:creditText)](https://schema.org/creditText)</small> | Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden. | `[0..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3ApartOfEpisode'></a>deel van aflevering <br> <small>[(schema:partOfEpisode)](https://schema.org/partOfEpisode)</small> | De aflevering waar deze clip toe behoort. | `[0..1]` | [Aflevering](#schema%3AEpisode) |
-| <a id='schema%3ApartOfSeries'></a>deel van serie <br> <small>[(schema:partOfSeries)](https://schema.org/partOfSeries)</small> | De serie waar deze aflevering of seizoen toe behoort. | `[0..1]` | [Serie van het creatief werk](#schema%3ACreativeWorkSeries) |
-| <a id='schema%3Aduration'></a>duur <br> <small>[(schema:duration)](https://schema.org/duration)</small> | De duur van het item (film, opname audio, evenement, enz.) in ISO 8601 datumformaat. | `[0..1]` | [`xsd:dateTime`](http://www.w3.org/2001/XMLSchema#dateTime) |
-| <a id='schema%3Agenre'></a>genre <br> <small>[(schema:genre)](https://schema.org/genre)</small> | Genre van het CreativeWork, uitzendkanaal of groep. | `[0..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3AspatialCoverage'></a>geografische dekking <br> <small>[(schema:spatialCoverage)](https://schema.org/spatialCoverage)</small> | De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt. | `[0..n]` | [Plaats](#schema%3APlace) |
-| <a id='schema%3AdatePublished'></a>gepubliceerd op <br> <small>[(schema:datePublished)](https://schema.org/datePublished)</small> | De datum waarop de eerste uitzending/publicatie plaatsvond. | `[0..1]` | [`edtf:EDTF-level1`](http://id.loc.gov/datatypes/edtf/EDTF-level1) |
-| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3AinLanguage'></a>in taal <br> <small>[(schema:inLanguage)](https://schema.org/inLanguage)</small> | De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard. | `[1..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3AisPartOf'></a>is een deel van <br> <small>[(schema:isPartOf)](https://schema.org/isPartOf)</small> | Geeft een item of CreativeWork aan waarvan dit item, of CreativeWork (in een bepaald opzicht), een onderdeel is. | `[0..1]` | [Archiefcomponent](#schema%3AArchiveComponent) |
-| <a id='schema%3Alicense'></a>licentie <br> <small>[(schema:license)](https://schema.org/license)</small> | Een licentiedocument dat geldig is voor deze inhoud, meestal gekenmerkt door een URL. | `[0..n]` | [Concept](#skos%3AConcept) |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='ebucore%3AobjectType'></a>object type <br> <small>[(ebucore:objectType)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#objectType)</small> |  | `[0..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Aabout'></a>over <br> <small>[(schema:about)](https://schema.org/about)</small> | Het onderwerp van de inhoud. | `[0..n]` |  |
-| <a id='schema%3Aabstract'></a>samenvatting <br> <small>[(schema:abstract)](https://schema.org/abstract)</small> | Een abstract is een korte beschrijving die een CreativeWork samenvat. | `[0..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3AtemporalCoverage'></a>tijdsdekking <br> <small>[(schema:temporalCoverage)](https://schema.org/temporalCoverage)</small> | De dekking in de tijd van een CreativeWork geeft aan oveer welke periode inhoud handelt, bijvoorbeeld als een DateTime of als een tekstuele string die een tijdsinterval in ISO 8601 formaat aanduidt. | `[0..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Akeywords'></a>trefwoorden <br> <small>[(schema:keywords)](https://schema.org/keywords)</small> | Trefwoorden of tags die gebruikt worden om een item te beschrijven. Meerdere tekstuele elementen in een trefwoordenlijst worden meestal gescheiden door komma's, of door het herhaling van de eigenschap (Property). | `[0..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Apublisher'></a>uitgever <br> <small>[(schema:publisher)](https://schema.org/publisher)</small> | De uitgever van het kunstwerk. | `[0..n]` | [Rol](#schema%3ARole) |
+| <a id='schema%3AdateCreated'></a>aangemaakt op <br> <small>[(schema:dateCreated)](https://schema.org/dateCreated)</small> | De datum waarin het CreativeWork werd gemaakt. | `0..1` | [`edtf:EDTF-level1`](http://id.loc.gov/datatypes/edtf/EDTF-level1) |
+| <a id='schema%3AalternateName'></a>alternatieve naam <br> <small>[(schema:alternateName)](https://schema.org/alternateName)</small> | Een alias voor het item | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aauthor'></a>auteur <br> <small>[(schema:author)](https://schema.org/author)</small> | De auteur van deze inhoud of beoordeling. | `0..n` | [Rol](#schema%3ARole) |
+| <a id='schema%3AcopyrightHolder'></a>auteur van de copyright <br> <small>[(schema:copyrightHolder)](https://schema.org/copyrightHolder)</small> | De partij die de auteursrechten heeft op het CreativeWork. | `0..n` | [Persoon](#schema%3APerson) _or_ [Organisatie](#org%3AOrganization) |
+| <a id='schema%3Amaintainer'></a>beheerder <br> <small>[(schema:maintainer)](https://schema.org/maintainer)</small> | Een beheerder is een Persoon of Organisatie die bijdragen beheert aan, en/of publicatie van, een (meestal complex) artefact. | `1..1` | [Contentpartner](#haOrg%3AContentPartner) |
+| <a id='dcterms%3Aavailable'></a>beschikbaar op <br> <small>[(dcterms:available)](http://purl.org/dc/terms/available)</small> | Datum waarop de bron beschikbaar is of zal zijn . | `0..n` | [`xsd:dateTime`](http://www.w3.org/2001/XMLSchema#dateTime) |
+| <a id='schema%3Acontributor'></a>bijdrager <br> <small>[(schema:contributor)](https://schema.org/contributor)</small> | Een tweede bijdrager aan het CreativeWork of Event. | `0..n` | [Rol](#schema%3ARole) |
+| <a id='schema%3AcopyrightYear'></a>copyright jaar <br> <small>[(schema:copyrightYear)](https://schema.org/copyrightYear)</small> | Het jaar waarin het auteursrecht voor het CreativeWork voor het eerst gold/geldend gemaakt werd. | `0..n` | [`xsd:integer`](http://www.w3.org/2001/XMLSchema#integer) |
+| <a id='schema%3AcopyrightNotice'></a>copyright melding <br> <small>[(schema:copyrightNotice)](https://schema.org/copyrightNotice)</small> | Tekst van een mededeling die geschikt is om de auteursrechtelijke aspecten van dit CreativeWork te beschrijven, idealiter met vermelding van de auteursrechthouder van het werk. | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AcreditText'></a>credit tekst <br> <small>[(schema:creditText)](https://schema.org/creditText)</small> | Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden. | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3ApartOfEpisode'></a>deel van aflevering <br> <small>[(schema:partOfEpisode)](https://schema.org/partOfEpisode)</small> | De aflevering waar deze clip toe behoort. | `0..1` | [Aflevering](#schema%3AEpisode) |
+| <a id='schema%3ApartOfSeries'></a>deel van serie <br> <small>[(schema:partOfSeries)](https://schema.org/partOfSeries)</small> | De serie waar deze aflevering of seizoen toe behoort. | `0..1` | [Serie van het creatief werk](#schema%3ACreativeWorkSeries) |
+| <a id='schema%3Aduration'></a>duur <br> <small>[(schema:duration)](https://schema.org/duration)</small> | De duur van het item (film, opname audio, evenement, enz.) in ISO 8601 datumformaat. | `0..1` | [`xsd:dateTime`](http://www.w3.org/2001/XMLSchema#dateTime) |
+| <a id='schema%3Agenre'></a>genre <br> <small>[(schema:genre)](https://schema.org/genre)</small> | Genre van het CreativeWork, uitzendkanaal of groep. | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AspatialCoverage'></a>geografische dekking <br> <small>[(schema:spatialCoverage)](https://schema.org/spatialCoverage)</small> | De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt. | `0..n` | [Plaats](#schema%3APlace) |
+| <a id='schema%3AdatePublished'></a>gepubliceerd op <br> <small>[(schema:datePublished)](https://schema.org/datePublished)</small> | De datum waarop de eerste uitzending/publicatie plaatsvond. | `0..1` | [`edtf:EDTF-level1`](http://id.loc.gov/datatypes/edtf/EDTF-level1) |
+| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AinLanguage'></a>in taal <br> <small>[(schema:inLanguage)](https://schema.org/inLanguage)</small> | De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard. | `1..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AisPartOf'></a>is een deel van <br> <small>[(schema:isPartOf)](https://schema.org/isPartOf)</small> | Geeft een item of CreativeWork aan waarvan dit item, of CreativeWork (in een bepaald opzicht), een onderdeel is. | `0..1` | [Archiefcomponent](#schema%3AArchiveComponent) |
+| <a id='schema%3Alicense'></a>licentie <br> <small>[(schema:license)](https://schema.org/license)</small> | Een licentiedocument dat geldig is voor deze inhoud, meestal gekenmerkt door een URL. | `0..n` | [Concept](#skos%3AConcept) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='ebucore%3AobjectType'></a>object type <br> <small>[(ebucore:objectType)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#objectType)</small> |  | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aabout'></a>over <br> <small>[(schema:about)](https://schema.org/about)</small> | Het onderwerp van de inhoud. | `0..n` | [`IRI`](https://www.rfc-editor.org/rfc/rfc3987.txt) |
+| <a id='schema%3Aabstract'></a>samenvatting <br> <small>[(schema:abstract)](https://schema.org/abstract)</small> | Een abstract is een korte beschrijving die een CreativeWork samenvat. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AtemporalCoverage'></a>tijdsdekking <br> <small>[(schema:temporalCoverage)](https://schema.org/temporalCoverage)</small> | De dekking in de tijd van een CreativeWork geeft aan oveer welke periode inhoud handelt, bijvoorbeeld als een DateTime of als een tekstuele string die een tijdsinterval in ISO 8601 formaat aanduidt. | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Akeywords'></a>trefwoorden <br> <small>[(schema:keywords)](https://schema.org/keywords)</small> | Trefwoorden of tags die gebruikt worden om een item te beschrijven. Meerdere tekstuele elementen in een trefwoordenlijst worden meestal gescheiden door komma's, of door het herhaling van de eigenschap (Property). | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Apublisher'></a>uitgever <br> <small>[(schema:publisher)](https://schema.org/publisher)</small> | De uitgever van het kunstwerk. | `0..n` | [Rol](#schema%3ARole) |
 
 
 ## <a id="haObj%3APhysicalRepresentation"></a>Fysieke representatie <small>[(haObj:PhysicalRepresentation)](https://data.hetarchief.be/ns/object#PhysicalRepresentation)</small>
@@ -140,12 +140,12 @@ Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een an
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='dcterms%3Aformat'></a>formaat <br> <small>[(dcterms:format)](http://purl.org/dc/terms/format)</small> | Het bestandsformaat, fysiek medium of afmetingen van de bron. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='dcterms%3Aformat'></a>formaat <br> <small>[(dcterms:format)](http://purl.org/dc/terms/format)</small> | Het bestandsformaat, het opslagmedium of de afmetingen van het bestand. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='dcterms%3Amedium'></a>medium <br> <small>[(dcterms:medium)](http://purl.org/dc/terms/medium)</small> | Het materiaal of fysieke drager van de bron | `[1..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='dcterms%3Aformat'></a>formaat <br> <small>[(dcterms:format)](http://purl.org/dc/terms/format)</small> | Het bestandsformaat, fysiek medium of afmetingen van de bron. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='dcterms%3Aformat'></a>formaat <br> <small>[(dcterms:format)](http://purl.org/dc/terms/format)</small> | Het bestandsformaat, het opslagmedium of de afmetingen van het bestand. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='dcterms%3Amedium'></a>medium <br> <small>[(dcterms:medium)](http://purl.org/dc/terms/medium)</small> | Het materiaal of fysieke drager van de bron | `1..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
 
 
 ## <a id="haObj%3ADigitalRepresentation"></a>Digitale representatie <small>[(haObj:DigitalRepresentation)](https://data.hetarchief.be/ns/object#DigitalRepresentation)</small>
@@ -158,13 +158,13 @@ Digitale representatie van een gearchiveerde intellectuele entiteit, zoals een a
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3AdateCreated'></a>aangemaakt op <br> <small>[(schema:dateCreated)](https://schema.org/dateCreated)</small> | De datum waarin het CreativeWork werd gemaakt. | `[1..1]` | [`edtf:EDTF-level1`](http://id.loc.gov/datatypes/edtf/EDTF-level1) |
-| <a id='schema%3Aauthor'></a>auteur <br> <small>[(schema:author)](https://schema.org/author)</small> | De auteur van deze inhoud of beoordeling. | `[0..n]` | [Rol](#schema%3ARole) |
-| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Acaption'></a>onderschrift <br> <small>[(schema:caption)](https://schema.org/caption)</small> | De ondertiteling voor dit object. | `[0..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Atranscript'></a>transcriptie <br> <small>[(schema:transcript)](https://schema.org/transcript)</small> | Als dit MediaObject een AudioObject of VideoObject is, de transcriptie van dat object. | `[0..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AdateCreated'></a>aangemaakt op <br> <small>[(schema:dateCreated)](https://schema.org/dateCreated)</small> | De datum waarin het CreativeWork werd gemaakt. | `1..1` | [`edtf:EDTF-level1`](http://id.loc.gov/datatypes/edtf/EDTF-level1) |
+| <a id='schema%3Aauthor'></a>auteur <br> <small>[(schema:author)](https://schema.org/author)</small> | De auteur van deze inhoud of beoordeling. | `0..n` | [Rol](#schema%3ARole) |
+| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Acaption'></a>onderschrift <br> <small>[(schema:caption)](https://schema.org/caption)</small> | De ondertiteling voor dit object. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Atranscript'></a>transcriptie <br> <small>[(schema:transcript)](https://schema.org/transcript)</small> | Als dit MediaObject een AudioObject of VideoObject is, de transcriptie van dat object. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
 
 
 ## <a id="schema%3ACreativeWorkSeries"></a>Serie van het creatief werk <small>[(schema:CreativeWorkSeries)](https://schema.org/CreativeWorkSeries)</small>
@@ -177,10 +177,10 @@ Een CreativeWorkSeries in schema.org is een groep vergelijkbare items, meestal m
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3AseasonNumber'></a>seizoensnummer <br> <small>[(schema:seasonNumber)](https://schema.org/seasonNumber)</small> | Positie van het seizoen in een geordende groep van seizoenen. | `[0..n]` | [`xsd:integer`](http://www.w3.org/2001/XMLSchema#integer) |
+| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AseasonNumber'></a>seizoensnummer <br> <small>[(schema:seasonNumber)](https://schema.org/seasonNumber)</small> | Positie van het seizoen in een geordende groep van seizoenen. | `0..n` | [`xsd:integer`](http://www.w3.org/2001/XMLSchema#integer) |
 
 
 ## <a id="schema%3AEpisode"></a>Aflevering <small>[(schema:Episode)](https://schema.org/Episode)</small>
@@ -193,9 +193,9 @@ Een media aflevering (bijvoorbeeld tv, radio, videogame) die deel uitmaakt van e
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
 
 
 ## <a id="schema%3APlace"></a>Plaats <small>[(schema:Place)](https://schema.org/Place)</small>
@@ -205,8 +205,8 @@ Entiteiten die een enigszins vastliggende, fysieke uitbreiding hebben.
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
 
 
 ## <a id="schema%3AArchiveComponent"></a>Archiefcomponent <small>[(schema:ArchiveComponent)](https://schema.org/ArchiveComponent)</small>
@@ -219,8 +219,8 @@ Een immaterieel type dat toegepast moet worden op elke inhoud van het archief, m
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
 
 
 ## <a id="schema%3ARole"></a>Rol <small>[(schema:Role)](https://schema.org/Role)</small>
@@ -237,11 +237,11 @@ Stelt bijkomende informatie voor over een relatie of eigenschap.
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3Aactor'></a>acteur <br> <small>[(schema:actor)](https://schema.org/actor)</small> | Een acteur, bv. in tv, radio, film, videogames etc. of in een evenement. Acteurs kunnen geassocieerd worden met met individuele items of met een serie, aflevering, clip. | `[0..n]` | [Persoon](#schema%3APerson) |
-| <a id='schema%3Aauthor'></a>auteur <br> <small>[(schema:author)](https://schema.org/author)</small> | De auteur van deze inhoud of beoordeling. | `[0..n]` | [Persoon](#schema%3APerson) _or_ [Organisatie](#org%3AOrganization) |
-| <a id='schema%3Acontributor'></a>bijdrager <br> <small>[(schema:contributor)](https://schema.org/contributor)</small> | Een tweede bijdrager aan het CreativeWork of Event. | `[0..n]` | [Persoon](#schema%3APerson) _or_ [Organisatie](#org%3AOrganization) |
-| <a id='schema%3AroleName'></a>rolenaam <br> <small>[(schema:roleName)](https://schema.org/roleName)</small> | Een rol gespeeld of vertolkt door een persoon of organisatie. | `[1..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) _or_ [Concept](#skos%3AConcept) |
-| <a id='schema%3Apublisher'></a>uitgever <br> <small>[(schema:publisher)](https://schema.org/publisher)</small> | De uitgever van het kunstwerk. | `[0..n]` | [Persoon](#schema%3APerson) _or_ [Organisatie](#org%3AOrganization) |
+| <a id='schema%3Aactor'></a>acteur <br> <small>[(schema:actor)](https://schema.org/actor)</small> | Een acteur, bv. in tv, radio, film, videogames etc. of in een evenement. Acteurs kunnen geassocieerd worden met met individuele items of met een serie, aflevering, clip. | `0..n` | [Persoon](#schema%3APerson) |
+| <a id='schema%3Aauthor'></a>auteur <br> <small>[(schema:author)](https://schema.org/author)</small> | De auteur van deze inhoud of beoordeling. | `0..n` | [Persoon](#schema%3APerson) _or_ [Organisatie](#org%3AOrganization) |
+| <a id='schema%3Acontributor'></a>bijdrager <br> <small>[(schema:contributor)](https://schema.org/contributor)</small> | Een tweede bijdrager aan het CreativeWork of Event. | `0..n` | [Persoon](#schema%3APerson) _or_ [Organisatie](#org%3AOrganization) |
+| <a id='schema%3AroleName'></a>rolenaam <br> <small>[(schema:roleName)](https://schema.org/roleName)</small> | Een rol gespeeld of vertolkt door een persoon of organisatie. | `1..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) _or_ [Concept](#skos%3AConcept) |
+| <a id='schema%3Apublisher'></a>uitgever <br> <small>[(schema:publisher)](https://schema.org/publisher)</small> | De uitgever van het kunstwerk. | `0..n` | [Persoon](#schema%3APerson) _or_ [Organisatie](#org%3AOrganization) |
 
 
 ## <a id="schema%3APerson"></a>Persoon <small>[(schema:Person)](https://schema.org/Person)</small>
@@ -251,9 +251,9 @@ Een persoon (levend, dood, ondood, of fictief).
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3AfamilyName'></a>achternaam <br> <small>[(schema:familyName)](https://schema.org/familyName)</small> | Familienaam. In de V.S., de achternaam van een Persoon. | `[0..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3AgivenName'></a>voornaam <br> <small>[(schema:givenName)](https://schema.org/givenName)</small> | Voornaam. In de V.S., de eerste naam van een Persoon. | `[0..n]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AfamilyName'></a>achternaam <br> <small>[(schema:familyName)](https://schema.org/familyName)</small> | Familienaam. In de V.S., de achternaam van een Persoon. | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AgivenName'></a>voornaam <br> <small>[(schema:givenName)](https://schema.org/givenName)</small> | Voornaam. In de V.S., de eerste naam van een Persoon. | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
 
 
 ## <a id="schema%3ACollection"></a>Collectie <small>[(schema:Collection)](https://schema.org/Collection)</small>
@@ -266,11 +266,11 @@ Een collectie van items, e.g. creative works of producten, gewoonlijk maar niet 
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='schema%3AcollectionSize'></a>aantal items <br> <small>[(schema:collectionSize)](https://schema.org/collectionSize)</small> | Het aantal items in de collectie. | `[0..n]` | [`xsd:integer`](http://www.w3.org/2001/XMLSchema#integer) |
-| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3AhasPart'></a>is deel van <br> <small>[(schema:hasPart)](https://schema.org/hasPart)</small> | Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze collectie. | `[0..n]` | [Intellectuele entiteit](#premis%3AIntellectualEntity) |
-| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
-| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `[1..1]` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AcollectionSize'></a>aantal items <br> <small>[(schema:collectionSize)](https://schema.org/collectionSize)</small> | Het aantal items in de collectie. | `0..n` | [`xsd:integer`](http://www.w3.org/2001/XMLSchema#integer) |
+| <a id='schema%3Aidentifier'></a>identifier <br> <small>[(schema:identifier)](https://schema.org/identifier)</small> | De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3AhasPart'></a>is deel van <br> <small>[(schema:hasPart)](https://schema.org/hasPart)</small> | Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze collectie. | `0..n` | [Intellectuele entiteit](#premis%3AIntellectualEntity) |
+| <a id='schema%3Aname'></a>naam <br> <small>[(schema:name)](https://schema.org/name)</small> | De naam van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
+| <a id='schema%3Adescription'></a>omschrijving <br> <small>[(schema:description)](https://schema.org/description)</small> | Een beschrijving van het item. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string) |
 
 
 ## <a id="skos%3AConcept"></a>Concept <small>[(skos:Concept)](http://www.w3.org/2004/02/skos/core#Concept)</small>
