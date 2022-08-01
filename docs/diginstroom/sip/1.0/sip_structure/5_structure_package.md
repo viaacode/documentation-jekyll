@@ -114,7 +114,7 @@ The various requirements are listed in the table below.
 | Attribute | `mets/@OBJID` |
 |-----------------------|-----------|
 | Name | Package identifier |
-| Description | This is a UUID identifier for the METS document. For the package METS, this MUST be the same UUID as the one used for the entire bag. |
+| Description | This is an ID for the METS document. For the package METS, this MUST be the same ID as the one used for the entire bag. |
 | Datatype | [UUID]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uuid) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1430,12 +1430,12 @@ Each XML file follows the naming convention `dc*.xml` (where `*` is any string o
 - The `/descriptive` directory SHOULD at least contain one metadata file: `dc*.xml`.
 - The metadata files in the `/descriptive` directory SHOULD follow the `dc*.xml` naming convention.
 
-The `descriptive.xml` file at the package-level contains descriptive metadata about the IE(s) of the SIP.
+The `dc*.xml` file at the package-level contains descriptive metadata about the IE(s) of the SIP.
 It relies on the [DCTERMS](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schema in order to facilitate a basic description with a limited number of descriptive metadata elements.
 
 <a id="shareduuidinfo"></a>Descriptive metadata about multiple IEs is divided into different descriptive metadata files.
-There is a link present between each `dc_*.xml` file and the different PREMIS objects in the `preservation/premis.xml` file via a shared UUID.
-This shared UUID is stored in the `<dcterms:identifier>` element of each `dc_*.xml` file and in a `<premis:objectIdentifier>` element of each PREMIS object in the `preservation/premis.xml` file.
+There is a link present between each `dc*.xml` file and the different PREMIS objects in the `preservation/premis.xml` file via a shared UUID.
+This shared UUID is stored in the `<dcterms:identifier>` element of each `dc*.xml` file and in a `<premis:objectIdentifier>` element of each PREMIS object in the `preservation/premis.xml` file.
 
 Please note that additional IDs must be dealt with in the `preservation/premis.xml` file via `<premis:objectIdentifier>` elements in which the type of ID is specified using the `<premis:objectIdentifierType>` element.
 
@@ -1465,13 +1465,13 @@ Please note that additional IDs must be dealt with in the `preservation/premis.x
 
 ***Requirements***
 
-- Each `dc_*.xml` file MUST only use the [DCTERMS](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schema and MUST NOT use any other metadata schemas.
-- Each `dc_*.xml` file MUST declare the DCTERMS namespaces in its root element.
-- Each `dc_*.xml` file MUST contain a shared UUID with a PREMIS object in the `preservation/premis.xml` file, stored in the `<dcterms:identifier>` element.
-- Each `dc_*.xml` file MUST use the `<metadata/>` tag as its root element.
-- Each `dc_*.xml` file MUST include the DCTERMS elements outlined in the table below; besides these mandatory elements it MAY use all other terms from the DCTERMS schema.
-- Each `dc_*.xml` file MUST adhere to the restrictions on cardinality of terms outlined in the table below; if a term is not listed with a restriction on cardinality, it MAY be used multiple times.
-- Each `dc_*.xml` file MUST NOT contain additional IDs besides the shared UUID in the `<dcterms:identifier>`; these MUST be added in the `preservation/premis.xml` file.
+- Each `dc*.xml` file MUST only use the [DCTERMS](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/) schema and MUST NOT use any other metadata schemas.
+- Each `dc*.xml` file MUST declare the DCTERMS namespaces in its root element.
+- Each `dc*.xml` file MUST contain a shared UUID with a PREMIS object in the `preservation/premis.xml` file, stored in the `<dcterms:identifier>` element.
+- Each `dc*.xml` file MUST use the `<metadata/>` tag as its root element.
+- Each `dc*.xml` file MUST include the DCTERMS elements outlined in the table below; besides these mandatory elements it MAY use all other terms from the DCTERMS schema.
+- Each `dc*.xml` file MUST adhere to the restrictions on cardinality of terms outlined in the table below; if a term is not listed with a restriction on cardinality, it MAY be used multiple times.
+- Each `dc*.xml` file MUST NOT contain additional IDs besides the shared UUID in the `<dcterms:identifier>`; these MUST be added in the `preservation/premis.xml` file.
 
 | Element | `metadata` |
 |-----------------------|-----------|
@@ -1483,7 +1483,7 @@ Please note that additional IDs must be dealt with in the `preservation/premis.x
 | Element | `metadata/dcterms:identifier` |
 |-----------------------|-----------|
 | Name | Identifier |
-| Description | An unambiguous and unique reference to the Intellectual Entity/Entities present in the SIP.<br>This identifier MUST be used to establish a link between the `dc_*.xml` file and the relevant PREMIS object in the `preservation/premis.xml` file. |
+| Description | An unambiguous and unique reference to the Intellectual Entity/Entities present in the SIP.<br>This identifier MUST be used to establish a link between the `dc*.xml` file and the relevant PREMIS object in the `preservation/premis.xml` file. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1533,8 +1533,8 @@ It also contains any additional IDs related to the IE(s) of the SIP.
 It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](https://www.loc.gov/standards/premis/) standard in order to provide basic preservation information.
 More detailed preservation information can be described using PREMIS events and PREMIS agents.
 
-If descriptive metadata is available for a given IE, a link is established via a shared UUID between the relevant PREMIS object in the `premis.xml` file and the corresponding `descriptive/dc_*.xml` file.
-This UUID is stored in the `<premis:objectidentifier>` element of the relevant PREMIS object and in the `<dcterms:identifier>` element of the corresponding `dc_*.xml` file in the `/descriptive` directory. 
+If descriptive metadata is available for a given IE, a link is established via a shared UUID between the relevant PREMIS object in the `premis.xml` file and the corresponding `descriptive/dc*.xml` file.
+This UUID is stored in the `<premis:objectidentifier>` element of the relevant PREMIS object and in the `<dcterms:identifier>` element of the corresponding `dc*.xml` file in the `/descriptive` directory. 
 
 ***Example***
 
@@ -1652,7 +1652,7 @@ This UUID is stored in the `<premis:objectidentifier>` element of the relevant P
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
-| Attribute | `premis:premis/premis:object` |
+| Element | `premis:premis/premis:object` |
 |-----------------------|-----------|
 | Name | PREMIS object element |
 | Description | A `premis:object` element MUST be defined for each IE in the SIP. |
@@ -1661,135 +1661,141 @@ This UUID is stored in the `<premis:objectidentifier>` element of the relevant P
 
 | Attribute | `premis:premis/premis:object/@xsi:type` |
 |-----------------------|-----------|
-| Name | PREMIS object type |
+| Name | Object type |
 | Description | This attribute signals whether a PREMIS object is of type intellectual entity, representation or file.<br><br>In the case of the `premis.xml` file of the package level, this attribute's value MUST always be set to `premis:intellectualEntity` since the package level can only contain IEs.|
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:objectIdentifier` |
+| Element | `premis:premis/premis:object/premis:objectIdentifier` |
 |-----------------------|-----------|
-| Name | PREMIS object identifier |
+| Name | Object identifier |
 | Description | This element contains object identifier information.<br><br>At least one object identifier MUST be present to uniquely identify the concerned IE and establish a link between the relevant preservation metadata in the `premis.xml` file and the descriptive metadata in the `dc.xml` file, if any is present. |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:objectIdentifier/premis:objectIdentifierType` |
+| Element | `premis:premis/premis:object/premis:objectIdentifier/premis:objectIdentifierType` |
 |-----------------------|-----------|
-| Name | PREMIS object identifier type |
-| Description | The type of the PREMIS object identifier being used.<br><br>At least one identifier of type UUID MUST be defined in order to provide a unique identifier for each PREMIS object.<br><br> This unique identifier is also used to link the PREMIS object with the descriptive metadata in the `/metadata/descriptive/dc.xml` file, if any is present. |
-| Datatype | String; fixed vocabulary (e.g. [`PREMIS standard identifiers`](https://id.loc.gov/vocabulary/identifiers.html)) |
-| Vocabulary | `local`<br>`UUID`<br>... |
+| Name | Object identifier type |
+| Description | The type of the PREMIS object identifier being used.<br><br>At least one identifier of type ID MUST be defined in order to provide a unique identifier for each PREMIS object.<br><br>This unique identifier is also used to link the concerned PREMIS object with the descriptive metadata in the `/metadata/descriptive/dc.xml` file, if any is present. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary (e.g. [`PREMIS standard identifiers`](https://id.loc.gov/vocabulary/identifiers.html)) |
+| Vocabulary | `local`<br>`ID`<br>`UUID`<br>... |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:objectIdentifier/premis:objectIdentifierValue` |
+| Element | `premis:premis/premis:object/premis:objectIdentifier/premis:objectIdentifierValue` |
 |-----------------------|-----------|
-| Name | PREMIS object identifier value |
-| Description | The actual value making up the identifier of the PREMIS object. |
-| Datatype | String |
+| Name | Object identifier value |
+| Description | The actual value that makes up the identifier of the PREMIS object. |
+| Datatype | String (depending on the value of the `premis:objectIdentifierType`) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:relationship` |
+| Element | `premis:premis/premis:object/premis:relationship` |
 |-----------------------|-----------|
 | Name | PREMIS relationship |
-| Description | Information about a relationship between the current object and one or more other objects.<br><br> In the case of the `premis.xml` file of the package level, this element MUST detail the relationships between the IE defined at the package level and all of its representations defined in the various directories at the representation level.|
+| Description | Information about a relationship between the current object and one or more other objects.<br><br> In the case of the `premis.xml` file of the package level, this element MUST detail the relationships between the IE defined at the package level and all of its representations defined in the various directories of the representation level.|
 | Cardinality | 1..* |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipType` |
+| Element | `premis:premis/premis:object/premis:relationship/premis:relationshipType` |
 |-----------------------|-----------|
-| Name | PREMIS relationship type |
-| Description | A high-level categorization of the nature of the relationship.<br><br>In the case of the `premis.xml` file of the package level, this element's value MUST be set to `structural` when expressing the relationship between the IE object and the representation object.<br><br>When multiple IEs are used in the SIP, this element's value MUST be set to `logical` to express the relationship between one IE and another. |
-| Datatype |  |
+| Name | Relationship type |
+| Description | A high-level categorization of the nature of the relationship.<br><br>In the case of the `premis.xml` file of the package level, this element's value MUST be set to `structural` when expressing the relationship between the IE object and one of its representations.<br><br>When multiple IEs are used in the SIP, this element's value MUST be set to `logical` to express the relationship between one IE and another. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary |
+| Vocabulary | `structural`<br>`logical` |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipType/@authority` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Relationship type authority attribute |
+| Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different relationship types. Its value MUST be set to `"relationshipType"`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipType/@authorityURI` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Relationship type authority URI |
+| Description | This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipType"`. |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipType/@valueURI` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Relationship type value URI |
+| Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>If the `structural` relationship type is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipType/str"`.<br>If the `logical` relationship type is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipType/log"`. |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri); fixed vocabulary |
+| Vocabulary | `"http://id.loc.gov/vocabulary/preservation/relationshipType/str"`<br>`"http://id.loc.gov/vocabulary/preservation/relationshipType/log"` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipSubType/` |
+| Element | `premis:premis/premis:object/premis:relationship/premis:relationshipSubType` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Relationship subtype |
+| Description | A detailed categorization of the nature of the relationship.<br><br>In the case of the `premis.xml` file of the package level, this element's value MUST be set to `is represented by` when expressing the relationship between the IE object and one of its representations.<br><br>When multiple IEs are used in the SIP, this element's value MUST be set to `generalizes` when the relationship is expressed from the side of the main IE (i.e. the main IE is the subject of the relationship); when the relationship is expressed from the side of one of the subIEs (i.e. one of the subIEs is the subject of the relationship), this element's value MUST be set to `specializes`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary |
+| Vocabulary | `is represented by`<br>`generalizes`<br>`specializes` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipSubType/@authority` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Relationship subtype authority attribute |
+| Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different relationship subtypes. Its value MUST be set to `"relationshipSubType"`. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipSubType/@authorityURI` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Relationship subtype authority URI |
+| Description | This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType"`. |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipSubType/@valueURI` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Relationship subtype value URI |
+| Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>If the `is represented by` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr"`.<br>If the `generalizes` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen"`.<br>If the `generalizes` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe"` |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri); fixed vocabulary |
+| Vocabulary | `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr"`<br>`"http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen"`<br>`"http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe"` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:relationship/premis:relatedObjectIdentifier` |
+| Element | `premis:premis/premis:object/premis:relationship/premis:relatedObjectIdentifier` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Related object identifier |
+| Description | This element references the object of the relationship that is expressed. |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:relationship/premis:relatedObjectIdentifier/premis:relatedObjectIdentifierType` |
+| Element | `premis:premis/premis:object/premis:relationship/premis:relatedObjectIdentifier/premis:relatedObjectIdentifierType` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Related object identifier type |
+| Description | The type of the PREMIS related object identifier being used. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary (e.g. [`PREMIS standard identifiers`](https://id.loc.gov/vocabulary/identifiers.html)) |
+| Vocabulary | `local`<br>`ID`<br>`UUID`<br>... |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-| Attribute | `premis:premis/premis:object/premis:relationship/premis:relatedObjectIdentifier/premis:relatedObjectIdentifierValue` |
+| Element | `premis:premis/premis:object/premis:relationship/premis:relatedObjectIdentifier/premis:relatedObjectIdentifierValue` |
 |-----------------------|-----------|
-| Name |  |
-| Description |  |
-| Datatype |  |
+| Name | Related object identifier value |
+| Description | The actual value that makes up the identifier of the PREMIS related object. |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) (depending on the value of the `premis:relatedObjectIdentifierType`) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
-***Requirements***
+***Overview of relevant PREMIS relationships***
 
-- The `premis.xml` file MUST contain a PREMIS object for each IE in the SIP.
-- Each PREMIS object in the `premis.xml` MUST contain a unique identifier, shared with the corresponding `dc_*.xml` file in the `/descriptive` directory.
-- The `preservation.xml` file SHOULD contain PREMIS events detailing, a.o., the creation and each modification of the SIP as a whole.
+| Relationship type | Relationship subtype | Reciprocal/inverse relationship | Subject | Object | Description |
+|-------------------|----------------------|---------------------------------|---------|--------|-------------|
+| `logical` | `generalizes` | `logical/specializes` | (main) IE | (sub) IE | The main IE generalizes one or more subIEs |
+| `logical` | `specializes` | `logical/generalizes` | (sub) IE | (main) IE | One or more subIEs specialize the main IE |
+| `structural` | `is represented by` | `structural/represents` | IE | Representation | The IE object is represented by one of its representations |
 
 ## /representations (directory)
 
