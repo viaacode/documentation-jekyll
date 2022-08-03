@@ -19,8 +19,8 @@ class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
 class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
 class "<b>Lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
-class "<b>Opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 class "<b>Bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>Opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 
 

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="475px" preserveAspectRatio="none" style="width:1412px;height:475px;background:#FFFFFF;" version="1.1" viewBox="0 0 1412 475" width="1412px" zoomAndPan="magnify"><defs/><g><!--MD5=[fa2b0adb833571d9e05c730d1e50fb5f]
+class prov_Activity--><a href="#prov%3AActivity" target="_top" title="#prov%3AActivity" xlink:actuate="onRequest" xlink:href="#prov%3AActivity" xlink:show="new" xlink:title="#prov%3AActivity" xlink:type="simple"><g id="elem_prov_Activity"><rect codeLine="13" fill="#F1F1F1" height="66.8906" id="prov_Activity" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="289" x="689" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="77" x="741" y="24.9951">Activiteit</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="822" y="24.9951">(prov:Activity)</text><line style="stroke:#181818;stroke-width:0.5;" x1="690" x2="977" y1="33.2969" y2="33.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="695" y="50.292">heeft einddatum :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="97" x="829" y="50.292">xsd:dateTime</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="930" y="50.292">[1..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="134" x="695" y="66.5889">heeft startdatum :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="97" x="833" y="66.5889">xsd:dateTime</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="934" y="66.5889">[1..1]</text></g></a><!--MD5=[5abb4eb3ad4ad819b23c3f6f00088cf8]
+class premis_Event--><a href="#premis%3AEvent" target="_top" title="#premis%3AEvent" xlink:actuate="onRequest" xlink:href="#premis%3AEvent" xlink:show="new" xlink:title="#premis%3AEvent" xlink:type="simple"><g id="elem_premis_Event"><rect codeLine="14" fill="#F1F1F1" height="66.8906" id="premis_Event" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="328" x="669.5" y="284"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="98" x="729" y="301.9951">Gebeurtenis</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="831" y="301.9951">(premis:Event)</text><line style="stroke:#181818;stroke-width:0.5;" x1="670.5" x2="996.5" y1="310.2969" y2="310.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="675.5" y="327.292">heeft opmerking :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="811.5" y="327.292">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="884.5" y="327.292">[0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="675.5" y="343.5889">heeft uitkomst opmerking :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="880.5" y="343.5889">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="953.5" y="343.5889">[0..1]</text></g></a><!--MD5=[e996e722867b2f60f5bc9e0f6df6a1b1]
+class premis_Object--><a href="#premis%3AObject" target="_top" title="#premis%3AObject" xlink:actuate="onRequest" xlink:href="#premis%3AObject" xlink:show="new" xlink:title="#premis%3AObject" xlink:type="simple"><g id="elem_premis_Object"><rect codeLine="15" fill="#F1F1F1" height="26.2969" id="premis_Object" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="177" x="745" y="166"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="53" x="748" y="183.9951">Object</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="805" y="183.9951">(premis:Object)</text></g></a><!--MD5=[e7ada96af9655ed134db61deb8808f45]
+class premis_OutcomeStatus--><a href="#premis%3AOutcomeStatus" target="_top" title="#premis%3AOutcomeStatus" xlink:actuate="onRequest" xlink:href="#premis%3AOutcomeStatus" xlink:show="new" xlink:title="#premis%3AOutcomeStatus" xlink:type="simple"><g id="elem_premis_OutcomeStatus"><rect codeLine="16" fill="#F1F1F1" height="26.2969" id="premis_OutcomeStatus" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="316" x="702.5" y="443"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="129" x="705.5" y="460.9951">Uitkomststatus</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="838.5" y="460.9951">(premis:OutcomeStatus)</text></g></a><!--MD5=[43b38afcb77f6ae9622ecf1a646f1cac]
+class org_Organization--><a href="#org%3AOrganization" target="_top" title="#org%3AOrganization" xlink:actuate="onRequest" xlink:href="#org%3AOrganization" xlink:show="new" xlink:title="#org%3AOrganization" xlink:type="simple"><g id="elem_org_Organization"><rect codeLine="17" fill="#F1F1F1" height="26.2969" id="org_Organization" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="236" x="1053.5" y="443"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="95" x="1056.5" y="460.9951">Organisatie</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="1155.5" y="460.9951">(org:Organization)</text></g></a><!--MD5=[147e1b21a787ec139e8e560f6c108ca0]
+class schema_Person--><a href="#schema%3APerson" target="_top" title="#schema%3APerson" xlink:actuate="onRequest" xlink:href="#schema%3APerson" xlink:show="new" xlink:title="#schema%3APerson" xlink:type="simple"><g id="elem_schema_Person"><rect codeLine="18" fill="#F1F1F1" height="26.2969" id="schema_Person" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="194" x="1211.5" y="166"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="65" x="1214.5" y="183.9951">Persoon</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="1283.5" y="183.9951">(schema:Person)</text></g></a><!--MD5=[73d6c56954153a95f52dc9cf689416cb]
+class premis_HardwareAgent--><a href="#premis%3AHardwareAgent" target="_top" title="#premis%3AHardwareAgent" xlink:actuate="onRequest" xlink:href="#premis%3AHardwareAgent" xlink:show="new" xlink:title="#premis%3AHardwareAgent" xlink:type="simple"><g id="elem_premis_HardwareAgent"><rect codeLine="19" fill="#F1F1F1" height="26.2969" id="premis_HardwareAgent" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="315" x="7" y="443"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="129" x="10" y="460.9951">Hardware agent</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="143" y="460.9951">(premis:HardwareAgent)</text></g></a><!--MD5=[631270d925258aed2c5171d4c334f132]
+class premis_SoftwareAgent--><a href="#premis%3ASoftwareAgent" target="_top" title="#premis%3ASoftwareAgent" xlink:actuate="onRequest" xlink:href="#premis%3ASoftwareAgent" xlink:show="new" xlink:title="#premis%3ASoftwareAgent" xlink:type="simple"><g id="elem_premis_SoftwareAgent"><rect codeLine="20" fill="#F1F1F1" height="26.2969" id="premis_SoftwareAgent" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="310" x="357.5" y="443"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="126" x="360.5" y="460.9951">Software agent</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="174" x="490.5" y="460.9951">(premis:SoftwareAgent)</text></g></a><!--MD5=[864d38579ad7b9e0ca609472d54a8c51]
+link prov_Activity to premis_Object--><g id="link_prov_Activity_premis_Object"><path codeLine="29" d="M833.5,74.195 C833.5,101.389 833.5,139.03 833.5,160.717 " fill="none" id="prov_Activity-to-premis_Object" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="833.5,165.871,837.5,156.871,833.5,160.871,829.5,156.871,833.5,165.871" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="838.5,125.1328,841.4389,116.0877,835.5611,116.0877,838.5,125.1328" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="847.5" y="117.0669">was toegekend</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="884.5" y="132.1997">aan</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="793.0188" y="155.0418">[1..1]</text></g><!--MD5=[70de17e5a6242d2f51a48a439140bb9a]
+link prov_Activity to schema_Person--><g id="link_prov_Activity_schema_Person"><path codeLine="30" d="M978.368,55.33 C1042.9,64.506 1118.97,79.549 1184.5,104 C1223.86,118.686 1264.82,145.852 1288.42,162.868 " fill="none" id="prov_Activity-to-schema_Person" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1292.62,165.922,1287.6962,157.3923,1288.5771,162.9801,1282.9892,163.861,1292.62,165.922" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1258.2239,121.7713,1250.6413,116.0306,1248.7152,121.5839,1258.2239,121.7713" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="1262.5" y="117.0669">was toegekend</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="1299.5" y="132.1997">aan</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1245.6735" y="154.854">[1..1]</text></g><!--MD5=[244d9c9d0a902929ce2ec082503cbc63]
+link prov_Activity to org_Organization--><g id="link_prov_Activity_org_Organization"><path codeLine="31" d="M908.964,74.067 C924.818,82.622 940.854,92.676 954.5,104 C1072.77,202.148 1145.21,382.2836 1165.57,438.0751 " fill="none" id="prov_Activity-to-org_Organization" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1167.27,442.7812,1167.97,432.9573,1165.5692,438.0794,1160.4471,435.6785,1167.27,442.7812" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1085.3809,242.2195,1082.5714,233.1333,1077.7673,236.52,1085.3809,242.2195" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="1091.5" y="235.0669">was toegekend</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="1128.5" y="250.1997">aan</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1125.1761" y="431.9178">[1..1]</text></g><!--MD5=[d52e81d4068156b15ced544878176920]
+link prov_Activity to premis_SoftwareAgent--><g id="link_prov_Activity_premis_SoftwareAgent"><path codeLine="32" d="M771.371,74.03 C717.174,105.309 639.987,157.319 592.5,222 C541.267,291.783 521.038,396.8778 514.814,437.8187 " fill="none" id="prov_Activity-to-premis_SoftwareAgent" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="514.059,442.9362,519.3303,434.6167,514.7891,437.9898,511.4161,433.4486,514.059,442.9362" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="594.6183,242.2189,602.233,236.5209,597.4296,233.1333,594.6183,242.2189" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="606.5" y="235.0669">was toegekend</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="643.5" y="250.1997">aan</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="473.9791" y="431.8738">[1..1]</text></g><!--MD5=[0cdc9dfb55527d2baa67fb02ea3aae7d]
+link prov_Activity to premis_HardwareAgent--><g id="link_prov_Activity_premis_HardwareAgent"><path codeLine="33" d="M743.11,74.059 C719.552,83.172 694.367,93.479 671.5,104 C571.058,150.212 544.542,160.743 452.5,222 C343.06,294.836 224.775,399.9057 181.543,439.2983 " fill="none" id="prov_Activity-to-premis_HardwareAgent" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="177.596,442.9021,186.9387,439.7854,181.2876,439.5299,181.5431,433.8788,177.596,442.9021" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="453.3085,240.8589,462.4933,238.391,459.2886,233.4637,453.3085,240.8589" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="98" x="466.5" y="235.0669">was toegekend</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="24" x="503.5" y="250.1997">aan</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="142.0588" y="431.8263">[1..1]</text></g><!--MD5=[4fd86cee1e7b579b488f702a850b048c]
+link premis_Event to org_Organization--><g id="link_premis_Event_org_Organization"><path codeLine="37" d="M913.143,351.01 C931.55,359.774 950.661,369.931 967.5,381 C985.388,392.7591 984.57,403.0044 1003.5,413 C1028.65,426.2813 1058.16,435.4824 1085.37,441.805 " fill="none" id="premis_Event-to-org_Organization" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1090.42,442.9524,1082.5209,437.0698,1085.5426,441.852,1080.7604,444.8737,1090.42,442.9524" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1012.923,399.4645,1006.2923,392.6466,1003.5512,397.8462,1012.923,399.4645" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="114" x="1017.5" y="394.0669">geimplementeerd</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="1060" y="409.1997">door</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1017.801" y="431.8964">[1..1]</text></g><!--MD5=[1840934fe0ff3493d3433b80153edb4f]
+link premis_Event to premis_Object--><g id="link_premis_Event_premis_Object"><path codeLine="39" d="M916.674,283.906 C945.362,267.634 966.505,246.243 949.5,222 C940.494,209.161 927.15,200.23 912.686,194.023 " fill="none" id="premis_Event-to-premis_Object" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="907.742,192.02,914.5812,199.107,912.3761,193.8976,917.5854,191.6925,907.742,192.02" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="961.2784,233.0713,958.7433,242.2378,964.6153,241.9772,961.2784,233.0713" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="970.5" y="242.5669">heeft bron</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="897.3543" y="212.5176">[0..1]</text></g><!--MD5=[1840934fe0ff3493d3433b80153edb4f]
+link premis_Event to premis_Object--><g id="link_premis_Event_premis_Object"><path codeLine="47" d="M751.02,283.812 C722.574,267.521 701.616,246.141 718.5,222 C727.475,209.168 740.808,200.243 755.248,194.039 " fill="none" id="premis_Event-to-premis_Object-1" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="760.182,192.038,750.3384,191.7157,755.5489,193.9181,753.3466,199.1286,760.182,192.038" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="723.7352,233.0719,720.374,241.9688,726.2454,242.2453,723.7352,233.0719" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="57" x="732.5" y="242.5669">resultaat</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="703.038" y="209.3467">[0..1]</text></g><!--MD5=[372bb66a3da0cb3aaf69b12f0fef8e61]
+link premis_Object to premis_Event--><g id="link_premis_Object_premis_Event"><path codeLine="54" d="M830.946,192.064 C829.31,200.423 827.341,211.833 826.5,222 C824.963,240.573 826.157,261.212 827.966,278.453 " fill="none" id="premis_Object-to-premis_Event" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="828.545,283.689,831.5332,274.3044,827.9963,278.7192,823.5815,275.1823,828.545,283.689" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="831.3276,243.1298,834.5766,234.1915,828.7023,233.9888,831.3276,243.1298" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="840.5" y="235.0669">is gegenereerd</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="876" y="250.1997">door</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="790.3598" y="272.9041">[0..1]</text></g><!--MD5=[db0b058baead921df9ce5bf29cc52501]
+link premis_Event to premis_OutcomeStatus--><g id="link_premis_Event_premis_OutcomeStatus"><path codeLine="43" d="M839.967,351.195 C845.346,378.3886 852.792,416.0301 857.081,437.7169 " fill="none" id="premis_Event-to-premis_OutcomeStatus" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="858.101,442.8706,860.2782,433.2654,857.1306,437.9657,852.4303,434.8181,858.101,442.8706" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="858.4702,401.9714,859.5982,392.5279,853.832,393.6685,858.4702,401.9714" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="94" x="866.5" y="401.5669">heeft uitkomst</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="816.7051" y="432.0413">[1..1]</text></g><!--MD5=[03fa8c25c10a6609c992853ae469ef0d]
+link premis_Event to premis_SoftwareAgent--><g id="link_premis_Event_premis_SoftwareAgent"><path codeLine="49" d="M790.935,351.055 C762.442,371.4551 723.355,396.8516 685.5,413 C655.401,425.8397 620.608,435.2429 590.152,441.8559 " fill="none" id="premis_Event-to-premis_SoftwareAgent" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="584.911,442.9757,594.548,445.0077,589.8007,441.9314,592.877,437.1841,584.911,442.9757" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="745.9442,399.1931,755.3967,398.1438,752.9747,392.7882,745.9442,399.1931" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="759.5" y="394.0669">uitgevoerd</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="781.5" y="409.1997">door</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="572.7291" y="431.9289">[0..1]</text></g><!--MD5=[e56c1481585a864dda8d1400c3b2ad1e]
+link premis_Event to premis_HardwareAgent--><g id="link_premis_Event_premis_HardwareAgent"><path codeLine="50" d="M674.108,351.022 C531.775,380.0628 330.534,421.1231 228.773,441.8861 " fill="none" id="premis_Event-to-premis_HardwareAgent" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="223.705,442.9201,233.3232,445.0393,228.604,441.9201,231.7232,437.2009,223.705,442.9201" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="519.6009,398.1324,529.051,399.2037,527.8759,393.4445,519.6009,398.1324" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="69" x="533.5" y="394.0669">uitgevoerd</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="29" x="555.5" y="409.1997">door</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="206.3232" y="431.8514">[0..1]</text></g><!--MD5=[94db1fc83aeadb49e239b60531a6dad4]
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>Gebeurtenis</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Uitkomststatus</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
+class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
+
+
+prov_Activity : heeft einddatum : <i>xsd:dateTime</i> [1..1]
+
+
+prov_Activity : heeft startdatum : <i>xsd:dateTime</i> [1..1]
+
+
+prov_Activity - -> "[1..1]" premis_Object : was toegekend aan >
+prov_Activity - -> "[1..1]" schema_Person : was toegekend aan >
+prov_Activity - -> "[1..1]" org_Organization : was toegekend aan >
+prov_Activity - -> "[1..1]" premis_SoftwareAgent : was toegekend aan >
+prov_Activity - -> "[1..1]" premis_HardwareAgent : was toegekend aan >
+
+
+
+premis_Event - -> "[1..1]" org_Organization : geimplementeerd door >
+
+premis_Event - -> "[0..1]" premis_Object : heeft bron >
+premis_Event : heeft opmerking : <i>xsd:string</i> [0..1]
+
+
+premis_Event - -> "[1..1]" premis_OutcomeStatus : heeft uitkomst >
+premis_Event : heeft uitkomst opmerking : <i>xsd:string</i> [0..1]
+
+
+premis_Event - -> "[0..1]" premis_Object : resultaat >
+
+premis_Event - -> "[0..1]" premis_SoftwareAgent : uitgevoerd door >
+premis_Event - -> "[0..1]" premis_HardwareAgent : uitgevoerd door >
+
+
+
+premis_Object - -> "[0..1]" premis_Event : is gegenereerd door >
+
+
+
+
+
+
+
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+@startuml
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFFFFF
+    BorderThickness 1.5
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 454645
+    FontColor 454645
+    BorderThickness 1.5
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF5F42
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam queue {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFF
+    BorderThickness 1.5
+}
+skinparam classFontSize 14
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam shadowing false
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>Gebeurtenis</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Uitkomststatus</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
+class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
+
+
+prov_Activity : heeft einddatum : <i>xsd:dateTime</i> [1..1]
+
+
+prov_Activity : heeft startdatum : <i>xsd:dateTime</i> [1..1]
+
+
+prov_Activity - -> "[1..1]" premis_Object : was toegekend aan >
+prov_Activity - -> "[1..1]" schema_Person : was toegekend aan >
+prov_Activity - -> "[1..1]" org_Organization : was toegekend aan >
+prov_Activity - -> "[1..1]" premis_SoftwareAgent : was toegekend aan >
+prov_Activity - -> "[1..1]" premis_HardwareAgent : was toegekend aan >
+
+
+
+premis_Event - -> "[1..1]" org_Organization : geimplementeerd door >
+
+premis_Event - -> "[0..1]" premis_Object : heeft bron >
+premis_Event : heeft opmerking : <i>xsd:string</i> [0..1]
+
+
+premis_Event - -> "[1..1]" premis_OutcomeStatus : heeft uitkomst >
+premis_Event : heeft uitkomst opmerking : <i>xsd:string</i> [0..1]
+
+
+premis_Event - -> "[0..1]" premis_Object : resultaat >
+
+premis_Event - -> "[0..1]" premis_SoftwareAgent : uitgevoerd door >
+premis_Event - -> "[0..1]" premis_HardwareAgent : uitgevoerd door >
+
+
+
+premis_Object - -> "[0..1]" premis_Event : is gegenereerd door >
+
+
+
+
+
+
+
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+PlantUML version 1.2022.7beta2(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

@@ -1,0 +1,73 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>Gebeurtenis</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Uitkomststatus</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
+class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
+
+
+prov_Activity : heeft einddatum : <i>xsd:dateTime</i> [1..1]
+
+
+prov_Activity : heeft startdatum : <i>xsd:dateTime</i> [1..1]
+
+
+prov_Activity --> "[1..1]" premis_Object : was toegekend aan >
+prov_Activity --> "[1..1]" schema_Person : was toegekend aan >
+prov_Activity --> "[1..1]" org_Organization : was toegekend aan >
+prov_Activity --> "[1..1]" premis_SoftwareAgent : was toegekend aan >
+prov_Activity --> "[1..1]" premis_HardwareAgent : was toegekend aan >
+
+
+
+premis_Event --> "[1..1]" org_Organization : geimplementeerd door >
+
+premis_Event --> "[0..1]" premis_Object : heeft bron >
+premis_Event : heeft opmerking : <i>xsd:string</i> [0..1]
+
+
+premis_Event --> "[1..1]" premis_OutcomeStatus : heeft uitkomst >
+premis_Event : heeft uitkomst opmerking : <i>xsd:string</i> [0..1]
+
+
+premis_Event --> "[0..1]" premis_Object : resultaat >
+
+premis_Event --> "[0..1]" premis_SoftwareAgent : uitgevoerd door >
+premis_Event --> "[0..1]" premis_HardwareAgent : uitgevoerd door >
+
+
+
+premis_Object --> "[0..1]" premis_Event : is gegenereerd door >
+
+
+
+
+
+
+
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
