@@ -55,7 +55,6 @@ Datamodel voor de beschrijving van de inhoud van objecten.
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
 | vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
-| xsd1     | [http://www.w3.org/2001/XMLSchema](http://www.w3.org/2001/XMLSchema) |
 
 ## Classes & properties
 
