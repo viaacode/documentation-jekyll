@@ -14,10 +14,10 @@ skinparam ArrowMessageAlignment left
 class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
 class "<b>Gebeurtenis</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
 class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
 class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
 class "<b>Uitkomststatus</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
 
 
@@ -56,14 +56,14 @@ premis_Object --|> prov_Entity #blue;line.dotted;text:blue
 
 premis_Object --> "[0..1]" premis_Event : is gegenereerd door >
 
-
-
-premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
-
-
 premis_HardwareAgent --|> premis_Agent #blue;line.dotted;text:blue
 
 
+
+
+
+
+premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
 
 
 

@@ -31,35 +31,18 @@ Datamodel voor het beschrijven van organisaties.
 
 | Prefix | URI      |
 | :----- | :------- |
-| brick     | [https://brickschema.org/schema/Brick#](https://brickschema.org/schema/Brick#) |
-| csvw     | [http://www.w3.org/ns/csvw#](http://www.w3.org/ns/csvw#) |
-| dc     | [http://purl.org/dc/elements/1.1/](http://purl.org/dc/elements/1.1/) |
-| dcat     | [http://www.w3.org/ns/dcat#](http://www.w3.org/ns/dcat#) |
-| dcmitype     | [http://purl.org/dc/dcmitype/](http://purl.org/dc/dcmitype/) |
-| dcterms     | [http://purl.org/dc/terms/](http://purl.org/dc/terms/) |
-| dcam     | [http://purl.org/dc/dcam/](http://purl.org/dc/dcam/) |
-| doap     | [http://usefulinc.com/ns/doap#](http://usefulinc.com/ns/doap#) |
+| dct     | [http://purl.org/dc/terms/](http://purl.org/dc/terms/) |
 | foaf     | [http://xmlns.com/foaf/0.1/](http://xmlns.com/foaf/0.1/) |
-| odrl     | [http://www.w3.org/ns/odrl/2/](http://www.w3.org/ns/odrl/2/) |
+| haOrg     | [https://data.hetarchief.be/ns/organization#](https://data.hetarchief.be/ns/organization#) |
 | org     | [http://www.w3.org/ns/org#](http://www.w3.org/ns/org#) |
 | owl     | [http://www.w3.org/2002/07/owl#](http://www.w3.org/2002/07/owl#) |
-| prof     | [http://www.w3.org/ns/dx/prof/](http://www.w3.org/ns/dx/prof/) |
-| prov     | [http://www.w3.org/ns/prov#](http://www.w3.org/ns/prov#) |
-| qb     | [http://purl.org/linked-data/cube#](http://purl.org/linked-data/cube#) |
 | rdf     | [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) |
 | rdfs     | [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) |
 | schema     | [https://schema.org/](https://schema.org/) |
 | sh     | [http://www.w3.org/ns/shacl#](http://www.w3.org/ns/shacl#) |
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
-| sosa     | [http://www.w3.org/ns/sosa/](http://www.w3.org/ns/sosa/) |
-| ssn     | [http://www.w3.org/ns/ssn/](http://www.w3.org/ns/ssn/) |
-| time     | [http://www.w3.org/2006/time#](http://www.w3.org/2006/time#) |
 | vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
-| void     | [http://rdfs.org/ns/void#](http://rdfs.org/ns/void#) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
-| xml     | [http://www.w3.org/XML/1998/namespace](http://www.w3.org/XML/1998/namespace) |
-| dct     | [http://purl.org/dc/terms/](http://purl.org/dc/terms/) |
-| haOrg     | [https://data.hetarchief.be/ns/organization#](https://data.hetarchief.be/ns/organization#) |
 
 ## Classes & properties
 
