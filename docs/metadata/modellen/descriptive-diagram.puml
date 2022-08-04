@@ -12,18 +12,26 @@ skinparam ArrowMessageAlignment left
 
 
 class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
@@ -186,11 +194,11 @@ schema_Collection : naam : <i>xsd:string</i> [1..1]
 schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
 
 
-
-
-
-
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
+
+
 
 
 
