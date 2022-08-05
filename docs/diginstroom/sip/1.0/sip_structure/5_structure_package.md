@@ -1532,7 +1532,7 @@ It relies on the [Preservation Metadata: Implementation Strategies (PREMIS)](htt
 More detailed preservation information can be described using PREMIS events and PREMIS agents.
 
 If descriptive metadata is available for a given IE, a link is established via a shared ID between the relevant PREMIS object in the `premis.xml` file and the corresponding `descriptive/dc*.xml` file.
-This ID is stored in the `<premis:objectidentifier>` element of the relevant PREMIS object and in the `<dcterms:identifier>` element of the corresponding `dc*.xml` file in the `/descriptive` directory. 
+This ID is stored in the `<premis:objectIdentifier>` element of the relevant PREMIS object and in the `<dcterms:identifier>` element of the corresponding `dc*.xml` file in the `/descriptive` directory. 
 
 ***Example***
 
@@ -1550,8 +1550,8 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 
     <!-- relationship between the main IE and the nested IEs -->
     <premis:relationship>
-      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen">generalizes</premis:relationshipSubType>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp">has part</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-948e2213-ca54-459c-8c87-5818adeb9444</premis:relatedObjectIdentifierValue>
@@ -1574,8 +1574,8 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 
     <!-- relationship between nested IE1 and the main IE -->
     <premis:relationship>
-      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe">specializes</premis:relationshipSubType>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp">is part of</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:relatedObjectIdentifierValue>
@@ -1604,8 +1604,8 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 
     <!-- relationship between nested IE2 and the main IE -->
     <premis:relationship>
-      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/log">logical</premis:relationshipType>
-      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe">specializes</premis:relationshipSubType>
+      <premis:relationshipType authority="relationshipType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
+      <premis:relationshipSubType authority="relationshipSubType" authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType" valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp">is part of</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</premis:relatedObjectIdentifierValue>
@@ -1627,6 +1627,20 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 </premis:premis>
 ```
 
+***Overview of relevant PREMIS relationships***
+
+On the package level, the preservation metadata is used to express 
+- what the different IEs and representations are that are contained in the SIP; and 
+- how they relate to eachother. 
+
+The table below gives an overview of the different relationship types that can be used on the package level:
+
+| Direction | Relationship type | Relationship subtype | Reciprocal/inverse relationship | Description |
+|-------------------|----------------------|---------------------------------|-------------|
+| From (main) IE to (sub) IE | [`structural`](http://id.loc.gov/vocabulary/preservation/relationshipType/str) | [`has part`](http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp) | [`is part of`](http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp) | A a larger IE, such as the main IE, has another IE as a part. |
+| From (sub) IE to (main) IE | [`structural`](http://id.loc.gov/vocabulary/preservation/relationshipType/str) | [`is part of`](http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp) | [`has part`](http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp) | A subIE is part of a larger main IE. |
+| From IE to Representation | [`structural`](http://id.loc.gov/vocabulary/preservation/relationshipType/str) | [`is represented by`](http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr) | [`represents`](http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep) | The IE object is represented by one of its representations |
+
 ***Requirements***
 
 | Element | `premis:premis` |
@@ -1646,7 +1660,7 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 | Attribute | `premis:premis@/xsi:schemaLocation` |
 |-----------------------|-----------|
 | Name | Schema location declaration |
-| Description | This attribute signals where to find the relevant XSD schema in order to validate the PREMIS file.<br><br>When used, its value MUST be set to `"http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd"` to signal conformance with PREMIS 3.0.|
+| Description | This attribute signals where to find the relevant XSD schema in order to validate the PREMIS file.<br><br>When used, its value MUST be set to `http://www.loc.gov/premis/v3 https://www.loc.gov/standards/premis/premis.xsd` to signal conformance with PREMIS 3.0.|
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -1660,7 +1674,7 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 | Attribute | `premis:premis/premis:object/@xsi:type` |
 |-----------------------|-----------|
 | Name | Object type |
-| Description | This attribute signals whether a PREMIS object is of type intellectual entity, representation or file.<br><br>In the case of the `premis.xml` file of the package level, this attribute's value MUST always be set to `premis:intellectualEntity` since the package level can only contain IEs.|
+| Description | This attribute signals whether a PREMIS object is of type intellectual entity, representation or file.<br><br>Since the package level can only contain IEs, this attribute's value MUST always be set to `premis:intellectualEntity`. |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -1684,30 +1698,30 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 |-----------------------|-----------|
 | Name | Object identifier value |
 | Description | The actual value that makes up the identifier of the PREMIS object. |
-| Datatype | String (depending on the value of the `premis:objectIdentifierType`) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) (depending on the value of the `premis:objectIdentifierType`) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Element | `premis:premis/premis:object/premis:relationship` |
 |-----------------------|-----------|
 | Name | PREMIS relationship |
-| Description | Information about a relationship between the current object and one or more other objects.<br><br> In the case of the `premis.xml` file of the package level, this element MUST detail the relationships between the IE defined at the package level and all of its representations defined in the various directories of the representation level.|
+| Description | Information about a relationship between the current object and one or more other objects.<br><br>In the case of the `premis.xml` file of the package level, this element MUST detail the relationships between the IE defined at the package level and all of its representations defined in the various directories of the representation level.|
 | Cardinality | 1..* |
 | Obligation | MUST |
 
 | Element | `premis:premis/premis:object/premis:relationship/premis:relationshipType` |
 |-----------------------|-----------|
 | Name | Relationship type |
-| Description | A high-level categorization of the nature of the relationship.<br><br>In the case of the `premis.xml` file of the package level, this element's value MUST be set to `structural` when expressing the relationship between the IE object and one of its representations.<br><br>When multiple IEs are used in the SIP, this element's value MUST be set to `logical` to express the relationship between one IE and another. |
+| Description | A high-level categorization of the nature of the relationship.<br><br>This element's value MUST be set to `structural` when expressing the relationship between one IE and another or between the IE object and one of its representations. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary |
-| Vocabulary | `structural`<br>`logical` |
+| Vocabulary | `structural` |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipType/@authority` |
 |-----------------------|-----------|
 | Name | Relationship type authority attribute |
-| Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different relationship types. Its value MUST be set to `"relationshipType"`. |
+| Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different relationship types. Its value MUST be set to `relationshipType`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1715,7 +1729,7 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipType/@authorityURI` |
 |-----------------------|-----------|
 | Name | Relationship type authority URI |
-| Description | This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipType"`. |
+| Description | This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `http://id.loc.gov/vocabulary/preservation/relationshipType`. |
 | Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1723,9 +1737,9 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipType/@valueURI` |
 |-----------------------|-----------|
 | Name | Relationship type value URI |
-| Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>If the `structural` relationship type is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipType/str"`.<br>If the `logical` relationship type is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipType/log"`. |
+| Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>If the `structural` relationship type is being used, this attribute's value MUST be set to `http://id.loc.gov/vocabulary/preservation/relationshipType/str`. |
 | Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri); fixed vocabulary |
-| Vocabulary | `"http://id.loc.gov/vocabulary/preservation/relationshipType/str"`<br>`"http://id.loc.gov/vocabulary/preservation/relationshipType/log"` |
+| Vocabulary | `http://id.loc.gov/vocabulary/preservation/relationshipType/str` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -1741,7 +1755,7 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipSubType/@authority` |
 |-----------------------|-----------|
 | Name | Relationship subtype authority attribute |
-| Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different relationship subtypes. Its value MUST be set to `"relationshipSubType"`. |
+| Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different relationship subtypes. Its value MUST be set to `relationshipSubType`. |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1749,7 +1763,7 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipSubType/@authorityURI` |
 |-----------------------|-----------|
 | Name | Relationship subtype authority URI |
-| Description | This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType"`. |
+| Description | This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `http://id.loc.gov/vocabulary/preservation/relationshipSubType`. |
 | Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -1757,9 +1771,9 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 | Attribute | `premis:premis/premis:object/premis:relationship/premis:relationshipSubType/@valueURI` |
 |-----------------------|-----------|
 | Name | Relationship subtype value URI |
-| Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>If the `is represented by` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr"`.<br>If the `generalizes` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen"`.<br>If the `generalizes` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe"` |
+| Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>If the `is represented by` relationship subtype is being used, this attribute's value MUST be set to `http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr`.<br>If the `has part` relationship subtype is being used, this attribute's value MUST be set to `http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp`.<br>If the `is part of` relationship subtype is being used, this attribute's value MUST be set to `http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp` |
 | Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri); fixed vocabulary |
-| Vocabulary | `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr"`<br>`"http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen"`<br>`"http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe"` |
+| Vocabulary | `http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr`<br>`http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp`<br>`http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -1786,14 +1800,6 @@ This ID is stored in the `<premis:objectidentifier>` element of the relevant PRE
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) (depending on the value of the `premis:relatedObjectIdentifierType`) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
-
-***Overview of relevant PREMIS relationships***
-
-| Relationship type | Relationship subtype | Reciprocal/inverse relationship | Subject | Object | Description |
-|-------------------|----------------------|---------------------------------|---------|--------|-------------|
-| `logical` | `generalizes` | `logical/specializes` | (main) IE | (sub) IE | The main IE generalizes one or more subIEs |
-| `logical` | `specializes` | `logical/generalizes` | (sub) IE | (main) IE | One or more subIEs specialize the main IE |
-| `structural` | `is represented by` | `structural/represents` | IE | Representation | The IE object is represented by one of its representations |
 
 ## /representations (directory)
 

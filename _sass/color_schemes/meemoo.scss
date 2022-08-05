@@ -52,3 +52,11 @@ $link-color: $meemoo-green;
     url(https://meemoo.be/fonts/3AFA78_1_0.woff) format("woff"),
     url(https://meemoo.be/fonts/3AFA78_1_0.ttf) format("truetype");
 }
+
+//
+// Layout
+//
+
+.main {
+	max-width: 900px;
+}
