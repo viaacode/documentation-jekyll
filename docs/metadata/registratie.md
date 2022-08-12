@@ -8,6 +8,9 @@ nav_order: 2
 {: .fw-300 }
 Deze velden worden ingevuld door contentpartners tijdens de registratie van analoog materiaal, met oog op een digitaliseringsproject uitgevoerd door meemoo. Deze informatie wordt standaard automatisch overgenomen uit de registratieinformatie in [AMS](http://registratie.meemoo.be).
 
+{: .important }
+Deze pagina dient louter ter documentatie van de relevante velden bij registratie. Onderstaande velden kunnen dus niet gebruikt worden bij bv. een digitaal instroomproces.
+
 <details markdown="block">
   <summary>
     Inhoudstafel

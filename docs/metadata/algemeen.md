@@ -62,23 +62,6 @@ De naam van de sub CP die gekoppeld is aan de hoofd CP (enkel van toepassing ind
 <Sub_CP>Faculteit Letterkunde</Sub_CP>
 ```
 
-## PID
-
-{: #pid}
-
-De *Persistent Identifier*. Een door meemoo toegekende unieke naam.
-
-Elk digitaal object in het meemoo archief heeft een unieke PID.
-
-| **XML element**        | `<PID>`                                                             |
-| **Datatype**           | PID                                                                 |
-| **Verplichting**       | Verplicht (automatisch)                                             |
-| **Herhaalbaar**        | Nee                                                                 |
-
-```xml
-<PID>294805325</PID>
-```
-
 ## Hoofd lokale CP ID
 
 {: #dc_identifier_localid}
