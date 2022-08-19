@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-de61d4af-d19c-4cc7-864d-55573875b438" TYPE="Photographs – Digital" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" csip:CONTENTINFORMATIONTYPE="https://data.hetarchief.be/id/sip/1.0/basic">
+<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-de61d4af-d19c-4cc7-864d-55573875b438" TYPE="Photographs – Digital" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" csip:CONTENTINFORMATIONTYPE="https://data.hetarchief.be/id/sip/1.0/2D">
 
     <metsHdr CREATEDATE="2022-02-16T10:01:15.014+02:00" csip:OAISPACKAGETYPE="SIP">
         <!-- information about the software -->
@@ -19,9 +19,9 @@
         </agent>
     </metsHdr>
 
-    <!-- ref to descriptive metadata about IE -->
-    <dmdSec ID="uuid-4d18fdda-a20c-4410-9fce-30c6bff14f50">
-        <mdRef ID="uuid-60a52b07-37f3-4db9-8c82-3ce23c82a675" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="729" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="bc2be547a41f93d7c8b582eeb2d575dc" CHECKSUMTYPE="MD5" />
+    <!-- ref to descriptive metadata about IE: DCTERMS format -->
+    <dmdSec ID="uuid-3936403d-133f-4765-b3b9-0a46df28db17">
+        <mdRef ID="uuid-bafd2099-a9e7-43f7-8d92-fc3f4a0042cc" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc.xml" MIMETYPE="text/xml" SIZE="931" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="0cfe0ae4d003302fe7f21208622a3284" CHECKSUMTYPE="MD5" />
     </dmdSec>
 
     <!-- ref to the PREMIS metadata about IE/subIE(s)/package -->
@@ -37,7 +37,7 @@
             <fileGrp USE="metadata" ID="uuid-3698fbd5-4037-4ac9-8389-9c38e2eed349">
                 <fileGrp USE="metadata/descriptive" ID="uuid-1656c238-8ca8-4251-b301-8a67fb105f47">
                     <file ID="uuid-0b21a14c-c58c-4f20-879a-4da54326f182" MIMETYPE="text/xml" SIZE="729" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="bc2be547a41f93d7c8b582eeb2d575dc" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" />
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc.xml" />
                     </file>
                 </fileGrp>
                 <fileGrp USE="metadata/preservation" ID="uuid-55ce414d-df66-4b8d-b02c-748743e41fc0">
