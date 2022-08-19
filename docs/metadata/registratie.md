@@ -24,7 +24,7 @@ Deze pagina dient louter ter documentatie van de relevante velden bij registrati
 
 ## Bestandstype
 
-Type drager (onderverdeeld in audio, video, film, papier).
+Type drager (onderverdeeld in `audio`, `video`, `film`, en `paper`).
 
 
 | **XML element**            | `<type/>`                                                                                                                                           |
