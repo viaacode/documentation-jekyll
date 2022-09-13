@@ -8,6 +8,9 @@ nav_order: 3
 {: .fw-300 }
 Deze velden worden gebruikt door de digitaliseringspartners van meemoo in kader van het digitaliseringsproject.
 
+{: .important }
+Deze pagina dient louter ter documentatie van de relevante velden bij digitalisering. Onderstaande velden kunnen dus niet gebruikt worden bij bv. een digitaal instroomproces.
+
 <details markdown="block">
   <summary>
     Inhoudstafel
@@ -382,6 +385,22 @@ Het aantal geluidssporen dat op de drager werd vastgelegd.
 <audio_tracks>2</audio_tracks>
 ```
 
+## PID
+
+{: #pid}
+
+De *Persistent Identifier*. Een door meemoo toegekende unieke naam.
+
+Elk digitaal object in het meemoo archief heeft een unieke PID.
+
+| **XML element**        | `<PID>`                                                             |
+| **Datatype**           | PID                                                                 |
+| **Verplichting**       | Verplicht (automatisch)                                             |
+| **Herhaalbaar**        | Nee                                                                 |
+
+```xml
+<PID>294805325</PID>
+```
 
 # Digitaliseringsketen
 
