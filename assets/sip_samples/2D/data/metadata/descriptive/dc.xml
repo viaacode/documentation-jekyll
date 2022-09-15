@@ -20,14 +20,22 @@
   <dcterms:subject xml:lang="nl">religie</dcterms:subject>
   <dcterms:subject xml:lang="nl">Christus</dcterms:subject>
 
-  <dcterms:creator schema:roleName="auteur">
+  <schema:creator schema:roleName="auteur">
     <schema:name>Anthony van Dyck</schema:name>
     <schema:birthDate xsi:type="xsd:dateTime">1599</schema:birthDate>
     <schema:deathDate xsi:type="xsd:dateTime">1641</schema:deathDate>
-  </dcterms:creator>
+  </schema:creator>
 
   <!-- rights note -->
   <dcterms:rights xml:lang="en">public domain</dcterms:rights>
+
+  <!-- creator -->
+  <schema:creator schema:roleName="auteur">
+    <schema:name>Anthony van Dyck</schema:name>
+    <schema:birthDate xsi:type="xsd:dateTime">1599</schema:birthDate>
+    <schema:deathDate xsi:type="xsd:dateTime">1641</schema:deathDate>
+  </schema:creator>
+
 
   <!-- dimensions -->
   <schema:height>
