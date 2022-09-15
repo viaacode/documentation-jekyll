@@ -29,14 +29,15 @@
   <dcterms:subject xml:lang="en">scan</dcterms:subject>
   <dcterms:subject xml:lang="en">sculpture</dcterms:subject>
 
-  <dcterms:creator schema:roleName="auteur">
+  <!-- rights note -->
+  <dcterms:rights xml:lang="en">public domain</dcterms:rights>
+
+  <!-- creator -->
+  <schema:creator schema:roleName="auteur">
     <schema:name>Walter Pompe</schema:name>
     <schema:birthDate xsi:type="xsd:dateTime">1703</schema:birthDate>
     <schema:deathDate xsi:type="xsd:dateTime">1777</schema:deathDate>
-  </dcterms:creator>
-
-  <!-- rights note -->
-  <dcterms:rights xml:lang="en">public domain</dcterms:rights>
+  </schema:creator>
 
   <!-- dimensions -->
   <schema:height>
