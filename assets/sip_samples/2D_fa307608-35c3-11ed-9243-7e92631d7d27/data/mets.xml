@@ -67,6 +67,11 @@
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_4/mets.xml" />
                     </file>
                 </fileGrp>
+                <fileGrp USE="representations/representation_5" ID="uuid-237899F0-1C25-4DAC-BFA4-BAFC156714BB">
+                    <file ID="uuid-ba89c101-109a-4fe3-a4ed-0c276b20e14c" MIMETYPE="text/xml" SIZE="2992" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="80c501580dc75d883cdf8548a09a72d1" CHECKSUMTYPE="MD5">
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_5/mets.xml" />
+                    </file>
+                </fileGrp>
             </fileGrp>
         </fileGrp>
     </fileSec>
