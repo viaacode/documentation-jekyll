@@ -47,6 +47,10 @@
                 <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
                 <premis:relatedObjectIdentifierValue>uuid-4e475706-2752-4f77-9069-1f71c0e22572</premis:relatedObjectIdentifierValue>
             </premis:relatedObjectIdentifier>
+            <premis:relatedObjectIdentifier>
+                <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+                <premis:relatedObjectIdentifierValue>uuid-ddcf9e36-35ae-11ed-b866-7e92631d7d27</premis:relatedObjectIdentifierValue>
+            </premis:relatedObjectIdentifier>
         </premis:relationship>
 
     </premis:object>
@@ -89,6 +93,11 @@
         <premis:linkingObjectIdentifier>
             <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
             <premis:linkingObjectIdentifierValue>uuid-4e475706-2752-4f77-9069-1f71c0e22572</premis:linkingObjectIdentifierValue>
+            <premis:linkingObjectRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
+        </premis:linkingObjectIdentifier>
+        <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>uuid-ddcf9e36-35ae-11ed-b866-7e92631d7d27</premis:linkingObjectIdentifierValue>
             <premis:linkingObjectRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
         </premis:linkingObjectIdentifier>
 
