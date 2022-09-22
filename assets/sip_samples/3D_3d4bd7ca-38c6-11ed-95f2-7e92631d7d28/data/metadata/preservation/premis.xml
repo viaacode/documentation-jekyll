@@ -61,7 +61,6 @@
             <premis:eventOutcome>success</premis:eventOutcome>
         </premis:eventOutcomeInformation>
 
-
         <premis:linkingAgentIdentifier>
             <premis:linkingAgentIdentifierType>VIAA SP Agent ID</premis:linkingAgentIdentifierType>
             <premis:linkingAgentIdentifierValue>OR-x05xc4w</premis:linkingAgentIdentifierValue>
@@ -88,8 +87,11 @@
             <premis:linkingObjectIdentifierValue>uuid-5c430d70-21ff-11ed-baeb-7e92631d7d27</premis:linkingObjectIdentifierValue>
             <premis:linkingObjectRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
         </premis:linkingObjectIdentifier>
-
-
+        <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>uuid-0b6c68e2-3a7d-11ed-97b8-7e92631d7d28</premis:linkingObjectIdentifierValue>
+            <premis:linkingObjectRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
+        </premis:linkingObjectIdentifier>
     </premis:event>
 
     <premis:agent>
