@@ -45,7 +45,7 @@ org_Organization : alternative label : <i>xsd:string</i> [0..n]
 org_Organization --> "[0..n]" haOrg_OrganizationType : classification >
 
 org_Organization --> "[0..n]" schema_ContactPoint : contact point >
-org_Organization : description : <i>xsd:string</i> [0..1]
+org_Organization : description : <i>rdf:langString</i> [0..1]
 
 
 org_Organization --> "[0..n]" org_OrganizationalUnit : has Unit >
@@ -59,7 +59,7 @@ org_Organization --> "[0..1]" org_Site : has primary site >
 org_Organization --> "[0..n]" org_Site : has site >
 
 
-org_Organization --> "[1..n]" haOrg_Logo : logo >
+org_Organization --> "[0..n]" haOrg_Logo : logo >
 org_Organization : preferred label : <i>xsd:string</i> [1..1]
 
 

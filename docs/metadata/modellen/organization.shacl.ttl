@@ -177,6 +177,19 @@ schema:PostalAddress a rdfs:Class ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:ContactPoint .
 
+<file:///Users/mielvandersande/Meemoo/Development/datamodels/organizations/organizations.shacl.ttl> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ],
+        [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ] ;
+    dct:created "2022-01-07" ;
+    dct:description "SHACL model to validate/describe organisations."@en,
+        "Modèle SHACL pour valider/décrire des organisations."@fr,
+        "SHACL-model voor het valideren/beschrijven van organisaties."@nl ;
+    dct:modified "2022-06-16" ;
+    dct:title "SHACL Model Organisations"@en,
+        "Modèle SHACL Organisations"@fr,
+        "SHACL-model Organisaties"@nl .
+
 haOrg:ContactPointShape a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "The type of contact point."@en,
@@ -254,7 +267,6 @@ haOrg:OrganizationShape a sh:NodeShape ;
             sh:message "haOrg:hasLogo is missing or its Object is no haOrg:logo"@en,
                 "haOrg:hasLogo est absent ou son Object n'est pas un haOrg:logo"@fr,
                 "haOrg:hasLogo ontbreekt of zijn Object is geen haOrg:logo"@nl ;
-            sh:minCount 1 ;
             sh:name "logo"@en,
                 "logo"@fr,
                 "logo"@nl ;
@@ -271,7 +283,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
             sh:nodeKind sh:IRI ;
             sh:path foaf:homepage ;
             sh:severity sh:Warning ],
-        [ sh:datatype xsd:string ;
+        [ sh:datatype rdf:langString ;
             sh:description "Description of the organization."@en,
                 "Description de l'organization."@fr,
                 "Beschrijving van de organisatie."@nl ;
@@ -506,19 +518,6 @@ haOrg:SiteShape a sh:NodeShape ;
             sh:path org:siteAddress ;
             sh:severity sh:Violation ] ;
     sh:targetClass org:Site .
-
-<https://data.hetarchief.be/ns/organization/shape> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ],
-        [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ] ;
-    dct:created "2022-01-07" ;
-    dct:description "SHACL model to validate/describe organisations."@en,
-        "Modèle SHACL pour valider/décrire des organisations."@fr,
-        "SHACL-model voor het valideren/beschrijven van organisaties."@nl ;
-    dct:modified "2022-06-16" ;
-    dct:title "SHACL Model Organisations"@en,
-        "Modèle SHACL Organisations"@fr,
-        "SHACL-model Organisaties"@nl .
 
 schema:name a rdf:Property ;
     rdfs:label "The name of the item."@en,

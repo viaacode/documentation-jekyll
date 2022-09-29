@@ -76,33 +76,33 @@ premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File --> "[1..1]" dct_FileFormat : Format >
 
-premis_File --> "[0..n]" haObj_DigitalRepresentation : Fragment >
-
-premis_File --> "[0..1]" premis_File : Is Next In Sequence Of >
-
 premis_File --> "[0..n]" premis_File : documents >
 
 premis_File --> "[1..1]" premis_Fixity : has fixity >
 
+premis_File --> "[0..n]" haObj_DigitalRepresentation : has media fragment >
+
 premis_File --> "[1..n]" haObj_DigitalRepresentation : is Included in >
 premis_File : mime type : <i>xsd:string</i> [0..1]
 
+
+premis_File --> "[0..1]" premis_File : next file in sequence >
 
 premis_File --> "[1..n]" premis_StorageLocation : stored at >
 
 premis_File --> "[0..n]" premis_File : supersedes >
 
 
-premis_Fixity : None : <i>xsd:string</i> [1..n]
+premis_Fixity : checksum creator : <i>xsd:string</i> [0..n]
 
-premis_Fixity : None : <i>xsd:string</i> [0..n]
+premis_Fixity : fixity checksum : <i>xsd:string</i> [1..n]
 
 
 
 premis_StorageLocation : file path : <i>xsd:string</i> [1..n]
 
 
-premis_StorageLocation --> "[0..n]" premis_StorageMedium : has medium >
+premis_StorageLocation --> "[0..n]" premis_StorageMedium : medium >
 
 
 haObj_LocalIdentifier : value : <i>xsd:string</i> [1..1]
