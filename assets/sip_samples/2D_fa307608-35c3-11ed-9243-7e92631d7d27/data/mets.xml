@@ -99,6 +99,9 @@
                 <div ID="uuid-6B54B923-2DA0-47DA-82FB-A67206D34BA7" LABEL="representation_4">
                     <mptr xlink:type="simple" xlink:href="./representations/representation_4/mets.xml" LOCTYPE="URL" />
                 </div>
+                <div ID="uuid-6B54B923-2DA0-47DA-82FB-A67206D34BA7" LABEL="representation_5">
+                    <mptr xlink:type="simple" xlink:href="./representations/representation_5/mets.xml" LOCTYPE="URL" />
+                </div>
             </div>
         </div>
     </structMap>
