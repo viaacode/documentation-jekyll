@@ -5,7 +5,9 @@ parent: "Velden: Digitaliseringsproces"
 nav_order: 2
 ---
 
-# Aantal folio’s
+# Metadata voor manuscript digitalisering
+
+## Aantal folio’s
 
 Het aantal folio’s van een handschrift of manuscript. 1 folio = 2 pagina’s.
 
@@ -17,7 +19,7 @@ Het aantal folio’s van een handschrift of manuscript. 1 folio = 2 pagina’s.
 ```xml
 ```
 
-# Materiaal
+## Materiaal
 
 Het materiaal waaruit het object bestaat.
 
@@ -29,7 +31,7 @@ Het materiaal waaruit het object bestaat.
 ```xml
 ```
 
-# Herkomst object
+## Herkomst object
 
 Neerslag van de herkomst van dit exemplaar van het object in kwestie, of de opeenvolging van eigenaars of beheerders, die verantwoordelijk zijn voor het creëeren, ontvangen of accumuleren van het object.
 
@@ -41,7 +43,7 @@ Neerslag van de herkomst van dit exemplaar van het object in kwestie, of de opee
 ```xml
 ```
 
-# Afmetingen - hoogte, breedte, dikte
+## Afmetingen - hoogte, breedte, dikte
 
 De afmetingen van het object in mm, volgens hoogte x breedte x (indien driedimensionaal) dikte.
 
