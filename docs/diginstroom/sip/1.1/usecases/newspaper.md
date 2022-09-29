@@ -3,7 +3,7 @@ layout:       default
 title:        Newspaper edition (without PDF)
 parent:       Use cases
 nav_order:    3
-nav_exclude:  false
+nav_exclude:  true
 has_children: false
 sip_profile:  newspaper
 ---
@@ -16,7 +16,7 @@ The following use case describes how to package a newspaper edition digitised pe
 - basic descriptive metadata;
 - basic preservation metadata.
 
-It uses the [**Newspaper SIP profile**]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/profiles/newspaper.md %}).
+It uses the [**Newspaper SIP profile**]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/profiles/newspaper.md %}).
 
 A full sample SIP can be downloaded [here]({{ site.baseurl }}{% link assets/sip_samples/c44a0b0d-6e2f-4af2-9dab-3a9d447288d0.zip %}).
 
