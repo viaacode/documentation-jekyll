@@ -41,4 +41,4 @@ Zie `viaa_metadatamodel_voorbeeld_voor_cp.xml` voor een voorbeeld van een volled
 
 ## Metadata model
 
-Zie velden: [Algemeen]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}) | [Digitalisering]({{ site.baseurl }}{% link docs/metadata/digitalisering.md %}) 
+Zie velden: [Algemeen]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}) | [Digitalisering]({{ site.baseurl }}{% link docs/metadata/digitalisering/index.md %}) 
