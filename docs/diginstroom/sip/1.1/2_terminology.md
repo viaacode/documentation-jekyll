@@ -1,11 +1,13 @@
 ---
 layout:       default
 title:        Terminology
-parent:       SIP Specification 1.0
+parent:       SIP Specification 1.1
 grand_parent:  Digitale instroom
 nav_order:    2
 nav_exclude:  false
 ---
+Editor's Draft
+{: .label .label-yellow }
 # Terminology
 
 <dl>
@@ -70,5 +72,5 @@ In the context of noting metadata values, the following datatypes are mentioned 
 | <a id="url"></a>URL            | A Uniform Resource Locator as defined in [RFC1738](https://datatracker.ietf.org/doc/html/rfc1738). |
 
 <small>
-Continue to [Core Concepts]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/3_core-concepts.md %}).
+Continue to [Core Concepts]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/3_core-concepts.md %}).
 </small>
