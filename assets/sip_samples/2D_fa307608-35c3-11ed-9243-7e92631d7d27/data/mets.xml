@@ -39,6 +39,9 @@
                     <file ID="uuid-0b21a14c-c58c-4f20-879a-4da54326f182" MIMETYPE="text/xml" SIZE="729" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="bc2be547a41f93d7c8b582eeb2d575dc" CHECKSUMTYPE="MD5">
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc.xml" />
                     </file>
+                    <file ID="uuid-0b21a14c-c58c-4f20-879a-4da54326f182" MIMETYPE="text/xml" SIZE="729" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="bc2be547a41f93d7c8b582eeb2d575dc" CHECKSUMTYPE="MD5">
+                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/schema.xml" />
+                    </file>
                 </fileGrp>
                 <fileGrp USE="metadata/preservation" ID="uuid-55ce414d-df66-4b8d-b02c-748743e41fc0">
                     <file ID="uuid-95d03ccf-d33e-482a-8715-c96315c789cf" MIMETYPE="text/xml" SIZE="1501" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="23cc828ed22090e0ab1ca7bae13afac4" CHECKSUMTYPE="MD5">
