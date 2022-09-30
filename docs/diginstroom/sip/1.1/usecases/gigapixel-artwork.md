@@ -2,7 +2,8 @@
 layout:       default
 title:        Gigapixel artwork
 parent:       Use cases
-nav_order:    5
+grand_parent:  SIP Specification 1.1
+nav_order:    6
 nav_exclude:  false
 has_children: false
 sip_profile:  2d
