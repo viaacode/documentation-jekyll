@@ -2,10 +2,12 @@
 layout:       default
 title:        Representation level
 parent:       Structure
-grand_parent:  SIP Specification 1.0
+grand_parent:  SIP Specification 1.1
 nav_order:    7
 nav_exclude:  false
 ---
+Editor's Draft
+{: .label .label-yellow }
 # Representation level
 {: .no_toc }
 
@@ -110,7 +112,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Representation identifier |
 | Description | This is an ID for the METS document. For the representation METS, this MUST be the same name as the one used for the corresponding representation directory. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -118,7 +120,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Content category |
 | Description | This attribute MUST be set to declare the category of the content held in the representation directory. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string); fixed vocabulary |
 | Vocabulary | `Textual works - Print`<br>`Textual works - Digital`<br>`Textual works - Electronic Serials`<br>`Photographs - Print`<br>`Photographs - Digital`<br>`Other Graphic Images - Print`<br>`Other Graphic Images - Digital`<br>`Audio - On Tangible Medium (digital or analog)`<br>`Audio - Media-independent (digital)`<br>`Motion Pictures – Digital and Physical Media`<br>`Video – File-based and Physical Media`<br>`Collection`<br>`Physical object`<br>`Mixed`<br>`OTHER` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -127,7 +129,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Other content category |
 | Description | When the `mets/@TYPE` attribute is set to `OTHER`, the `mets/@csip:OTHERTYPE` attribute SHOULD be used to declare the content category of the representation not contained in the fixed vocabulary of the `@TYPE` attribute. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -135,7 +137,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | METS profile |
 | Description | The URL of the E-ARK METS profile that the SIP conforms with.<br>This URL MUST be set to [`https://earksip.dilcis.eu/profile/E-ARK-SIP.xml`](https://earksip.dilcis.eu/profile/E-ARK-SIP.xml) to indicate conformance with the E-ARK specification. |
-| Datatype | [URL]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#url) |
+| Datatype | [URL]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#url) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -143,7 +145,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Package name |
 | Description | An optional short text describing the contents of the representation. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
@@ -168,7 +170,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Representation creation datetime |
 | Description | This attribute records the date and time the representation was created. |
-| Datatype | [XML Schema datetime]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#xsd-datetime) |
+| Datatype | [XML Schema datetime]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#xsd-datetime) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -176,7 +178,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Representation last modification datetime |
 | Description | In case the representation was modified since its creation, this attribute records the date and time of that modification.<br>This attribute MUST be present and used when the representation has been modified since its creation datetime. |
-| Datatype | [XML Schema datetime]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#xsd-datetime) |
+| Datatype | [XML Schema datetime]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#xsd-datetime) |
 | Cardinality | 0..1 |
 | Obligation | SHOULD |
 
@@ -184,7 +186,7 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Representation status |
 | Description | A way of indicating the status of the representation and to instruct meemoo on how to properly handle it.<br>If not set, the expected value is `NEW`.<br>Meemoo investigates the use of the `@RECORDSTATUS` attribute for future use cases such as e.g. a metadata update (i.e. ingest of metadata only with the goal of updating, adding or deleting existing metadata in meemoo's archive system). |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string); fixed vocabulary |
 | Vocabulary | `NEW`<br>`SUPPLEMENT`<br>`REPLACEMENT`<br>`TEST`<br>`VERSION`<br>`DELETE`<br>`OTHER` |
 | Cardinality | 0..1 |
 | Obligation | MAY |
@@ -198,14 +200,14 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 | Attribute | `mets/metsHdr/agent/@ROLE` |
 |-----------------------|-----------|
 | Name | Agent role |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Attribute | `mets/metsHdr/agent/@TYPE` |
 |-----------------------|-----------|
 | Name | Agent type |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -213,21 +215,21 @@ Since the `dmdSec`, `amdSec`, `fileSec` and `structMap` sections follow the same
 |-----------------------|-----------|
 | Name | Agent other type |
 | Description | This attribute MUST be used if the attribute `agent/@TYPE` is set to `OTHER`. It is used to specify the exact other type that is being used. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Element | `mets/metsHdr/agent/name` |
 |-----------------------|-----------|
 | Name | Agent name |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 | Element | `mets/metsHdr/agent/note` |
 |-----------------------|-----------|
 | Name | Agent additional information |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
@@ -477,7 +479,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Object identifier type |
 | Description | The type of the PREMIS object identifier being used.<br><br>At least one identifier of type ID MUST be defined in order to provide a unique identifier for each PREMIS object.<br><br>This unique identifier is also used to link the concerned PREMIS object with the descriptive metadata in the `/metadata/descriptive/dc*.xml` file, if any is present. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary (e.g. [`PREMIS standard identifiers`](https://id.loc.gov/vocabulary/identifiers.html)) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string); fixed vocabulary (e.g. [`PREMIS standard identifiers`](https://id.loc.gov/vocabulary/identifiers.html)) |
 | Vocabulary | `local`<br>`ID`<br>`UUID`<br>... |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -486,7 +488,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Object identifier value |
 | Description | The actual value that makes up the identifier of the PREMIS object. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) (depending on the value of the `premis:objectIdentifierType`) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) (depending on the value of the `premis:objectIdentifierType`) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -501,7 +503,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Relationship type |
 | Description | A high-level categorization of the nature of the relationship.<br><br>In the case of the `premis.xml` file of the representation level, this element's value MUST be set to `structural`.|
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..* |
 | Obligation | MUST |
 
@@ -509,7 +511,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Relationship type authority attribute |
 | Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different relationship types. Its value MUST be set to `"relationshipType"`. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -517,7 +519,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Relationship type authority URI |
 | Description | This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipType"`. |
-| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -525,7 +527,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Relationship type value URI |
 | Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>For the `structural` relationship type, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipType/str"`. |
-| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -533,7 +535,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Relationship subtype |
 | Description | A detailed categorization of the nature of the relationship.<br><br>In the case of the `premis.xml` file of the representation level, this element's value MUST be set to `represents` when expressing the relationship between a representation and the IE it represents.<br>When expressing the relationship between a representation and a file, this element's value MUST be set to `includes` when this relationship is expressed from the side of the representation (i.e. the representation is the subject of the relationship); when this relationship is expressed from the side of the file (i.e. the file is the subject of the relationship), this element's value MUST be set to `is included in`.|
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string); fixed vocabulary |
 | Vocabulary | `represents`<br>`includes`<br>`is included in` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -542,7 +544,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Relationship subtype authority attribute |
 | Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different relationship subtypes. Its value MUST be set to `"relationshipSubType"`. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -550,7 +552,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Relationship subtype authority URI |
 | Description | This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType"`. |
-| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -558,7 +560,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Relationship subtype value URI |
 | Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>If the `represents` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep"`.<br>If the `includes` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc"`.<br>If the `is included in` relationship subtype is being used, this attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi"` |
-| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri); fixed vocabulary |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri); fixed vocabulary |
 | Vocabulary | `"http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep"`<br>`"http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc"`<br>`"http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi"` |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -574,7 +576,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Related object identifier type |
 | Description | The type of the PREMIS related object identifier being used. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary (e.g. [`PREMIS standard identifiers`](https://id.loc.gov/vocabulary/identifiers.html)) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string); fixed vocabulary (e.g. [`PREMIS standard identifiers`](https://id.loc.gov/vocabulary/identifiers.html)) |
 | Vocabulary | `local`<br>`ID`<br>`UUID`<br>... |
 | Cardinality | 1..1 |
 | Obligation | MUST |
@@ -583,7 +585,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Related object identifier value |
 | Description | The actual value that makes up the identifier of the PREMIS related object. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) (depending on the value of the `premis:relatedObjectIdentifierType`) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) (depending on the value of the `premis:relatedObjectIdentifierType`) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -605,7 +607,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Message digest algorithm |
 | Description | This element details which algorithm is used to construct the message digest for the digital file object present. The value MUST be set to MD5. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -613,7 +615,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Message digest algorithm authority attribute |
 | Description | This attribute indicates the name of the authority/controlled vocabulary that is being used for the different message digest algorithms. Its value MUST be set to `"cryptographicHashFunctions"`. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -621,7 +623,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Message digest algorithm authority URI |
 | Description |  This attribute references the URI that contains the authority/controlled vocabulary. Its value MUST be set to `"http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions"`. |
-| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -629,7 +631,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Message digest algorithm value URI |
 | Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>This attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5"`. |
-| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -667,7 +669,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | File format name |
 | Description | A commonly accepted name for the file format. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string); fixed vocabulary (from a format or technical registry, e.g. [PRONOM](https://www.nationalarchives.gov.uk/PRONOM/Default.aspx)) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string); fixed vocabulary (from a format or technical registry, e.g. [PRONOM](https://www.nationalarchives.gov.uk/PRONOM/Default.aspx)) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -689,7 +691,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Format registry name |
 | Description | Name of the referenced format registry |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -712,7 +714,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Format registry role authority |
 | Description | This attribute indicates the name of the authority/controlled vocabulary that is being used. Its value MUST be set to `"http://id.loc.gov/vocabulary/preservation/formatRegistryRole"`. |
-| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -720,7 +722,7 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Format registry role value URI |
 | Description | This attribute references the URI that contains the specific entry from the authority/controlled vocabulary.<br><br>This attribute's value MUST be set to `"http://id.loc.gov/vocabulary/preservation/formatRegistryRole/spe"`. |
-| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#uri) |
+| Datatype | [URI]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#uri) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
@@ -728,10 +730,10 @@ The table below gives an overview of the different relationship types that can b
 |-----------------------|-----------|
 | Name | Original filename |
 | Description | This element contains the original name of the file object, including its extension. |
-| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/2_terminology.md %}#string) |
+| Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
 
 <small>
-Continue to [Profiles]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/profiles/index.md %}).
+Continue to [Profiles]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/profiles/index.md %}).
 </small>

@@ -2,15 +2,17 @@
 layout:       default
 title:        Basic
 parent:       Profiles
-grand_parent:  SIP Specification 1.0
+grand_parent:  SIP Specification 1.1
 nav_order:    1
 nav_exclude:  false
 ---
+Editor's Draft
+{: .label .label-yellow }
 # Profile: Basic 
 
 The basic profile supports simple cases consisting of a single media file accompanied by limited metadata.
 
-**Permalink:** <https://data.hetarchief.be/id/sip/1.0/basic>
+**Permalink:** <https://data.hetarchief.be/id/sip/1.1/basic>
 
 **Directory structure:**
 
@@ -42,7 +44,7 @@ root_directory
 
 ## Requirements
 
-- The `csip:CONTENTINFORMATIONTYPE` attribute MUST be set to `https://data.hetarchief.be/id/sip/1.0/basic`.
+- The `csip:CONTENTINFORMATIONTYPE` attribute MUST be set to `https://data.hetarchief.be/id/sip/1.1/basic`.
 - There MUST be exactly one IE.
 - The IE MUST be represented by exactly one representation.
 - There MUST NOT be any descriptive metadata at the representation level.
