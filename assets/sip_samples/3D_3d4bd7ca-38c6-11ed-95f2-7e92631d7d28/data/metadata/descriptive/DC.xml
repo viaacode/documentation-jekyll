@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance/" xmlns:edtf="http://id.loc.gov/datatypes/edtf/" xmlns:schema="">
+
+
+  <!-- general title for the resource -->
+  <dcterms:title xml:lang="nl">De Romeinse wolvin met Romulus en Remus</dcterms:title>
+  <dcterms:title xml:lang="en">The Roman She-Wolf with Romulus and Remus</dcterms:title>
+
+  <!-- general description for the resource -->
+  <dcterms:description xml:lang="nl">onderdeel van de Van Herck collectie terracottabeelden</dcterms:description>
+  <dcterms:description xml:lang="en">part of the Van Herck collection of terracotta sculptures.</dcterms:description>
+
+  <!-- linking id between dc and premis -->
+  <dcterms:identifier>7m03z1634f</dcterms:identifier>
+
+  <!-- creationdate -->
+  <dcterms:created xsi:type="edtf:EDTF-level1">1701/1800</dcterms:created>
+
+  <dcterms:subject xml:lang="nl">topstukken</dcterms:subject>
+  <dcterms:subject xml:lang="nl">collectie Van Herck</dcterms:subject>
+  <dcterms:subject xml:lang="nl">terracotta</dcterms:subject>
+  <dcterms:subject xml:lang="nl">3D</dcterms:subject>
+  <dcterms:subject xml:lang="nl">scan</dcterms:subject>
+  <dcterms:subject xml:lang="nl">beeldhouwwerk</dcterms:subject>
+
+  <dcterms:subject xml:lang="en">collection Van Herck</dcterms:subject>
+  <dcterms:subject xml:lang="en">terracotta</dcterms:subject>
+  <dcterms:subject xml:lang="en">3D</dcterms:subject>
+  <dcterms:subject xml:lang="en">scan</dcterms:subject>
+  <dcterms:subject xml:lang="en">sculpture</dcterms:subject>
+
+  <!-- rights note -->
+  <dcterms:rights xml:lang="en">public domain</dcterms:rights>
+
+</metadata>
