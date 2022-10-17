@@ -156,6 +156,35 @@ haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:isDefinedBy haObj: ;
     rdfs:subClassOf premis:Representation .
 
+<file:///Users/mielvandersande/Meemoo/Development/datamodels/objects/objects.shacl.ttl> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ],
+        [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ] ;
+    dct:created "2022-01-07" ;
+    dct:description "SHACL model to validate/describe the structure of achive objects."@en,
+        "Modèle SHACL pour valider/décrire des objets."@fr,
+        "SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."@nl ;
+    dct:modified "2022-06-16" ;
+    dct:title "SHACL Model Objects"@en,
+        "Modèle SHACL Objet"@fr,
+        "SHACL-model Objecten"@nl .
+
+<file:///Users/mielvandersande/Meemoo/Development/datamodels/objects/objects.shacl.ttl#LocalIdentifierNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "rdf:value is missing or not of type string"@en,
+                "rdf:value est manquant ou n'est pas de type string"@fr,
+                "rdf:value ontbreekt of is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "value"@en,
+                "valeur"@fr,
+                "waarde"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haObj:LocalIdentifier .
+
 rel:gen a owl:ObjectProperty ;
     rdfs:label "generalizes"@en,
         "généralise"@fr,
@@ -328,13 +357,14 @@ haObj:FileShape a sh:NodeShape ;
             sh:path premis:storedAt ;
             sh:severity sh:Violation ],
         [ sh:class dct:FileFormat ;
-            sh:description "Het bestandsformaat."@nl ;
+            sh:description "Het bestandsformaat van het bestand."@nl ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path dct:format ;
             sh:severity sh:Violation ],
         [ sh:datatype xsd:string ;
-            sh:description "Het MIME type of IANA media type."@nl ;
+            sh:description "The MIME type or IANA media type of the file."@en,
+                "Het MIME type of IANA media type van het bestand."@nl ;
             sh:maxCount 1 ;
             sh:name "mime type"@en,
                 "mime type"@fr,
@@ -342,27 +372,43 @@ haObj:FileShape a sh:NodeShape ;
             sh:path ebucore:hasMimeType ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
+            sh:description "The file that follows on this file."@en,
+                "Het bestand dat op dit bestand volgt."@nl ;
             sh:maxCount 1 ;
+            sh:name "next file in sequence"@en,
+                "volgende bestand in volgorde"@nl ;
             sh:path edm:isNextInSequence ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
+            sh:description "The file that describes or documents this file."@en,
+                "Het bestand dat dit bestand beschrijft of documenteert."@nl ;
+            sh:name "documents"@en,
+                "documenteert"@nl ;
             sh:path rel:doc ;
             sh:severity sh:Violation ],
         [ sh:class haObj:DigitalRepresentation ;
+            sh:description "A fragment from this file."@en,
+                "Een fragment uit dit bestand."@nl ;
+            sh:name "has media fragment"@en,
+                "heeft media fragment"@nl ;
             sh:path ebucore:hasMediaFragment ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:File .
 
 haObj:FixityShape a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "De waarde van de checksum."@nl ;
+            sh:description "The value of the checksum."@en,
+                "De waarde van de checksum."@nl ;
             sh:minCount 1 ;
-            sh:name "fixity checksum"@nl ;
+            sh:name "fixity checksum"@en,
+                "fixity checksum"@nl ;
             sh:path rdf:value ;
             sh:severity sh:Violation ],
         [ sh:datatype xsd:string ;
-            sh:description "De entiteit die de checksum gegenereerd heeft."@nl ;
-            sh:name "maker"@nl ;
+            sh:description "The entity that generated the checksum."@en,
+                "De entiteit die de checksum gegenereerd heeft."@nl ;
+            sh:name "checksum creator"@en,
+                "checksum maker"@nl ;
             sh:path dct:creator ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:Fixity .
@@ -425,46 +471,21 @@ haObj:PhysicalRepresentationShape a sh:NodeShape ;
 
 haObj:StorageLocationShape a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
-            sh:description "Het pad van de opslaglocatie."@nl ;
+            sh:description "The file path of the storage location."@en,
+                "Het pad van de opslaglocatie."@nl ;
             sh:minCount 1 ;
             sh:name "file path"@en,
                 "opslagpad"@nl ;
             sh:path rdf:value ;
             sh:severity sh:Violation ],
         [ sh:class premis:StorageMedium ;
-            sh:description "Het type opslagmedium."@nl ;
+            sh:description "Het type opslagmedium."@nl,
+                "The type of storage medium."@nl ;
+            sh:name "medium"@en,
+                "medium"@nl ;
             sh:path premis:medium ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:StorageLocation .
-
-<https://data.hetarchief.be/ns/object/shape> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ],
-        [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ] ;
-    dct:created "2022-01-07" ;
-    dct:description "SHACL model to validate/describe the structure of achive objects."@en,
-        "Modèle SHACL pour valider/décrire des objets."@fr,
-        "SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."@nl ;
-    dct:modified "2022-06-16" ;
-    dct:title "SHACL Model Objects"@en,
-        "Modèle SHACL Objet"@fr,
-        "SHACL-model Objecten"@nl .
-
-<https://data.hetarchief.be/ns/object/shape#LocalIdentifierNodeShape> a sh:NodeShape ;
-    sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "rdf:value is missing or not of type string"@en,
-                "rdf:value est manquant ou n'est pas de type string"@fr,
-                "rdf:value ontbreekt of is niet van het type string"@nl ;
-            sh:minCount 1 ;
-            sh:name "value"@en,
-                "valeur"@fr,
-                "waarde"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path rdf:value ;
-            sh:severity sh:Violation ] ;
-    sh:targetClass haObj:LocalIdentifier .
 
 rel:doc a owl:ObjectProperty ;
     rdfs:label "documents"@en,
