@@ -1,12 +1,15 @@
 ---
 layout:       default
-title:        Scan of a 3D artwork
+title:        Scan of a three-dimensional artwork
 parent:       Use cases
-nav_order:    6
+grand_parent:  SIP Specification 1.1
+nav_order:    7
 nav_exclude:  false
 has_children: false
-sip_profile:  3d
+sip_profile:  material-artwork
 ---
+Editor's Draft
+{: .label .label-yellow }
 # Use Case: a digitization of a three-dimensional artwork
 
 The following use case describes how to package a reproduction of a three-dimensional artwork such as a statue or sculpture. 
@@ -21,7 +24,7 @@ It includes:
 - basic descriptive metadata;
 - basic preservation metadata.
 
-It uses the [**3D SIP profile**]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/profiles/3D.md %}).
+It uses the [**material-artwork SIP profile**]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/profiles/material-artwork.md %}).
 
 A full sample SIP can be viewed [here]({{ site.baseurl }}{% link assets/sip_samples/3d4bd7ca-38c6-11ed-95f2-7e92631d7d28.zip %}).
 
@@ -78,7 +81,7 @@ Since each set of files can have a meaning on its own, they are split into separ
 |_Files (rep. 4)_| the files:  `qv3bz95m19_REF_OBJ.OBJ`, `qv3bz95m19_REF_MTL.MTL`, `qv3bz95m19_REF_BMP.BMP`, `qv3bz95m19_REF_IJK_BMP.BMP` |
 |_Files (rep. 5)_| the TIFF files: `qv3bz95m19_FOTO1_TIFF.TIFF`, `qv3bz95m19_FOTO2_TIFF.TIFF`, `qv3bz95m19_FOTO3_TIFF.TIFF`|
 
-This case relies on the 3D profile because:
+This case relies on the material-artwork profile because:
 
 - there is one IE and multiple representations containing one or more files;
 - the sculpture can be described using a combination of DCTERMS and a Schema.org;
