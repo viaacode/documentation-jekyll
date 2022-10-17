@@ -24,11 +24,11 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:ncf007cb18799410b82f402fa420edde1b11 a rdfs:Class,
+_:n01c6b7feb63c471cb79ad70b6064c7eab11 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:ncf007cb18799410b82f402fa420edde1b14 a rdfs:Class,
+_:n01c6b7feb63c471cb79ad70b6064c7eab14 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
@@ -793,7 +793,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "date de fin"@en,
         "einddatum"@en,
         "end date"@en ;
-    rdfs:domain _:ncf007cb18799410b82f402fa420edde1b11 ;
+    rdfs:domain _:n01c6b7feb63c471cb79ad70b6064c7eab11 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -835,7 +835,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:ncf007cb18799410b82f402fa420edde1b14 ;
+    rdfs:domain _:n01c6b7feb63c471cb79ad70b6064c7eab14 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
