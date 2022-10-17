@@ -28,9 +28,9 @@ class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
@@ -70,7 +70,9 @@ premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : in language : <i>xsd:string</i> [1..n]
 
 
-premis_IntellectualEntity --> "[0..1]" schema_ArchiveComponent : is part of >
+premis_IntellectualEntity --> "[0..n]" schema_ArchiveComponent : is part of >
+premis_IntellectualEntity --> "[0..n]" schema_CreativeWorkSeries : is part of >
+premis_IntellectualEntity --> "[0..n]" schema_Episode : is part of >
 premis_IntellectualEntity : keywords : <i>xsd:string</i> [0..n]
 
 
@@ -82,14 +84,10 @@ premis_IntellectualEntity : name : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : object type : <i>xsd:string</i> [0..1]
 
 
-premis_IntellectualEntity --> "[0..1]" schema_Episode : part of episode >
-
-premis_IntellectualEntity --> "[0..1]" schema_CreativeWorkSeries : part of series >
-
 premis_IntellectualEntity --> "[0..n]" schema_Role : publisher >
 
-premis_IntellectualEntity --> "[0..n]" schema_Place : spatial coverage >
-premis_IntellectualEntity : temporal coverage : <i>xsd:string</i> [0..n]
+premis_IntellectualEntity --> "[0..n]" schema_Place : spatial >
+premis_IntellectualEntity : temporal : <i>rdf:langString</i> [0..n]
 
 
 haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
@@ -194,9 +192,9 @@ schema_Collection : name : <i>xsd:string</i> [1..1]
 
 
 
-
-
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
 
 
 

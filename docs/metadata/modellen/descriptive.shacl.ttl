@@ -569,6 +569,30 @@ schema:Role a rdfs:Class ;
 
 <file:///Users/mielvandersande/Meemoo/Development/datamodels/description/description.shacl.ttl#IntellectualEntityNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:message "schema:duration is not of type string"@en,
+                "schema:duration n'est pas de type string"@fr,
+                "schema:duration is niet van het type string"@nl ;
+            sh:name "duration"@en,
+                "durée"@fr,
+                "duur"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:duration ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype edtf:EDTF-level1 ;
+            sh:maxCount 1 ;
+            sh:message "schema:dateCreated is not of type string"@en,
+                "schema:dateCreated n'est pas de type string"@fr,
+                "schema:dateCreated is niet van het type string"@nl ;
+            sh:name "date created"@en,
+                "date de création"@fr,
+                "aangemaakt op"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:dateCreated ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:datatype edtf:EDTF-level1 ;
             sh:maxCount 1 ;
             sh:message "schema:datePublished is not of type string"@en,
@@ -650,21 +674,21 @@ schema:Role a rdfs:Class ;
             sh:message "schema:spatialCoverage is not of class schema:Place"@en,
                 "schema:spatialCoverage n'est pas de la classe schema:Place"@fr,
                 "schema:spatialCoverage is niet van de klasse schema:Place"@nl ;
-            sh:name "spatial coverage"@en,
-                "coverage spatiale"@fr,
-                "geografische dekking"@nl ;
-            sh:path schema:spatialCoverage ;
+            sh:name "spatial"@en,
+                "spatial"@fr,
+                "spatiaal"@nl ;
+            sh:path schema:spatial ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:message "schema:temporalCoverage is not of type string"@en,
-                "schema:temporalCoverage n'est pas de type string"@fr,
-                "schema:temporalCoverage is niet van het type string"@nl ;
-            sh:name "temporal coverage"@en,
-                "coverage temporelle"@fr,
-                "tijdsdekking"@nl ;
+            sh:datatype rdf:langString ;
+            sh:message "schema:temporal is not a language string"@en,
+                "schema:temporal n'est pas de type language string"@fr,
+                "schema:temporal is niet van het type language string"@nl ;
+            sh:name "temporal"@en,
+                "temporelle"@fr,
+                "temporeel"@nl ;
             sh:nodeKind sh:Literal ;
-            sh:path schema:temporalCoverage ;
+            sh:path schema:temporal ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
@@ -721,6 +745,18 @@ schema:Role a rdfs:Class ;
             sh:path schema:copyrightHolder ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
+            sh:class haOrg:ContentPartner ;
+            sh:maxCount 1 ;
+            sh:message "The maintainer of the IntellectualEntity must be a ContentPartner."@en,
+                "Le mainteneur de l'IntellectualEntity doit être un ContentPartner."@fr,
+                "De beheerder van de IntellectualEntity moet een Contentpartner zijn."@nl ;
+            sh:minCount 1 ;
+            sh:name "maintainer"@en,
+                "mainteneur/responsable"@fr,
+                "beheerder"@nl ;
+            sh:path schema:maintainer ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:message "schema:copyrightNotice is not of type string"@en,
                 "schema:copyrightNotice n'est pas de type string"@fr,
@@ -741,18 +777,6 @@ schema:Role a rdfs:Class ;
                 "copyright jaar"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path schema:copyrightYear ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:class haOrg:ContentPartner ;
-            sh:maxCount 1 ;
-            sh:message "The maintainer of the IntellectualEntity must be a ContentPartner."@en,
-                "Le mainteneur de l'IntellectualEntity doit être un ContentPartner."@fr,
-                "De beheerder van de IntellectualEntity moet een Contentpartner zijn."@nl ;
-            sh:minCount 1 ;
-            sh:name "maintainer"@en,
-                "mainteneur/responsable"@fr,
-                "beheerder"@nl ;
-            sh:path schema:maintainer ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
@@ -787,61 +811,14 @@ schema:Role a rdfs:Class ;
             sh:path schema:alternateName ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:class schema:Episode ;
-            sh:maxCount 1 ;
-            sh:message "schema:partOfEpisode is not of class schema:Episode"@en,
-                "schema:partOfEpisode n'est pas de la classe schema:Episode"@fr,
-                "schema:partOfEpisode is niet van de klasse schema:Episode"@nl ;
-            sh:name "part of episode"@en,
-                "partie de épisode"@fr,
-                "deel van aflevering"@nl ;
-            sh:path schema:partOfEpisode ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:class schema:CreativeWorkSeries ;
-            sh:maxCount 1 ;
-            sh:message "schema:partOfEpisode is not of class schema:CreativeWorkSeries"@en,
-                "schema:partOfEpisode n'est pas de la classe schema:CreativeWorkSeries"@fr,
-                "schema:partOfEpisode is niet van de klasse schema:CreativeWorkSeries"@nl ;
-            sh:name "part of series"@en,
-                "partie de série"@fr,
-                "deel van serie"@nl ;
-            sh:path schema:partOfSeries ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:class schema:ArchiveComponent ;
-            sh:maxCount 1 ;
             sh:message "schema:isPartOf is not of class schema:ArchiveComponent"@en,
                 "schema:isPartOf n'est pas de la classe schema:ArchiveComponent"@fr,
                 "schema:isPartOf is niet van de klasse schema:ArchiveComponent"@nl ;
             sh:name "is part of"@en,
                 "est partie de"@fr,
                 "is een deel van"@nl ;
+            sh:or ( [ sh:class schema:ArchiveComponent ] [ sh:class schema:CreativeWorkSeries ] [ sh:class schema:Episode ] ) ;
             sh:path schema:isPartOf ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:dateTime ;
-            sh:maxCount 1 ;
-            sh:message "schema:duration is not of type string"@en,
-                "schema:duration n'est pas de type string"@fr,
-                "schema:duration is niet van het type string"@nl ;
-            sh:name "duration"@en,
-                "durée"@fr,
-                "duur"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:duration ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype edtf:EDTF-level1 ;
-            sh:maxCount 1 ;
-            sh:message "schema:dateCreated is not of type string"@en,
-                "schema:dateCreated n'est pas de type string"@fr,
-                "schema:dateCreated is niet van het type string"@nl ;
-            sh:name "date created"@en,
-                "date de création"@fr,
-                "aangemaakt op"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:dateCreated ;
             sh:severity sh:Violation ],
         <file:///Users/mielvandersande/Meemoo/Development/datamodels/description/description.shacl.ttl#descriptionShape>,
         <file:///Users/mielvandersande/Meemoo/Development/datamodels/description/description.shacl.ttl#identifierShape>,
@@ -2068,8 +2045,7 @@ schema:isPartOf a rdf:Property ;
     rdfs:comment "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of."@en,
         "Indique un élément ou un CreativeWork qui fait partie de cet élément, ou de ce CreativeWork (dans un certain sens)."@fr,
         "Geeft een item of CreativeWork aan waarvan dit item, of CreativeWork (in een bepaald opzicht), een onderdeel is."@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:ArchiveComponent .
+    rdfs:domain schema:CreativeWork .
 
 schema:keywords a rdf:Property ;
     rdfs:label "keywords"@en,
@@ -2116,26 +2092,6 @@ schema:name a rdf:Property ;
     rdfs:range xsd:string ;
     owl:equivalentProperty dcterms:title .
 
-schema:partOfEpisode a rdf:Property ;
-    rdfs:label "part of episode"@en,
-        "partie de l'épisode"@fr,
-        "deel van aflevering"@nl ;
-    rdfs:comment "The episode to which this clip belongs."@en,
-        "L'épisode à laquelle appartient ce clip."@fr,
-        "De aflevering waar deze clip toe behoort."@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:Episode .
-
-schema:partOfSeries a rdf:Property ;
-    rdfs:label "part of series"@en,
-        "partie de la série"@fr,
-        "deel van serie"@nl ;
-    rdfs:comment "The series to which this episode or season belongs."@en,
-        "La série à laquelle appartient cette saison ou cette épisode."@fr,
-        "De serie waar deze aflevering of seizoen toe behoort."@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:range schema:CreativeWorkSeries .
-
 schema:roleName a rdf:Property ;
     rdfs:label "role name"@en,
         "nom du rôle"@fr,
@@ -2155,7 +2111,7 @@ schema:seasonNumber a rdf:Property ;
         "Positie van het seizoen in een geordende groep van seizoenen."@nl ;
     rdfs:domain schema:CreativeWorkSeason .
 
-schema:spatialCoverage a rdf:Property ;
+schema:spatial a rdf:Property ;
     rdfs:label "spatial coverage"@en,
         "couverture spatiale/géographique"@fr,
         "geografische dekking; aflijning binnen de ruimte"@nl ;
@@ -2166,7 +2122,7 @@ schema:spatialCoverage a rdf:Property ;
     rdfs:range schema:Place ;
     owl:equivalentProperty dcterms:spatial .
 
-schema:temporalCoverage a rdf:Property ;
+schema:temporal a rdf:Property ;
     rdfs:label "temporal coverage"@en,
         "couveerture temporelle"@fr,
         "temporele dekking; aflijning binnen de tijd"@nl ;
