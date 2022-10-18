@@ -23,8 +23,8 @@ class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
 class "<b>Storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
 class "<b>Local identifier</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
-class "<b>Storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 class "<b>File Format</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>Storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 
@@ -66,6 +66,8 @@ haObj_DigitalRepresentation --> "[1..n]" premis_File : includes >
 haObj_DigitalRepresentation --> "[0..1]" premis_IntellectualEntity : is access copy of >
 
 haObj_DigitalRepresentation --> "[1..n]" premis_IntellectualEntity : is archiving master of >
+
+haObj_DigitalRepresentation --> "[0..n]" premis_File : is media fragment of >
 
 haObj_DigitalRepresentation --> "[0..1]" premis_IntellectualEntity : is mezzanine format of >
 

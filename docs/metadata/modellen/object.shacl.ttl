@@ -332,7 +332,15 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
             sh:path rel:hsr ;
             sh:severity sh:Violation ],
         [ sh:class haObj:PhysicalRepresentation ;
+            sh:description "De fysieke drager waarvan deze representatie afkomstig is."@nl ;
             sh:path rel:hss ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "The file of which this is a fragment."@en,
+                "Het bestand waarvan dit een fragment is."@nl ;
+            sh:name "is media fragment of"@en,
+                "is media fragment van"@nl ;
+            sh:path ebucore:isMediaFragmentOf ;
             sh:severity sh:Violation ] ;
     sh:targetClass haObj:DigitalRepresentation .
 
@@ -343,6 +351,7 @@ haObj:FileShape a sh:NodeShape ;
             sh:path rel:isi ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
+            sh:description "Het bestand dat dit bestand vervangt of opvolgt."@nl ;
             sh:path rel:sup ;
             sh:severity sh:Violation ],
         [ sh:class premis:Fixity ;
@@ -607,17 +616,6 @@ ebucore:hasMimeType a rdf:Property ;
         xsd:string ;
     rdfs:subPropertyOf ebucore:hasFormat .
 
-ebucore:isMediaFragmentOf a rdf:Property ;
-    rdfs:label "Media fragment source"@en,
-        "Source du fragment de média"@fr,
-        "Bron van het mediafragment"@nl ;
-    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to."@en,
-        "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
-        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl ;
-    rdfs:domain ebucore:MediaFragment ;
-    rdfs:isDefinedBy ebucore: ;
-    rdfs:range ebucore:MediaResource .
-
 edm:isNextInSequence a owl:ObjectProperty ;
     rdfs:label "Is Next In Sequence Of"@en,
         "Est le prochain dans la séquence de"@fr,
@@ -678,6 +676,20 @@ seq:precedes a owl:ObjectProperty,
     rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
     rdfs:range owl:Thing ;
     owl:inverseOf seq:follows .
+
+ebucore:isMediaFragmentOf a rdf:Property ;
+    rdfs:label "Media fragment source"@en,
+        "Source du fragment de média"@fr,
+        "Bron van het mediafragment"@nl,
+        "Media fragment bron"@nl ;
+    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to"@en,
+        "To identify the Media Resource to which a Media Fragment belongs to."@en,
+        "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
+        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl,
+        "Om de mediabron te identificeren waartoe een mediafragment behoort"@nl ;
+    rdfs:domain ebucore:MediaFragment ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:MediaResource .
 
 premis:medium a owl:ObjectProperty ;
     rdfs:label "has medium"@en,

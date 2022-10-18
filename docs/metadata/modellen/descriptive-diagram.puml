@@ -28,9 +28,9 @@ class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
@@ -190,9 +190,9 @@ schema_Collection : identifier : <i>xsd:string</i> [1..1]
 schema_Collection : name : <i>xsd:string</i> [1..1]
 
 
-
-
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
 
 
 

@@ -24,11 +24,11 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:ndba76f7cd7a84cc6bc199e8200251955b11 a rdfs:Class,
+_:n1df13c562c514f1295aecb3930545caab11 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:ndba76f7cd7a84cc6bc199e8200251955b14 a rdfs:Class,
+_:n1df13c562c514f1295aecb3930545caab14 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
@@ -793,7 +793,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "date de fin"@en,
         "einddatum"@en,
         "end date"@en ;
-    rdfs:domain _:ndba76f7cd7a84cc6bc199e8200251955b11 ;
+    rdfs:domain _:n1df13c562c514f1295aecb3930545caab11 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -835,7 +835,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:ndba76f7cd7a84cc6bc199e8200251955b14 ;
+    rdfs:domain _:n1df13c562c514f1295aecb3930545caab14 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1192,10 +1192,13 @@ dct:description a rdfs:Property ;
 ebucore:isMediaFragmentOf a rdf:Property ;
     rdfs:label "Media fragment source"@en,
         "Source du fragment de média"@fr,
-        "Bron van het mediafragment"@nl ;
-    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to."@en,
+        "Bron van het mediafragment"@nl,
+        "Media fragment bron"@nl ;
+    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to"@en,
+        "To identify the Media Resource to which a Media Fragment belongs to."@en,
         "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
-        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl ;
+        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl,
+        "Om de mediabron te identificeren waartoe een mediafragment behoort"@nl ;
     rdfs:domain ebucore:MediaFragment ;
     rdfs:isDefinedBy ebucore: ;
     rdfs:range ebucore:MediaResource .
