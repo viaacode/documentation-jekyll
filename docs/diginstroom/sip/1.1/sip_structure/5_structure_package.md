@@ -794,7 +794,7 @@ This means that the `amdSec` MUST use `<mdRef>` elements, contained in `<digipro
 | Attribute | `mets/amdSec/rightsMD/@STATUS` |
 |-----------------------|-----------|
 | Name | Status of the rights metadata |
-| Description | Describes the status of the `digiprovMD` which is supported by the profile.<br>Meemoo investigates the use of the `@STATUS` attribute for future use cases such as e.g. a rights metadata update (i.e. ingest of metadata only with the goal of updating, adding or deleting existing metadata in meemoo's archive system). |
+| Description | Describes the status of the `rightsMD` which is supported by the profile.<br>Meemoo investigates the use of the `@STATUS` attribute for future use cases such as e.g. a rights metadata update (i.e. ingest of metadata only with the goal of updating, adding or deleting existing metadata in meemoo's archive system). |
 | Datatype | [String]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#string); fixed vocabulary |
 | Vocabulary | `CURRENT`<br>`SUPERSEDED` |
 | Cardinality | 0..1 |
@@ -1108,7 +1108,8 @@ The listing of other representation files (i.e. metadata files and media files) 
 | Attribute | `mets/fileSec/fileGrp/file/FLocat/@xlink:href` |
 |-----------------------|-----------|
 | Name | Resource location |
-| Description | One SHOULD use the relative location of the file in this URL. |
+| Description | Indication of the actual location of the referenced file.
+As indicated by the @LOCTYPE attribute, this filepath MUST be a URL type filepath. |
 | Datatype | [URL]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/2_terminology.md %}#url) |
 | Cardinality | 1..1 |
 | Obligation | MUST |
