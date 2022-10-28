@@ -12,6 +12,7 @@
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -24,11 +25,11 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n1df13c562c514f1295aecb3930545caab11 a rdfs:Class,
+_:nde17846c64af4b91a2a2035cc70a793fb11 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n1df13c562c514f1295aecb3930545caab14 a rdfs:Class,
+_:nde17846c64af4b91a2a2035cc70a793fb14 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
@@ -793,7 +794,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "date de fin"@en,
         "einddatum"@en,
         "end date"@en ;
-    rdfs:domain _:n1df13c562c514f1295aecb3930545caab11 ;
+    rdfs:domain _:nde17846c64af4b91a2a2035cc70a793fb11 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -835,7 +836,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n1df13c562c514f1295aecb3930545caab14 ;
+    rdfs:domain _:nde17846c64af4b91a2a2035cc70a793fb14 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -996,6 +997,7 @@ foaf:homepage a rdf:Property ;
     dct:title "Data model Events"@en,
         "Modèle de données Events"@fr,
         "Datamodel Events"@nl ;
+    pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haEvt" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/events#" ;
     owl:imports <http://id.loc.gov/vocabulary/preservation/eventOutcome>,
@@ -1468,6 +1470,7 @@ haObj: a owl:Ontology ;
     dct:title "Data model Objects"@en,
         "Modèle de données Objets"@fr,
         "Datamodel Objecten"@nl ;
+    pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haObj" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
     owl:imports rel:,
@@ -1487,6 +1490,7 @@ haOrg: a owl:Ontology ;
     dct:title "Data model Organizations"@en,
         "Modèle de données Organisations"@fr,
         "Datamodel Organisaties"@nl ;
+    pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haOrg" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" .
 

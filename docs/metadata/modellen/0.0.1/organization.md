@@ -8,7 +8,7 @@ nav_order: 1
 Data model Organizations
 ====================
 
-**Version:** 
+**Version:** 0.0.1
 
 **Prior version:** 
 
@@ -38,6 +38,7 @@ Data model to describe organizations.
 | haOrg     | [https://data.hetarchief.be/ns/organization#](https://data.hetarchief.be/ns/organization#) |
 | org     | [http://www.w3.org/ns/org#](http://www.w3.org/ns/org#) |
 | owl     | [http://www.w3.org/2002/07/owl#](http://www.w3.org/2002/07/owl#) |
+| pav     | [http://purl.org/pav/](http://purl.org/pav/) |
 | rdf     | [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) |
 | rdfs     | [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) |
 | schema     | [https://schema.org/](https://schema.org/) |

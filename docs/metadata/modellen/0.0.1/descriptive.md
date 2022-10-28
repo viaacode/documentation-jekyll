@@ -8,7 +8,7 @@ nav_order: 3
 Data model Description
 ====================
 
-**Version:** 
+**Version:** 0.0.1
 
 **Prior version:** 
 
@@ -46,6 +46,7 @@ Data model to describe the content of objects.
 | ma     | [http://www.w3.org/ns/ma-ont#](http://www.w3.org/ns/ma-ont#) |
 | org     | [http://www.w3.org/ns/org#](http://www.w3.org/ns/org#) |
 | owl     | [http://www.w3.org/2002/07/owl#](http://www.w3.org/2002/07/owl#) |
+| pav     | [http://purl.org/pav/](http://purl.org/pav/) |
 | premis     | [http://www.loc.gov/premis/rdf/v3/](http://www.loc.gov/premis/rdf/v3/) |
 | prov     | [http://www.w3.org/ns/prov#](http://www.w3.org/ns/prov#) |
 | rdf     | [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) |

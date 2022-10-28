@@ -10,6 +10,7 @@
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -1430,6 +1431,7 @@ haDes: a owl:Ontology ;
     dcterms:title "Data model Description"@en,
         "Modèle de données Description"@fr,
         "Datamodel Descriptie"@nl ;
+    pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haDes" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description#" .
 
@@ -2356,6 +2358,7 @@ haObj: a owl:Ontology ;
     dcterms:title "Data model Objects"@en,
         "Modèle de données Objets"@fr,
         "Datamodel Objecten"@nl ;
+    pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haObj" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
     owl:imports rel:,
@@ -2375,6 +2378,7 @@ haOrg: a owl:Ontology ;
     dcterms:title "Data model Organizations"@en,
         "Modèle de données Organisations"@fr,
         "Datamodel Organisaties"@nl ;
+    pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haOrg" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" .
 

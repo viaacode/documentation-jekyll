@@ -23,10 +23,10 @@ class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
 class "<b>Storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
 class "<b>Local identifier</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
-class "<b>File Format</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
 class "<b>Storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>File Format</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
 
 
 
@@ -112,9 +112,9 @@ haObj_LocalIdentifier : value : <i>xsd:string</i> [1..1]
 
 
 
-
-
 premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+
 
 
 

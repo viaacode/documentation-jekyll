@@ -5,6 +5,7 @@
 @prefix haObj: <https://data.hetarchief.be/ns/object#> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -346,12 +347,14 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
 
 haObj:FileShape a sh:NodeShape ;
     sh:property [ sh:class haObj:DigitalRepresentation ;
-            sh:description "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
+            sh:description "The representation this file is part of."@en,
+                "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
             sh:minCount 1 ;
             sh:path rel:isi ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
-            sh:description "Het bestand dat dit bestand vervangt of opvolgt."@nl ;
+            sh:description "Het bestand dat dit bestand vervangt of opvolgt."@nl,
+                "The file that replaces or succeeds this file."@nl ;
             sh:path rel:sup ;
             sh:severity sh:Violation ],
         [ sh:class premis:Fixity ;
@@ -792,6 +795,7 @@ haObj: a owl:Ontology ;
     dct:title "Data model Objects"@en,
         "Modèle de données Objets"@fr,
         "Datamodel Objecten"@nl ;
+    pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haObj" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
     owl:imports rel:,
