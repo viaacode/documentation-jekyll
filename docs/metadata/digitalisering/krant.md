@@ -1,11 +1,13 @@
 ---
 layout: default
-title: "Velden: Krant"
+title: "Krant"
 parent: "Velden: Digitaliseringsproces"
 nav_order: 3
 ---
 
 # Metadata voor krant digitalisering
+
+Deze velden worden gebruikt in een kranten digitaliseringsproject.
 
 ## Abraham ID
 
@@ -17,6 +19,7 @@ Identifier van de krantentitel die ervoor zorgt dat de link met Abraham - Catalo
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
+<abraham_ID>c:bnc:5224</abraham_ID>
 ```
 
 ## Editie
@@ -29,6 +32,7 @@ Hierbij gaat het om de soort uitgave van de editie. Een krant kent meerdere soor
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
+<edition>Afternoon</edition>
 ```
 
 ## Jaargang en volumenummer
@@ -41,6 +45,7 @@ Een krant verschijnt serieel. Via jaargangen en volumenummers wordt aangegeven o
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
+<number>1.6</number>
 ```
 
 ## Teksttype
@@ -53,13 +58,16 @@ Hoe het voornaamste deel van de tekst van deze drager is weergegeven: gedrukt, g
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
+<text_type>Printed</text_type>
+<text_type>Typed</text_type>
+<text_type>Handwritten</text_type>
 ```
 
 ### Mogelijke waarden
 
-- `Handgeschreven`
-- `Getypt`
-- `Gedrukt`
+- `Handwritten`
+- `Typed`
+- `Printed`
 	
 
 ## Aantal pagina’s
@@ -72,6 +80,7 @@ Het aantal pagina's waaruit de drager bestaat.
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
+<number_of_pages>2</number_of_pages>
 ```
 
 ## Afmetingen van papier 
@@ -115,14 +124,18 @@ Evaluatie in welke staat de band zich bevindt.
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
+<cover_and_bindings>Poor</cover_and_bindings>
+<cover_and_bindings>Bad</cover_and_bindings>
+<cover_and_bindings>Reasonable</cover_and_bindings>
+<cover_and_bindings>Good</cover_and_bindings>
 ```
 
 ### Mogelijke waarden
 
-- `Goed`
-- `Redelijk`
-- `Matig`
-- `Slecht`
+- `Poor`
+- `Bad`
+- `Reasonable`
+- `Good`
 
 ## Staat van papier
 
@@ -135,12 +148,16 @@ Evaluatie in welke staat het papier zich bevindt.
 
 ### Mogelijke waarden
 
-- `Goed`
-- `Redelijk`
-- `Matig`
-- `Slecht`
+- `Poor`
+- `Bad`
+- `Reasonable`
+- `Good`
 
 ```xml
+<paper>Good</paper>
+<paper>Reasonable</paper>
+<paper>Poor</paper>
+<paper>Bad</paper>
 ```
 
 ## Tekstkwaliteit voor OCR
@@ -153,17 +170,26 @@ Verschijnselen die een uitdaging kunnen vormen voor een geautomatiseerde optisch
 | **Herhaalbaar**            | Ja                                                                                                            |
 	
 ```xml
+<text_quality_for_ocr>
+  <multiselect>Creases</multiselect>
+  <multiselect>Folds</multiselect>
+  <multiselect>Imprints</multiselect>
+  <multiselect>Repairs</multiselect>
+  <multiselect>Stains</multiselect>
+  <multiselect>Tears</multiselect>
+  <multiselect>Text Loss</multiselect>
+</text_quality_for_ocr>
 ```
 
 ### Mogelijke waarden
 
-- `Geen problemen`
-- `Doordruk`
-- `Plooien`
-- `Vervaging van de inkt`
-- `vouwen`
-- `tekstverlies`
-- `herstellingen`
-- `scheuren`
-- `vlekken`
-- `verticaal gedrukte tekst`
+- `No problems`
+- `Imprints`
+- `Folds`
+- `Faded ink`
+- `Creases`
+- `Text loss`
+- `Repairs`
+- `Tears`
+- `Stains`
+- `Vertically printed text`

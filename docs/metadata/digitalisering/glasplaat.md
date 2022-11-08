@@ -1,11 +1,13 @@
 ---
 layout: default
-title: "Velden: Glasplaat"
+title: "Glasplaat"
 parent: "Velden: Digitaliseringsproces"
 nav_order: 1
 ---
 
 # Metadata voor glasplaat digitalisering
+
+
 
 ## Bijbehorende documenten/dragers aanwezig?
 
