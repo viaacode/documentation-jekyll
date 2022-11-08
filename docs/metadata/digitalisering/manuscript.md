@@ -11,7 +11,7 @@ Deze velden worden gebruikt in een manuscripten digitaliseringsproject.
 
 ## Aantal folio’s
 
-Het aantal folio’s van een handschrift of manuscript. 1 folio = 2 pagina’s.
+Het aantal folio’s van een handschrift of manuscript. Eén folio zijn twee opeenvolgende pagina’s. De rectozijde is de voorkant, de versozijde de achterkant.
 
 | **XML element**        | `<number_of_folios/>`                                                                                                     |
 | **Datatype**           | Numeriek                                                                                                            |
@@ -26,7 +26,7 @@ Het aantal folio’s van een handschrift of manuscript. 1 folio = 2 pagina’s.
 
 Het materiaal waaruit het object bestaat.
 
-| **XML element**        | `<material/>`                                                                                                     |
+| **XML element**        | `<materials><material /></materials>`                                                                                                     |
 | **Datatype**           | Vrije tekst                                                                                                            |
 | **Verplichting**       | Optioneel     |
 | **Herhaalbaar**        | Ja                                                                                                                |

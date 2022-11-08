@@ -7,7 +7,7 @@ nav_order: 1
 
 # Metadata voor glasplaat digitalisering
 
-
+Deze velden worden gebruikt in een glasplaten digitaliseringsproject.
 
 ## Bijbehorende documenten/dragers aanwezig?
 
