@@ -1,0 +1,206 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Physical representation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Creative Work Series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>Archive Component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
+
+
+premis_IntellectualEntity : abstract : <i>xsd:string</i> [0..1]
+
+premis_IntellectualEntity : alternate name : <i>xsd:string</i> [0..n]
+
+
+premis_IntellectualEntity --> "[0..n]" schema_Role : author >
+
+premis_IntellectualEntity --> "[0..n]" schema_Role : contributor >
+
+premis_IntellectualEntity --> "[0..n]" schema_Person : copyright holder >
+premis_IntellectualEntity --> "[0..n]" org_Organization : copyright holder >
+premis_IntellectualEntity : copyright notice : <i>xsd:string</i> [0..n]
+
+premis_IntellectualEntity : copyright year : <i>xsd:integer</i> [0..n]
+
+premis_IntellectualEntity : credit text : <i>xsd:string</i> [0..n]
+
+premis_IntellectualEntity : date available : <i>xsd:dateTime</i> [0..n]
+
+premis_IntellectualEntity : date created : <i>edtf:EDTF-level1</i> [0..1]
+
+premis_IntellectualEntity : date published : <i>edtf:EDTF-level1</i> [0..1]
+
+premis_IntellectualEntity : description : <i>xsd:string</i> [1..1]
+
+premis_IntellectualEntity : duration : <i>xsd:dateTime</i> [0..1]
+
+premis_IntellectualEntity : genre : <i>xsd:string</i> [0..n]
+
+premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
+
+premis_IntellectualEntity : in language : <i>xsd:string</i> [1..n]
+
+
+premis_IntellectualEntity --> "[0..n]" schema_ArchiveComponent : is part of >
+premis_IntellectualEntity --> "[0..n]" schema_CreativeWorkSeries : is part of >
+premis_IntellectualEntity --> "[0..n]" schema_Episode : is part of >
+premis_IntellectualEntity : keywords : <i>xsd:string</i> [0..n]
+
+
+premis_IntellectualEntity --> "[0..n]" skos_Concept : license >
+
+premis_IntellectualEntity --> "[1..1]" haOrg_ContentPartner : maintainer >
+premis_IntellectualEntity : name : <i>xsd:string</i> [1..1]
+
+premis_IntellectualEntity : object type : <i>xsd:string</i> [0..1]
+
+
+premis_IntellectualEntity --> "[0..n]" schema_Role : publisher >
+
+premis_IntellectualEntity --> "[0..n]" schema_Place : spatial >
+premis_IntellectualEntity : temporal : <i>rdf:langString</i> [0..n]
+
+
+haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_PhysicalRepresentation : description : <i>xsd:string</i> [1..1]
+
+haObj_PhysicalRepresentation : format : <i>xsd:string</i> [1..1]
+
+haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
+
+haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
+
+haObj_PhysicalRepresentation : name : <i>xsd:string</i> [1..1]
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+
+haObj_DigitalRepresentation --> "[0..n]" schema_Role : author >
+haObj_DigitalRepresentation : caption : <i>xsd:string</i> [0..1]
+
+haObj_DigitalRepresentation : date created : <i>edtf:EDTF-level1</i> [1..1]
+
+haObj_DigitalRepresentation : description : <i>xsd:string</i> [1..1]
+
+haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
+
+haObj_DigitalRepresentation : name : <i>xsd:string</i> [1..1]
+
+haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
+
+
+schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_CreativeWorkSeries : description : <i>xsd:string</i> [1..1]
+
+schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
+
+schema_CreativeWorkSeries : name : <i>xsd:string</i> [1..1]
+
+schema_CreativeWorkSeries : season number : <i>xsd:integer</i> [0..n]
+
+
+schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Episode : description : <i>xsd:string</i> [1..1]
+
+schema_Episode : identifier : <i>xsd:string</i> [1..1]
+
+schema_Episode : name : <i>xsd:string</i> [1..1]
+
+
+
+schema_Place : description : <i>xsd:string</i> [1..1]
+
+schema_Place : name : <i>xsd:string</i> [1..1]
+
+
+schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_ArchiveComponent : description : <i>xsd:string</i> [1..1]
+
+schema_ArchiveComponent : name : <i>xsd:string</i> [1..1]
+
+
+
+
+schema_Role --> "[0..n]" schema_Person : actor >
+
+schema_Role --> "[0..n]" schema_Person : author >
+schema_Role --> "[0..n]" org_Organization : author >
+
+schema_Role --> "[0..n]" schema_Person : contributor >
+schema_Role --> "[0..n]" org_Organization : contributor >
+
+schema_Role --> "[0..n]" schema_Person : publisher >
+schema_Role --> "[0..n]" org_Organization : publisher >
+schema_Role : role name : <i>xsd:string</i> [1..n]
+
+schema_Role --> "[1..n]" skos_Concept : role name >
+
+
+schema_Person : family name : <i>xsd:string</i> [0..n]
+
+schema_Person : given name : <i>xsd:string</i> [0..n]
+
+schema_Person : name : <i>xsd:string</i> [1..1]
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : collection size : <i>xsd:integer</i> [0..n]
+
+schema_Collection : description : <i>xsd:string</i> [1..1]
+
+
+schema_Collection --> "[0..n]" premis_IntellectualEntity : has part >
+schema_Collection : identifier : <i>xsd:string</i> [1..1]
+
+schema_Collection : name : <i>xsd:string</i> [1..1]
+
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+

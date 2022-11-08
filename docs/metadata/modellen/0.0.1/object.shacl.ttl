@@ -1,0 +1,814 @@
+@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
+@prefix edm: <http://www.europeana.eu/schemas/edm/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object#> .
+@prefix ma: <http://www.w3.org/ns/ma-ont#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
+@prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
+@prefix schema: <https://schema.org/> .
+@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+dct:FileFormat a rdfs:Class ;
+    rdfs:label "File Format"@en,
+        "Format de fichier"@fr,
+        "Bestandsformaat"@nl ;
+    dct:description "Examples include the formats defined by the list of Internet Media Types."@en ;
+    dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
+    dct:issued "2008-01-14"^^xsd:date ;
+    rdfs:comment "A digital resource format."@en,
+        "Un format de ressource numérique."@fr,
+        "Een formaat van een digitale bron."@nl ;
+    rdfs:isDefinedBy dct: ;
+    rdfs:subClassOf dct:MediaType .
+
+premis:File a rdfs:Class,
+        owl:Class ;
+    rdfs:label "File"@en,
+        "Fichier"@fr,
+        "Bestand"@nl ;
+    rdfs:comment "Named and ordered sequence of bytes that is known to an operating system."@en,
+        "Séquence nommée et ordonnée d'octets/bytes connue par un système d'exploitation."@fr,
+        "Genoemde en geordende sequentie van bytes gekend door een besturingssysteem."@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subClassOf premis:Object ;
+    owl:disjointWith premis:Bitstream,
+        premis:IntellectualEntity,
+        premis:Representation .
+
+premis:Fixity a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Fixity"@en,
+        "Fixité"@fr,
+        "Fixity"@nl ;
+    rdfs:comment "Information used to verify whether an object has been altered in an undocumented or unauthorized way."@en,
+        "Informations utilisées pour vérifier si un objet a été modifié de manière non documentée ou non autorisée."@fr,
+        "Informatie die wordt gebruikt om na te gaan of een object op een ongedocumenteerde of ongeoorloofde manier werd gewijzigd."@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions> .
+
+premis:IntellectualEntity a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Intellectual entity"@en,
+        "Entité intellectuelle"@fr,
+        "Intellectuele entiteit"@nl ;
+    rdfs:comment """A set of content that is considered a single intellectual unit for purposes of management and
+      description: for example, a particular book, map, photograph, database, or piece of hardware or
+      software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can
+      include a web page; a web page can include an image. An Intellectual Entity may have one or more digital
+      representations. An Intellectual Entity may also describe an environment, defined as technology
+      supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of
+      software, hardware, or a combination of both."""@en,
+        "Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description"@fr,
+        "Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met als doeleinden beheer en beschrijving."@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/environmentFunctionType> ;
+    rdfs:subClassOf premis:Object ;
+    owl:disjointWith premis:Bitstream,
+        premis:File,
+        premis:Representation .
+
+premis:Object a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Object"@en,
+        "Objet"@fr,
+        "Object"@nl ;
+    rdfs:comment "Discrete unit of information subject to digital preservation. Subclasses of Object are Intellectual Entity, Representation, File and Bitstream."@en,
+        "Unité discrète d'information soumise à la préservation numérique. Les sous-classes d'objet sont le Intellectual Entity (entité intellectuelle), la Representation (représentation), le File (fichier) et le Bitstream (flux binaire)."@fr,
+        "Discrete eenheid van informatie die digitaal moet worden bewaard. Subklassen van Object zijn Intellectual Entity (intellectuele entiteit), Representation (voorstelling/weergave), File (bestand) en Bitstream (bitstream)."@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subClassOf prov:Entity .
+
+premis:Representation a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Representation"@en,
+        "Représentation"@fr,
+        "Representatie"@nl ;
+    rdfs:comment """Digital or physical Object instantiating or embodying an Intellectual Entity. A digital
+      representation is the set of stored digital files and structural metadata needed to provide a complete
+      and reasonable rendition of the Intellectual Entity. A physical representation is an item such as a
+      manuscript, video cassette, or printed document."""@en ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:subClassOf premis:Object ;
+    owl:disjointWith premis:Bitstream,
+        premis:File,
+        premis:IntellectualEntity .
+
+premis:StorageLocation a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Storage location"@en,
+        "Emplacement de stockage"@fr,
+        "Opslagplaats"@nl ;
+    rdfs:comment "Information needed to retrieve a physical item from its physical storage location or a file from the storage system, or to access a bitstream within a file."@en,
+        "Informations nécessaires pour extraire un élément physique de son emplacement de stockage physique ou un fichier du système de stockage, ou pour accéder à un flux binaire (bitstream) dans un fichier (file)."@fr,
+        "Informatie die nodig is om een fysiek voorwerp van zijn fysieke opslagplaats of een bestand uit het opslagsysteem op te halen, of om toegang te krijgen tot een bitstream binnen een bestand (file)."@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/contentLocationType> .
+
+premis:StorageMedium a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Storage medium"@en,
+        "Support de stockage"@fr,
+        "Opslagmedium"@nl ;
+    rdfs:comment """The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM,
+        DVD)."""@en,
+        "Le support physique sur lequel l'Objet est stocké (par exemple, le mécanisme magnétique, le disque dur, le CD-ROM, le DVD)."@fr,
+        "Het fysieke medium waarop het Object is opgeslagen (bijvoorbeeld, de magnetische tape, de harde schijf, de CD-ROM, de DVD)."@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium> .
+
+haObj:DigitalRepresentation a rdfs:Class ;
+    rdfs:label "Digital representation"@en,
+        "Représentation digitale"@fr,
+        "Digitale representatie"@nl ;
+    rdfs:comment "Digital representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en,
+        "Représentation digitale d'une entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr,
+        "Digitale representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subClassOf premis:Representation .
+
+haObj:LocalIdentifier a rdfs:Class ;
+    rdfs:label "Local identifier"@en,
+        "Identifiant local"@fr,
+        "Lokale identificatie"@nl ;
+    rdfs:comment "A local identifier for an object defined by or known to the content partner, such as a barcode, an identifier from an external database or the identifier in the contentpartner's collection registration system."@en,
+        "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'un système externe ou l'identifiant dans le système de registre de collection du partenaire de contenu."@fr,
+        "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een extern database of de identificatie in het systeem van registratie van de collectie van de partner van content."@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subClassOf premis:Identifier,
+        skos:Concept .
+
+haObj:PhysicalRepresentation a rdfs:Class ;
+    rdfs:label "Physical representation"@en,
+        "Représentation physique"@fr,
+        "Fysieke representatie"@nl ;
+    rdfs:comment "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en,
+        "Représentation physique d'un entité intellectuelle archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr,
+        "Fysieke representatie van een gearchiveerde intellectuele entiteit, zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subClassOf premis:Representation .
+
+<file:///Users/mielvandersande/Meemoo/Development/datamodels/objects/objects.shacl.ttl> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ],
+        [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ] ;
+    dct:created "2022-01-07" ;
+    dct:description "SHACL model to validate/describe the structure of achive objects."@en,
+        "Modèle SHACL pour valider/décrire des objets."@fr,
+        "SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."@nl ;
+    dct:modified "2022-06-16" ;
+    dct:title "SHACL Model Objects"@en,
+        "Modèle SHACL Objet"@fr,
+        "SHACL-model Objecten"@nl .
+
+<file:///Users/mielvandersande/Meemoo/Development/datamodels/objects/objects.shacl.ttl#LocalIdentifierNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "rdf:value is missing or not of type string"@en,
+                "rdf:value est manquant ou n'est pas de type string"@fr,
+                "rdf:value ontbreekt of is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "value"@en,
+                "valeur"@fr,
+                "waarde"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haObj:LocalIdentifier .
+
+rel:gen a owl:ObjectProperty ;
+    rdfs:label "generalizes"@en,
+        "généralise"@fr,
+        "veralgemeent"@nl ;
+    rdfs:comment "A relationship between an environment object and another where the described object is a more general description than the more specific related environment. Has a reciprocal relationship of specializes."@en,
+        "Une Relation entre un objet d'environnement et un autre objet où l'objet décrit a une description plus générale que l'environnement lié plus spécifique. A une relation réciproque avec specializes."@fr,
+        "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object een algemenere beschrijving is dan de meer specifieke verwante omgeving. Heeft een wederkerige relatie met specializes."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:idc a owl:ObjectProperty ;
+    rdfs:label "is Documented In"@en,
+        "est documenté dans"@fr,
+        "is gedocumenteerd in"@nl ;
+    rdfs:comment "A relationship between an environment object and the information that documents it. Has a reciprocal relationship with documents."@en,
+        "Une relation entre un objet d'environnement et les informations qui le documentent. A une relation réciproque avec documents."@fr,
+        "Een relatie tussen een omgevingsobject en de informatie die het documenteert. Heeft een wederkerige relatie met documents."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:irq a owl:ObjectProperty ;
+    rdfs:label "is Required by"@en,
+        "est requis par"@fr,
+        "wordt vereist door"@nl ;
+    rdfs:comment "The relationship of an environment object to a file or representation, where the environment is required by the other objects to render or run. Has a reciprocal relationship of requires."@en,
+        "La relation entre un objet d'environnement et un fichier (file) ou une représentation (representation), lorsque l'environnement est requis par les autres objets pour le rendu ou l'exécution. A une relation réciproque avec requires."@fr,
+        "De relatie van een omgevingsobject tot een bestand (file) of representatie (representation), waarbij de omgeving door de andere objecten vereist wordt om te renderen of uit te voeren. Heeft een wederkerige relatie met requires."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:iso a owl:ObjectProperty ;
+    rdfs:label "is Source of"@en,
+        "est à la source de"@fr,
+        "ligt aan de bron van"@nl ;
+    rdfs:comment "The related object is a version of the source object created by a transformation. For example, an HTML file that is the product of a migration from a file encoded in the WordStar format, the Wordstar file has a “isSourceOf” relationship to the HTML file. Also applies to the relationship between the original and a disk image. Has a reciprocal relationship of hasSource."@en,
+        "L'objet lié est une version de l'objet source créée par une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar, le fichier Wordstar a une relation 'isSourceOf' avec le fichier HTML. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec hasSource."@fr,
+        "Het gerelateerde object is een versie van het bronobject gemaakt door een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat is gecodeerd in het WordStar-formaat, het Wordstar-bestand heeft een 'isSourceOf'-relatie met het HTML-bestand. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met hasSource."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:iss a owl:ObjectProperty ;
+    rdfs:label "is Superseded by"@en,
+        "a été remplacé par"@fr,
+        "werd vervangen door"@nl ;
+    rdfs:comment "A relationship between an environment object and another where the described object has been replaced by another. This allows for an audit trail of environments to be maintained. Has a reciprocal relationship of supersedes."@en,
+        "Une relation entre un objet d'environnement et un autre objet où l'objet décrit a été remplacé par un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec supersedes."@fr,
+        "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object is vervangen door een ander. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met supersedes."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:req a owl:ObjectProperty ;
+    rdfs:label "requires"@en,
+        "nécessite"@fr,
+        "vereist"@nl ;
+    rdfs:comment "The relationship of an object to another object, where it requires a particular environment or non-environment object to be rendered or to be run. For instance, a file of format Word 97, requires MS Word 1997 to render it. Has a reciprocal relationship of isRequiredBy."@en,
+        "La relation d'un objet avec un autre objet, lorsqu'il nécessite un environnement particulier ou un objet non lié à l'environnement pour être rendu ou exécuté comme il faut. Par exemple, un fichier au format Word 97 nécessite MS Word 1997 pour être rendu. A une relation réciproque avec isRequiredBy."@fr,
+        "De relatie van een object tot een ander object, waarbij het een bepaald omgevings- of niet-omgevingsobject nodig heeft om te worden weergegeven of om te worden uitgevoerd. Bijvoorbeeld, een bestand met de opmaak Word 97 vereist MS Word 1997 om het weer te geven. Heeft een wederkerige relatie met isRequiredBy."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:spe a owl:ObjectProperty ;
+    rdfs:label "specializes"@en,
+        "spécialise"@fr,
+        "specialiseert"@nl ;
+    rdfs:comment "A relationship between an environment object and another where the described object provides specific characteristics, while the related environment is more generic. Has a reciprocal relationship of generalizes."@en,
+        "Une relation entre un objet d'environnement et un autre objet où l'objet décrit fournit des caractéristiques spécifiques, tandis que l'environnement lié est plus générique. A une relation réciproque avec generalizes."@fr,
+        "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object specifieke kenmerken vertoont, terwijl de verwante omgeving meer generiek is. Heeft een wederkerige relatie met generalizes."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+ebucore:hasCaptioning a rdf:Property ;
+    rdfs:label "Captioning"@en,
+        "Sous-titrage"@fr,
+        "Ondertiteling"@nl ;
+    rdfs:comment "To signal the presence of Captioning."@en,
+        "Pour signaler la présence du sous-titrage."@fr,
+        "Om de aanwezigheid van ondertiteling aan te duiden."@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:Captioning .
+
+ebucore:hasObjectType a rdf:Property ;
+    rdfs:label "Object/asset type"@en,
+        "Type d'object/actif"@fr,
+        "Object-/activatype"@nl ;
+    rdfs:comment "To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."@en,
+        "Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."@fr,
+        "Om een ObjectType te definiëren voor een BusinessObject (bv. book, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."@nl ;
+    rdfs:domain ebucore:EditorialObject ;
+    rdfs:range ebucore:ObjectType,
+        xsd:anyURI,
+        xsd:string .
+
+premis:size a owl:DatatypeProperty ;
+    rdfs:label "has size"@en,
+        "a une taille (du fichier)"@fr,
+        "heeft (bestands)grootte"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( premis:Bitstream premis:File ) ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range xsd:nonNegativeInteger ;
+    skos:narrowMatch ebucore:fileSize .
+
+seq:directlyFollows a owl:ObjectProperty ;
+    rdfs:label "directly follows"@en,
+        "suit directement"@fr,
+        "volgt direct op"@nl ;
+    rdfs:comment "The intransitive follows relation. For example, Thursday directly follows Wednesday. Directness of precedence depends on the designer conceptualization."@en,
+        "La relation intransitive de 'suivre directement'. Par exemple, jeudi suit directement mercredi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr,
+        "De intransitieve 'volgt-direct-op' relatie. Bv. donderdag volgt direct op woensdag. De mate van 'directheid' bij het 'volgen-op' hangt af van het ontwerp van de bedenker."@nl ;
+    rdfs:domain owl:Thing ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+    rdfs:range owl:Thing ;
+    rdfs:subPropertyOf seq:follows ;
+    owl:inverseOf seq:directlyPrecedes .
+
+haObj:DigitalRepresentationShape a sh:NodeShape ;
+    sh:property [ sh:class premis:IntellectualEntity ;
+            sh:description "De intellectuele entiteit waarvan deze representatie de archiefmaster is."@nl ;
+            sh:minCount 1 ;
+            sh:path haObj:isMasterOf ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:IntellectualEntity ;
+            sh:description "De intellectuele entiteit waarvan deze representatie de mezzanine is."@nl ;
+            sh:maxCount 1 ;
+            sh:path haObj:isMezzanineOf ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:IntellectualEntity ;
+            sh:description "De intellectuele entiteit waarvan deze representatie de toegangs- of inkijk kopie is."@nl ;
+            sh:maxCount 1 ;
+            sh:path haObj:isAccesscopyOf ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:IntellectualEntity ;
+            sh:description "De intellectuele entiteit die deze representatie representeert."@nl ;
+            sh:minCount 1 ;
+            sh:path rel:rep ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "Een bestand die deel uit maakt van deze representatie"@nl ;
+            sh:minCount 1 ;
+            sh:path rel:inc ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "Het bestand dat eerst verwerkt moet worden."@nl ;
+            sh:path rel:hsr ;
+            sh:severity sh:Violation ],
+        [ sh:class haObj:PhysicalRepresentation ;
+            sh:description "De fysieke drager waarvan deze representatie afkomstig is."@nl ;
+            sh:path rel:hss ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "The file of which this is a fragment."@en,
+                "Het bestand waarvan dit een fragment is."@nl ;
+            sh:name "is media fragment of"@en,
+                "is media fragment van"@nl ;
+            sh:path ebucore:isMediaFragmentOf ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haObj:DigitalRepresentation .
+
+haObj:FileShape a sh:NodeShape ;
+    sh:property [ sh:class haObj:DigitalRepresentation ;
+            sh:description "The representation this file is part of."@en,
+                "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
+            sh:minCount 1 ;
+            sh:path rel:isi ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "Het bestand dat dit bestand vervangt of opvolgt."@nl,
+                "The file that replaces or succeeds this file."@nl ;
+            sh:path rel:sup ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:Fixity ;
+            sh:description "De berekende fixity checksum van het bestand."@nl ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path premis:fixity ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:StorageLocation ;
+            sh:description "De locatie waar het bestand is opgeslagen."@nl ;
+            sh:minCount 1 ;
+            sh:path premis:storedAt ;
+            sh:severity sh:Violation ],
+        [ sh:class dct:FileFormat ;
+            sh:description "Het bestandsformaat van het bestand."@nl ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path dct:format ;
+            sh:severity sh:Violation ],
+        [ sh:datatype xsd:string ;
+            sh:description "The MIME type or IANA media type of the file."@en,
+                "Het MIME type of IANA media type van het bestand."@nl ;
+            sh:maxCount 1 ;
+            sh:name "mime type"@en,
+                "mime type"@fr,
+                "mime type"@nl ;
+            sh:path ebucore:hasMimeType ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "The file that follows on this file."@en,
+                "Het bestand dat op dit bestand volgt."@nl ;
+            sh:maxCount 1 ;
+            sh:name "next file in sequence"@en,
+                "volgende bestand in volgorde"@nl ;
+            sh:path edm:isNextInSequence ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "The file that describes or documents this file."@en,
+                "Het bestand dat dit bestand beschrijft of documenteert."@nl ;
+            sh:name "documents"@en,
+                "documenteert"@nl ;
+            sh:path rel:doc ;
+            sh:severity sh:Violation ],
+        [ sh:class haObj:DigitalRepresentation ;
+            sh:description "A fragment from this file."@en,
+                "Een fragment uit dit bestand."@nl ;
+            sh:name "has media fragment"@en,
+                "heeft media fragment"@nl ;
+            sh:path ebucore:hasMediaFragment ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass premis:File .
+
+haObj:FixityShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The value of the checksum."@en,
+                "De waarde van de checksum."@nl ;
+            sh:minCount 1 ;
+            sh:name "fixity checksum"@en,
+                "fixity checksum"@nl ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ],
+        [ sh:datatype xsd:string ;
+            sh:description "The entity that generated the checksum."@en,
+                "De entiteit die de checksum gegenereerd heeft."@nl ;
+            sh:name "checksum creator"@en,
+                "checksum maker"@nl ;
+            sh:path dct:creator ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass premis:Fixity .
+
+haObj:IntellectualEntityShape a sh:NodeShape ;
+    sh:property [ sh:class haObj:DigitalRepresentation ;
+            sh:description "De toegangs- of inkijk kopie van de intellectuele entiteit. "@nl ;
+            sh:path haObj:hasAccesscopy ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class haObj:LocalIdentifier ;
+            sh:description "A local identifier for the intellectual entity."@en,
+                "Un identificateur local pour l'entité intellectuelle."@fr,
+                "Een lokale identifier voor de intellectuele entiteit."@nl ;
+            sh:message "premis:identifier is not a LocalIdentifier"@en,
+                "premis:identifier n'est pas de la classe LocalIdentifier"@fr,
+                "premis:identifier is niet van de klasse LocalIdentifier"@nl ;
+            sh:name "local identifier"@en,
+                "identificateur local"@fr,
+                "lokale identifier"@nl ;
+            sh:path premis:identifier ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:IntellectualEntity ;
+            sh:description "Een intellectuele entiteit die deel uit maakt van deze intellectuele entiteit."@nl ;
+            sh:path rel:hsp ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:IntellectualEntity ;
+            sh:description "De intellectuele entiteit waarvan deze intellectuele entiteit deel uit maakt."@nl ;
+            sh:path rel:isp ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:Representation ;
+            sh:description "Een representatie van de intellectuele entiteit."@nl ;
+            sh:path rel:isr ;
+            sh:severity sh:Violation ],
+        [ sh:class haObj:DigitalRepresentation ;
+            sh:description "De archiefmaster van de intellectuele entiteit."@nl ;
+            sh:maxCount 1 ;
+            sh:path haObj:hasMaster ;
+            sh:severity sh:Violation ],
+        [ sh:class haObj:DigitalRepresentation ;
+            sh:description "De mezzanine representatie van de intellectuele entiteit."@nl ;
+            sh:maxCount 1 ;
+            sh:path haObj:hasMezzanine ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass premis:IntellectualEntity .
+
+haObj:ObjectShape a sh:NodeShape ;
+    sh:property [ sh:class premis:Object ;
+            sh:description "Een generieke relatie tussen intellectuele entiteiten, files, of representaties."@nl ;
+            sh:path premis:relationship ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass premis:Object .
+
+haObj:PhysicalRepresentationShape a sh:NodeShape ;
+    sh:property [ sh:class premis:StorageMedium ;
+            sh:description "Het type opslagmedium."@nl ;
+            sh:path premis:medium ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haObj:PhysicalRepresentation .
+
+haObj:StorageLocationShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:description "The file path of the storage location."@en,
+                "Het pad van de opslaglocatie."@nl ;
+            sh:minCount 1 ;
+            sh:name "file path"@en,
+                "opslagpad"@nl ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:StorageMedium ;
+            sh:description "Het type opslagmedium."@nl,
+                "The type of storage medium."@nl ;
+            sh:name "medium"@en,
+                "medium"@nl ;
+            sh:path premis:medium ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass premis:StorageLocation .
+
+rel:doc a owl:ObjectProperty ;
+    rdfs:label "documents"@en,
+        "généralise"@fr,
+        "documenteert"@nl ;
+    rdfs:comment "A relationship between information about an environment object and the environment object itself. For instance, a user manual has a “documents” relationship to the Open Office software application. Has a reciprocal relationship of isDocumentedIn."@en,
+        "Une relation entre les informations sur un objet d'environnement et l'objet d'environnement lui-même. Par exemple, un manuel d'utilisation a une relation 'documents' avec l'application logicielle Open Office. A une relation réciproque avec isDocumentedIn."@fr,
+        "Een relatie tussen informatie over een omgevingsobject en het omgevingsobject zelf. Bijvoorbeeld, een gebruikershandleiding heeft een 'documents'-relatie met de Open Office-softwareapplicatie. Heeft een wederkerige relatie met isDocumentedIn."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:hsp a owl:ObjectProperty ;
+    rdfs:label "has Part"@en,
+        "a partie"@fr,
+        "heeft onderdeel"@nl ;
+    rdfs:comment "The object contains the related object when these are the same object category. For instance, a larger Intellectual Entity has another Intellectual Entity as a part, or a compound file (e.g. archive.tar) contains another file (e.g. text.xml). Has the reciprocal relationship of isPartOf."@en,
+        "L'objet contient l'objet lié lorsqu'il s'agit de la même catégorie d'objet. Par exemple, une entité intellectuelle plus grande a une autre entité intellectuelle comme partie, ou un fichier composé (par exemple archive.tar) contient un autre fichier (par exemple text.xml). A une relation réciproque avec isPartOf."@fr,
+        "Het object bevat het gerelateerde object wanneer ze tot dezelfde objectcategorie behoren. Bv. een grotere intellectuele entiteit bevat een andere intellectuele entiteit, of een samengesteld bestand (bv. archive.tar) bevat een ander bestand (bv. text.xml). Heeft een wederkerige relatie met isPartOf."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:hsr a owl:ObjectProperty ;
+    rdfs:label "has Root"@en,
+        "est à la base de"@fr,
+        "ligt aan de basis van"@nl ;
+    rdfs:comment "For a representation only, the related object is the file that must be processed first in order to render the representation. It implies that a compound object (i.e. one made up of multiple files) requires that one file be picked up first as its root to render it."@en,
+        "Uniquement pour une représentation (representation), l'objet lié est le fichier (file) qui doit être traité en premier afin de rendre la représentation comme il faut. Cela implique qu'un objet composé (c'est-à-dire composé de plusieurs fichiers (files)) nécessite qu'un fichier (file) soit pris en premier comme racine/base pour le rendre."@fr,
+        "Alleen voor een representatie (representation) is het gerelateerde object het bestand (file) dat als eerste moet worden verwerkt om de representatie (representation) te kunnen renderen. Dit impliceert dat een samengesteld object (d.w.z. een object dat uit meerdere bestanden (file) bestaat) vereist dat één bestand (file) als eerste als root/basis wordt verwerkt om het te renderen."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:hss a owl:ObjectProperty ;
+    rdfs:label "has Source"@en,
+        "a une source"@fr,
+        "heeft een bron"@nl ;
+    rdfs:comment "A relationship in which the object is derived from the related object as a result of a transformation. For instance, an HTML file that is the product of a migration from a file encoded in the WordStar format has that Wordstar file as its source. Also applies to the relationship between the original and a disk image. Has a reciprocal relationship of isSourceOf."@en,
+        "Une relation dans laquelle l'objet est dérivé de l'objet lié à la suite d'une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar a ce fichier Wordstar comme source. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec isSourceOf."@fr,
+        "Een relatie waarbij het object is afgeleid van het verwante object als resultaat van een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat gecodeerd is in het WordStar-formaat, heeft dat Wordstar-bestand als zijn bron. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met isSourceOf."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:inc a owl:ObjectProperty ;
+    rdfs:label "includes"@en,
+        "inclut"@fr,
+        "bevat"@nl ;
+    rdfs:comment "A relationship in which the described object includes the referenced object, when objects have different object categories. For instance, a representation includes files. Has a reciprocal relationship of isIncludedIn."@en,
+        "Une relation dans laquelle l'objet décrit inclut l'objet référencé, lorsque les objets ont des catégories d'objets différentes. Par exemple, une représentation (representation) inclut des fichiers (files). A une relation réciproque avec isIncludedIn."@fr,
+        "Een relatie waarbij het beschreven object het object bevat waarnaar wordt verwezen, wanneer objecten verschillende objectcategorieën hebben. Bijvoorbeeld, een representatie (representation) bevat bestanden (files). Heeft een wederkerige relatie met isIncludedIn."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:isi a owl:ObjectProperty ;
+    rdfs:label "is Included in"@en,
+        "est inclus dans"@fr,
+        "is inbegrepen in"@nl ;
+    rdfs:comment "A relationship in which the described object is included in the referenced object, when the objects have different object categories, for instance, a bitstream to a file, a file to a representation. Has a reciprocal relationship of includes."@en,
+        "Une relation dans laquelle l'objet décrit est inclus dans l'objet référencé, lorsque les objets ont des catégories d'objets différentes, par exemple, un flux binaire (bitstream) dans un fichier (file), un fichier (file) dans une représentation (representation). A une relation réciproque avec includes."@fr,
+        "Een relatie waarbij het beschreven object is inbegrepen in het object waarnaar wordt verwezen, wanneer de objecten verschillende objectcategorieën hebben, bijvoorbeeld een bitstream in een bestand (file), een bestand (file) in een representatie (representation). Heeft een wederkerige relatie met includes."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:isp a owl:ObjectProperty ;
+    rdfs:label "is Part Of"@en,
+        "fait partie de"@fr,
+        "maakt onderdeel uit van"@nl ;
+    rdfs:comment "A relationship in which the object is contained in the related object when these are the same object category. For instance a Web page intellectual entity is part of a larger Web site intellectual entity. Has a reciprocal relationship of hasPart."@en,
+        "Une relation dans laquelle l'objet est contenu dans l'objet lié lorsque ceux-ci sont de la même catégorie d'objet. Par exemple, une entité intellectuelle de site Web fait partie d'une entité intellectuelle de site Web plus grande. A une relation réciproque avec hasPart."@fr,
+        "Een relatie waarbij het object deel uitmaakt van het gerelateerde object wanneer ze behoren tot dezelfde objectcategorie. Bv. een webpagina intellectuele entiteit maakt onderdeel uit van een grotere webpagina intellectuele entiteit. Heeft een wederkerige relatie met hasPart."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:sup a owl:ObjectProperty ;
+    rdfs:label "supersedes"@en,
+        "remplace"@fr,
+        "vervangt"@nl ;
+    rdfs:comment "A relationship between an environment object and another where the described object replaces another. This allows for an audit trail of environments to be maintained. Has a reciprocal relationship of isSupersededBy."@en,
+        "Une relation entre un objet d'environnement et un autre objet où l'objet décrit en remplace un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec isSupersededBy."@fr,
+        "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object een ander object vervangt. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met isSupersededBy."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+dct:format a rdf:Property ;
+    rdfs:label "Format"@en,
+        "Format"@fr,
+        "Formaat"@nl ;
+    dct:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
+    dct:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
+    dct:issued "2008-01-14"^^xsd:date ;
+    dct:modified "2008-01-14"^^xsd:date ;
+    rdfs:comment "The file format, physical medium, or dimensions of the resource."@en,
+        "Le format du fichier, le support de stockage ou les dimensions du fichier."@fr,
+        "Het bestandsformaat, het opslagmedium of de afmetingen van het bestand."@nl ;
+    rdfs:isDefinedBy dct: ;
+    rdfs:range dct:MediaTypeOrExtent ;
+    rdfs:subPropertyOf dc11:format .
+
+ebucore:hasMediaFragment a rdf:Property ;
+    rdfs:label "Fragment"@en,
+        "a un fragment (de média)"@fr,
+        "heeft (media)fragment"@nl ;
+    rdfs:comment "To define relation to MediaFragments within a MediaResource."@en,
+        "Pour définir une relation entre des MediaFragments dans une MediaResource."@fr,
+        "Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."@nl ;
+    rdfs:domain ebucore:MediaResource ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:MediaFragment ;
+    owl:equivalentProperty ma:hasFragment ;
+    owl:inverseOf ebucore:isMediaFragmentOf .
+
+ebucore:hasMimeType a rdf:Property ;
+    rdfs:label "Mime type"@en,
+        "Mime type"@fr,
+        "Mime type"@nl ;
+    rdfs:comment "To specify the Mime type of a Resource."@en,
+        "Pour spécifier le type MIME d'une ressource."@fr,
+        "Om het MIME type van een resource te specificeren."@nl ;
+    rdfs:domain ebucore:MediaResource ;
+    rdfs:range ebucore:MimeType,
+        xsd:string ;
+    rdfs:subPropertyOf ebucore:hasFormat .
+
+edm:isNextInSequence a owl:ObjectProperty ;
+    rdfs:label "Is Next In Sequence Of"@en,
+        "Est le prochain dans la séquence de"@fr,
+        "Is de volgende in de reeks van"@nl ;
+    rdfs:comment "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."@en,
+        "edm:isNextInSequence met en relation deux ressources S et R qui sont des parties ordonnées de la même ressource A, et telles que S vient immédiatement après R dans l'ordre créé par leur appartenance à A."@fr,
+        "edm:isNextInSequence relateert twee resources S en R die geordende onderdelen zijn van dezelfde resource A, en wel zodanig dat S onmiddellijk na R komt in de volgorde die ontstaat doordat zij onderdelen zijn van A."@nl ;
+    rdfs:isDefinedBy edm: ;
+    rdfs:subPropertyOf dc11:relation ;
+    skos:definition "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."@en .
+
+premis:fixity a owl:ObjectProperty ;
+    rdfs:label "has fixity"@en,
+        "a fixity"@fr,
+        "heeft fixity"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( premis:Bitstream premis:File ) ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Fixity .
+
+premis:identifier a owl:ObjectProperty ;
+    rdfs:label "has identifier"@en,
+        "a identifiant"@fr,
+        "heeft identificatiecode"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Identifier .
+
+premis:storedAt a owl:ObjectProperty ;
+    rdfs:label "stored at"@en,
+        "stocké à"@fr,
+        "opgeslagen te"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( premis:Bitstream premis:File premis:Representation ) ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:StorageLocation .
+
+seq:directlyPrecedes a owl:ObjectProperty ;
+    rdfs:label "directly precedes"@en,
+        "précède directement"@fr,
+        "gaat direct vooraf aan"@nl ;
+    rdfs:comment "The intransitive precedes relation. For example, Monday directly precedes Tuesday. Directness of precedence depends on the designer conceptualization."@en,
+        "La relation intransitive de 'préceder'. Par exemple, lundi précède directement mardi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr,
+        "De intransitieve 'gaat-vooraf-aan' relatie. Bv. maandag gaat direct vooraf aan dinsdag. De mate van 'direct-vooraf-gaan-aan' hangt af van het ontwerp van de bedenker."@nl ;
+    rdfs:domain owl:Thing ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+    rdfs:range owl:Thing ;
+    rdfs:subPropertyOf seq:precedes .
+
+seq:precedes a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "precedes"@en,
+        "précède"@fr,
+        "gaat vooraf aan"@nl ;
+    rdfs:comment "A relation between entities, expressing a 'sequence' schema. E.g. 'year 1999 precedes 2000', 'deciding what coffee to use' precedes 'preparing coffee', 'World War II follows World War I', 'in the Milan to Rome autoroute, Bologna precedes Florence', etc. It can then be used between tasks, processes, time intervals, spatially locate objects, situations, etc. Subproperties can be defined in order to distinguish the different uses."@en,
+        "Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 1999 précède l'année 2000', 'décider quel café à utiliser' précède 'préparer du café', 'sur l'autoroute de Milan à Rome, Bologne précède Florence', etc. Il peut être utilisé avec des tâches, des processus, des intervalles de temps, des objets dans l'espace, des situations, etc. Des sous-propriétés (subproperties) peuvent être définies pour distinguer les différentes utilisations."@fr,
+        "Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 1999 gaat vooraf aan het jaar 2000', 'beslissen welke koffie te gebruiken' gaat vooraf aan 'koffie klaarmaken', 'op de autoweg van Milaan naar Rome, gaat Bologna vooraf aan Florence', etc. Het kan gebruikt worden bij taken, processen, tijdsintervallen, objecten in de ruimte, situaties, etc. Subeigenschappen (subproperties) kunnen gedefinieerd worden om de verschillende gebruiken te onderscheiden."@nl ;
+    rdfs:domain owl:Thing ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+    rdfs:range owl:Thing ;
+    owl:inverseOf seq:follows .
+
+ebucore:isMediaFragmentOf a rdf:Property ;
+    rdfs:label "Media fragment source"@en,
+        "Source du fragment de média"@fr,
+        "Bron van het mediafragment"@nl,
+        "Media fragment bron"@nl ;
+    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to"@en,
+        "To identify the Media Resource to which a Media Fragment belongs to."@en,
+        "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
+        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl,
+        "Om de mediabron te identificeren waartoe een mediafragment behoort"@nl ;
+    rdfs:domain ebucore:MediaFragment ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:MediaResource .
+
+premis:medium a owl:ObjectProperty ;
+    rdfs:label "has medium"@en,
+        "a un support"@fr,
+        "heeft als medium"@nl ;
+    rdfs:domain premis:StorageLocation ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:StorageMedium .
+
+seq:follows a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "follows"@en,
+        "suit"@fr,
+        "volgt op"@nl ;
+    rdfs:comment "A relation between entities, expressing a 'sequence' schema. E.g. 'year 2000 follows 1999', 'preparing coffee' follows 'deciding what coffee to use', 'II World War follows I World War', etc. It can be used between tasks, processes or time intervals, and subproperties would fit best in order to distinguish the different uses."@en,
+        "Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 2000 suit l'année 1999', 'préparer du café' suit 'décider quel café à utiliser', 'la Seconde Guerre mondiale suit la Première Guerre mondiale', etc. Il peut être utilisé avec des tâches, des processus ou des intervalles de temps, et des sous-propriétés seraient les meilleures adaptées pour distinguer les différentes utilisations."@fr,
+        "Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 2000 volgt op het jaar 1999', 'koffie klaarmaken' volgt op 'beslissen welke koffie te gebruiken', 'WO II volgt op WO I', etc. Het kan gebruikt worden bij taken, processen, of tijdsintervallen, en subeigenschappen (subproperties) zouden het best passen om de verschillende gebruiken te onderscheiden."@nl ;
+    rdfs:domain owl:Thing ;
+    rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
+    rdfs:range owl:Thing .
+
+haObj:hasAccesscopy a rdf:Property ;
+    rdfs:label "has access copy"@en,
+        "a copie d'accès"@fr,
+        "heeft toegangskopie"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:isr ;
+    owl:inverseOf haObj:isAccesscopyOf .
+
+haObj:hasMaster a rdf:Property ;
+    rdfs:label "has archiving master"@en,
+        "a copie principale"@fr,
+        "heeft archiefmaster"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:isr ;
+    owl:inverseOf haObj:isMasterOf .
+
+haObj:hasMezzanine a rdf:Property ;
+    rdfs:label "has mezzanine format"@en,
+        "a format mezzanine"@fr,
+        "heeft mezzanineformaat"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:isr ;
+    owl:inverseOf haObj:isMezzanineOf .
+
+haObj:isAccesscopyOf a rdf:Property ;
+    rdfs:label "is access copy of"@en,
+        "est copie d'accès de"@fr,
+        "is toegangskopie van"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:rep ;
+    owl:inverseOf haObj:hasAccesscopy .
+
+haObj:isMasterOf a rdf:Property ;
+    rdfs:label "is archiving master of"@en,
+        "est la copie principale de"@fr,
+        "is archiefmaster van"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:rep ;
+    owl:inverseOf haObj:hasMaster .
+
+haObj:isMezzanineOf a rdf:Property ;
+    rdfs:label "is mezzanine format of"@en,
+        "est format mezzanine de"@fr,
+        "is mezzanineformaat van"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:rep ;
+    owl:inverseOf haObj:hasMezzanine .
+
+rel:isr a owl:ObjectProperty ;
+    rdfs:label "is Represented by"@en,
+        "est représenté par"@fr,
+        "wordt gerepresenteerd door"@nl ;
+    rdfs:comment "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en,
+        "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
+        "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+rel:rep a owl:ObjectProperty ;
+    rdfs:label "represents"@en,
+        "représente"@fr,
+        "representeert"@nl ;
+    rdfs:comment "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en,
+        "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr,
+        "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship .
+
+haObj: a owl:Ontology ;
+    dct:author [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ],
+        [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ] ;
+    dct:created "2022-05-16" ;
+    dct:description "Data model to describe objects."@en,
+        "Modèle de données pour décrire des objets."@fr,
+        "Datamodel voor het beschrijven van objecten."@nl ;
+    dct:modified "2022-06-18" ;
+    dct:title "Data model Objects"@en,
+        "Modèle de données Objets"@fr,
+        "Datamodel Objecten"@nl ;
+    pav:version "0.0.1" ;
+    vann:preferredNamespacePrefix "haObj" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
+    owl:imports rel:,
+        premis:,
+        prov: .
+
+premis:relationship a owl:ObjectProperty ;
+    rdfs:label "has relationship"@en,
+        "a une relation"@fr,
+        "heeft een relatie"@nl ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( premis:Agent premis:Object ) ] ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Object ;
+    rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/relationshipSubType> .
+

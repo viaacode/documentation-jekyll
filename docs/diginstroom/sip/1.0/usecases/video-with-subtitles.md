@@ -2,10 +2,11 @@
 layout:       default
 title:        Video file with subtitles
 parent:       Use cases
+grand_parent:  SIP Specification 1.0
 nav_order:    2
 nav_exclude:  false
 has_children: false
-sip_profile:  basic
+sip_profile:  Basic
 ---
 # Use Case: a video file with subtitles
 
@@ -119,7 +120,7 @@ Note that the identifier is used to link the `dc.xml` file to the corresponding 
 
   <dcterms:license>VIAA-PUBLIEK-METADATA-LTD</dcterms:license>
   <dcterms:publisher>the publisher of the episode</dcterms:publisher>
-  <dcterms:rightsHolder schema:roleName="auteursrechthouder">the rights owner</dcterms:rightsHolder>
+  <dcterms:rightsHolder>the rights owner</dcterms:rightsHolder>
 
   <dcterms:subject>Keyword 1</dcterms:subject>
   <dcterms:subject>Keyword 2</dcterms:subject>
