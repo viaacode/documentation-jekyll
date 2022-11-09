@@ -1624,13 +1624,10 @@ dcterms:medium a rdf:Property ;
 ebucore:isMediaFragmentOf a rdf:Property ;
     rdfs:label "Media fragment source"@en,
         "Source du fragment de média"@fr,
-        "Bron van het mediafragment"@nl,
-        "Media fragment bron"@nl ;
-    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to"@en,
-        "To identify the Media Resource to which a Media Fragment belongs to."@en,
+        "Bron van het mediafragment"@nl ;
+    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to."@en,
         "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
-        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl,
-        "Om de mediabron te identificeren waartoe een mediafragment behoort"@nl ;
+        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl ;
     rdfs:domain ebucore:MediaFragment ;
     rdfs:isDefinedBy ebucore: ;
     rdfs:range ebucore:MediaResource .
