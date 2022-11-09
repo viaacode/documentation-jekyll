@@ -501,6 +501,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 | `<Kunstenaar />` | |
 | `<Make-up />` | |
 | `<Muzikant />` | |
+| `<Monteur />` | |
 | `<Nieuwsanker />` | |
 | `<Omroeper />` | |
 | `<Onderzoeker />` | |
