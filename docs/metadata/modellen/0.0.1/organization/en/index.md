@@ -18,6 +18,9 @@ Data model Organizations
 
 **SHACL file:** [organization.shacl.ttl](organization.shacl.ttl)
 
+**Other languages:**
+[nl](../nl)
+
 **Authors:**
 [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Milan Valadou](mailto:milan.valadou@meemoo.be)

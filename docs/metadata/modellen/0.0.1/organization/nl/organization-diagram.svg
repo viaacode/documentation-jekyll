@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="876px" preserveAspectRatio="none" style="width:2056px;height:876px;background:#FFFFFF;" version="1.1" viewBox="0 0 2056 876" width="2056px" zoomAndPan="magnify"><defs/><g><!--MD5=[43b38afcb77f6ae9622ecf1a646f1cac]
+class org_Organization--><a href="#org%3AOrganization" target="_top" title="#org%3AOrganization" xlink:actuate="onRequest" xlink:href="#org%3AOrganization" xlink:show="new" xlink:title="#org%3AOrganization" xlink:type="simple"><g id="elem_org_Organization"><rect codeLine="23" fill="#F1F1F1" height="83.1875" id="org_Organization" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="307" x="825.5" y="212"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="95" x="864" y="229.9951">Organisatie</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="963" y="229.9951">(org:Organization)</text><line style="stroke:#181818;stroke-width:0.5;" x1="826.5" x2="1131.5" y1="238.2969" y2="238.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="831.5" y="255.292">alternatieve naam/label :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="1015.5" y="255.292">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1088.5" y="255.292">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="831.5" y="271.5889">beschrijving :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="98" x="931.5" y="271.5889">rdf:langString</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1033.5" y="271.5889">[0..1]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="831.5" y="287.8857">voorkeursnaam/-label :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="1000.5" y="287.8857">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1073.5" y="287.8857">[1..1]</text></g></a><!--MD5=[74528efb1e12dffc36a1e377d0e6cbd4]
+class org_OrganizationalUnit--><a href="#org%3AOrganizationalUnit" target="_top" title="#org%3AOrganizationalUnit" xlink:actuate="onRequest" xlink:href="#org%3AOrganizationalUnit" xlink:show="new" xlink:title="#org%3AOrganizationalUnit" xlink:type="simple"><g id="elem_org_OrganizationalUnit"><rect codeLine="14" fill="#F1F1F1" height="26.2969" id="org_OrganizationalUnit" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="345" x="767.5" y="430.5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="163" x="770.5" y="448.4951">Organisatie-eenheid</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="937.5" y="448.4951">(org:OrganizationalUnit)</text></g></a><!--MD5=[98646e06e59ada397c6706dd93365df6]
+class haOrg_ContentPartner--><a href="#haOrg%3AContentPartner" target="_top" title="#haOrg%3AContentPartner" xlink:actuate="onRequest" xlink:href="#haOrg%3AContentPartner" xlink:show="new" xlink:title="#haOrg%3AContentPartner" xlink:type="simple"><g id="elem_haOrg_ContentPartner"><rect codeLine="16" fill="#F1F1F1" height="26.2969" id="haOrg_ContentPartner" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="308" x="1584" y="94"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="126" x="1587" y="111.9951">Contentpartner</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="172" x="1717" y="111.9951">(haOrg:ContentPartner)</text></g></a><!--MD5=[8ada0c22cf4a79b131c169b6b4fcab5f]
+class haOrg_ServiceProvider--><a href="#haOrg%3AServiceProvider" target="_top" title="#haOrg%3AServiceProvider" xlink:actuate="onRequest" xlink:href="#haOrg%3AServiceProvider" xlink:show="new" xlink:title="#haOrg%3AServiceProvider" xlink:type="simple"><g id="elem_haOrg_ServiceProvider"><rect codeLine="18" fill="#F1F1F1" height="26.2969" id="haOrg_ServiceProvider" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="341" x="821.5" y="94"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="160" x="824.5" y="111.9951">Dienstenleverancier</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="988.5" y="111.9951">(haOrg:ServiceProvider)</text></g></a><!--MD5=[b6c5c9623cd0245e03340bda97f76277]
+class haOrg_ServiceConsumer--><a href="#haOrg%3AServiceConsumer" target="_top" title="#haOrg%3AServiceConsumer" xlink:actuate="onRequest" xlink:href="#haOrg%3AServiceConsumer" xlink:show="new" xlink:title="#haOrg%3AServiceConsumer" xlink:type="simple"><g id="elem_haOrg_ServiceConsumer"><rect codeLine="20" fill="#F1F1F1" height="26.2969" id="haOrg_ServiceConsumer" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="331" x="1197.5" y="94"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="138" x="1200.5" y="111.9951">Dienstenafnemer</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="183" x="1342.5" y="111.9951">(haOrg:ServiceConsumer)</text></g></a><!--MD5=[8bd0d3c95e9c81eb5e2f554bc3dab169]
+class haOrg_EducationalOrganization--><a href="#haOrg%3AEducationalOrganization" target="_top" title="#haOrg%3AEducationalOrganization" xlink:actuate="onRequest" xlink:href="#haOrg%3AEducationalOrganization" xlink:show="new" xlink:title="#haOrg%3AEducationalOrganization" xlink:type="simple"><g id="elem_haOrg_EducationalOrganization"><rect codeLine="29" fill="#F1F1F1" height="26.2969" id="haOrg_EducationalOrganization" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="429" x="357.5" y="94"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="186" x="360.5" y="111.9951">Educatieve organisatie</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="233" x="550.5" y="111.9951">(haOrg:EducationalOrganization)</text></g></a><!--MD5=[a51a0284a479f27e3c7e4fe6656ebedb]
+class haOrg_EducationalPartner--><a href="#haOrg%3AEducationalPartner" target="_top" title="#haOrg%3AEducationalPartner" xlink:actuate="onRequest" xlink:href="#haOrg%3AEducationalPartner" xlink:show="new" xlink:title="#haOrg%3AEducationalPartner" xlink:type="simple"><g id="elem_haOrg_EducationalPartner"><rect codeLine="24" fill="#F1F1F1" height="26.2969" id="haOrg_EducationalPartner" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="359" x="1312.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="154" x="1315.5" y="24.9951">Educatieve partner</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="1473.5" y="24.9951">(haOrg:EducationalPartner)</text></g></a><!--MD5=[3043daa978ad1dc3b045bd80369c4046]
+class haOrg_EducationalPublisher--><a href="#haOrg%3AEducationalPublisher" target="_top" title="#haOrg%3AEducationalPublisher" xlink:actuate="onRequest" xlink:href="#haOrg%3AEducationalPublisher" xlink:show="new" xlink:title="#haOrg%3AEducationalPublisher" xlink:type="simple"><g id="elem_haOrg_EducationalPublisher"><rect codeLine="26" fill="#F1F1F1" height="26.2969" id="haOrg_EducationalPublisher" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="387" x="221.5" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="170" x="224.5" y="24.9951">Educatieve uitgeverij</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="207" x="398.5" y="24.9951">(haOrg:EducationalPublisher)</text></g></a><!--MD5=[28f5da8ec262186bad905b7927b9d7dc]
+class haOrg_School--><a href="#haOrg%3ASchool" target="_top" title="#haOrg%3ASchool" xlink:actuate="onRequest" xlink:href="#haOrg%3ASchool" xlink:show="new" xlink:title="#haOrg%3ASchool" xlink:type="simple"><g id="elem_haOrg_School"><rect codeLine="28" fill="#F1F1F1" height="26.2969" id="haOrg_School" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="170" x="644" y="7"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="54" x="647" y="24.9951">School</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="106" x="705" y="24.9951">(haOrg:School)</text></g></a><!--MD5=[744d63da3a12d218f027dcd41cf48518]
+class org_Site--><a href="#org%3ASite" target="_top" title="#org%3ASite" xlink:actuate="onRequest" xlink:href="#org%3ASite" xlink:show="new" xlink:title="#org%3ASite" xlink:type="simple"><g id="elem_org_Site"><rect codeLine="30" fill="#F1F1F1" height="26.2969" id="org_Site" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="155" x="219.5" y="430.5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="77" x="222.5" y="448.4951">Vestiging</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="303.5" y="448.4951">(org:Site)</text></g></a><!--MD5=[3b98c358cc3dfe2f40ebea9e91744b91]
+class org_Post--><a href="#org%3APost" target="_top" title="#org%3APost" xlink:actuate="onRequest" xlink:href="#org%3APost" xlink:show="new" xlink:title="#org%3APost" xlink:type="simple"><g id="elem_org_Post"><rect codeLine="31" fill="#F1F1F1" height="26.2969" id="org_Post" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="137" x="1476.5" y="630"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="56" x="1479.5" y="647.9951">Positie</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="1539.5" y="647.9951">(org:Post)</text></g></a><!--MD5=[d84c8879ed35bbb36268b648e2fd35b8]
+class org_Role--><a href="#org%3ARole" target="_top" title="#org%3ARole" xlink:actuate="onRequest" xlink:href="#org%3ARole" xlink:show="new" xlink:title="#org%3ARole" xlink:type="simple"><g id="elem_org_Role"><rect codeLine="32" fill="#F1F1F1" height="50.5938" id="org_Role" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="292" x="1399" y="802"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="26" x="1494.5" y="819.9951">Rol</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="1524.5" y="819.9951">(org:Role)</text><line style="stroke:#181818;stroke-width:0.5;" x1="1400" x2="1690" y1="828.2969" y2="828.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="1405" y="845.292">voorkeursnaam/-label :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="1574" y="845.292">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1647" y="845.292">[1..1]</text></g></a><!--MD5=[147e1b21a787ec139e8e560f6c108ca0]
+class schema_Person--><a href="#schema%3APerson" target="_top" title="#schema%3APerson" xlink:actuate="onRequest" xlink:href="#schema%3APerson" xlink:show="new" xlink:title="#schema%3APerson" xlink:type="simple"><g id="elem_schema_Person"><rect codeLine="33" fill="#F1F1F1" height="83.1875" id="schema_Person" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="224" x="1679" y="402"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="65" x="1697" y="419.9951">Persoon</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="119" x="1766" y="419.9951">(schema:Person)</text><line style="stroke:#181818;stroke-width:0.5;" x1="1680" x2="1902" y1="428.2969" y2="428.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="1685" y="445.292">email :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="1737" y="445.292">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1810" y="445.292">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="97" x="1685" y="461.5889">familienaam :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="1786" y="461.5889">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1859" y="461.5889">[1..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="1685" y="477.8857">voornaam :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="1769" y="477.8857">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="1842" y="477.8857">[1..n]</text></g></a><!--MD5=[50888e05883a71d72e74a45d1345c8e9]
+class schema_PostalAddress--><a href="#schema%3APostalAddress" target="_top" title="#schema%3APostalAddress" xlink:actuate="onRequest" xlink:href="#schema%3APostalAddress" xlink:show="new" xlink:title="#schema%3APostalAddress" xlink:type="simple"><g id="elem_schema_PostalAddress"><rect codeLine="34" fill="#F1F1F1" height="132.0781" id="schema_PostalAddress" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="263" x="187.5" y="577"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="82" x="190.5" y="594.9951">Postadres</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="276.5" y="594.9951">(schema:PostalAddress)</text><line style="stroke:#181818;stroke-width:0.5;" x1="188.5" x2="449.5" y1="603.2969" y2="603.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="193.5" y="620.292">adres :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="245.5" y="620.292">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="318.5" y="620.292">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="193.5" y="636.5889">gemeente :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="281.5" y="636.5889">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="354.5" y="636.5889">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="39" x="193.5" y="652.8857">land :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="236.5" y="652.8857">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="309.5" y="652.8857">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="193.5" y="669.1826">postbusnummer :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="324.5" y="669.1826">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="397.5" y="669.1826">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="77" x="193.5" y="685.4795">postcode :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="274.5" y="685.4795">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="347.5" y="685.4795">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="193.5" y="701.7764">provincie :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="273.5" y="701.7764">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="346.5" y="701.7764">[0..n]</text></g></a><!--MD5=[6f1714c9f08a1cbf9652d3ead1aaeef5]
+class schema_ContactPoint--><a href="#schema%3AContactPoint" target="_top" title="#schema%3AContactPoint" xlink:actuate="onRequest" xlink:href="#schema%3AContactPoint" xlink:show="new" xlink:title="#schema%3AContactPoint" xlink:type="simple"><g id="elem_schema_ContactPoint"><rect codeLine="36" fill="#F1F1F1" height="83.1875" id="schema_ContactPoint" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="348" x="7" y="786"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="172" x="10" y="803.9951">Aanspreek-/meldpunt</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="186" y="803.9951">(schema:ContactPoint)</text><line style="stroke:#181818;stroke-width:0.5;" x1="8" x2="354" y1="812.2969" y2="812.2969"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="13" y="829.292">contacttype :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="116" y="829.292">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="189" y="829.292">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="54" x="13" y="845.5889">e-mail :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="71" y="845.5889">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="144" y="845.5889">[0..n]</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="131" x="13" y="861.8857">telefoonnummer :</text><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="69" x="148" y="861.8857">xsd:string</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="221" y="861.8857">[0..n]</text></g></a><!--MD5=[813c236bc78226540a167240ba591789]
+class haOrg_Logo--><a href="#haOrg%3ALogo" target="_top" title="#haOrg%3ALogo" xlink:actuate="onRequest" xlink:href="#haOrg%3ALogo" xlink:show="new" xlink:title="#haOrg%3ALogo" xlink:type="simple"><g id="elem_haOrg_Logo"><rect codeLine="37" fill="#F1F1F1" height="26.2969" id="haOrg_Logo" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="142" x="410" y="430.5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="39" x="413" y="448.4951">Logo</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="456" y="448.4951">(haOrg:Logo)</text></g></a><!--MD5=[113562c91e188bc0900e674cbbe9a08d]
+class haOrg_OrganizationType--><a href="#haOrg%3AOrganizationType" target="_top" title="#haOrg%3AOrganizationType" xlink:actuate="onRequest" xlink:href="#haOrg%3AOrganizationType" xlink:show="new" xlink:title="#haOrg%3AOrganizationType" xlink:type="simple"><g id="elem_haOrg_OrganizationType"><rect codeLine="38" fill="#F1F1F1" height="26.2969" id="haOrg_OrganizationType" rx="3.5" ry="3.5" style="stroke:#181818;stroke-width:0.5;" width="327" x="1147.5" y="430.5"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="131" x="1150.5" y="448.4951">Organisatietype</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="1285.5" y="448.4951">(haOrg:OrganizationType)</text></g></a><!--MD5=[7358a6c3d03c1d240680fcb8b2ea3aef]
+link org_Organization to schema_ContactPoint--><g id="link_org_Organization_schema_ContactPoint"><path codeLine="42" d="M825.171,258.066 C610.091,264.585 240.769,281.962 197,325 C73.4635,446.475 132.226,681.907 164.591,780.9005 " fill="none" id="org_Organization-to-schema_ContactPoint" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="166.206,785.7962,167.1844,775.9961,164.6393,781.048,159.5873,778.5028,166.206,785.7962" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="124.0794,534.2359,132.9958,530.9268,129.3479,526.3179,124.0794,534.2359" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="137" y="528.0669">aanspreekpunt</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="170" y="543.1997">[0..n]</text></g><!--MD5=[2258ed7c25caf02fedd593714a2e4180]
+link org_Organization to haOrg_OrganizationType--><g id="link_org_Organization_haOrg_OrganizationType"><path codeLine="48" d="M1080.71,295.154 C1101.03,304.277 1121.97,314.414 1141,325 C1198.38,356.915 1260.59,403.244 1291.41,427.071 " fill="none" id="org_Organization-to-haOrg_OrganizationType" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1295.72,430.419,1291.069,421.7375,1291.7723,427.3505,1286.1594,428.0538,1295.72,430.419" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1223.2379,351.2861,1217.131,343.9953,1214.0119,348.9772,1223.2379,351.2861" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="74" x="1228" y="345.5669">classificatie</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1250" y="360.6997">[0..n]</text></g><!--MD5=[78c2fb670adf3a477ffb758d3d9830c9]
+link org_Organization to schema_Person--><g id="link_org_Organization_schema_Person"><path codeLine="50" d="M1132.57,263.751 C1255.62,273.465 1416.69,292.047 1473,325 C1495.71,338.29 1486.73,357.979 1509,372 C1563.95,406.603 1589,386.239 1652,402 C1659.13,403.784 1666.45,405.69 1673.82,407.665 " fill="none" id="org_Organization-to-schema_Person" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1678.92,409.043,1671.2698,402.8402,1674.092,407.7428,1669.1895,410.565,1678.92,409.043" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1518.8321,349.9176,1510.8459,344.7531,1509.3355,350.4336,1518.8321,349.9176" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="89" x="1524.5" y="345.5669">heeft account</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="1523" y="360.6997">manager [0..1]</text></g><!--MD5=[d7e7aa524ec3079b28276e216896729b]
+link schema_Person to org_Organization--><g id="link_schema_Person_org_Organization"><path codeLine="117" d="M1703.08,401.906 C1687.97,393.091 1672.98,383.052 1660,372 C1639.97,354.94 1646.93,337.914 1624,325 C1543.54,279.673 1301.54,263.488 1137.94,257.709 " fill="none" id="schema_Person-to-org_Organization" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1132.64,257.524,1141.4976,261.8302,1137.6371,257.6954,1141.7718,253.8349,1132.64,257.524" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1660.1552,347.4631,1668.1929,352.547,1669.6461,346.8516,1660.1552,347.4631" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="1684.5" y="338.0669">is account</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="1674" y="353.1997">manager van</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1702" y="368.3325">[0..n]</text></g><!--MD5=[9a1740aa6b9fa8179cb7396216f8e3b5]
+link org_Organization to org_OrganizationalUnit--><g id="link_org_Organization_org_OrganizationalUnit"><path codeLine="52" d="M864.432,295.153 C853.218,303.397 843.309,313.248 836,325 C824.968,342.738 826.215,353.545 836,372 C850.082,398.559 879.142,416.954 902.972,428.278 " fill="none" id="org_Organization-to-org_OrganizationalUnit" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="907.662,430.448,901.1746,423.0376,903.1245,428.3478,897.8143,430.2977,907.662,430.448" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="842.3904,353.4356,842.6981,343.93,837.0521,345.5645,842.3904,353.4356" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="861.5" y="345.5669">heeft een</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="89" x="850" y="360.6997">eenheid [0..n]</text></g><!--MD5=[eafb905c0a18baf7c75e0c24429216cd]
+link org_OrganizationalUnit to org_Organization--><g id="link_org_OrganizationalUnit_org_Organization"><path codeLine="65" d="M942.542,430.249 C947.309,407.268 957.883,356.296 966.422,315.134 " fill="none" id="org_OrganizationalUnit-to-org_Organization" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="959.621,313.454,970.538,295.293,973.329,316.298,959.621,313.454" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[eafb905c0a18baf7c75e0c24429216cd]
+link org_OrganizationalUnit to org_Organization--><g id="link_org_OrganizationalUnit_org_Organization"><path codeLine="68" d="M951.08,430.098 C962.138,416.814 978.408,394.58 985,372 C991.704,349.038 991.018,322.494 988.302,300.452 " fill="none" id="org_OrganizationalUnit-to-org_Organization-1" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="987.612,295.242,984.8268,304.6888,988.2677,300.1988,992.7577,303.6397,987.612,295.242" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="997.3798,343.827,992.0589,351.7098,997.7085,353.3318,997.3798,343.827" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="127" x="1005" y="345.5669">organisatie-eenheid</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="62" x="1037.5" y="360.6997">van [1..n]</text></g><!--MD5=[f3113ab20978c8b5604eb53b9db4af4e]
+link org_Organization to org_Post--><g id="link_org_Organization_org_Post"><path codeLine="54" d="M1132.61,279.073 C1266.47,303.84 1446.16,346.336 1492,402 C1547.41,469.283 1548.14,581.992 1546.17,624.799 " fill="none" id="org_Organization-to-org_Post" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1545.91,629.899,1550.3683,621.117,1546.1675,624.9056,1542.3789,620.7049,1545.91,629.899" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1541.8361,446.8397,1536.7815,438.7836,1533.0115,443.2932,1541.8361,446.8397" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="1547" y="440.5669">heeft positie</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1572" y="455.6997">[0..n]</text></g><!--MD5=[b5bdcff9aed29b477ed3ce3a0ea7443a]
+link org_Post to org_Organization--><g id="link_org_Post_org_Organization"><path codeLine="101" d="M1476.23,640.977 C1283.88,636.519 747.419,612.659 640,485 C570.342,402.217 702.951,336.471 822.17,296.719 " fill="none" id="org_Post-to-org_Organization" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="827.119,295.081,817.3182,294.1093,822.3719,296.651,819.8302,301.7047,827.119,295.081" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="640.5755,441.2376,647.2107,448.0511,649.9484,442.8498,640.5755,441.2376" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="95" x="654" y="448.0669">positie in [1..n]</text></g><!--MD5=[29b8d4020e614201aaa51ba2cc852e02]
+link org_Organization to org_Site--><g id="link_org_Organization_org_Site"><path codeLine="56" d="M825.236,257.391 C670.384,262.907 444.223,278.878 371,325 C351.621,337.207 320.243,396.023 305.354,425.535 " fill="none" id="org_Organization-to-org_Site" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="302.941,430.348,310.5492,424.0938,305.1811,425.8779,303.397,420.5097,302.941,430.348" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="371.2426,350.1715,380.7532,350.1843,378.9444,344.5917,371.2426,350.1715" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="91" x="385.5" y="345.5669">heeft primaire</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="385" y="360.6997">vestiging [0..1]</text></g><!--MD5=[29b8d4020e614201aaa51ba2cc852e02]
+link org_Organization to org_Site--><g id="link_org_Organization_org_Site"><path codeLine="58" d="M825.494,257.763 C613.736,263.877 253.388,280.724 213,325 C182.109,358.864 238.16,404.275 272.743,427.477 " fill="none" id="org_Organization-to-org_Site-1" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="277.261,430.465,271.9617,422.1633,273.0909,427.7064,267.5479,428.8355,277.261,430.465" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="213.2202,350.1004,222.7295,350.255,221.0043,344.636,213.2202,350.1004" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="227" y="345.5669">heeft vestiging</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="260" y="360.6997">[0..n]</text></g><!--MD5=[fc3ecca6e135d9b341e94a1f1e395529]
+link org_Organization to haOrg_Logo--><g id="link_org_Organization_haOrg_Logo"><path codeLine="61" d="M825.254,260.483 C708.792,268.137 561.347,285.532 516,325 C486.771,350.44 481.414,399.119 480.757,425.119 " fill="none" id="org_Organization-to-haOrg_Logo" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="480.682,430.307,484.8127,421.3662,480.7548,425.3075,476.8136,421.2497,480.682,430.307" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="516.4887,350.7224,525.917,349.4739,523.3825,344.1705,516.4887,350.7224" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="65" x="530" y="353.0669">logo [0..n]</text></g><!--MD5=[00090ad6488fa8d5af5c2e14e63ddefc]
+link haOrg_ContentPartner to org_Organization--><g id="link_haOrg_ContentPartner_org_Organization"><path codeLine="70" d="M1674.92,120.01 C1561.37,141.627 1318.93,187.784 1152.43,219.482 " fill="none" id="haOrg_ContentPartner-to-org_Organization" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="1153.73,226.361,1132.77,223.225,1151.11,212.608,1153.73,226.361" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[81efa2861e5a286700b32216545eedd5]
+link haOrg_ContentPartner to schema_Person--><g id="link_haOrg_ContentPartner_schema_Person"><path codeLine="73" d="M1739.95,120.302 C1747,164.821 1771.43,319.001 1783.76,396.818 " fill="none" id="haOrg_ContentPartner-to-schema_Person" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1784.56,401.831,1787.0986,392.3149,1783.7756,396.8929,1779.1977,393.5699,1784.56,401.831" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1773.7824,258.5712,1775.2697,249.1777,1769.4643,250.0975,1773.7824,258.5712" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="89" x="1783.5" y="250.5669">heeft account</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="1782" y="265.6997">manager [1..1]</text></g><!--MD5=[955925b456e39b33cc5e58aad0c732fe]
+link haOrg_ServiceProvider to org_Organization--><g id="link_haOrg_ServiceProvider_org_Organization"><path codeLine="75" d="M990.892,120.32 C989.46,136.231 986.867,165.058 984.466,191.739 " fill="none" id="haOrg_ServiceProvider-to-org_Organization" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="991.414,192.638,982.65,211.93,977.47,191.384,991.414,192.638" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[757469a8e72d0a04fa4767d6dbe0fba9]
+link haOrg_ServiceConsumer to org_Organization--><g id="link_haOrg_ServiceConsumer_org_Organization"><path codeLine="78" d="M1330.92,120.071 C1281.78,138.565 1185.18,174.914 1105.6,204.859 " fill="none" id="haOrg_ServiceConsumer-to-org_Organization" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="1108.01,211.432,1086.83,211.925,1103.08,198.329,1108.01,211.432" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[4de5f560a2b660f159e5b69d16b0eb42]
+link haOrg_EducationalOrganization to org_Organization--><g id="link_haOrg_EducationalOrganization_org_Organization"><path codeLine="81" d="M606.001,120.071 C658.254,138.623 761.12,175.145 845.614,205.143 " fill="none" id="haOrg_EducationalOrganization-to-org_Organization" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="848.21,198.637,864.715,211.925,843.526,211.83,848.21,198.637" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[31cdda84a3efcfa92a35ff9bebd579bf]
+link haOrg_EducationalPartner to haOrg_EducationalOrganization--><g id="link_haOrg_EducationalPartner_haOrg_EducationalOrganization"><path codeLine="84" d="M1361.65,33.043 C1193.04,48.621 899.952,75.7 722.19,92.124 " fill="none" id="haOrg_EducationalPartner-to-haOrg_EducationalOrganization" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="722.724,99.104,702.165,93.974,721.436,85.164,722.724,99.104" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[ce7596a2e278a3deca5671264a809f27]
+link haOrg_EducationalPartner to schema_Person--><g id="link_haOrg_EducationalPartner_schema_Person"><path codeLine="87" d="M1671.59,29.905 C1769.98,38.959 1878.09,57.212 1909,94 C1984.94,184.391 1889.73,325.908 1830.91,397.618 " fill="none" id="haOrg_EducationalPartner-to-schema_Person" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1827.44,401.819,1836.2544,397.4251,1830.6232,397.9632,1830.0851,392.332,1827.44,401.819" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1944.9878,170.7207,1944.0885,161.2527,1938.6951,163.5895,1944.9878,170.7207" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="89" x="1953.5" y="163.0669">heeft account</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="1952" y="178.1997">manager [1..1]</text></g><!--MD5=[521a898a5fcd116a934d975e542c88ca]
+link haOrg_EducationalPublisher to haOrg_EducationalOrganization--><g id="link_haOrg_EducationalPublisher_haOrg_EducationalOrganization"><path codeLine="89" d="M437.494,33.178 C462.047,46.471 501.851,68.021 531.801,84.236 " fill="none" id="haOrg_EducationalPublisher-to-haOrg_EducationalOrganization" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="535.546,78.304,549.801,93.981,528.881,90.615,535.546,78.304" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[bb7cd031893019775e9848dd330e2916]
+link haOrg_School to haOrg_EducationalOrganization--><g id="link_haOrg_School_haOrg_EducationalOrganization"><path codeLine="92" d="M706.506,33.178 C681.953,46.471 642.149,68.021 612.199,84.236 " fill="none" id="haOrg_School-to-haOrg_EducationalOrganization" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="615.119,90.615,594.199,93.981,608.454,78.304,615.119,90.615" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[fe3fec48c3bab043d56623bda700dc89]
+link org_Site to schema_PostalAddress--><g id="link_org_Site_schema_PostalAddress"><path codeLine="97" d="M298.343,456.557 C300.853,479.091 306.43,529.154 311.157,571.589 " fill="none" id="org_Site-to-schema_PostalAddress" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="311.729,576.724,314.7092,567.3368,311.1761,571.7547,306.7582,568.2216,311.729,576.724" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="313.5536,536.1021,315.473,526.7872,309.6313,527.438,313.5536,536.1021" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="84" x="326" y="528.0669">adres van de</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="96" x="322" y="543.1997">vestiging [0..1]</text></g><!--MD5=[23dcde7c46cb55ebaa527c384c42a8e2]
+link org_Post to org_Role--><g id="link_org_Post_org_Role"><path codeLine="103" d="M1545,656.258 C1545,684.71 1545,755.907 1545,796.6469 " fill="none" id="org_Post-to-org_Role" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1545,801.9435,1549,792.9435,1545,796.9435,1541,792.9435,1545,801.9435" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1550,752.5664,1552.9389,743.5213,1547.0611,743.5213,1550,752.5664" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="54" x="1559" y="752.0669">rol [1..n]</text></g><!--MD5=[51c43ee81729d1118de2fcf4e2332e15]
+link schema_Person to org_Post--><g id="link_schema_Person_org_Post"><path codeLine="115" d="M1740.33,485.183 C1685.86,528.912 1602.04,596.204 1564.43,626.397 " fill="none" id="schema_Person-to-org_Post" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#454645" points="1560.08,629.892,1569.6028,627.3788,1563.9796,626.7626,1564.5958,621.1394,1560.08,629.892" style="stroke:#454645;stroke-width:1.0;"/><polygon fill="#000000" points="1699.101,534.263,1707.9942,530.8922,1704.3145,526.3087,1699.101,534.263" style="stroke:#000000;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="80" x="1712" y="528.0669">heeft positie</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="34" x="1737" y="543.1997">[0..n]</text></g><!--MD5=[468b93c42df166dc1c406cc226ad246e]
+link schema_PostalAddress to schema_ContactPoint--><g id="link_schema_PostalAddress_schema_ContactPoint"><path codeLine="121" d="M269.763,709.114 C254.796,728.907 238.474,750.492 223.955,769.6932 " fill="none" id="schema_PostalAddress-to-schema_ContactPoint" style="stroke:#0000FF;stroke-width:1.0;stroke-dasharray:1.0,3.0;"/><polygon fill="none" points="229.386,774.117,211.74,785.8477,218.219,765.673,229.386,774.117" style="stroke:#0000FF;stroke-width:1.0;"/></g><!--MD5=[5cc3989fbb61b58b702a37e9b3ba5e43]
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Educatieve uitgeverij</b> (haOrg:EducationalPublisher)" as haOrg_EducationalPublisher [[#haOrg%3AEducationalPublisher]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>School</b> (haOrg:School)" as haOrg_School [[#haOrg%3ASchool]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
+class "<b>Positie</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Rol</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+
+
+
+org_Organization - -> schema_ContactPoint : aanspreekpunt [0..n] >
+org_Organization : alternatieve naam/label : <i>xsd:string</i> [0..n]
+
+org_Organization : beschrijving : <i>rdf:langString</i> [0..1]
+
+
+org_Organization - -> haOrg_OrganizationType : classificatie [0..n] >
+
+org_Organization - -> schema_Person : heeft account manager [0..1] >
+
+org_Organization - -> org_OrganizationalUnit : heeft een eenheid [0..n] >
+
+org_Organization - -> org_Post : heeft positie [0..n] >
+
+org_Organization - -> org_Site : heeft primaire vestiging [0..1] >
+
+org_Organization - -> org_Site : heeft vestiging [0..n] >
+
+
+org_Organization - -> haOrg_Logo : logo [0..n] >
+org_Organization : voorkeursnaam/-label : <i>xsd:string</i> [1..1]
+
+
+org_OrganizationalUnit - -|> org_Organization #blue;line.dotted;text:blue
+
+
+org_OrganizationalUnit - -> org_Organization : organisatie-eenheid van [1..n] >
+
+haOrg_ContentPartner - -|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_ContentPartner - -> schema_Person : heeft account manager [1..1] >
+
+haOrg_ServiceProvider - -|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_ServiceConsumer - -|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalOrganization - -|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalPartner - -|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalPartner - -> schema_Person : heeft account manager [1..1] >
+
+haOrg_EducationalPublisher - -|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+haOrg_School - -|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+
+
+org_Site - -> schema_PostalAddress : adres van de vestiging [0..1] >
+
+
+
+org_Post - -> org_Organization : positie in [1..n] >
+
+org_Post - -> org_Role : rol [1..n] >
+
+
+org_Role : voorkeursnaam/-label : <i>xsd:string</i> [1..1]
+
+
+
+schema_Person : email : <i>xsd:string</i> [0..n]
+
+schema_Person : familienaam : <i>xsd:string</i> [1..n]
+
+
+schema_Person - -> org_Post : heeft positie [0..n] >
+
+schema_Person - -> org_Organization : is account manager van [0..n] >
+schema_Person : voornaam : <i>xsd:string</i> [1..n]
+
+
+schema_PostalAddress - -|> schema_ContactPoint #blue;line.dotted;text:blue
+
+schema_PostalAddress : adres : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : gemeente : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : land : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : postbusnummer : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : postcode : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : provincie : <i>xsd:string</i> [0..n]
+
+
+
+schema_ContactPoint : contacttype : <i>xsd:string</i> [0..n]
+
+schema_ContactPoint : e-mail : <i>xsd:string</i> [0..n]
+
+schema_ContactPoint : telefoonnummer : <i>xsd:string</i> [0..n]
+
+
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+@startuml
+skinparam BackgroundColor FFFFFF
+skinparam shadowing false
+skinparam RoundCorner 7
+skinparam ArrowColor 454645
+skinparam FontColor 454645
+skinparam SequenceLifeLineBorderColor 696969
+skinparam SequenceGroupHeaderFontColor 454645
+skinparam SequenceGroupFontColor 696969
+skinparam SequenceGroupBorderColor 696969
+skinparam SequenceGroupBorderThickness 1
+
+skinparam sequenceDivider {
+    BorderColor 454645
+    BorderThickness 1
+    FontColor 454645
+}
+
+skinparam participant {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFFFFF
+    BorderThickness 1.5
+}
+
+skinparam database {
+    BackgroundColor 00FFFF
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam entity {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam note {
+    BackgroundColor 7FFFD4
+    BorderColor 454645
+    FontColor 454645
+    BorderThickness 1.5
+}
+
+skinparam actor {
+    BackgroundColor 454645
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam boundary {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam control {
+    BackgroundColor FFE552
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam collections {
+    BackgroundColor FF5F42
+    BorderColor 454645
+    FontColor 454645
+}
+
+skinparam queue {
+    BackgroundColor FF6347
+    BorderColor 454645
+    FontColor FFF
+    BorderThickness 1.5
+}
+skinparam classFontSize 14
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+skinparam shadowing false
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Educatieve uitgeverij</b> (haOrg:EducationalPublisher)" as haOrg_EducationalPublisher [[#haOrg%3AEducationalPublisher]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>School</b> (haOrg:School)" as haOrg_School [[#haOrg%3ASchool]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
+class "<b>Positie</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Rol</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+
+
+
+org_Organization - -> schema_ContactPoint : aanspreekpunt [0..n] >
+org_Organization : alternatieve naam/label : <i>xsd:string</i> [0..n]
+
+org_Organization : beschrijving : <i>rdf:langString</i> [0..1]
+
+
+org_Organization - -> haOrg_OrganizationType : classificatie [0..n] >
+
+org_Organization - -> schema_Person : heeft account manager [0..1] >
+
+org_Organization - -> org_OrganizationalUnit : heeft een eenheid [0..n] >
+
+org_Organization - -> org_Post : heeft positie [0..n] >
+
+org_Organization - -> org_Site : heeft primaire vestiging [0..1] >
+
+org_Organization - -> org_Site : heeft vestiging [0..n] >
+
+
+org_Organization - -> haOrg_Logo : logo [0..n] >
+org_Organization : voorkeursnaam/-label : <i>xsd:string</i> [1..1]
+
+
+org_OrganizationalUnit - -|> org_Organization #blue;line.dotted;text:blue
+
+
+org_OrganizationalUnit - -> org_Organization : organisatie-eenheid van [1..n] >
+
+haOrg_ContentPartner - -|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_ContentPartner - -> schema_Person : heeft account manager [1..1] >
+
+haOrg_ServiceProvider - -|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_ServiceConsumer - -|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalOrganization - -|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalPartner - -|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalPartner - -> schema_Person : heeft account manager [1..1] >
+
+haOrg_EducationalPublisher - -|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+haOrg_School - -|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+
+
+org_Site - -> schema_PostalAddress : adres van de vestiging [0..1] >
+
+
+
+org_Post - -> org_Organization : positie in [1..n] >
+
+org_Post - -> org_Role : rol [1..n] >
+
+
+org_Role : voorkeursnaam/-label : <i>xsd:string</i> [1..1]
+
+
+
+schema_Person : email : <i>xsd:string</i> [0..n]
+
+schema_Person : familienaam : <i>xsd:string</i> [1..n]
+
+
+schema_Person - -> org_Post : heeft positie [0..n] >
+
+schema_Person - -> org_Organization : is account manager van [0..n] >
+schema_Person : voornaam : <i>xsd:string</i> [1..n]
+
+
+schema_PostalAddress - -|> schema_ContactPoint #blue;line.dotted;text:blue
+
+schema_PostalAddress : adres : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : gemeente : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : land : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : postbusnummer : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : postcode : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : provincie : <i>xsd:string</i> [0..n]
+
+
+
+schema_ContactPoint : contacttype : <i>xsd:string</i> [0..n]
+
+schema_ContactPoint : e-mail : <i>xsd:string</i> [0..n]
+
+schema_ContactPoint : telefoonnummer : <i>xsd:string</i> [0..n]
+
+
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+PlantUML version 1.2022.13beta7(Unknown compile time)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

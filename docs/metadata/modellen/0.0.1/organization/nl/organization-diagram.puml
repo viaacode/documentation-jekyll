@@ -1,0 +1,155 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Educatieve uitgeverij</b> (haOrg:EducationalPublisher)" as haOrg_EducationalPublisher [[#haOrg%3AEducationalPublisher]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>School</b> (haOrg:School)" as haOrg_School [[#haOrg%3ASchool]]
+class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
+class "<b>Positie</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Rol</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+
+
+
+org_Organization --> schema_ContactPoint : aanspreekpunt [0..n] >
+org_Organization : alternatieve naam/label : <i>xsd:string</i> [0..n]
+
+org_Organization : beschrijving : <i>rdf:langString</i> [0..1]
+
+
+org_Organization --> haOrg_OrganizationType : classificatie [0..n] >
+
+org_Organization --> schema_Person : heeft account manager [0..1] >
+
+org_Organization --> org_OrganizationalUnit : heeft een eenheid [0..n] >
+
+org_Organization --> org_Post : heeft positie [0..n] >
+
+org_Organization --> org_Site : heeft primaire vestiging [0..1] >
+
+org_Organization --> org_Site : heeft vestiging [0..n] >
+
+
+org_Organization --> haOrg_Logo : logo [0..n] >
+org_Organization : voorkeursnaam/-label : <i>xsd:string</i> [1..1]
+
+
+org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
+
+
+org_OrganizationalUnit --> org_Organization : organisatie-eenheid van [1..n] >
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_ContentPartner --> schema_Person : heeft account manager [1..1] >
+
+haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalOrganization --|> org_Organization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalPartner --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+haOrg_EducationalPartner --> schema_Person : heeft account manager [1..1] >
+
+haOrg_EducationalPublisher --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+haOrg_School --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+
+
+
+org_Site --> schema_PostalAddress : adres van de vestiging [0..1] >
+
+
+
+org_Post --> org_Organization : positie in [1..n] >
+
+org_Post --> org_Role : rol [1..n] >
+
+
+org_Role : voorkeursnaam/-label : <i>xsd:string</i> [1..1]
+
+
+
+schema_Person : email : <i>xsd:string</i> [0..n]
+
+schema_Person : familienaam : <i>xsd:string</i> [1..n]
+
+
+schema_Person --> org_Post : heeft positie [0..n] >
+
+schema_Person --> org_Organization : is account manager van [0..n] >
+schema_Person : voornaam : <i>xsd:string</i> [1..n]
+
+
+schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
+
+schema_PostalAddress : adres : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : gemeente : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : land : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : postbusnummer : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : postcode : <i>xsd:string</i> [0..n]
+
+schema_PostalAddress : provincie : <i>xsd:string</i> [0..n]
+
+
+
+schema_ContactPoint : contacttype : <i>xsd:string</i> [0..n]
+
+schema_ContactPoint : e-mail : <i>xsd:string</i> [0..n]
+
+schema_ContactPoint : telefoonnummer : <i>xsd:string</i> [0..n]
+
+
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
