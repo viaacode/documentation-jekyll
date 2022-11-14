@@ -39,39 +39,33 @@ class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
 class "<b>Organization Type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
 
 
-org_Organization : alternative label : <i>xsd:string</i> [0..n]
 
+org_Organization --> haOrg_OrganizationType : classification [0..n] >
 
-org_Organization --> "[0..n]" haOrg_OrganizationType : classification >
-
-org_Organization --> "[0..n]" schema_ContactPoint : contact point >
+org_Organization --> schema_ContactPoint : contact point [0..n] >
 org_Organization : description : <i>rdf:langString</i> [0..1]
 
 
-org_Organization --> "[0..n]" org_OrganizationalUnit : has Unit >
+org_Organization --> org_OrganizationalUnit : has Unit [0..n] >
 
-org_Organization --> "[0..1]" schema_Person : has account manager >
+org_Organization --> schema_Person : has account manager [0..1] >
 
-org_Organization --> "[0..n]" org_Post : has post >
+org_Organization --> org_Post : has post [0..n] >
 
-org_Organization --> "[0..1]" org_Site : has primary site >
+org_Organization --> org_Site : has primary site [0..1] >
 
-org_Organization --> "[0..n]" org_Site : has site >
+org_Organization --> org_Site : has site [0..n] >
 
 
-org_Organization --> "[0..n]" haOrg_Logo : logo >
-org_Organization : preferred label : <i>xsd:string</i> [1..1]
-
+org_Organization --> haOrg_Logo : logo [0..n] >
 
 org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
 
 
-org_OrganizationalUnit --> "[1..n]" org_Organization : unit of >
+org_OrganizationalUnit --> org_Organization : unit of [1..n] >
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
-
-haOrg_ContentPartner --> "[1..1]" schema_Person : has account manager >
 
 haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
 
@@ -85,8 +79,6 @@ haOrg_EducationalOrganization --|> org_Organization #blue;line.dotted;text:blue
 haOrg_EducationalPartner --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
 
 
-haOrg_EducationalPartner --> "[1..1]" schema_Person : has account manager >
-
 haOrg_EducationalPublisher --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
 
 
@@ -95,16 +87,14 @@ haOrg_School --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
 
 
 
-org_Site --> "[0..1]" schema_PostalAddress : site Address >
+org_Site --> schema_PostalAddress : site Address [0..1] >
 
 
 
-org_Post --> "[1..n]" org_Organization : post in >
+org_Post --> org_Organization : post in [1..n] >
 
-org_Post --> "[1..n]" org_Role : role >
+org_Post --> org_Role : role [1..n] >
 
-
-org_Role : preferred label : <i>xsd:string</i> [1..1]
 
 
 
@@ -115,9 +105,9 @@ schema_Person : family name : <i>xsd:string</i> [1..n]
 schema_Person : given name : <i>xsd:string</i> [1..n]
 
 
-schema_Person --> "[0..n]" org_Post : holds >
+schema_Person --> org_Post : holds [0..n] >
 
-schema_Person --> "[0..n]" org_Organization : is account manager of >
+schema_Person --> org_Organization : is account manager of [0..n] >
 
 schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
 
