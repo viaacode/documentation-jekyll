@@ -157,38 +157,6 @@ haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:isDefinedBy haObj: ;
     rdfs:subClassOf premis:Representation .
 
-<file:///Users/mielvandersande/Meemoo/Development/datamodels/objects/objects.shacl.ttl> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ],
-        [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ] ;
-    dct:created "2022-01-07" ;
-    dct:description "SHACL model to validate/describe the structure of achive objects."@en,
-        "Modèle SHACL pour valider/décrire des objets."@fr,
-        "SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."@nl ;
-    dct:modified "2022-06-16" ;
-    dct:title "SHACL Model Objects"@en,
-        "Modèle SHACL Objet"@fr,
-        "SHACL-model Objecten"@nl .
-
-<file:///Users/mielvandersande/Meemoo/Development/datamodels/objects/objects.shacl.ttl#LocalIdentifierNodeShape> a sh:NodeShape ;
-    sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:description "The value of this identifier."@en,
-                "La valeur de cet identifiant."@fr,
-                "De waarde van deze identifier."@nl ;
-            sh:maxCount 1 ;
-            sh:message "rdf:value is missing or not of type string"@en,
-                "rdf:value est manquant ou n'est pas de type string"@fr,
-                "rdf:value ontbreekt of is niet van het type string"@nl ;
-            sh:minCount 1 ;
-            sh:name "value"@en,
-                "valeur"@fr,
-                "waarde"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path rdf:value ;
-            sh:severity sh:Violation ] ;
-    sh:targetClass haObj:LocalIdentifier .
-
 rel:gen a owl:ObjectProperty ;
     rdfs:label "generalizes"@en,
         "généralise"@fr,
@@ -305,7 +273,40 @@ seq:directlyFollows a owl:ObjectProperty ;
     rdfs:subPropertyOf seq:follows ;
     owl:inverseOf seq:directlyPrecedes .
 
-haObj:DigitalRepresentationShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object> a owl:Ontology ;
+    dct:author [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ],
+        [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ] ;
+    dct:created "2022-05-16" ;
+    dct:description "Data model to describe objects."@en,
+        "Modèle de données pour décrire des objets."@fr,
+        "Datamodel voor het beschrijven van objecten."@nl ;
+    dct:modified "2022-06-18" ;
+    dct:title "Data model Objects"@en,
+        "Modèle de données Objets"@fr,
+        "Datamodel Objecten"@nl ;
+    pav:version "0.0.1" ;
+    vann:preferredNamespacePrefix "haObj" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
+    owl:imports rel:,
+        premis:,
+        prov: .
+
+<https://data.hetarchief.be/ns/object/shapes> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ],
+        [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ] ;
+    dct:created "2022-01-07" ;
+    dct:description "SHACL model to validate/describe the structure of achive objects."@en,
+        "Modèle SHACL pour valider/décrire des objets."@fr,
+        "SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."@nl ;
+    dct:modified "2022-06-16" ;
+    dct:title "SHACL Model Objects"@en,
+        "Modèle SHACL Objet"@fr,
+        "SHACL-model Objecten"@nl .
+
+<https://data.hetarchief.be/ns/object/shapes#DigitalRepresentationShape> a sh:NodeShape ;
     sh:property [ sh:class premis:IntellectualEntity ;
             sh:description "The intellectual entity of which this representation is the archive master."@en,
                 "L'entité intellectuelle dont cette représentation est le maître des archives."@fr,
@@ -361,7 +362,7 @@ haObj:DigitalRepresentationShape a sh:NodeShape ;
             sh:severity sh:Violation ] ;
     sh:targetClass haObj:DigitalRepresentation .
 
-haObj:FileShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#FileShape> a sh:NodeShape ;
     sh:property [ sh:class haObj:DigitalRepresentation ;
             sh:description "The digital representation this file is part of."@en,
                 "La représentation digital dans ce fichier fait partie."@fr,
@@ -438,7 +439,7 @@ haObj:FileShape a sh:NodeShape ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:File .
 
-haObj:FixityShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#FixityShape> a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "The value of the checksum."@en,
                 "La valeur de la somme de contrôle."@fr,
@@ -460,7 +461,7 @@ haObj:FixityShape a sh:NodeShape ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:Fixity .
 
-haObj:IntellectualEntityShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#IntellectualEntityShape> a sh:NodeShape ;
     sh:property [ sh:class haObj:DigitalRepresentation ;
             sh:description "The access or browse copy of the intellectual entity."@en,
                 "L'accès ou la copie de l'entité intellectuelle d'accès."@fr,
@@ -514,7 +515,26 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:IntellectualEntity .
 
-haObj:ObjectShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#LocalIdentifierNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "The value of this identifier."@en,
+                "La valeur de cet identifiant."@fr,
+                "De waarde van deze identifier."@nl ;
+            sh:maxCount 1 ;
+            sh:message "rdf:value is missing or not of type string"@en,
+                "rdf:value est manquant ou n'est pas de type string"@fr,
+                "rdf:value ontbreekt of is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "value"@en,
+                "valeur"@fr,
+                "waarde"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haObj:LocalIdentifier .
+
+<https://data.hetarchief.be/ns/object/shapes#ObjectShape> a sh:NodeShape ;
     sh:property [ sh:class premis:Object ;
             sh:description "A generic relationship between intellectual entities, files, or representations."@en,
                 "Une relation générique entre les entités intellectuelles, les fichiers ou les représentations."@fr,
@@ -525,7 +545,7 @@ haObj:ObjectShape a sh:NodeShape ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:Object .
 
-haObj:PhysicalRepresentationShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#PhysicalRepresentationShape> a sh:NodeShape ;
     sh:property [ sh:class premis:StorageMedium ;
             sh:description "The type of storage medium on which this physical representation is stored."@en,
                 "Le type de milieu de stockage sur lequel cette représentation physique est stockée."@fr,
@@ -534,7 +554,7 @@ haObj:PhysicalRepresentationShape a sh:NodeShape ;
             sh:severity sh:Violation ] ;
     sh:targetClass haObj:PhysicalRepresentation .
 
-haObj:StorageLocationShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#StorageLocationShape> a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "The file path of the storage location."@en,
                 "Le chemin du fichier de l'emplacement de stockage."@fr,
@@ -835,26 +855,6 @@ rel:rep a owl:ObjectProperty ;
         "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl ;
     rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
     rdfs:subPropertyOf premis:relationship .
-
-haObj: a owl:Ontology ;
-    dct:author [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ],
-        [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ] ;
-    dct:created "2022-05-16" ;
-    dct:description "Data model to describe objects."@en,
-        "Modèle de données pour décrire des objets."@fr,
-        "Datamodel voor het beschrijven van objecten."@nl ;
-    dct:modified "2022-06-18" ;
-    dct:title "Data model Objects"@en,
-        "Modèle de données Objets"@fr,
-        "Datamodel Objecten"@nl ;
-    pav:version "0.0.1" ;
-    vann:preferredNamespacePrefix "haObj" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
-    owl:imports rel:,
-        premis:,
-        prov: .
 
 premis:relationship a owl:ObjectProperty ;
     rdfs:label "has relationship"@en,

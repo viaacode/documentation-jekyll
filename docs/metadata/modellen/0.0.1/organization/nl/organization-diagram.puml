@@ -41,8 +41,6 @@ class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationTyp
 
 
 org_Organization --> schema_ContactPoint : aanspreekpunt [0..n] >
-org_Organization : alternatieve naam/label : <i>xsd:string</i> [0..n]
-
 org_Organization : beschrijving : <i>rdf:langString</i> [0..1]
 
 
@@ -60,8 +58,6 @@ org_Organization --> org_Site : heeft vestiging [0..n] >
 
 
 org_Organization --> haOrg_Logo : logo [0..n] >
-org_Organization : voorkeursnaam/-label : <i>xsd:string</i> [1..1]
-
 
 org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
 
@@ -70,8 +66,6 @@ org_OrganizationalUnit --> org_Organization : organisatie-eenheid van [1..n] >
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
-
-haOrg_ContentPartner --> schema_Person : heeft account manager [1..1] >
 
 haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
 
@@ -84,8 +78,6 @@ haOrg_EducationalOrganization --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_EducationalPartner --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
 
-
-haOrg_EducationalPartner --> schema_Person : heeft account manager [1..1] >
 
 haOrg_EducationalPublisher --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
 
@@ -103,8 +95,6 @@ org_Post --> org_Organization : positie in [1..n] >
 
 org_Post --> org_Role : rol [1..n] >
 
-
-org_Role : voorkeursnaam/-label : <i>xsd:string</i> [1..1]
 
 
 

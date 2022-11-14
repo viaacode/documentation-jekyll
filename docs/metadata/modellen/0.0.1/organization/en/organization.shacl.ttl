@@ -178,7 +178,38 @@ schema:PostalAddress a rdfs:Class ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:ContactPoint .
 
-<file:///Users/mielvandersande/Meemoo/Development/datamodels/organizations/organizations.shacl.ttl> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+<https://data.hetarchief.be/ns/organization> a owl:Ontology ;
+    dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ],
+        [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ] ;
+    dct:created "2022-03-14" ;
+    dct:description "Data model to describe organizations."@en,
+        "Modèle de données pour décrire des organisations."@fr,
+        "Datamodel voor het beschrijven van organisaties."@nl ;
+    dct:modified "2022-06-16" ;
+    dct:title "Data model Organizations"@en,
+        "Modèle de données Organisations"@fr,
+        "Datamodel Organisaties"@nl ;
+    pav:version "0.0.1" ;
+    vann:preferredNamespacePrefix "haOrg" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" .
+
+haOrg:OrganizationalUnitShape a sh:NodeShape ;
+    sh:property [ sh:class org:Organization ;
+            sh:description "De organisatie waarvan de organisatie-eenheid deel uitmaakt."@nl ;
+            sh:message "org:unitOf is missing or its Object is no org:Organization."@en,
+                "org:unitOf est absent ou son Object n'est pas un org:Organization."@fr,
+                "org:unitOf ontbreekt of zijn Object is geen org:Organization."@nl ;
+            sh:minCount 1 ;
+            sh:name "unit of"@en,
+                "unité de"@fr,
+                "organisatie-eenheid van"@nl ;
+            sh:path org:unitOf ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass org:OrganizationalUnit .
+
+<https://data.hetarchief.be/ns/organization/shapes> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             schema:name "Miel Vander Sande" ],
         [ schema:email "milan.valadou@meemoo.be" ;
             schema:name "Milan Valadou" ] ;
@@ -191,7 +222,7 @@ schema:PostalAddress a rdfs:Class ;
         "Modèle SHACL Organisations"@fr,
         "SHACL-model Organisaties"@nl .
 
-haOrg:ContactPointShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#ContactPointShape> a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "The type of contact point."@en,
                 "Het type contactpunt."@nl ;
@@ -212,21 +243,21 @@ haOrg:ContactPointShape a sh:NodeShape ;
             sh:path schema:telephone ] ;
     sh:targetClass schema:ContactPoint .
 
-haOrg:ContentPartnerShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#ContentPartnerShape> a sh:NodeShape ;
     sh:property haOrg:accountManagerShape ;
     sh:targetClass haOrg:ContentPartner .
 
-haOrg:EducationalOrganizationShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#EducationalOrganizationShape> a sh:NodeShape ;
     sh:targetClass haOrg:EducationalOrganization .
 
-haOrg:EducationalPartnerShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#EducationalPartnerShape> a sh:NodeShape ;
     sh:property haOrg:accountManagerShape ;
     sh:targetClass haOrg:EducationalPartner .
 
-haOrg:EducationalPublisherShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#EducationalPublisherShape> a sh:NodeShape ;
     sh:targetClass haOrg:EducationalPublisher .
 
-haOrg:OrganizationShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#OrganizationShape> a sh:NodeShape ;
     sh:property [ sh:class org:Site ;
             sh:description "De primaire vestiging van de organisatie."@nl ;
             sh:maxCount 1 ;
@@ -342,21 +373,7 @@ haOrg:OrganizationShape a sh:NodeShape ;
         haOrg:prefLabelShape ;
     sh:targetClass org:Organization .
 
-haOrg:OrganizationalUnitShape a sh:NodeShape ;
-    sh:property [ sh:class org:Organization ;
-            sh:description "De organisatie waarvan de organisatie-eenheid deel uitmaakt."@nl ;
-            sh:message "org:unitOf is missing or its Object is no org:Organization."@en,
-                "org:unitOf est absent ou son Object n'est pas un org:Organization."@fr,
-                "org:unitOf ontbreekt of zijn Object is geen org:Organization."@nl ;
-            sh:minCount 1 ;
-            sh:name "unit of"@en,
-                "unité de"@fr,
-                "organisatie-eenheid van"@nl ;
-            sh:path org:unitOf ;
-            sh:severity sh:Violation ] ;
-    sh:targetClass org:OrganizationalUnit .
-
-haOrg:PersonShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#PersonShape> a sh:NodeShape ;
     sh:property [ sh:class org:Post ;
             sh:description "The post that a person holds in the organization."@en,
                 "Le poste que la personne occupe dans l'organisation."@fr,
@@ -403,7 +420,7 @@ haOrg:PersonShape a sh:NodeShape ;
             sh:severity sh:Warning ] ;
     sh:targetClass schema:Person .
 
-haOrg:PostShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#PostShape> a sh:NodeShape ;
     sh:property [ sh:class org:Role ;
             sh:description "Indicates the Role that the Agent plays in a Membership relationship with an Organization."@en,
                 "Indique le Rôle de l'Agent dans son Engagement avec l'Organisation."@fr,
@@ -432,7 +449,7 @@ haOrg:PostShape a sh:NodeShape ;
             sh:severity sh:Warning ] ;
     sh:targetClass org:Post .
 
-haOrg:PostalAddressShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#PostalAddressShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:description "The country in which the postal address is located."@en,
@@ -493,20 +510,20 @@ haOrg:PostalAddressShape a sh:NodeShape ;
             sh:path schema:streetAddress ] ;
     sh:targetClass schema:PostalAddress .
 
-haOrg:RoleShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#RoleShape> a sh:NodeShape ;
     sh:property haOrg:prefLabelShape ;
     sh:targetClass org:Role .
 
-haOrg:SchoolShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#SchoolShape> a sh:NodeShape ;
     sh:targetClass haOrg:School .
 
-haOrg:ServiceConsumerShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#ServiceConsumerShape> a sh:NodeShape ;
     sh:targetClass haOrg:ServiceConsumer .
 
-haOrg:ServiceProviderShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#ServiceProviderShape> a sh:NodeShape ;
     sh:targetClass haOrg:ServiceProvider .
 
-haOrg:SiteShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization/shapes#SiteShape> a sh:NodeShape ;
     sh:property [ sh:class schema:PostalAddress ;
             sh:description "Het adres van de vestiging."@nl ;
             sh:maxCount 1 ;
@@ -519,6 +536,48 @@ haOrg:SiteShape a sh:NodeShape ;
             sh:path org:siteAddress ;
             sh:severity sh:Violation ] ;
     sh:targetClass org:Site .
+
+<https://data.hetarchief.be/ns/organization/shapes#accountManagerShape> a sh:PropertyShape ;
+    sh:class schema:Person ;
+    sh:description "The account manager of the organization."@en,
+        "Le gestionnaire de comptes de l'organisation."@fr,
+        "De account manager van de organisatie."@nl ;
+    sh:maxCount 1 ;
+    sh:message "haOrg:hasAccountManager is missing, occurs more than once or its Object is no schema:Person"@en,
+        "haOrg:hasAccountManager est absemt, apparaît plus d'une seule fois ou son Object n'est pas un schema:Person"@fr,
+        "haOrg:hasAccountManager ontbreekt, komt meer dan eens voor or its Object is no schema:Person"@nl ;
+    sh:minCount 1 ;
+    sh:name "has account manager"@en,
+        "a gestionnaire de comptes"@fr,
+        "heeft account manager"@nl ;
+    sh:path haOrg:hasAccountManager ;
+    sh:severity sh:Violation .
+
+<https://data.hetarchief.be/ns/organization/shapes#altLabelShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "The alternative label of the concept."@en,
+        "Le label alternatif du concept."@fr,
+        "Het alternatieve label van het concept."@nl ;
+    sh:message "skos:altLabel is missing or no Literal"@en ;
+    sh:name "alternative label"@en,
+        "label alternatif"@fr,
+        "alternatieve naam/label"@nl ;
+    sh:path skos:altLabel ;
+    sh:severity sh:Warning .
+
+<https://data.hetarchief.be/ns/organization/shapes#prefLabelShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:description "De voorkeursnaam/-label van het concept."@nl ;
+    sh:maxCount 1 ;
+    sh:message "skos:prefLabel is missing or its Object is no xsd:string."@en,
+        "skos:prefLabel is missing or its Object is no xsd:string."@fr,
+        "skos:prefLabel is missing or its Object is no xsd:string."@nl ;
+    sh:minCount 1 ;
+    sh:name "preferred label"@en,
+        "label préféré"@fr,
+        "voorkeursnaam/-label"@nl ;
+    sh:path skos:prefLabel ;
+    sh:severity sh:Violation .
 
 schema:name a rdf:Property ;
     rdfs:label "The name of the item."@en,
@@ -634,18 +693,6 @@ foaf:homepage a rdf:Property ;
     rdfs:domain owl:Thing ;
     rdfs:isDefinedBy foaf: ;
     rdfs:range foaf:Document .
-
-haOrg:altLabelShape a sh:PropertyShape ;
-    sh:datatype xsd:string ;
-    sh:description "The alternative label of the concept."@en,
-        "Le label alternatif du concept."@fr,
-        "Het alternatieve label van het concept."@nl ;
-    sh:message "skos:altLabel is missing or no Literal"@en ;
-    sh:name "alternative label"@en,
-        "label alternatif"@fr,
-        "alternatieve naam/label"@nl ;
-    sh:path skos:altLabel ;
-    sh:severity sh:Warning .
 
 haOrg:hasLogo a rdf:Property ;
     rdfs:label "has a logo"@en,
@@ -834,22 +881,6 @@ org:postIn a rdf:Property,
     rdfs:range org:Organization ;
     owl:inverseOf org:hasPost .
 
-haOrg:accountManagerShape a sh:PropertyShape ;
-    sh:class schema:Person ;
-    sh:description "The account manager of the organization."@en,
-        "Le gestionnaire de comptes de l'organisation."@fr,
-        "De account manager van de organisatie."@nl ;
-    sh:maxCount 1 ;
-    sh:message "haOrg:hasAccountManager is missing, occurs more than once or its Object is no schema:Person"@en,
-        "haOrg:hasAccountManager est absemt, apparaît plus d'une seule fois ou son Object n'est pas un schema:Person"@fr,
-        "haOrg:hasAccountManager ontbreekt, komt meer dan eens voor or its Object is no schema:Person"@nl ;
-    sh:minCount 1 ;
-    sh:name "has account manager"@en,
-        "a gestionnaire de comptes"@fr,
-        "heeft account manager"@nl ;
-    sh:path haOrg:hasAccountManager ;
-    sh:severity sh:Violation .
-
 haOrg:hasAccountManager a rdf:Property ;
     rdfs:label "has an account manager"@en,
         "a un gestionnaire de comptes"@fr,
@@ -868,20 +899,6 @@ haOrg:isAccountManagerOf a rdf:Property ;
     rdfs:range org:Organization ;
     owl:inverseOf haOrg:hasAccountManager .
 
-haOrg:prefLabelShape a sh:PropertyShape ;
-    sh:datatype xsd:string ;
-    sh:description "De voorkeursnaam/-label van het concept."@nl ;
-    sh:maxCount 1 ;
-    sh:message "skos:prefLabel is missing or its Object is no xsd:string."@en,
-        "skos:prefLabel is missing or its Object is no xsd:string."@fr,
-        "skos:prefLabel is missing or its Object is no xsd:string."@nl ;
-    sh:minCount 1 ;
-    sh:name "preferred label"@en,
-        "label préféré"@fr,
-        "voorkeursnaam/-label"@nl ;
-    sh:path skos:prefLabel ;
-    sh:severity sh:Violation .
-
 schema:email a rdf:Property ;
     rdfs:label "Email address"@en,
         "Adresse e-mail"@fr,
@@ -891,21 +908,4 @@ schema:email a rdf:Property ;
         schema:Person ;
     rdfs:isDefinedBy schema: ;
     rdfs:range xsd:string .
-
-haOrg: a owl:Ontology ;
-    dct:author [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ],
-        [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ] ;
-    dct:created "2022-03-14" ;
-    dct:description "Data model to describe organizations."@en,
-        "Modèle de données pour décrire des organisations."@fr,
-        "Datamodel voor het beschrijven van organisaties."@nl ;
-    dct:modified "2022-06-16" ;
-    dct:title "Data model Organizations"@en,
-        "Modèle de données Organisations"@fr,
-        "Datamodel Organisaties"@nl ;
-    pav:version "0.0.1" ;
-    vann:preferredNamespacePrefix "haOrg" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" .
 

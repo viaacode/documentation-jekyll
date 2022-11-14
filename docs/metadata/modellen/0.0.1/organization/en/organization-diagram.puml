@@ -39,8 +39,6 @@ class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
 class "<b>Organization Type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
 
 
-org_Organization : alternative label : <i>xsd:string</i> [0..n]
-
 
 org_Organization --> haOrg_OrganizationType : classification [0..n] >
 
@@ -60,8 +58,6 @@ org_Organization --> org_Site : has site [0..n] >
 
 
 org_Organization --> haOrg_Logo : logo [0..n] >
-org_Organization : preferred label : <i>xsd:string</i> [1..1]
-
 
 org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
 
@@ -70,8 +66,6 @@ org_OrganizationalUnit --> org_Organization : unit of [1..n] >
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
-
-haOrg_ContentPartner --> schema_Person : has account manager [1..1] >
 
 haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
 
@@ -84,8 +78,6 @@ haOrg_EducationalOrganization --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_EducationalPartner --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
 
-
-haOrg_EducationalPartner --> schema_Person : has account manager [1..1] >
 
 haOrg_EducationalPublisher --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
 
@@ -103,8 +95,6 @@ org_Post --> org_Organization : post in [1..n] >
 
 org_Post --> org_Role : role [1..n] >
 
-
-org_Role : preferred label : <i>xsd:string</i> [1..1]
 
 
 
