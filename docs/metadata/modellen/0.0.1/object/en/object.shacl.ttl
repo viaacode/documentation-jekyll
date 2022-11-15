@@ -157,35 +157,6 @@ haObj:PhysicalRepresentation a rdfs:Class ;
     rdfs:isDefinedBy haObj: ;
     rdfs:subClassOf premis:Representation .
 
-<file:///Users/mielvandersande/Meemoo/Development/datamodels/objects/objects.shacl.ttl> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ],
-        [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ] ;
-    dct:created "2022-01-07" ;
-    dct:description "SHACL model to validate/describe the structure of achive objects."@en,
-        "Modèle SHACL pour valider/décrire des objets."@fr,
-        "SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."@nl ;
-    dct:modified "2022-06-16" ;
-    dct:title "SHACL Model Objects"@en,
-        "Modèle SHACL Objet"@fr,
-        "SHACL-model Objecten"@nl .
-
-<file:///Users/mielvandersande/Meemoo/Development/datamodels/objects/objects.shacl.ttl#LocalIdentifierNodeShape> a sh:NodeShape ;
-    sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "rdf:value is missing or not of type string"@en,
-                "rdf:value est manquant ou n'est pas de type string"@fr,
-                "rdf:value ontbreekt of is niet van het type string"@nl ;
-            sh:minCount 1 ;
-            sh:name "value"@en,
-                "valeur"@fr,
-                "waarde"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path rdf:value ;
-            sh:severity sh:Violation ] ;
-    sh:targetClass haObj:LocalIdentifier .
-
 rel:gen a owl:ObjectProperty ;
     rdfs:label "generalizes"@en,
         "généralise"@fr,
@@ -302,80 +273,135 @@ seq:directlyFollows a owl:ObjectProperty ;
     rdfs:subPropertyOf seq:follows ;
     owl:inverseOf seq:directlyPrecedes .
 
-haObj:DigitalRepresentationShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object> a owl:Ontology ;
+    dct:author [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ],
+        [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ] ;
+    dct:created "2022-05-16" ;
+    dct:description "Data model to describe objects."@en,
+        "Modèle de données pour décrire des objets."@fr,
+        "Datamodel voor het beschrijven van objecten."@nl ;
+    dct:modified "2022-06-18" ;
+    dct:title "Data model Objects"@en,
+        "Modèle de données Objets"@fr,
+        "Datamodel Objecten"@nl ;
+    pav:version "0.0.1" ;
+    vann:preferredNamespacePrefix "haObj" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
+    owl:imports rel:,
+        premis:,
+        prov: .
+
+<https://data.hetarchief.be/ns/object/shapes> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ],
+        [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ] ;
+    dct:created "2022-01-07" ;
+    dct:description "SHACL model to validate/describe the structure of achive objects."@en,
+        "Modèle SHACL pour valider/décrire des objets."@fr,
+        "SHACL-model voor het valideren/beschrijven de structuur van archiefobjecten."@nl ;
+    dct:modified "2022-06-16" ;
+    dct:title "SHACL Model Objects"@en,
+        "Modèle SHACL Objet"@fr,
+        "SHACL-model Objecten"@nl .
+
+<https://data.hetarchief.be/ns/object/shapes#DigitalRepresentationShape> a sh:NodeShape ;
     sh:property [ sh:class premis:IntellectualEntity ;
-            sh:description "De intellectuele entiteit waarvan deze representatie de archiefmaster is."@nl ;
+            sh:description "The intellectual entity of which this representation is the archive master."@en,
+                "L'entité intellectuelle dont cette représentation est le maître des archives."@fr,
+                "De intellectuele entiteit waarvan deze representatie de archiefmaster is."@nl ;
             sh:minCount 1 ;
             sh:path haObj:isMasterOf ;
             sh:severity sh:Violation ],
         [ sh:class premis:IntellectualEntity ;
-            sh:description "De intellectuele entiteit waarvan deze representatie de mezzanine is."@nl ;
+            sh:description "The intellectual entity of which this digital representation is the mezzanine copy."@en,
+                "L'entité intellectuelle dont cette représentation est la copie de mezzanine."@fr,
+                "De intellectuele entiteit waarvan deze digitale representatie de mezzanine kopie is."@nl ;
             sh:maxCount 1 ;
             sh:path haObj:isMezzanineOf ;
             sh:severity sh:Violation ],
         [ sh:class premis:IntellectualEntity ;
-            sh:description "De intellectuele entiteit waarvan deze representatie de toegangs- of inkijk kopie is."@nl ;
+            sh:description "The intellectual entity of which this digital representation is the access or browse copy."@en,
+                "L'entité intellectuelle dont cette représentation digital est l'accès ou la copie de vue."@fr,
+                "De intellectuele entiteit waarvan deze digitale representatie de toegangs- of inkijk kopie is."@nl ;
             sh:maxCount 1 ;
             sh:path haObj:isAccesscopyOf ;
             sh:severity sh:Violation ],
         [ sh:class premis:IntellectualEntity ;
-            sh:description "De intellectuele entiteit die deze representatie representeert."@nl ;
+            sh:description "The intellectual entity that represents this digital representation."@en,
+                "L'entité intellectuelle qui représente cette représentation digital."@fr,
+                "De intellectuele entiteit die deze digitale representatie representeert."@nl ;
             sh:minCount 1 ;
             sh:path rel:rep ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
-            sh:description "Een bestand die deel uit maakt van deze representatie"@nl ;
+            sh:description "A file that is part of this digital representation."@en,
+                "Un fichier qui fait partie de cette représentation digital."@fr,
+                "Een bestand die deel uit maakt van deze digitale representatie."@nl ;
             sh:minCount 1 ;
             sh:path rel:inc ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
-            sh:description "Het bestand dat eerst verwerkt moet worden."@nl ;
+            sh:description "The file that must be processed first."@en,
+                "Le fichier qui doit être traité en premier."@fr,
+                "Het bestand dat eerst verwerkt moet worden."@nl ;
             sh:path rel:hsr ;
             sh:severity sh:Violation ],
         [ sh:class haObj:PhysicalRepresentation ;
-            sh:description "De fysieke drager waarvan deze representatie afkomstig is."@nl ;
+            sh:description "The physical carrier from which this digital representation originates from."@en,
+                "Le porteur physique dont vient cette représentation numérique."@fr,
+                "De fysieke drager waarvan deze digitale representatie afkomstig is."@nl ;
             sh:path rel:hss ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
             sh:description "The file of which this is a fragment."@en,
+                "Le fichier dont il s'agit d'un fragment."@fr,
                 "Het bestand waarvan dit een fragment is."@nl ;
-            sh:name "is media fragment of"@en,
-                "is media fragment van"@nl ;
             sh:path ebucore:isMediaFragmentOf ;
             sh:severity sh:Violation ] ;
     sh:targetClass haObj:DigitalRepresentation .
 
-haObj:FileShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#FileShape> a sh:NodeShape ;
     sh:property [ sh:class haObj:DigitalRepresentation ;
-            sh:description "The representation this file is part of."@en,
-                "De representatie waarvan dit bestand deel van uitmaakt."@nl ;
+            sh:description "The digital representation this file is part of."@en,
+                "La représentation digital dans ce fichier fait partie."@fr,
+                "De digitale representatie waarvan dit bestand deel van uitmaakt."@nl ;
             sh:minCount 1 ;
             sh:path rel:isi ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
-            sh:description "Het bestand dat dit bestand vervangt of opvolgt."@nl,
-                "The file that replaces or succeeds this file."@nl ;
+            sh:description "The file that replaces or succeeds this file."@en,
+                "Le fichier qui remplace ou succède à ce fichier."@fr,
+                "Het bestand dat dit bestand vervangt of opvolgt."@nl ;
             sh:path rel:sup ;
             sh:severity sh:Violation ],
         [ sh:class premis:Fixity ;
-            sh:description "De berekende fixity checksum van het bestand."@nl ;
+            sh:description "The calculated fixity checksum of the file."@en,
+                "La somme de contrôle de fixité calculée du fichier."@fr,
+                "De berekende fixity checksum van het bestand."@nl ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path premis:fixity ;
             sh:severity sh:Violation ],
         [ sh:class premis:StorageLocation ;
-            sh:description "De locatie waar het bestand is opgeslagen."@nl ;
+            sh:description "The location where the file is stored."@en,
+                "L'emplacement où le fichier est stocké."@fr,
+                "De locatie waar het bestand is opgeslagen."@nl ;
             sh:minCount 1 ;
             sh:path premis:storedAt ;
             sh:severity sh:Violation ],
         [ sh:class dct:FileFormat ;
-            sh:description "Het bestandsformaat van het bestand."@nl ;
+            sh:description "The file format of the file."@en,
+                "Le format de fichier du fichier."@fr,
+                "Het bestandsformaat van het bestand."@nl ;
             sh:maxCount 1 ;
             sh:minCount 1 ;
             sh:path dct:format ;
             sh:severity sh:Violation ],
         [ sh:datatype xsd:string ;
             sh:description "The MIME type or IANA media type of the file."@en,
+                "Le type MIME ou le type de média IANA du fichier."@fr,
                 "Het MIME type of IANA media type van het bestand."@nl ;
             sh:maxCount 1 ;
             sh:name "mime type"@en,
@@ -385,49 +411,61 @@ haObj:FileShape a sh:NodeShape ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
             sh:description "The file that follows on this file."@en,
+                "Le fichier qui suit sur ce fichier."@fr,
                 "Het bestand dat op dit bestand volgt."@nl ;
             sh:maxCount 1 ;
             sh:name "next file in sequence"@en,
+                "fichier suivant dans l'ordre"@fr,
                 "volgende bestand in volgorde"@nl ;
             sh:path edm:isNextInSequence ;
             sh:severity sh:Violation ],
         [ sh:class premis:File ;
             sh:description "The file that describes or documents this file."@en,
+                "Le fichier qui décrit ou documente ce fichier."@fr,
                 "Het bestand dat dit bestand beschrijft of documenteert."@nl ;
             sh:name "documents"@en,
+                "document"@fr,
                 "documenteert"@nl ;
             sh:path rel:doc ;
             sh:severity sh:Violation ],
         [ sh:class haObj:DigitalRepresentation ;
             sh:description "A fragment from this file."@en,
+                "Un fragment de ce fichier."@fr,
                 "Een fragment uit dit bestand."@nl ;
             sh:name "has media fragment"@en,
+                "a le fragment des médias"@fr,
                 "heeft media fragment"@nl ;
             sh:path ebucore:hasMediaFragment ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:File .
 
-haObj:FixityShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#FixityShape> a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "The value of the checksum."@en,
+                "La valeur de la somme de contrôle."@fr,
                 "De waarde van de checksum."@nl ;
             sh:minCount 1 ;
             sh:name "fixity checksum"@en,
+                "Vérification de la fixation"@fr,
                 "fixity checksum"@nl ;
             sh:path rdf:value ;
             sh:severity sh:Violation ],
         [ sh:datatype xsd:string ;
             sh:description "The entity that generated the checksum."@en,
+                "L'entité qui a généré la somme de contrôle."@fr,
                 "De entiteit die de checksum gegenereerd heeft."@nl ;
             sh:name "checksum creator"@en,
+                "Créateur de somme de contrôle"@fr,
                 "checksum maker"@nl ;
             sh:path dct:creator ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:Fixity .
 
-haObj:IntellectualEntityShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#IntellectualEntityShape> a sh:NodeShape ;
     sh:property [ sh:class haObj:DigitalRepresentation ;
-            sh:description "De toegangs- of inkijk kopie van de intellectuele entiteit. "@nl ;
+            sh:description "The access or browse copy of the intellectual entity."@en,
+                "L'accès ou la copie de l'entité intellectuelle d'accès."@fr,
+                "De toegangs- of inkijk kopie van de intellectuele entiteit."@nl ;
             sh:path haObj:hasAccesscopy ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
@@ -444,57 +482,96 @@ haObj:IntellectualEntityShape a sh:NodeShape ;
             sh:path premis:identifier ;
             sh:severity sh:Violation ],
         [ sh:class premis:IntellectualEntity ;
-            sh:description "Een intellectuele entiteit die deel uit maakt van deze intellectuele entiteit."@nl ;
+            sh:description "An intellectual entity that is part of this intellectual entity."@en,
+                "Une entité intellectuelle qui fait partie de cette entité intellectuelle."@fr,
+                "Een intellectuele entiteit die deel uit maakt van deze intellectuele entiteit."@nl ;
             sh:path rel:hsp ;
             sh:severity sh:Violation ],
         [ sh:class premis:IntellectualEntity ;
-            sh:description "De intellectuele entiteit waarvan deze intellectuele entiteit deel uit maakt."@nl ;
+            sh:description "The intellectual entity of which this intellectual entity is part of."@en,
+                "L'entité intellectuelle dont cette entité intellectuelle fait partie de."@fr,
+                "De intellectuele entiteit waarvan deze intellectuele entiteit deel uit maakt."@nl ;
             sh:path rel:isp ;
             sh:severity sh:Violation ],
         [ sh:class premis:Representation ;
-            sh:description "Een representatie van de intellectuele entiteit."@nl ;
+            sh:description "A representation of the intellectual entity."@en,
+                "Une représentation de l'entité intellectuelle."@fr,
+                "Een representatie van de intellectuele entiteit."@nl ;
             sh:path rel:isr ;
             sh:severity sh:Violation ],
         [ sh:class haObj:DigitalRepresentation ;
-            sh:description "De archiefmaster van de intellectuele entiteit."@nl ;
+            sh:description "The archive master of the intellectual entity."@en,
+                "Le maître des archives de l'entité intellectuelle."@fr,
+                "De archiefmaster van de intellectuele entiteit."@nl ;
             sh:maxCount 1 ;
             sh:path haObj:hasMaster ;
             sh:severity sh:Violation ],
         [ sh:class haObj:DigitalRepresentation ;
-            sh:description "De mezzanine representatie van de intellectuele entiteit."@nl ;
+            sh:description "The mezzanine copy of the intellectual entity."@en,
+                "La copie mezzanine de l'entité intellectuelle."@fr,
+                "De mezzanine kopie van de intellectuele entiteit."@nl ;
             sh:maxCount 1 ;
             sh:path haObj:hasMezzanine ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:IntellectualEntity .
 
-haObj:ObjectShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#LocalIdentifierNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "The value of this identifier."@en,
+                "La valeur de cet identifiant."@fr,
+                "De waarde van deze identifier."@nl ;
+            sh:maxCount 1 ;
+            sh:message "rdf:value is missing or not of type string"@en,
+                "rdf:value est manquant ou n'est pas de type string"@fr,
+                "rdf:value ontbreekt of is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "value"@en,
+                "valeur"@fr,
+                "waarde"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path rdf:value ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass haObj:LocalIdentifier .
+
+<https://data.hetarchief.be/ns/object/shapes#ObjectShape> a sh:NodeShape ;
     sh:property [ sh:class premis:Object ;
-            sh:description "Een generieke relatie tussen intellectuele entiteiten, files, of representaties."@nl ;
+            sh:description "A generic relationship between intellectual entities, files, or representations."@en,
+                "Une relation générique entre les entités intellectuelles, les fichiers ou les représentations."@fr,
+                "Een generieke relatie tussen intellectuele entiteiten, bestanden, of representaties."@nl ;
+            sh:message "premis:relationship is not a premis:Object"@en,
+                "premis:relationship is niet van de klasse premis:Object"@nl ;
             sh:path premis:relationship ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:Object .
 
-haObj:PhysicalRepresentationShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#PhysicalRepresentationShape> a sh:NodeShape ;
     sh:property [ sh:class premis:StorageMedium ;
-            sh:description "Het type opslagmedium."@nl ;
+            sh:description "The type of storage medium on which this physical representation is stored."@en,
+                "Le type de milieu de stockage sur lequel cette représentation physique est stockée."@fr,
+                "Het type opslagmedium waarop deze fysieke representatie is opgeslagen."@nl ;
             sh:path premis:medium ;
             sh:severity sh:Violation ] ;
     sh:targetClass haObj:PhysicalRepresentation .
 
-haObj:StorageLocationShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/object/shapes#StorageLocationShape> a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "The file path of the storage location."@en,
+                "Le chemin du fichier de l'emplacement de stockage."@fr,
                 "Het pad van de opslaglocatie."@nl ;
             sh:minCount 1 ;
             sh:name "file path"@en,
+                "chemin du fichier"@fr,
                 "opslagpad"@nl ;
             sh:path rdf:value ;
             sh:severity sh:Violation ],
         [ sh:class premis:StorageMedium ;
-            sh:description "Het type opslagmedium."@nl,
-                "The type of storage medium."@nl ;
-            sh:name "medium"@en,
-                "medium"@nl ;
+            sh:description "The type of storage medium."@en,
+                "Le type de milieu de stockage."@fr,
+                "Het type opslagmedium."@nl ;
+            sh:name "milieu de stockage"@en,
+                "storage medium"@en,
+                "opslagmedium"@nl ;
             sh:path premis:medium ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:StorageLocation .
@@ -683,13 +760,10 @@ seq:precedes a owl:ObjectProperty,
 ebucore:isMediaFragmentOf a rdf:Property ;
     rdfs:label "Media fragment source"@en,
         "Source du fragment de média"@fr,
-        "Bron van het mediafragment"@nl,
-        "Media fragment bron"@nl ;
-    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to"@en,
-        "To identify the Media Resource to which a Media Fragment belongs to."@en,
+        "Bron van het mediafragment"@nl ;
+    rdfs:comment "To identify the Media Resource to which a Media Fragment belongs to."@en,
         "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
-        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl,
-        "Om de mediabron te identificeren waartoe een mediafragment behoort"@nl ;
+        "Om de MediaResource te identifiëren waartoe een MediaFragment behoort."@nl ;
     rdfs:domain ebucore:MediaFragment ;
     rdfs:isDefinedBy ebucore: ;
     rdfs:range ebucore:MediaResource .
@@ -781,26 +855,6 @@ rel:rep a owl:ObjectProperty ;
         "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl ;
     rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
     rdfs:subPropertyOf premis:relationship .
-
-haObj: a owl:Ontology ;
-    dct:author [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ],
-        [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ] ;
-    dct:created "2022-05-16" ;
-    dct:description "Data model to describe objects."@en,
-        "Modèle de données pour décrire des objets."@fr,
-        "Datamodel voor het beschrijven van objecten."@nl ;
-    dct:modified "2022-06-18" ;
-    dct:title "Data model Objects"@en,
-        "Modèle de données Objets"@fr,
-        "Datamodel Objecten"@nl ;
-    pav:version "0.0.1" ;
-    vann:preferredNamespacePrefix "haObj" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
-    owl:imports rel:,
-        premis:,
-        prov: .
 
 premis:relationship a owl:ObjectProperty ;
     rdfs:label "has relationship"@en,
