@@ -27,7 +27,7 @@ Identifier van de krantentitel die ervoor zorgt dat de link met Abraham - Catalo
 Hierbij gaat het om de soort uitgave van de editie. Een krant kent meerdere soorten edities: ochtend-, middag-, avond- of weekendeditie.
 
 | **XML element**            | `<edition />`                                                                   |
-| **Datatype**               | Via dropdown in AMS met mogelijkheid tot ‘andere’, waarna een vrij tekstveld verschijnt.                                                          |
+| **Datatype**               | Gecontroleerde lijst _of_ Vrije tekst                                                          |
 | **Verplichting**           | Verplicht indien gekend                                                                                                    |
 | **Herhaalbaar**            | Ja                                                                                                            |
 
@@ -35,12 +35,18 @@ Hierbij gaat het om de soort uitgave van de editie. Een krant kent meerdere soor
 <edition>Afternoon</edition>
 ```
 
+### Mogelijke waarden
+
+- `Morning`
+- `Afternoon`
+- `Evening`
+
 ## Jaargang en volumenummer
 
 Een krant verschijnt serieel. Via jaargangen en volumenummers wordt aangegeven om welke uitgave van een langlopende titel het gaat. 
 
 | **XML element**            | `<number />`                                                                   |
-| **Datatype**               | Vrije tekst                                                           |
+| **Datatype**               | Tekst die een numerieke waarde, gevolgd met een punt als onderscheidingsteken en opnieuw een numerieke waarde bevat. Als onbekende kan een 'x' worden gebruikt.                                                           |
 | **Verplichting**           | Verplicht indien gekend                                                                                                     |
 | **Herhaalbaar**            | Ja                                                                                                            |
 
@@ -75,7 +81,7 @@ Hoe het voornaamste deel van de tekst van deze drager is weergegeven: gedrukt, g
 Het aantal pagina's waaruit de drager bestaat.
 
 | **XML element**            | `<number_of_pages/>`                                                                   |
-| **Datatype**               | Vrije tekst                                                      |
+| **Datatype**               | Numeriek                                                      |
 | **Verplichting**           | Verplicht                                                                                            |
 | **Herhaalbaar**            | Ja                                                                                                            |
 
@@ -93,6 +99,7 @@ De omvang van het papier volgens hoogte x breedte (in cm).
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
+<dimensions>46 x 30</dimensions>
 ```	
 
 ## Dragereenheid
@@ -105,14 +112,16 @@ De dragereenheid toont aan hoe de drager bijeen wordt gehouden.
 | **Herhaalbaar**            | Ja                                                                                                            |
 
 ```xml
+<carrier_unity>Bound - 180° opening</carrier_unity>
 ```
 
 ### Mogelijke waarden
 
-- `Gebonden - 180° te openen`
-- `Gebonden - niet 180° te openen`
-- `Geniet`
-- `Los`
+- `Bound - 180° opening`
+- `Bound - not 180° opening` 
+- `Stapled`
+- `Loose`
+
 
 ## Staat van band en bindingen
 
