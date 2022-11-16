@@ -18,6 +18,24 @@ Finally, run
 bundle exec jekyll serve
 ```
 
+## Build the docs via Docker
+
+First, make sure that [Docker is installed](https://docs.docker.com/get-docker/).
+
+Next, build the Docker image:
+
+```bash
+docker build -t meemoo-docs .
+```
+
+Then, start the container serving the docs:
+
+```bash
+docker container run --rm -it -p 4000:4000 meemoo-docs
+```
+
+Finally, go to `http://127.0.0.1:4000` using your preferred browser to browse the docs.
+
 ## Convert legacy files
 
 Get pandoc
