@@ -19,7 +19,7 @@ Bijbehorende documenten en dragers kan de contentpartner niet apart bewaren. Bij
 | **Herhaalbaar**            | Nee                                                                                                            |
 
 ```xml
-
+<related_documents>0</related_documents>
 ```
 
 ## Kleur
@@ -30,7 +30,11 @@ De kleur van de inhoud van de drager. Dit duidt bijvoorbeeld het verschil tussen
 | **Datatype**               | Gecontroleerde lijst (Zwart-wit; Kleur; Ingekleurd)                                                          |
 | **Verplichting**           | Verplicht                                                                                                     |
 | **Herhaalbaar**            | Nee                                                                                                            |
-	
+
+```xml
+<color>Color</color>
+```
+
 ### Mogelijke waarden
 
 - `Zwart-wit`
@@ -45,7 +49,10 @@ Het al dan niet aanwezig zijn van een label op de drager.
 | **Datatype**               | "0" of "1"                                                          |
 | **Verplichting**           | Verplicht                                                                                                     |
 | **Herhaalbaar**            | Nee                                                                                                            |
-	
+
+```xml
+<label_present>1</label_present>
+```
 
 ## Opschrift originele doos
 
@@ -55,4 +62,7 @@ Een kopie van eventuele opschriften op de originele bewaardoos van de drager.
 | **Datatype**               | "0" of "1"                                                          |
 | **Verplichting**           | Optioneel                                                                                                     |
 | **Herhaalbaar**            | Nee                                                                                                            |
-	
+
+```xml
+<inscription_original_carrier_box>1234</inscription_original_carrier_box>
+```
