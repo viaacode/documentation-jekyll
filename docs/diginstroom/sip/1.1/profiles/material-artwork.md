@@ -2,7 +2,7 @@
 layout:       default
 title:        Material artwork
 parent:       Profiles
-grand_parent:  SIP Specification 1.1
+grand_parent:  1.1
 nav_order:    3
 nav_exclude:  false
 ---
@@ -31,8 +31,7 @@ root_directory
     │── mets.xml
     │── metadata
     |   |── descriptive
-    |   |   |── dc.xml
-    |   |   └── schema.xml
+    |   |   └── dc+schema.xml
     |   └── preservation
     |       └── premis.xml
     │
@@ -44,7 +43,7 @@ root_directory
            │
            └──metadata
               |── descriptive     (optional)
-              |   └── dc.xml
+              |   └── dc+schema.xml
               └──preservation
                  └── premis.xml
         └──representation_2       # overview without list
@@ -54,7 +53,7 @@ root_directory
            │
            └──metadata
               |── descriptive     (optional)
-              |   └── dc.xml    
+              |   └── dc+schema.xml    
               └──preservation
                  └── premis.xml
         └──representation_3       # composed stitch 
@@ -64,7 +63,7 @@ root_directory
            │
            └──metadata
               |── descriptive     (optional)    
-              |   └── dc.xml    
+              |   └── dc+schema.xml    
               └──preservation
                  └── premis.xml
         └──representation_4       # stitch 
@@ -76,7 +75,7 @@ root_directory
            │
            └──metadata
               |── descriptive     (optional)  
-              |   └── dc.xml    
+              |   └── dc+schema.xml    
               └──preservation
                  └── premis.xml
 ```
@@ -92,7 +91,7 @@ root_directory
     │── mets.xml
     │── metadata
     |   |── descriptive
-    |   |   └── dc.xml
+    |   |   └── dc+schema.xml
     |   └── preservation
     |       └── premis.xml
     │
@@ -104,7 +103,7 @@ root_directory
            │
            └──metadata
               |── descriptive     (optional)
-              |   └── dc.xml
+              |   └── dc+schema.xml
               └──preservation
                  └── premis.xml
         └──representation_2       # high-poly capture
@@ -116,7 +115,7 @@ root_directory
            │
            └──metadata
               |── descriptive     (optional)
-              |   └── dc.xml
+              |   └── dc+schema.xml
               └──preservation
                  └── premis.xml
         └──representation_3       # low-poly capture
@@ -128,7 +127,7 @@ root_directory
            │
            └──metadata
               |── descriptive     (optional)
-              |   └── dc.xml    
+              |   └── dc+schema.xml   
               └──preservation
                  └── premis.xml
         └──representation_4       # quality assessment reference
@@ -141,7 +140,7 @@ root_directory
            │
            └──metadata
               |── descriptive     (optional)
-              |   └── dc.xml    
+              |   └── dc+schema.xml    
               └──preservation
                  └── premis.xml
 ```
@@ -150,26 +149,31 @@ root_directory
 
 ### General
 
-- There MUST be at least one IE. It MAY contain other (sub-)IE's (e.g. to describe panels of a triptych individually)
+- There MUST be exactly one IE at the root. There MAY be other sub-IE's that are part of the root IE or other sub-IE's (e.g. to describe panels of a triptych individually).
 - There MUST be at least one representation, but there MAY be multiple: either containing different captures or resolutions of the same IE or representing a different IE.
 - Each representation MUST contain at least one file. 
 - Preservation metadata MUST be limited to the PREMIS metadata schema.
 - There MUST be preservation metadata at the package level in the `preservation/premis.xml` file.
 - There MUST be preservation metadata at the representation level in the `preservation/premis.xml` file.
 
-
 ### Package METS
 
 - The `csip:CONTENTINFORMATIONTYPE` attribute MUST be set to `https://data.hetarchief.be/id/sip/1.1/material-artwork`.
 - The `TYPE` attribute in the `mets.xml` file MUST be set to `Physical object`.
+- The `mets/dmdSec/mdRef/@MDTYPE` attribute MUST be set to `OTHER`.
+  
+<!-- 
+The E-ARK (C)SIP spec verplicht blijkbaar OTHERMDTYPE niet als MDTYPE de waarde "OTHER" bevat:
+https://earkcsip.dilcis.eu/. Later nog toevoegen indien nodig?
+-->
 
 ### Descriptive Metadata
 
-- A descriptive metadata file `descriptive/dc.xml` describing the IE MUST be present at the package level and MAY be present at the representation level (eg. to indicate diverting licenses). 
-- Descriptive metadata in `descriptive/dc.xml` MUST apply the DCTERMS metadata schema.
-- A descriptive metadata file `descriptive/schema.xml` describing the IE MAY be present at the package level. 
-- Descriptive metadata in `descriptive/schema.xml` MUST apply a subset of the [SCHEMA](http://schema.org) metadata schema (see below).
-- The [SCHEMA](http://schema.org) elements in `descriptive/dc.xml` MUST be limited to the elements outlined below.
+- A descriptive metadata file `descriptive/dc+schema.xml` describing the IE MUST be present at the package level.
+- A descriptive metadata file `descriptive/dc+schema.xml` describing the representation MAY be present at the representation level (eg. to indicate diverting licenses). 
+- Descriptive metadata in `descriptive/dc+schema.xml` MUST apply the DCTERMS metadata schema and MAY also apply the [SCHEMA](http://schema.org) metadata schema (see below).
+- The [DCTERMS](https://www.dublincore.org/schemas/xmls/qdc/dcterms.xsd) metadata MUST follow the [basic profile requirements]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/profiles/basic.md %}#dc-requirements) regarding the use of elements and attributes.
+- The [SCHEMA](http://schema.org) metadata in `descriptive/dc+schema.xml` MUST be limited to the elements and attributes outlined below.
 
 | Element | `schema:creator` |
 |-----------------------|-----------|
@@ -271,6 +275,16 @@ root_directory
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
+
+### Rep level/descriptive (directory)
+
+The `/descriptive` directory contains descriptive metadata about the representation.
+
+***Requirements***
+
+- The `/descriptive` directory MAY contain zero or more `dc*.xml` metadata files.
+
+The `dc*.xml` files at the representation level contains descriptive metadata about a specific representation of the SIP.
 
 ## Use Cases
 
