@@ -35,13 +35,7 @@ Zie `viaa_metadatamodel_voorbeeld_voor_cp.xml` voor een voorbeeld van een volled
 
 ## Instroom via meemoo SIP
 
-Momenteel werkt meemoo aan een uniforme meemoo SIP voor toekomstige projecten. Lees de meest recente stabiele specificatie [hier]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %}).
-
-Meemoo hanteert hierbij de volgende publicatiecyclus:
-
-| <span class="label label-yellow">Editor's Draft</span> | Deze versie van de specificatie is nog in ontwikkeling. |
-| <span class="label label-blue">Release Candidate</span> | Deze versie van de specificatie is klaar voor _publieke review_ en _implementatie_. De tekst kan nog gewijzigd worden en meemoo geeft nog geen garanties dat materiaal op deze manier kan instromen. |
-| <span class="label label-green">Stable</span> | Deze versie van de specificatie zal niet meer wijzigen en is volledig geïmplementeerd. Meemoo garandeert dat materiaal dat op deze manier wordt aangeleverd kan gearchiveerd worden. |
+Momenteel werkt meemoo aan een uniforme meemoo SIP voor toekomstige projecten. Lees alles over de specificatie [hier]({{ site.baseurl }}{% link docs/diginstroom/sip/index.md %}).
 
 ## Metadata model
 

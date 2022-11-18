@@ -14,7 +14,7 @@ Hier vind je alles over ons metadatamodel (incl. dataformaten), onze SIP-specifi
 
 1. [Alles over het metadatamodel]({{ site.baseurl }}{% link docs/metadata/index.md %})
 2. [Alles over digitale instroom]({{ site.baseurl }}{% link docs/diginstroom/index.md %})
-   1. [De SIP-specificatie]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %})
+   1. [De SIP-specificatie]({{ site.baseurl }}{% link docs/diginstroom/sip/index.md %})
 3. [Alles om te starten met het bouwen van een integratie]({{ site.baseurl }}{% link docs/integratie/index.md %})
    1. [Verschillen tussen de Mediahaven REST API v1 en v2]({{ site.baseurl }}{% link docs/integratie/rest-api.md %})
    2. [De OAI-PMH API]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %})
