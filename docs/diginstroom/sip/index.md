@@ -16,8 +16,9 @@ The meemoo SIP specification is available in the following versions:
 
 ### Added
 
-- The Material Artwork content profile 
+- The Material Artwork and Newspaper content profiles
 - Use case documents about the intake of 2D artworks, 3D museum objects, and gigapixel digital reproductions of artworks
+- Use case documents about the intake of newspapers with or without PDF representation
 
 ## [1.0]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %}) <span class="label label-green">Stable</span> - 2022-09-30
 
