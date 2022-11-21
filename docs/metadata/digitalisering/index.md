@@ -8,6 +8,13 @@ nav_order: 3
 
 {: .fw-300 }
 Deze velden worden gebruikt door de digitaliseringspartners van meemoo in kader van het digitaliseringsproject.
+Naast deze algemene velden zijn er drager-specifieke velden:
+
+{% assign children = site.pages | where_exp: "p", "p.parent == page.title" %}
+{% for child in children %}
+- [{{child.title}}]({{child.url}})
+{% endfor %}
+
 
 {: .important }
 Deze pagina dient louter ter documentatie van de relevante velden bij digitalisering. Onderstaande velden kunnen dus niet gebruikt worden bij bv. een digitaal instroomproces.
