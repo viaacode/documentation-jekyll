@@ -7,8 +7,9 @@
 @prefix evtOutcome: <http://id.loc.gov/vocabulary/preservation/eventOutcome/> .
 @prefix evtType: <http://id.loc.gov/vocabulary/preservation/eventType> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix haObj: <https://data.hetarchief.be/ns/object#> .
-@prefix haOrg: <https://data.hetarchief.be/ns/organization#> .
+@prefix haEvent: <https://data.hetarchief.be/ns/event/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -25,11 +26,11 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n33e0d54af3984fe69a895e16bf843f49b11 a rdfs:Class,
+_:n2343593a893d42f29970f84d97c5bfd4b11 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n33e0d54af3984fe69a895e16bf843f49b14 a rdfs:Class,
+_:n2343593a893d42f29970f84d97c5bfd4b14 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
@@ -664,7 +665,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "date de fin"@en,
         "einddatum"@en,
         "end date"@en ;
-    rdfs:domain _:n33e0d54af3984fe69a895e16bf843f49b11 ;
+    rdfs:domain _:n2343593a893d42f29970f84d97c5bfd4b11 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -706,7 +707,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n33e0d54af3984fe69a895e16bf843f49b14 ;
+    rdfs:domain _:n2343593a893d42f29970f84d97c5bfd4b14 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -869,14 +870,14 @@ foaf:homepage a rdf:Property ;
         "Datamodel Events"@nl ;
     pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haEvt" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/events#" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/events/" ;
     owl:imports <http://id.loc.gov/vocabulary/preservation/eventOutcome>,
         <http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole>,
         <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole>,
         evtType:,
         premis: .
 
-<https://data.hetarchief.be/ns/event/shapes> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+haEvent:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             schema:name "Miel Vander Sande" ],
         [ schema:email "milan.valadou@meemoo.be" ;
             schema:name "Milan Valadou" ] ;
@@ -1021,7 +1022,7 @@ foaf:homepage a rdf:Property ;
         "Datamodel Objecten"@nl ;
     pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haObj" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object/" ;
     owl:imports rel:,
         premis:,
         prov: .
@@ -1041,7 +1042,7 @@ foaf:homepage a rdf:Property ;
         "Datamodel Organisaties"@nl ;
     pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haOrg" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" .
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" .
 
 haOrg:hasLogo a rdf:Property ;
     rdfs:label "has a logo"@en,

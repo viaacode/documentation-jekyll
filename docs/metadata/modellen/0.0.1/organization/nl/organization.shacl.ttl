@@ -1,6 +1,6 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix haOrg: <https://data.hetarchief.be/ns/organization#> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
@@ -193,7 +193,7 @@ schema:PostalAddress a rdfs:Class ;
         "Datamodel Organisaties"@nl ;
     pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haOrg" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" .
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" .
 
 haOrg:OrganizationalUnitShape a sh:NodeShape ;
     sh:property [ sh:class org:Organization ;
@@ -208,7 +208,7 @@ haOrg:OrganizationalUnitShape a sh:NodeShape ;
             sh:path org:unitOf ] ;
     sh:targetClass org:OrganizationalUnit .
 
-<https://data.hetarchief.be/ns/organization/shapes> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             schema:name "Miel Vander Sande" ],
         [ schema:email "milan.valadou@meemoo.be" ;
             schema:name "Milan Valadou" ] ;

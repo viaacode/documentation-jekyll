@@ -25,8 +25,8 @@ class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
 class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
 class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
 
 
 

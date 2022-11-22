@@ -4,8 +4,9 @@
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix haObj: <https://data.hetarchief.be/ns/object#> .
-@prefix haOrg: <https://data.hetarchief.be/ns/organization#> .
+@prefix haDes: <https://data.hetarchief.be/ns/description/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -936,9 +937,9 @@ foaf:homepage a rdf:Property ;
         "Datamodel Descriptie"@nl ;
     pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haDes" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description#" .
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" .
 
-<https://data.hetarchief.be/ns/description/shapes> dcterms:author [ schema:email "miel.vandersande@meemoo.be" ;
+haDes:shapes dcterms:author [ schema:email "miel.vandersande@meemoo.be" ;
             schema:name "Miel Vander Sande" ],
         [ schema:email "lennert.vandevelde@meemoo.be" ;
             schema:name "Lennert Van de Velde" ] ;
@@ -1449,7 +1450,7 @@ foaf:homepage a rdf:Property ;
         "Datamodel Objecten"@nl ;
     pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haObj" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object/" ;
     owl:imports rel:,
         premis:,
         prov: .
@@ -1469,7 +1470,7 @@ foaf:homepage a rdf:Property ;
         "Datamodel Organisaties"@nl ;
     pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haOrg" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organisations#" .
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" .
 
 haOrg:hasLogo a rdf:Property ;
     rdfs:label "has a logo"@en,
