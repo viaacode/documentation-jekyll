@@ -47,7 +47,7 @@ Een niet-exhaustieve lijst van EDTF features die ondersteund worden in MediaHave
 |:----|:----|:----|
 |[Lege datum]| | |
 |Onbekende datum|uuuu-uu-uu|Dit is een tijdelijke uitzondering binnen Mediahaven 22.1. Een volledig onbekende datum wordt enkel toegestaan in EDTF Level 2 (als XXXX-XX-XX) en dus nog niet als zodanig in Mediahaven.|
-|Volledige datum|27/10/1988| |
+|Volledige datum|1988-10-27| |
 |Volledige datum met tijdstip|1988-10-27T15:35:54|T duid tijdstip aan|
 |Volledige datum met tijdstip (UTC)|1988-10-27T15:35:54Z|Z duidt gecoördineerde wereldtijd (UTC) aan|
 |Volledige datum met tijdstip en shift|1988-10-27T15:35:54+1:00|+1:00 duidt aan dat de tijdszone UTC+1 is|
