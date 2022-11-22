@@ -64,7 +64,7 @@ Een niet-exhaustieve lijst van EDTF features die ondersteund worden in MediaHave
 |Niet specifieke maand|1988-XX| |
 |Niet specifieke dag in de maand|1988-10-XX| |
 |Niet specifieke dag in het jaar|1988-XX-XX| |
-|Tijdsinterval|1988-10/1989| |
+|Tijdsinterval|1988-10/1989|De oudste datum moet altijd eerst staan. Onbekende waardes zijn niet toegestaan (bv. 1988-XX-XX/1989 mag niet)|
 |Interval met onbekend begin|/1988-10-27| |
 |Interval met onbekend einde|1988-10-27/| |
 |Interval met open begin|../1988-10-27| |
