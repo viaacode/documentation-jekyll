@@ -12,7 +12,7 @@ Hier vind je alle informatie over het gebruiken van het _VIAA-metadatamodel_, he
 1. Velden in het metadatamodel:
    1. [Algemeen]({{ site.baseurl }}{% link docs/metadata/algemeen.md %})
    2. [Registratie van analoge dragers]({{ site.baseurl }}{% link docs/metadata/registratie.md %})
-   3. [Digitaliseringsproces]({{ site.baseurl }}{% link docs/metadata/digitalisering/index.md %})
+   3. [Digitaliseringsproces]({{ site.baseurl }}{% link docs/metadata/digitalisering.md %})
 2. [Datatypes]({{ site.baseurl }}{% link docs/metadata/datatypes.md %})
 3. [Licenties]({{ site.baseurl }}{% link docs/metadata/licenties.md %})
 
