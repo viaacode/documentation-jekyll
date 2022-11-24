@@ -138,6 +138,33 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 | `<PersistenteURI_VKC_Record />`    | Persistente URI die verwijst naar de lokale record bij de Vlaamse Kunstencollectie. |
 | `<PersistenteURI_VKC_Werk />`      | Persistente URI die verwijst naar het werk dat wordt afgebeeld bij de Vlaamse Kunstencollectie. |
 
+## Batch ID
+
+De ID van de batch waarin de drager van de contentpartner naar de Service Provider of meemoo werd verstuurd. 
+
+| **XML element**        | `<batch_id/>`                                                                                                     |
+| **Datatype**           | ID                                                                                                                |
+| **Verplichting**       | Verplicht indien gekend |
+| **Herhaalbaar**        | Nee                                                                                                               |
+
+```xml
+<batch_id>BMXMJPGB01</batch_id>
+```
+
+## Batch Naam
+
+De naam van de batch waarin de drager van de contentpartner naar de Service Provider of meemoo werd verstuurd. 
+
+| **XML element**        | `<batch_name/>`                                                                                                     |
+| **Datatype**           | Vrije tekst                                                                                                               |
+| **Verplichting**       | Optioneel |
+| **Herhaalbaar**        | Nee                                                                                                               |
+
+```xml
+<batch_name>GPLB06</batch_name>
+```
+
+
 # Relaties 
 
 De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele relaties aan te duiden tussen verschillende digitale objecten. De definitie van deze relaties beperkt zich tot 4 verschillende types (_is deel van_, _bevat_, _is verwant aan_ en _is versie van_).
