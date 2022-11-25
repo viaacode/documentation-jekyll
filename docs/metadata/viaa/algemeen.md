@@ -460,6 +460,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecif
 
 | `<Maker />` | |
 | `<Archiefvormer />` | |
+| `<Architect>` | |
 | `<Auteur />` | |
 | `<Acteur />` | |
 | `<Cineast />` | |
