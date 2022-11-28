@@ -501,7 +501,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 | `<Kunstenaar />` | |
 | `<Make-up />` | |
 | `<Muzikant />` | |
-| `<Monteur />` | |
+| `<Monteur />` | Iemand verantwoordelijk voor de ordening van beeld en/of geluid in audiomateriaal of audiovisueel materiaal. |
 | `<Nieuwsanker />` | |
 | `<Omroeper />` | |
 | `<Onderzoeker />` | |
@@ -517,7 +517,6 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 | `<Vertaler />` | |
 | `<Verteller />` | |
 | `<Voorzitter />` | |
-
 
 ## Publisher
 
