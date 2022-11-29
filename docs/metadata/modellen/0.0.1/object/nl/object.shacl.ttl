@@ -2,7 +2,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix edm: <http://www.europeana.eu/schemas/edm/> .
-@prefix haObj: <https://data.hetarchief.be/ns/object/> .
+@prefix haObj: <https://data.hetarchief.be/ns/object#> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
@@ -288,12 +288,12 @@ seq:directlyFollows a owl:ObjectProperty ;
         "Datamodel Objecten"@nl ;
     pav:version "0.0.1" ;
     vann:preferredNamespacePrefix "haObj" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object/" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object#" ;
     owl:imports rel:,
         premis:,
         prov: .
 
-haObj:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+<https://data.hetarchief.be/ns/object/shapes> dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             schema:name "Miel Vander Sande" ],
         [ schema:email "milan.valadou@meemoo.be" ;
             schema:name "Milan Valadou" ] ;
