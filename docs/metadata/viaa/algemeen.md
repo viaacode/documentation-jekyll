@@ -460,7 +460,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecif
 
 | `<Maker />` | |
 | `<Archiefvormer />` | |
-| `<Architect>` | |
+| `<Architect>` | De architect van het afgebeelde gebouw. |
 | `<Auteur />` | |
 | `<Acteur />` | |
 | `<Cineast />` | |
