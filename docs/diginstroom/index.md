@@ -39,4 +39,4 @@ Momenteel werkt meemoo aan een uniforme meemoo SIP voor toekomstige projecten. L
 
 ## Metadata model
 
-Zie velden: [Algemeen]({{ site.baseurl }}{% link docs/metadata/algemeen.md %}) | [Digitalisering]({{ site.baseurl }}{% link docs/metadata/digitalisering.md %}) 
+Zie velden: [Algemeen]({{ site.baseurl }}{% link docs/metadata/viaa/algemeen.md %}) | [Digitalisering]({{ site.baseurl }}{% link docs/metadata/viaa/digitalisering.md %}) 
