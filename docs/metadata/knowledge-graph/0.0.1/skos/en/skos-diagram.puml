@@ -1,0 +1,120 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 100
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+
+
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Ordered Collection</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Concept Scheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
+class "(skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
+class "(rdf:List)" as rdf_List [[#rdf%3AList]]
+
+
+skos_Collection : alternative label : <i>rdf:langString</i> [0..n]
+skos_Collection : change note : <i>xsd:string</i> [0..n]
+skos_Collection : definition : <i>xsd:string</i> [0..n]
+skos_Collection : editorial note : <i>xsd:string</i> [0..n]
+skos_Collection : example : <i>xsd:string</i> [0..n]
+skos_Collection : hidden label : <i>rdf:langString</i> [0..n]
+skos_Collection : history note : <i>xsd:string</i> [0..n]
+skos_Collection : notation : <i>xsd:string</i> [0..n]
+skos_Collection : note : <i>xsd:string</i> [0..n]
+skos_Collection : preferred label : <i>rdf:langString</i> [0..n]
+skos_Collection : scope note : <i>xsd:string</i> [0..n]
+
+skos_Collection --> skos_Collection : member \n [0..n] >
+skos_Collection --> skos_Concept : member \n [0..n] >
+
+
+
+skos_OrderedCollection : alternative label : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : change note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : definition : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : editorial note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : example : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : hidden label : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : history note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : notation : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : preferred label : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : scope note : <i>xsd:string</i> [0..n]
+
+skos_OrderedCollection --> rdf_List : has member list \n [0..n] >
+
+
+
+skos_Concept : alternative label : <i>rdf:langString</i> [0..n]
+skos_Concept : alt label : <i>rdf:langString</i> [0..n]
+skos_Concept : change note : <i>xsd:string</i> [0..n]
+skos_Concept : definition : <i>rdf:langString</i> [0..n]
+skos_Concept : definition : <i>xsd:string</i> [1..n]
+skos_Concept : editorial note : <i>rdf:langString</i> [0..n]
+skos_Concept : editorial note : <i>xsd:string</i> [0..n]
+skos_Concept : example : <i>rdf:langString</i> [0..n]
+skos_Concept : example : <i>xsd:string</i> [0..n]
+skos_Concept : hidden label : <i>rdf:langString</i> [0..n]
+skos_Concept : history note : <i>rdf:langString</i> [0..n]
+skos_Concept : history note : <i>xsd:string</i> [0..n]
+skos_Concept : notation : <i>xsd:string</i> [0..n]
+skos_Concept : note : <i>xsd:string</i> [0..n]
+skos_Concept : pref label : <i>rdf:langString</i> [1..n]
+skos_Concept : preferred label : <i>rdf:langString</i> [0..n]
+skos_Concept : scope note : <i>rdf:langString</i> [0..n]
+skos_Concept : scope note : <i>xsd:string</i> [0..n]
+
+skos_Concept --> skos_Concept : broad match \n [0..n] > \n  broader \n [0..n] > \n  broader transitive \n [0..n] > \n  close match \n [0..n] > \n  exact match \n [0..n] > \n  mapping relation \n [0..n] > \n  narrow match \n [0..n] > \n  narrower \n [0..n] > \n  narrower transitive \n [0..n] > \n  related match \n [0..n] > \n  semantic relation \n [0..n] >
+skos_Concept --> skos_ConceptScheme : in scheme \n [1..n] > \n  top concept of \n [0..n] >
+skos_Concept --> skosxl_Label : pref label \n [1..n] >
+
+
+
+skos_ConceptScheme : alternative label : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme : change note : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : definition : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : editorial note : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : example : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : hidden label : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme : history note : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : notation : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : note : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : preferred label : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme : scope note : <i>xsd:string</i> [0..n]
+
+skos_ConceptScheme --> skos_Concept : has top concept \n [0..n] >
+
+
+
+skosxl_Label : alternative label : <i>rdf:langString</i> [0..n]
+skosxl_Label : change note : <i>xsd:string</i> [0..n]
+skosxl_Label : definition : <i>xsd:string</i> [0..n]
+skosxl_Label : editorial note : <i>xsd:string</i> [0..n]
+skosxl_Label : example : <i>xsd:string</i> [0..n]
+skosxl_Label : hidden label : <i>rdf:langString</i> [0..n]
+skosxl_Label : history note : <i>xsd:string</i> [0..n]
+skosxl_Label : literal form : <i>rdf:langString</i> [1..1]
+skosxl_Label : notation : <i>xsd:string</i> [0..n]
+skosxl_Label : note : <i>xsd:string</i> [0..n]
+skosxl_Label : preferred label : <i>rdf:langString</i> [0..n]
+skosxl_Label : scope note : <i>xsd:string</i> [0..n]
+skosxl_Label : version info : <i>xsd:string</i> [0..1]
+
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
