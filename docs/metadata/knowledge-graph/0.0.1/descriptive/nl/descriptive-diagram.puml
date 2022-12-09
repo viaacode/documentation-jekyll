@@ -3,7 +3,8 @@
 skinparam classFontSize 14
 !define LIGHTORANGE
 skinparam componentStyle uml2
-skinparam wrapMessageWidth 100
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
 ' skinparam ArrowColor #Maroon
 ' Remove shadows
 skinparam shadowing false
@@ -25,178 +26,133 @@ class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
-class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
-class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity : aangemaakt op : <i>edtf:EDTF-level1</i> [0..1]
-
 premis_IntellectualEntity : alternatieve naam : <i>xsd:string</i> [0..n]
-
-
-premis_IntellectualEntity --> schema_Role : auteur [0..n] >
-
-premis_IntellectualEntity --> schema_Person : auteur van de copyright [0..n] >
-premis_IntellectualEntity --> org_Organization : auteur van de copyright [0..n] >
-
-premis_IntellectualEntity --> haOrg_ContentPartner : beheerder [1..1] >
 premis_IntellectualEntity : beschikbaar op : <i>xsd:dateTime</i> [0..n]
-
-
-premis_IntellectualEntity --> schema_Role : bijdrager [0..n] >
 premis_IntellectualEntity : copyright jaar : <i>xsd:integer</i> [0..n]
-
 premis_IntellectualEntity : copyright melding : <i>xsd:string</i> [0..n]
-
 premis_IntellectualEntity : credit tekst : <i>xsd:string</i> [0..n]
-
 premis_IntellectualEntity : duur : <i>xsd:dateTime</i> [0..1]
-
 premis_IntellectualEntity : genre : <i>xsd:string</i> [0..n]
-
 premis_IntellectualEntity : gepubliceerd op : <i>edtf:EDTF-level1</i> [0..1]
-
 premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
-
 premis_IntellectualEntity : in taal : <i>xsd:string</i> [1..n]
-
-
-premis_IntellectualEntity --> schema_ArchiveComponent : is een deel van [0..n] >
-premis_IntellectualEntity --> schema_CreativeWorkSeries : is een deel van [0..n] >
-premis_IntellectualEntity --> schema_Episode : is een deel van [0..n] >
-
-premis_IntellectualEntity --> skos_Concept : licentie [0..n] >
 premis_IntellectualEntity : naam : <i>xsd:string</i> [1..1]
-
 premis_IntellectualEntity : object type : <i>xsd:string</i> [0..1]
-
 premis_IntellectualEntity : omschrijving : <i>xsd:string</i> [1..1]
-
-
 premis_IntellectualEntity : samenvatting : <i>xsd:string</i> [0..1]
-
-
-premis_IntellectualEntity --> schema_Place : spatiaal [0..n] >
 premis_IntellectualEntity : temporeel : <i>rdf:langString</i> [0..n]
-
 premis_IntellectualEntity : trefwoorden : <i>xsd:string</i> [0..n]
 
 
-premis_IntellectualEntity --> schema_Role : uitgever [0..n] >
+premis_IntellectualEntity --> haOrg_ContentPartner :beheerder [1..1]  > 
+premis_IntellectualEntity --> org_Organization :auteur van de copyright [0..n]  > 
+
+premis_IntellectualEntity --> schema_ArchiveComponent :is een deel van [0..n]  > 
+premis_IntellectualEntity --> schema_CreativeWorkSeries :is een deel van [0..n]  > 
+premis_IntellectualEntity --> schema_Episode :is een deel van [0..n]  > 
+premis_IntellectualEntity --> schema_Person :auteur van de copyright [0..n]  > 
+premis_IntellectualEntity --> schema_Place :spatiaal [0..n]  > 
+premis_IntellectualEntity --> schema_Role :auteur [0..n]  \lbijdrager [0..n]  \luitgever [0..n]  > 
+premis_IntellectualEntity --> skos_Concept :licentie [0..n]  > 
+
+
+
 
 haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_PhysicalRepresentation : formaat : <i>xsd:string</i> [1..1]
-
 haObj_PhysicalRepresentation : formaat : <i>xsd:string</i> [1..1]
-
 haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
-
+haObj_PhysicalRepresentation : kunst medium : <i>xsd:string</i> [0..n]
+haObj_PhysicalRepresentation : kunstvorm : <i>xsd:string</i> [0..n]
 haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
-
 haObj_PhysicalRepresentation : naam : <i>xsd:string</i> [1..1]
-
 haObj_PhysicalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation --> schema_QuantitativeValue :breedte [0..n]  \ldiepte [0..n]  \lhoogte [0..n]  > 
 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation : aangemaakt op : <i>edtf:EDTF-level1</i> [1..1]
-
-
-haObj_DigitalRepresentation --> schema_Role : auteur [0..n] >
 haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
-
 haObj_DigitalRepresentation : naam : <i>xsd:string</i> [1..1]
-
 haObj_DigitalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
-
 haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
-
 haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
+
+haObj_DigitalRepresentation --> schema_Role :auteur [0..n]  > 
 
 
 schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
-
 schema_CreativeWorkSeries : naam : <i>xsd:string</i> [1..1]
-
 schema_CreativeWorkSeries : omschrijving : <i>xsd:string</i> [1..1]
-
 schema_CreativeWorkSeries : seizoensnummer : <i>xsd:integer</i> [0..n]
+
 
 
 schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_Episode : identifier : <i>xsd:string</i> [1..1]
-
 schema_Episode : naam : <i>xsd:string</i> [1..1]
-
 schema_Episode : omschrijving : <i>xsd:string</i> [1..1]
 
 
 
 schema_Place : naam : <i>xsd:string</i> [1..1]
-
 schema_Place : omschrijving : <i>xsd:string</i> [1..1]
 
 
 schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_ArchiveComponent : naam : <i>xsd:string</i> [1..1]
-
 schema_ArchiveComponent : omschrijving : <i>xsd:string</i> [1..1]
 
 
 
-
-schema_Role --> schema_Person : acteur [0..n] >
-
-schema_Role --> schema_Person : auteur [0..n] >
-schema_Role --> org_Organization : auteur [0..n] >
-
-schema_Role --> schema_Person : bijdrager [0..n] >
-schema_Role --> org_Organization : bijdrager [0..n] >
 schema_Role : rolenaam : <i>xsd:string</i> [1..n]
-
-schema_Role --> skos_Concept : rolenaam [1..n] >
-
-schema_Role --> schema_Person : uitgever [0..n] >
-schema_Role --> org_Organization : uitgever [0..n] >
+schema_Role --> org_Organization :auteur [0..n]  \lbijdrager [0..n]  \luitgever [0..n]  > 
+schema_Role --> schema_Person :acteur [0..n]  \lauteur [0..n]  \lbijdrager [0..n]  \luitgever [0..n]  > 
+schema_Role --> skos_Concept :rolenaam [1..n]  > 
 
 
-schema_Person : achternaam : <i>xsd:string</i> [0..n]
 
-schema_Person : naam : <i>xsd:string</i> [1..1]
+schema_QuantitativeValue : eenheidcode : <i>xsd:string</i> [0..n]
+schema_QuantitativeValue : eenheidstekst : <i>xsd:string</i> [0..n]
+schema_QuantitativeValue : waarde : <i>xsd:float</i> [0..n]
 
-schema_Person : voornaam : <i>xsd:string</i> [0..n]
 
 
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_Collection : aantal items : <i>xsd:integer</i> [0..n]
-
 schema_Collection : identifier : <i>xsd:string</i> [1..1]
-
-
-schema_Collection --> premis_IntellectualEntity : is deel van [0..n] >
 schema_Collection : naam : <i>xsd:string</i> [1..1]
-
 schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
+schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  > 
+
+
+
+
+
+
+
 
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
-
-
-
-
 
 
 

@@ -3,7 +3,8 @@
 skinparam classFontSize 14
 !define LIGHTORANGE
 skinparam componentStyle uml2
-skinparam wrapMessageWidth 100
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
 ' skinparam ArrowColor #Maroon
 ' Remove shadows
 skinparam shadowing false
@@ -21,102 +22,83 @@ class "<b>Educational Organization</b> (haOrg:EducationalOrganization)" as haOrg
 class "<b>Site</b> (org:Site)" as org_Site [[#org%3ASite]]
 class "<b>Post</b> (org:Post)" as org_Post [[#org%3APost]]
 class "<b>Role</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Postal address</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
 class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>Organization Type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
 
 
 org_Organization : alternative label : <i>rdf:langString</i> [0..n]
-
-
-org_Organization --> haOrg_OrganizationType : classification [0..n] >
-
-org_Organization --> schema_ContactPoint : contact point [0..n] >
 org_Organization : description : <i>rdf:langString</i> [0..1]
-
-
-org_Organization --> org_OrganizationalUnit : has Unit [0..n] >
-
-org_Organization --> schema_Person : has account manager [0..1] >
-
-org_Organization --> org_Post : has post [0..n] >
-
-org_Organization --> org_Site : has primary site [0..1] >
-
-org_Organization --> org_Site : has site [0..n] >
-
-
-org_Organization --> haOrg_Logo : logo [0..n] >
 org_Organization : preferred label : <i>rdf:langString</i> [1..1]
 
+org_Organization --> haOrg_Logo :logo [0..n]  > 
+org_Organization --> haOrg_OrganizationType :classification [0..n]  > 
+org_Organization --> org_OrganizationalUnit :has Unit [0..n]  > 
+org_Organization --> org_Post :has post [0..n]  > 
+org_Organization --> org_Site :has primary site [0..1]  \lhas site [0..n]  > 
+
+org_Organization --> schema_ContactPoint :contact point [0..n]  > 
+org_Organization --> schema_Person :has account manager [0..1]  > 
 
 org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
 
-
-org_OrganizationalUnit --> org_Organization : unit of [1..n] >
+org_OrganizationalUnit --> org_Organization :unit of [1..n]  > 
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
-
-haOrg_ContentPartner --> schema_Person : has account manager [1..1] >
+haOrg_ContentPartner --> schema_Person :has account manager [1..1]  > 
 
 haOrg_EducationalPartner --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
 
-
-haOrg_EducationalPartner --> schema_Person : has account manager [1..1] >
-
+haOrg_EducationalPartner --> schema_Person :has account manager [1..1]  > 
 
 
-org_Site --> schema_PostalAddress : site Address [0..1] >
+org_Site --> schema_PostalAddress :site Address [0..1]  > 
 
 
+org_Post --> org_Organization :post in [1..n]  > 
+org_Post --> org_Role :role [1..n]  > 
 
-org_Post --> org_Organization : post in [1..n] >
-
-org_Post --> org_Role : role [1..n] >
-
+org_Role --|> skos_Concept #blue;line.dotted;text:blue
 
 org_Role : preferred label : <i>rdf:langString</i> [1..1]
 
 
 
+schema_Person : birth date : <i>edtf:EDTF-level1</i> [0..n]
+schema_Person : death date : <i>edtf:EDTF-level1</i> [0..n]
 schema_Person : email : <i>xsd:string</i> [0..n]
+schema_Person : family name : <i>xsd:string</i> [1..1]
+schema_Person : given name : <i>xsd:string</i> [1..1]
+schema_Person : name : <i>xsd:string</i> [0..1]
 
-schema_Person : family name : <i>xsd:string</i> [1..n]
+schema_Person --> org_Organization :is account manager of [0..1]  > 
+schema_Person --> org_Post :holds [0..n]  > 
 
-schema_Person : given name : <i>xsd:string</i> [1..n]
-
-
-schema_Person --> org_Post : holds [0..n] >
-
-schema_Person --> org_Organization : is account manager of [0..1] >
 
 schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
 
 schema_PostalAddress : address : <i>xsd:string</i> [0..1]
-
 schema_PostalAddress : country : <i>rdf:langString</i> [0..1]
-
 schema_PostalAddress : locality : <i>xsd:string</i> [0..1]
-
 schema_PostalAddress : post office box number : <i>xsd:string</i> [0..1]
-
 schema_PostalAddress : postal code : <i>xsd:string</i> [0..1]
-
 schema_PostalAddress : region : <i>xsd:string</i> [0..1]
 
 
 
+
 schema_ContactPoint : contact type : <i>xsd:string</i> [1..1]
-
 schema_ContactPoint : email : <i>xsd:string</i> [0..n]
-
 schema_ContactPoint : telephone : <i>xsd:string</i> [0..n]
 
 
+haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
 
 
 
