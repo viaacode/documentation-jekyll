@@ -1,7 +1,6 @@
 FROM jekyll/jekyll:3
-
+RUN gem install bundler 
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
 COPY . .
-
-RUN gem install bundler && bundle install
-
 ENTRYPOINT ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"]
