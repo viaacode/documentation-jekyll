@@ -460,6 +460,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de maker worden gespecif
 
 | `<Maker />` | |
 | `<Archiefvormer />` | |
+| `<Architect>` | De architect van het afgebeelde gebouw. |
 | `<Auteur />` | |
 | `<Acteur />` | |
 | `<Cineast />` | |
@@ -706,6 +707,7 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 | `Sport` | |
 | `Wetenschap` | |
 | `Praatprogramma` | Een televisieprogramma of radioprogramma waarbij het hoofdaandeel uit spreken bestaat; een talkshow. |
+| `Theater` | Theater is een verzamelnaam voor kunstvormen waarbij acteurs levende voorstellingen maken voor een publiek, opgevoerd op een scène, waarbij het hoofdaandeel uit spreken bestaat. |
 
 ## Object type
 
