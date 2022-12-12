@@ -10,6 +10,7 @@ skinparam wrapWidth 1000
 skinparam shadowing false
 'skinparam linetype polyline
 skinparam ArrowMessageAlignment left
+top to bottom direction
 
 
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
@@ -27,9 +28,9 @@ class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Postal address</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
 class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
 class "<b>Organization Type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
 
 
 org_Organization : alternative label : <i>rdf:langString</i> [0..n]
@@ -98,9 +99,9 @@ schema_ContactPoint : email : <i>xsd:string</i> [0..n]
 schema_ContactPoint : telephone : <i>xsd:string</i> [0..n]
 
 
+
+
 haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
-
-
 
 
 

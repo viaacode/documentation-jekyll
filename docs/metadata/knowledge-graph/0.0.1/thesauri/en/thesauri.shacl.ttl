@@ -8,7 +8,7 @@
 @prefix skosxl1: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n3dc33c075d154b82a1dec9455c51731bb1 a rdfs:Class,
+_:n18b67290f95c423dab8349d3bbcff47bb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -445,7 +445,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n3dc33c075d154b82a1dec9455c51731bb1 ;
+    rdfs:range _:n18b67290f95c423dab8349d3bbcff47bb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met een van zijn leden."@nl .

@@ -26,17 +26,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n4657c9a0badf41e6b5c4ecae9b325f3db11 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n4657c9a0badf41e6b5c4ecae9b325f3db14 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n4ac423edfed64cf99ce28efc2ed7855ab1 a rdfs:Class,
+_:naf194465ae93417383f06dcf0ecf6c9eb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
+
+_:nbaa55772473149f09142259e865355f4b11 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:nbaa55772473149f09142259e865355f4b14 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 dcterms:FileFormat a rdfs:Class ;
     rdfs:label "File Format"@en,
@@ -725,7 +725,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n4657c9a0badf41e6b5c4ecae9b325f3db11 ;
+    rdfs:domain _:nbaa55772473149f09142259e865355f4b11 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dcterms:date .
 
@@ -767,7 +767,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n4657c9a0badf41e6b5c4ecae9b325f3db14 ;
+    rdfs:domain _:nbaa55772473149f09142259e865355f4b14 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dcterms:date .
 
@@ -909,7 +909,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n4ac423edfed64cf99ce28efc2ed7855ab1 ;
+    rdfs:range _:naf194465ae93417383f06dcf0ecf6c9eb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met een van zijn leden."@nl .

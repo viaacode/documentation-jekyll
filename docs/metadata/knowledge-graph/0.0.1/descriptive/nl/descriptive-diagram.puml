@@ -10,6 +10,7 @@ skinparam wrapWidth 1000
 skinparam shadowing false
 'skinparam linetype polyline
 skinparam ArrowMessageAlignment left
+top to bottom direction
 
 
 class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
@@ -29,11 +30,11 @@ class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
@@ -148,11 +149,11 @@ schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  >
 
 
 
-
-
-
-
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
+
+
 
 
 

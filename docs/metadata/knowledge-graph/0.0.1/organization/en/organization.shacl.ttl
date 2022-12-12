@@ -13,7 +13,7 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:nbdcf052a468547a38f3f1912a564db11b1 a rdfs:Class,
+_:n42f5168f7df24e37874cbdbcc0fed45db1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -334,7 +334,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:nbdcf052a468547a38f3f1912a564db11b1 ;
+    rdfs:range _:n42f5168f7df24e37874cbdbcc0fed45db1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met een van zijn leden."@nl .

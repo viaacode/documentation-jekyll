@@ -10,6 +10,7 @@ skinparam wrapWidth 1000
 skinparam shadowing false
 'skinparam linetype polyline
 skinparam ArrowMessageAlignment left
+top to bottom direction
 
 
 class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
@@ -29,11 +30,11 @@ class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
@@ -147,11 +148,11 @@ schema_Collection --> premis_IntellectualEntity :has part [0..n]  >
 
 
 
-
-
-
-
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+
+
+
 
 
 

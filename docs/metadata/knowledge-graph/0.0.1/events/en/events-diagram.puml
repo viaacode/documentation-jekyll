@@ -10,6 +10,7 @@ skinparam wrapWidth 1000
 skinparam shadowing false
 'skinparam linetype polyline
 skinparam ArrowMessageAlignment left
+top to bottom direction
 
 
 class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
@@ -18,10 +19,10 @@ class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Entity</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Outcome status</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
 class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
-class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Outcome status</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
 class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
 class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
 
