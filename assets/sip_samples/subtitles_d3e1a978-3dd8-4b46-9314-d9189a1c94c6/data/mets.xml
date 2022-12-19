@@ -46,8 +46,8 @@
                     </file>
                 </fileGrp>
             </fileGrp>
-            <fileGrp USE="representations" ID="uuid-585f793c-b6cd-4985-82f5-95dc60d34157">
-                <fileGrp USE="representations/representation_1" ID="uuid-14138e4b-645b-41c4-ba17-adeac62e773c">
+            <fileGrp USE="Representations" ID="uuid-585f793c-b6cd-4985-82f5-95dc60d34157">
+                <fileGrp USE="Representations/representation_1" ID="uuid-14138e4b-645b-41c4-ba17-adeac62e773c">
                     <file ID="uuid-ae19db1b-51da-41e4-8f86-592acc8b7571" MIMETYPE="text/xml" SIZE="3573" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="2b5d678e0965438e1ac1e4f8cc3096a7" CHECKSUMTYPE="MD5">
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" />
                     </file>

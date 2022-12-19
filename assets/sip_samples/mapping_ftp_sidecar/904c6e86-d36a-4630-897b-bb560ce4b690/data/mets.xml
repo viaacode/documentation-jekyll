@@ -43,8 +43,8 @@
                     </file>
                 </fileGrp>
             </fileGrp>
-            <fileGrp USE="representations" ID="uuid-eedea26d-4e18-4088-b79d-9ee55edabd91">
-                <fileGrp USE="representations/representation_1" ID="uuid-f98a1920-e98d-4e3a-a80e-80525fc57bf8">
+            <fileGrp USE="Representations" ID="uuid-eedea26d-4e18-4088-b79d-9ee55edabd91">
+                <fileGrp USE="Representations/representation_1" ID="uuid-f98a1920-e98d-4e3a-a80e-80525fc57bf8">
                     <file ID="uuid-489d422b-4195-4545-9920-b1cd6fecbd02" MIMETYPE="text/xml" SIZE="3035" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="738dd98c663822731dbd073ce639d12a" CHECKSUMTYPE="MD5">
                         <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" />
                     </file>
