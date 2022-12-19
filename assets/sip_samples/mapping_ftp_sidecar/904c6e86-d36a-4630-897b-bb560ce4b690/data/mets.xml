@@ -20,12 +20,12 @@
     </metsHdr>
 
     <dmdSec ID="uuid-25c076a4-39e5-429b-a495-1c0a7dff5b04">
-        <mdRef ID="uuid-fc5130de-22bf-4389-af24-0c6b37a9513e" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="9505" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="8f7835a06bec15b4038cc6089ef1e655" CHECKSUMTYPE="MD5" />
+        <mdRef LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="9505" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="8f7835a06bec15b4038cc6089ef1e655" CHECKSUMTYPE="MD5" />
     </dmdSec>
 
     <amdSec ID="uuid-b1c393da-7bc1-4178-967f-9f32c3fe4f14">
         <digiprovMD ID="uuid-056d1289-c015-4815-b91c-78dcbdbdf9aa">
-            <mdRef ID="uuid-0aa25ff8-90e4-48d8-93c5-50ab8dd0be80" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="5695" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="3b6c95b04a5fb9a4baf7bbf68a10a04f" CHECKSUMTYPE="MD5" />
+            <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="5695" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="3b6c95b04a5fb9a4baf7bbf68a10a04f" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 

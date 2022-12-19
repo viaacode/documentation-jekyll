@@ -4,12 +4,12 @@
     <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00" />
 
     <dmdSec ID="uuid-9ade6abd-c7f9-450d-9c50-9c313af54d02">
-        <mdRef ID="uuid-8052dfce-00e3-46f6-a7e9-df46a19c5773" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="790" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="e45622b2b8536d312203e1cb7d5548c7" CHECKSUMTYPE="MD5" />
+        <mdRef LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="790" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="e45622b2b8536d312203e1cb7d5548c7" CHECKSUMTYPE="MD5" />
     </dmdSec>
 
     <amdSec ID="uuid-13f57158-7c3f-40b5-86ef-d190ec968742">
         <digiprovMD ID="uuid-fca97f11-e8cb-40df-9021-5f2af44140a0">
-            <mdRef ID="uuid-bcffe55d-bbf6-498e-acc7-447e16898a23" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="7321" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="7a1a5145d1f54b01537b76e52b19b804" CHECKSUMTYPE="MD5" />
+            <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="7321" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="7a1a5145d1f54b01537b76e52b19b804" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 

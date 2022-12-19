@@ -5,7 +5,7 @@
 
     <amdSec ID="uuid-d4e5839a-a200-454c-83b0-220cc6f0df07">
         <digiprovMD ID="uuid-281dbc55-8250-4e54-a490-6cdf30880589">
-            <mdRef ID="uuid-80244b47-cb29-4f8b-9577-95ac2c449a2f" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="13586" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="1237af081869400e76ce8f379578bcfe" CHECKSUMTYPE="MD5" />
+            <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="13586" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="1237af081869400e76ce8f379578bcfe" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 

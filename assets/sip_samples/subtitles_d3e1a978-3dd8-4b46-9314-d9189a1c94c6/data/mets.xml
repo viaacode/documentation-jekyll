@@ -21,13 +21,13 @@
 
     <!-- ref to descriptive metadata about IE -->
     <dmdSec ID="uuid-f1fdfc02-22e3-4a0c-bcf5-3901db9fbb05">
-        <mdRef ID="uuid-2025bb2f-2132-45d7-b112-c849d1d70240" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="998" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5421f612391f246855d8768e5ee07b9a" CHECKSUMTYPE="MD5" />
+        <mdRef LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="998" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5421f612391f246855d8768e5ee07b9a" CHECKSUMTYPE="MD5" />
     </dmdSec>
 
     <!-- ref to the PREMIS metadata about IE/package -->
     <amdSec ID="uuid-6718bbe5-95d5-4171-bde8-011b32eec823">
         <digiprovMD ID="uuid-e06159c9-0133-49d5-a0a8-46c6e774cfac">
-            <mdRef ID="uuid-947bfd4e-5d73-469a-9538-05fed002a603" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="1635" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="b5c029d396d9c73804498fa9223154cf" CHECKSUMTYPE="MD5" />
+            <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="1635" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="b5c029d396d9c73804498fa9223154cf" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 
