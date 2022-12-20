@@ -3,40 +3,27 @@
 
     <metsHdr CREATEDATE="2022-04-08T09:29:15.014+02:00" />
 
-    <amdSec ID="uuid-3385fccb-957c-4139-b875-824883d7e47e">
+    <amdSec>
         <digiprovMD ID="uuid-1e1a1ecb-2f32-477e-b0d7-d5e838091ce4">
             <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="3958" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="0e3500af5febb8400a0fa6b78104ed74" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 
     <fileSec ID="uuid-15a33548-2564-4f7b-bb84-0dae9532b15a">
-        <fileGrp USE="representation_1" ID="uuid-8192ddbd-55de-4119-b31d-340806f2d150">
-            <fileGrp USE="metadata" ID="uuid-c9109d90-5b81-431a-831b-78867291be6c">
-                <fileGrp USE="metadata/descriptive" ID="uuid-cb754088-4def-43f6-be17-905ec3cc6e04" />
-                <fileGrp USE="metadata/preservation" ID="uuid-d5a955bd-e172-45d7-83f6-d4ca5847dce7">
-                    <file ID="uuid-2a06eb3d-c131-4a4a-8ebd-ec1fb0cb1beb" MIMETYPE="application/xml" SIZE="3958" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="0e3500af5febb8400a0fa6b78104ed74" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" />
-                    </file>
-                </fileGrp>
-            </fileGrp>
-            <fileGrp USE="data" ID="uuid-3a3a659d-e950-4d71-bbfd-ff1787c1b930">
-                <file ID="uuid-867b145a-3bfa-4b3b-ac97-4818f7a0e6bc" MIMETYPE="image/jpeg" SIZE="721603" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="b7ae37f6094794e313402b9d064978e8" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/1445.jpeg" />
-                </file>
-            </fileGrp>
+        <fileGrp USE="data" ID="uuid-3a3a659d-e950-4d71-bbfd-ff1787c1b930">
+            <file ID="uuid-867b145a-3bfa-4b3b-ac97-4818f7a0e6bc" MIMETYPE="image/jpeg" SIZE="721603" CREATED="2022-01-07T15:41:12.497+01:00" CHECKSUM="b7ae37f6094794e313402b9d064978e8" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/1445.jpeg" />
+            </file>
         </fileGrp>
     </fileSec>
 
     <structMap ID="uuid-ea36ae82-36b9-413e-a78b-61bc9eb09c1b" TYPE="PHYSICAL" LABEL="CSIP">
         <div ID="uuid-4366bcec-576b-47bc-b894-fc60e3516717" LABEL="">
-            <div ID="uuid-bbd74f78-1616-429f-9d11-9be3e3312275" LABEL="Metadata">
-                <div ID="uuid-0aa98148-8a94-4fc8-b9dd-52fbf677be82" LABEL="descriptive" />
-                <div ID="uuid-99fc509f-3d6e-48c0-8096-299f41292148" LABEL="preservation">
-                    <fptr FILEID="uuid-2a06eb3d-c131-4a4a-8ebd-ec1fb0cb1beb" />
-                </div>
-            </div>
+            <div ID="uuid-bbd74f78-1616-429f-9d11-9be3e3312275" LABEL="Metadata" 
+            ADMID="uuid-1e1a1ecb-2f32-477e-b0d7-d5e838091ce4" 
+            DMDID="uuid-0aa98148-8a94-4fc8-b9dd-52fbf677be82" />
             <div ID="uuid-8e5c48cf-9206-42df-9229-6510b4ddf851" LABEL="data">
-                <fptr FILEID="uuid-867b145a-3bfa-4b3b-ac97-4818f7a0e6bc" />
+                <fptr FILEID="uuid-3a3a659d-e950-4d71-bbfd-ff1787c1b930" />
             </div>
         </div>
     </structMap>
