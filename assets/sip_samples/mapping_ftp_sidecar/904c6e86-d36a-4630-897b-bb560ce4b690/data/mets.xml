@@ -55,7 +55,7 @@
 
     <structMap ID="uuid-f4802b22-f5c6-4fea-adef-cf1f5669ca0f" TYPE="PHYSICAL" LABEL="CSIP">
         <div ID="uuid-567e153a-e41c-4477-9db0-04e7011e6ef4" LABEL="">
-            <div ID="uuid-45ca08e1-c62b-4e2e-b53b-89c888d68fb0" LABEL="metadata">
+            <div ID="uuid-45ca08e1-c62b-4e2e-b53b-89c888d68fb0" LABEL="Metadata">
                 <div ID="uuid-0b6ef4f3-ed0b-44c1-b64b-a6d04aedb663" LABEL="descriptive">
                     <fptr FILEID="uuid-8e6b050d-93a4-429a-b2c7-570dfe2fe68d" />
                 </div>
@@ -63,7 +63,7 @@
                     <fptr FILEID="uuid-afcc3358-6f7c-4df3-b477-e3d5c3d5dd16" />
                 </div>
             </div>
-            <div ID="uuid-68a7e598-8227-4c7f-98df-4ccfe9fa4387" LABEL="representations">
+            <div ID="uuid-68a7e598-8227-4c7f-98df-4ccfe9fa4387" LABEL="Representations">
                 <div ID="uuid-5f54d77c-5927-4e45-90ae-7cf378a82807" LABEL="representation_1">
                     <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
                 </div>

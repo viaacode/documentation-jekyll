@@ -34,7 +34,7 @@
 
     <structMap ID="uuid-610ad42a-f6b0-46b5-a01f-8e7a065fcddf" TYPE="PHYSICAL" LABEL="CSIP">
         <div ID="uuid-ef2916e7-7378-41db-bb64-6187953f6361" LABEL="">
-            <div ID="uuid-4497333d-7973-4ab4-8a73-f460d70db8d8" LABEL="metadata">
+            <div ID="uuid-4497333d-7973-4ab4-8a73-f460d70db8d8" LABEL="Metadata">
                 <div ID="uuid-bce51613-6b60-4de6-95d4-2fc1b2cce378" LABEL="descriptive" />
                 <div ID="uuid-1623a603-d729-4aea-8822-dfa76f5d2618" LABEL="preservation">
                     <fptr FILEID="uuid-b1e79b20-53f2-4b76-97de-a546d95c9271" />

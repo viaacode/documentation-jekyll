@@ -38,7 +38,7 @@
     <!-- structural map for the structure of the SIP itself -->
     <structMap ID="uuid-cf28d5ff-16d1-4af9-ae2a-67b3db8e75f0" TYPE="PHYSICAL" LABEL="CSIP">
         <div ID="uuid-79d61ee7-dafb-4011-a9f2-c0d7d6b766b5" LABEL="representation_2">
-            <div ID="uuid-132f7d2f-0708-4962-a960-511f480045ce" LABEL="metadata">
+            <div ID="uuid-132f7d2f-0708-4962-a960-511f480045ce" LABEL="Metadata">
                 <div ID="uuid-804d070c-7f01-490b-a0bc-ee3df1b2d59d" LABEL="preservation">
                     <fptr FILEID="uuid-fff0d71d-ec7d-40a2-be28-ea7f491d3424" />
                 </div>
