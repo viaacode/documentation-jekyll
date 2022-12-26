@@ -19,7 +19,7 @@ Voor het beschrijven van deze brede kennis hanteren we een modulair datamodel da
 - metamodellen om de opgebouwde kennis te annoteren zoals gebruiksrecht (wie mag er wat met de metadata of het materiaal?) of dataherkomst (wie heeft metadata toegevoegd of gewijzigd en wanneer?).
 
 De thesauri zijn gecontroleerde (hierarchische) termenlijsten om dingen te classificeren.
-Alle datamodellen zijn beschrikbaar in [RDFS](https://www.w3.org/TR/rdf-schema/) en [SHACL](https://www.w3.org/TR/shacl/); de thesauri als [SKOS](https://www.w3.org/TR/skos-reference/).
+Alle datamodellen zijn beschikbaar in [RDFS](https://www.w3.org/TR/rdf-schema/) en [SHACL](https://www.w3.org/TR/shacl/); de thesauri als [SKOS](https://www.w3.org/TR/skos-reference/).
 
 {: .note }
 Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet beschikbaar in productie.
