@@ -13,13 +13,15 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Collectie</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
-class "<b>Geordende collectie</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "(rdf:List)" as rdf_List [[#rdf%3AList]]
 class "<b>Collectie</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Conceptscheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
-class "(skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
-class "(rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>Geordende collectie</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "<b>Collectie</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
+
+
 
 
 skos_Collection : alternatief label : <i>rdf:langString</i> [0..n]
@@ -38,23 +40,6 @@ skos_Collection --> skos_Collection :lid [0..n]  >
 skos_Collection --> skos_Concept :lid [0..n]  > 
 
 
-skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
-
-skos_OrderedCollection : alternatief label : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : definitie : <i>xsd:string</i> [1..n]
-skos_OrderedCollection : historische notitie : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : notation : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : note : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : redactionele notitie : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : scope notitie : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : verborgen label : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : voorbeeld : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_OrderedCollection : wijzigingsnotitie : <i>xsd:string</i> [0..n]
-skos_OrderedCollection --> rdf_List :lijst van leden [0..n]  > 
-
-
-
 
 skos_Concept : alternatief label : <i>rdf:langString</i> [0..n]
 skos_Concept : definitie : <i>xsd:string</i> [1..n]
@@ -62,9 +47,8 @@ skos_Concept : historische notitie : <i>xsd:string</i> [0..n]
 skos_Concept : notation : <i>xsd:string</i> [0..n]
 skos_Concept : note : <i>xsd:string</i> [0..n]
 skos_Concept : redactionele notitie : <i>xsd:string</i> [0..n]
-skos_Concept : scope notitie : <i>xsd:string</i> [0..n]
-skos_Concept : scope notitie : <i>xsd:string</i> [0..n]
 skos_Concept : scope note : <i>rdf:langString</i> [0..n]
+skos_Concept : scope notitie : <i>xsd:string</i> [0..n]
 skos_Concept : verborgen label : <i>rdf:langString</i> [0..n]
 skos_Concept : voorbeeld : <i>xsd:string</i> [0..n]
 skos_Concept : voorkeurslabel : <i>rdf:langString</i> [1..n]
@@ -91,6 +75,23 @@ skos_ConceptScheme : wijzigingsnotitie : <i>xsd:string</i> [0..n]
 skos_ConceptScheme --> skos_Concept :heeft top concept [0..n]  > 
 
 
+skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
+
+skos_OrderedCollection : alternatief label : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : definitie : <i>xsd:string</i> [1..n]
+skos_OrderedCollection : historische notitie : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : notation : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : redactionele notitie : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : scope notitie : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : verborgen label : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : voorbeeld : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : voorkeurslabel : <i>rdf:langString</i> [1..n]
+skos_OrderedCollection : wijzigingsnotitie : <i>xsd:string</i> [0..n]
+skos_OrderedCollection --> rdf_List :lijst van leden [0..n]  > 
+
+
+
 
 skosxl_Label : alternatief label : <i>rdf:langString</i> [0..n]
 skosxl_Label : definitie : <i>xsd:string</i> [1..n]
@@ -104,8 +105,6 @@ skosxl_Label : verborgen label : <i>rdf:langString</i> [0..n]
 skosxl_Label : voorbeeld : <i>xsd:string</i> [0..n]
 skosxl_Label : voorkeurslabel : <i>rdf:langString</i> [1..n]
 skosxl_Label : wijzigingsnotitie : <i>xsd:string</i> [0..n]
-
-
 
 
 

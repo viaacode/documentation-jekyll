@@ -82,7 +82,10 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 .zoom:hover {
   transform: scale(2.0); cursor: grab;
 }
-
+.svg-external-link {
+  width: 16px;
+  height: 16px;
+}
 </style>
 <script>
 var svg = document.querySelector('svg[zoomAndPan="magnify"]');

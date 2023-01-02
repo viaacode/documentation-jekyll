@@ -13,71 +13,75 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>rdf:List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
 class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
-class "<b>Event</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
-class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Entity</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
-class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Physical representation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Creative Work Series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
-class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
-class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Archive Component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
-class "<b>Quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>File</b> (premis:File)" as premis_File [[#premis%3AFile]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
-class "<b>Storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>Local identifier</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>OrganizationalUnit</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Educational Partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
-class "<b>Educational Organization</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
-class "<b>Site</b> (org:Site)" as org_Site [[#org%3ASite]]
-class "<b>Post</b> (org:Post)" as org_Post [[#org%3APost]]
-class "<b>Role</b> (org:Role)" as org_Role [[#org%3ARole]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
-class "<b>Postal address</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
-class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
-class "<b>Ordered Collection</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
-class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Concept Scheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
-class "(skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
-class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
-class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
-class "<b>Organization Type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Outcome status</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
-class "<b>Storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
-class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Creative Work Series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
 class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Educational Partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Educational Organization</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>Episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Event</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
+class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>File</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>File Format</b> (dc:FileFormat)" as dc_FileFormat [[#dc%3AFileFormat]]
+class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
+class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
+class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
+class "<b>Local identifier</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Entity</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>Ordered Collection</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organization Type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>OrganizationalUnit</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Outcome status</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Physical representation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>Post</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Postal address</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Role</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Site</b> (org:Site)" as org_Site [[#org%3ASite]]
 class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
 class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
-class "(rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>Storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
+
+
 
 
 prov_Activity : has end date : <i>xsd:dateTime</i> [1..1]
+prov_Activity : has generated : <i>IRI</i> [0..1]
 prov_Activity : has start date : <i>xsd:dateTime</i> [1..1]
 
 prov_Activity --> org_Organization :was attributed to [1..1]  > 
@@ -85,6 +89,146 @@ prov_Activity --> premis_HardwareAgent :was attributed to [1..1]  >
 prov_Activity --> premis_Object :was attributed to [1..1]  > 
 prov_Activity --> premis_SoftwareAgent :was attributed to [1..1]  > 
 prov_Activity --> schema_Person :was attributed to [1..1]  > 
+
+
+schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_ArchiveComponent : description : <i>xsd:string</i> [1..1]
+schema_ArchiveComponent : name : <i>xsd:string</i> [1..1]
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : collection size : <i>xsd:integer</i> [0..n]
+schema_Collection : description : <i>xsd:string</i> [1..1]
+schema_Collection : identifier : <i>xsd:string</i> [1..1]
+schema_Collection : name : <i>xsd:string</i> [1..1]
+schema_Collection --> premis_IntellectualEntity :has part [0..n]  > 
+
+
+
+
+skos_Collection : alternative label : <i>rdf:langString</i> [0..n]
+skos_Collection : alternative label : <i>rdf:langString</i> [0..n]
+skos_Collection : change note : <i>xsd:string</i> [0..n]
+skos_Collection : definition : <i>xsd:string</i> [1..n]
+skos_Collection : editorial note : <i>xsd:string</i> [0..n]
+skos_Collection : example : <i>xsd:string</i> [0..n]
+skos_Collection : hidden label : <i>rdf:langString</i> [0..n]
+skos_Collection : history note : <i>xsd:string</i> [0..n]
+skos_Collection : notation : <i>xsd:string</i> [0..n]
+skos_Collection : note : <i>xsd:string</i> [0..n]
+skos_Collection : preferred label : <i>rdf:langString</i> [1..n]
+skos_Collection : preferred label : <i>rdf:langString</i> [1..n]
+skos_Collection : scope note : <i>xsd:string</i> [0..n]
+
+skos_Collection --> skos_Collection :member [0..n]  > 
+skos_Collection --> skos_Concept :member [0..n]  > 
+
+
+
+skos_Concept : alternative label : <i>rdf:langString</i> [0..n]
+skos_Concept : alternative label : <i>rdf:langString</i> [0..n]
+skos_Concept : change note : <i>xsd:string</i> [0..n]
+skos_Concept : definition : <i>xsd:string</i> [1..n]
+skos_Concept : editorial note : <i>xsd:string</i> [0..n]
+skos_Concept : example : <i>xsd:string</i> [0..n]
+skos_Concept : hidden label : <i>rdf:langString</i> [0..n]
+skos_Concept : history note : <i>xsd:string</i> [0..n]
+skos_Concept : notation : <i>xsd:string</i> [0..n]
+skos_Concept : note : <i>xsd:string</i> [0..n]
+skos_Concept : preferred label : <i>rdf:langString</i> [1..n]
+skos_Concept : preferred label : <i>rdf:langString</i> [1..n]
+skos_Concept : scope note : <i>xsd:string</i> [0..n]
+skos_Concept : scope note : <i>rdf:langString</i> [0..n]
+
+skos_Concept --> skos_Concept :broad match [0..n]  \lbroader [0..n]  \lbroader transitive [0..n]  \lclose match [0..n]  \lexact match [0..n]  \lmapping relation [0..n]  \lnarrow match [0..n]  \lnarrower [0..n]  \lnarrower transitive [0..n]  \lrelated match [0..n]  \lsemantic relation [0..n]  > 
+skos_Concept --> skos_ConceptScheme :in scheme [1..n]  \ltop concept of [0..n]  > 
+skos_Concept --> skosxl_Label :pref label [1..n]  > 
+
+
+
+skos_Concept : alternative label : <i>rdf:langString</i> [0..n]
+skos_Concept : alternative label : <i>rdf:langString</i> [0..n]
+skos_Concept : change note : <i>xsd:string</i> [0..n]
+skos_Concept : definition : <i>xsd:string</i> [1..n]
+skos_Concept : editorial note : <i>xsd:string</i> [0..n]
+skos_Concept : example : <i>xsd:string</i> [0..n]
+skos_Concept : hidden label : <i>rdf:langString</i> [0..n]
+skos_Concept : history note : <i>xsd:string</i> [0..n]
+skos_Concept : notation : <i>xsd:string</i> [0..n]
+skos_Concept : note : <i>xsd:string</i> [0..n]
+skos_Concept : preferred label : <i>rdf:langString</i> [1..n]
+skos_Concept : preferred label : <i>rdf:langString</i> [1..n]
+skos_Concept : scope note : <i>xsd:string</i> [0..n]
+skos_Concept : scope note : <i>rdf:langString</i> [0..n]
+
+skos_Concept --> skos_Concept :broad match [0..n]  \lbroader [0..n]  \lbroader transitive [0..n]  \lclose match [0..n]  \lexact match [0..n]  \lmapping relation [0..n]  \lnarrow match [0..n]  \lnarrower [0..n]  \lnarrower transitive [0..n]  \lrelated match [0..n]  \lsemantic relation [0..n]  > 
+skos_Concept --> skos_ConceptScheme :in scheme [1..n]  \ltop concept of [0..n]  > 
+skos_Concept --> skosxl_Label :pref label [1..n]  > 
+
+
+
+skos_ConceptScheme : alternative label : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme : alternative label : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme : change note : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : definition : <i>xsd:string</i> [1..n]
+skos_ConceptScheme : editorial note : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : example : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : hidden label : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme : history note : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : notation : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : note : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : preferred label : <i>rdf:langString</i> [1..n]
+skos_ConceptScheme : preferred label : <i>rdf:langString</i> [1..n]
+skos_ConceptScheme : scope note : <i>xsd:string</i> [0..n]
+
+skos_ConceptScheme --> skos_Concept :has top concept [0..n]  > 
+
+
+
+schema_ContactPoint : contact type : <i>xsd:string</i> [1..1]
+schema_ContactPoint : email : <i>xsd:string</i> [0..n]
+schema_ContactPoint : telephone : <i>xsd:string</i> [0..n]
+
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
+
+haOrg_ContentPartner --> schema_Person :has account manager [1..1]  > 
+
+schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_CreativeWorkSeries : description : <i>xsd:string</i> [1..1]
+schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
+schema_CreativeWorkSeries : name : <i>xsd:string</i> [1..1]
+schema_CreativeWorkSeries : season number : <i>xsd:integer</i> [0..n]
+
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation : caption : <i>xsd:string</i> [0..1]
+haObj_DigitalRepresentation : date created : <i>edtf:EDTF-level1</i> [1..1]
+haObj_DigitalRepresentation : description : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : name : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
+
+haObj_DigitalRepresentation --> haObj_PhysicalRepresentation :has Source [0..n]  > 
+haObj_DigitalRepresentation --> premis_File :Media fragment source [0..n]  \lhas Root [0..n]  \lincludes [1..n]  > 
+haObj_DigitalRepresentation --> premis_IntellectualEntity :is access copy of [0..1]  \lis archiving master of [1..n]  \lis mezzanine format of [0..1]  \lrepresents [1..n]  > 
+haObj_DigitalRepresentation --> schema_Role :author [0..n]  > 
+
+
+haOrg_EducationalPartner --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
+
+haOrg_EducationalPartner --> schema_Person :has account manager [1..1]  > 
+
+schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Episode : description : <i>xsd:string</i> [1..1]
+schema_Episode : identifier : <i>xsd:string</i> [1..1]
+schema_Episode : name : <i>xsd:string</i> [1..1]
 
 
 premis_Event --|> prov_Activity #blue;line.dotted;text:blue
@@ -98,13 +242,29 @@ premis_Event --> premis_OutcomeStatus :has outcome [1..1]  >
 premis_Event --> premis_SoftwareAgent :executed by [0..1]  > 
 
 
-premis_Object --|> prov_Entity #blue;line.dotted;text:blue
+premis_File --|> premis_Object #blue;line.dotted;text:blue
 
-premis_Object --> premis_Event :was generated by [0..1]  > 
-premis_Object --> premis_Object :has relationship [0..n]  > 
+premis_File : mime type : <i>xsd:string</i> [0..1]
+premis_File --> dc_FileFormat :Format [1..1]  \lformat [1..1]  > 
+premis_File --> haObj_DigitalRepresentation :has media fragment [0..n]  \lis Included in [1..n]  > 
+premis_File --> premis_File :documents [0..n]  \lnext file in sequence [0..1]  \lsupersedes [0..n]  > 
+premis_File --> premis_Fixity :has fixity [1..1]  > 
+premis_File --> premis_StorageLocation :stored at [1..n]  > 
+
+
+
+
+
+premis_Fixity : checksum creator : <i>xsd:string</i> [0..n]
+premis_Fixity : fixity checksum : <i>xsd:string</i> [1..n]
+
+
+premis_HardwareAgent --|> premis_Agent #blue;line.dotted;text:blue
+
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
+premis_IntellectualEntity : about : <i>IRI</i> [0..n]
 premis_IntellectualEntity : abstract : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : alternate name : <i>xsd:string</i> [0..n]
 premis_IntellectualEntity : copyright notice : <i>xsd:string</i> [0..n]
@@ -142,103 +302,22 @@ premis_IntellectualEntity --> skos_Concept :license [0..n]  >
 
 
 
-haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_PhysicalRepresentation : art medium : <i>xsd:string</i> [0..n]
-haObj_PhysicalRepresentation : artform : <i>xsd:string</i> [0..n]
-haObj_PhysicalRepresentation : description : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : format : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
-haObj_PhysicalRepresentation : name : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation --> premis_StorageMedium :has medium [0..n]  > 
-haObj_PhysicalRepresentation --> schema_QuantitativeValue :depth [0..n]  \lheight [0..n]  \lwidth [0..n]  > 
+skosxl_Label : alternative label : <i>rdf:langString</i> [0..n]
+skosxl_Label : alternative label : <i>rdf:langString</i> [0..n]
+skosxl_Label : change note : <i>xsd:string</i> [0..n]
+skosxl_Label : definition : <i>xsd:string</i> [1..n]
+skosxl_Label : editorial note : <i>xsd:string</i> [0..n]
+skosxl_Label : example : <i>xsd:string</i> [0..n]
+skosxl_Label : hidden label : <i>rdf:langString</i> [0..n]
+skosxl_Label : history note : <i>xsd:string</i> [0..n]
+skosxl_Label : literal form : <i>rdf:langString</i> [1..1]
+skosxl_Label : notation : <i>xsd:string</i> [0..n]
+skosxl_Label : note : <i>xsd:string</i> [0..n]
+skosxl_Label : preferred label : <i>rdf:langString</i> [1..n]
+skosxl_Label : preferred label : <i>rdf:langString</i> [1..n]
+skosxl_Label : scope note : <i>xsd:string</i> [0..n]
 
-
-haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
-
-haObj_DigitalRepresentation : caption : <i>xsd:string</i> [0..1]
-haObj_DigitalRepresentation : date created : <i>edtf:EDTF-level1</i> [1..1]
-haObj_DigitalRepresentation : description : <i>xsd:string</i> [1..1]
-haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
-haObj_DigitalRepresentation : name : <i>xsd:string</i> [1..1]
-haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
-
-haObj_DigitalRepresentation --> haObj_PhysicalRepresentation :has Source [0..n]  > 
-haObj_DigitalRepresentation --> premis_File :Media fragment source [0..n]  \lhas Root [0..n]  \lincludes [1..n]  > 
-haObj_DigitalRepresentation --> premis_IntellectualEntity :is access copy of [0..1]  \lis archiving master of [1..n]  \lis mezzanine format of [0..1]  \lrepresents [1..n]  > 
-haObj_DigitalRepresentation --> schema_Role :author [0..n]  > 
-
-
-schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_CreativeWorkSeries : description : <i>xsd:string</i> [1..1]
-schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
-schema_CreativeWorkSeries : name : <i>xsd:string</i> [1..1]
-schema_CreativeWorkSeries : season number : <i>xsd:integer</i> [0..n]
-
-
-
-schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_Episode : description : <i>xsd:string</i> [1..1]
-schema_Episode : identifier : <i>xsd:string</i> [1..1]
-schema_Episode : name : <i>xsd:string</i> [1..1]
-
-
-
-schema_Place : description : <i>xsd:string</i> [1..1]
-schema_Place : name : <i>xsd:string</i> [1..1]
-
-
-schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_ArchiveComponent : description : <i>xsd:string</i> [1..1]
-schema_ArchiveComponent : name : <i>xsd:string</i> [1..1]
-
-
-
-schema_Role : role name : <i>xsd:string</i> [1..n]
-schema_Role --> org_Organization :author [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
-schema_Role --> schema_Person :actor [0..n]  \lauthor [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
-schema_Role --> skos_Concept :role name [1..n]  > 
-
-
-
-schema_QuantitativeValue : unit code : <i>xsd:string</i> [0..n]
-schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..n]
-schema_QuantitativeValue : value : <i>xsd:float</i> [0..n]
-
-
-
-schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_Collection : collection size : <i>xsd:integer</i> [0..n]
-schema_Collection : description : <i>xsd:string</i> [1..1]
-schema_Collection : identifier : <i>xsd:string</i> [1..1]
-schema_Collection : name : <i>xsd:string</i> [1..1]
-schema_Collection --> premis_IntellectualEntity :has part [0..n]  > 
-
-
-
-premis_File --|> premis_Object #blue;line.dotted;text:blue
-
-premis_File : mime type : <i>xsd:string</i> [0..1]
-premis_File --> dc_FileFormat :Format [1..1]  \lformat [1..1]  > 
-premis_File --> haObj_DigitalRepresentation :has media fragment [0..n]  \lis Included in [1..n]  > 
-premis_File --> premis_File :documents [0..n]  \lnext file in sequence [0..1]  \lsupersedes [0..n]  > 
-premis_File --> premis_Fixity :has fixity [1..1]  > 
-premis_File --> premis_StorageLocation :stored at [1..n]  > 
-
-
-
-premis_Fixity : checksum creator : <i>xsd:string</i> [0..n]
-premis_Fixity : fixity checksum : <i>xsd:string</i> [1..n]
-
-
-
-premis_StorageLocation : file path : <i>xsd:string</i> [1..n]
-premis_StorageLocation --> premis_StorageMedium :storage medium [0..n]  \lmilieu de stockage [0..n]  > 
 
 
 haObj_LocalIdentifier --|> skos_Concept #blue;line.dotted;text:blue
@@ -247,8 +326,35 @@ haObj_LocalIdentifier : value : <i>xsd:string</i> [1..1]
 
 
 
+
+premis_Object --|> prov_Entity #blue;line.dotted;text:blue
+
+premis_Object --> premis_Event :was generated by [0..1]  > 
+premis_Object --> premis_Object :has relationship [0..n]  > 
+
+skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
+
+skos_OrderedCollection : alternative label : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : alternative label : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : change note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : definition : <i>xsd:string</i> [1..n]
+skos_OrderedCollection : editorial note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : example : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : hidden label : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : history note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : notation : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : preferred label : <i>rdf:langString</i> [1..n]
+skos_OrderedCollection : preferred label : <i>rdf:langString</i> [1..n]
+skos_OrderedCollection : scope note : <i>xsd:string</i> [0..n]
+skos_OrderedCollection --> rdf_List :member list [0..n]  > 
+
+
+
+
 org_Organization : alternative label : <i>rdf:langString</i> [0..n]
 org_Organization : description : <i>rdf:langString</i> [0..1]
+org_Organization : homepage : <i>IRI</i> [0..1]
 org_Organization : preferred label : <i>rdf:langString</i> [1..1]
 
 org_Organization --> haOrg_Logo :logo [0..n]  > 
@@ -260,28 +366,13 @@ org_Organization --> org_Site :has primary site [0..1]  \lhas site [0..n]  >
 org_Organization --> schema_ContactPoint :contact point [0..n]  > 
 org_Organization --> schema_Person :has account manager [0..1]  > 
 
+haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
+
+
 org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
 
 org_OrganizationalUnit --> org_Organization :unit of [1..n]  > 
 
-haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
-
-haOrg_ContentPartner --> schema_Person :has account manager [1..1]  > 
-
-haOrg_EducationalPartner --|> haOrg_EducationalOrganization #blue;line.dotted;text:blue
-
-haOrg_EducationalPartner --> schema_Person :has account manager [1..1]  > 
-
-
-org_Site --> schema_PostalAddress :site Address [0..1]  > 
-
-
-org_Post --> org_Organization :post in [1..n]  > 
-org_Post --> org_Role :role [1..n]  > 
-
-org_Role --|> skos_Concept #blue;line.dotted;text:blue
-
-org_Role : preferred label : <i>rdf:langString</i> [1..1]
 
 
 
@@ -296,6 +387,28 @@ schema_Person --> org_Organization :is account manager of [0..1]  >
 schema_Person --> org_Post :holds [0..n]  > 
 
 
+haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_PhysicalRepresentation : art medium : <i>xsd:string</i> [0..n]
+haObj_PhysicalRepresentation : artform : <i>xsd:string</i> [0..n]
+haObj_PhysicalRepresentation : description : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation : format : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
+haObj_PhysicalRepresentation : name : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation --> premis_StorageMedium :has medium [0..n]  > 
+haObj_PhysicalRepresentation --> schema_QuantitativeValue :depth [0..n]  \lheight [0..n]  \lwidth [0..n]  > 
+
+
+
+schema_Place : description : <i>xsd:string</i> [1..1]
+schema_Place : name : <i>xsd:string</i> [1..1]
+
+
+
+org_Post --> org_Organization :post in [1..n]  > 
+org_Post --> org_Role :role [1..n]  > 
+
 schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
 
 schema_PostalAddress : address : <i>xsd:string</i> [0..1]
@@ -308,105 +421,9 @@ schema_PostalAddress : region : <i>xsd:string</i> [0..1]
 
 
 
-schema_ContactPoint : contact type : <i>xsd:string</i> [1..1]
-schema_ContactPoint : email : <i>xsd:string</i> [0..n]
-schema_ContactPoint : telephone : <i>xsd:string</i> [0..n]
-
-
-
-skos_Collection : alternative label : <i>rdf:langString</i> [0..n]
-skos_Collection : change note : <i>xsd:string</i> [0..n]
-skos_Collection : definition : <i>xsd:string</i> [1..n]
-skos_Collection : editorial note : <i>xsd:string</i> [0..n]
-skos_Collection : example : <i>xsd:string</i> [0..n]
-skos_Collection : hidden label : <i>rdf:langString</i> [0..n]
-skos_Collection : history note : <i>xsd:string</i> [0..n]
-skos_Collection : notation : <i>xsd:string</i> [0..n]
-skos_Collection : note : <i>xsd:string</i> [0..n]
-skos_Collection : preferred label : <i>rdf:langString</i> [1..n]
-skos_Collection : scope note : <i>xsd:string</i> [0..n]
-
-skos_Collection --> skos_Collection :member [0..n]  > 
-skos_Collection --> skos_Concept :member [0..n]  > 
-
-
-skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
-
-skos_OrderedCollection : alternative label : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : change note : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : definition : <i>xsd:string</i> [1..n]
-skos_OrderedCollection : editorial note : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : example : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : hidden label : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : history note : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : notation : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : note : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : preferred label : <i>rdf:langString</i> [1..n]
-skos_OrderedCollection : scope note : <i>xsd:string</i> [0..n]
-skos_OrderedCollection --> rdf_List :member list [0..n]  > 
-
-
-
-
-skos_Concept : alternative label : <i>rdf:langString</i> [0..n]
-skos_Concept : change note : <i>xsd:string</i> [0..n]
-skos_Concept : definition : <i>xsd:string</i> [1..n]
-skos_Concept : editorial note : <i>xsd:string</i> [0..n]
-skos_Concept : example : <i>xsd:string</i> [0..n]
-skos_Concept : hidden label : <i>rdf:langString</i> [0..n]
-skos_Concept : history note : <i>xsd:string</i> [0..n]
-skos_Concept : notation : <i>xsd:string</i> [0..n]
-skos_Concept : note : <i>xsd:string</i> [0..n]
-skos_Concept : preferred label : <i>rdf:langString</i> [1..n]
-skos_Concept : scope note : <i>rdf:langString</i> [0..n]
-skos_Concept : scope note : <i>xsd:string</i> [0..n]
-
-skos_Concept --> skos_Concept :broad match [0..n]  \lbroader [0..n]  \lbroader transitive [0..n]  \lclose match [0..n]  \lexact match [0..n]  \lmapping relation [0..n]  \lnarrow match [0..n]  \lnarrower [0..n]  \lnarrower transitive [0..n]  \lrelated match [0..n]  \lsemantic relation [0..n]  > 
-skos_Concept --> skos_ConceptScheme :in scheme [1..n]  \ltop concept of [0..n]  > 
-skos_Concept --> skosxl_Label :pref label [1..n]  > 
-
-
-
-skos_ConceptScheme : alternative label : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : change note : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : definition : <i>xsd:string</i> [1..n]
-skos_ConceptScheme : editorial note : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : example : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : hidden label : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : history note : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : notation : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : note : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : preferred label : <i>rdf:langString</i> [1..n]
-skos_ConceptScheme : scope note : <i>xsd:string</i> [0..n]
-
-skos_ConceptScheme --> skos_Concept :has top concept [0..n]  > 
-
-
-
-skosxl_Label : alternative label : <i>rdf:langString</i> [0..n]
-skosxl_Label : change note : <i>xsd:string</i> [0..n]
-skosxl_Label : definition : <i>xsd:string</i> [1..n]
-skosxl_Label : editorial note : <i>xsd:string</i> [0..n]
-skosxl_Label : example : <i>xsd:string</i> [0..n]
-skosxl_Label : hidden label : <i>rdf:langString</i> [0..n]
-skosxl_Label : history note : <i>xsd:string</i> [0..n]
-skosxl_Label : literal form : <i>rdf:langString</i> [1..1]
-skosxl_Label : notation : <i>xsd:string</i> [0..n]
-skosxl_Label : note : <i>xsd:string</i> [0..n]
-skosxl_Label : preferred label : <i>rdf:langString</i> [1..n]
-skosxl_Label : scope note : <i>xsd:string</i> [0..n]
-
-
-
-premis_HardwareAgent --|> premis_Agent #blue;line.dotted;text:blue
-
-
-haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
-
-
-
-
-
+schema_QuantitativeValue : unit code : <i>xsd:string</i> [0..n]
+schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..n]
+schema_QuantitativeValue : value : <i>xsd:float</i> [0..n]
 
 
 
@@ -414,8 +431,26 @@ premis_Representation --|> premis_Object #blue;line.dotted;text:blue
 
 
 
+schema_Role : role name : <i>xsd:string</i> [1..n]
+schema_Role --> org_Organization :author [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
+schema_Role --> schema_Person :actor [0..n]  \lauthor [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
+schema_Role --> skos_Concept :role name [1..n]  > 
+
+
+org_Role --|> skos_Concept #blue;line.dotted;text:blue
+
+org_Role : preferred label : <i>rdf:langString</i> [1..1]
+
+
+
+org_Site --> schema_PostalAddress :site Address [0..1]  > 
 
 premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
+
+
+
+premis_StorageLocation : file path : <i>xsd:string</i> [1..n]
+premis_StorageLocation --> premis_StorageMedium :milieu de stockage [0..n]  \lstorage medium [0..n]  > 
 
 
 

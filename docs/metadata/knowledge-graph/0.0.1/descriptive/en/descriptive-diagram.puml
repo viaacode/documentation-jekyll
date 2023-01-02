@@ -13,31 +13,27 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Physical representation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>premis:IntellectualEntity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>haObj:PhysicalRepresentation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>haObj:DigitalRepresentation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[../../organization/en#schema%3APerson]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[../../organization/en#org%3AOrganization]]
+class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organization/en#haOrg%3AContentPartner]]
+class "<b>Archive Component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../thesauri/en#skos%3AConcept]]
 class "<b>Creative Work Series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
-class "<b>Archive Component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
-class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
-class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
-class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 
-premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
+premis_IntellectualEntity : about : <i>IRI</i> [0..n]
 premis_IntellectualEntity : abstract : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : alternate name : <i>xsd:string</i> [0..n]
 premis_IntellectualEntity : copyright notice : <i>xsd:string</i> [0..n]
@@ -71,7 +67,6 @@ premis_IntellectualEntity --> skos_Concept :license [0..n]  >
 
 
 
-haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_PhysicalRepresentation : art medium : <i>xsd:string</i> [0..n]
 haObj_PhysicalRepresentation : artform : <i>xsd:string</i> [0..n]
@@ -83,7 +78,6 @@ haObj_PhysicalRepresentation : name : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation --> schema_QuantitativeValue :depth [0..n]  \lheight [0..n]  \lwidth [0..n]  > 
 
 
-haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation : caption : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : date created : <i>edtf:EDTF-level1</i> [1..1]
@@ -93,6 +87,30 @@ haObj_DigitalRepresentation : name : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
 
 haObj_DigitalRepresentation --> schema_Role :author [0..n]  > 
+
+
+
+
+
+
+
+
+schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_ArchiveComponent : description : <i>xsd:string</i> [1..1]
+schema_ArchiveComponent : name : <i>xsd:string</i> [1..1]
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : collection size : <i>xsd:integer</i> [0..n]
+schema_Collection : description : <i>xsd:string</i> [1..1]
+schema_Collection : identifier : <i>xsd:string</i> [1..1]
+schema_Collection : name : <i>xsd:string</i> [1..1]
+schema_Collection --> premis_IntellectualEntity :has part [0..n]  > 
+
+
+
 
 
 schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -116,19 +134,6 @@ schema_Place : description : <i>xsd:string</i> [1..1]
 schema_Place : name : <i>xsd:string</i> [1..1]
 
 
-schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_ArchiveComponent : description : <i>xsd:string</i> [1..1]
-schema_ArchiveComponent : name : <i>xsd:string</i> [1..1]
-
-
-
-schema_Role : role name : <i>xsd:string</i> [1..n]
-schema_Role --> org_Organization :author [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
-schema_Role --> schema_Person :actor [0..n]  \lauthor [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
-schema_Role --> skos_Concept :role name [1..n]  > 
-
-
 
 schema_QuantitativeValue : unit code : <i>xsd:string</i> [0..n]
 schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..n]
@@ -136,23 +141,11 @@ schema_QuantitativeValue : value : <i>xsd:float</i> [0..n]
 
 
 
-schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_Collection : collection size : <i>xsd:integer</i> [0..n]
-schema_Collection : description : <i>xsd:string</i> [1..1]
-schema_Collection : identifier : <i>xsd:string</i> [1..1]
-schema_Collection : name : <i>xsd:string</i> [1..1]
-schema_Collection --> premis_IntellectualEntity :has part [0..n]  > 
-
-
-
-
-
-haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
-
-
-
-
+schema_Role : role name : <i>xsd:string</i> [1..n]
+schema_Role --> org_Organization :author [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
+schema_Role --> schema_Person :actor [0..n]  \lauthor [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
+schema_Role --> skos_Concept :role name [1..n]  > 
 
 
 
