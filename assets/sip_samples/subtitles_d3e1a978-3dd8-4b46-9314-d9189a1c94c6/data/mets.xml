@@ -21,53 +21,32 @@
 
     <!-- ref to descriptive metadata about IE -->
     <dmdSec ID="uuid-f1fdfc02-22e3-4a0c-bcf5-3901db9fbb05">
-        <mdRef ID="uuid-2025bb2f-2132-45d7-b112-c849d1d70240" LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="998" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5421f612391f246855d8768e5ee07b9a" CHECKSUMTYPE="MD5" />
+        <mdRef LOCTYPE="URL" MDTYPE="DC" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" MIMETYPE="text/xml" SIZE="998" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5421f612391f246855d8768e5ee07b9a" CHECKSUMTYPE="MD5" />
     </dmdSec>
 
     <!-- ref to the PREMIS metadata about IE/package -->
-    <amdSec ID="uuid-6718bbe5-95d5-4171-bde8-011b32eec823">
+    <amdSec>
         <digiprovMD ID="uuid-e06159c9-0133-49d5-a0a8-46c6e774cfac">
-            <mdRef ID="uuid-947bfd4e-5d73-469a-9538-05fed002a603" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="1635" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="b5c029d396d9c73804498fa9223154cf" CHECKSUMTYPE="MD5" />
+            <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="1635" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="b5c029d396d9c73804498fa9223154cf" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 
     <!-- file section -->
     <fileSec ID="uuid-934e7c04-e411-459d-a552-5c88f6e4e7d4">
-        <fileGrp USE="root" ID="uuid-e70a7567-4a98-4f26-a813-ef6ac6a7375e">
-            <fileGrp USE="metadata" ID="uuid-097dccd4-f27a-4469-acdd-00b900a9ed58">
-                <fileGrp USE="metadata/descriptive" ID="uuid-019acccb-1356-4af7-89dd-24a99c0913de">
-                    <file ID="uuid-9d89a241-e75e-4691-a9c0-624ab0b23f4e" MIMETYPE="text/xml" SIZE="998" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="5421f612391f246855d8768e5ee07b9a" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/descriptive/dc_1.xml" />
-                    </file>
-                </fileGrp>
-                <fileGrp USE="metadata/preservation" ID="uuid-98bafb68-1657-4dc0-86d8-913634a493fb">
-                    <file ID="uuid-1eceebbd-2db6-4b65-b7df-61ac8f813926" MIMETYPE="text/xml" SIZE="1699" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="6a2827a16f391cae31c0ef3cb1db66ec" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" />
-                    </file>
-                </fileGrp>
-            </fileGrp>
-            <fileGrp USE="representations" ID="uuid-585f793c-b6cd-4985-82f5-95dc60d34157">
-                <fileGrp USE="representations/representation_1" ID="uuid-14138e4b-645b-41c4-ba17-adeac62e773c">
-                    <file ID="uuid-ae19db1b-51da-41e4-8f86-592acc8b7571" MIMETYPE="text/xml" SIZE="3573" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="2b5d678e0965438e1ac1e4f8cc3096a7" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" />
-                    </file>
-                </fileGrp>
-            </fileGrp>
+        <fileGrp USE="Representations/representation_1" ID="uuid-14138e4b-645b-41c4-ba17-adeac62e773c">
+            <file ID="uuid-ae19db1b-51da-41e4-8f86-592acc8b7571" MIMETYPE="text/xml" SIZE="3573" CREATED="2022-02-16T10:01:15.014+02:00" CHECKSUM="2b5d678e0965438e1ac1e4f8cc3096a7" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" />
+            </file>
         </fileGrp>
     </fileSec>
 
     <!-- structural map -->
     <structMap ID="uuid-5673d42f-5a4b-40ba-90e1-f4367784fb34" TYPE="PHYSICAL" LABEL="CSIP">
-        <div ID="uuid-6748938f-712e-4eef-bc92-57ace15cf0e3" LABEL="">
-            <div ID="uuid-0beaa043-c3f6-40b5-afef-afe446ba8622" LABEL="metadata">
-                <div ID="uuid-c06937d6-3bd9-4ed8-beba-74f06b6903ed" LABEL="descriptive">
-                    <fptr FILEID="uuid-42988725-0836-4df6-a266-58f62afaf88d" />
-                </div>
-                <div ID="uuid-eeafbf14-403a-412d-90bb-f380e2ff169b" LABEL="preservation">
-                    <fptr FILEID="uuid-4d988c1e-4316-4aa1-8745-f203fe0d2a30" />
-                </div>
+        <div ID="uuid-6748938f-712e-4eef-bc92-57ace15cf0e3" LABEL="example-with-subtitles">
+            <div ID="uuid-0beaa043-c3f6-40b5-afef-afe446ba8622" LABEL="Metadata"
+            ADMID="uuid-e06159c9-0133-49d5-a0a8-46c6e774cfac" DMDID="uuid-f1fdfc02-22e3-4a0c-bcf5-3901db9fbb05">
             </div>
-            <div ID="uuid-ef71eb48-1ed7-488e-8e75-b8e958be9308" LABEL="representations">
+            <div ID="uuid-ef71eb48-1ed7-488e-8e75-b8e958be9308" LABEL="Representations">
                 <div ID="uuid-1dabfd97-925e-487f-a6e6-1c323327c698" LABEL="representation_1">
                     <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
                 </div>

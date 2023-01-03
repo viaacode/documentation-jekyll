@@ -3,46 +3,33 @@
 
     <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00" />
 
-    <amdSec ID="uuid-d4e5839a-a200-454c-83b0-220cc6f0df07">
+    <amdSec>
         <digiprovMD ID="uuid-281dbc55-8250-4e54-a490-6cdf30880589">
-            <mdRef ID="uuid-80244b47-cb29-4f8b-9577-95ac2c449a2f" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="13586" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="1237af081869400e76ce8f379578bcfe" CHECKSUMTYPE="MD5" />
+            <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="13586" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="1237af081869400e76ce8f379578bcfe" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 
     <fileSec ID="uuid-5852a5bc-2f87-45c2-abb1-8b224339d391">
-        <fileGrp USE="representation_2" ID="uuid-aac6f783-cf73-4a96-a7a8-0e2651c9bf09">
-            <fileGrp USE="metadata" ID="uuid-1dee73c8-67ab-4b10-9042-54b70264398a">
-                <fileGrp USE="metadata/preservation" ID="uuid-76fbe835-3e58-4a73-8da3-5078fb1d570f">
-                    <file ID="uuid-fff0d71d-ec7d-40a2-be28-ea7f491d3424" MIMETYPE="application/xml" SIZE="13586" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="1237af081869400e76ce8f379578bcfe" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" />
-                    </file>
-                </fileGrp>
-            </fileGrp>
-            <fileGrp USE="data" ID="uuid-7b0ef544-6ddd-42c9-8d61-b1fbc98f4164">
-                <!-- dummy txt file filling in for alto xml file -->
-                <file ID="uuid-fd5fec40-a696-40d4-be7b-e0a01a2bf0e3" MIMETYPE="application/xml" SIZE="0" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/18950101_0001.xml" />
-                </file>
-                <!-- dummy txt file filling in for alto xml file -->
-                <file ID="uuid-d63b064f-7fed-4981-983c-6c99c03fd4e5" MIMETYPE="application/xml" SIZE="0" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/18950101_0002.xml" />
-                </file>
-                <!-- dummy txt file filling in for alto xml file -->
-                <file ID="uuid-cfd8a279-177c-48ae-9034-66b0a6f8daee" MIMETYPE="application/xml" SIZE="0" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/18950101_0003.xml" />
-                </file>
-            </fileGrp>
+        <fileGrp USE="data" ID="uuid-7b0ef544-6ddd-42c9-8d61-b1fbc98f4164">
+            <!-- dummy txt file filling in for alto xml file -->
+            <file ID="uuid-fd5fec40-a696-40d4-be7b-e0a01a2bf0e3" MIMETYPE="application/xml" SIZE="0" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/18950101_0001.xml" />
+            </file>
+            <!-- dummy txt file filling in for alto xml file -->
+            <file ID="uuid-d63b064f-7fed-4981-983c-6c99c03fd4e5" MIMETYPE="application/xml" SIZE="0" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/18950101_0002.xml" />
+            </file>
+            <!-- dummy txt file filling in for alto xml file -->
+            <file ID="uuid-cfd8a279-177c-48ae-9034-66b0a6f8daee" MIMETYPE="application/xml" SIZE="0" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/18950101_0003.xml" />
+            </file>
         </fileGrp>
     </fileSec>
 
     <!-- structural map for the structure of the SIP itself -->
     <structMap ID="uuid-cf28d5ff-16d1-4af9-ae2a-67b3db8e75f0" TYPE="PHYSICAL" LABEL="CSIP">
         <div ID="uuid-79d61ee7-dafb-4011-a9f2-c0d7d6b766b5" LABEL="representation_2">
-            <div ID="uuid-132f7d2f-0708-4962-a960-511f480045ce" LABEL="metadata">
-                <div ID="uuid-804d070c-7f01-490b-a0bc-ee3df1b2d59d" LABEL="preservation">
-                    <fptr FILEID="uuid-fff0d71d-ec7d-40a2-be28-ea7f491d3424" />
-                </div>
-            </div>
+            <div ID="uuid-132f7d2f-0708-4962-a960-511f480045ce" LABEL="Metadata" ADMID="uuid-281dbc55-8250-4e54-a490-6cdf30880589" />
             <!-- added divs with order attributes for page order -->
             <div ID="uuid-12aff14b-07b4-4ca5-b053-572f6d187e58" LABEL="data">
                 <div ID="uuid-8617a575-a76d-4d21-9fb9-7a3a0532d3f1" TYPE="page" ORDER="1">

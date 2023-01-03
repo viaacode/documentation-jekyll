@@ -3,40 +3,27 @@
 
     <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00" />
 
-    <amdSec ID="uuid-1edefaad-8b4c-4640-878f-2f4198960671">
+    <amdSec>
         <digiprovMD ID="uuid-0fe3be01-ec81-4623-a376-f6b836575a82">
-            <mdRef ID="uuid-d16d0a49-ee0e-4a68-b2d3-599936a22ee1" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="7386" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="c4a58181f1e7ee9f17885d8b286e4400" CHECKSUMTYPE="MD5" />
+            <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="7386" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="c4a58181f1e7ee9f17885d8b286e4400" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 
     <fileSec ID="uuid-0b697139-4a37-4dcf-aec1-a6baf4602aac">
-        <fileGrp USE="representation_3" ID="uuid-4614f15f-1edc-4d6f-9964-b82b1295109c">
-            <fileGrp USE="metadata" ID="uuid-018ae0c8-9c5d-41b8-bc5e-75ac1b5cf1e3">
-                <fileGrp USE="metadata/preservation" ID="uuid-b3c2f589-9e09-4309-a9a9-77e14cf532aa">
-                    <file ID="uuid-ec5b6176-3b66-4cd8-8fb1-fb56cfbdaa8e" MIMETYPE="application/xml" SIZE="7386" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="c4a58181f1e7ee9f17885d8b286e4400" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" />
-                    </file>
-                </fileGrp>
-            </fileGrp>
-            <fileGrp USE="data" ID="uuid-3e0e5e49-5e8a-4ecd-af5f-4f998cec460b">
-                <!-- dummy txt file filling in for pdf file -->
-                <file ID="uuid-91d69ad4-67b1-4585-a452-a9fa2d187da4" MIMETYPE="application/postscript" SIZE="0" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/18950101.pdf" />
-                </file>
-            </fileGrp>
+        <fileGrp USE="data" ID="uuid-3e0e5e49-5e8a-4ecd-af5f-4f998cec460b">
+            <!-- dummy txt file filling in for pdf file -->
+            <file ID="uuid-91d69ad4-67b1-4585-a452-a9fa2d187da4" MIMETYPE="application/postscript" SIZE="0" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="d41d8cd98f00b204e9800998ecf8427e" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/18950101.pdf" />
+            </file>
         </fileGrp>
     </fileSec>
 
     <!-- structural map for the structure of the SIP itself -->
     <structMap ID="uuid-01f86982-4708-45a4-950f-65708b7a5937" TYPE="PHYSICAL" LABEL="CSIP">
         <div ID="uuid-dbcdff8f-7422-4ddb-b366-56e984622f7d" LABEL="representation_3">
-            <div ID="uuid-d3238f49-28c8-49c6-a30e-7635ec97696b" LABEL="metadata">
-                <div ID="uuid-89112af3-627d-443e-b801-d7dc17eecc83" LABEL="preservation">
-                    <fptr FILEID="uuid-ec5b6176-3b66-4cd8-8fb1-fb56cfbdaa8e" />
-                </div>
-            </div>
+            <div ID="uuid-d3238f49-28c8-49c6-a30e-7635ec97696b" LABEL="Metadata" ADMID="uuid-0fe3be01-ec81-4623-a376-f6b836575a82" />
             <div ID="uuid-cae7f276-2867-4bfb-8048-f799a38dcc22" LABEL="data">
-                <fptr FILEID="uuid-91d69ad4-67b1-4585-a452-a9fa2d187da4" />
+                <fptr FILEID="uuid-3e0e5e49-5e8a-4ecd-af5f-4f998cec460b" />
             </div>
         </div>
     </structMap>

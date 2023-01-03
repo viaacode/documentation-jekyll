@@ -3,46 +3,31 @@
 
     <metsHdr CREATEDATE="2022-02-16T10:02:37.009+02:00" />
 
-    <amdSec ID="uuid-76dc406a-ad11-49a7-ac74-e5f9420c5558">
+    <amdSec>
         <digiprovMD ID="uuid-983b63b3-9e62-4cfa-b07e-2f2c2410db44">
-            <mdRef ID="uuid-f82e0012-a06c-42dd-a54f-21c6a08eeed2" LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="9194" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="23003be62c59d0bfc0d299bf9927deb0" CHECKSUMTYPE="MD5" />
+            <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="9194" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="23003be62c59d0bfc0d299bf9927deb0" CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
 
     <fileSec ID="uuid-a6b54f0a-6467-4b08-93a3-3018b69d8834">
-        <fileGrp USE="representation_1" ID="uuid-419ec31a-983e-4973-b18f-676a1a2dd54c">
-            <fileGrp USE="metadata" ID="uuid-f5855990-ed79-4356-871f-a2d8197fa3e9">
-                <fileGrp USE="metadata/descriptive" ID="uuid-4c5ca249-050b-42d1-9e89-1404dd63fc0b" />
-                <fileGrp USE="metadata/preservation" ID="uuid-024eb041-7434-4ad3-9022-ce9b085d47fd">
-                    <file ID="uuid-b1e79b20-53f2-4b76-97de-a546d95c9271" MIMETYPE="application/xml" SIZE="9194" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="23003be62c59d0bfc0d299bf9927deb0" CHECKSUMTYPE="MD5">
-                        <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./metadata/preservation/premis.xml" />
-                    </file>
-                </fileGrp>
-            </fileGrp>
-            <fileGrp USE="data" ID="uuid-fe597cdb-3aa5-4cd1-8437-494cfed0f24d">
-                <!-- dummy txt file filling in for video file -->
-                <file ID="uuid-f27d5cc4-ff5b-4875-b216-7dfa9b0c198d" MIMETYPE="video/mp4" SIZE="5" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="22502b5dc38e893d99e9368c6ff70229" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/broadcaster_news_20220525.mp4" />
-                </file>
-                <!-- dummy txt file filling in for subtitles file -->
-                <file ID="uuid-5a4b5c03-267b-4c85-9e59-ff0074388466" MIMETYPE="text/plain" SIZE="3" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="daefffb93e6c3be7136ba40edae4f2f1" CHECKSUMTYPE="MD5">
-                    <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/broadcaster_news_20220525.srt" />
-                </file>
-            </fileGrp>
+        <fileGrp USE="data" ID="uuid-fe597cdb-3aa5-4cd1-8437-494cfed0f24d">
+            <!-- dummy txt file filling in for video file -->
+            <file ID="uuid-f27d5cc4-ff5b-4875-b216-7dfa9b0c198d" MIMETYPE="video/mp4" SIZE="5" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="22502b5dc38e893d99e9368c6ff70229" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/broadcaster_news_20220525.mp4" />
+            </file>
+            <!-- dummy txt file filling in for subtitles file -->
+            <file ID="uuid-5a4b5c03-267b-4c85-9e59-ff0074388466" MIMETYPE="text/plain" SIZE="3" CREATED="2022-02-16T10:02:37.009+02:00" CHECKSUM="daefffb93e6c3be7136ba40edae4f2f1" CHECKSUMTYPE="MD5">
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/broadcaster_news_20220525.srt" />
+            </file>
         </fileGrp>
     </fileSec>
 
     <structMap ID="uuid-610ad42a-f6b0-46b5-a01f-8e7a065fcddf" TYPE="PHYSICAL" LABEL="CSIP">
         <div ID="uuid-ef2916e7-7378-41db-bb64-6187953f6361" LABEL="">
-            <div ID="uuid-4497333d-7973-4ab4-8a73-f460d70db8d8" LABEL="metadata">
-                <div ID="uuid-bce51613-6b60-4de6-95d4-2fc1b2cce378" LABEL="descriptive" />
-                <div ID="uuid-1623a603-d729-4aea-8822-dfa76f5d2618" LABEL="preservation">
-                    <fptr FILEID="uuid-b1e79b20-53f2-4b76-97de-a546d95c9271" />
-                </div>
-            </div>
+            <div ID="uuid-4497333d-7973-4ab4-8a73-f460d70db8d8" LABEL="Metadata"
+                ADMID="uuid-983b63b3-9e62-4cfa-b07e-2f2c2410db44" />
             <div ID="uuid-1dbcfdfd-694f-4628-9a6a-4b044a581b82" LABEL="data">
-                <fptr FILEID="uuid-f27d5cc4-ff5b-4875-b216-7dfa9b0c198d" />
-                <fptr FILEID="uuid-5a4b5c03-267b-4c85-9e59-ff0074388466" />
+                <fptr FILEID="uuid-fe597cdb-3aa5-4cd1-8437-494cfed0f24d" />
             </div>
         </div>
     </structMap>
