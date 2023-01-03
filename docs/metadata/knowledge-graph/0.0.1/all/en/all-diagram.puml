@@ -13,7 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>rdf:List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
 class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
 class "<b>Archive Component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]

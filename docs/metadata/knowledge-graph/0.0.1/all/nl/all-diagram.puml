@@ -13,7 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>rdf:List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
 class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
 class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]

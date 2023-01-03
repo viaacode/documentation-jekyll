@@ -13,12 +13,12 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>premis:IntellectualEntity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>haObj:PhysicalRepresentation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>haObj:DigitalRepresentation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organization/nl#schema%3APerson]]
+class "<b>IntellectualEntity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>PhysicalRepresentation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>DigitalRepresentation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[../../organization/nl#org%3AOrganization]]
 class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organization/nl#haOrg%3AContentPartner]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organization/nl#schema%3APerson]]
 class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]

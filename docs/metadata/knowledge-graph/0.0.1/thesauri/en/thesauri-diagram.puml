@@ -13,7 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "(rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
 class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Concept Scheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]

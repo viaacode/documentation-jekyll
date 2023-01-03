@@ -13,12 +13,12 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>premis:IntellectualEntity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>haObj:PhysicalRepresentation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>haObj:DigitalRepresentation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>Person</b> (schema:Person)" as schema_Person [[../../organization/en#schema%3APerson]]
+class "<b>IntellectualEntity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>PhysicalRepresentation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>DigitalRepresentation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[../../organization/en#org%3AOrganization]]
 class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organization/en#haOrg%3AContentPartner]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[../../organization/en#schema%3APerson]]
 class "<b>Archive Component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
