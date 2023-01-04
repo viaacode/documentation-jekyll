@@ -152,7 +152,7 @@ Fenomenen -- doorgaans onder invloed van fysische of chemische factoren -- die m
 
 ## Bijbehorende documenten/dragers aanwezig?
 
-Bijbehorende documenten en dragers kan de contentpartner niet apart bewaren. Bij registratie wordt dus aangeduid dat er bij de verpakte drager andere dragers zitten. Deze bijbehorende documenten/dragers worden dus niet mee gedigitaliseerd, maar wel gesignaleerd aan de Service Provider, o.m. om verlies tegen te gaan.
+Bijbehorende documenten/dragers die de contentpartner niet apart kan bewaren. Bij registratie wordt dus aangeduid dat er bij de verpakte drager andere dragers zitten. Deze bijbehorende documenten/dragers worden dus niet mee gedigitaliseerd, maar wel gesignaleerd aan de Service Provider, o.m. om verlies tegen te gaan.
 
 | **XML element**            | `<related_documents />`                                                                   |
 | **Datatype**               | "0" of "1"                                                           |
@@ -168,7 +168,7 @@ Bijbehorende documenten en dragers kan de contentpartner niet apart bewaren. Bij
 De kleur van de inhoud van de drager. Dit duidt bijvoorbeeld het verschil tussen zwart-wit en kleur fotografie of film.
 
 | **XML element**            | `<color />`                                                                   |
-| **Datatype**               | Gecontroleerde lijst (Zwart-wit; Kleur; Ingekleurd)                                                          |
+| **Datatype**               | Gecontroleerde lijst                                                         |
 | **Verplichting**           | Verplicht                                                                                                     |
 | **Herhaalbaar**            | Nee                                                                                                            |
 
@@ -178,9 +178,9 @@ De kleur van de inhoud van de drager. Dit duidt bijvoorbeeld het verschil tussen
 
 ### Mogelijke waarden
 
-- `Zwart-wit`
-- `Kleur`
-- `Ingekleurd`
+- `Black-white`
+- `Color`
+- `Coloured`
 
 ## Label aanwezig?
 
@@ -200,7 +200,7 @@ Het al dan niet aanwezig zijn van een label op de drager.
 Een kopie van eventuele opschriften op de originele bewaardoos van de drager.
 
 | **XML element**            | `<inscription_original_carrier_box/>`                                                                   |
-| **Datatype**               | "0" of "1"                                                          |
+| **Datatype**               | Vrije tekst                                                          |
 | **Verplichting**           | Optioneel                                                                                                     |
 | **Herhaalbaar**            | Nee                                                                                                            |
 
