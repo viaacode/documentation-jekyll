@@ -60,7 +60,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 | **Implicatie** | de browsekopie van het object mag beschikbaar gemaakt worden op de bezoekertool. |
 
 | **Naam** | Andere licenties |
-| **MAM-naam** | `CC-BY-CONTENT`, `CC-BY-SA-CONTENT`, `CC0-CONTENT`, `CC-BY-NC-CONTENT`, `CC-BY-ND-CONTENT`, `CC-BY-NC-ND-CONTENT` |
+| **MAM-naam** | `CC_BY-CONTENT`, `CC_BY-SA-CONTENT`, `CC0-CONTENT`, `CC_BY-NC-CONTENT`, `CC_BY-ND-CONTENT`, `CC_BY-NC-ND-CONTENT` |
 | **Defaultwaarde** | UIT |
 | **Implicatie** | naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). |
 
@@ -82,7 +82,7 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 | **Implicatie** | alle metadata mag gedeeld worden op de bezoekertool. |
 
 | **Naam** | Andere licenties |
-| **MAM-naam** | `CC-BY-METADATA`, `CC-BY-SA-METADATA`, `CC0-METADATA`, `CC-BY-NC-METADATA`, `CC-BY-ND-METADATA`, `CC-BY-NC-ND-METADATA`
+| **MAM-naam** | `CC_BY-METADATA`, `CC_BY-SA-METADATA`, `CC0-METADATA`, `CC_BY-NC-METADATA`, `CC_BY-ND-METADATA`, `CC_BY-NC-ND-METADATA`
 | **Defaultwaarde** | UIT |
 | **Implicatie** | naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). |
 
