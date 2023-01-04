@@ -813,7 +813,7 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 
 ```xml
 <dc_rights_licenses type="list">
-    <multiselect>CC BY-SA-METADATA</multiselect>
+    <multiselect>CC_BY-SA-METADATA</multiselect>
 </dc_rights_licenses>
 ```
 
@@ -830,17 +830,21 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 - VIAA-PUBLIEK-METADATA-LTD
 - VIAA-PUBLIEK-METADATA-ALL
 - VIAA-PUBLIEK-CONTENT
-- Publiek Domein
-- CC BY-SA-METADATA
-- CC BY-SA-CONTENT
-- CC BY-ND-METADATA
-- CC BY-ND-CONTENT
-- CC BY-NC-METADATA
-- CC BY-NC-CONTENT
-- CC BY-NC-SA-METADATA
-- CC BY-NC-SA-CONTENT
-- CC BY-NC-ND-METADATA
-- CC BY-NC-ND-CONTENT
+- Publiek-Domein
+- CC0-METADATA
+- CC0-CONTENT
+- CC_BY-METADATA
+- CC_BY-CONTENT
+- CC_BY-SA-METADATA
+- CC_BY-SA-CONTENT
+- CC_BY-ND-METADATA
+- CC_BY-ND-CONTENT
+- CC_BY-NC-METADATA
+- CC_BY-NC-CONTENT
+- CC_BY-NC-SA-METADATA
+- CC_BY-NC-SA-CONTENT
+- CC_BY-NC-ND-METADATA
+- CC_BY-NC-ND-CONTENT
 
 Zie de [detailpagina]({{ site.baseurl }}{% link docs/metadata/viaa/licenties.md %}) over licenties voor meer informatie over de betekenis van de verschillende waarden.
 

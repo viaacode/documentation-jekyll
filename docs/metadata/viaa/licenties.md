@@ -13,130 +13,106 @@ Op deze pagina vind je een overzicht van alle bestaande licenties in het _VIAA-m
 
 Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metadatamodel_. Per licentie wordt aangegeven wat de waarde is in het meemoo archief en wat de waarde betekent.
 
-### Onderwijs
+### Onderwijs 
 
-- MAM-naam: `VIAA-ONDERWIJS`
+| **MAM-naam** | `VIAA-ONDERWIJS` |
+| **Defaultwaarde**|  AAN |
+| **Implicatie** | meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be. |
 
-- Defaultwaarde: AAN
+### Wetenschappelijk onderzoek 
 
-- Implicatie: meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be.
+| **MAM-naam** | `VIAA-ONDERZOEK` |
+| **Defaultwaarde** | AAN |
+| **Implicatie** | meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar. |
 
-### Onderzoek
+### Bibliotheken 
 
-- MAM-naam: `VIAA-ONDERZOEK`
+| **MAM naam** | `VIAA-BIBLIOTHEKEN` |
+| **Default waarde** | UIT |
+| **Implicatie** | wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via bibliotheken ontsloten zou worden. |
 
-- Defaultwaarde: AAN
+### Contentpartners
 
-- Implicatie: meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar.
+#### Content
 
-### Bibliotheken
+| **MAM-naam** |  `VIAA-INTRA_CP-CONTENT` |
+| **Defaultwaarde** | AAN |
+| **Implicatie** | De lage resolutiekopie van het object mag getoond worden tussen contentpartners. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden. Deze licentie wordt gebruikt op cataloguspro.hetarchief.be. |
 
-- MAM naam: `VIAA-BIBLIOTHEKEN`
+#### Metadata
 
-- Default waarde: UIT
+| **MAM-naam** | `VIAA-INTRA_CP-METADATA-ALL` |
+| **Defaultwaarde** | AAN |
+| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op cataloguspro.hetarchief.be |
 
-- Implicatie: wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via bibliotheken ontsloten zou worden.
+### Brede publiek
+
+#### Content
+
+| **MAM-naam** | `VIAA-PUBLIEK-CONTENT` |
+| **Defaultwaarde** | UIT |
+| **Implicatie** | De lage resolutiekopie van het object mag beschikbaar gemaakt worden aan het brede publiek. Deze licentie impliceert dat ook de `VIAA-PUBLIEK-METADATA-LTD` of `VIAA-PUBLIEK-METADATA-ALL` gegeven wordt. Deze licentie is nog niet in gebruik. |
+
+#### Metadata
+
+**Beperkte metadataset**
+
+| **MAM-naam** | `VIAA-PUBLIEK-METADATA-LTD` |
+| **Defaultwaarde** | AAN |
+| **Implicatie** | Een beperkte set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be. |
+
+**Uitgebreide metadataset**
+
+| **MAM-naam** | `VIAA-PUBLIEK-METADATA-ALL` |
+| **Defaultwaarde** | UIT |
+| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be. |
+
+### Leeszaal van de contentpartner
+
+#### Content
+
+| **MAM-naam** | `BEZOEKERTOOL-CONTENT` |
+| **Defaultwaarde** | AAN |
+| **Implicatie** | De lage resolutiekopie van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be |
+
+#### Metadata
+
+| **MAM-naam** | `BEZOEKERTOOL-METADATA-ALL` |
+| **Defaultwaarde** | AAN |
+| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be |
 
 ### VIAA-licentie intra-muros
 
-- MAM naam: `VIAA-INTRAMUROS`
+| **MAM naam** | `VIAA-INTRAMUROS` |
+| **Default waarde** | UIT |
+| **Implicatie** | wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de meemoo-muren ontsloten zou worden. |
 
-- Default waarde: UIT
+### Andere licenties
 
-- Implicatie: wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via applicaties binnen de meemoo-muren ontsloten zou worden.
+#### Content
 
-### Intra contentpartners
+| **MAM-naam** | `CC_BY-CONTENT`, `CC_BY-SA-CONTENT`, `CC0-CONTENT`, `CC_BY-NC-CONTENT`, `CC_BY-ND-CONTENT`, `CC_BY-NC-ND-CONTENT` |
+| **Defaultwaarde** | UIT |
+| **Implicatie** | naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). |
 
-- Content
+#### Metadata
 
-  - MAM-naam:  `VIAA-INTRA_CP-CONTENT`
-
-  - Defaultwaarde: AAN
-
-  - Implicatie: De browsekopie van het object mag gedeeld worden tussen de meemoo contentpartners. In sommige gevallen gelden hier uitzonderingen op, zie verder in dit document. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden.
-
-- Metadata
-
-  - MAM-naam : `VIAA-INTRA_CP-METADATA-ALL`
-
-  - Defaultwaarde: AAN
-
-  - Implicatie: Alle metadata van het object mag gedeeld worden tussen de VIAA contentpartners. In sommige gevallen gelden hier uitzonderingen op, zie verder in dit document.
-
-### Licenties publiek
-
-- Metadata
-
-  - meemoo Restricted licentie
-`
-    - MAM-naam: `VIAA-PUBLIEK-METADATA-LTD`
-
-    - Defaultwaarde: AAN
-
-    - Implicatie: letterlijke vertaling uit de samenwerkingsovereenkomst: een beperkte set aan metadata ( "titel, korte omschrijving en/of trefwoorden, duurtijd" ) worden publiek beschikbaar gemaakt.
-
-  - meemoo Uitgebreide licentie
-
-    - MAM-naam : `VIAA-PUBLIEK-METADATA-ALL`
-
-    - Defaultwaarde: UIT
-
-    - Implicatie: alle metadata mag gedeeld worden op publieke platformen.
-
-  - meemoo Bezoekertool licentie
-
-    - MAM-naam : `BEZOEKERTOOL-METADATA-ALL`
-
-    - Defaultwaarde: AAN
-
-    - Implicatie: alle metadata mag gedeeld worden op de bezoekertool.
-
-  - Andere licenties
-
-    - MAM-naam: `CC-BY-SA-METADATA`
-
-    - Defaultwaarde: UIT
-
-    - Implicatie: naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). Analoog voor andere licenties, bvb. CC-0 : CC-0-METADATA.
-
-- Content
-
-  - meemoo content licentie
-
-    - MAM-naam: `VIAA-PUBLIEK-CONTENT`
-
-    - Defaultwaarde: UIT
-
-    - Implicatie: de browsekopie van het object mag beschikbaar gemaakt worden op publieke platformen van meemoo. Deze licentie impliceert dat ook de `VIAA-PUBLIEK-METADATA-ALL` gegeven wordt.
-
-  - meemoo Bezoekertool licentie
-
-    - MAM-naam : `BEZOEKERTOOL-CONTENT`
-
-    - Defaultwaarde: AAN
-
-    - Implicatie: de browsekopie van het object mag beschikbaar gemaakt worden op de bezoekertool.
-
-  - Andere licenties
-
-    - MAM-naam: `CC-BY-SA-CONTENT`
-
-    - Defaultwaarde: UIT
-
-    - Implicatie: naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). Analoog voor andere licenties, bvb. CC-0 : CC-0-CONTENT.
-
+| **MAM-naam** | `CC_BY-METADATA`, `CC_BY-SA-METADATA`, `CC0-METADATA`, `CC_BY-NC-METADATA`, `CC_BY-ND-METADATA`, `CC_BY-NC-ND-METADATA`
+| **Defaultwaarde** | UIT |
+| **Implicatie** | naamgeving in lijn met de licenties bij [Creative Commons](https://creativecommons.org/). Alle metadata en de browsekopie kunnen gedeeld worden in lijn met de licentie zoals omschreven door [Creative Commons](https://creativecommons.org/). |
 
 ## Wanneer worden de standaardwaardes ingevuld?
 
-Voor bestanden uit meemoo-digitaliseringsprojecten worden de standaardlicenties (zie tabel hierboven) automatisch actief op het moment van import in het archiefsysteem. Let wel: aangezien het materiaal zich op dat moment nog in de ingestruimte of workspace bevindt, zal het niet gebruikt worden. Contentpartners hebben zes maanden de tijd om het materiaal te publiceren en indien nodig de licenties aan te passen.  Pas na publicatie wordt de licentie echt actief en kan het materiaal dus ontsloten worden volgens de licenties.
+Voor bestanden uit meemoo-digitaliseringsprojecten worden de standaardlicenties (zie tabel hierboven) automatisch actief op het moment van import in het archiefsysteem. Let wel: aangezien het materiaal zich op dat moment nog in de ingest-ruimte of workspace bevindt, zal het niet gebruikt worden. Contentpartners hebben zes maanden de tijd om het materiaal te publiceren en indien nodig de licenties aan te passen. Pas na publicatie wordt de licentie echt actief en kan het materiaal dus ontsloten worden volgens de licenties.
 
-Voor bestanden uit digitale collecties worden de licenties meegegeven bij de aanlevering van het materiaal. Indien geen licentie aangeleverd werd, zal VIAA de standaardlicenties activeren.
+Voor bestanden uit digitale collecties worden de licenties meegegeven bij de aanlevering van het materiaal. Indien geen licentie aangeleverd werd, zal meemoo de standaardlicenties activeren.
 
 ## Overzicht standaardwaardes
 
 Standaard zal meemoo op dit moment onderstaande licenties activeren:
 
   | VIAA-ONDERWIJS  |    AAN |
+  | ONDERWIJS-FRAGMENT  |    UIT |
   | VIAA-ONDERZOEK   |   AAN |
   | VIAA-BIBLIOTHEKEN  |   UIT |
   | VIAA-INTRAMUROS  |   UIT |
