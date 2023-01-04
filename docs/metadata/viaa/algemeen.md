@@ -831,6 +831,10 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 - VIAA-PUBLIEK-METADATA-ALL
 - VIAA-PUBLIEK-CONTENT
 - Publiek-Domein
+- CC0-METADATA
+- CC0-CONTENT
+- CC-BY-METADATA
+- CC-BY-CONTENT
 - CC-BY-SA-METADATA
 - CC-BY-SA-CONTENT
 - CC-BY-ND-METADATA
