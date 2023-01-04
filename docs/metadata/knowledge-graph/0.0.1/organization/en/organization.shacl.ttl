@@ -208,33 +208,7 @@ schema:PostalAddress a rdfs:Class ;
     vann:preferredNamespacePrefix "haOrg" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/organization/" .
 
-haOrg:OrganizationalUnitShape a sh:NodeShape ;
-    sh:property [ sh:class org:Organization ;
-            sh:description "The organization of which the organizational unit is part."@en,
-                "L'organisation dont l'unité organisationnelle fait partie."@fr,
-                "De organisatie waarvan de organisatie-eenheid deel uitmaakt."@nl ;
-            sh:message "is missing or is no org:Organization."@en ;
-            sh:minCount 1 ;
-            sh:name "unit of"@en,
-                "unité de"@fr,
-                "organisatie-eenheid van"@nl ;
-            sh:path org:unitOf ] ;
-    sh:targetClass org:OrganizationalUnit .
-
-haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ],
-        [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ] ;
-    dct:created "2022-01-07" ;
-    dct:description "SHACL model to validate/describe organisations."@en,
-        "Modèle SHACL pour valider/décrire des organisations."@fr,
-        "SHACL-model voor het valideren/beschrijven van organisaties."@nl ;
-    dct:modified "2022-06-16" ;
-    dct:title "SHACL Model Organisations"@en,
-        "Modèle SHACL Organisations"@fr,
-        "SHACL-model Organisaties"@nl .
-
-<https://data.hetarchief.be/ns/organization/shapes#ContactPointShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#ContactPointShape> a sh:NodeShape ;
     sh:property [ sh:datatype xsd:string ;
             sh:description "The type of contact point."@en,
                 "Le type de point de contact."@fr,
@@ -263,7 +237,7 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path schema:telephone ] ;
     sh:targetClass schema:ContactPoint .
 
-<https://data.hetarchief.be/ns/organization/shapes#ContentPartnerShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#ContentPartnerShape> a sh:NodeShape ;
     sh:property [ sh:class schema:Person ;
             sh:description "The account manager of the content partner."@en,
                 "Le gestionnaire de comptes de l'contentpartner."@fr,
@@ -277,7 +251,7 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path haOrg:hasAccountManager ] ;
     sh:targetClass haOrg:ContentPartner .
 
-<https://data.hetarchief.be/ns/organization/shapes#EducationalPartnerShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#EducationalPartnerShape> a sh:NodeShape ;
     sh:property [ sh:class schema:Person ;
             sh:description "The account manager of the educational partner."@en,
                 "Le gestionnaire de comptes du partenaire éducatif."@fr,
@@ -291,7 +265,7 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path haOrg:hasAccountManager ] ;
     sh:targetClass haOrg:EducationalPartner .
 
-<https://data.hetarchief.be/ns/organization/shapes#OrganizationShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#OrganizationShape> a sh:NodeShape ;
     sh:property [ sh:class schema:ContactPoint ;
             sh:description "An organization can have a point of contact."@en,
                 "Une organisation peut avoir un point de contact."@fr,
@@ -412,7 +386,7 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path org:hasUnit ] ;
     sh:targetClass org:Organization .
 
-<https://data.hetarchief.be/ns/organization/shapes#PersonShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#PersonShape> a sh:NodeShape ;
     sh:property [ sh:class org:Post ;
             sh:description "The post that a person holds in the organization."@en,
                 "Le poste que la personne occupe dans l'organisation."@fr,
@@ -504,7 +478,7 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:severity sh:Violation ] ;
     sh:targetClass schema:Person .
 
-<https://data.hetarchief.be/ns/organization/shapes#PostShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#PostShape> a sh:NodeShape ;
     sh:property [ sh:class org:Role ;
             sh:description "Indicates the role that the agent plays as a memmber of the organization."@en,
                 "Indique le rôle de l'agent dans son engagement avec l'organisation."@fr,
@@ -531,7 +505,7 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path org:postIn ] ;
     sh:targetClass org:Post .
 
-<https://data.hetarchief.be/ns/organization/shapes#PostalAddressShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#PostalAddressShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:datatype rdf:langString ;
             sh:description "The country in which the postal address is located."@en,
@@ -602,7 +576,7 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path schema:streetAddress ] ;
     sh:targetClass schema:PostalAddress .
 
-<https://data.hetarchief.be/ns/organization/shapes#RoleShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#RoleShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:datatype rdf:langString ;
             sh:description "The preferred name/label of the role."@en,
@@ -619,7 +593,7 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path skos:prefLabel ] ;
     sh:targetClass org:Role .
 
-<https://data.hetarchief.be/ns/organization/shapes#SiteShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/organization#SiteShape> a sh:NodeShape ;
     sh:property [ sh:class schema:PostalAddress ;
             sh:description "The address of the location."@en,
                 "L'adresse de l'emplacement."@fr,
@@ -633,6 +607,19 @@ haOrg:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
                 "adres van de vestiging"@nl ;
             sh:path org:siteAddress ] ;
     sh:targetClass org:Site .
+
+haOrg:OrganizationalUnitShape a sh:NodeShape ;
+    sh:property [ sh:class org:Organization ;
+            sh:description "The organization of which the organizational unit is part."@en,
+                "L'organisation dont l'unité organisationnelle fait partie."@fr,
+                "De organisatie waarvan de organisatie-eenheid deel uitmaakt."@nl ;
+            sh:message "is missing or is no org:Organization."@en ;
+            sh:minCount 1 ;
+            sh:name "unit of"@en,
+                "unité de"@fr,
+                "organisatie-eenheid van"@nl ;
+            sh:path org:unitOf ] ;
+    sh:targetClass org:OrganizationalUnit .
 
 dct:description a rdfs:Property ;
     rdfs:label "Description"@en,

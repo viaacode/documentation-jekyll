@@ -7,7 +7,6 @@
 @prefix evtOutcome: <http://id.loc.gov/vocabulary/preservation/eventOutcome/> .
 @prefix evtType: <http://id.loc.gov/vocabulary/preservation/eventType> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix haEvent: <https://data.hetarchief.be/ns/event/> .
 @prefix haObj: <https://data.hetarchief.be/ns/object/> .
 @prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -25,11 +24,11 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n219328b26a82445c91d7dd1156ad90d8b11 a rdfs:Class,
+_:nf679abb0fdcc4a9686ab94508cc4edf4b12 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n219328b26a82445c91d7dd1156ad90d8b14 a rdfs:Class,
+_:nf679abb0fdcc4a9686ab94508cc4edf4b9 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
@@ -497,7 +496,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n219328b26a82445c91d7dd1156ad90d8b11 ;
+    rdfs:domain _:nf679abb0fdcc4a9686ab94508cc4edf4b9 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -539,7 +538,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n219328b26a82445c91d7dd1156ad90d8b14 ;
+    rdfs:domain _:nf679abb0fdcc4a9686ab94508cc4edf4b12 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -632,18 +631,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
         evtType:,
         premis: .
 
-haEvent:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ],
-        [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ] ;
-    dct:created "2022-08-02" ;
-    dct:description "SHACL model to describe events and data provenance."@en,
-        "SHACL-model om gebeurtenissen en data herkomst te beschrijven."@nl ;
-    dct:modified "2022-08-02" ;
-    dct:title "SHACL Model Events"@en,
-        "SHACL Model Events"@nl .
-
-<https://data.hetarchief.be/ns/event/shapes#activityShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/event#activityShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:description "The generated object."@en,
                 "Het gegenereerde object."@nl ;
@@ -683,7 +671,7 @@ haEvent:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path prov:wasAtrributedTo ] ;
     sh:targetClass prov:Activity .
 
-<https://data.hetarchief.be/ns/event/shapes#eventShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/event#eventShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:class premis:OutcomeStatus ;
             sh:description "The outcome status of the event."@en,
@@ -750,7 +738,7 @@ haEvent:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
             sh:path evtAgRole:exe ] ;
     sh:targetClass premis:Event .
 
-<https://data.hetarchief.be/ns/event/shapes#objectShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/event#objectShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:class premis:Event ;
             sh:description "The time at which the object was completely created and is available for use."@en,
@@ -761,26 +749,6 @@ haEvent:shapes dct:author [ schema:email "miel.vandersande@meemoo.be" ;
                 "is gegenereerd door"@nl ;
             sh:path prov:wasGeneratedBy ] ;
     sh:targetClass premis:Object .
-
-<https://data.hetarchief.be/ns/object> a owl:Ontology ;
-    dct:author [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ],
-        [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ] ;
-    dct:created "2022-05-16" ;
-    dct:description "Data model to describe objects."@en,
-        "Modèle de données pour décrire des objets."@fr,
-        "Datamodel voor het beschrijven van objecten."@nl ;
-    dct:modified "2022-06-18" ;
-    dct:title "Data model Objects"@en,
-        "Modèle de données Objets"@fr,
-        "Datamodel Objecten"@nl ;
-    pav:version "0.0.1" ;
-    vann:preferredNamespacePrefix "haObj" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/object/" ;
-    owl:imports rel:,
-        premis:,
-        prov: .
 
 evtObjRole:out a owl:ObjectProperty ;
     rdfs:label "outcome"@en,

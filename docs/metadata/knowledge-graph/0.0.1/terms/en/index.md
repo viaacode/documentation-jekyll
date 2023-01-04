@@ -1,32 +1,33 @@
 ---
 layout: "default"
-title: "SKOS Vocabulary"
+title: "Data model List of terms"
 parent: "Knowledge Graph"
 nav_order: 4
 nav_exclude: True
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
-SKOS Vocabulary
+Data model List of terms
 ====================
 
-**Version:** None
+**Version:** 0.0.1
 
 **Previous version:** 
 
-**Created:** None
+**Created:** 2022-03-14
 
-**Last modified:** None
+**Last modified:** 2022-06-16
 
-**SHACL file:** [thesauri.shacl.ttl](thesauri.shacl.ttl)
+**SHACL file:** [terms.shacl.ttl](terms.shacl.ttl)
 
 **Other languages:**
 [nl](../nl)
 
 **Authors:**
+[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 
 
-An RDF vocabulary for describing the basic structure and content of concept schemes such as thesauri, classification schemes, subject heading lists, taxonomies, 'folksonomies', other types of controlled vocabulary, and also concept schemes embedded in glossaries and terminologies.
+Data model to describe structured lists of terms such as thesauri.
 
 <div class="wrap">
   <div class="zoom">
@@ -42,12 +43,16 @@ An RDF vocabulary for describing the basic structure and content of concept sche
 | dash     | [http://datashapes.org/dash#](http://datashapes.org/dash#) |
 | dc     | [http://purl.org/dc/terms/](http://purl.org/dc/terms/) |
 | owl     | [http://www.w3.org/2002/07/owl#](http://www.w3.org/2002/07/owl#) |
+| pav     | [http://purl.org/pav/](http://purl.org/pav/) |
 | rdf     | [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) |
 | rdfs     | [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) |
+| schema     | [https://schema.org/](https://schema.org/) |
 | sh     | [http://www.w3.org/ns/shacl#](http://www.w3.org/ns/shacl#) |
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
 | skosxl     | [http://www.w3.org/2008/05/skos-xl#](http://www.w3.org/2008/05/skos-xl#) |
+| vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
 | vs     | [http://www.w3.org/2003/06/sw-vocab-status/ns#](http://www.w3.org/2003/06/sw-vocab-status/ns#) |
+| xml     | [http://www.w3.org/XML/1998/namespace](http://www.w3.org/XML/1998/namespace) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
 
 ## Classes & Properties

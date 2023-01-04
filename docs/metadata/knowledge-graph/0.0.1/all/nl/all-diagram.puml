@@ -22,10 +22,10 @@ class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveCompo
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Bestandsformaat</b> (dc:FileFormat)" as dc_FileFormat [[#dc%3AFileFormat]]
+class "<b>Bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>Collectie</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
 class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Collectie</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Conceptscheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
@@ -116,23 +116,12 @@ schema_ArchiveComponent : omschrijving : <i>xsd:string</i> [1..1]
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : mime type : <i>xsd:string</i> [0..1]
-premis_File --> dc_FileFormat :Formaat [1..1]  \lformaat [1..1]  > 
+premis_File --> dct_FileFormat :Formaat [1..1]  \lformaat [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :heeft media fragment [0..n]  \lis inbegrepen in [1..n]  > 
 premis_File --> premis_File :documenteert [0..n]  \lvervangt [0..n]  \lvolgende bestand in volgorde [0..1]  > 
 premis_File --> premis_Fixity :heeft fixity [1..1]  > 
 premis_File --> premis_StorageLocation :opgeslagen te [1..n]  > 
 
-
-
-
-schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_Collection : aantal items : <i>xsd:integer</i> [0..n]
-schema_Collection : identifier : <i>xsd:string</i> [1..1]
-schema_Collection : naam : <i>xsd:string</i> [1..1]
-schema_Collection : naam : <i>xsd:string</i> [1..1]
-schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
-schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  > 
 
 
 
@@ -153,6 +142,17 @@ skos_Collection : wijzigingsnotitie : <i>xsd:string</i> [0..n]
 
 skos_Collection --> skos_Collection :lid [0..n]  > 
 skos_Collection --> skos_Concept :lid [0..n]  > 
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : aantal items : <i>xsd:integer</i> [0..n]
+schema_Collection : identifier : <i>xsd:string</i> [1..1]
+schema_Collection : naam : <i>xsd:string</i> [1..1]
+schema_Collection : naam : <i>xsd:string</i> [1..1]
+schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
+schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  > 
+
 
 
 

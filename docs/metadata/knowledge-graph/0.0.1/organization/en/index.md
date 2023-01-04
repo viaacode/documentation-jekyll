@@ -53,6 +53,7 @@ Data model to describe organizations.
 | sh     | [http://www.w3.org/ns/shacl#](http://www.w3.org/ns/shacl#) |
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
 | vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
+| xml     | [http://www.w3.org/XML/1998/namespace](http://www.w3.org/XML/1998/namespace) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
 
 ## Classes & Properties

@@ -46,8 +46,9 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 | **Organisaties** | 0.0.1 | [Nederlands]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organization/nl/index.md %}) | [Engels]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organization/en/index.md %})
 | **Descriptie** | 0.0.1 | [Nederlands]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/descriptive/nl/index.md %}) | [Engels]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/descriptive/en/index.md %})
 | **Data herkomst** | 0.0.1 | [Nederlands]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/events/nl/index.md %}) | [Engels]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/events/en/index.md %}) |
+| **Termenlijsten** | 0.0.1 | [Nederlands]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/terms/nl/index.md %}) | [Engels]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/terms/en/index.md %}) |
 
-## Thesauri
+## Termenlijsten
 
 | **Onderwijs: onderwijsstructuur** | 1.0.0 | [Nederlands](https://w3id.org/onderwijs-vlaanderen/id/structuur/) | _Nog niet beschikbaar_ |
 | **Onderwijs: vakken** | 1.0.0 | [Nederlands](https://w3id.org/onderwijs-vlaanderen/id/vak/) | _Nog niet beschikbaar_ |

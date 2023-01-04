@@ -1,32 +1,33 @@
 ---
 layout: "default"
-title: "SKOS Vocabulaire"
+title: "Datamodel Termenlijst"
 parent: "Knowledge Graph"
 nav_order: 4
 nav_exclude: False
 ---
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"><symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><title id="svg-external-link-title">(external link)</title><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line> </symbol></svg>
 
-SKOS Vocabulaire
+Datamodel Termenlijst
 ====================
 
-**Versie:** None
+**Versie:** 0.0.1
 
 **Vorige versie:** 
 
-**Aangemaakt op:** None
+**Aangemaakt op:** 2022-03-14
 
-**Laatst gewijzigd op:** None
+**Laatst gewijzigd op:** 2022-06-16
 
-**SHACL-bestand:** [thesauri.shacl.ttl](thesauri.shacl.ttl)
+**SHACL-bestand:** [terms.shacl.ttl](terms.shacl.ttl)
 
 **Andere talen:**
 [en](../en)
 
 **Auteurs:**
+[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 
 
-Een RDF vocabulaire voor het beschrijven van de basisstructuur en inhoud van concept schemes zoals thesauri, classificatieschema's, subject heading lijsten, taxonomieën, 'folksonomies', andere soorten gecontroleerde vocabulaires, en ook concept schemes die geïntegreerd zijn in glossaries en terminologieën.
+Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri.
 
 <div class="wrap">
   <div class="zoom">
@@ -42,12 +43,16 @@ Een RDF vocabulaire voor het beschrijven van de basisstructuur en inhoud van con
 | dash     | [http://datashapes.org/dash#](http://datashapes.org/dash#) |
 | dc     | [http://purl.org/dc/terms/](http://purl.org/dc/terms/) |
 | owl     | [http://www.w3.org/2002/07/owl#](http://www.w3.org/2002/07/owl#) |
+| pav     | [http://purl.org/pav/](http://purl.org/pav/) |
 | rdf     | [http://www.w3.org/1999/02/22-rdf-syntax-ns#](http://www.w3.org/1999/02/22-rdf-syntax-ns#) |
 | rdfs     | [http://www.w3.org/2000/01/rdf-schema#](http://www.w3.org/2000/01/rdf-schema#) |
+| schema     | [https://schema.org/](https://schema.org/) |
 | sh     | [http://www.w3.org/ns/shacl#](http://www.w3.org/ns/shacl#) |
 | skos     | [http://www.w3.org/2004/02/skos/core#](http://www.w3.org/2004/02/skos/core#) |
 | skosxl     | [http://www.w3.org/2008/05/skos-xl#](http://www.w3.org/2008/05/skos-xl#) |
+| vann     | [http://purl.org/vocab/vann/](http://purl.org/vocab/vann/) |
 | vs     | [http://www.w3.org/2003/06/sw-vocab-status/ns#](http://www.w3.org/2003/06/sw-vocab-status/ns#) |
+| xml     | [http://www.w3.org/XML/1998/namespace](http://www.w3.org/XML/1998/namespace) |
 | xsd     | [http://www.w3.org/2001/XMLSchema#](http://www.w3.org/2001/XMLSchema#) |
 
 ## Klassen & Eigenschappen
@@ -109,8 +114,8 @@ Een idee of notie; een denkunit.
 | <a id='skos%3AtopConceptOf'></a>top concept van <br> <small>[(skos:topConceptOf)](http://www.w3.org/2004/02/skos/core#topConceptOf)</small> | Verbindt een concept met het conceptenschema waarvan het een bovenste niveau concept is. | `0..n` | [Conceptscheme](#skos%3AConceptScheme)  |
 | <a id='skos%3AhiddenLabel'></a>verborgen label <br> <small>[(skos:hiddenLabel)](http://www.w3.org/2004/02/skos/core#hiddenLabel)</small> | Een lexicaal label voor een resource dat verborgen moet worden bij het genereren van visuele weergaven van de resource, maar dat nog steeds toegankelijk moet zijn voor vrije tekst zoekoperaties. | `0..n` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='skos%3Aexample'></a>voorbeeld <br> <small>[(skos:example)](http://www.w3.org/2004/02/skos/core#example)</small> | Een voorbeeld van het gebruik van een concept. | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
-| <a id='skos%3AprefLabel'></a>voorkeurslabel <br> <small>[(skos:prefLabel)](http://www.w3.org/2004/02/skos/core#prefLabel)</small> | Het voorkeurslexicale label voor een resource, in een gegeven taal. | `1..n` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='skosxl%3AprefLabel'></a>voorkeurslabel <br> <small>[(skosxl:prefLabel)](http://www.w3.org/2008/05/skos-xl#prefLabel)</small> | De eigenschap skosxl:prefLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:prefLabel. | `1..n` | [Label](#skosxl%3ALabel)  |
+| <a id='skos%3AprefLabel'></a>voorkeurslabel <br> <small>[(skos:prefLabel)](http://www.w3.org/2004/02/skos/core#prefLabel)</small> | Het voorkeurslexicale label voor een resource, in een gegeven taal. | `1..n` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='skos%3AchangeNote'></a>wijzigingsnotitie <br> <small>[(skos:changeNote)](http://www.w3.org/2004/02/skos/core#changeNote)</small> | Een notitie over een wijziging aan een concept. | `0..n` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 
 ## <a id="skos%3AConceptScheme"></a>Conceptscheme <small>[(skos:ConceptScheme)](http://www.w3.org/2004/02/skos/core#ConceptScheme)</small>

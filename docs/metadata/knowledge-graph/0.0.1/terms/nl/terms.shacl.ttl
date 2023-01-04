@@ -1,13 +1,16 @@
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix pav: <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n35830dbe64b6487aa68f8b215809de05b1 a rdfs:Class,
+_:neae9128eec8e49a38c839bdb623388ebb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -92,17 +95,17 @@ skosxl:Label a rdfs:Class,
                 "letterlijke vorm"@nl ;
             sh:path skosxl:literalForm ;
             sh:severity sh:Violation ],
-        <https://data.hetarchief.be/ns/skos/shapes#altLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#changeNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#definitionShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#editorialNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#exampleShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#hiddenLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#historyNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#notationShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#noteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#prefLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#scopeNoteShape> ;
+        <https://data.hetarchief.be/ns/terms#altLabelShape>,
+        <https://data.hetarchief.be/ns/terms#changeNoteShape>,
+        <https://data.hetarchief.be/ns/terms#definitionShape>,
+        <https://data.hetarchief.be/ns/terms#editorialNoteShape>,
+        <https://data.hetarchief.be/ns/terms#exampleShape>,
+        <https://data.hetarchief.be/ns/terms#hiddenLabelShape>,
+        <https://data.hetarchief.be/ns/terms#historyNoteShape>,
+        <https://data.hetarchief.be/ns/terms#notationShape>,
+        <https://data.hetarchief.be/ns/terms#noteShape>,
+        <https://data.hetarchief.be/ns/terms#prefLabelShape>,
+        <https://data.hetarchief.be/ns/terms#scopeNoteShape> ;
     sh:targetClass skosxl:Label .
 
 skosxl:altLabel a rdf:Property,
@@ -145,35 +148,42 @@ skosxl:labelRelation a rdf:Property,
         "De eigenschap skosxl:labelRelation wordt gebruikt voor het weergeven van binaire ('directe') relaties tussen instanties van de klasse skosxl:Label."@nl ;
     skos:scopeNote "skosxl:labelRelation is not intended to be used directly, but rather as the basis for a design pattern which can be refined for more specific labeling scenarios."@en .
 
-<https://data.hetarchief.be/ns/skos/shapes> dc:description "Constraints definitions for SKOS and skosxl:"@en,
-        "Définitions de contraintes pour SKOS et skosxl:"@fr,
-        "Constraints definities voor SKOS en skosxl:"@nl ;
-    dc:modified "2022-11-30" ;
-    dc:title "SHACL Model Description"@en,
-        "Modèle SHACL Description"@fr,
-        "SHACL-model Descriptie"@nl .
+<https://data.hetarchief.be/ns/terms> a owl:Ontology ;
+    dc:author [ schema:email "lennert.vandevelde@meemoo.be" ;
+            schema:name "Lennert Van de Velde" ] ;
+    dc:created "2022-03-14" ;
+    dc:description "Data model to describe structured lists of terms such as thesauri."@en,
+        "Modèle de données pour décrire des listes structurées de termes tels que le thésaure."@fr,
+        "Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."@nl ;
+    dc:modified "2022-06-16" ;
+    dc:title "Data model List of terms"@en,
+        "Modèle de données Listes de termes"@fr,
+        "Datamodel Termenlijst"@nl ;
+    pav:version "0.0.1" ;
+    vann:preferredNamespacePrefix "haTerm" ;
+    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/terms/" .
 
-<https://data.hetarchief.be/ns/skos/shapes#CollectionShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/terms#CollectionShape> a sh:NodeShape ;
     sh:property [ sh:name "member"@en,
                 "membre"@fr,
                 "lid"@nl ;
             sh:or ( [ sh:class skos:Concept ] [ sh:class skos:Collection ] ) ;
             sh:path skos:member ;
             sh:severity sh:Violation ],
-        <https://data.hetarchief.be/ns/skos/shapes#altLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#changeNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#definitionShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#editorialNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#exampleShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#hiddenLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#historyNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#notationShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#noteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#prefLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#scopeNoteShape> ;
+        <https://data.hetarchief.be/ns/terms#altLabelShape>,
+        <https://data.hetarchief.be/ns/terms#changeNoteShape>,
+        <https://data.hetarchief.be/ns/terms#definitionShape>,
+        <https://data.hetarchief.be/ns/terms#editorialNoteShape>,
+        <https://data.hetarchief.be/ns/terms#exampleShape>,
+        <https://data.hetarchief.be/ns/terms#hiddenLabelShape>,
+        <https://data.hetarchief.be/ns/terms#historyNoteShape>,
+        <https://data.hetarchief.be/ns/terms#notationShape>,
+        <https://data.hetarchief.be/ns/terms#noteShape>,
+        <https://data.hetarchief.be/ns/terms#prefLabelShape>,
+        <https://data.hetarchief.be/ns/terms#scopeNoteShape> ;
     sh:targetClass skos:Collection .
 
-<https://data.hetarchief.be/ns/skos/shapes#ConceptSchemeShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/terms#ConceptSchemeShape> a sh:NodeShape ;
     sh:property [ sh:class skos:Concept ;
             sh:name "has top concept"@en,
                 "a pour concept supérieur"@fr,
@@ -181,21 +191,27 @@ skosxl:labelRelation a rdf:Property,
             sh:nodeKind sh:IRI ;
             sh:path skos:hasTopConcept ;
             sh:severity sh:Violation ],
-        <https://data.hetarchief.be/ns/skos/shapes#altLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#changeNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#definitionShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#editorialNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#exampleShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#hiddenLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#historyNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#notationShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#noteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#prefLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#scopeNoteShape> ;
+        <https://data.hetarchief.be/ns/terms#altLabelShape>,
+        <https://data.hetarchief.be/ns/terms#changeNoteShape>,
+        <https://data.hetarchief.be/ns/terms#definitionShape>,
+        <https://data.hetarchief.be/ns/terms#editorialNoteShape>,
+        <https://data.hetarchief.be/ns/terms#exampleShape>,
+        <https://data.hetarchief.be/ns/terms#hiddenLabelShape>,
+        <https://data.hetarchief.be/ns/terms#historyNoteShape>,
+        <https://data.hetarchief.be/ns/terms#notationShape>,
+        <https://data.hetarchief.be/ns/terms#noteShape>,
+        <https://data.hetarchief.be/ns/terms#prefLabelShape>,
+        <https://data.hetarchief.be/ns/terms#scopeNoteShape> ;
     sh:targetClass skos:ConceptScheme .
 
-<https://data.hetarchief.be/ns/skos/shapes#ConceptShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/terms#ConceptShape> a sh:NodeShape ;
     sh:property [ sh:class skos:Concept ;
+            sh:name "broader transitive"@en,
+                "plus large transitive"@fr,
+                "breder transitief"@nl ;
+            sh:nodeKind sh:IRI ;
+            sh:path skos:broaderTransitive ],
+        [ sh:class skos:Concept ;
             sh:disjoint skos:broadMatch,
                 skos:exactMatch,
                 skos:narrowMatch,
@@ -328,27 +344,21 @@ skosxl:labelRelation a rdf:Property,
                 "brede match"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path skos:broadMatch ],
-        [ sh:class skos:Concept ;
-            sh:name "broader transitive"@en,
-                "plus large transitive"@fr,
-                "breder transitief"@nl ;
-            sh:nodeKind sh:IRI ;
-            sh:path skos:broaderTransitive ],
-        <https://data.hetarchief.be/ns/skos/shapes#altLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#changeNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#definitionShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#editorialNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#exampleShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#hiddenLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#historyNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#notationShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#noteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#prefLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#scopeNoteShape> ;
+        <https://data.hetarchief.be/ns/terms#altLabelShape>,
+        <https://data.hetarchief.be/ns/terms#changeNoteShape>,
+        <https://data.hetarchief.be/ns/terms#definitionShape>,
+        <https://data.hetarchief.be/ns/terms#editorialNoteShape>,
+        <https://data.hetarchief.be/ns/terms#exampleShape>,
+        <https://data.hetarchief.be/ns/terms#hiddenLabelShape>,
+        <https://data.hetarchief.be/ns/terms#historyNoteShape>,
+        <https://data.hetarchief.be/ns/terms#notationShape>,
+        <https://data.hetarchief.be/ns/terms#noteShape>,
+        <https://data.hetarchief.be/ns/terms#prefLabelShape>,
+        <https://data.hetarchief.be/ns/terms#scopeNoteShape> ;
     sh:scopeClass skos:Concept ;
     sh:targetClass skos:Concept .
 
-<https://data.hetarchief.be/ns/skos/shapes#OrderedCollectionShape> a sh:NodeShape ;
+<https://data.hetarchief.be/ns/terms#OrderedCollectionShape> a sh:NodeShape ;
     sh:class skos:Collection ;
     sh:property [ sh:class rdf:List ;
             sh:name "member list"@en,
@@ -356,17 +366,17 @@ skosxl:labelRelation a rdf:Property,
                 "lijst van leden"@nl ;
             sh:path skos:memberList ;
             sh:severity sh:Violation ],
-        <https://data.hetarchief.be/ns/skos/shapes#altLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#changeNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#definitionShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#editorialNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#exampleShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#hiddenLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#historyNoteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#notationShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#noteShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#prefLabelShape>,
-        <https://data.hetarchief.be/ns/skos/shapes#scopeNoteShape> ;
+        <https://data.hetarchief.be/ns/terms#altLabelShape>,
+        <https://data.hetarchief.be/ns/terms#changeNoteShape>,
+        <https://data.hetarchief.be/ns/terms#definitionShape>,
+        <https://data.hetarchief.be/ns/terms#editorialNoteShape>,
+        <https://data.hetarchief.be/ns/terms#exampleShape>,
+        <https://data.hetarchief.be/ns/terms#hiddenLabelShape>,
+        <https://data.hetarchief.be/ns/terms#historyNoteShape>,
+        <https://data.hetarchief.be/ns/terms#notationShape>,
+        <https://data.hetarchief.be/ns/terms#noteShape>,
+        <https://data.hetarchief.be/ns/terms#prefLabelShape>,
+        <https://data.hetarchief.be/ns/terms#scopeNoteShape> ;
     sh:targetClass skos:OrderedCollection .
 
 skos:changeNote a rdf:Property,
@@ -431,7 +441,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n35830dbe64b6487aa68f8b215809de05b1 ;
+    rdfs:range _:neae9128eec8e49a38c839bdb623388ebb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met een van zijn leden."@nl .
@@ -744,7 +754,7 @@ skos:semanticRelation a rdf:Property,
         "Cette propriété ne doit pas être utilisée directement, mais comme super-propriété pour toutes les propriétés désignant une relation de sens entre concepts."@fr,
         "Deze eigenschap moet niet direct gebruikt worden, maar als super-eigenschap voor alle eigenschappen die een betekenisrelatie tussen concepten aanduiden."@nl .
 
-<https://data.hetarchief.be/ns/skos/shapes#altLabelShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#altLabelShape> a sh:PropertyShape ;
     sh:datatype rdf:langString ;
     sh:disjoint skos:hiddenLabel,
         skos:prefLabel ;
@@ -758,7 +768,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:altLabel ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#changeNoteShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#changeNoteShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:name "change note"@en,
         "note de changement"@fr,
@@ -767,7 +777,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:changeNote ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#definitionShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#definitionShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:minCount 1 ;
     sh:name "definition"@en,
@@ -777,7 +787,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:definition ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#editorialNoteShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#editorialNoteShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:name "editorial note"@en,
         "note éditoriale"@fr,
@@ -786,7 +796,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:editorialNote ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#exampleShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#exampleShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:name "example"@en,
         "exemple"@fr,
@@ -795,7 +805,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:example ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#hiddenLabelShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#hiddenLabelShape> a sh:PropertyShape ;
     sh:datatype rdf:langString ;
     sh:name "hidden label"@en,
         "étiquette cachée"@fr,
@@ -804,7 +814,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:hiddenLabel ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#historyNoteShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#historyNoteShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:name "history note"@en,
         "note d'historique"@fr,
@@ -813,7 +823,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:historyNote ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#notationShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#notationShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:name "notation"@en,
         "notation"@fr,
@@ -822,7 +832,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:notation ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#noteShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#noteShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:name "note"@en,
         "note"@fr,
@@ -831,7 +841,7 @@ skos:semanticRelation a rdf:Property,
     sh:path skos:note ;
     sh:severity sh:Violation .
 
-<https://data.hetarchief.be/ns/skos/shapes#prefLabelShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#prefLabelShape> a sh:PropertyShape ;
     sh:datatype rdf:langString ;
     sh:disjoint skos:altLabel,
         skos:hiddenLabel ;
@@ -844,7 +854,7 @@ skos:semanticRelation a rdf:Property,
     sh:severity sh:Violation ;
     sh:uniqueLang true .
 
-<https://data.hetarchief.be/ns/skos/shapes#scopeNoteShape> a sh:PropertyShape ;
+<https://data.hetarchief.be/ns/terms#scopeNoteShape> a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:name "scope note"@en,
         "note de champ"@fr,

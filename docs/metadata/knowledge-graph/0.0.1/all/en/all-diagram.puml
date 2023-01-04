@@ -17,9 +17,9 @@ class "<b>List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
 class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
 class "<b>Archive Component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
 class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Concept Scheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
@@ -38,7 +38,7 @@ class "<b>Event</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
 class "<b>Activity</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
 class "<b>File</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>File Format</b> (dc:FileFormat)" as dc_FileFormat [[#dc%3AFileFormat]]
+class "<b>File Format</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
 class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
 class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
 class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
@@ -97,16 +97,6 @@ schema_ArchiveComponent : description : <i>xsd:string</i> [1..1]
 schema_ArchiveComponent : name : <i>xsd:string</i> [1..1]
 
 
-schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_Collection : collection size : <i>xsd:integer</i> [0..n]
-schema_Collection : description : <i>xsd:string</i> [1..1]
-schema_Collection : identifier : <i>xsd:string</i> [1..1]
-schema_Collection : name : <i>xsd:string</i> [1..1]
-schema_Collection --> premis_IntellectualEntity :has part [0..n]  > 
-
-
-
 
 skos_Collection : alternative label : <i>rdf:langString</i> [0..n]
 skos_Collection : alternative label : <i>rdf:langString</i> [0..n]
@@ -124,6 +114,16 @@ skos_Collection : scope note : <i>xsd:string</i> [0..n]
 
 skos_Collection --> skos_Collection :member [0..n]  > 
 skos_Collection --> skos_Concept :member [0..n]  > 
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : collection size : <i>xsd:integer</i> [0..n]
+schema_Collection : description : <i>xsd:string</i> [1..1]
+schema_Collection : identifier : <i>xsd:string</i> [1..1]
+schema_Collection : name : <i>xsd:string</i> [1..1]
+schema_Collection --> premis_IntellectualEntity :has part [0..n]  > 
+
 
 
 
@@ -245,7 +245,7 @@ premis_Event --> premis_SoftwareAgent :executed by [0..1]  >
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : mime type : <i>xsd:string</i> [0..1]
-premis_File --> dc_FileFormat :Format [1..1]  \lformat [1..1]  > 
+premis_File --> dct_FileFormat :Format [1..1]  \lformat [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :has media fragment [0..n]  \lis Included in [1..n]  > 
 premis_File --> premis_File :documents [0..n]  \lnext file in sequence [0..1]  \lsupersedes [0..n]  > 
 premis_File --> premis_Fixity :has fixity [1..1]  > 

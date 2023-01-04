@@ -13,25 +13,85 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>IntellectualEntity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>PhysicalRepresentation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>DigitalRepresentation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organization/nl#schema%3APerson]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[../../organization/nl#org%3AOrganization]]
 class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organization/nl#haOrg%3AContentPartner]]
-class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organization/nl#schema%3APerson]]
 class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../thesauri/nl#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 
+
+
+
+
+
+
+schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Episode : identifier : <i>xsd:string</i> [1..1]
+schema_Episode : naam : <i>xsd:string</i> [1..1]
+schema_Episode : omschrijving : <i>xsd:string</i> [1..1]
+
+
+schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_ArchiveComponent : naam : <i>xsd:string</i> [1..1]
+schema_ArchiveComponent : omschrijving : <i>xsd:string</i> [1..1]
+
+
+schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
+
+schema_Collection : aantal items : <i>xsd:integer</i> [0..n]
+schema_Collection : identifier : <i>xsd:string</i> [1..1]
+schema_Collection : naam : <i>xsd:string</i> [1..1]
+schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
+schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  > 
+
+
+
+
+
+haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_DigitalRepresentation : aangemaakt op : <i>edtf:EDTF-level1</i> [1..1]
+haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : naam : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
+haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
+
+haObj_DigitalRepresentation --> schema_Role :auteur [0..n]  > 
+
+
+haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_PhysicalRepresentation : formaat : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation : formaat : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation : kunst medium : <i>xsd:string</i> [0..n]
+haObj_PhysicalRepresentation : kunstvorm : <i>xsd:string</i> [0..n]
+haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
+haObj_PhysicalRepresentation : naam : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
+haObj_PhysicalRepresentation --> schema_QuantitativeValue :breedte [0..n]  \ldiepte [0..n]  \lhoogte [0..n]  > 
+
+
+premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity : aangemaakt op : <i>edtf:EDTF-level1</i> [0..1]
 premis_IntellectualEntity : alternatieve naam : <i>xsd:string</i> [0..n]
@@ -63,59 +123,6 @@ premis_IntellectualEntity --> schema_Person :auteur van de copyright [0..n]  >
 premis_IntellectualEntity --> schema_Place :spatiaal [0..n]  > 
 premis_IntellectualEntity --> schema_Role :auteur [0..n]  \lbijdrager [0..n]  \luitgever [0..n]  > 
 premis_IntellectualEntity --> skos_Concept :licentie [0..n]  > 
-
-
-
-
-
-haObj_PhysicalRepresentation : formaat : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : kunst medium : <i>xsd:string</i> [0..n]
-haObj_PhysicalRepresentation : kunstvorm : <i>xsd:string</i> [0..n]
-haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
-haObj_PhysicalRepresentation : naam : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation --> schema_QuantitativeValue :breedte [0..n]  \ldiepte [0..n]  \lhoogte [0..n]  > 
-
-
-
-haObj_DigitalRepresentation : aangemaakt op : <i>edtf:EDTF-level1</i> [1..1]
-haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
-haObj_DigitalRepresentation : naam : <i>xsd:string</i> [1..1]
-haObj_DigitalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
-haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
-haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
-
-haObj_DigitalRepresentation --> schema_Role :auteur [0..n]  > 
-
-
-
-
-
-
-
-
-schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_Episode : identifier : <i>xsd:string</i> [1..1]
-schema_Episode : naam : <i>xsd:string</i> [1..1]
-schema_Episode : omschrijving : <i>xsd:string</i> [1..1]
-
-
-schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_ArchiveComponent : naam : <i>xsd:string</i> [1..1]
-schema_ArchiveComponent : omschrijving : <i>xsd:string</i> [1..1]
-
-
-schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
-
-schema_Collection : aantal items : <i>xsd:integer</i> [0..n]
-schema_Collection : identifier : <i>xsd:string</i> [1..1]
-schema_Collection : naam : <i>xsd:string</i> [1..1]
-schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
-schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  > 
-
 
 
 
