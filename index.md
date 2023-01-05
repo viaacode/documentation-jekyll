@@ -12,7 +12,9 @@ nav_exclude: true
 Welkom op meemoo's documentatie voor ontwikkelaars!
 Hier vind je alles over ons metadatamodel (incl. dataformaten), onze SIP-specificatie en onze APIs.
 
-1. [Alles over het metadatamodel]({{ site.baseurl }}{% link docs/metadata/index.md %})
+1. [Alles over metadata bij meemoo]({{ site.baseurl }}{% link docs/metadata/index.md %})
+   1. [Het huidig metadatamodel]({{ site.baseurl }}{% link docs/metadata/viaa/index.md %})
+   2. [De toekomstige metadatamodellen in de *knowledge graph*]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/index.md %})
 2. [Alles over digitale instroom]({{ site.baseurl }}{% link docs/diginstroom/index.md %})
    1. [De SIP-specificatie]({{ site.baseurl }}{% link docs/diginstroom/sip/index.md %})
 3. [Alles om te starten met het bouwen van een integratie]({{ site.baseurl }}{% link docs/integratie/index.md %})

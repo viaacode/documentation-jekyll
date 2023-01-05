@@ -19,7 +19,7 @@ Voor het beschrijven van deze brede kennis hanteren we een modulair datamodel da
 - metamodellen om de opgebouwde kennis te annoteren zoals gebruiksrecht (wie mag er wat met de metadata of het materiaal?) of dataherkomst (wie heeft metadata toegevoegd of gewijzigd en wanneer?).
 
 De thesauri zijn gecontroleerde (hierarchische) termenlijsten om dingen te classificeren.
-Alle datamodellen zijn beschrikbaar in [RDFS](https://www.w3.org/TR/rdf-schema/) en [SHACL](https://www.w3.org/TR/shacl/); de thesauri als [SKOS](https://www.w3.org/TR/skos-reference/).
+Alle datamodellen zijn beschikbaar in [RDFS](https://www.w3.org/TR/rdf-schema/) en [SHACL](https://www.w3.org/TR/shacl/); de thesauri als [SKOS](https://www.w3.org/TR/skos-reference/).
 
 {: .note }
 Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet beschikbaar in productie.
@@ -41,7 +41,8 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 </figure>
 
 
-
+|Naam|Versie|Documentatie (NL)|Documentation (EN)|
+|----|------|-----------------------------|-------------------------|
 | **Objectstructuur (kernmodel)** | 0.0.1 | [Nederlands]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/object/nl/index.md %}) | [Engels]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/object/en/index.md %})
 | **Organisaties** | 0.0.1 | [Nederlands]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organization/nl/index.md %}) | [Engels]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organization/en/index.md %})
 | **Descriptie** | 0.0.1 | [Nederlands]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/descriptive/nl/index.md %}) | [Engels]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/descriptive/en/index.md %})
@@ -50,6 +51,8 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 
 ## Termenlijsten
 
+|Naam|Versie|Documentatie (NL)|Documentation (EN)|
+|----|------|-----------------------------|-------------------------|
 | **Onderwijs: onderwijsstructuur** | 1.0.0 | [Nederlands](https://w3id.org/onderwijs-vlaanderen/id/structuur/) | _Nog niet beschikbaar_ |
 | **Onderwijs: vakken** | 1.0.0 | [Nederlands](https://w3id.org/onderwijs-vlaanderen/id/vak/) | _Nog niet beschikbaar_ |
 | **Onderwijs: themas** | 1.0.0 | _Nog niet beschikbaar_ | _Nog niet beschikbaar_ |
