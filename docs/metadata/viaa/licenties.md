@@ -17,7 +17,11 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 | **MAM-naam** | `VIAA-ONDERWIJS` |
 | **Defaultwaarde**|  AAN |
-| **Implicatie** | meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op onderwijs.hetarchief.be. |
+| **Implicatie** | meemoo mag de content en metadata gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op [onderwijs.hetarchief.be](https://onderwijs.hetarchief.be/). |
+
+| **MAM-naam** | `ONDERWIJS-FRAGMENT` |
+| **Defaultwaarde**|  UIT |
+| **Implicatie** | meemoo mag de content en metadata van één dan wel meerdere fragmenten van het item gebruiken voor ontsluiting richting het onderwijs, bijvoorbeeld op [onderwijs.hetarchief.be](https://onderwijs.hetarchief.be/). |
 
 ### Wetenschappelijk onderzoek 
 
@@ -37,13 +41,13 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 | **MAM-naam** |  `VIAA-INTRA_CP-CONTENT` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | De lage resolutiekopie van het object mag getoond worden tussen contentpartners. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden. Deze licentie wordt gebruikt op cataloguspro.hetarchief.be. |
+| **Implicatie** | De lage resolutiekopie van het object mag getoond worden tussen contentpartners. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden. Deze licentie wordt gebruikt op [cataloguspro.hetarchief.be](https://cataloguspro.hetarchief.be). |
 
 #### Metadata
 
 | **MAM-naam** | `VIAA-INTRA_CP-METADATA-ALL` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op cataloguspro.hetarchief.be |
+| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op [cataloguspro.hetarchief.be](https://cataloguspro.hetarchief.be) |
 
 ### Brede publiek
 
@@ -59,13 +63,13 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 | **MAM-naam** | `VIAA-PUBLIEK-METADATA-LTD` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | Een beperkte set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be. |
+| **Implicatie** | Een beperkte set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
 
 **Uitgebreide metadataset**
 
 | **MAM-naam** | `VIAA-PUBLIEK-METADATA-ALL` |
 | **Defaultwaarde** | UIT |
-| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op hetarchief.be. |
+| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
 
 ### Leeszaal van de contentpartner
 
@@ -73,13 +77,13 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 | **MAM-naam** | `BEZOEKERTOOL-CONTENT` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | De lage resolutiekopie van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be |
+| **Implicatie** | De lage resolutiekopie van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op [bezoek.hetarchief.be](https://bezoek.hetarchief.be) |
 
 #### Metadata
 
 | **MAM-naam** | `BEZOEKERTOOL-METADATA-ALL` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op bezoek.hetarchief.be |
+| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op [bezoek.hetarchief.be](https://bezoek.hetarchief.be) |
 
 ### VIAA-licentie intra-muros
 
