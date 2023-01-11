@@ -521,6 +521,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 | `<Digitaliseringspartner />` | |
 | `<Dirigent />` | |
 | `<Dramaturg />` | |
+| `<Fabrikant />` | Bedrijf dat het afgebeelde goed of product geproduceerd heeft. |
 | `<Fotografie />` | |
 | `<Geluid />` | |
 | `<Geluidsman />` | |
