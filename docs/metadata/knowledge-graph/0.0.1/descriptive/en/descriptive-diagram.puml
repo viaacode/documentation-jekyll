@@ -13,33 +13,28 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Person</b> (schema:Person)" as schema_Person [[../../organization/en#schema%3APerson]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[../../organization/en#org%3AOrganization]]
-class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organization/en#haOrg%3AContentPartner]]
-class "<b>Archive Component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
-class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
-class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
-class "<b>Creative Work Series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
-class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
-class "<b>Creative Work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Physical representation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
-class "<b>Quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
-class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
-
-
-
-
-
-
+class "<b>archive component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
+class "<b>content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organization/en#haOrg%3AContentPartner]]
+class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>creative work series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>organization</b> (org:Organization)" as org_Organization [[../../organization/en#org%3AOrganization]]
+class "<b>person</b> (schema:Person)" as schema_Person [[../../organization/en#schema%3APerson]]
+class "<b>physical representation</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
+class "<b>role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 
 schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
 
@@ -57,6 +52,9 @@ schema_Collection --> premis_IntellectualEntity :has part [0..n]  >
 
 
 
+
+
+haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 
 schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -105,7 +103,6 @@ premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : in language : <i>xsd:string</i> [1..n]
 premis_IntellectualEntity : keywords : <i>xsd:string</i> [0..n]
 premis_IntellectualEntity : name : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : object type : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : temporal : <i>rdf:langString</i> [0..n]
 
 
@@ -119,6 +116,10 @@ premis_IntellectualEntity --> schema_Person :copyright holder [0..n]  >
 premis_IntellectualEntity --> schema_Place :spatial [0..n]  > 
 premis_IntellectualEntity --> schema_Role :author [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
 premis_IntellectualEntity --> skos_Concept :license [0..n]  > 
+
+
+
+
 
 
 

@@ -13,27 +13,29 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
-class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
-class "<b>Fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
-class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
+class "<b>fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>entiteit</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
+class "<b>opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : mime type : <i>xsd:string</i> [0..1]
-premis_File --> dct_FileFormat :Formaat [1..1]  > 
+premis_File --> dct_FileFormat :formaat [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :heeft media fragment [0..n]  \lis inbegrepen in [1..n]  > 
 premis_File --> premis_File :documenteert [0..n]  \lvervangt [0..n]  \lvolgende bestand in volgorde [0..1]  > 
 premis_File --> premis_Fixity :heeft fixity [1..1]  > 
@@ -45,7 +47,7 @@ premis_File --> premis_StorageLocation :opgeslagen te [1..n]  >
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --> haObj_PhysicalRepresentation :heeft een bron [0..n]  > 
-haObj_DigitalRepresentation --> premis_File :Bron van het mediafragment [0..n]  \lbevat [1..n]  \lligt aan de basis van [0..n]  > 
+haObj_DigitalRepresentation --> premis_File :bevat [1..n]  \lbron van het mediafragment (MediaFragment) [0..n]  \lligt aan de basis van [0..n]  > 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :is archiefmaster van [1..n]  \lis mezzanineformaat van [0..1]  \lis toegangskopie van [0..1]  \lrepresenteert [1..n]  > 
 
 
@@ -64,10 +66,12 @@ premis_IntellectualEntity --> haObj_LocalIdentifier :lokale identifier [0..n]  >
 premis_IntellectualEntity --> premis_IntellectualEntity :heeft onderdeel [0..n]  \lmaakt onderdeel uit van [0..n]  > 
 premis_IntellectualEntity --> premis_Representation :wordt gerepresenteerd door [0..n]  > 
 
+haObj_LocalIdentifier --|> skos_Concept #blue;line.dotted;text:blue
 
 haObj_LocalIdentifier : waarde : <i>xsd:string</i> [1..1]
 
 
+premis_Object --|> prov_Entity #blue;line.dotted;text:blue
 
 premis_Object --> premis_Object :heeft een relatie [0..n]  > 
 

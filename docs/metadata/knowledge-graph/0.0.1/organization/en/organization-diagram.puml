@@ -13,22 +13,24 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>Content Partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Educational Partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
-class "<b>Educational Organization</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
-class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Organization Type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
-class "<b>OrganizationalUnit</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
-class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
-class "<b>Post</b> (org:Post)" as org_Post [[#org%3APost]]
-class "<b>Postal address</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
-class "<b>ContactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>Role</b> (org:Role)" as org_Role [[#org%3ARole]]
-class "<b>Site</b> (org:Site)" as org_Site [[#org%3ASite]]
+class "<b>contactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>educational partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>educational organization</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>organization type</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>organizationalUnit</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>post</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>postal address</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>contactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>role</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>site</b> (org:Site)" as org_Site [[#org%3ASite]]
 
 
 schema_ContactPoint : contact type : <i>xsd:string</i> [1..1]
@@ -61,6 +63,7 @@ org_Organization --> org_Site :has primary site [0..1]  \lhas site [0..n]  >
 org_Organization --> schema_ContactPoint :contact point [0..n]  > 
 org_Organization --> schema_Person :has account manager [0..1]  > 
 
+haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
 
 
 org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
@@ -94,6 +97,7 @@ schema_PostalAddress : region : <i>xsd:string</i> [0..1]
 
 
 
+org_Role --|> skos_Concept #blue;line.dotted;text:blue
 
 org_Role : preferred label : <i>rdf:langString</i> [1..1]
 

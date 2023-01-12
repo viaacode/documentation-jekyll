@@ -13,76 +13,72 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
-class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
-class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
-class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
-class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
-class "<b>Collectie</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
-class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
-class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Conceptscheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
-class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
-class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
-class "<b>Educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
-class "<b>Fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
-class "<b>Fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Gebeurtenis</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
-class "<b>Activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
-class "<b>Geordende collectie</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
-class "<b>Collectie</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
-class "<b>Hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
-class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
-class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
-class "<b>Label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
-class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
-class "<b>Lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Entiteit</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
-class "<b>Opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
-class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
-class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
-class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
-class "<b>Positie</b> (org:Post)" as org_Post [[#org%3APost]]
-class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
-class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
-class "<b>Rol</b> (org:Role)" as org_Role [[#org%3ARole]]
-class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
-class "<b>Creatief Werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>Software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
-class "<b>Agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
-class "<b>Uitkomststatus</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
-class "<b>Vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
-
-
+class "<b>aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>conceptenschema</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
+class "<b>contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>educatieve organisatie</b> (haOrg:EducationalOrganization)" as haOrg_EducationalOrganization [[#haOrg%3AEducationalOrganization]]
+class "<b>fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
+class "<b>fysieke representatie</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
+class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>gebeurtenis</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
+class "<b>activiteit</b> (prov:Activity)" as prov_Activity [[#prov%3AActivity]]
+class "<b>geordende collectie</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "<b>verzameling</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>hardware agent</b> (premis:HardwareAgent)" as premis_HardwareAgent [[#premis%3AHardwareAgent]]
+class "<b>agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
+class "<b>intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
+class "<b>label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
+class "<b>lijst</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>entiteit</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>opslagmedium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
+class "<b>opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>positie</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>rol</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>software agent</b> (premis:SoftwareAgent)" as premis_SoftwareAgent [[#premis%3ASoftwareAgent]]
+class "<b>agent</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
+class "<b>uitkomststatus</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
+class "<b>verzameling</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
 
 
 schema_ContactPoint : contacttype : <i>xsd:string</i> [1..1]
 schema_ContactPoint : e-mail : <i>xsd:string</i> [0..n]
-schema_ContactPoint : numéro de téléphone : <i>xsd:string</i> [0..n]
 schema_ContactPoint : telefoonnummer : <i>xsd:string</i> [0..n]
 
 
@@ -93,7 +89,6 @@ prov_Activity : heeft startdatum : <i>xsd:dateTime</i> [1..1]
 
 prov_Activity --> org_Organization :was toegekend aan [1..1]  > 
 prov_Activity --> premis_HardwareAgent :was toegekend aan [1..1]  > 
-prov_Activity --> premis_Object :was toegekend aan [1..1]  > 
 prov_Activity --> premis_SoftwareAgent :was toegekend aan [1..1]  > 
 prov_Activity --> schema_Person :was toegekend aan [1..1]  > 
 
@@ -102,13 +97,11 @@ schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_Episode : identifier : <i>xsd:string</i> [1..1]
 schema_Episode : naam : <i>xsd:string</i> [1..1]
-schema_Episode : naam : <i>xsd:string</i> [1..1]
 schema_Episode : omschrijving : <i>xsd:string</i> [1..1]
 
 
 schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_ArchiveComponent : naam : <i>xsd:string</i> [1..1]
 schema_ArchiveComponent : naam : <i>xsd:string</i> [1..1]
 schema_ArchiveComponent : omschrijving : <i>xsd:string</i> [1..1]
 
@@ -116,7 +109,7 @@ schema_ArchiveComponent : omschrijving : <i>xsd:string</i> [1..1]
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : mime type : <i>xsd:string</i> [0..1]
-premis_File --> dct_FileFormat :Formaat [1..1]  \lformaat [1..1]  > 
+premis_File --> dct_FileFormat :formaat [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :heeft media fragment [0..n]  \lis inbegrepen in [1..n]  > 
 premis_File --> premis_File :documenteert [0..n]  \lvervangt [0..n]  \lvolgende bestand in volgorde [0..1]  > 
 premis_File --> premis_Fixity :heeft fixity [1..1]  > 
@@ -125,30 +118,10 @@ premis_File --> premis_StorageLocation :opgeslagen te [1..n]  >
 
 
 
-
-skos_Collection : alternatief label : <i>rdf:langString</i> [0..n]
-skos_Collection : alternatief label : <i>rdf:langString</i> [0..n]
-skos_Collection : definitie : <i>xsd:string</i> [1..n]
-skos_Collection : historische notitie : <i>xsd:string</i> [0..n]
-skos_Collection : notation : <i>xsd:string</i> [0..n]
-skos_Collection : note : <i>xsd:string</i> [0..n]
-skos_Collection : redactionele notitie : <i>xsd:string</i> [0..n]
-skos_Collection : scope notitie : <i>xsd:string</i> [0..n]
-skos_Collection : verborgen label : <i>rdf:langString</i> [0..n]
-skos_Collection : voorbeeld : <i>xsd:string</i> [0..n]
-skos_Collection : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_Collection : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_Collection : wijzigingsnotitie : <i>xsd:string</i> [0..n]
-
-skos_Collection --> skos_Collection :lid [0..n]  > 
-skos_Collection --> skos_Concept :lid [0..n]  > 
-
-
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_Collection : aantal items : <i>xsd:integer</i> [0..n]
 schema_Collection : identifier : <i>xsd:string</i> [1..1]
-schema_Collection : naam : <i>xsd:string</i> [1..1]
 schema_Collection : naam : <i>xsd:string</i> [1..1]
 schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
 schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  > 
@@ -157,60 +130,34 @@ schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  >
 
 
 skos_Concept : alternatief label : <i>rdf:langString</i> [0..n]
-skos_Concept : alternatief label : <i>rdf:langString</i> [0..n]
-skos_Concept : definitie : <i>xsd:string</i> [1..n]
-skos_Concept : historische notitie : <i>xsd:string</i> [0..n]
+skos_Concept : definitie : <i>rdf:langString</i> [1..n]
+skos_Concept : historische notitie : <i>rdf:langString</i> [0..n]
 skos_Concept : notation : <i>xsd:string</i> [0..n]
-skos_Concept : note : <i>xsd:string</i> [0..n]
-skos_Concept : redactionele notitie : <i>xsd:string</i> [0..n]
-skos_Concept : scope note : <i>rdf:langString</i> [0..n]
-skos_Concept : scope notitie : <i>xsd:string</i> [0..n]
+skos_Concept : note : <i>rdf:langString</i> [0..n]
+skos_Concept : redactionele notitie : <i>rdf:langString</i> [0..n]
+skos_Concept : scope notitie : <i>rdf:langString</i> [0..n]
 skos_Concept : verborgen label : <i>rdf:langString</i> [0..n]
-skos_Concept : voorbeeld : <i>xsd:string</i> [0..n]
+skos_Concept : voorbeeld : <i>rdf:langString</i> [0..n]
 skos_Concept : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_Concept : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_Concept : wijzigingsnotitie : <i>xsd:string</i> [0..n]
+skos_Concept : wijzigingsnotitie : <i>rdf:langString</i> [0..n]
 
-skos_Concept --> skos_Concept :brede match [0..n]  \lbreder [0..n]  \lbreder transitief [0..n]  \lexacte overeenkomst [0..n]  \lgerelateerde match [0..n]  \lmapping relatie [0..n]  \lnabije match [0..n]  \lnauwe match [0..n]  \lnauwer [0..n]  \lnauwer transitief [0..n]  \lsemantische relatie [0..n]  > 
-skos_Concept --> skos_ConceptScheme :in schema [1..n]  \ltop concept van [0..n]  > 
-skos_Concept --> skosxl_Label :voorkeurslabel [1..n]  > 
-
-
-
-skos_Concept : alternatief label : <i>rdf:langString</i> [0..n]
-skos_Concept : alternatief label : <i>rdf:langString</i> [0..n]
-skos_Concept : definitie : <i>xsd:string</i> [1..n]
-skos_Concept : historische notitie : <i>xsd:string</i> [0..n]
-skos_Concept : notation : <i>xsd:string</i> [0..n]
-skos_Concept : note : <i>xsd:string</i> [0..n]
-skos_Concept : redactionele notitie : <i>xsd:string</i> [0..n]
-skos_Concept : scope note : <i>rdf:langString</i> [0..n]
-skos_Concept : scope notitie : <i>xsd:string</i> [0..n]
-skos_Concept : verborgen label : <i>rdf:langString</i> [0..n]
-skos_Concept : voorbeeld : <i>xsd:string</i> [0..n]
-skos_Concept : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_Concept : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_Concept : wijzigingsnotitie : <i>xsd:string</i> [0..n]
-
-skos_Concept --> skos_Concept :brede match [0..n]  \lbreder [0..n]  \lbreder transitief [0..n]  \lexacte overeenkomst [0..n]  \lgerelateerde match [0..n]  \lmapping relatie [0..n]  \lnabije match [0..n]  \lnauwe match [0..n]  \lnauwer [0..n]  \lnauwer transitief [0..n]  \lsemantische relatie [0..n]  > 
+skos_Concept --> skos_Concept :brede match [0..n]  \lbreder [0..n]  \lbreder transitief [0..n]  \lexacte overeenkomst [0..n]  \lgerelateerd [0..n]  \lgerelateerde match [0..n]  \lmapping relatie [0..n]  \lnabije match [0..n]  \lnauwe match [0..n]  \lnauwer [0..n]  \lnauwer transitief [0..n]  \lsemantische relatie [0..n]  > 
 skos_Concept --> skos_ConceptScheme :in schema [1..n]  \ltop concept van [0..n]  > 
 skos_Concept --> skosxl_Label :voorkeurslabel [1..n]  > 
 
 
 
 skos_ConceptScheme : alternatief label : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : alternatief label : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : definitie : <i>xsd:string</i> [1..n]
-skos_ConceptScheme : historische notitie : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : definitie : <i>rdf:langString</i> [1..n]
+skos_ConceptScheme : historische notitie : <i>rdf:langString</i> [0..n]
 skos_ConceptScheme : notation : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : note : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : redactionele notitie : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : scope notitie : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : note : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme : redactionele notitie : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme : scope notitie : <i>rdf:langString</i> [0..n]
 skos_ConceptScheme : verborgen label : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : voorbeeld : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : voorbeeld : <i>rdf:langString</i> [0..n]
 skos_ConceptScheme : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_ConceptScheme : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_ConceptScheme : wijzigingsnotitie : <i>xsd:string</i> [0..n]
+skos_ConceptScheme : wijzigingsnotitie : <i>rdf:langString</i> [0..n]
 
 skos_ConceptScheme --> skos_Concept :heeft top concept [0..n]  > 
 
@@ -224,13 +171,12 @@ haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:bl
 haObj_DigitalRepresentation : aangemaakt op : <i>edtf:EDTF-level1</i> [1..1]
 haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : naam : <i>xsd:string</i> [1..1]
-haObj_DigitalRepresentation : naam : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
 
 haObj_DigitalRepresentation --> haObj_PhysicalRepresentation :heeft een bron [0..n]  > 
-haObj_DigitalRepresentation --> premis_File :Bron van het mediafragment [0..n]  \lbevat [1..n]  \lligt aan de basis van [0..n]  > 
+haObj_DigitalRepresentation --> premis_File :bevat [1..n]  \lbron van het mediafragment (MediaFragment) [0..n]  \lligt aan de basis van [0..n]  > 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :is archiefmaster van [1..n]  \lis mezzanineformaat van [0..1]  \lis toegangskopie van [0..1]  \lrepresenteert [1..n]  > 
 haObj_DigitalRepresentation --> schema_Role :auteur [0..n]  > 
 
@@ -247,12 +193,10 @@ premis_Fixity : fixity checksum : <i>xsd:string</i> [1..n]
 haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_PhysicalRepresentation : formaat : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : formaat : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation : kunst medium : <i>xsd:string</i> [0..n]
 haObj_PhysicalRepresentation : kunstvorm : <i>xsd:string</i> [0..n]
 haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
-haObj_PhysicalRepresentation : naam : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation : naam : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation --> premis_StorageMedium :heeft als medium [0..n]  > 
@@ -262,7 +206,7 @@ haObj_PhysicalRepresentation --> schema_QuantitativeValue :breedte [0..n]  \ldie
 premis_Event --|> prov_Activity #blue;line.dotted;text:blue
 
 premis_Event : heeft opmerking : <i>xsd:string</i> [0..1]
-premis_Event : heeft uitkomst opmerking : <i>xsd:string</i> [0..1]
+premis_Event : heeft uitkomstopmerking : <i>xsd:string</i> [0..1]
 premis_Event --> org_Organization :geimplementeerd door [1..1]  > 
 premis_Event --> premis_HardwareAgent :uitgevoerd door [0..1]  > 
 premis_Event --> premis_Object :heeft bron [0..1]  \lresultaat [0..1]  > 
@@ -273,18 +217,16 @@ premis_Event --> premis_SoftwareAgent :uitgevoerd door [0..1]  >
 skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
 
 skos_OrderedCollection : alternatief label : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : alternatief label : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : definitie : <i>xsd:string</i> [1..n]
-skos_OrderedCollection : historische notitie : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : definitie : <i>rdf:langString</i> [1..n]
+skos_OrderedCollection : historische notitie : <i>rdf:langString</i> [0..n]
 skos_OrderedCollection : notation : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : note : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : redactionele notitie : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : scope notitie : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : note : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : redactionele notitie : <i>rdf:langString</i> [0..n]
+skos_OrderedCollection : scope notitie : <i>rdf:langString</i> [0..n]
 skos_OrderedCollection : verborgen label : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : voorbeeld : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : voorbeeld : <i>rdf:langString</i> [0..n]
 skos_OrderedCollection : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_OrderedCollection : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skos_OrderedCollection : wijzigingsnotitie : <i>xsd:string</i> [0..n]
+skos_OrderedCollection : wijzigingsnotitie : <i>rdf:langString</i> [0..n]
 skos_OrderedCollection --> rdf_List :lijst van leden [0..n]  > 
 
 
@@ -296,18 +238,16 @@ premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity : aangemaakt op : <i>edtf:EDTF-level1</i> [0..1]
 premis_IntellectualEntity : alternatieve naam : <i>xsd:string</i> [0..n]
+premis_IntellectualEntity : auteursrechtenmelding : <i>xsd:string</i> [0..n]
 premis_IntellectualEntity : beschikbaar op : <i>xsd:dateTime</i> [0..n]
 premis_IntellectualEntity : copyright jaar : <i>xsd:integer</i> [0..n]
-premis_IntellectualEntity : copyright melding : <i>xsd:string</i> [0..n]
-premis_IntellectualEntity : credit tekst : <i>xsd:string</i> [0..n]
+premis_IntellectualEntity : credittekst : <i>xsd:string</i> [0..n]
 premis_IntellectualEntity : duur : <i>xsd:dateTime</i> [0..1]
 premis_IntellectualEntity : genre : <i>xsd:string</i> [0..n]
 premis_IntellectualEntity : gepubliceerd op : <i>edtf:EDTF-level1</i> [0..1]
 premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : in taal : <i>xsd:string</i> [1..n]
 premis_IntellectualEntity : naam : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : naam : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : object type : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : omschrijving : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : over : <i>IRI</i> [0..n]
 premis_IntellectualEntity : samenvatting : <i>xsd:string</i> [0..1]
@@ -318,14 +258,14 @@ premis_IntellectualEntity : trefwoorden : <i>xsd:string</i> [0..n]
 premis_IntellectualEntity --> haObj_DigitalRepresentation :heeft archiefmaster [0..1]  \lheeft mezzanineformaat [0..1]  \lheeft toegangskopie [0..n]  > 
 premis_IntellectualEntity --> haObj_LocalIdentifier :lokale identifier [0..n]  > 
 premis_IntellectualEntity --> haOrg_ContentPartner :beheerder [1..1]  > 
-premis_IntellectualEntity --> org_Organization :auteur van de copyright [0..n]  > 
+premis_IntellectualEntity --> org_Organization :houder van auteursrecht [0..n]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :heeft onderdeel [0..n]  \lmaakt onderdeel uit van [0..n]  > 
 premis_IntellectualEntity --> premis_Representation :wordt gerepresenteerd door [0..n]  > 
 
 premis_IntellectualEntity --> schema_ArchiveComponent :is een deel van [0..n]  > 
 premis_IntellectualEntity --> schema_CreativeWorkSeries :is een deel van [0..n]  > 
 premis_IntellectualEntity --> schema_Episode :is een deel van [0..n]  > 
-premis_IntellectualEntity --> schema_Person :auteur van de copyright [0..n]  > 
+premis_IntellectualEntity --> schema_Person :houder van auteursrecht [0..n]  > 
 premis_IntellectualEntity --> schema_Place :spatiaal [0..n]  > 
 premis_IntellectualEntity --> schema_Role :auteur [0..n]  \lbijdrager [0..n]  \luitgever [0..n]  > 
 premis_IntellectualEntity --> skos_Concept :licentie [0..n]  > 
@@ -342,19 +282,19 @@ schema_QuantitativeValue : waarde : <i>xsd:float</i> [0..n]
 
 
 skosxl_Label : alternatief label : <i>rdf:langString</i> [0..n]
-skosxl_Label : alternatief label : <i>rdf:langString</i> [0..n]
-skosxl_Label : definitie : <i>xsd:string</i> [1..n]
-skosxl_Label : historische notitie : <i>xsd:string</i> [0..n]
+skosxl_Label : definitie : <i>rdf:langString</i> [1..n]
+skosxl_Label : historische notitie : <i>rdf:langString</i> [0..n]
 skosxl_Label : letterlijke vorm : <i>rdf:langString</i> [1..1]
 skosxl_Label : notation : <i>xsd:string</i> [0..n]
-skosxl_Label : note : <i>xsd:string</i> [0..n]
-skosxl_Label : redactionele notitie : <i>xsd:string</i> [0..n]
-skosxl_Label : scope notitie : <i>xsd:string</i> [0..n]
+skosxl_Label : note : <i>rdf:langString</i> [0..n]
+skosxl_Label : redactionele notitie : <i>rdf:langString</i> [0..n]
+skosxl_Label : scope notitie : <i>rdf:langString</i> [0..n]
 skosxl_Label : verborgen label : <i>rdf:langString</i> [0..n]
-skosxl_Label : voorbeeld : <i>xsd:string</i> [0..n]
+skosxl_Label : voorbeeld : <i>rdf:langString</i> [0..n]
 skosxl_Label : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skosxl_Label : voorkeurslabel : <i>rdf:langString</i> [1..n]
-skosxl_Label : wijzigingsnotitie : <i>xsd:string</i> [0..n]
+skosxl_Label : wijzigingsnotitie : <i>rdf:langString</i> [0..n]
+
+
 
 
 
@@ -404,7 +344,6 @@ schema_Person : email : <i>xsd:string</i> [0..n]
 schema_Person : familienaam : <i>xsd:string</i> [1..1]
 schema_Person : geboortedatum : <i>edtf:EDTF-level1</i> [0..n]
 schema_Person : naam : <i>xsd:string</i> [0..1]
-schema_Person : naam : <i>xsd:string</i> [0..1]
 schema_Person : sterfdatum : <i>edtf:EDTF-level1</i> [0..n]
 schema_Person : voornaam : <i>xsd:string</i> [1..1]
 
@@ -413,7 +352,6 @@ schema_Person --> org_Post :heeft positie [0..n]  >
 
 
 
-schema_Place : naam : <i>xsd:string</i> [1..1]
 schema_Place : naam : <i>xsd:string</i> [1..1]
 schema_Place : omschrijving : <i>xsd:string</i> [1..1]
 
@@ -452,7 +390,6 @@ schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
 schema_CreativeWorkSeries : naam : <i>xsd:string</i> [1..1]
-schema_CreativeWorkSeries : naam : <i>xsd:string</i> [1..1]
 schema_CreativeWorkSeries : omschrijving : <i>xsd:string</i> [1..1]
 schema_CreativeWorkSeries : seizoensnummer : <i>xsd:integer</i> [0..n]
 
@@ -461,6 +398,23 @@ schema_CreativeWorkSeries : seizoensnummer : <i>xsd:integer</i> [0..n]
 premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
 
 
+
+
+
+skos_Collection : alternatief label : <i>rdf:langString</i> [0..n]
+skos_Collection : definitie : <i>rdf:langString</i> [1..n]
+skos_Collection : historische notitie : <i>rdf:langString</i> [0..n]
+skos_Collection : notation : <i>xsd:string</i> [0..n]
+skos_Collection : note : <i>rdf:langString</i> [0..n]
+skos_Collection : redactionele notitie : <i>rdf:langString</i> [0..n]
+skos_Collection : scope notitie : <i>rdf:langString</i> [0..n]
+skos_Collection : verborgen label : <i>rdf:langString</i> [0..n]
+skos_Collection : voorbeeld : <i>rdf:langString</i> [0..n]
+skos_Collection : voorkeurslabel : <i>rdf:langString</i> [1..n]
+skos_Collection : wijzigingsnotitie : <i>rdf:langString</i> [0..n]
+
+skos_Collection --> skos_Collection :lid [0..n]  > 
+skos_Collection --> skos_Concept :lid [0..n]  > 
 
 
 
