@@ -42,7 +42,7 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 
 
 |Naam|Documentatie (NL)|Documentation (EN)|
-|----|-----------------------------|-------------------------|
+|----|:-----------------------------:|:-------------------------:|
 | **Objectstructuur (kernmodel)** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/object/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/object/en/index.md %}) |
 | **Organisaties** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organization/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organization/en/index.md %}) |
 | **Descriptie** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/descriptive/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/descriptive/en/index.md %}) |
@@ -52,7 +52,7 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 ## Termenlijsten
 
 |Naam|Documentatie (NL)|Documentation (EN)|
-|----|-----------------------------|-------------------------|
+|----|:----------------------------:|:------------------------:|
 | **Onderwijs: onderwijsstructuur** | [1.0.0](https://w3id.org/onderwijs-vlaanderen/id/structuur/) | _Nog niet beschikbaar_ |
 | **Onderwijs: vakken** | [1.0.0](https://w3id.org/onderwijs-vlaanderen/id/vak/) | _Nog niet beschikbaar_ |
 | **Onderwijs: themas** | _Nog niet beschikbaar_ | _Nog niet beschikbaar_ |
