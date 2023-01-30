@@ -12,7 +12,7 @@ parent:       Digitale instroom
 
 The meemoo SIP specification is available in the following versions:
 
-## [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-yellow">Editor's Draft</span>
+## [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-blue">Release Candidate</span> - 2023-01-30 
 
 ### Added
 
