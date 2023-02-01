@@ -41,10 +41,8 @@
         <div ID="uuid-567e153a-e41c-4477-9db0-04e7011e6ef4" LABEL="ftp_sidecar_example">
             <div ID="uuid-45ca08e1-c62b-4e2e-b53b-89c888d68fb0" LABEL="Metadata"
             ADMID="uuid-056d1289-c015-4815-b91c-78dcbdbdf9aa" DMDID="uuid-25c076a4-39e5-429b-a495-1c0a7dff5b04" />
-            <div ID="uuid-68a7e598-8227-4c7f-98df-4ccfe9fa4387" LABEL="Representations">
-                <div ID="uuid-5f54d77c-5927-4e45-90ae-7cf378a82807" LABEL="representation_1">
-                    <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
-                </div>
+            <div ID="uuid-5f54d77c-5927-4e45-90ae-7cf378a82807" LABEL="Representations/representation_1">
+                <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" xlink:title="representation_1" />
             </div>
         </div>
     </structMap>
