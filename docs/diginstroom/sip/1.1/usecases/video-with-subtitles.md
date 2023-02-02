@@ -8,8 +8,8 @@ nav_exclude:  false
 has_children: false
 sip_profile:  Basic
 ---
-Editor's Draft
-{: .label .label-yellow }
+Release Candidate
+{: .label .label-blue }
 # Use Case: a video file with subtitles
 
 The following use case describes how to package
@@ -149,7 +149,7 @@ Note that the identifier in the `<premis:objectIdentifier>` element is shared wi
     </premis:objectIdentifier>
 
     <premis:objectIdentifier>
-      <premis:objectIdentifierType>local_id</premis:objectIdentifierType>
+      <premis:objectIdentifierType>LOCAL_ID</premis:objectIdentifierType>
       <premis:objectIdentifierValue>a custom identifier provided by the CP</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 

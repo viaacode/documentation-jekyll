@@ -6,8 +6,8 @@ grand_parent:  1.1
 nav_order:    3
 nav_exclude:  false
 ---
-Editor's Draft
-{: .label .label-yellow }
+Release Candidate
+{: .label .label-blue }
 # Profile: Material artwork 
 
 The _Material artwork_ profile supports digital reproductions of artworks that are moveable material objects, often, but not always, displayed in or maintained by museums. 
@@ -36,7 +36,7 @@ root_directory
     |       └── premis.xml
     │
     └── representations
-        └──representation_1       # overview with list
+        └──representation_1       # overview with frame
            │── mets.xml
            └──data
            │  └── PID_overzichtsopname_metlijst_tiff.tiff
@@ -46,7 +46,7 @@ root_directory
               |   └── dc+schema.xml
               └──preservation
                  └── premis.xml
-        └──representation_2       # overview without list
+        └──representation_2       # overview without frame
            │── mets.xml
            └──data
            │  └── PID_overzichtsopname_zonderlijst_tiff.tif
@@ -275,6 +275,14 @@ https://earkcsip.dilcis.eu/. Later nog toevoegen indien nodig?
 | Cardinality | 0..1 |
 | Obligation | MAY |
 
+### Validation
+
+The XML files that are required by this profile can be validated using the following XML schema definitions:
+
+| File | Format | XML Schema |
+| `mets.xml` | METS v1.12.1 | [mets.xsd](https://www.loc.gov/standards/mets/mets.xsd) |
+| `premis.xml` | PREMIS v3.0 | [premis-v3-0.xsd](https://www.loc.gov/standards/premis/v3/premis-v3-0.xsd) |
+| `dc+schema.xml` | Dublin Core with Schema.org | dc+schema.xsd (not yet available) |
 
 ## Use Cases
 

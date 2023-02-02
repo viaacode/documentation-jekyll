@@ -8,8 +8,8 @@ nav_exclude:  false
 has_children: false
 sip_profile:  Material artwork
 ---
-Editor's Draft
-{: .label .label-yellow }
+Release Candidate
+{: .label .label-blue }
 # Use Case: a gigapixel digitization of a two-dimensional artwork
 
 The following use case describes how to package a gigapixel reproduction of a two-dimensional artwork such as a drawing or painting. 
@@ -96,7 +96,7 @@ root_directory
     |       └── premis.xml
     │
     └── representations
-        |── representation_1       # overview with list
+        |── representation_1       # overview with frame
         |   │── mets.xml
         |   |── data
         |   │   └── cf9j41p15z_overzichtsopname_metlijst_tiff.tiff
@@ -105,7 +105,7 @@ root_directory
         |      |   └── dc+schema.xml   
         |      └── preservation
         |          └── premis.xml
-        |── representation_2       # overview without list
+        |── representation_2       # overview without frame
         |   │── mets.xml
         |   |── data
         |   │   └── cf9j41p15z_overzichtsopname_zonderlijst_tiff.tiff
