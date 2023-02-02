@@ -42,7 +42,7 @@
             <div ID="uuid-45ca08e1-c62b-4e2e-b53b-89c888d68fb0" LABEL="Metadata"
             ADMID="uuid-056d1289-c015-4815-b91c-78dcbdbdf9aa" DMDID="uuid-25c076a4-39e5-429b-a495-1c0a7dff5b04" />
             <div ID="uuid-5f54d77c-5927-4e45-90ae-7cf378a82807" LABEL="Representations/representation_1">
-                <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" xlink:title="representation_1" />
+                <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" xlink:title="uuid-f98a1920-e98d-4e3a-a80e-80525fc57bf8" />
             </div>
         </div>
     </structMap>
