@@ -38,7 +38,7 @@
             <div ID="uuid-c0b3a54c-b42e-4ecb-9d44-dc8b998d43c2" LABEL="Metadata"
                 ADMID="uuid-9976a799-e974-4fc5-94d0-fe0e98bff923"
                 DMDID="uuid-7f14be59-199c-4a9a-9530-78e0ff66a7d6" />
-            <div ID="uuid-50a4b952-ac38-4441-b769-0f2f8d1edb9f" LABEL="data">
+            <div ID="uuid-50a4b952-ac38-4441-b769-0f2f8d1edb9f" LABEL="Representations">
                 <fptr FILEID="uuid-cd18512d-7712-447d-8412-ef16cbe1c065" />
             </div>
         </div>

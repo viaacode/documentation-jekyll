@@ -43,7 +43,7 @@
             <div ID="uuid-10cf478f-2bf6-4208-80fb-193883ebc922" LABEL="Metadata"
                 ADMID="uuid-fca97f11-e8cb-40df-9021-5f2af44140a0"
                 DMDID="uuid-9ade6abd-c7f9-450d-9c50-9c313af54d02" />
-            <div ID="uuid-d4e3b07f-5205-4a93-a1f8-62edfc329021" LABEL="data">
+            <div ID="uuid-d4e3b07f-5205-4a93-a1f8-62edfc329021" LABEL="Representations">
                 <fptr FILEID="uuid-a4fd766d-5c87-4dc3-be46-d47df1664a8c" />
             </div>
         </div>

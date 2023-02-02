@@ -40,7 +40,7 @@
             <div ID="uuid-af54ed63-8361-4d90-a30f-99d02de24857" LABEL="Metadata"
                 ADMID="uuid-f7972ff5-599e-4f60-8b7e-8bbf4e035482"
             />
-            <div ID="uuid-36bfba1a-2229-11ed-a0f4-7e92631d7d28" LABEL="data">
+            <div ID="uuid-36bfba1a-2229-11ed-a0f4-7e92631d7d28" LABEL="Representations">
                 <fptr FILEID="uuid-d020d7d1-f258-40af-8788-04cf62a0032b" />
             </div>
         </div>

@@ -64,22 +64,20 @@
         <div ID="uuid-1dd9df64-94f5-46d4-9d76-3d09f2124412" LABEL="">
             <div ID="uuid-e9a09018-9c23-46c7-9768-aaf372fd33dc" LABEL="Metadata"
             ADMID="uuid-e2dcd7c5-5fad-4bcd-a7c7-762b0be75d0f" DMDID="uuid-3936403d-133f-4765-b3b9-0a46df28db17" />
-            <div ID="uuid-fa1ecdd5-ecec-488d-baac-01025d996b77" LABEL="Representations">
-                <div ID="uuid-B0D5E486-C582-41BC-BD2D-50543FC897C1" LABEL="representation_1">
-                    <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" />
-                </div>
-                <div ID="uuid-FDF37384-FEB4-49BF-82EA-513F6185B89F" LABEL="representation_2">
-                    <mptr xlink:type="simple" xlink:href="./representations/representation_2/mets.xml" LOCTYPE="URL" />
-                </div>
-                <div ID="uuid-dad19c86-806b-11ed-a420-7e92631d7d27" LABEL="representation_3">
-                    <mptr xlink:type="simple" xlink:href="./representations/representation_3/mets.xml" LOCTYPE="URL" />
-                </div>
-                <div ID="uuid-e539a52e-806b-11ed-8b12-7e92631d7d27" LABEL="representation_4">
-                    <mptr xlink:type="simple" xlink:href="./representations/representation_4/mets.xml" LOCTYPE="URL" />
-                </div>
-                <div ID="uuid-6B54B923-2DA0-47DA-82FB-A67206D34BA7" LABEL="representation_5">
-                    <mptr xlink:type="simple" xlink:href="./representations/representation_5/mets.xml" LOCTYPE="URL" />
-                </div>
+            <div ID="uuid-B0D5E486-C582-41BC-BD2D-50543FC897C1" LABEL="Representations/representation_1">
+                <mptr xlink:type="simple" xlink:href="./representations/representation_1/mets.xml" LOCTYPE="URL" xlink:title="uuid-A0A670BA-0E14-40E6-BCE0-62FC42D8B4A6" />
+            </div>
+            <div ID="uuid-FDF37384-FEB4-49BF-82EA-513F6185B89F" LABEL="Representations/representation_2">
+                <mptr xlink:type="simple" xlink:href="./representations/representation_2/mets.xml" LOCTYPE="URL" xlink:title="uuid-93CB5D95-A091-4EAF-94B0-82B140510BE0" />
+            </div>
+            <div ID="uuid-dad19c86-806b-11ed-a420-7e92631d7d27" LABEL="Representations/representation_3">
+                <mptr xlink:type="simple" xlink:href="./representations/representation_3/mets.xml" LOCTYPE="URL" xlink:title="uuid-8DA59BD2-2B13-4317-8C6C-BCBED669D0F6" />
+            </div>
+            <div ID="uuid-e539a52e-806b-11ed-8b12-7e92631d7d27" LABEL="Representations/representation_4">
+                <mptr xlink:type="simple" xlink:href="./representations/representation_4/mets.xml" LOCTYPE="URL" xlink:title="uuid-237899F0-1C25-4DAC-BFA4-BAFC156714BB" />
+            </div>
+            <div ID="uuid-6B54B923-2DA0-47DA-82FB-A67206D34BA7" LABEL="Representations/representation_5">
+                <mptr xlink:type="simple" xlink:href="./representations/representation_5/mets.xml" LOCTYPE="URL" xlink:title="uuid-fde9e70a-806b-11ed-af79-7e92631d7d27" />
             </div>
         </div>
     </structMap>
