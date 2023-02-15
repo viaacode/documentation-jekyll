@@ -174,6 +174,6 @@ https://images.meemoo.be/iiif/h12v432j8x.jp2/1700,1300,1100,1750/!300,400/90/gra
 Om de afbeelding in PNG-formaat te verkrijgen, wordt `jpg` in de URL simpelweg vervangen door `png`. 
 
 ``` shell
-https://images.meemoo.be/iiif/h12v432j8x.jp2/1700,1300,1100,1750/!300,400/90/gray.jpg
+https://images.meemoo.be/iiif/h12v432j8x.jp2/1700,1300,1100,1750/!300,400/90/default.png
 ```
 
