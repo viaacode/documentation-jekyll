@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<metadata xmlns="https://data.hetarchief.be/id/sip/1.0/basic" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:schema="https://schema.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<metadata xmlns="https://data.hetarchief.be/id/sip/1.0/basic" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:schema="https://schema.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edtf="http://id.loc.gov/datatypes/edtf/">
 
   <dcterms:title xml:lang="en">the title of the episode</dcterms:title>
   <dcterms:title xml:lang="nl">de titel van de episode</dcterms:title>
@@ -21,9 +21,9 @@
   <dcterms:abstract xml:lang="en">the abstract of the episode</dcterms:abstract>
   <dcterms:abstract xml:lang="nl">de samenvatting van de episode</dcterms:abstract>
 
-  <dcterms:created xsi:type="edtf">2023-02-12</dcterms:created>
+  <dcterms:created xsi:type="edtf:EDTF">2023-02-12</dcterms:created>
 
-  <dcterms:issued xsi:type="edtf">2023-02-14</dcterms:issued>
+  <dcterms:issued xsi:type="edtf:EDTF">2023-02-14</dcterms:issued>
 
   <dcterms:publisher>VIAA</dcterms:publisher>
   <dcterms:publisher>meemoo</dcterms:publisher>
