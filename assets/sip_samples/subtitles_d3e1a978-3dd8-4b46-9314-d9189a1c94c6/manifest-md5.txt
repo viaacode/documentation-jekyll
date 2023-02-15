@@ -4,5 +4,5 @@
 daefffb93e6c3be7136ba40edae4f2f1  ./data/representations/representation_1/data/broadcaster_news_20220525.srt
 23003be62c59d0bfc0d299bf9927deb0  ./data/representations/representation_1/metadata/preservation/premis.xml
 038f7078c3b4b3fa7e2d655164b4ea32  ./data/metadata/preservation/premis.xml
-1d757e54c208f2f1aee88e9fb714547f  ./data/metadata/descriptive/dc_1.xml
+e0c6573275de8b0d3181cac37651127c  ./data/metadata/descriptive/dc_1.xml
 eaa2c609ff6371712f623f5531945b44  ./bagit.txt

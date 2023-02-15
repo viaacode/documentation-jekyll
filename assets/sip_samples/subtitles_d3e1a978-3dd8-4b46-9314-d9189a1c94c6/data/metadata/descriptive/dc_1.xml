@@ -11,7 +11,7 @@
   <!-- matches the identifier of the premis:object defined in the preservation/premis.xml -->
   <dcterms:identifier>uuid-f58ece94-f050-4b5b-b383-bba83393eaff</dcterms:identifier>
 
-  <dcterms:extent>0000-00-00T01:59:34</dcterms:extent>
+  <dcterms:extent>01:59:34</dcterms:extent>
 
   <dcterms:available>2023-02-14T18:12:36</dcterms:available>
 
