@@ -12,22 +12,42 @@ parent:       Digitale instroom
 
 The meemoo SIP specification is available in the following versions:
 
-## [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-blue">Release Candidate</span> - 2023-01-30 
+## Version [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-blue">Release Candidate</span>
 
-### Added
+This second release adds support for the intake of digital reproductions of museum objects and digitized newspapers. This version is **not yet supported**.
 
-- The Material Artwork and Newspaper content profiles
-- Use case documents about the intake of 2D artworks, 3D museum objects, and gigapixel digital reproductions of artworks
-- Use case documents about the intake of newspapers with or without PDF representation
+### What was **added** compared to the previous version?
 
-## [1.0]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %}) <span class="label label-green">Stable</span> - 2022-09-30
+- Two new content profiles: _Material Artwork_ and _Newspaper_
+- A description on how to package 2D artworks, 3D museum objects, and gigapixel digital reproductions of artworks in a SIP (using the _Material Artwork_ profile)
+- A description on how to package newspapers with or without PDF representation in a SIP (using the _Newspaper_ profile)
 
-### Added
+### What was **changed** compared to the previous version?
 
-- Introductionary materials
-- Core concepts aligned with the PREMIS data model
-- The Basic content profile
-- Use case documents about the intake of single audiovisual files with or without subtitles
+Nothing
+
+### What was **removed** compared to the previous version?
+
+Nothing
+
+## Version [1.0]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %}) <span class="label label-green">Stable</span>
+
+This is the very first release of the SIP, which lays the groundwork for the new digital intake format at meemoo. This version is **supported since 30 September 2022**.
+
+### What was **added** compared to the previous version?
+
+- Introductionary materials about the motivation and design of the SIP
+- A layout of the SIP's core concepts, which originate from the PREMIS data model
+- The first content profile: _Basic_
+- Use case documents about the intake of single audiovisual files with or without subtitles (using the _Newspaper_ profile)
+
+### What was **changed** compared to the previous version?
+
+Nothing
+
+### What was **removed** compared to the previous version?
+
+Nothing
 
 # Publication status
 
