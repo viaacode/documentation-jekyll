@@ -56,10 +56,7 @@
 
   <dcterms:type>video</dcterms:type>
 
-
-
-  <!-- <dcterms:license>VIAA-PUBLIEK-METADATA-LTD</dcterms:license> -->
-
-
+  <dcterms:license>VIAA-PUBLIEK-METADATA-LTD</dcterms:license>
+  <dcterms:license>VIAA-ONDERWIJS</dcterms:license>
 
 </metadata> 
