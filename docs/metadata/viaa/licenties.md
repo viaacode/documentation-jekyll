@@ -29,12 +29,6 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 | **Defaultwaarde** | AAN |
 | **Implicatie** | meemoo mag de content en metadata gebruiken voor research doeleinden. Hier is nog geen concrete applicatie voor beschikbaar. |
 
-### Bibliotheken 
-
-| **MAM naam** | `VIAA-BIBLIOTHEKEN` |
-| **Default waarde** | UIT |
-| **Implicatie** | wordt momenteel nog niet gebruikt en zal uitstaan. Kan in de toekomst gebruikt worden indien materiaal via bibliotheken ontsloten zou worden. |
-
 ### Contentpartners
 
 #### Content
@@ -118,7 +112,6 @@ Standaard zal meemoo op dit moment onderstaande licenties activeren:
   | VIAA-ONDERWIJS  |    AAN |
   | ONDERWIJS-FRAGMENT  |    UIT |
   | VIAA-ONDERZOEK   |   AAN |
-  | VIAA-BIBLIOTHEKEN  |   UIT |
   | VIAA-INTRAMUROS  |   UIT |
   | VIAA-INTRA_CP-CONTENT  |  AAN |
   | VIAA-INTRA_CP-METADATA-ALL | AAN |
