@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<metadata xmlns="https://data.hetarchief.be/id/sip/1.0/basic" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<metadata xmlns="https://data.hetarchief.be/id/sip/1.0/basic" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edtf="http://id.loc.gov/datatypes/edtf/">
 
 
   <!-- general title for the resource -->
@@ -9,7 +9,7 @@
   <dcterms:identifier>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</dcterms:identifier>
 
   <!-- date unknown -->
-  <dcterms:created xsi:type="edtf">XXXX</dcterms:created>
+  <dcterms:created xsi:type="edtf:EDTF">XXXX</dcterms:created>
 
   <!-- multiple keywords about the resource -->
   <dcterms:subject>Cat</dcterms:subject>
