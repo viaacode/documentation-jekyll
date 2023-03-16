@@ -824,7 +824,6 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 
 - VIAA-ONDERWIJS
 - VIAA-ONDERZOEK
-- VIAA-BIBLIOTHEKEN
 - VIAA-INTRAMUROS
 - VIAA-INTRA_CP-CONTENT
 - VIAA-INTRA_CP-METADATA-ALL
