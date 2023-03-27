@@ -4,7 +4,7 @@
     <!-- linking id between dc and premis -->
     <dcterms:identifier>uuid-7f16cfda-21ff-11ed-a277-7e92631d7d27</dcterms:identifier>
 
-    <dcterms:title>ARCHIVERINGSCOPIE OBJ</dcterms:title>
+    <dcterms:title xml:lang="nl">ARCHIVERINGSCOPIE OBJ</dcterms:title>
 
     <!-- licenses -->
     <dcterms:license>CCBY-NC-ND-CONTENT</dcterms:license>
