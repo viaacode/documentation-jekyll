@@ -1,8 +1,6 @@
-0d5348389501fbb07abc609e61a7d92e  ./data/mets.xml
-738dd98c663822731dbd073ce639d12a  ./data/representations/representation_1/mets.xml
-b7ae37f6094794e313402b9d064978e8  ./data/representations/representation_1/data/1445.jpeg
-0e3500af5febb8400a0fa6b78104ed74  ./data/representations/representation_1/metadata/preservation/premis.xml
-3b6c95b04a5fb9a4baf7bbf68a10a04f  ./data/metadata/preservation/premis.xml
-8f7835a06bec15b4038cc6089ef1e655  ./data/metadata/descriptive/dc_1.xml
-d784fa8b6d98d27699781bd9a7cf19f0  ./bagit.txt
-2a86338032aa6b4259afe3b5ab73704c  ./manifest-md5.txt
+276ed9152bafc0560fd2033a99520e95  data/mets.xml
+913c7e09c0c3ee078c89a5d6adba8e71  data/metadata/descriptive/dc_1.xml
+d9e4d3d9cbbae912fdda525c4a6d7b32  data/metadata/preservation/premis.xml
+cca9253da6e5c0e9b10dd0a55f1ab750  data/representations/representation_1/mets.xml
+b7ae37f6094794e313402b9d064978e8  data/representations/representation_1/data/1445.jpeg
+0e3500af5febb8400a0fa6b78104ed74  data/representations/representation_1/metadata/preservation/premis.xml
