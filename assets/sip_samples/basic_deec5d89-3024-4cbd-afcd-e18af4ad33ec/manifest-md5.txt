@@ -1,6 +1,6 @@
 20ecc5b4289feb4f0dd11acbf456e11d  data/mets.xml
-70c799bc3b12e0629de91448e1cbf429  data/metadata/descriptive/dc.xml
+b9b05f97de1fde458b9ecdc711dde407  data/metadata/descriptive/dc.xml
 23cc828ed22090e0ab1ca7bae13afac4  data/metadata/preservation/premis.xml
 6e616e7f6db9e37fb8c7b604cace6ab3  data/representations/representation_1/mets.xml
 18513a8d61c6f2cbaaeeedd754b01d6b  data/representations/representation_1/data/D523F963.jpg
-a8041a1a240fc7f6ec9c838e78819613  data/representations/representation_1/metadata/preservation/premis.xml
+3c0c3eb9bf78bc215312d30e0e5906e7  data/representations/representation_1/metadata/preservation/premis.xml
