@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-904c6e86-d36a-4630-897b-bb560ce4b690" TYPE="OTHER" csip:OTHERTYPE="Legacy born digital FTP" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml">
+<mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS" xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" OBJID="uuid-904c6e86-d36a-4630-897b-bb560ce4b690" TYPE="OTHER" csip:OTHERTYPE="Legacy born digital FTP" PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml" xsi:schemaLocation="http://www.loc.gov/METS/ https://www.loc.gov/standards/mets/mets.xsd">
 
     <metsHdr CREATEDATE="2022-04-08T09:29:15.014+02:00" />
 
