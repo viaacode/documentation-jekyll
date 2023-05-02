@@ -546,6 +546,7 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 | `<Vertaler />` | |
 | `<Verteller />` | |
 | `<Voorzitter />` | |
+| `<Afgebeelde />` | De entiteiten (bv. objecten, plaatsen of personen) die worden afgebeeld op het materiaal. |
 
 ## Publisher
 
