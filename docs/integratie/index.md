@@ -84,6 +84,9 @@ API een welomlijnde standaard en is de REST API MediaHaven-specifiek.
 
 ## REST API
 
+{: .note }
+Opgelet: de REST API versie 1 wordt uitgefaseerd en wordt vanaf 1 juni niet meer ondersteund!
+
 Momenteel zijn er twee versies van de REST API actief: versie 1 en versie 2.
 Het wordt aangeraden om, voor nieuwe integraties, meteen van start te gaan met
 versie 2.
