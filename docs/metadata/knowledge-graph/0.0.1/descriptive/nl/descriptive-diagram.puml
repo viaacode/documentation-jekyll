@@ -51,11 +51,11 @@ schema_ArchiveComponent : omschrijving : <i>xsd:string</i> [1..1]
 
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_Collection : aantal items : <i>xsd:integer</i> [0..n]
+schema_Collection : aantal items : <i>xsd:integer</i> [0..*]
 schema_Collection : identifier : <i>xsd:string</i> [1..1]
 schema_Collection : naam : <i>xsd:string</i> [1..1]
 schema_Collection : omschrijving : <i>xsd:string</i> [1..1]
-schema_Collection --> premis_IntellectualEntity :is deel van [0..n]  > 
+schema_Collection --> premis_IntellectualEntity :is deel van [0..*]  > 
 
 
 
@@ -73,60 +73,60 @@ haObj_DigitalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
 
-haObj_DigitalRepresentation --> schema_Role :auteur [0..n]  > 
+haObj_DigitalRepresentation --> schema_Role :auteur [0..*]  > 
 
 
 haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_PhysicalRepresentation : formaat : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : kunst medium : <i>xsd:string</i> [0..n]
-haObj_PhysicalRepresentation : kunstvorm : <i>xsd:string</i> [0..n]
-haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
+haObj_PhysicalRepresentation : kunst medium : <i>xsd:string</i> [0..*]
+haObj_PhysicalRepresentation : kunstvorm : <i>xsd:string</i> [0..*]
+haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..*]
 haObj_PhysicalRepresentation : naam : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation : omschrijving : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation --> schema_QuantitativeValue :breedte [0..n]  \ldiepte [0..n]  \lhoogte [0..n]  > 
+haObj_PhysicalRepresentation --> schema_QuantitativeValue :breedte [0..*]  \ldiepte [0..*]  \lhoogte [0..*]  > 
 
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity : aangemaakt op : <i>edtf:EDTF-level1</i> [0..1]
-premis_IntellectualEntity : alternatieve naam : <i>xsd:string</i> [0..n]
-premis_IntellectualEntity : auteursrechtenmelding : <i>xsd:string</i> [0..n]
-premis_IntellectualEntity : beschikbaar op : <i>xsd:dateTime</i> [0..n]
-premis_IntellectualEntity : copyright jaar : <i>xsd:integer</i> [0..n]
-premis_IntellectualEntity : credittekst : <i>xsd:string</i> [0..n]
+premis_IntellectualEntity : alternatieve naam : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : auteursrechtenmelding : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : beschikbaar op : <i>xsd:dateTime</i> [0..*]
+premis_IntellectualEntity : copyright jaar : <i>xsd:integer</i> [0..*]
+premis_IntellectualEntity : credittekst : <i>xsd:string</i> [0..*]
 premis_IntellectualEntity : duur : <i>xsd:dateTime</i> [0..1]
-premis_IntellectualEntity : genre : <i>xsd:string</i> [0..n]
+premis_IntellectualEntity : genre : <i>xsd:string</i> [0..*]
 premis_IntellectualEntity : gepubliceerd op : <i>edtf:EDTF-level1</i> [0..1]
 premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : in taal : <i>xsd:string</i> [1..n]
+premis_IntellectualEntity : in taal : <i>xsd:string</i> [1..*]
 premis_IntellectualEntity : naam : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : omschrijving : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : over : <i>IRI</i> [0..n]
+premis_IntellectualEntity : over : <i>IRI</i> [0..*]
 premis_IntellectualEntity : samenvatting : <i>xsd:string</i> [0..1]
-premis_IntellectualEntity : temporeel : <i>rdf:langString</i> [0..n]
-premis_IntellectualEntity : trefwoorden : <i>xsd:string</i> [0..n]
+premis_IntellectualEntity : temporeel : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : trefwoorden : <i>xsd:string</i> [0..*]
 
 
 premis_IntellectualEntity --> haOrg_ContentPartner :beheerder [1..1]  > 
-premis_IntellectualEntity --> org_Organization :houder van auteursrecht [0..n]  > 
+premis_IntellectualEntity --> org_Organization :houder van auteursrecht [0..*]  > 
 
-premis_IntellectualEntity --> schema_ArchiveComponent :is een deel van [0..n]  > 
-premis_IntellectualEntity --> schema_CreativeWorkSeries :is een deel van [0..n]  > 
-premis_IntellectualEntity --> schema_Episode :is een deel van [0..n]  > 
-premis_IntellectualEntity --> schema_Person :houder van auteursrecht [0..n]  > 
-premis_IntellectualEntity --> schema_Place :spatiaal [0..n]  > 
-premis_IntellectualEntity --> schema_Role :auteur [0..n]  \lbijdrager [0..n]  \luitgever [0..n]  > 
-premis_IntellectualEntity --> skos_Concept :licentie [0..n]  > 
-
-
+premis_IntellectualEntity --> schema_ArchiveComponent :is een deel van [0..*]  > 
+premis_IntellectualEntity --> schema_CreativeWorkSeries :is een deel van [0..*]  > 
+premis_IntellectualEntity --> schema_Episode :is een deel van [0..*]  > 
+premis_IntellectualEntity --> schema_Person :houder van auteursrecht [0..*]  > 
+premis_IntellectualEntity --> schema_Place :spatiaal [0..*]  > 
+premis_IntellectualEntity --> schema_Role :auteur [0..*]  \lbijdrager [0..*]  \luitgever [0..*]  > 
+premis_IntellectualEntity --> skos_Concept :licentie [0..*]  > 
 
 
 
-schema_QuantitativeValue : eenheidcode : <i>xsd:string</i> [0..n]
-schema_QuantitativeValue : eenheidstekst : <i>xsd:string</i> [0..n]
-schema_QuantitativeValue : waarde : <i>xsd:float</i> [0..n]
+
+
+schema_QuantitativeValue : eenheidcode : <i>xsd:string</i> [0..*]
+schema_QuantitativeValue : eenheidstekst : <i>xsd:string</i> [0..*]
+schema_QuantitativeValue : waarde : <i>xsd:float</i> [0..*]
 
 
 
@@ -140,10 +140,10 @@ schema_Place : omschrijving : <i>xsd:string</i> [1..1]
 
 
 
-schema_Role : rolenaam : <i>xsd:string</i> [1..n]
-schema_Role --> org_Organization :auteur [0..n]  \lbijdrager [0..n]  \luitgever [0..n]  > 
-schema_Role --> schema_Person :acteur [0..n]  \lauteur [0..n]  \lbijdrager [0..n]  \luitgever [0..n]  > 
-schema_Role --> skos_Concept :rolenaam [1..n]  > 
+schema_Role : rolenaam : <i>xsd:string</i> [1..*]
+schema_Role --> org_Organization :auteur [0..*]  \lbijdrager [0..*]  \luitgever [0..*]  > 
+schema_Role --> schema_Person :acteur [0..*]  \lauteur [0..*]  \lbijdrager [0..*]  \luitgever [0..*]  > 
+schema_Role --> skos_Concept :rolenaam [1..*]  > 
 
 
 schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -151,7 +151,7 @@ schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
 schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
 schema_CreativeWorkSeries : naam : <i>xsd:string</i> [1..1]
 schema_CreativeWorkSeries : omschrijving : <i>xsd:string</i> [1..1]
-schema_CreativeWorkSeries : seizoensnummer : <i>xsd:integer</i> [0..n]
+schema_CreativeWorkSeries : seizoensnummer : <i>xsd:integer</i> [0..*]
 
 
 

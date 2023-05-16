@@ -44,11 +44,11 @@ schema_ArchiveComponent : name : <i>xsd:string</i> [1..1]
 
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_Collection : collection size : <i>xsd:integer</i> [0..n]
+schema_Collection : collection size : <i>xsd:integer</i> [0..*]
 schema_Collection : description : <i>xsd:string</i> [1..1]
 schema_Collection : identifier : <i>xsd:string</i> [1..1]
 schema_Collection : name : <i>xsd:string</i> [1..1]
-schema_Collection --> premis_IntellectualEntity :has part [0..n]  > 
+schema_Collection --> premis_IntellectualEntity :has part [0..*]  > 
 
 
 
@@ -62,7 +62,7 @@ schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
 schema_CreativeWorkSeries : description : <i>xsd:string</i> [1..1]
 schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
 schema_CreativeWorkSeries : name : <i>xsd:string</i> [1..1]
-schema_CreativeWorkSeries : season number : <i>xsd:integer</i> [0..n]
+schema_CreativeWorkSeries : season number : <i>xsd:integer</i> [0..*]
 
 
 
@@ -75,7 +75,7 @@ haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : name : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
 
-haObj_DigitalRepresentation --> schema_Role :author [0..n]  > 
+haObj_DigitalRepresentation --> schema_Role :author [0..*]  > 
 
 
 schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -87,35 +87,35 @@ schema_Episode : name : <i>xsd:string</i> [1..1]
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
-premis_IntellectualEntity : about : <i>IRI</i> [0..n]
+premis_IntellectualEntity : about : <i>IRI</i> [0..*]
 premis_IntellectualEntity : abstract : <i>xsd:string</i> [0..1]
-premis_IntellectualEntity : alternate name : <i>xsd:string</i> [0..n]
-premis_IntellectualEntity : copyright notice : <i>xsd:string</i> [0..n]
-premis_IntellectualEntity : copyright year : <i>xsd:integer</i> [0..n]
-premis_IntellectualEntity : credit text : <i>xsd:string</i> [0..n]
-premis_IntellectualEntity : date available : <i>xsd:dateTime</i> [0..n]
+premis_IntellectualEntity : alternate name : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : copyright notice : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : copyright year : <i>xsd:integer</i> [0..*]
+premis_IntellectualEntity : credit text : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : date available : <i>xsd:dateTime</i> [0..*]
 premis_IntellectualEntity : date created : <i>edtf:EDTF-level1</i> [0..1]
 premis_IntellectualEntity : date published : <i>edtf:EDTF-level1</i> [0..1]
 premis_IntellectualEntity : description : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : duration : <i>xsd:dateTime</i> [0..1]
-premis_IntellectualEntity : genre : <i>xsd:string</i> [0..n]
+premis_IntellectualEntity : genre : <i>xsd:string</i> [0..*]
 premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : in language : <i>xsd:string</i> [1..n]
-premis_IntellectualEntity : keywords : <i>xsd:string</i> [0..n]
+premis_IntellectualEntity : in language : <i>xsd:string</i> [1..*]
+premis_IntellectualEntity : keywords : <i>xsd:string</i> [0..*]
 premis_IntellectualEntity : name : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : temporal : <i>rdf:langString</i> [0..n]
+premis_IntellectualEntity : temporal : <i>rdf:langString</i> [0..*]
 
 
 premis_IntellectualEntity --> haOrg_ContentPartner :maintainer [1..1]  > 
-premis_IntellectualEntity --> org_Organization :copyright holder [0..n]  > 
+premis_IntellectualEntity --> org_Organization :copyright holder [0..*]  > 
 
-premis_IntellectualEntity --> schema_ArchiveComponent :is part of [0..n]  > 
-premis_IntellectualEntity --> schema_CreativeWorkSeries :is part of [0..n]  > 
-premis_IntellectualEntity --> schema_Episode :is part of [0..n]  > 
-premis_IntellectualEntity --> schema_Person :copyright holder [0..n]  > 
-premis_IntellectualEntity --> schema_Place :spatial [0..n]  > 
-premis_IntellectualEntity --> schema_Role :author [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
-premis_IntellectualEntity --> skos_Concept :license [0..n]  > 
+premis_IntellectualEntity --> schema_ArchiveComponent :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_CreativeWorkSeries :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_Episode :is part of [0..*]  > 
+premis_IntellectualEntity --> schema_Person :copyright holder [0..*]  > 
+premis_IntellectualEntity --> schema_Place :spatial [0..*]  > 
+premis_IntellectualEntity --> schema_Role :author [0..*]  \lcontributor [0..*]  \lpublisher [0..*]  > 
+premis_IntellectualEntity --> skos_Concept :license [0..*]  > 
 
 
 
@@ -126,14 +126,14 @@ premis_IntellectualEntity --> skos_Concept :license [0..n]  >
 
 haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_PhysicalRepresentation : art medium : <i>xsd:string</i> [0..n]
-haObj_PhysicalRepresentation : artform : <i>xsd:string</i> [0..n]
+haObj_PhysicalRepresentation : art medium : <i>xsd:string</i> [0..*]
+haObj_PhysicalRepresentation : artform : <i>xsd:string</i> [0..*]
 haObj_PhysicalRepresentation : description : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation : format : <i>xsd:string</i> [1..1]
 haObj_PhysicalRepresentation : identifier : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..n]
+haObj_PhysicalRepresentation : medium : <i>xsd:string</i> [1..*]
 haObj_PhysicalRepresentation : name : <i>xsd:string</i> [1..1]
-haObj_PhysicalRepresentation --> schema_QuantitativeValue :depth [0..n]  \lheight [0..n]  \lwidth [0..n]  > 
+haObj_PhysicalRepresentation --> schema_QuantitativeValue :depth [0..*]  \lheight [0..*]  \lwidth [0..*]  > 
 
 
 
@@ -142,17 +142,17 @@ schema_Place : name : <i>xsd:string</i> [1..1]
 
 
 
-schema_QuantitativeValue : unit code : <i>xsd:string</i> [0..n]
-schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..n]
-schema_QuantitativeValue : value : <i>xsd:float</i> [0..n]
+schema_QuantitativeValue : unit code : <i>xsd:string</i> [0..*]
+schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..*]
+schema_QuantitativeValue : value : <i>xsd:float</i> [0..*]
 
 
 
 
-schema_Role : role name : <i>xsd:string</i> [1..n]
-schema_Role --> org_Organization :author [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
-schema_Role --> schema_Person :actor [0..n]  \lauthor [0..n]  \lcontributor [0..n]  \lpublisher [0..n]  > 
-schema_Role --> skos_Concept :role name [1..n]  > 
+schema_Role : role name : <i>xsd:string</i> [1..*]
+schema_Role --> org_Organization :author [0..*]  \lcontributor [0..*]  \lpublisher [0..*]  > 
+schema_Role --> schema_Person :actor [0..*]  \lauthor [0..*]  \lcontributor [0..*]  \lpublisher [0..*]  > 
+schema_Role --> skos_Concept :role name [1..*]  > 
 
 
 
