@@ -44,7 +44,7 @@ premis_Event : has outcome note : <i>xsd:string</i> [0..1]
 premis_Event --> org_Organization :implemented by [1..1]  > 
 premis_Event --> premis_HardwareAgent :executed by [0..1]  > 
 premis_Event --> premis_Object :has source [0..1]  \lresult [0..1]  > 
-premis_Event --> premis_OutcomeStatus :has outcome [1..1]  > 
+premis_Event --> premis_OutcomeStatus :has outcome [0..1]  > 
 premis_Event --> premis_SoftwareAgent :executed by [0..1]  > 
 
 

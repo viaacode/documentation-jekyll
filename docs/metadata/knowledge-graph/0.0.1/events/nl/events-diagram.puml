@@ -44,7 +44,7 @@ premis_Event : heeft uitkomstopmerking : <i>xsd:string</i> [0..1]
 premis_Event --> org_Organization :geimplementeerd door [1..1]  > 
 premis_Event --> premis_HardwareAgent :uitgevoerd door [0..1]  > 
 premis_Event --> premis_Object :heeft bron [0..1]  \lresultaat [0..1]  > 
-premis_Event --> premis_OutcomeStatus :heeft uitkomst [1..1]  > 
+premis_Event --> premis_OutcomeStatus :heeft uitkomst [0..1]  > 
 premis_Event --> premis_SoftwareAgent :uitgevoerd door [0..1]  > 
 
 

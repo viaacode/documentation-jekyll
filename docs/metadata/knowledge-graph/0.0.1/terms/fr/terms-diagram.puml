@@ -22,88 +22,88 @@ class "<b>schéma de concepts</b> (skos:ConceptScheme)" as skos_ConceptScheme [[
 class "<b>étiquette</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
 
 
-skos_Collection : définition : <i>rdf:langString</i> [1..n]
-skos_Collection : exemple : <i>rdf:langString</i> [0..n]
-skos_Collection : notation : <i>xsd:string</i> [0..n]
-skos_Collection : note : <i>rdf:langString</i> [0..n]
-skos_Collection : note d'historique : <i>rdf:langString</i> [0..n]
-skos_Collection : note de champ : <i>rdf:langString</i> [0..n]
-skos_Collection : note de changement : <i>rdf:langString</i> [0..n]
-skos_Collection : note éditoriale : <i>rdf:langString</i> [0..n]
-skos_Collection : étiquette alternative : <i>rdf:langString</i> [0..n]
-skos_Collection : étiquette cachée : <i>rdf:langString</i> [0..n]
-skos_Collection : étiquette préférée : <i>rdf:langString</i> [1..n]
+skos_Collection : définition : <i>rdf:langString</i> [0..*]
+skos_Collection : exemple : <i>rdf:langString</i> [0..*]
+skos_Collection : notation : <i>xsd:string</i> [0..*]
+skos_Collection : note : <i>rdf:langString</i> [0..*]
+skos_Collection : note d'historique : <i>rdf:langString</i> [0..*]
+skos_Collection : note de champ : <i>rdf:langString</i> [0..*]
+skos_Collection : note de changement : <i>rdf:langString</i> [0..*]
+skos_Collection : note éditoriale : <i>rdf:langString</i> [0..*]
+skos_Collection : étiquette alternative : <i>rdf:langString</i> [0..*]
+skos_Collection : étiquette cachée : <i>rdf:langString</i> [0..*]
+skos_Collection : étiquette préférée : <i>rdf:langString</i> [1..*]
 
-skos_Collection --> skos_Collection :membre [0..n]  > 
-skos_Collection --> skos_Concept :membre [0..n]  > 
+skos_Collection --> skos_Collection :membre [0..*]  > 
+skos_Collection --> skos_Concept :membre [0..*]  > 
 
 
 skos_OrderedCollection --|> skos_Collection #blue;line.dotted;text:blue
 
-skos_OrderedCollection : définition : <i>rdf:langString</i> [1..n]
-skos_OrderedCollection : exemple : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : notation : <i>xsd:string</i> [0..n]
-skos_OrderedCollection : note : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : note d'historique : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : note de champ : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : note de changement : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : note éditoriale : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : étiquette alternative : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : étiquette cachée : <i>rdf:langString</i> [0..n]
-skos_OrderedCollection : étiquette préférée : <i>rdf:langString</i> [1..n]
-skos_OrderedCollection --> rdf_List :liste de membres [0..n]  > 
+skos_OrderedCollection : définition : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : exemple : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : notation : <i>xsd:string</i> [0..*]
+skos_OrderedCollection : note : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : note d'historique : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : note de champ : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : note de changement : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : note éditoriale : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : étiquette alternative : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : étiquette cachée : <i>rdf:langString</i> [0..*]
+skos_OrderedCollection : étiquette préférée : <i>rdf:langString</i> [1..*]
 
 
 
 
-skos_Concept : définition : <i>rdf:langString</i> [1..n]
-skos_Concept : exemple : <i>rdf:langString</i> [0..n]
-skos_Concept : notation : <i>xsd:string</i> [0..n]
-skos_Concept : note : <i>rdf:langString</i> [0..n]
-skos_Concept : note d'historique : <i>rdf:langString</i> [0..n]
-skos_Concept : note de champ : <i>rdf:langString</i> [0..n]
-skos_Concept : note de changement : <i>rdf:langString</i> [0..n]
-skos_Concept : note éditoriale : <i>rdf:langString</i> [0..n]
-skos_Concept : étiquette alternative : <i>rdf:langString</i> [0..n]
-skos_Concept : étiquette cachée : <i>rdf:langString</i> [0..n]
-skos_Concept : étiquette préférée : <i>rdf:langString</i> [1..n]
+skos_Concept : définition : <i>rdf:langString</i> [1..*]
+skos_Concept : exemple : <i>rdf:langString</i> [0..*]
+skos_Concept : notation : <i>xsd:string</i> [0..*]
+skos_Concept : note : <i>rdf:langString</i> [0..*]
+skos_Concept : note d'historique : <i>rdf:langString</i> [0..*]
+skos_Concept : note de champ : <i>rdf:langString</i> [0..*]
+skos_Concept : note de changement : <i>rdf:langString</i> [0..*]
+skos_Concept : note éditoriale : <i>rdf:langString</i> [0..*]
+skos_Concept : étiquette alternative : <i>rdf:langString</i> [0..*]
+skos_Concept : étiquette cachée : <i>rdf:langString</i> [0..*]
+skos_Concept : étiquette préférée : <i>rdf:langString</i> [1..*]
 
-skos_Concept --> skos_Concept :correspondance exacte [0..n]  \lcorrespondance large [0..n]  \lcorrespondance liée [0..n]  \lcorrespondance proche [0..n]  \lcorrespondance étroite [0..n]  \llié [0..n]  \lplus large [0..n]  \lplus large transitive [0..n]  \lplus étroit [0..n]  \lplus étroit transitive [0..n]  \lrelation de correspondance [0..n]  \lrelation sémantique [0..n]  > 
-skos_Concept --> skos_ConceptScheme :concept supérieur de [0..n]  \ldans le schéma [1..n]  > 
-skos_Concept --> skosxl_Label :label préféré [1..n]  > 
-
-
+skos_Concept --> skos_Concept :correspondance exacte [0..*]  \lcorrespondance large [0..*]  \lcorrespondance liée [0..*]  \lcorrespondance proche [0..*]  \lcorrespondance étroite [0..*]  \llié [0..*]  \lplus large [0..*]  \lplus large transitive [0..*]  \lplus étroit [0..*]  \lplus étroit transitive [0..*]  \lrelation de correspondance [0..*]  \lrelation sémantique [0..*]  > 
+skos_Concept --> skos_ConceptScheme :concept supérieur de [0..*]  \ldans le schéma [1..*]  > 
+skos_Concept --> skosxl_Label :label préféré [0..1]  > 
 
 
 
-skos_ConceptScheme : définition : <i>rdf:langString</i> [1..n]
-skos_ConceptScheme : exemple : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : notation : <i>xsd:string</i> [0..n]
-skos_ConceptScheme : note : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : note d'historique : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : note de champ : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : note de changement : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : note éditoriale : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : étiquette alternative : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : étiquette cachée : <i>rdf:langString</i> [0..n]
-skos_ConceptScheme : étiquette préférée : <i>rdf:langString</i> [1..n]
-
-skos_ConceptScheme --> skos_Concept :a pour concept supérieur [0..n]  > 
+rdf_List --> skos_Collection :None [0..*]  > 
+rdf_List --> skos_Concept :None [0..*]  > 
 
 
+skos_ConceptScheme : exemple : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : notation : <i>xsd:string</i> [0..*]
+skos_ConceptScheme : note : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : note d'historique : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : note de champ : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : note de changement : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : note éditoriale : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : étiquette alternative : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : étiquette cachée : <i>rdf:langString</i> [0..*]
+skos_ConceptScheme : étiquette préférée : <i>rdf:langString</i> [1..*]
 
-skosxl_Label : définition : <i>rdf:langString</i> [1..n]
-skosxl_Label : exemple : <i>rdf:langString</i> [0..n]
+skos_ConceptScheme --> skos_Concept :a pour concept supérieur [0..*]  > 
+
+
+
+skosxl_Label : définition : <i>rdf:langString</i> [1..*]
+skosxl_Label : exemple : <i>rdf:langString</i> [0..*]
 skosxl_Label : forme littérale : <i>rdf:langString</i> [1..1]
-skosxl_Label : notation : <i>xsd:string</i> [0..n]
-skosxl_Label : note : <i>rdf:langString</i> [0..n]
-skosxl_Label : note d'historique : <i>rdf:langString</i> [0..n]
-skosxl_Label : note de champ : <i>rdf:langString</i> [0..n]
-skosxl_Label : note de changement : <i>rdf:langString</i> [0..n]
-skosxl_Label : note éditoriale : <i>rdf:langString</i> [0..n]
-skosxl_Label : étiquette alternative : <i>rdf:langString</i> [0..n]
-skosxl_Label : étiquette cachée : <i>rdf:langString</i> [0..n]
-skosxl_Label : étiquette préférée : <i>rdf:langString</i> [1..n]
+skosxl_Label : notation : <i>xsd:string</i> [0..*]
+skosxl_Label : note : <i>rdf:langString</i> [0..*]
+skosxl_Label : note d'historique : <i>rdf:langString</i> [0..*]
+skosxl_Label : note de champ : <i>rdf:langString</i> [0..*]
+skosxl_Label : note de changement : <i>rdf:langString</i> [0..*]
+skosxl_Label : note éditoriale : <i>rdf:langString</i> [0..*]
+skosxl_Label : étiquette alternative : <i>rdf:langString</i> [0..*]
+skosxl_Label : étiquette cachée : <i>rdf:langString</i> [0..*]
+skosxl_Label : étiquette préférée : <i>rdf:langString</i> [1..*]
 
 
 

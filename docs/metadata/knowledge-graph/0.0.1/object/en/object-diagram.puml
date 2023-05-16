@@ -17,7 +17,7 @@ class "<b>digital representation</b> (haObj:DigitalRepresentation)" as haObj_Dig
 class "<b>representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>file</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>file format</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>file format</b> (dcterms:FileFormat)" as dcterms_FileFormat [[#dcterms%3AFileFormat]]
 class "<b>fixity</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
 class "<b>intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
@@ -34,33 +34,36 @@ class "<b>storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation --> haObj_PhysicalRepresentation :has Source [0..n]  > 
-haObj_DigitalRepresentation --> premis_File :has Root [0..n]  \lincludes [1..n]  \lmedia fragment source [0..n]  > 
-haObj_DigitalRepresentation --> premis_IntellectualEntity :is access copy of [0..1]  \lis archiving master of [1..n]  \lis mezzanine format of [0..1]  \lrepresents [1..n]  > 
+haObj_DigitalRepresentation --> haObj_PhysicalRepresentation :has Source [0..*]  > 
+haObj_DigitalRepresentation --> premis_File :has Root [0..*]  \lincludes [1..*]  \lmedia fragment source [0..*]  > 
+haObj_DigitalRepresentation --> premis_IntellectualEntity :is access copy of [0..1]  \lis archiving master of [1..*]  \lis mezzanine format of [0..1]  \lrepresents [1..*]  > 
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
+premis_File : has original name : <i>xsd:string</i> [0..1]
+premis_File : has size : <i>xsd:nonNegativeInteger</i> [0..1]
 premis_File : mime type : <i>xsd:string</i> [0..1]
-premis_File --> dct_FileFormat :format [1..1]  > 
-premis_File --> haObj_DigitalRepresentation :has media fragment [0..n]  \lis Included in [1..n]  > 
-premis_File --> premis_File :documents [0..n]  \lnext file in sequence [0..1]  \lsupersedes [0..n]  > 
+premis_File --> dcterms_FileFormat :format [1..1]  > 
+premis_File --> haObj_DigitalRepresentation :has media fragment [0..*]  \lis Included in [1..*]  > 
+premis_File --> premis_File :documents [0..*]  \lnext file in sequence [0..1]  \lsupersedes [0..*]  > 
 premis_File --> premis_Fixity :has fixity [1..1]  > 
-premis_File --> premis_StorageLocation :stored at [1..n]  > 
+premis_File --> premis_StorageLocation :stored at [1..*]  > 
 
 
 
 
 
-premis_Fixity : checksum creator : <i>xsd:string</i> [0..n]
-premis_Fixity : fixity checksum : <i>xsd:string</i> [1..n]
+
+premis_Fixity : checksum creator : <i>xsd:string</i> [0..*]
+premis_Fixity : fixity checksum : <i>xsd:string</i> [1..*]
 
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
-premis_IntellectualEntity --> haObj_DigitalRepresentation :has access copy [0..n]  \lhas archiving master [0..1]  \lhas mezzanine format [0..1]  > 
-premis_IntellectualEntity --> haObj_LocalIdentifier :local identifier [0..n]  > 
-premis_IntellectualEntity --> premis_IntellectualEntity :has Part [0..n]  \lis Part Of [0..n]  > 
-premis_IntellectualEntity --> premis_Representation :is Represented by [0..n]  > 
+premis_IntellectualEntity --> haObj_DigitalRepresentation :has access copy [0..*]  \lhas archiving master [0..1]  \lhas mezzanine format [0..1]  > 
+premis_IntellectualEntity --> haObj_LocalIdentifier :local identifier [0..*]  > 
+premis_IntellectualEntity --> premis_IntellectualEntity :has Part [0..*]  \lis Part Of [0..*]  > 
+premis_IntellectualEntity --> premis_Representation :is Represented by [0..*]  > 
 
 haObj_LocalIdentifier --|> skos_Concept #blue;line.dotted;text:blue
 
@@ -69,18 +72,18 @@ haObj_LocalIdentifier : value : <i>xsd:string</i> [1..1]
 
 premis_Object --|> prov_Entity #blue;line.dotted;text:blue
 
-premis_Object --> premis_Object :has relationship [0..n]  > 
+premis_Object --> premis_Object :has relationship [0..*]  > 
 
 haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_PhysicalRepresentation --> premis_StorageMedium :has medium [0..n]  > 
+haObj_PhysicalRepresentation --> premis_StorageMedium :has medium [0..*]  > 
 
 premis_Representation --|> premis_Object #blue;line.dotted;text:blue
 
 
 
-premis_StorageLocation : file path : <i>xsd:string</i> [1..n]
-premis_StorageLocation --> premis_StorageMedium :milieu de stockage [0..n]  \lstorage medium [0..n]  > 
+premis_StorageLocation : file path : <i>xsd:string</i> [1..*]
+premis_StorageLocation --> premis_StorageMedium :milieu de stockage [0..*]  \lstorage medium [0..*]  > 
 
 
 
