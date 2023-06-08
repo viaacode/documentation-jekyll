@@ -12,7 +12,7 @@ info:
     Documentation for meemoo's Organization API V2.
     This API provides access to information about organizations and persons within the meemoo context, such as content partners, educational partners, address sites, contact information, account managers, or personnel of meemoo. 
     It is a [GraphQL API](https://graphql.org/) that is conform the [2021 specification](https://spec.graphql.org/October2021/). 
-  version: 0.2.0
+  version: 0.3.0
   title: meemoo Organization API V2
   contact:
     name: meemoo
