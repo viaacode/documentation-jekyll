@@ -18,6 +18,10 @@
       </premis:relatedObjectIdentifier>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
+        <premis:relatedObjectIdentifierValue>uuid-8583DBE9-048C-4EB8-A690-A4A00425C232</premis:relatedObjectIdentifierValue>
+      </premis:relatedObjectIdentifier>
+      <premis:relatedObjectIdentifier>
+        <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
         <premis:relatedObjectIdentifierValue>uuid-94F620EB-C269-45F0-A276-1C0319E5330F</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
       <premis:relatedObjectIdentifier>
@@ -103,7 +107,7 @@
 
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-075BF4BB-559A-497E-AA58-EEF7287F0A39</premis:objectIdentifierValue>
+      <premis:objectIdentifierValue>uuid-8583DBE9-048C-4EB8-A690-A4A00425C232</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
     <premis:objectCharacteristics>
