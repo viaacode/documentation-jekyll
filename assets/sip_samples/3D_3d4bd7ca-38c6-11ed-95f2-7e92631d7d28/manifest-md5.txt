@@ -1,5 +1,5 @@
 806556a007a59f291c41205160b0cb55  data/mets.xml
-8c1cdf76e531f225a6c5b89d09f3c7a5  data/metadata/descriptive/dc+schema.xml
+818769856f87109eb2f2d38886f2d9f4  data/metadata/descriptive/dc+schema.xml
 a48061a5ed8b8d9370292210dff37ace  data/metadata/preservation/premis.xml
 cf751668448e4036d9faad2835a611f0  data/representations/representation_1/mets.xml
 d41d8cd98f00b204e9800998ecf8427e  data/representations/representation_1/data/qv3bz95m19_ARCH_STL.STL
