@@ -18,58 +18,58 @@
     <fileSec ID="uuid-170f9654-bf8d-45df-8451-48d6203b9f03">
         <fileGrp USE="data" ID="uuid-d020d7d1-f258-40af-8788-04cf62a0032b">
             <file ID="uuid-811479A2-8529-4CBA-BD8A-0A225B6A5C27" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="bd388203a764fc7092568d8c7bb0d654" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname1_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname1_tiff.tiff" />
             </file>
             <file ID="uuid-FDDF6085-3ED3-436C-B842-FAA9B91E82F4" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="100059b0cc3df5e6fd309d50f60133ca" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname2_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname2_tiff.tiff" />
             </file>
             <file ID="uuid-2097321F-C1B7-48C7-B0B5-AF167AD39896" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="42c00b0070ad981461a1a4182eb5f091" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname3_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname3_tiff.tiff" />
             </file>
             <file ID="uuid-90A037EB-E9D9-4CB7-9E3C-CDE3E801536E" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="f762d8b8c7093bbae0cb8f3bd250155f" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname4_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname4_tiff.tiff" />
             </file>
             <file ID="uuid-DD08FE88-1727-49DD-9127-F14BF8945A98" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="0a3adc808577eb76d6a21fb294c348ec" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname5_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname5_tiff.tiff" />
             </file>
             <file ID="uuid-4E4B1F4B-DA8B-4FEA-A5A6-928D5BCC84A1" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="07f974bc0a8b58f0863e1d41b071dbf6" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname6_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname6_tiff.tiff" />
             </file>
             <file ID="uuid-D6A1C43B-BA26-414C-A081-B4E60501A7FF" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="83c54cf16821f25201190659dc21319c" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname7_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname7_tiff.tiff" />
             </file>
             <file ID="uuid-E8AB4E0A-E0A4-4BDA-9EF1-71335A1C7447" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="f414338a80686ab16604ebcc41247145" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname8_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname8_tiff.tiff" />
             </file>
             <file ID="uuid-8FFB1DC8-4D98-4862-AC65-C1B0F0B0662B" MIMETYPE="image/tiff"
-                SIZE="1735648" CREATED="2022-02-16T10:02:37.009+02:00"
-                CHECKSUM="18513a8d61c6f2cbaaeeedd754b01d6b" CHECKSUMTYPE="MD5">
+                SIZE="1067" CREATED="2022-02-16T10:02:37.009+02:00"
+                CHECKSUM="0881684a92f4317811447fc7fc5f992f" CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="./data/7m03z1634f_deelopname9_tiff.tif" />
+                    xlink:href="./data/7m03z1634f_deelopname9_tiff.tiff" />
             </file>
         </fileGrp>
     </fileSec>
