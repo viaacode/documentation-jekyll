@@ -8,7 +8,7 @@
   <dcterms:identifier>uuid-541292c3-223a-4b80-b747-66bc86ff4a89</dcterms:identifier>
 
   <!-- date when representation was created -->
-  <dcterms:created xsi:type="edtf:EDTF">2022-01~</dcterms:created>
+  <dcterms:created xsi:type="edtf:EDTF-level1">2022-01~</dcterms:created>
 
   <!-- multiple keywords about the representation -->
   <dcterms:subject xml:lang="nl">Cat</dcterms:subject>

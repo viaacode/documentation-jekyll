@@ -8,7 +8,7 @@
   <dcterms:title xml:lang="nl">Felis Catus Flamens sitting on a cat tree</dcterms:title>
 
   <!-- date unknown -->
-  <dcterms:created xsi:type="edtf:EDTF">XXXX</dcterms:created>
+  <dcterms:created xsi:type="edtf:EDTF-level1">XXXX</dcterms:created>
 
   <!-- multiple keywords about the resource -->
   <dcterms:subject xml:lang="nl">Cat</dcterms:subject>
