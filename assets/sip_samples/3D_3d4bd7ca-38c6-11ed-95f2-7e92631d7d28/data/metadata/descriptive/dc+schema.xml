@@ -56,7 +56,7 @@
     <schema:unitCode>MMT</schema:unitCode>
   </schema:depth>
   <schema:weight>
-    <schema:value>2,3</schema:value>
+    <schema:value>2.3</schema:value>
     <schema:unitText>kg</schema:unitText>
     <schema:unitCode>KGM</schema:unitCode>
   </schema:weight>
