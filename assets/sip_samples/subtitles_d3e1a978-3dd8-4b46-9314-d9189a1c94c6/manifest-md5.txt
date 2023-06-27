@@ -4,4 +4,4 @@
 08b381bf5080bcb721f6900c737eb156  data/representations/representation_1/mets.xml
 22502b5dc38e893d99e9368c6ff70229  data/representations/representation_1/data/broadcaster_news_20220525.mp4
 daefffb93e6c3be7136ba40edae4f2f1  data/representations/representation_1/data/broadcaster_news_20220525.srt
-353bc78ee3b28fdfefca9c4a46c657e7  data/representations/representation_1/metadata/preservation/premis.xml
+8a37cc709da88221cb71117a6c66265f  data/representations/representation_1/metadata/preservation/premis.xml
