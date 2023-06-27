@@ -196,7 +196,7 @@ For elements that require the `@xml:lang` attribute, it is still necessary to su
 | Cardinality | 0..* |
 | Obligation | MAY |
 
-| Element | `metadata/dcterms:subject` |
+| Element | `metadata/dcterms:subject[@xml:lang=*]` |
 |-----------------------|-----------|
 | Name | Subject |
 | Description | Subjects or keywords related to the Intellectual Entity.<br> If the element is present, the applied language MUST be provided by a `@xml:lang` attribute (see requirements above) and there MUST always be an entry in Dutch with `@xml:lang` set to `nl`. |
@@ -281,7 +281,7 @@ Please note that additional IDs must be dealt with in the `preservation/premis.x
   <dcterms:identifier>uuid-b21a86aa-97a3-4f7b-a9f5-4d330af641c0</dcterms:identifier>
 
   <!-- date unknown -->
-  <dcterms:created xsi:type="edtf:EDTF">XXXX</dcterms:created>
+  <dcterms:created xsi:type="edtf:EDTF-level1">XXXX</dcterms:created>
 
   <!-- multiple keywords about the resource -->
   <dcterms:subject xml:lang="nl">Cat</dcterms:subject>

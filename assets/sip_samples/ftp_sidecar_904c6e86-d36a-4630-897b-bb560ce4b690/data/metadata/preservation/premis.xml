@@ -19,7 +19,7 @@
 
         <!-- alles mbt. mogelijke IDs -->
         <premis:objectIdentifier>
-            <premis:objectIdentifierType>LOCAL_ID</premis:objectIdentifierType>
+            <premis:objectIdentifierType>MEEMOO-LOCAL-ID</premis:objectIdentifierType>
             <premis:objectIdentifierValue>VIAA.dc_identifier_localid</premis:objectIdentifierValue>
         </premis:objectIdentifier>
         <premis:objectIdentifier>

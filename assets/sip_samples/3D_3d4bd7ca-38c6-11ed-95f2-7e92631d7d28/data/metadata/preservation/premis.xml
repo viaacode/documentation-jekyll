@@ -4,7 +4,12 @@
     <!-- IE about the artwork -->
     <premis:object xsi:type="premis:intellectualEntity">
         <premis:objectIdentifier>
-            <premis:objectIdentifierType>VIAA PID</premis:objectIdentifierType>
+            <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
+            <premis:objectIdentifierValue>uuid-645392be-fa36-40fe-92e7-16c9fa60fe46</premis:objectIdentifierValue>
+        </premis:objectIdentifier>
+
+        <premis:objectIdentifier>
+            <premis:objectIdentifierType>MEEMOO-PID</premis:objectIdentifierType>
             <premis:objectIdentifierValue>qv3bz95m19</premis:objectIdentifierValue>
         </premis:objectIdentifier>
 
@@ -26,18 +31,18 @@
             <premis:relatedObjectIdentifier>
                 <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
                 <premis:relatedObjectIdentifierValue>uuid-e3aff200-237b-11ed-8d32-7e92631d7d28</premis:relatedObjectIdentifierValue>
-            </premis:relatedObjectIdentifier>            
+            </premis:relatedObjectIdentifier>
             <premis:relatedObjectIdentifier>
                 <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
                 <premis:relatedObjectIdentifierValue>uuid-7f16cfda-21ff-11ed-a277-7e92631d7d27</premis:relatedObjectIdentifierValue>
             </premis:relatedObjectIdentifier>
             <premis:relatedObjectIdentifier>
                 <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-                <premis:relatedObjectIdentifierValue>uuid-671f4eb6-21ff-11ed-9e92-7e92631d7d27</premis:relatedObjectIdentifierValue>
+                <premis:relatedObjectIdentifierValue>uuid-aa10c188-039b-4c9f-831c-c1f6079f92a4</premis:relatedObjectIdentifierValue>
             </premis:relatedObjectIdentifier>
             <premis:relatedObjectIdentifier>
                 <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-                <premis:relatedObjectIdentifierValue>uuid-5c430d70-21ff-11ed-baeb-7e92631d7d27</premis:relatedObjectIdentifierValue>
+                <premis:relatedObjectIdentifierValue>uuid-f1a073c0-ebdd-40f6-b449-c2032e83e58a</premis:relatedObjectIdentifierValue>
             </premis:relatedObjectIdentifier>
         </premis:relationship>
 
@@ -62,7 +67,7 @@
         </premis:eventOutcomeInformation>
 
         <premis:linkingAgentIdentifier>
-            <premis:linkingAgentIdentifierType>VIAA SP Agent ID</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
             <premis:linkingAgentIdentifierValue>OR-x05xc4w</premis:linkingAgentIdentifierValue>
             <premis:linkingAgentRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
         </premis:linkingAgentIdentifier>
@@ -79,24 +84,19 @@
         </premis:linkingObjectIdentifier>
         <premis:linkingObjectIdentifier>
             <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-            <premis:linkingObjectIdentifierValue>uuid-671f4eb6-21ff-11ed-9e92-7e92631d7d27</premis:linkingObjectIdentifierValue>
+            <premis:linkingObjectIdentifierValue>uuid-aa10c188-039b-4c9f-831c-c1f6079f92a4</premis:linkingObjectIdentifierValue>
             <premis:linkingObjectRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
         </premis:linkingObjectIdentifier>
         <premis:linkingObjectIdentifier>
             <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-            <premis:linkingObjectIdentifierValue>uuid-5c430d70-21ff-11ed-baeb-7e92631d7d27</premis:linkingObjectIdentifierValue>
-            <premis:linkingObjectRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
-        </premis:linkingObjectIdentifier>
-        <premis:linkingObjectIdentifier>
-            <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-            <premis:linkingObjectIdentifierValue>uuid-0b6c68e2-3a7d-11ed-97b8-7e92631d7d28</premis:linkingObjectIdentifierValue>
+            <premis:linkingObjectIdentifierValue>uuid-f1a073c0-ebdd-40f6-b449-c2032e83e58a</premis:linkingObjectIdentifierValue>
             <premis:linkingObjectRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
         </premis:linkingObjectIdentifier>
     </premis:event>
 
     <premis:agent>
         <premis:agentIdentifier>
-            <premis:agentIdentifierType>VIAA SP Agent ID</premis:agentIdentifierType>
+            <premis:agentIdentifierType>MEEMOO-OR-ID</premis:agentIdentifierType>
             <premis:agentIdentifierValue>OR-x05xc4w</premis:agentIdentifierValue>
         </premis:agentIdentifier>
         <premis:agentName>De Logi &amp; Hoorne - Erfgo3D</premis:agentName>
