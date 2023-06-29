@@ -111,7 +111,7 @@ De keuze voor een flow hangt af van de use-case:
 - machine-to-machine applicatie integratie → "Resource Owner Credentials Grant
   Type"
 
-(Zie bv [https://alexbilbie.com/guide-to-oauth-2-grants/](https://alexbilbie.com/guide-to-oauth-2-grants/))
+(Zie bv [A Guide To OAuth 2.0 Grants](https://alexbilbie.github.io/guide-to-oauth-2-grants/))
 
 (De auth-flow die typisch gebruikt wordt voor machine-to-machine integraties is
 de "Client Credentials Grant Type". Deze is echter - nog - niet geïmplementeerd
