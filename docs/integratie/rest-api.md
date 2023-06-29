@@ -21,7 +21,7 @@ last_modified_date: 2021-04-19T09:27:33+02:00
 # REST API v1 vs v2
 
 {: .note }
-Opgelet: de REST API versie 1 wordt uitgefaseerd en wordt vanaf 1 juni niet meer ondersteund!
+Opgelet: de REST API versie 1 werd uitgefaseerd en is vanaf 1 juni '23 niet meer ondersteund!
 
 MediaHaven biedt sinds het begin een REST API aan om bewerkingen uit te kunnen
 voeren op mediaobjecten. Vanaf MediaHaven versie 21.1 (uitgebracht op 16 april
