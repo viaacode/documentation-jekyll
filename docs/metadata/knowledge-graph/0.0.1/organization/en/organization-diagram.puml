@@ -13,14 +13,11 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Formal Organization</b> (org:FormalOrganization)" as org_FormalOrganization [[#org%3AFormalOrganization]]
-class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Country</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
 class "<b>contactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>country</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
 class "<b>digitization partner</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
-class "<b>service provider</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
 class "<b>educational partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
 class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
@@ -30,6 +27,7 @@ class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>organizationalUnit</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
 class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>post</b> (org:Post)" as org_Post [[#org%3APost]]
 class "<b>postal address</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
 class "<b>contactPoint</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
@@ -43,7 +41,8 @@ class "<b>service provider</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider
 class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>site</b> (org:Site)" as org_Site [[#org%3ASite]]
 
-org_FormalOrganization --|> org_Organization #blue;line.dotted;text:blue
+
+schema_Country : name : <i>xsd:string</i> [1..1]
 
 
 
@@ -57,13 +56,11 @@ haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 haOrg_ContentPartner : allows bezoekertool : <i>xsd:boolean</i> [1..1]
 haOrg_ContentPartner : allows overlay : <i>xsd:boolean</i> [1..1]
 haOrg_ContentPartner : has identifier : <i>xsd:string</i> [1..1]
+haOrg_ContentPartner : request form : <i>xsd:string</i> [0..*]
 haOrg_ContentPartner --> schema_Person :has account manager [1..1]  > 
 
 
 
-
-
-haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
 
 haOrg_DigitizationPartner : has identifier : <i>xsd:string</i> [1..1]
 
@@ -79,13 +76,13 @@ haOrg_EducationalPartner --> schema_Person :has account manager [1..1]  >
 
 org_Organization : alternative label : <i>rdf:langString</i> [0..*]
 org_Organization : description : <i>rdf:langString</i> [0..*]
-org_Organization : has identifier : <i>xsd:string</i> [0..1]
+org_Organization : has identifier : <i>xsd:string</i> [1..1]
 org_Organization : homepage : <i>IRI</i> [0..1]
 org_Organization : preferred label : <i>rdf:langString</i> [1..*]
 org_Organization : sector : <i>xsd:string</i> [0..1]
 org_Organization : tenant name : <i>xsd:string</i> [0..*]
 
-org_Organization --> haOrg_Logo :logo [0..*]  > 
+org_Organization --> haOrg_Logo :logo [0..*]  \lmain logo [0..1]  > 
 org_Organization --> haOrg_OrganizationType :classification [0..*]  > 
 org_Organization --> org_OrganizationalUnit :has Unit [0..*]  > 
 org_Organization --> org_Post :has post [0..*]  > 
@@ -102,6 +99,7 @@ org_OrganizationalUnit --|> org_Organization #blue;line.dotted;text:blue
 
 org_OrganizationalUnit --> org_Organization :unit of [1..*]  > 
 
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_Person : birth date : <i>edtf:EDTF-level1</i> [0..1]
 schema_Person : death date : <i>edtf:EDTF-level1</i> [0..1]
@@ -150,7 +148,7 @@ haOrg_ServiceProvider : has identifier : <i>xsd:string</i> [1..1]
 
 
 
-org_Site --> org_Organization :site of [1..1]  > 
+org_Site --> org_Organization :site of [1..*]  > 
 org_Site --> schema_PostalAddress :site Address [0..1]  > 
 
 
