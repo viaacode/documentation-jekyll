@@ -13,8 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Organisation Formelle</b> (org:FormalOrganization)" as org_FormalOrganization [[#org%3AFormalOrganization]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Pays</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
 class "<b>adresse postale</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
 class "<b>point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>consomatteur de services</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
@@ -26,13 +25,12 @@ class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrga
 class "<b>partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>partenaire de digitalisation</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
-class "<b>fournisseur de services</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
 class "<b>partenaire de projet</b> (haOrg:ProjectPartner)" as haOrg_ProjectPartner [[#haOrg%3AProjectPartner]]
 class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>partenaire éducatif</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
 class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>pays</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
 class "<b>personne</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>poste</b> (org:Post)" as org_Post [[#org%3APost]]
 class "<b>rôle</b> (org:Role)" as org_Role [[#org%3ARole]]
@@ -43,7 +41,8 @@ class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>unité opérationnelle</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
 class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 
-org_FormalOrganization --|> org_Organization #blue;line.dotted;text:blue
+
+schema_Country : nom : <i>xsd:string</i> [1..1]
 
 
 schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
@@ -75,10 +74,10 @@ org_Organization : label alternatif : <i>rdf:langString</i> [0..*]
 org_Organization : label préféré : <i>rdf:langString</i> [1..*]
 org_Organization : nom du locataire Mediahaven : <i>xsd:string</i> [0..*]
 org_Organization : page d'accueil : <i>IRI</i> [0..1]
-org_Organization : possède un identifiant : <i>xsd:string</i> [0..1]
+org_Organization : possède un identifiant : <i>xsd:string</i> [1..1]
 org_Organization : secteur : <i>xsd:string</i> [0..1]
 
-org_Organization --> haOrg_Logo :logo [0..*]  > 
+org_Organization --> haOrg_Logo :logo [0..*]  \llogo principal [0..1]  > 
 org_Organization --> haOrg_OrganizationType :classification [0..*]  > 
 org_Organization --> org_OrganizationalUnit :possède une Unité [0..*]  > 
 org_Organization --> org_Post :possède un poste [0..*]  > 
@@ -90,6 +89,7 @@ org_Organization --> schema_Person :a gestionnaire de comptes [0..1]  >
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
+haOrg_ContentPartner : formulaire de demande : <i>xsd:string</i> [0..*]
 haOrg_ContentPartner : permet la superposition : <i>xsd:boolean</i> [1..1]
 haOrg_ContentPartner : permet le bezoekertool : <i>xsd:boolean</i> [1..1]
 haOrg_ContentPartner : possède un identifiant : <i>xsd:string</i> [1..1]
@@ -97,7 +97,6 @@ haOrg_ContentPartner --> schema_Person :a gestionnaire de comptes [1..1]  >
 
 
 
-haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
 
 haOrg_DigitizationPartner : possède un identifiant : <i>xsd:string</i> [1..1]
 
@@ -113,8 +112,7 @@ haOrg_EducationalPartner : possède un identifiant : <i>xsd:string</i> [1..1]
 haOrg_EducationalPartner --> schema_Person :a gestionnaire de comptes [1..1]  > 
 
 
-
-
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_Person : date de décès : <i>edtf:EDTF-level1</i> [0..1]
 schema_Person : date de naissance : <i>edtf:EDTF-level1</i> [0..1]
@@ -143,7 +141,7 @@ org_Role : label préféré : <i>rdf:langString</i> [1..*]
 
 
 
-org_Site --> org_Organization :site de [1..1]  > 
+org_Site --> org_Organization :site de [1..*]  > 
 org_Site --> schema_PostalAddress :adresse du Site [0..1]  > 
 
 haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
