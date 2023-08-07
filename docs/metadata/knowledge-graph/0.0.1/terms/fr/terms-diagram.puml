@@ -92,19 +92,7 @@ skos_ConceptScheme --> skos_Concept :a pour concept supérieur [0..*]  >
 
 
 
-skosxl_Label : définition : <i>rdf:langString</i> [1..*]
-skosxl_Label : exemple : <i>rdf:langString</i> [0..*]
 skosxl_Label : forme littérale : <i>rdf:langString</i> [1..1]
-skosxl_Label : notation : <i>xsd:string</i> [0..*]
-skosxl_Label : note : <i>rdf:langString</i> [0..*]
-skosxl_Label : note d'historique : <i>rdf:langString</i> [0..*]
-skosxl_Label : note de champ : <i>rdf:langString</i> [0..*]
-skosxl_Label : note de changement : <i>rdf:langString</i> [0..*]
-skosxl_Label : note éditoriale : <i>rdf:langString</i> [0..*]
-skosxl_Label : étiquette alternative : <i>rdf:langString</i> [0..*]
-skosxl_Label : étiquette cachée : <i>rdf:langString</i> [0..*]
-skosxl_Label : étiquette préférée : <i>rdf:langString</i> [1..*]
-
 
 
 
