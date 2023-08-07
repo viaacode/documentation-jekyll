@@ -19,40 +19,44 @@ class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>fichier</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>fixité</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
-class "<b>format de fichier</b> (dcterms:FileFormat)" as dcterms_FileFormat [[#dcterms%3AFileFormat]]
+class "<b>format de fichier</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
 class "<b>identifiant local</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
 class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>entité</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
 class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
 class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>représentation physique</b> (haObj:PhysicalRepresentation)" as haObj_PhysicalRepresentation [[#haObj%3APhysicalRepresentation]]
-class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>représentation fragment</b> (haObj:FragmentRepresentation)" as haObj_FragmentRepresentation [[#haObj%3AFragmentRepresentation]]
 class "<b>support de stockage</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 
 
 premis_StorageLocation : chemin du fichier : <i>xsd:string</i> [1..*]
-premis_StorageLocation --> premis_StorageMedium :a un support [0..*]  > 
+premis_StorageLocation --> premis_StorageMedium :milieu de stockage [0..*]  > 
 
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
-premis_IntellectualEntity --> haObj_DigitalRepresentation :a copie d'accès [0..*]  \la copie principale [0..1]  \la format mezzanine [0..1]  > 
-premis_IntellectualEntity --> haObj_LocalIdentifier :identificateur local [0..*]  > 
-premis_IntellectualEntity --> premis_IntellectualEntity :a partie [0..*]  \lfait partie de [0..*]  > 
-premis_IntellectualEntity --> premis_Representation :est représenté par [0..*]  > 
+premis_IntellectualEntity --> haObj_DigitalRepresentation :a copie d'accès [0..*]  \la maître [0..*]  \la mezzanine [0..*]  > 
+premis_IntellectualEntity --> haObj_LocalIdentifier :identificateur local [1..*]  > 
+premis_IntellectualEntity --> premis_IntellectualEntity :a partie [0..*]  \lest partie de [0..*]  \ll'entité intellectuelle suivante dans l'ordre [0..1]  > 
+premis_IntellectualEntity --> premis_Representation :est représenté par [1..*]  > 
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
-premis_File : a une taille (du fichier) : <i>xsd:nonNegativeInteger</i> [0..1]
-premis_File : mime type : <i>xsd:string</i> [0..1]
-premis_File : porte le nom d'origine : <i>xsd:string</i> [0..1]
-premis_File --> dcterms_FileFormat :format [1..1]  > 
-premis_File --> haObj_DigitalRepresentation :a le fragment des médias [0..*]  \lest inclus dans [1..*]  > 
+premis_File : a une taille (du fichier) : <i>xsd:nonNegativeInteger</i> [1..1]
+premis_File : mime type : <i>xsd:string</i> [1..1]
+premis_File : porte le nom d'origine : <i>xsd:string</i> [1..1]
+premis_File --> dct_FileFormat :format [1..1]  > 
+premis_File --> haObj_DigitalRepresentation :est inclus dans [0..*]  > 
+premis_File --> haObj_FragmentRepresentation :a le fragment des médias [0..*]  > 
 premis_File --> premis_File :document [0..*]  \lfichier suivant dans l'ordre [0..1]  \lremplace [0..*]  > 
-premis_File --> premis_Fixity :a fixity [1..1]  > 
+premis_File --> premis_Fixity :fixity [1..1]  > 
 premis_File --> premis_StorageLocation :stocké à [1..*]  > 
 
 
@@ -71,20 +75,31 @@ haObj_LocalIdentifier : valeur : <i>xsd:string</i> [1..1]
 
 premis_Object --|> prov_Entity #blue;line.dotted;text:blue
 
-premis_Object --> premis_Object :a une relation [0..*]  > 
+premis_Object --> premis_Object :relation [0..*]  > 
+
+haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
+
+haObj_PhysicalCarrier --> premis_StorageMedium :milieu de stockage [1..1]  > 
 
 premis_Representation --|> premis_Object #blue;line.dotted;text:blue
 
 
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stocké à [1..1]  > 
+
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation --> haObj_PhysicalRepresentation :a une source [0..*]  > 
-haObj_DigitalRepresentation --> premis_File :est à la base de [0..*]  \linclut [1..*]  \lsource du fragment de média (MediaFragment) [0..*]  > 
-haObj_DigitalRepresentation --> premis_IntellectualEntity :est copie d'accès de [0..1]  \lest format mezzanine de [0..1]  \lest la copie principale de [1..*]  \lreprésente [1..*]  > 
+haObj_DigitalRepresentation --> haObj_CarrierRepresentation :a source [0..*]  > 
+haObj_DigitalRepresentation --> haObj_DigitalRepresentation :la représentation numérique suivante dans l'ordre [0..1]  > 
+haObj_DigitalRepresentation --> premis_File :a racine [1..*]  \lcomprend [1..*]  > 
+haObj_DigitalRepresentation --> premis_IntellectualEntity :est copie d'accès de [0..1]  \lest maître de [0..1]  \lest mezzanine de [0..1]  \lreprésente [1..1]  > 
 
-haObj_PhysicalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_PhysicalRepresentation --> premis_StorageMedium :a un support [0..*]  > 
+haObj_FragmentRepresentation : heure de départ : <i>xsd:time</i> [0..1]
+haObj_FragmentRepresentation : heure de fin : <i>xsd:time</i> [0..1]
+haObj_FragmentRepresentation --> premis_File :est fragment des médias de [0..*]  > 
+
 
 
 

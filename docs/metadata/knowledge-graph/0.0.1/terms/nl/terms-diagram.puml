@@ -71,19 +71,7 @@ skos_OrderedCollection : wijzigingsnotitie : <i>rdf:langString</i> [0..*]
 
 
 
-skosxl_Label : alternatief label : <i>rdf:langString</i> [0..*]
-skosxl_Label : definitie : <i>rdf:langString</i> [1..*]
-skosxl_Label : historische notitie : <i>rdf:langString</i> [0..*]
 skosxl_Label : letterlijke vorm : <i>rdf:langString</i> [1..1]
-skosxl_Label : notation : <i>xsd:string</i> [0..*]
-skosxl_Label : note : <i>rdf:langString</i> [0..*]
-skosxl_Label : redactionele notitie : <i>rdf:langString</i> [0..*]
-skosxl_Label : scope notitie : <i>rdf:langString</i> [0..*]
-skosxl_Label : verborgen label : <i>rdf:langString</i> [0..*]
-skosxl_Label : voorbeeld : <i>rdf:langString</i> [0..*]
-skosxl_Label : voorkeurslabel : <i>rdf:langString</i> [1..*]
-skosxl_Label : wijzigingsnotitie : <i>rdf:langString</i> [0..*]
-
 
 
 

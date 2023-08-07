@@ -13,8 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Formele Organisatie</b> (org:FormalOrganization)" as org_FormalOrganization [[#org%3AFormalOrganization]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Land</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
 class "<b>aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
@@ -23,10 +22,8 @@ class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrgan
 class "<b>dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
 class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>digitaliseringspartner</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
-class "<b>dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
 class "<b>educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
 class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>land</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
 class "<b>logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
 class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
@@ -34,6 +31,7 @@ class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrgan
 class "<b>organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
 class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>positie</b> (org:Post)" as org_Post [[#org%3APost]]
 class "<b>postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
 class "<b>aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
@@ -43,7 +41,8 @@ class "<b>rol</b> (org:Role)" as org_Role [[#org%3ARole]]
 class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
 
-org_FormalOrganization --|> org_Organization #blue;line.dotted;text:blue
+
+schema_Country : naam : <i>xsd:string</i> [1..1]
 
 
 
@@ -54,6 +53,7 @@ schema_ContactPoint : telefoonnummer : <i>xsd:string</i> [0..*]
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
+haOrg_ContentPartner : aanvraagformulier : <i>xsd:string</i> [0..*]
 haOrg_ContentPartner : heeft een identificator : <i>xsd:string</i> [1..1]
 haOrg_ContentPartner : laat bezoekertool toe : <i>xsd:boolean</i> [1..1]
 haOrg_ContentPartner : laat overlay toe : <i>xsd:boolean</i> [1..1]
@@ -71,7 +71,6 @@ haOrg_ServiceProvider --|> org_Organization #blue;line.dotted;text:blue
 haOrg_ServiceProvider : heeft een identificator : <i>xsd:string</i> [1..1]
 
 
-haOrg_DigitizationPartner --|> haOrg_ServiceProvider #blue;line.dotted;text:blue
 
 haOrg_DigitizationPartner : heeft een identificator : <i>xsd:string</i> [1..1]
 
@@ -85,17 +84,15 @@ haOrg_EducationalPartner --> schema_Person :heeft account manager [1..1]  >
 
 
 
-
-
 org_Organization : alternatieve naam/label : <i>rdf:langString</i> [0..*]
 org_Organization : beschrijving : <i>rdf:langString</i> [0..*]
-org_Organization : heeft een identificator : <i>xsd:string</i> [0..1]
+org_Organization : heeft een identificator : <i>xsd:string</i> [1..1]
 org_Organization : homepagina : <i>IRI</i> [0..1]
 org_Organization : sector : <i>xsd:string</i> [0..1]
 org_Organization : tenant naam : <i>xsd:string</i> [0..*]
 org_Organization : voorkeursnaam/-label : <i>rdf:langString</i> [1..*]
 
-org_Organization --> haOrg_Logo :logo [0..*]  > 
+org_Organization --> haOrg_Logo :hoofdlogo [0..1]  \llogo [0..*]  > 
 org_Organization --> haOrg_OrganizationType :classificatie [0..*]  > 
 org_Organization --> org_OrganizationalUnit :heeft een eenheid [0..*]  > 
 org_Organization --> org_Post :heeft positie [0..*]  > 
@@ -112,6 +109,7 @@ org_OrganizationalUnit --> org_Organization :organisatie-eenheid van [1..*]  >
 haOrg_OrganizationType --|> skos_Concept #blue;line.dotted;text:blue
 
 
+schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_Person : email : <i>xsd:string</i> [0..*]
 schema_Person : familienaam : <i>xsd:string</i> [1..1]
@@ -150,7 +148,7 @@ org_Role : voorkeursnaam/-label : <i>rdf:langString</i> [1..*]
 
 
 
-org_Site --> org_Organization :vestiging van [1..1]  > 
+org_Site --> org_Organization :vestiging van [1..*]  > 
 org_Site --> schema_PostalAddress :adres van de vestiging [0..1]  > 
 
 
