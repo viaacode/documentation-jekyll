@@ -1,13 +1,9 @@
-@prefix dc11: <http://purl.org/dc/elements/1.1/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
-@prefix edm: <http://www.europeana.eu/schemas/edm/> .
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
-@prefix evtObjRole: <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix haObj: <https://data.hetarchief.be/ns/object/> .
 @prefix haOrg: <https://data.hetarchief.be/ns/organization/> .
-@prefix ma: <http://www.w3.org/ns/ma-ont#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
@@ -15,24 +11,21 @@
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix rel: <http://id.loc.gov/vocabulary/preservation/relationshipSubType/> .
 @prefix schema: <https://schema.org/> .
-@prefix seq: <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:nb3d36a9fda014738a176fcc9259717e3b1 a rdfs:Class,
+_:n4cf11a7ced5b42e197e0377182d4375fb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:nb3d36a9fda014738a176fcc9259717e3b17 a rdfs:Class,
+_:n4cf11a7ced5b42e197e0377182d4375fb17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:nc4e4348fb1814b0fb9b1978adf833221b1 a rdfs:Class,
+_:n84dd63da59b040c2aa6c21c2f69b3eb6b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -267,7 +260,7 @@ skos:OrderedCollection a rdfs:Class,
         "Les collections ordonnées peuvent être utilisées lorsque vous souhaitez afficher un ensemble de concepts dans un ordre spécifique, et éventuellement sous une \"étiquette de nœud\"."@fr,
         "Geordende collecties kunnen worden gebruikt waar je een set van concepten wilt weergeven in een specifieke volgorde, en optioneel onder een 'knooppuntlabel'."@nl .
 
-skosxl:Label a rdfs:Class,
+<http://www.w3.org/2008/05/skos-xl#Label> a rdfs:Class,
         owl:Class ;
     rdfs:label "label"@en,
         "étiquette"@fr,
@@ -275,25 +268,13 @@ skosxl:Label a rdfs:Class,
     rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty skosxl:literalForm ] ;
+            owl:onProperty <http://www.w3.org/2008/05/skos-xl#literalForm> ] ;
     owl:disjointWith skos:Collection,
         skos:Concept,
         skos:ConceptScheme ;
     skos:definition "A special class of lexical entities."@en,
         "Une classe spéciale d'entités lexicales."@fr,
         "Een speciale klasse van lexicale entiteiten."@nl .
-
-org:FormalOrganization a rdfs:Class,
-        owl:Class ;
-    rdfs:label "Formal Organization"@en,
-        "Organisation Formelle"@fr,
-        "Formele Organisatie"@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
-    rdfs:subClassOf org:Organization,
-        foaf:Organization ;
-    skos:definition "An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities. Examples include a Corporation, Charity, Government or Church. Note that this is a super class of `gr:BusinessEntity` and it is recommended to use the GoodRelations vocabulary to denote Business classifications such as DUNS or NAICS."@en,
-        "Une Organisation reconnue, en particulier par les juridictions locales, ayant des droits et des responsabilités. Exemples : entreprises, association à but non-lucratif, collectivité, église. Notez que c'est une super-classe de `gr:BusinessEntity` et qu'il est recommandé d'utiliser le vocabulaire GoodRelations pour indiquer les classifications économiques comme le code NACE."@fr,
-        "Een organisatie dat wordt herkend als een officiele instantie door rechtelijke jurispudentie, met de daarbij behorende verantwoordelijkheden en rechten. Hieronder vallen bijvoorbeeld Bedrijven, liefdadigheidsinstellingen, overheden of kerken. Let op, dit is een superklasse van `gr:BusinessEntity` en het is gebruikelijk om Goodrelations vocabulaire te gebruiken om de klassificatie van de organisatie aan te geven middels DUNS of NAICS."@nl .
 
 org:Organization a rdfs:Class,
         owl:Class ;
@@ -384,6 +365,16 @@ prov:Entity a rdfs:Class,
         "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr,
         "Een entiteit is een fysiek, digitaal, conceptueel of een ander soort ding met enkele vaste aspecten; entiteiten kunnen echt of denkbeeldig zijn."@nl .
 
+haObj:CarrierRepresentation a rdfs:Class ;
+    rdfs:label "carrier representation"@en,
+        "représentation de porteur"@fr,
+        "drager representatie"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subClassOf premis:Representation ;
+    skos:definition "A physical or digital representation of an archived intellectual entity that is stored on a physical carrier such as a video tape, film reel, paper or canvas."@en,
+        "Une représentation physique ou numérique d'une entité intellectuelle (Intellectual Entity) archivée qui est stockée sur un porteur physique tel qu'une bande vidéo, une bobine de film, du papier ou une toile."@fr,
+        "Een fysieke of digitale weergave van een gearchiveerde intellectuele entiteit (Intellectual Entity) die is opgeslagen op een fysieke drager zoals een videoband, filmrol, papier of canvas."@nl .
+
 haObj:DigitalRepresentation a rdfs:Class ;
     rdfs:label "digital representation"@en,
         "représentation digitale"@fr,
@@ -393,6 +384,17 @@ haObj:DigitalRepresentation a rdfs:Class ;
     skos:definition "Digital representation of an archived intellectual entity."@en,
         "Représentation digitale d'une entité intellectuelle (Intellectual Entity) archivée."@fr,
         "Digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl .
+
+haObj:FragmentRepresentation a rdfs:Class ;
+    rdfs:label "fragment representation"@en,
+        "représentation fragment"@fr,
+        "fragment representatie"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subClassOf premis:DigitalRepresentation ;
+    owl:equivalentClass <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
+    skos:definition "A spatial or temporal segment of a file that serves as a partial digital representation of an archived Intellectual Entity."@en,
+        "Un segment spatial ou temporel d'un fichier qui sert de représentation numérique partielle d'une entité intellectuelle archivée."@fr,
+        "Een spatiaal of temporeel segment van een bestand die fungeert als een partiële digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl .
 
 haObj:LocalIdentifier a rdfs:Class ;
     rdfs:label "local identifier"@en,
@@ -405,15 +407,15 @@ haObj:LocalIdentifier a rdfs:Class ;
         "Un identifiant local pour un objet défini par ou connu par le partenaire de contenu, par exemple un code barre, un identifiant d'une base de données externe ou l'identifiant dans le système d'enregistrement de collection du partenaire de contenu."@fr,
         "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een externe database of de identificatie in het registratiesysteem van de collectie van de contentpartner."@nl .
 
-haObj:PhysicalRepresentation a rdfs:Class ;
-    rdfs:label "physical representation"@en,
-        "représentation physique"@fr,
-        "fysieke representatie"@nl ;
+haObj:PhysicalCarrier a rdfs:Class ;
+    rdfs:label "physical carrier"@en,
+        "porteur physique"@fr,
+        "fysieke drager"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subClassOf premis:Representation ;
-    skos:definition "Physical Representation of an archived intellectual entity, such as an analog AV carrier, a canvas, or a physical object like a sculpture."@en,
-        "Représentation physique d'un entité intellectuelle (Intellectual Entity) archivée, par exemple un support analogique de transmission, un canvas, ou un objet physique comme une sculpture."@fr,
-        "Fysieke representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity), zoals een analoge AV drager, een canvas, of een fysiek object zoals een beeldhouwwerk."@nl .
+    rdfs:subClassOf premis:StorageLocation ;
+    skos:definition "A physical carrier in which data, sound, images, etc., are stored.  For certain categories of material, the physical carrier consists of a storage medium (e.g., tape, film) sometimes encased in a plastic, metal, etc., housing (e.g., cassette, cartridge) that is an integral part of the item."@en,
+        "Un porteur physique dans lequel les données, le son, les images, etc., sont stockées.Pour certaines catégories de matériaux, le support physique se compose d'un support de stockage (par exemple, du ruban adhésif, du film) parfois enfermé dans un boîtier en plastique, en métal, etc., (par exemple, cassette, cartouche) qui fait partie intégrante de l'article."@fr,
+        "Een fysieke drager waarop data, geluid, beeld etc. zijn opgeslagen. Voor bepaalde materiaalcategorieën bestaat de fysieke drager uit een opslagmedium (bijv. tape, film), soms verpakt in een plastic, metalen, enz. behuizing (bijv. cassette, cartridge) die een integraal onderdeel vormt van het item."@nl .
 
 haOrg:ContentPartner a rdfs:Class ;
     rdfs:label "content partner"@en,
@@ -430,7 +432,7 @@ haOrg:DigitizationPartner a rdfs:Class ;
         "partenaire de digitalisation"@fr,
         "digitaliseringspartner"@nl ;
     rdfs:isDefinedBy haOrg: ;
-    rdfs:subClassOf haOrg:ServiceProvider ;
+    rdfs:subClassOf org:ServiceProvider ;
     skos:definition "An organization that provides digitisation services to meemoo."@en,
         "Une organisation qui fournit des services de digitalisation à meemoo."@fr,
         "Een organisatie die aan meemoo digitaliseringsdiensten levert."@nl .
@@ -526,13 +528,14 @@ schema:ContactPoint a rdfs:Class ;
         "Een aanspreekpunt, zoals een afdeling voor klachten van klanten."@nl .
 
 schema:Country a rdfs:Class ;
-    rdfs:label "country"@en,
-        "pays"@fr,
-        "land"@nl ;
-    rdfs:subClassOf schema:AdministrativeArea ;
-    skos:definition "A country."@en,
+    rdfs:label "Country"@en,
+        "Pays"@fr,
+        "Land"@nl ;
+    rdfs:comment "A country."@en,
         "Un pays."@fr,
-        "Een land."@nl .
+        "Een land."@nl ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:subClassOf schema:AdministrativeArea .
 
 schema:CreativeWork a rdfs:Class ;
     rdfs:label "creative work"@en,
@@ -667,31 +670,40 @@ schema:Role a rdfs:Class ;
         Deze eigenschappen kunnen worden toegevoegd aan een rolentiteit, die dan geassocieerd wordt met de hoofdentiteiten via normale eigenschappen zoals 'lid' (member) of 'acteur' (actor).
         """@nl .
 
-evtObjRole:out a owl:ObjectProperty ;
+schema:Thing a rdfs:Class ;
+    rdfs:label "Thing"@en,
+        "Chose"@fr,
+        "Ding"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The most generic type of item."@en,
+        "Le type d'élément le plus générique."@fr,
+        "Het meest generieke type item."@nl .
+
+<http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out> a owl:ObjectProperty ;
     rdfs:label "outcome"@en,
         "résultat"@fr,
         "uitkomst"@nl ;
     rdfs:domain premis:Event ;
-    rdfs:isDefinedBy evtObjRole: ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> ;
     rdfs:range premis:Object ;
     rdfs:subPropertyOf prov:generated ;
     skos:definition "The object in relation to the described event is the outcome of that event."@en,
         "L'objet dans la relation à l'événement (Event) décrit est le résultat de cet événement (Event)."@fr,
         "Het object in relatie tot de beschreven gebeurtenis (Event) is het resultaat van die gebeurtenis (Event)."@nl .
 
-evtObjRole:sou a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou> a owl:ObjectProperty ;
     rdfs:label "source"@en,
         "source"@fr,
         "bron"@nl ;
     rdfs:domain premis:Event ;
-    rdfs:isDefinedBy evtObjRole: ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/> ;
     rdfs:range premis:Object ;
     rdfs:subPropertyOf prov:used ;
     skos:definition "The object in relation to the described event that existed prior to that event and was used by it."@en,
         "L'objet dans la relation à l'événement (Event) décrit et qui existait avant cet événement (Event) et qui a été utilisé par celui-ci."@fr,
         "Het object in relatie tot de beschreven gebeurtenis (Event) dat bestond voor die gebeurtenis (Event) en die erdoor gebruikt werd."@nl .
 
-rel:doc a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/doc> a owl:ObjectProperty ;
     rdfs:label "documents"@en,
         "généralise"@fr,
         "documenteert"@nl ;
@@ -701,7 +713,7 @@ rel:doc a owl:ObjectProperty ;
         "Une relation entre les informations sur un objet d'environnement et l'objet d'environnement lui-même. Par exemple, un manuel d'utilisation a une relation 'documents' avec l'application logicielle Open Office. A une relation réciproque avec isDocumentedIn."@fr,
         "Een relatie tussen informatie over een omgevingsobject en het omgevingsobject zelf. Bijvoorbeeld, een gebruikershandleiding heeft een 'documents'-relatie met de Open Office-softwareapplicatie. Heeft een wederkerige relatie met isDocumentedIn."@nl .
 
-rel:gen a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/gen> a owl:ObjectProperty ;
     rdfs:label "generalizes"@en,
         "généralise"@fr,
         "veralgemeent"@nl ;
@@ -711,7 +723,7 @@ rel:gen a owl:ObjectProperty ;
         "Une Relation entre un objet d'environnement et un autre objet où l'objet décrit a une description plus générale que l'environnement lié plus spécifique. A une relation réciproque avec specializes."@fr,
         "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object een algemenere beschrijving is dan de meer specifieke verwante omgeving. Heeft een wederkerige relatie met specializes."@nl .
 
-rel:hsp a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsp> a owl:ObjectProperty ;
     rdfs:label "has Part"@en,
         "a partie"@fr,
         "heeft onderdeel"@nl ;
@@ -721,7 +733,7 @@ rel:hsp a owl:ObjectProperty ;
         "L'objet contient l'objet lié lorsqu'il s'agit de la même catégorie d'objet. Par exemple, une entité intellectuelle plus grande a une autre entité intellectuelle comme partie, ou un fichier composé (par exemple archive.tar) contient un autre fichier (par exemple text.xml). A une relation réciproque avec isPartOf."@fr,
         "Het object bevat het gerelateerde object wanneer ze tot dezelfde objectcategorie behoren. Bv. een grotere intellectuele entiteit bevat een andere intellectuele entiteit, of een samengesteld bestand (bv. archive.tar) bevat een ander bestand (bv. text.xml). Heeft een wederkerige relatie met isPartOf."@nl .
 
-rel:hsr a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hsr> a owl:ObjectProperty ;
     rdfs:label "has Root"@en,
         "est à la base de"@fr,
         "ligt aan de basis van"@nl ;
@@ -731,7 +743,7 @@ rel:hsr a owl:ObjectProperty ;
         "Uniquement pour une représentation (representation), l'objet lié est le fichier (file) qui doit être traité en premier afin de rendre la représentation comme il faut. Cela implique qu'un objet composé (c'est-à-dire composé de plusieurs fichiers (files)) nécessite qu'un fichier (file) soit pris en premier comme racine/base pour le rendre."@fr,
         "Alleen voor een representatie (representation) is het gerelateerde object het bestand (file) dat als eerste moet worden verwerkt om de representatie (representation) te kunnen renderen. Dit impliceert dat een samengesteld object (d.w.z. een object dat uit meerdere bestanden (file) bestaat) vereist dat één bestand (file) als eerste als root/basis wordt verwerkt om het te renderen."@nl .
 
-rel:hss a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/hss> a owl:ObjectProperty ;
     rdfs:label "has Source"@en,
         "a une source"@fr,
         "heeft een bron"@nl ;
@@ -741,7 +753,7 @@ rel:hss a owl:ObjectProperty ;
         "Une relation dans laquelle l'objet est dérivé de l'objet lié à la suite d'une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar a ce fichier Wordstar comme source. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec isSourceOf."@fr,
         "Een relatie waarbij het object is afgeleid van het verwante object als resultaat van een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat gecodeerd is in het WordStar-formaat, heeft dat Wordstar-bestand als zijn bron. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met isSourceOf."@nl .
 
-rel:idc a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/idc> a owl:ObjectProperty ;
     rdfs:label "is Documented In"@en,
         "est documenté dans"@fr,
         "is gedocumenteerd in"@nl ;
@@ -751,7 +763,7 @@ rel:idc a owl:ObjectProperty ;
         "Une relation entre un objet d'environnement et les informations qui le documentent. A une relation réciproque avec documents."@fr,
         "Een relatie tussen een omgevingsobject en de informatie die het documenteert. Heeft een wederkerige relatie met documents."@nl .
 
-rel:inc a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc> a owl:ObjectProperty ;
     rdfs:label "includes"@en,
         "inclut"@fr,
         "bevat"@nl ;
@@ -761,7 +773,7 @@ rel:inc a owl:ObjectProperty ;
         "Une relation dans laquelle l'objet décrit inclut l'objet référencé, lorsque les objets ont des catégories d'objets différentes. Par exemple, une représentation (representation) inclut des fichiers (files). A une relation réciproque avec isIncludedIn."@fr,
         "Een relatie waarbij het beschreven object het object bevat waarnaar wordt verwezen, wanneer objecten verschillende objectcategorieën hebben. Bijvoorbeeld, een representatie (representation) bevat bestanden (files). Heeft een wederkerige relatie met isIncludedIn."@nl .
 
-rel:irq a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/irq> a owl:ObjectProperty ;
     rdfs:label "is Required by"@en,
         "est requis par"@fr,
         "wordt vereist door"@nl ;
@@ -771,7 +783,7 @@ rel:irq a owl:ObjectProperty ;
         "La relation entre un objet d'environnement et un fichier (file) ou une représentation (representation), lorsque l'environnement est requis par les autres objets pour le rendu ou l'exécution. A une relation réciproque avec requires."@fr,
         "De relatie van een omgevingsobject tot een bestand (file) of representatie (representation), waarbij de omgeving door de andere objecten vereist wordt om te renderen of uit te voeren. Heeft een wederkerige relatie met requires."@nl .
 
-rel:isi a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi> a owl:ObjectProperty ;
     rdfs:label "is Included in"@en,
         "est inclus dans"@fr,
         "is inbegrepen in"@nl ;
@@ -781,7 +793,7 @@ rel:isi a owl:ObjectProperty ;
         "Une relation dans laquelle l'objet décrit est inclus dans l'objet référencé, lorsque les objets ont des catégories d'objets différentes, par exemple, un flux binaire (bitstream) dans un fichier (file), un fichier (file) dans une représentation (representation). A une relation réciproque avec includes."@fr,
         "Een relatie waarbij het beschreven object is inbegrepen in het object waarnaar wordt verwezen, wanneer de objecten verschillende objectcategorieën hebben, bijvoorbeeld een bitstream in een bestand (file), een bestand (file) in een representatie (representation). Heeft een wederkerige relatie met includes."@nl .
 
-rel:iso a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/iso> a owl:ObjectProperty ;
     rdfs:label "is Source of"@en,
         "est à la source de"@fr,
         "ligt aan de bron van"@nl ;
@@ -791,7 +803,7 @@ rel:iso a owl:ObjectProperty ;
         "L'objet lié est une version de l'objet source créée par une transformation. Par exemple, un fichier HTML qui est le produit d'une migration à partir d'un fichier codé au format WordStar, le fichier Wordstar a une relation 'isSourceOf' avec le fichier HTML. S'applique également à la relation entre l'original et une image disque. A une relation réciproque avec hasSource."@fr,
         "Het gerelateerde object is een versie van het bronobject gemaakt door een transformatie. Bijvoorbeeld, een HTML-bestand dat het product is van een migratie van een bestand dat is gecodeerd in het WordStar-formaat, het Wordstar-bestand heeft een 'isSourceOf'-relatie met het HTML-bestand. Geldt ook voor de relatie tussen het origineel en een schijfbestand. Heeft een wederkerige relatie met hasSource."@nl .
 
-rel:isp a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isp> a owl:ObjectProperty ;
     rdfs:label "is Part Of"@en,
         "fait partie de"@fr,
         "maakt onderdeel uit van"@nl ;
@@ -801,7 +813,7 @@ rel:isp a owl:ObjectProperty ;
         "Une relation dans laquelle l'objet est contenu dans l'objet lié lorsque ceux-ci sont de la même catégorie d'objet. Par exemple, une entité intellectuelle de site Web fait partie d'une entité intellectuelle de site Web plus grande. A une relation réciproque avec hasPart."@fr,
         "Een relatie waarbij het object deel uitmaakt van het gerelateerde object wanneer ze behoren tot dezelfde objectcategorie. Bv. een webpagina intellectuele entiteit maakt onderdeel uit van een grotere webpagina intellectuele entiteit. Heeft een wederkerige relatie met hasPart."@nl .
 
-rel:iss a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/iss> a owl:ObjectProperty ;
     rdfs:label "is Superseded by"@en,
         "a été remplacé par"@fr,
         "werd vervangen door"@nl ;
@@ -811,7 +823,7 @@ rel:iss a owl:ObjectProperty ;
         "Une relation entre un objet d'environnement et un autre objet où l'objet décrit a été remplacé par un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec supersedes."@fr,
         "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object is vervangen door een ander. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met supersedes."@nl .
 
-rel:req a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/req> a owl:ObjectProperty ;
     rdfs:label "requires"@en,
         "nécessite"@fr,
         "vereist"@nl ;
@@ -821,7 +833,7 @@ rel:req a owl:ObjectProperty ;
         "La relation d'un objet avec un autre objet, lorsqu'il nécessite un environnement particulier ou un objet non lié à l'environnement pour être rendu ou exécuté comme il faut. Par exemple, un fichier au format Word 97 nécessite MS Word 1997 pour être rendu. A une relation réciproque avec isRequiredBy."@fr,
         "De relatie van een object tot een ander object, waarbij het een bepaald omgevings- of niet-omgevingsobject nodig heeft om te worden weergegeven of om te worden uitgevoerd. Bijvoorbeeld, een bestand met de opmaak Word 97 vereist MS Word 1997 om het weer te geven. Heeft een wederkerige relatie met isRequiredBy."@nl .
 
-rel:spe a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/spe> a owl:ObjectProperty ;
     rdfs:label "specializes"@en,
         "spécialise"@fr,
         "specialiseert"@nl ;
@@ -831,7 +843,7 @@ rel:spe a owl:ObjectProperty ;
         "Une relation entre un objet d'environnement et un autre objet où l'objet décrit fournit des caractéristiques spécifiques, tandis que l'environnement lié est plus générique. A une relation réciproque avec generalizes."@fr,
         "Een relatie tussen een omgevingsobject en een ander object, waarbij het beschreven object specifieke kenmerken vertoont, terwijl de verwante omgeving meer generiek is. Heeft een wederkerige relatie met generalizes."@nl .
 
-rel:sup a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/sup> a owl:ObjectProperty ;
     rdfs:label "supersedes"@en,
         "remplace"@fr,
         "vervangt"@nl ;
@@ -841,62 +853,62 @@ rel:sup a owl:ObjectProperty ;
         "Une relation entre un objet d'environnement et un autre objet où l'objet décrit en remplace un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec isSupersededBy."@fr,
         "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object een ander object vervangt. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met isSupersededBy."@nl .
 
-ebucore:hasCaptioning a rdf:Property ;
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning> a rdf:Property ;
     rdfs:label "captioning"@en,
         "sous-titrage"@fr,
         "ondertiteling"@nl ;
-    rdfs:domain ebucore:Asset ;
-    rdfs:isDefinedBy ebucore: ;
-    rdfs:range ebucore:Captioning ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset> ;
+    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
+    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning> ;
     skos:definition "To signal the presence of Captioning."@en,
         "Pour signaler la présence du sous-titrage."@fr,
         "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
 
-ebucore:hasMediaFragment a rdf:Property ;
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment> a rdf:Property ;
     rdfs:label "fragment"@en,
         "a un fragment (de média)"@fr,
         "heeft (media)fragment"@nl ;
-    rdfs:domain ebucore:MediaResource ;
-    rdfs:isDefinedBy ebucore: ;
-    rdfs:range ebucore:MediaFragment ;
-    owl:equivalentProperty ma:hasFragment ;
-    owl:inverseOf ebucore:isMediaFragmentOf ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> ;
+    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
+    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
+    owl:equivalentProperty <http://www.w3.org/ns/ma-ont#hasFragment> ;
+    owl:inverseOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf> ;
     skos:definition "To define relation to MediaFragments within a MediaResource."@en,
         "Pour définir une relation entre des MediaFragments dans une MediaResource."@fr,
         "Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."@nl .
 
-ebucore:hasMimeType a rdf:Property ;
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType> a rdf:Property ;
     rdfs:label "mime type"@en,
         "mime type"@fr,
         "mime type"@nl ;
-    rdfs:domain ebucore:MediaResource ;
-    rdfs:isDefinedBy ebucore: ;
-    rdfs:range ebucore:MimeType,
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> ;
+    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
+    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MimeType>,
         xsd:string ;
-    rdfs:subPropertyOf ebucore:hasFormat ;
+    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat> ;
     skos:definition "To specify the Mime type of a Resource."@en,
         "Pour spécifier le type MIME d'une ressource."@fr,
         "Om het MIME type van een resource te specificeren."@nl .
 
-ebucore:hasObjectType a rdf:Property ;
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasObjectType> a rdf:Property ;
     rdfs:label "object/asset type"@en,
         "type d'objet/de bien"@fr,
         "type object/activum"@nl ;
-    rdfs:domain ebucore:EditorialObject ;
-    rdfs:isDefinedBy ebucore: ;
-    rdfs:range ebucore:ObjectType,
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject> ;
+    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
+    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ObjectType>,
         xsd:anyURI,
         xsd:string ;
     skos:definition "To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."@en,
         "Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."@fr,
         "Om een ObjectType te definiëren voor een BusinessObject (bv. boek, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."@nl .
 
-edm:isNextInSequence a owl:ObjectProperty ;
+<http://www.europeana.eu/schemas/edm/isNextInSequence> a owl:ObjectProperty ;
     rdfs:label "is next in sequence of"@en,
         "est le prochain dans la séquence de"@fr,
         "is de volgende in de reeks van"@nl ;
-    rdfs:isDefinedBy edm: ;
-    rdfs:subPropertyOf dc11:relation ;
+    rdfs:isDefinedBy <http://www.europeana.eu/schemas/edm/> ;
+    rdfs:subPropertyOf dc:relation ;
     skos:definition "edm:isNextInSequence relates two resources S and R that are ordered parts of the same resource A, and such that S comes immediately after R in the order created by their being parts of A."@en,
         "edm:isNextInSequence met en relation deux ressources S et R qui sont des parties ordonnées de la même ressource A, et telles que S vient immédiatement après R dans l'ordre créé par leur appartenance à A."@fr,
         "edm:isNextInSequence relateert twee resources S en R die geordende onderdelen zijn van dezelfde resource A, en wel zodanig dat S onmiddellijk na R komt in de volgorde die ontstaat doordat zij onderdelen zijn van A."@nl .
@@ -905,7 +917,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:nb3d36a9fda014738a176fcc9259717e3b1 ;
+    rdfs:domain _:n4cf11a7ced5b42e197e0377182d4375fb1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -967,13 +979,13 @@ premis:size a owl:DatatypeProperty ;
             owl:unionOf ( premis:Bitstream premis:File ) ] ;
     rdfs:isDefinedBy premis: ;
     rdfs:range xsd:nonNegativeInteger ;
-    skos:narrowMatch ebucore:fileSize .
+    skos:narrowMatch <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileSize> .
 
 premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:nb3d36a9fda014738a176fcc9259717e3b17 ;
+    rdfs:domain _:n4cf11a7ced5b42e197e0377182d4375fb17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -986,15 +998,15 @@ premis:storedAt a owl:ObjectProperty ;
     rdfs:isDefinedBy premis: ;
     rdfs:range premis:StorageLocation .
 
-seq:directlyFollows a owl:ObjectProperty ;
+<http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyFollows> a owl:ObjectProperty ;
     rdfs:label "directly follows"@en,
         "suit directement"@fr,
         "volgt direct op"@nl ;
     rdfs:domain owl:Thing ;
     rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
     rdfs:range owl:Thing ;
-    rdfs:subPropertyOf seq:follows ;
-    owl:inverseOf seq:directlyPrecedes ;
+    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> ;
+    owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> ;
     skos:definition "The intransitive follows relation. For example, Thursday directly follows Wednesday. Directness of precedence depends on the designer conceptualization."@en,
         "La relation intransitive de 'suivre directement'. Par exemple, jeudi suit directement mercredi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr,
         "De intransitieve 'volgt-direct-op' relatie. Bv. donderdag volgt direct op woensdag. De mate van 'directheid' bij het 'volgen-op' hangt af van het ontwerp van de bedenker."@nl .
@@ -1088,7 +1100,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:nc4e4348fb1814b0fb9b1978adf833221b1 ;
+    rdfs:range _:n84dd63da59b040c2aa6c21c2f69b3eb6b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1136,54 +1148,54 @@ skos:scopeNote a rdf:Property,
         "Une note qui aide à clarifier le sens et/ou l'utilisation d'un concept."@fr,
         "Een notitie die helpt om de betekenis en/of het gebruik van een concept te verduidelijken."@nl .
 
-skosxl:altLabel a rdf:Property,
+<http://www.w3.org/2008/05/skos-xl#altLabel> a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "alternative label"@en,
         "étiquette alternative"@fr,
         "alternatief label"@nl ;
     rdfs:comment "If C skosxl:altLabel L and L skosxl:literalForm V, then X skos:altLabel V."@en ;
     rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
-    rdfs:range skosxl:Label ;
+    rdfs:range <http://www.w3.org/2008/05/skos-xl#Label> ;
     rdfs:seeAlso skos:altLabel ;
     skos:definition "The property skosxl:altLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:altLabel."@en,
         "La propriété skosxl:altLabel est utilisée pour associer une skosxl:Label avec un skos:Concept. La propriété est analogue à skos:altLabel."@fr,
         "De eigenschap skosxl:altLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:altLabel."@nl .
 
-skosxl:hiddenLabel a rdf:Property,
+<http://www.w3.org/2008/05/skos-xl#hiddenLabel> a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "hidden label"@en,
         "étiquette cachée"@fr,
         "verborgen label"@nl ;
     rdfs:comment "If C skosxl:hiddenLabel L and L skosxl:literalForm V, then C skos:hiddenLabel V."@en ;
     rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
-    rdfs:range skosxl:Label ;
+    rdfs:range <http://www.w3.org/2008/05/skos-xl#Label> ;
     rdfs:seeAlso skos:hiddenLabel ;
     skos:definition "The property skosxl:hiddenLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:hiddenLabel."@en,
         "La propriété skosxl:hiddenLabel est utilisée pour associer une skosxl:Label avec un skos:Concept. La propriété est analogue à skos:hiddenLabel."@fr,
         "De eigenschap skosxl:hiddenLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:hiddenLabel."@nl .
 
-skosxl:labelRelation a rdf:Property,
+<http://www.w3.org/2008/05/skos-xl#labelRelation> a rdf:Property,
         owl:ObjectProperty,
         owl:SymmetricProperty ;
     rdfs:label "label relation"@en,
         "relation de l'étiquette"@fr,
         "labelrelatie"@nl ;
-    rdfs:domain skosxl:Label ;
+    rdfs:domain <http://www.w3.org/2008/05/skos-xl#Label> ;
     rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
-    rdfs:range skosxl:Label ;
+    rdfs:range <http://www.w3.org/2008/05/skos-xl#Label> ;
     skos:definition "The property skosxl:labelRelation is used for representing binary ('direct') relations between instances of the class skosxl:Label."@en,
         "La propriété skosxl:labelRelation est utilisée pour représenter les relations binaires («directes») entre les instances de la classe skosxl:Label."@fr,
         "De eigenschap skosxl:labelRelation wordt gebruikt voor het weergeven van binaire ('directe') relaties tussen instanties van de klasse skosxl:Label."@nl ;
     skos:scopeNote "skosxl:labelRelation is not intended to be used directly, but rather as the basis for a design pattern which can be refined for more specific labeling scenarios."@en .
 
-skosxl:prefLabel a rdf:Property,
+<http://www.w3.org/2008/05/skos-xl#prefLabel> a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "preferred label"@en,
         "étiquette préférée"@fr,
         "voorkeurslabel"@nl ;
     rdfs:comment "If C skosxl:prefLabel L and L skosxl:literalForm V, then X skos:prefLabel V."@en ;
     rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
-    rdfs:range skosxl:Label ;
+    rdfs:range <http://www.w3.org/2008/05/skos-xl#Label> ;
     rdfs:seeAlso skos:prefLabel ;
     skos:definition "The property skosxl:prefLabel is used to associate an skosxl:Label with a skos:Concept. The property is analogous to skos:prefLabel."@en,
         "La propriété skosxl:prefLabel est utilisée pour associer une skosxl:Label avec un skos:Concept. La propriété est analogue à skos:prefLabel."@fr,
@@ -1362,9 +1374,38 @@ foaf:homepage a rdf:Property ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" .
 
 <https://data.hetarchief.be/ns/description#ArchiveComponentShape> a sh:NodeShape ;
-    sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
+    sh:property [ a sh:PropertyShape ;
+            sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this archive component."@en,
+                "Indique une intellectualité ou un travail créatif qui fait partie de cette composante d'archives."@fr,
+                "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze archief component."@nl ;
+            sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en,
+                "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr,
+                "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+            sh:name "has part"@en,
+                "fait partie de"@fr,
+                "is deel van"@nl ;
+            sh:or ( [ sh:class premis:IntellectualEntity ] [ sh:class schema:ArchiveComponent ] ) ;
+            sh:path schema:hasPart ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:ArchiveComponent ;
+            sh:message "schema:isPartOf is not of class schema:ArchiveComponent."@en,
+                "schema:isPartOf n'est pas de la classe schema:ArchiveComponent."@fr,
+                "schema:isPartOf is niet van de klasse schema:ArchiveComponent."@nl ;
+            sh:name "is part of"@en,
+                "est partie de"@fr,
+                "is een deel van"@nl ;
+            sh:path schema:isPartOf ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:ArchiveComponent .
+
+<https://data.hetarchief.be/ns/description#CarrierRepresentationNodeShape> a sh:NodeShape ;
+    sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
+        <https://data.hetarchief.be/ns/description#IdentifierShape>,
+        <https://data.hetarchief.be/ns/description#NameShape> ;
+    sh:targetClass haObj:CarrierRepresentation .
 
 <https://data.hetarchief.be/ns/description#CollectionShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
@@ -1410,6 +1451,29 @@ foaf:homepage a rdf:Property ;
             sh:nodeKind sh:Literal ;
             sh:path schema:seasonNumber ;
             sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en,
+                "Indique une intellectualité ou un travail créatif qui fait partie de cette saison."@fr,
+                "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
+            sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en,
+                "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr,
+                "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+            sh:name "has part"@en,
+                "fait partie de"@fr,
+                "is deel van"@nl ;
+            sh:or ( [ sh:class premis:IntellectualEntity ] [ sh:class schema:CreativeWorkSeries ] ) ;
+            sh:path schema:hasPart ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:CreativeWorkSeries ;
+            sh:message "schema:isPartOf is not of class schema:CreativeWorkSeries."@en,
+                "schema:isPartOf n'est pas de la classe schema:CreativeWorkSeries."@fr,
+                "schema:isPartOf is niet van de klasse schema:CreativeWorkSeries."@nl ;
+            sh:name "is part of"@en,
+                "est partie de"@fr,
+                "is een deel van"@nl ;
+            sh:path schema:isPartOf ;
+            sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
@@ -1441,6 +1505,20 @@ foaf:homepage a rdf:Property ;
             sh:path schema:caption ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
+            sh:description "A thumbnail image relevant to the Digital Representation."@en,
+                "Une image miniature pertinente pour la représentation numérique."@fr,
+                "Een miniatuurafbeelding die relevant is voor de digitale weergave."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:thumbnailUrl is not an IRI"@en,
+                "schema:thumbnailUrl n'est pas un IRI"@fr,
+                "schema:thumbnailUrl is geen IRI"@nl ;
+            sh:name "thumbnail"@en,
+                "image miniature"@fr,
+                "miniatuurafbeelding"@nl ;
+            sh:nodeKind sh:IRI ;
+            sh:path schema:thumbnailUrl ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:datatype edtf:EDTF-level1 ;
             sh:maxCount 1 ;
             sh:message "schema:dateCreated is not of type EDTF-level1"@en,
@@ -1464,35 +1542,45 @@ foaf:homepage a rdf:Property ;
             sh:path schema:author ;
             sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
+        <https://data.hetarchief.be/ns/description#DurationShape>,
         <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass haObj:DigitalRepresentation .
 
 <https://data.hetarchief.be/ns/description#EpisodeShape> a sh:NodeShape ;
-    sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
+    sh:property [ a sh:PropertyShape ;
+            sh:class premis:IntellectualEntity ;
+            sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this episode."@en,
+                "Indique une intellectualité ou un travail créatif qui fait partie de cette episode."@fr,
+                "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze episode."@nl ;
+            sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en,
+                "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr,
+                "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+            sh:name "has part"@en,
+                "fait partie de"@fr,
+                "is deel van"@nl ;
+            sh:path schema:hasPart ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:Episode .
 
+<https://data.hetarchief.be/ns/description#FileNodeShape> a sh:NodeShape ;
+    sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
+        <https://data.hetarchief.be/ns/description#DurationShape>,
+        <https://data.hetarchief.be/ns/description#IdentifierShape>,
+        <https://data.hetarchief.be/ns/description#NameShape> ;
+    sh:targetClass premis:File .
+
 <https://data.hetarchief.be/ns/description#IntellectualEntityNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:dateTime ;
-            sh:maxCount 1 ;
-            sh:message "schema:duration is not of type xsd:dateTime"@en,
-                "schema:duration n'est pas de type xsd:dateTime"@fr,
-                "schema:duration is niet van het type xsd:dateTime"@nl ;
-            sh:name "duration"@en,
-                "durée"@fr,
-                "duur"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:duration ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
             sh:datatype edtf:EDTF-level1 ;
             sh:maxCount 1 ;
             sh:message "schema:dateCreated is not of type EDTF-level1"@en,
                 "schema:dateCreated n'est pas de type EDTF-level1"@fr,
                 "schema:dateCreated is niet van het type EDTF-level1"@nl ;
+            sh:minCount 1 ;
             sh:name "date created"@en,
                 "date de création"@fr,
                 "aangemaakt op"@nl ;
@@ -1542,8 +1630,7 @@ foaf:homepage a rdf:Property ;
             sh:path schema:contributor ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
+            sh:datatype rdf:langString ;
             sh:message "schema:abstract is not of type string"@en,
                 "schema:abstract n'est pas de type string"@fr,
                 "schema:abstract is niet van het type string"@nl ;
@@ -1552,9 +1639,11 @@ foaf:homepage a rdf:Property ;
                 "samenvatting"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path schema:abstract ;
-            sh:severity sh:Violation ],
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
+            sh:maxCount 1 ;
             sh:message "schema:genre is not of type string"@en,
                 "schema:genre n'est pas de type string"@fr,
                 "schema:genre is niet van het type string"@nl ;
@@ -1586,7 +1675,7 @@ foaf:homepage a rdf:Property ;
             sh:path schema:temporal ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
+            sh:datatype rdf:langString ;
             sh:message "schema:keywords is not of type string"@en,
                 "schema:keywords n'est pas de type string"@fr,
                 "schema:keywords is niet van het type string"@nl ;
@@ -1640,7 +1729,7 @@ foaf:homepage a rdf:Property ;
             sh:path schema:copyrightHolder ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
+            sh:datatype rdf:langString ;
             sh:message "schema:copyrightNotice is not of type string"@en,
                 "schema:copyrightNotice n'est pas de type string"@fr,
                 "schema:copyrightNotice is niet van het type string"@nl ;
@@ -1662,7 +1751,18 @@ foaf:homepage a rdf:Property ;
             sh:path schema:copyrightYear ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
+            sh:datatype rdf:langString ;
+            sh:message "dct:rights is not of type string"@en,
+                "dct:rights n'est pas de type string"@fr,
+                "dct:rights is niet van het type string"@nl ;
+            sh:name "rights information"@en,
+                "informations sur les droits"@fr,
+                "rechteninformatie"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path dct:rights ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
             sh:message "schema:creditText is not of type string"@en,
                 "schema:creditText n'est pas de type string"@fr,
                 "schema:creditText is niet van het type string"@nl ;
@@ -1683,6 +1783,28 @@ foaf:homepage a rdf:Property ;
             sh:path schema:about ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:message "schema:artform is not of type language string"@en,
+                "schema:artform n'est pas de type language string"@fr,
+                "schema:artform is niet van het type language string"@nl ;
+            sh:name "artform"@en,
+                "forme d'art"@fr,
+                "kunstvorm"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:artform ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:message "schema:artMedium is not of type language string"@en,
+                "schema:artMedium n'est pas de type language string"@fr,
+                "schema:artMedium is niet van het type language string"@nl ;
+            sh:name "art medium"@en,
+                "moyen d'art"@fr,
+                "kunst medium"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:artMedium ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:class haOrg:ContentPartner ;
             sh:maxCount 1 ;
             sh:message "The maintainer of the IntellectualEntity must be a ContentPartner."@en,
@@ -1693,66 +1815,6 @@ foaf:homepage a rdf:Property ;
                 "mainteneur/responsable"@fr,
                 "beheerder"@nl ;
             sh:path schema:maintainer ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:message "schema:alternateName is not of type string"@en,
-                "schema:alternateName n'est pas de type string"@fr,
-                "schema:alternateName is niet van het type string"@nl ;
-            sh:name "alternate name"@en,
-                "nom alternatif"@fr,
-                "alternatieve naam"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:alternateName ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:message "schema:isPartOf is not of class schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@en,
-                "schema:isPartOf n'est pas de la classe schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@fr,
-                "schema:isPartOf is niet van de klasse schema:ArchiveComponent/schema:CreativeWorkSeries/schema:Episode"@nl ;
-            sh:name "is part of"@en,
-                "est partie de"@fr,
-                "is een deel van"@nl ;
-            sh:or ( [ sh:class schema:ArchiveComponent ] [ sh:class schema:CreativeWorkSeries ] [ sh:class schema:Episode ] ) ;
-            sh:path schema:isPartOf ;
-            sh:severity sh:Violation ],
-        <https://data.hetarchief.be/ns/description#DescriptionShape>,
-        <https://data.hetarchief.be/ns/description#IdentifierShape>,
-        <https://data.hetarchief.be/ns/description#NameShape> ;
-    sh:targetClass premis:IntellectualEntity .
-
-<https://data.hetarchief.be/ns/description#PhysicalRepresentationNodeShape> a sh:NodeShape ;
-    sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:message "schema:artform is not of type string"@en,
-                "schema:artform n'est pas de type string"@fr,
-                "schema:artform is niet van het type string"@nl ;
-            sh:name "artform"@en,
-                "forme d'art"@fr,
-                "kunstvorm"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:artform ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:message "schema:artMedium is not of type string"@en,
-                "schema:artMedium n'est pas de type string"@fr,
-                "schema:artMedium is niet van het type string"@nl ;
-            sh:name "art medium"@en,
-                "moyen d'art"@fr,
-                "kunst medium"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:artMedium ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:class schema:QuantitativeValue ;
-            sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en,
-                "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
-                "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
-            sh:name "depth"@en,
-                "profondeur"@fr,
-                "diepte"@nl ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path schema:depth ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
@@ -1769,6 +1831,18 @@ foaf:homepage a rdf:Property ;
             sh:path dct:format ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:message "dct:medium is not of type string "@en,
+                "dct:medium n'est pas de type string"@fr,
+                "dct:medium is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "medium"@en,
+                "médium"@fr,
+                "medium"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path dct:medium ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:class schema:QuantitativeValue ;
             sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en,
                 "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
@@ -1780,16 +1854,100 @@ foaf:homepage a rdf:Property ;
             sh:path schema:height ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:message "dct:medium is not of type string "@en,
-                "dct:medium n'est pas de type string"@fr,
-                "dct:medium is niet van het type string"@nl ;
-            sh:minCount 1 ;
-            sh:name "medium"@en,
-                "médium"@fr,
-                "medium"@nl ;
+            sh:class schema:QuantitativeValue ;
+            sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en,
+                "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
+                "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+            sh:name "depth"@en,
+                "profondeur"@fr,
+                "diepte"@nl ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path schema:depth ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:QuantitativeValue ;
+            sh:message "schema:width is not a blank node or of class schema:QuantitativeValue"@en,
+                "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
+                "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+            sh:name "width"@en,
+                "largeur"@fr,
+                "breedte"@nl ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path schema:width ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:message "schema:alternateName is not of type string"@en,
+                "schema:alternateName n'est pas de type string"@fr,
+                "schema:alternateName is niet van het type string"@nl ;
+            sh:name "alternate name"@en,
+                "nom alternatif"@fr,
+                "alternatieve naam"@nl ;
             sh:nodeKind sh:Literal ;
-            sh:path dct:medium ;
+            sh:path schema:alternateName ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:message "schema:isPartOf is not of class schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode or schema:Collection."@en,
+                "schema:isPartOf n'est pas de la classe schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode ou schema:Collection."@fr,
+                "schema:isPartOf is niet van de klasse schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode of schema:Collection."@nl ;
+            sh:name "is part of"@en,
+                "est partie de"@fr,
+                "is een deel van"@nl ;
+            sh:or ( [ sh:class schema:ArchiveComponent ] [ sh:class schema:CreativeWorkSeries ] [ sh:class schema:Episode ] [ sh:class schema:Collection ] ) ;
+            sh:path schema:isPartOf ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#DescriptionShape>,
+        <https://data.hetarchief.be/ns/description#IdentifierShape>,
+        <https://data.hetarchief.be/ns/description#NameShape> ;
+    sh:targetClass premis:IntellectualEntity .
+
+<https://data.hetarchief.be/ns/description#PhysicalCarrierNodeShape> a sh:NodeShape ;
+    sh:property [ sh:class schema:Brand ;
+            sh:description "Brand of the physical carrier."@en,
+                "Marque du porteur physique."@fr,
+                "Merk van de fysieke drager."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:brand has more than one value or not a schema:Brand"@en,
+                "schema:brand a plus d'une valeur ou n'est pas une schema:Brand"@fr,
+                "schema:brand heeft meer dan één waarde of is geen schema:Brand"@nl ;
+            sh:name "brand"@en,
+                "marque"@fr,
+                "merk"@nl ;
+            sh:path schema:brand ;
+            sh:severity sh:Violation ],
+        [ sh:class skos:Concept ;
+            sh:description "Phenomenon-usually under the influence of physical or chemical factors-that may jeopardize the integrity and consultability of the data on the carrier."@en,
+                "Phénomène, habituellement sous l'influence de facteurs physiques ou chimiques - qui peut compromettre l'intégrité et la consultation des données sur le transporteur."@fr,
+                "Fenomeen – doorgaans onder invloed van fysische of chemische factoren – die mogelijks de integriteit en raadpleegbaarheid van de gegevens op de drager in gevaar kan brengen."@nl ;
+            sh:message "haObj:preservationProblem not a skos:Concept"@en,
+                "haObj:preservationProblem n'est pas un skos:Concept"@fr,
+                "haObj:preservationProblem is geen skos:Concept"@nl ;
+            sh:name "preservation problem"@en,
+                "problème de préservation"@fr,
+                "preservatieprobleem"@nl ;
+            sh:path haObj:preservationProblem ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:QuantitativeValue ;
+            sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en,
+                "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
+                "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+            sh:name "height"@en,
+                "hauteur"@fr,
+                "hoogte"@nl ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path schema:height ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:QuantitativeValue ;
+            sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en,
+                "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
+                "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+            sh:name "depth"@en,
+                "profondeur"@fr,
+                "diepte"@nl ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path schema:depth ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class schema:QuantitativeValue ;
@@ -1805,7 +1963,7 @@ foaf:homepage a rdf:Property ;
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
-    sh:targetClass haObj:PhysicalRepresentation .
+    sh:targetClass haObj:PhysicalCarrier .
 
 <https://data.hetarchief.be/ns/description#PlaceShape> a sh:NodeShape ;
     sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
@@ -1850,13 +2008,13 @@ foaf:homepage a rdf:Property ;
 
 <https://data.hetarchief.be/ns/description#RoleNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:message "schema:author is not of class schema:Person or org:Organization"@en,
-                "schema:author n'est pas de la classe schema:Person ou org:Organization"@fr,
-                "schema:author is niet van de klasse schema:Person of org:Organization"@nl ;
+            sh:message "schema:author is not of class schema:Thing, schema:Person or org:Organization"@en,
+                "schema:author n'est pas de la classe schema:Thing, schema:Person ou org:Organization"@fr,
+                "schema:author is niet van de klasse schema:Thing, schema:Person of org:Organization"@nl ;
             sh:name "author"@en,
                 "auteur"@fr,
                 "auteur"@nl ;
-            sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] ) ;
+            sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] [ sh:class schema:Thing ] ) ;
             sh:path schema:author ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
@@ -1866,7 +2024,7 @@ foaf:homepage a rdf:Property ;
             sh:name "contributor"@en,
                 "contributeur"@fr,
                 "bijdrager"@nl ;
-            sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] ) ;
+            sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] [ sh:class schema:Thing ] ) ;
             sh:path schema:contributor ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
@@ -1876,7 +2034,7 @@ foaf:homepage a rdf:Property ;
             sh:name "publisher"@en,
                 "éditeur"@fr,
                 "uitgever"@nl ;
-            sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] ) ;
+            sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] [ sh:class schema:Thing ] ) ;
             sh:path schema:publisher ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
@@ -1905,11 +2063,16 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ] ;
     sh:targetClass schema:Role .
 
+<https://data.hetarchief.be/ns/description#ThingShape> a sh:NodeShape ;
+    sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
+        <https://data.hetarchief.be/ns/description#NameShape> ;
+    sh:targetClass schema:Thing .
+
 haOrg:allowsBZT a rdf:Property ;
     rdfs:label "allows bezoekertool"@en,
         "permet le bezoekertool"@fr,
         "laat bezoekertool toe"@nl ;
-    rdfs:domain org:ContentPartner ;
+    rdfs:domain haOrg:ContentPartner ;
     rdfs:isDefinedBy haOrg: ;
     rdfs:range rdfs:Literal ;
     skos:definition "Gives admission to disseminate the content of which this content partner is the owner on the Bezoekertool of meemoo."@en,
@@ -1920,7 +2083,7 @@ haOrg:allowsOverlay a rdf:Property ;
     rdfs:label "allows overlay"@en,
         "permet la superposition"@fr,
         "laat overlay toe"@nl ;
-    rdfs:domain org:ContentPartner ;
+    rdfs:domain haOrg:ContentPartner ;
     rdfs:isDefinedBy haOrg: ;
     rdfs:range rdfs:Literal ;
     skos:definition "Gives admission to present the content of which this content partner is the owner with an overlay."@en,
@@ -1937,6 +2100,17 @@ haOrg:hasLogo a rdf:Property ;
     skos:definition "A logo for an organization."@en,
         "Un logo pour une organisation."@fr,
         "Een logo voor een organisatie."@nl .
+
+haOrg:requestForm a rdf:Property ;
+    rdfs:label "request form"@en,
+        "formulaire de demande"@fr,
+        "aanvraagformulier"@nl ;
+    rdfs:domain haOrg:ContentPartner ;
+    rdfs:isDefinedBy haOrg: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "A link to a form with which a user can request content from the content partner."@en,
+        "Un lien vers un formulaire avec lequel un utilisateur peut demander du contenu au partenaire de contenu."@fr,
+        "Een link naar een formulier waarmee een gebruiker materiaal kan aanvragen bij de contentpartner "@nl .
 
 haOrg:sector a rdf:Property ;
     rdfs:label "sector"@en,
@@ -2046,6 +2220,17 @@ schema:email a rdf:Property ;
         "Adresse e-mail."@fr,
         "E-mailadres."@nl .
 
+schema:endTime a rdf:Property ;
+    rdfs:label "endTime"@en,
+        "heure de fin"@fr,
+        "eindtijd"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition """
+    The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
+    Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."""@en,
+        "La fin de quelque chose.Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple.John a écrit un livre de janvier à * décembre *.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps de la fin d'un clip dans un fichier plus grand."@fr,
+        "De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand. "@nl .
+
 schema:episodeNumber a rdf:Property ;
     rdfs:label "episode number"@en,
         "numéro d'épisode"@fr,
@@ -2077,6 +2262,24 @@ schema:givenName a rdf:Property ;
         "Prénom. Aux États-Unis, le premier nom d'une Personne."@fr,
         "Voornaam. In de V.S., de eerste naam van een Persoon."@nl .
 
+schema:instrument a rdf:Property ;
+    rdfs:label "instrument"@en,
+        "instrument"@fr,
+        "instrument"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The object that helped the agent perform the action. E.g. John wrote a book with *a pen*."@en,
+        "L'objet qui a aidé l'agent à effectuer l'action. Par exemple: John a écrit un livre avec *un stylo*."@fr,
+        "Het object dat de agent heeft geholpen de actie uit te voeren. Bijv. John schreef een boek met *een pen*."@nl .
+
+schema:model a rdf:Property ;
+    rdfs:label "model"@en,
+        "modèle"@fr,
+        "model"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The model of the product. Use with the URL of a ProductModel or a textual representation of the model identifier. The URL of the ProductModel can be from an external source. It is recommended to additionally provide strong product identifiers via the gtin8/gtin13/gtin14 and mpn properties."@en,
+        "Le modèle du produit.Utilisez avec l'URL d'un produit de produit ou une représentation textuelle de l'identifiant du modèle. L'URL du ProductModel peut provenir d'une source externe.Il est recommandé de fournir en outre des identificateurs de produits solides via les propriétés GTIN8 / GTIN13 / GTIN14 et MPN."@fr,
+        "Het model van het product.Gebruik met de URL van een productmodel of een tekstuele weergave van de model-ID. De URL van het productmodel kan uit een externe bron zijn.Het wordt aanbevolen om bovendien sterke productidentifiers te bieden via de eigenschappen GTIN8/GTIN13/GTIN14 en MPN."@nl .
+
 schema:postOfficeBoxNumber a rdf:Property ;
     rdfs:label "postOfficeBoxNumber"@en,
         "numéroBoîtePostale"@fr,
@@ -2101,6 +2304,25 @@ schema:postalCode a rdf:Property ;
         schema:GeoShape,
         schema:PostalAddress ;
     schema:rangeIncludes schema:Text .
+
+schema:serialNumber a rdf:Property ;
+    rdfs:label "serialNumber"@en,
+        "numéro de série"@fr,
+        "serienummer"@nl ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:subPropertyOf schema:identifier ;
+    skos:definition "The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer."@en,
+        "Le numéro de série ou tout identifiant alphanumérique d'un produit particulier. Lorsqu'il est attaché à une offre, il s'agit d'un raccourci pour le numéro de série du produit inclus dans l'offre."@fr,
+        "Het serienummer of een alfanumerieke identificatie van een bepaald product. Wanneer het wordt bevestigd aan een aanbieding, is het een snelkoppeling voor het serienummer van het product dat in het aanbod is opgenomen."@nl .
+
+schema:startTime a rdf:Property ;
+    rdfs:label "startTime"@en,
+        "heure de départ"@fr,
+        "starttijd"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."@en,
+        "Le début du temps de quelque chose. Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple. John a écrit un livre de * janvier * à décembre.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps du début d'un clip dans un fichier plus grand. \\ n \\ nnote que l'événement utilise StartDate / EndDate au lieu de démarrage / fin de fin, même lors de la description des dates avec les temps. Cette situation peut être clarifiée dans les révisions futures."@fr,
+        "De starttijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd die naar verwachting zal beginnen.Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd.Bijv.John schreef een boek van * januari * tot december.Voor media, inclusief audio en video, is dit de tijdoffset van het begin van een clip binnen een groter bestand. \\ n \\ nnote die gebeurtenis gebruikt startdate/enddate in plaats van starttijd/eindtijd, zelfs bij het beschrijven van datums met tijden. Deze situatie kan worden verduidelijkt in toekomstige herzieningen."@nl .
 
 schema:streetAddress a rdf:Property ;
     rdfs:label "streetAddress"@en,
@@ -2127,6 +2349,15 @@ schema:telephone a rdf:Property ;
         schema:Place ;
     schema:rangeIncludes schema:Text .
 
+schema:version a rdf:Property ;
+    rdfs:label "version"@en,
+        "version"@fr,
+        "versie"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The version of the CreativeWork embodied by a specified resource."@en,
+        "La version du Creativework incarné par une ressource spécifiée."@fr,
+        "De versie van het Creative Work dat is belichaamd door een opgegeven item."@nl .
+
 dct:available a rdf:Property ;
     rdfs:label "date available"@en,
         "date de disponibilité"@fr,
@@ -2146,18 +2377,18 @@ dct:format a rdf:Property ;
     dct:modified "2008-01-14"^^xsd:date ;
     rdfs:isDefinedBy dct: ;
     rdfs:range dct:MediaTypeOrExtent ;
-    rdfs:subPropertyOf dc11:format ;
+    rdfs:subPropertyOf dc:format ;
     skos:definition "The file format, physical medium, or dimensions of the resource."@en,
         "Le format du fichier, le support physique ou les dimensions de la ressource."@fr,
         "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl .
 
-ebucore:isMediaFragmentOf a rdf:Property ;
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf> a rdf:Property ;
     rdfs:label "media fragment source"@en,
         "source du fragment de média (MediaFragment)"@fr,
         "bron van het mediafragment (MediaFragment)"@nl ;
-    rdfs:domain ebucore:MediaFragment ;
-    rdfs:isDefinedBy ebucore: ;
-    rdfs:range ebucore:MediaResource ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
+    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
+    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> ;
     skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en,
         "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
         "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl .
@@ -2170,19 +2401,19 @@ premis:note a owl:DatatypeProperty ;
     rdfs:range rdfs:Literal ;
     rdfs:subPropertyOf dct:description .
 
-seq:directlyPrecedes a owl:ObjectProperty ;
+<http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#directlyPrecedes> a owl:ObjectProperty ;
     rdfs:label "directly precedes"@en,
         "précède directement"@fr,
         "gaat direct vooraf aan"@nl ;
     rdfs:domain owl:Thing ;
     rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
     rdfs:range owl:Thing ;
-    rdfs:subPropertyOf seq:precedes ;
+    rdfs:subPropertyOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> ;
     skos:definition "The intransitive precedes relation. For example, Monday directly precedes Tuesday. Directness of precedence depends on the designer conceptualization."@en,
         "La relation intransitive de 'préceder'. Par exemple, lundi précède directement mardi. Le caractère direct de la précédence dépend de la conceptualisation du concepteur."@fr,
         "De intransitieve 'gaat-vooraf-aan' relatie. Bv. maandag gaat direct vooraf aan dinsdag. De mate van 'direct-vooraf-gaan-aan' hangt af van het ontwerp van de bedenker."@nl .
 
-seq:precedes a owl:ObjectProperty,
+<http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#precedes> a owl:ObjectProperty,
         owl:TransitiveProperty ;
     rdfs:label "precedes"@en,
         "précède"@fr,
@@ -2190,7 +2421,7 @@ seq:precedes a owl:ObjectProperty,
     rdfs:domain owl:Thing ;
     rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl> ;
     rdfs:range owl:Thing ;
-    owl:inverseOf seq:follows ;
+    owl:inverseOf <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> ;
     skos:definition "A relation between entities, expressing a 'sequence' schema. E.g. 'year 1999 precedes 2000', 'deciding what coffee to use' precedes 'preparing coffee', 'World War II follows World War I', 'in the Milan to Rome autoroute, Bologna precedes Florence', etc. It can then be used between tasks, processes, time intervals, spatially locate objects, situations, etc. Subproperties can be defined in order to distinguish the different uses."@en,
         "Une relation entre entités, exprimant une 'séquence'. Par exemple, 'l'année 1999 précède l'année 2000', 'décider quel café à utiliser' précède 'préparer du café', 'sur l'autoroute de Milan à Rome, Bologne précède Florence', etc. Il peut être utilisé avec des tâches, des processus, des intervalles de temps, des objets dans l'espace, des situations, etc. Des sous-propriétés (subproperties) peuvent être définies pour distinguer les différentes utilisations."@fr,
         "Een relatie tussen entiteiten, die een 'sequentie' uitdrukt. Bv. 'het jaar 1999 gaat vooraf aan het jaar 2000', 'beslissen welke koffie te gebruiken' gaat vooraf aan 'koffie klaarmaken', 'op de autoweg van Milaan naar Rome, gaat Bologna vooraf aan Florence', etc. Het kan gebruikt worden bij taken, processen, tijdsintervallen, objecten in de ruimte, situaties, etc. Subeigenschappen (subproperties) kunnen gedefinieerd worden om de verschillende gebruiken te onderscheiden."@nl .
@@ -2359,14 +2590,14 @@ skos:topConceptOf a rdf:Property,
         "Associe un concept au schéma de concepts dont il s'agit d'un concept de niveau supérieur."@fr,
         "Verbindt een concept met het conceptenschema waarvan het een bovenste niveau concept (top concept) is."@nl .
 
-skosxl:literalForm a rdf:Property,
+<http://www.w3.org/2008/05/skos-xl#literalForm> a rdf:Property,
         owl:DatatypeProperty ;
     rdfs:label "literal form"@en,
         "forme littérale"@fr,
         "letterlijke vorm"@nl ;
     rdfs:comment "If two instances of the class skosxl:Label have the same literal form, they are not necessarily the same resource."@en,
         "The range of skosxl:literalForm is the class of RDF plain literals."@en ;
-    rdfs:domain skosxl:Label ;
+    rdfs:domain <http://www.w3.org/2008/05/skos-xl#Label> ;
     rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
     skos:definition "The property skosxl:literalForm is used to give the literal form of an skosxl:Label."@en,
         "La propriété skosxl:literalForm est utilisée pour donner la forme littérale d'une skosxl:Label."@fr,
@@ -2469,53 +2700,59 @@ prov:wasGeneratedBy a owl:ObjectProperty ;
     rdfs:subPropertyOf prov:wasInfluencedBy ;
     owl:propertyChainAxiom ( prov:qualifiedGeneration prov:activity ) .
 
-haObj:hasAccesscopy a rdf:Property ;
+haObj:hasAccessCopy a rdf:Property ;
     rdfs:label "has access copy"@en,
         "a copie d'accès"@fr,
         "heeft toegangskopie"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf rel:isr ;
-    owl:inverseOf haObj:isAccesscopyOf .
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    owl:inverseOf haObj:isAccessCopyOf .
 
-haObj:hasMaster a rdf:Property ;
+haObj:hasMasterCopy a rdf:Property ;
     rdfs:label "has archiving master"@en,
         "a copie principale"@fr,
         "heeft archiefmaster"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf rel:isr ;
-    owl:inverseOf haObj:isMasterOf .
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    owl:inverseOf haObj:isMasterCopyOf .
 
-haObj:hasMezzanine a rdf:Property ;
+haObj:hasMezzanineCopy a rdf:Property ;
     rdfs:label "has mezzanine format"@en,
         "a format mezzanine"@fr,
         "heeft mezzanineformaat"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf rel:isr ;
-    owl:inverseOf haObj:isMezzanineOf .
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> ;
+    owl:inverseOf haObj:isMezzanineCopyOf .
 
-haObj:isAccesscopyOf a rdf:Property ;
+haObj:isAccessCopyOf a rdf:Property ;
     rdfs:label "is access copy of"@en,
         "est copie d'accès de"@fr,
         "is toegangskopie van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf rel:rep ;
-    owl:inverseOf haObj:hasAccesscopy .
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    owl:inverseOf haObj:hasAccessCopy .
 
-haObj:isMasterOf a rdf:Property ;
+haObj:isMasterCopyOf a rdf:Property ;
     rdfs:label "is archiving master of"@en,
         "est la copie principale de"@fr,
         "is archiefmaster van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf rel:rep ;
-    owl:inverseOf haObj:hasMaster .
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    owl:inverseOf haObj:hasMasterCopy .
 
-haObj:isMezzanineOf a rdf:Property ;
+haObj:isMezzanineCopyOf a rdf:Property ;
     rdfs:label "is mezzanine format of"@en,
         "est format mezzanine de"@fr,
         "is mezzanineformaat van"@nl ;
     rdfs:isDefinedBy haObj: ;
-    rdfs:subPropertyOf rel:rep ;
-    owl:inverseOf haObj:hasMezzanine .
+    rdfs:subPropertyOf <http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> ;
+    owl:inverseOf haObj:hasMezzanineCopy .
+
+haObj:preservationProblem a rdf:Property ;
+    rdfs:label "preservation problem"@en,
+        "problème de préservation"@fr,
+        "preservatieprobleem"@nl ;
+    rdfs:isDefinedBy haObj: .
 
 haOrg:hasAccountManager a rdf:Property ;
     rdfs:label "has an account manager"@en,
@@ -2610,6 +2847,15 @@ schema:artform a rdf:Property ;
         "La forme artistique, le support ou le mode de ce travail créatif, par exemple Peinture, Dessin, Sculpture, Impression, Photographie, Assemblage, Collage, etc."@fr,
         "De kunstvorm, het medium of de vorm van dit creatieve werk, bijvoorbeeld Schilderij, Tekening, Beeldhouwwerk, Print, Foto, Assemblage, Collage, etc."@nl .
 
+schema:brand a rdf:Property ;
+    rdfs:label "brand"@en,
+        "marque"@fr,
+        "merk"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person."@en,
+        "La (s) marque (s) associée à un produit ou à un service, ou la (s) marque (s) entretenue par une organisation ou un homme d'affaires."@fr,
+        "Het merk (en) geassocieerd met een product of service, of het merk (en) dat wordt onderhouden door een organisatie of ondernemer."@nl .
+
 schema:caption a rdf:Property ;
     rdfs:label "caption"@en,
         "sous-titrage"@fr,
@@ -2678,17 +2924,6 @@ schema:datePublished a rdf:Property ;
         "La date de la première diffusion ou publication."@fr,
         "De datum waarop de eerste uitzending/publicatie plaatsvond."@nl .
 
-schema:depth a rdf:Property ;
-    rdfs:label "depth"@en,
-        "profondeur"@fr,
-        "diepte"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range schema:QuantitativeValue ;
-    skos:definition "The depth of the item."@en,
-        "La profondeur de l'objet."@fr,
-        "De diepte van het item."@nl .
-
 schema:description a rdf:Property ;
     rdfs:label "description"@en,
         "description"@fr,
@@ -2723,29 +2958,6 @@ schema:genre a rdf:Property ;
         "Genre de l'œuvre créative (CreativeWork), de la chaîne de télévision/diffusion ou du groupe."@fr,
         "Genre van het CreativeWork, uitzendkanaal of groep."@nl .
 
-schema:height a rdf:Property ;
-    rdfs:label "height"@en,
-        "hauteur"@fr,
-        "hoogte"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range schema:QuantitativeValue ;
-    skos:definition "The height of the item."@en,
-        "La hauteur de l'objet."@fr,
-        "De hoogte van het item."@nl .
-
-schema:identifier a rdf:Property ;
-    rdfs:label "identifier"@en,
-        "identifiant"@fr,
-        "identifier"@nl ;
-    rdfs:domain schema:Thing ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range xsd:string ;
-    owl:equivalentProperty dct:identifier ;
-    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
-        "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
-        "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
-
 schema:inLanguage a rdf:Property ;
     rdfs:label "in language"@en,
         "en langue"@fr,
@@ -2756,16 +2968,6 @@ schema:inLanguage a rdf:Property ;
     skos:definition "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en,
         "La langue du contenu ou de la performance ou utilisée dans une action. Veuillez utiliser l'un des codes de langue de la norme IETF BCP 47."@fr,
         "De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard."@nl .
-
-schema:isPartOf a rdf:Property ;
-    rdfs:label "is part of"@en,
-        "fait partie de"@fr,
-        "is onderdeel van"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    skos:definition "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of."@en,
-        "Indique un élément ou un CreativeWork qui fait partie de cet élément, ou de ce CreativeWork (dans un certain sens)."@fr,
-        "Geeft een item of CreativeWork aan waarvan dit item, of CreativeWork (in een bepaald opzicht), een onderdeel is."@nl .
 
 schema:keywords a rdf:Property ;
     rdfs:label "keywords"@en,
@@ -2857,6 +3059,15 @@ schema:temporal a rdf:Property ;
         "La couverture temporelle d'un travail créatif (CreativeWork) indique la période à laquelle s'applique le contenu, c'est-à-dire qu'il décrit soit par une date et heure (`DateTime`), soit par une série de caractères indiquant une période de temps en format ISO 8601."@fr,
         "De dekking in de tijd van een CreativeWork geeft aan over welke periode de inhoud handelt, bijvoorbeeld als een `xsd:dateTime` of als een tekstuele string die een tijdsinterval in ISO 8601 formaat aanduidt."@nl .
 
+schema:thumbnailUrl a rdf:Property ;
+    rdfs:label "thumbnailUrl"@en,
+        "URL miniature"@fr,
+        "miniatuur-url"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "A thumbnail image relevant to the Thing."@en,
+        "Une image miniature pertinente pour la chose."@fr,
+        "Een miniatuurafbeelding relevant voor het ding."@nl .
+
 schema:transcript a rdf:Property ;
     rdfs:label "transcript"@en,
         "transcription"@fr,
@@ -2901,17 +3112,6 @@ schema:value a rdf:Property ;
         "La valeur de la valeur quantitative."@fr,
         "De waarde van de kwantitatieve waarde."@nl .
 
-schema:width a rdf:Property ;
-    rdfs:label "width"@en,
-        "largeur"@fr,
-        "breedte"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range schema:QuantitativeValue ;
-    skos:definition "The width of the item."@en,
-        "La largeur de l'élément."@fr,
-        "De breedte van het item."@nl .
-
 dct:description a rdfs:Property ;
     rdfs:label "description"@en,
         "description"@fr,
@@ -2931,7 +3131,22 @@ dct:medium a rdf:Property ;
         "Le support matériel ou physique de la ressource"@fr,
         "Het materiaal of fysieke drager van de bron"@nl .
 
-seq:follows a owl:ObjectProperty,
+dct:rights a rdf:Property ;
+    rdfs:label "Rights"@en,
+        "Droits"@fr,
+        "Rechten"@nl ;
+    dct:description "Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.  Recommended practice is to refer to a rights statement with a URI.  If this is not possible or feasible, a literal value (name, label, or short text) may be provided."@en,
+        "En règle générale, les informations sur les droits comprennent une déclaration sur les différents droits de propriété associés à la ressource, y compris les droits de propriété intellectuelle.La pratique recommandée est de se référer à une déclaration de droits avec un URI.Si cela n'est pas possible ou possible, une valeur littérale (nom, étiquette ou texte court) peut être fourni."@fr,
+        "Doorgaans bevat rechteninformatie een verklaring over verschillende eigendomsrechten die verband houden met de bron, inclusief intellectuele eigendomsrechten.Aanbevolen praktijk is om te verwijzen naar een rechtenverklaring met een URI.Als dit niet mogelijk of haalbaar is, kan een letterlijke waarde (naam, label of korte tekst) worden verstrekt."@nl ;
+    dct:issued "2008-01-14"^^xsd:date ;
+    rdfs:isDefinedBy dct: ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf dc:rights ;
+    skos:definition "Information about rights held in and over the resource."@en,
+        "Informations sur les droits maintenus dans et au-dessus de la ressource."@fr,
+        "Informatie over rechten in en over de bron."@nl .
+
+<http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> a owl:ObjectProperty,
         owl:TransitiveProperty ;
     rdfs:label "follows"@en,
         "suit"@fr,
@@ -3011,6 +3226,19 @@ skos:narrowerTransitive a rdf:Property,
         "Par convention, skos:narrowerTransitive n'est pas utilisé pour faire des assertions. A la place, les propriétés peuvent être utilisées pour tirer des inferences sur la fermeture transitive de la relation hiérarchique, ce qui est utile par exemple lors de l'implémentation d'un algorithme simple d'expansion de requête dans une application de recherche."@fr,
         "Volgens conventie wordt skos:narrowerTransitive niet gebruikt om beweringen te doen. De eigenschappen kunnen wel gebruikt worden om inferenties te trekken over de transitieve sluiting van de hiërarchische relatie, wat bijvoorbeeld handig is bij het implementeren van een eenvoudig queryexpansie-algoritme in een zoekapplicatie."@nl .
 
+<https://data.hetarchief.be/ns/description#DurationShape> a sh:PropertyShape ;
+    sh:datatype xsd:duration ;
+    sh:maxCount 1 ;
+    sh:message "schema:duration is not of type xsd:dateTime"@en,
+        "schema:duration n'est pas de type xsd:dateTime"@fr,
+        "schema:duration is niet van het type xsd:dateTime"@nl ;
+    sh:name "duration"@en,
+        "durée"@fr,
+        "duur"@nl ;
+    sh:nodeKind sh:Literal ;
+    sh:path schema:duration ;
+    sh:severity sh:Violation .
+
 schema:contributor a rdf:Property ;
     rdfs:label "contributor"@en,
         "contributeur"@fr,
@@ -3034,6 +3262,40 @@ schema:dateCreated a rdf:Property ;
         "La date à laquelle le CreativeWork a été créé."@fr,
         "De datum waarin het CreativeWork werd gemaakt."@nl .
 
+schema:depth a rdf:Property ;
+    rdfs:label "depth"@en,
+        "profondeur"@fr,
+        "diepte"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range schema:QuantitativeValue ;
+    skos:definition "The depth of the item."@en,
+        "La profondeur de l'objet."@fr,
+        "De diepte van het item."@nl .
+
+schema:height a rdf:Property ;
+    rdfs:label "height"@en,
+        "hauteur"@fr,
+        "hoogte"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range schema:QuantitativeValue ;
+    skos:definition "The height of the item."@en,
+        "La hauteur de l'objet."@fr,
+        "De hoogte van het item."@nl .
+
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier"@en,
+        "identifiant"@fr,
+        "identifier"@nl ;
+    rdfs:domain schema:Thing ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty dct:identifier ;
+    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
+        "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
+        "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
+
 schema:publisher a rdf:Property ;
     rdfs:label "publisher"@en,
         "éditeur"@fr,
@@ -3045,7 +3307,18 @@ schema:publisher a rdf:Property ;
         "L'éditeur du travail créatif."@fr,
         "De uitgever van het creatief werk."@nl .
 
-rel:isr a owl:ObjectProperty ;
+schema:width a rdf:Property ;
+    rdfs:label "width"@en,
+        "largeur"@fr,
+        "breedte"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range schema:QuantitativeValue ;
+    skos:definition "The width of the item."@en,
+        "La largeur de l'élément."@fr,
+        "De breedte van het item."@nl .
+
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> a owl:ObjectProperty ;
     rdfs:label "is Represented by"@en,
         "est représenté par"@fr,
         "wordt gerepresenteerd door"@nl ;
@@ -3055,7 +3328,7 @@ rel:isr a owl:ObjectProperty ;
         "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
         "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl .
 
-rel:rep a owl:ObjectProperty ;
+<http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep> a owl:ObjectProperty ;
     rdfs:label "represents"@en,
         "représente"@fr,
         "representeert"@nl ;
@@ -3076,6 +3349,16 @@ schema:author a rdf:Property ;
     skos:definition "The author of this content or rating."@en,
         "L'auteur de ce contenu ou de cette évaluation."@fr,
         "De auteur van deze inhoud of beoordeling."@nl .
+
+schema:isPartOf a rdf:Property ;
+    rdfs:label "is part of"@en,
+        "fait partie de"@fr,
+        "is onderdeel van"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "Indicates an item or CreativeWork that this item, or CreativeWork (in some sense), is part of."@en,
+        "Indique un élément ou un CreativeWork qui fait partie de cet élément, ou de ce CreativeWork (dans un certain sens)."@fr,
+        "Geeft een item of CreativeWork aan waarvan dit item, of CreativeWork (in een bepaald opzicht), een onderdeel is."@nl .
 
 skos:mappingRelation a rdf:Property,
         owl:ObjectProperty ;
@@ -3143,12 +3426,12 @@ skos:note a rdf:Property,
     sh:severity sh:Violation .
 
 <https://data.hetarchief.be/ns/description#DescriptionShape> a sh:PropertyShape ;
-    sh:datatype xsd:string ;
+    sh:datatype rdf:langString ;
     sh:maxCount 1 ;
     sh:message "schema:description is missing or not of type string "@en,
         "schema:description est manquant ou n'est pas de type string"@fr,
         "schema:description ontbreekt of is niet van het type string"@nl ;
-    sh:minCount 1 ;
+    sh:minCount 0 ;
     sh:name "description"@en,
         "description"@fr,
         "omschrijving"@nl ;
@@ -3157,7 +3440,7 @@ skos:note a rdf:Property,
     sh:severity sh:Violation .
 
 <https://data.hetarchief.be/ns/description#NameShape> a sh:PropertyShape ;
-    sh:datatype xsd:string ;
+    sh:datatype rdf:langString ;
     sh:maxCount 1 ;
     sh:message "schema:name is missing or not of type string "@en,
         "schema:name est manquant ou n'est pas de type string"@fr,
