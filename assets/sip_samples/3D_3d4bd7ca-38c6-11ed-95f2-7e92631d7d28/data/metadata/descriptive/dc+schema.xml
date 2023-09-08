@@ -65,4 +65,10 @@
   <schema:artform xml:lang="nl">beeldhouwwerk</schema:artform>
   <schema:artform xml:lang="en">sculpture</schema:artform>
 
+  <!-- project -->
+  <dcterms:isPartOf xsi:type="schema:Collection">
+    <dcterms:title>GIVE_topstukken_3D</dcterms:title>
+    <dcterms:identifier>GIVE_topstukken_3D</dcterms:identifier>
+  </dcterms:isPartOf>
+
 </metadata>
