@@ -63,13 +63,13 @@ Dit zijn de paden waarop de verschillende API's bereikbaar zijn. Onderstaande
 paden, gecombineerd met de netwerk locaties van hierboven, geven je de
 volledige URL waarop de API kan worden aangesproken.
 
-| Documentatie            | Pad                      |
-|----------------|--------------------------|
-| [OAI-PMH API]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %})     | /mediahaven-oai/oai/     |
-| [MH REST API v1](https://archief.viaa.be/mediahaven-rest-api/) | /mediahaven-rest-api/    | 
-| [MH REST API v2](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/) | /mediahaven-rest-api/v2/ |
-| [IIIF 3.0 Image API]({{ site.baseurl }}{% link docs/integratie/iiif.md %}) |                      | 
-| [Organizations API v2]({{ site.baseurl }}{% link docs/integratie/org-api/index.md %}) |                       | 
+| Documentatie                                                                          | Pad                                                      |
+|---------------------------------------------------------------------------------------|----------------------------------------------------------|
+| [OAI-PMH API]({{ site.baseurl }}{% link docs/integratie/oai-pmh.md %})                | /mediahaven-oai/oai/                                     |
+| [MH REST API v1](https://archief.viaa.be/mediahaven-rest-api/)                        | ~~/mediahaven-rest-api/~~ **Deprecated sinds juni '23!** |
+| [MH REST API v2](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/)            | /mediahaven-rest-api/v2/                                 |
+| [IIIF 3.0 Image API]({{ site.baseurl }}{% link docs/integratie/iiif.md %})            |                                                          |
+| [Organizations API v2]({{ site.baseurl }}{% link docs/integratie/org-api/index.md %}) |                                                          |
 
 # Mediahaven API's
 
@@ -85,30 +85,19 @@ API een welomlijnde standaard en is de REST API MediaHaven-specifiek.
 ## REST API
 
 {: .note }
-Opgelet: de REST API versie 1 wordt uitgefaseerd en wordt vanaf 1 juni niet meer ondersteund!
+Opgelet: de REST API versie 1 werd uitgefaseerd en is vanaf 1 juni '23 niet meer ondersteund!
 
-Momenteel zijn er twee versies van de REST API actief: versie 1 en versie 2.
-Het wordt aangeraden om, voor nieuwe integraties, meteen van start te gaan met
-versie 2.
+De documentatie is hier te vinden:
 
-De documentatie van beide versies is hier te vinden:
-
-- REST API v1:
-  [https://archief.viaa.be/mediahaven-rest-api](https://archief.viaa.be/mediahaven-rest-api)
 - REST API v2:
   [https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html](https://archief.viaa.be/mediahaven-rest-api/v2/api-docs/index.html)
 
-### Authenticatie voor de MediaHaven REST API v1
+### Authenticatie voor de MediaHaven REST API v2
 
-Authenticatie op v1 is mogelijk via Basic Auth én via OAuth 2.0. Zie de
-documentatie voor meer info.
+Authenticatie op v2 is **uitsluitend** mogelijk via OAuth 2.0! Basic Auth, zoals mogelijk was in de REST API v1, is nu niet meer ondersteund.
 
 De referentie-documentatie voor OAuth 2.0 vind je hier:
 [https://oauth.net/2/](https://oauth.net/2/).
-
-### Authenticatie voor de MediaHaven REST API v2
-
-Authenticatie op v2 is **uitsluitend** mogelijk via OAuth 2.0!
 
 Voor de autorisatie zijn op de MediaHaven REST API v2 momenteel twee
 OAuth2 flows geïmplementeerd:
@@ -122,7 +111,7 @@ De keuze voor een flow hangt af van de use-case:
 - machine-to-machine applicatie integratie → "Resource Owner Credentials Grant
   Type"
 
-(Zie bv [https://alexbilbie.com/guide-to-oauth-2-grants/](https://alexbilbie.com/guide-to-oauth-2-grants/))
+(Zie bv [A Guide To OAuth 2.0 Grants](https://alexbilbie.github.io/guide-to-oauth-2-grants/))
 
 (De auth-flow die typisch gebruikt wordt voor machine-to-machine integraties is
 de "Client Credentials Grant Type". Deze is echter - nog - niet geïmplementeerd
