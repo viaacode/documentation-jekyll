@@ -1,5 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<metadata xmlns="https://data.hetarchief.be/id/sip/1.1/material-artwork" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:edtf="http://id.loc.gov/datatypes/edtf/" xmlns:schema="https://schema.org/">
+<metadata xmlns="https://data.hetarchief.be/id/sip/1.1/material-artwork"
+  xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:edtf="http://id.loc.gov/datatypes/edtf/" xmlns:schema="https://schema.org/">
 
 
   <!-- general title for the resource -->
@@ -64,5 +67,48 @@
   <schema:artMedium xml:lang="en">terracotta</schema:artMedium>
   <schema:artform xml:lang="nl">beeldhouwwerk</schema:artform>
   <schema:artform xml:lang="en">sculpture</schema:artform>
+
+  <!-- project -->
+  <dcterms:isPartOf xsi:type="schema:Collection">
+    <dcterms:title>GIVE_topstukken_3D</dcterms:title>
+    <dcterms:identifier>GIVE_topstukken_3D</dcterms:identifier>
+  </dcterms:isPartOf>
+
+  <!-- VIAA.dc_titles.episode & VIAA.dc_titles.aflevering -->
+  <schema:isPartOf xsi:type="schema:Episode">
+    <schema:name>...</schema:name>
+  </schema:isPartOf>
+
+  <!-- VIAA.dc_titles.alternatief -->
+  <dcterms:alternative></dcterms:alternative>
+
+  <!-- VIAA.dc_titles.archief -->
+  <schema:isPartOf xsi:type="schema:ArchiveComponent">
+    <schema:name>...</schema:name>
+    <!-- VIAA.dc_titles.deelarchief -->
+    <schema:hasPart xsi:type="schema:ArchiveComponent">
+      <schema:name>...</schema:name>
+    </schema:hasPart>
+  </schema:isPartOf>
+
+  <!-- VIAA.dc_titles.programma & VIAA.dc_titles.serie -->
+  <schema:isPartOf xsi:type="schema:CreativeWorkSeries">
+    <schema:name>...</schema:name>
+    <!-- VIAA.dc_titles.serienummer -->
+    <schema:position>...</schema:position>
+    <!-- VIAA.dc_titles.deelreeks -->
+    <schema:hasPart xsi:type="schema:CreativeWorkSeries">
+      <schema:name>...</schema:name>
+    </schema:hasPart>
+  </schema:isPartOf>
+
+  <!-- VIAA.dc_titles.registratie -->
+  <dcterms:title xsi:type="RegistrationTitle">...</dcterms:title>
+  <!-- VIAA.dc_titles.seizoen -->
+  <schema:isPartOf xsi:type="schema:CreativeWorkSeries">
+    <schema:name>...</schema:name>
+    <!-- VIAA.dc_titles.seizoennummer -->
+    <schema:position>...</schema:position>
+  </schema:isPartOf>
 
 </metadata>

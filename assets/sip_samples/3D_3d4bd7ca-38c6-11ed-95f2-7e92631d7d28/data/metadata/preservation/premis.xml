@@ -60,6 +60,24 @@
 
         <premis:eventDetailInformation>
             <premis:eventDetail>GIVE</premis:eventDetail>
+            <premis:eventDetailExtension>
+                <schema:additionalProperty>
+                    <schema:name>light-metering</schema:name>
+                    <schema:value>F 0,57, iso 125, T 250</schema:value>
+                </schema:additionalProperty>
+                <schema:additionalProperty>
+                    <schema:name>scan-setup</schema:name>
+                    <schema:value>vaste opstelling voor beeld, persoon met scanner beweegt rond beeld; kroontje ligt op rotatietafel</schema:value>
+                </schema:additionalProperty>
+                <schema:additionalProperty>
+                    <schema:name>height-calibration-object</schema:name>
+                    <schema:valueReference>
+                    <schema:value>100</schema:value>
+                    <schema:unitText>mm</schema:unitText>
+                    <schema:unitCode>MMT</schema:unitCode>
+                    </schema:valueReference>
+                </schema:additionalProperty>
+            </premis:eventDetailExtension>
         </premis:eventDetailInformation>
 
         <premis:eventOutcomeInformation>
@@ -70,6 +88,18 @@
             <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
             <premis:linkingAgentIdentifierValue>OR-x05xc4w</premis:linkingAgentIdentifierValue>
             <premis:linkingAgentRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+        </premis:linkingAgentIdentifier>
+
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>uuid-51610cb2-4e41-11ee-80dd-7e92631d7d28</premis:linkingAgentIdentifierValue>
+            <premis:linkingAgentRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+        </premis:linkingAgentIdentifier>
+
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>UUID</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>uuid-56d22bd6-4e41-11ee-a105-7e92631d7d28</premis:linkingAgentIdentifierValue>
+            <premis:linkingAgentRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/exe">executor</premis:linkingAgentRole>
         </premis:linkingAgentIdentifier>
         
         <premis:linkingObjectIdentifier>
@@ -94,6 +124,35 @@
         </premis:linkingObjectIdentifier>
     </premis:event>
 
+    <premis:event>
+        <premis:eventIdentifier>
+            <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+            <premis:eventIdentifierValue>uuid-e25b4530-4e40-11ee-bf71-7e92631d7d28</premis:eventIdentifierValue>
+        </premis:eventIdentifier>
+        <premis:eventType>quality_control</premis:eventType>
+        <premis:eventDateTime>2022-08-31T00:00:00Z</premis:eventDateTime>
+
+        <premis:eventDetailInformation>
+            <premis:eventDetail>opmerkingen ivm context die belangrijk zijn voor QC</premis:eventDetail>
+        </premis:eventDetailInformation>
+
+        <premis:eventOutcomeInformation>
+            <premis:eventOutcome>success</premis:eventOutcome>
+        </premis:eventOutcomeInformation>
+
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>OR-x05xc4w</premis:linkingAgentIdentifierValue>
+            <premis:linkingAgentRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+        </premis:linkingAgentIdentifier>
+        
+        <!-- <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>uuid-e25b4530-4e40-11ee-bf71-7e92631d7d28</premis:linkingObjectIdentifierValue>
+            <premis:linkingObjectRole valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+        </premis:linkingObjectIdentifier> -->
+    </premis:event>
+
     <premis:agent>
         <premis:agentIdentifier>
             <premis:agentIdentifierType>MEEMOO-OR-ID</premis:agentIdentifierType>
@@ -101,6 +160,28 @@
         </premis:agentIdentifier>
         <premis:agentName>De Logi &amp; Hoorne - Erfgo3D</premis:agentName>
         <premis:agentType>organization</premis:agentType>
+    </premis:agent>
+
+    <premis:agent>
+        <premis:agentIdentifier>
+            <premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+            <premis:agentIdentifierValue>uuid-56d22bd6-4e41-11ee-a105-7e92631d7d28</premis:agentIdentifierValue>
+        </premis:agentIdentifier>
+        <premis:agentName>scanner A</premis:agentName>
+        <premis:agentType>hardware</premis:agentType>
+        <premis:agentExtension>
+            <schema:model>model X</schema:model>
+            <schema:additionalType>structured light scanner wit</schema:additionalType>
+        </premis:agentExtension>
+    </premis:agent>
+
+    <premis:agent>
+        <premis:agentIdentifier>
+            <premis:agentIdentifierType>UUID</premis:agentIdentifierType>
+            <premis:agentIdentifierValue>uuid-51610cb2-4e41-11ee-80dd-7e92631d7d28</premis:agentIdentifierValue>
+        </premis:agentIdentifier>
+        <premis:agentName>bruikte verwerkingssoftware (=post-processing)</premis:agentName>
+        <premis:agentType>software</premis:agentType>
     </premis:agent>
 
 </premis:premis>
