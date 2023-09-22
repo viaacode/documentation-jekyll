@@ -186,7 +186,7 @@ De uitkomst van het bakproces van de analoge drager. Met andere woorden is deze 
 De datum waarop de digitalisering van de analoge drager plaatsvond.
 
 | **XML element**        | `<digitization_date/>`                                                                                                                         |
-| **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYY-MM-DD`)                                                                         |
+| **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYYY-MM-DD`)                                                                         |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
@@ -231,7 +231,7 @@ De datum waarop door de Service Provider een kwaliteitscontrole van het digitale
 
 
 | **XML element**        | `<qc_date/>`                                                                                                                                   |
-| **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYY-MM-DD`)                                                                          |
+| **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYYY-MM-DD`)                                                                          |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
@@ -279,7 +279,7 @@ De datum waarop het digitale item bij de Service Provider naar LTO tape werd ges
 
 
 | **XML element**        | `<transfer_lto_date/>`                                                                                                                         |
-| **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYY-MM-DD`)                                                                          |
+| **Datatype**           | [ISO 8601](https://nl.wikipedia.org/wiki/ISO_8601) Datum (`YYYY-MM-DD`)                                                                          |
 | **Verplichting**       | Deze informatie wordt automatisch overgenomen uit de digitaliseringsmetadata die door de Service Provider wordt aangeleverd na digitalisering. |
 | **Herhaalbaar**        | Nee                                                                                                                                            |
 
