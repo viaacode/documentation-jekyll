@@ -34,7 +34,7 @@ skos_Concept : voorbeeld : <i>rdf:langString</i> [0..*]
 skos_Concept : voorkeurslabel : <i>rdf:langString</i> [1..*]
 skos_Concept : wijzigingsnotitie : <i>rdf:langString</i> [0..*]
 
-skos_Concept --> skos_Concept :brede match [0..*]  \lbreder [0..*]  \lbreder transitief [0..*]  \lexacte overeenkomst [0..*]  \lgerelateerd [0..*]  \lgerelateerde match [0..*]  \lmapping relatie [0..*]  \lnabije match [0..*]  \lnauwe match [0..*]  \lnauwer [0..*]  \lnauwer transitief [0..*]  \lsemantische relatie [0..*]  > 
+skos_Concept --> skos_Concept :brede match [0..*]  \lbreder [0..*]  \lbreder transitief [0..*]  \lexacte overeenkomst [0..*]  \lgerelateerd [0..*]  \lgerelateerde match [0..*]  \lheeft een hogere prioriteit dan [0..*]  \lheeft een lagere prioriteit dan [0..*]  \lmapping relatie [0..*]  \lnabije match [0..*]  \lnauwe match [0..*]  \lnauwer [0..*]  \lnauwer transitief [0..*]  \lsemantische relatie [0..*]  > 
 skos_Concept --> skos_ConceptScheme :in schema [1..*]  \ltop concept van [0..*]  > 
 skos_Concept --> skosxl_Label :voorkeurslabel [0..1]  > 
 
