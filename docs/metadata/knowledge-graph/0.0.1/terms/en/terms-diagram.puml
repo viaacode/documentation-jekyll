@@ -51,7 +51,7 @@ skos_Concept : note : <i>rdf:langString</i> [0..*]
 skos_Concept : preferred label : <i>rdf:langString</i> [1..*]
 skos_Concept : scope note : <i>rdf:langString</i> [0..*]
 
-skos_Concept --> skos_Concept :broad match [0..*]  \lbroader [0..*]  \lbroader transitive [0..*]  \lclose match [0..*]  \lexact match [0..*]  \lmapping relation [0..*]  \lnarrow match [0..*]  \lnarrower [0..*]  \lnarrower transitive [0..*]  \lrelated [0..*]  \lrelated match [0..*]  \lsemantic relation [0..*]  > 
+skos_Concept --> skos_Concept :broad match [0..*]  \lbroader [0..*]  \lbroader transitive [0..*]  \lclose match [0..*]  \lexact match [0..*]  \lhas higher priority than [0..*]  \lhas lower priority than [0..*]  \lmapping relation [0..*]  \lnarrow match [0..*]  \lnarrower [0..*]  \lnarrower transitive [0..*]  \lrelated [0..*]  \lrelated match [0..*]  \lsemantic relation [0..*]  > 
 skos_Concept --> skos_ConceptScheme :in scheme [1..*]  \ltop concept of [0..*]  > 
 skos_Concept --> skosxl_Label :pref label [0..1]  > 
 
