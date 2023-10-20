@@ -51,7 +51,7 @@ premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : a une taille (du fichier) : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
-premis_File : porte le nom d'origine : <i>xsd:string</i> [1..1]
+premis_File : porte le nom d'origine : <i>xsd:string</i> [0..1]
 premis_File --> dct_FileFormat :format [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :est inclus dans [0..*]  > 
 premis_File --> haObj_FragmentRepresentation :a le fragment des médias [0..*]  > 
