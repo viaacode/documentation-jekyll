@@ -15,17 +15,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n7b808b3a089444c9bd7dc218ecb82760b1 a rdfs:Class,
+_:n408aed62591a4699b59eca054081552eb1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:n408aed62591a4699b59eca054081552eb17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:na5c9fe02f02c45c09652025455c9f13fb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
-
-_:nb78268517d594b44a8e1a4b3db13ec54b1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:nb78268517d594b44a8e1a4b3db13ec54b17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 dct:FileFormat a rdfs:Class ;
     rdfs:label "file format"@en,
@@ -915,7 +915,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:nb78268517d594b44a8e1a4b3db13ec54b1 ;
+    rdfs:domain _:n408aed62591a4699b59eca054081552eb1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -966,7 +966,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:nb78268517d594b44a8e1a4b3db13ec54b17 ;
+    rdfs:domain _:n408aed62591a4699b59eca054081552eb17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1081,7 +1081,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n7b808b3a089444c9bd7dc218ecb82760b1 ;
+    rdfs:range _:na5c9fe02f02c45c09652025455c9f13fb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1287,18 +1287,18 @@ prov:invalidatedAtTime a owl:DatatypeProperty ;
         "Le moment où une entité a été invalidée (c'est-à-dire n'est plus utilisable)."@fr,
         "Het tijdstip waarop een entiteit ongeldig werd gemaakt (d.w.z. niet langer bruikbaar)."@nl .
 
-prov:wasAssociatedWith a owl:ObjectProperty ;
-    rdfs:label "was associated with"@en,
-        "a été associé à"@fr,
-        "is geassocieerd met"@nl ;
-    rdfs:domain prov:Activity ;
+prov:wasAttributedTo a owl:ObjectProperty ;
+    rdfs:label "was attributed to"@en,
+        "a été attribué à"@fr,
+        "is toegekend aan"@nl ;
+    rdfs:domain prov:Entity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:range prov:Agent ;
     rdfs:subPropertyOf prov:wasInfluencedBy ;
-    owl:propertyChainAxiom ( prov:qualifiedAssociation prov:agent ) ;
-    skos:definition "An `prov:Agent` that had some (unspecified) responsibility for the occurrence of this `prov:Activity`."@en,
-        "Un `prov:Agent` qui avait une responsabilité (non spécifiée) avant la survenue de cette `prov:Activity`."@fr,
-        "Een `prov:Agent` die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze `prov:Activity`."@nl .
+    owl:propertyChainAxiom ( prov:qualifiedAttribution prov:agent ) ;
+    skos:definition "Attribution is the ascribing of an entity to an agent."@en,
+        "Attribution est l'attribution d'une entité à un agent."@fr,
+        "Toekenning is het toekennen van een entiteit aan een agent."@nl .
 
 <http://xmlns.com/foaf/0.1/homepage> a rdf:Property ;
     rdfs:label "homepage"@en,
@@ -1382,19 +1382,19 @@ prov:wasAssociatedWith a owl:ObjectProperty ;
             sh:path prov:endedAtTime ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:description "The agent that was attributed to the activity."@en,
-                "L'agent qui est attribué à l'activité."@fr,
-                "De agent die toegekend is aan de activiteit."@nl ;
+            rdfs:label "was associated with"@en,
+                "a été associé à"@fr,
+                "is geassocieerd met"@nl ;
+            skos:definition "An agent that had some (unspecified) responsibility for the occurrence of this activity."@en,
+                "Un agent qui avait une responsabilité (non spécifiée) avant la survenue de cette activité."@fr,
+                "Een agent die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze activiteit."@nl ;
             sh:maxCount 1 ;
-            sh:message "prov:wasAttributedTo is absent, occurs more than once or its value is not an instance of classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@en,
-                "prov:wasAttributedTo est absent, apparaît plus d'une fois ou sa valeur n'est pas une instance de classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@fr,
-                "prov:endedAtTime ontbreekt, komt meer dan eens voor of de waarde is geen instantie van de klassen schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@nl ;
+            sh:message "prov:wasAssociatedWith is absent, occurs more than once or its value is not an instance of classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@en,
+                "prov:wasAssociatedWith est absent, apparaît plus d'une fois ou sa valeur n'est pas une instance de classes schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@fr,
+                "prov:wasAssociatedWith ontbreekt, komt meer dan eens voor of de waarde is geen instantie van de klassen schema:Person/org/Organization/premis:SoftwareAgent/premis:HardwareAgent"@nl ;
             sh:minCount 1 ;
-            sh:name "was attributed to"@en,
-                "était attribué à"@fr,
-                "was toegekend aan"@nl ;
             sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] [ sh:class premis:SoftwareAgent ] [ sh:class premis:HardwareAgent ] ) ;
-            sh:path prov:wasAttributedTo ;
+            sh:path prov:wasAssociatedWith ;
             sh:severity sh:Violation ] ;
     sh:targetClass prov:Activity .
 
@@ -2599,18 +2599,18 @@ prov:used a owl:ObjectProperty ;
         "Une `prov:Entity` qui a été utilisée par cette `prov:Activity`. Par exemple , `:baking prov:used :cuillère , :œuf , :four.`"@fr,
         "Een `prov:Entity` die door deze `prov:Activity` werd gebruikt. Bijvoorbeeld: `:bakken prov:used :lepel ,:ei, :oven.`"@nl .
 
-prov:wasAttributedTo a owl:ObjectProperty ;
-    rdfs:label "was attributed to"@en,
-        "a été attribué à"@fr,
-        "is toegekend aan"@nl ;
-    rdfs:domain prov:Entity ;
+prov:wasAssociatedWith a owl:ObjectProperty ;
+    rdfs:label "was associated with"@en,
+        "a été associé à"@fr,
+        "is geassocieerd met"@nl ;
+    rdfs:domain prov:Activity ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     rdfs:range prov:Agent ;
     rdfs:subPropertyOf prov:wasInfluencedBy ;
-    owl:propertyChainAxiom ( prov:qualifiedAttribution prov:agent ) ;
-    skos:definition "Attribution is the ascribing of an entity to an agent."@en,
-        "Attribution est l'attribution d'une entité à un agent."@fr,
-        "Toekenning is het toekennen van een entiteit aan een agent."@nl .
+    owl:propertyChainAxiom ( prov:qualifiedAssociation prov:agent ) ;
+    skos:definition "An `prov:Agent` that had some (unspecified) responsibility for the occurrence of this `prov:Activity`."@en,
+        "Un `prov:Agent` qui avait une responsabilité (non spécifiée) avant la survenue de cette `prov:Activity`."@fr,
+        "Een `prov:Agent` die enige (niet-gespecificeerde) verantwoordelijkheid had voor het optreden van deze `prov:Activity`."@nl .
 
 <https://data.hetarchief.be/ns/object/hasAccessCopy> a rdf:Property ;
     rdfs:label "has access copy"@en,
