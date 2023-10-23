@@ -101,6 +101,7 @@ haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:bl
 haObj_DigitalRepresentation : aangemaakt op : <i>edtf:EDTF-level1</i> [1..1]
 haObj_DigitalRepresentation : duur : <i>xsd:duration</i> [0..1]
 haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : in taal : <i>xsd:string</i> [0..*]
 haObj_DigitalRepresentation : miniatuurafbeelding : <i>IRI</i> [0..1]
 haObj_DigitalRepresentation : naam : <i>rdf:langString</i> [1..1]
 haObj_DigitalRepresentation : omschrijving : <i>rdf:langString</i> [0..1]
