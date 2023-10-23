@@ -37,10 +37,10 @@ prov_Activity : heeft einddatum : <i>xsd:dateTime</i> [1..1]
 prov_Activity : heeft gegenereerd : <i>IRI</i> [0..1]
 prov_Activity : heeft startdatum : <i>xsd:dateTime</i> [1..1]
 
-prov_Activity --> org_Organization :was toegekend aan [1..1]  > 
-prov_Activity --> premis_HardwareAgent :was toegekend aan [1..1]  > 
-prov_Activity --> premis_SoftwareAgent :was toegekend aan [1..1]  > 
-prov_Activity --> schema_Person :was toegekend aan [1..1]  > 
+prov_Activity --> org_Organization :is geassocieerd met [1..1]  > 
+prov_Activity --> premis_HardwareAgent :is geassocieerd met [1..1]  > 
+prov_Activity --> premis_SoftwareAgent :is geassocieerd met [1..1]  > 
+prov_Activity --> schema_Person :is geassocieerd met [1..1]  > 
 
 
 premis_Event --|> prov_Activity #blue;line.dotted;text:blue

@@ -67,7 +67,7 @@ skos_Concept : étiquette alternative : <i>rdf:langString</i> [0..*]
 skos_Concept : étiquette cachée : <i>rdf:langString</i> [0..*]
 skos_Concept : étiquette préférée : <i>rdf:langString</i> [1..*]
 
-skos_Concept --> skos_Concept :correspondance exacte [0..*]  \lcorrespondance large [0..*]  \lcorrespondance liée [0..*]  \lcorrespondance proche [0..*]  \lcorrespondance étroite [0..*]  \llié [0..*]  \lplus large [0..*]  \lplus large transitive [0..*]  \lplus étroit [0..*]  \lplus étroit transitive [0..*]  \lrelation de correspondance [0..*]  \lrelation sémantique [0..*]  > 
+skos_Concept --> skos_Concept :a une priorité inférieure à [0..*]  \la une priorité plus grande que [0..*]  \lcorrespondance exacte [0..*]  \lcorrespondance large [0..*]  \lcorrespondance liée [0..*]  \lcorrespondance proche [0..*]  \lcorrespondance étroite [0..*]  \llié [0..*]  \lplus large [0..*]  \lplus large transitive [0..*]  \lplus étroit [0..*]  \lplus étroit transitive [0..*]  \lrelation de correspondance [0..*]  \lrelation sémantique [0..*]  > 
 skos_Concept --> skos_ConceptScheme :concept supérieur de [0..*]  \ldans le schéma [1..*]  > 
 skos_Concept --> skosxl_Label :label préféré [0..1]  > 
 

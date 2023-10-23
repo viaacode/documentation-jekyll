@@ -163,6 +163,7 @@ haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:bl
 haObj_DigitalRepresentation : créé le : <i>edtf:EDTF-level1</i> [1..1]
 haObj_DigitalRepresentation : description : <i>rdf:langString</i> [0..1]
 haObj_DigitalRepresentation : durée : <i>xsd:duration</i> [0..1]
+haObj_DigitalRepresentation : en langue : <i>xsd:string</i> [0..*]
 haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : image miniature : <i>IRI</i> [0..1]
 haObj_DigitalRepresentation : légende : <i>xsd:string</i> [0..1]

@@ -1,4 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix haTer: <https://data.hetarchief.be/ns/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -10,15 +11,15 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n7b808b3a089444c9bd7dc218ecb82760b1 a rdfs:Class,
+_:n2c951025e81a494a95857c383b0203c1b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
-_:nb78268517d594b44a8e1a4b3db13ec54b1 a rdfs:Class,
+_:nb96ea042d7e445ad8901c6012c0a8e1db1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
-_:nb78268517d594b44a8e1a4b3db13ec54b17 a rdfs:Class,
+_:nb96ea042d7e445ad8901c6012c0a8e1db17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
@@ -945,7 +946,7 @@ dct:format a rdf:Property ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:nb78268517d594b44a8e1a4b3db13ec54b1 ;
+    rdfs:domain _:nb96ea042d7e445ad8901c6012c0a8e1db1 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1013,7 +1014,7 @@ dct:format a rdf:Property ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:nb78268517d594b44a8e1a4b3db13ec54b17 ;
+    rdfs:domain _:nb96ea042d7e445ad8901c6012c0a8e1db17 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1315,7 +1316,7 @@ skosxl:labelRelation a rdf:Property,
     dct:description "Data model to describe structured lists of terms such as thesauri."@en,
         "Modèle de données pour décrire des listes structurées de termes tels que le thésaure."@fr,
         "Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri."@nl ;
-    dct:modified "2023-01-12" ;
+    dct:modified "2023-10-03" ;
     dct:title "Data model List of terms"@en,
         "Modèle de données Listes de termes"@fr,
         "Datamodel Termenlijst"@nl ;
@@ -1493,6 +1494,18 @@ skosxl:labelRelation a rdf:Property,
                 "voorkeurslabel"@nl ;
             sh:path skosxl:prefLabel ;
             sh:severity sh:Violation ],
+        [ sh:class skos:Concept ;
+            sh:name "has lower priority than"@en,
+                "a une priorité inférieure à"@fr,
+                "heeft een lagere prioriteit dan"@nl ;
+            sh:path haTer:lowerPriority ;
+            sh:severity sh:Warning ],
+        [ sh:class skos:Concept ;
+            sh:name "has higher priority than"@en,
+                "a une priorité plus grande que"@fr,
+                "heeft een hogere prioriteit dan"@nl ;
+            sh:path haTer:higherPriority ;
+            sh:severity sh:Warning ],
         <https://data.hetarchief.be/ns/terms#AltLabelShape>,
         <https://data.hetarchief.be/ns/terms#ChangeNoteShape>,
         <https://data.hetarchief.be/ns/terms#DefinitionShape>,
@@ -2313,7 +2326,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n7b808b3a089444c9bd7dc218ecb82760b1 ;
+    rdfs:range _:n2c951025e81a494a95857c383b0203c1b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .

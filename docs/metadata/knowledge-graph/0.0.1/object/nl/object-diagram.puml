@@ -38,7 +38,7 @@ class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : heeft (bestands)grootte : <i>xsd:nonNegativeInteger</i> [1..1]
-premis_File : heeft originele naam : <i>xsd:string</i> [1..1]
+premis_File : heeft originele naam : <i>xsd:string</i> [0..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
 premis_File --> dct_FileFormat :formaat [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :is opgenomen in [0..*]  > 
