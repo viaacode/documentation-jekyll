@@ -48,7 +48,7 @@ haObj_DigitalRepresentation --> premis_IntellectualEntity :is Access Copy Of [0.
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
-premis_File : has original name : <i>xsd:string</i> [1..1]
+premis_File : has original name : <i>xsd:string</i> [0..1]
 premis_File : has size : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
 premis_File --> dct_FileFormat :format [1..1]  > 
