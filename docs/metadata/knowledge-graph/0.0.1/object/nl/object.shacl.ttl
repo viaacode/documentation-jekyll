@@ -18,17 +18,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n7b808b3a089444c9bd7dc218ecb82760b1 a rdfs:Class,
+_:n408aed62591a4699b59eca054081552eb1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:n408aed62591a4699b59eca054081552eb17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:na5c9fe02f02c45c09652025455c9f13fb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
-
-_:nb78268517d594b44a8e1a4b3db13ec54b1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:nb78268517d594b44a8e1a4b3db13ec54b17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 dct:FileFormat a rdfs:Class ;
     rdfs:label "file format"@en,
@@ -811,7 +811,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:nb78268517d594b44a8e1a4b3db13ec54b1 ;
+    rdfs:domain _:n408aed62591a4699b59eca054081552eb1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -836,7 +836,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:nb78268517d594b44a8e1a4b3db13ec54b17 ;
+    rdfs:domain _:n408aed62591a4699b59eca054081552eb17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -931,7 +931,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n7b808b3a089444c9bd7dc218ecb82760b1 ;
+    rdfs:range _:na5c9fe02f02c45c09652025455c9f13fb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1467,10 +1467,10 @@ prov:wasAttributedTo a owl:ObjectProperty ;
                 "Le nom d'origine de ce fichier."@fr,
                 "De oorspronkelijke naam van dit bestand."@nl ;
             sh:maxCount 1 ;
-            sh:message "premis:originalName is missing, has more than one value or not of type string"@en,
-                "premis:originalName manque, a plus d'une valeur ou n'est pas de type string"@fr,
-                "premis:originalName ontbreekt, heeft meer dan één waarde of is niet van het type string"@nl ;
-            sh:minCount 1 ;
+            sh:message "premis:originalName has more than one value or not of type string"@en,
+                "premis:originalName a plus d'une valeur ou n'est pas de type string"@fr,
+                "premis:originalName heeft meer dan één waarde of is niet van het type string"@nl ;
+            sh:minCount 0 ;
             sh:nodeKind sh:Literal ;
             sh:path premis:originalName ;
             sh:severity sh:Violation ] ;
