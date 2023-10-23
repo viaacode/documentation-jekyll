@@ -15,17 +15,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n7b808b3a089444c9bd7dc218ecb82760b1 a rdfs:Class,
+_:n408aed62591a4699b59eca054081552eb1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:n408aed62591a4699b59eca054081552eb17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:na5c9fe02f02c45c09652025455c9f13fb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
-
-_:nb78268517d594b44a8e1a4b3db13ec54b1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:nb78268517d594b44a8e1a4b3db13ec54b17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 dct:FileFormat a rdfs:Class ;
     rdfs:label "file format"@en,
@@ -915,7 +915,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:nb78268517d594b44a8e1a4b3db13ec54b1 ;
+    rdfs:domain _:n408aed62591a4699b59eca054081552eb1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -983,7 +983,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:nb78268517d594b44a8e1a4b3db13ec54b17 ;
+    rdfs:domain _:n408aed62591a4699b59eca054081552eb17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1098,7 +1098,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n7b808b3a089444c9bd7dc218ecb82760b1 ;
+    rdfs:range _:na5c9fe02f02c45c09652025455c9f13fb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1492,6 +1492,18 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
+            sh:message "schema:inLanguage is not of type string"@en,
+                "schema:inLanguage n'est pas de type string"@fr,
+                "schema:inLanguage is niet van het type string"@nl ;
+            sh:minCount 0 ;
+            sh:name "in language"@en,
+                "en langue"@fr,
+                "in taal"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:inLanguage ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:message "schema:caption is not of type string "@en,
                 "schema:caption n'est pas de type string"@fr,
@@ -1816,11 +1828,11 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
-            sh:in ( "audio" "video" "film" "papier" ) ;
+            sh:in ( "audio" "video" "film" "paper" ) ;
             sh:maxCount 1 ;
-            sh:message "dct:format is missing or not of type string or value is not in (audio video film papier)"@en,
-                "dct:format est manquant ou n'est pas de type string ou la valeur n'est pas dans (audio video film papier)"@fr,
-                "dct:format ontbreekt of is niet van het type string of waarde komt niet voor in (audio video film papier)"@nl ;
+            sh:message "dct:format is missing or not of type string or value is not in (audio video film paper)"@en,
+                "dct:format est manquant ou n'est pas de type string ou la valeur n'est pas dans (audio video film paper)"@fr,
+                "dct:format ontbreekt of is niet van het type string of waarde komt niet voor in (audio video film paper)"@nl ;
             sh:minCount 1 ;
             sh:name "format"@en,
                 "format"@fr,
@@ -2956,17 +2968,6 @@ schema:genre a rdf:Property ;
         "Genre de l'œuvre créative (CreativeWork), de la chaîne de télévision/diffusion ou du groupe."@fr,
         "Genre van het CreativeWork, uitzendkanaal of groep."@nl .
 
-schema:inLanguage a rdf:Property ;
-    rdfs:label "in language"@en,
-        "en langue"@fr,
-        "in taal"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range xsd:string ;
-    skos:definition "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en,
-        "La langue du contenu ou de la performance ou utilisée dans une action. Veuillez utiliser l'un des codes de langue de la norme IETF BCP 47."@fr,
-        "De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard."@nl .
-
 schema:keywords a rdf:Property ;
     rdfs:label "keywords"@en,
         "mots-clés"@fr,
@@ -3293,6 +3294,17 @@ schema:identifier a rdf:Property ;
     skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
         "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
         "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
+
+schema:inLanguage a rdf:Property ;
+    rdfs:label "in language"@en,
+        "en langue"@fr,
+        "in taal"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    skos:definition "The language of the content or performance or used in an action. Please use one of the language codes from the IETF BCP 47 standard."@en,
+        "La langue du contenu ou de la performance ou utilisée dans une action. Veuillez utiliser l'un des codes de langue de la norme IETF BCP 47."@fr,
+        "De taal van de inhoud of de uitvoering of gebruikt in een actie. Gebruik bij voorkeur één van de taalcodes uit de IETF BCP 47 standaard."@nl .
 
 schema:publisher a rdf:Property ;
     rdfs:label "publisher"@en,
