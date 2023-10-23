@@ -37,10 +37,10 @@ prov_Activity : a date de début : <i>xsd:dateTime</i> [1..1]
 prov_Activity : a date de fin : <i>xsd:dateTime</i> [1..1]
 prov_Activity : a généré : <i>IRI</i> [0..1]
 
-prov_Activity --> org_Organization :était attribué à [1..1]  > 
-prov_Activity --> premis_HardwareAgent :était attribué à [1..1]  > 
-prov_Activity --> premis_SoftwareAgent :était attribué à [1..1]  > 
-prov_Activity --> schema_Person :était attribué à [1..1]  > 
+prov_Activity --> org_Organization :a été associé à [1..1]  > 
+prov_Activity --> premis_HardwareAgent :a été associé à [1..1]  > 
+prov_Activity --> premis_SoftwareAgent :a été associé à [1..1]  > 
+prov_Activity --> schema_Person :a été associé à [1..1]  > 
 
 
 premis_SoftwareAgent --|> premis_Agent #blue;line.dotted;text:blue
