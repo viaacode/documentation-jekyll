@@ -846,6 +846,8 @@ Het type licentie waaronder de exploitatie (het gebruik, de reproductie en bewer
 - CC_BY-NC-SA-CONTENT
 - CC_BY-NC-ND-METADATA
 - CC_BY-NC-ND-CONTENT
+- BEZOEKERTOOL-CONTENT
+- BEZOEKERTOOL-METADATA-ALL
 
 Zie de [detailpagina]({{ site.baseurl }}{% link docs/metadata/viaa/licenties.md %}) over licenties voor meer informatie over de betekenis van de verschillende waarden.
 
