@@ -35,13 +35,13 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 
 | **MAM-naam** |  `VIAA-INTRA_CP-CONTENT` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | De lage resolutiekopie van het object mag getoond worden tussen contentpartners. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden. Deze licentie wordt gebruikt op [cataloguspro.hetarchief.be](https://cataloguspro.hetarchief.be). |
+| **Implicatie** | De lage resolutiekopie van het object mag getoond worden tussen contentpartners. Indien deze licentie gegeven wordt, zal ook de licentie `VIAA-INTRA_CP-METADATA-ALL` van toepassing worden. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
 
 #### Metadata
 
 | **MAM-naam** | `VIAA-INTRA_CP-METADATA-ALL` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op [cataloguspro.hetarchief.be](https://cataloguspro.hetarchief.be) |
+| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden tussen contentpartners. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
 
 ### Brede publiek
 
@@ -65,19 +65,19 @@ Hieronder vind je een overzicht van alle bestaande licenties in het _VIAA-metada
 | **Defaultwaarde** | UIT |
 | **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan het brede publiek. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be). |
 
-### Leeszaal van de contentpartner
+### Bezoekertool van de contentpartner
 
 #### Content
 
 | **MAM-naam** | `BEZOEKERTOOL-CONTENT` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | De lage resolutiekopie van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op [bezoek.hetarchief.be](https://bezoek.hetarchief.be) |
+| **Implicatie** | De lage resolutiekopie van het object mag gedeeld worden aan gebruikers van de bezoekertool. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
 
 #### Metadata
 
 | **MAM-naam** | `BEZOEKERTOOL-METADATA-ALL` |
 | **Defaultwaarde** | AAN |
-| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan bezoekers van de leeszaal. Deze licentie wordt gebruikt op [bezoek.hetarchief.be](https://bezoek.hetarchief.be) |
+| **Implicatie** | Een uitgebreide set aan metadata van het object mag gedeeld worden aan gebruikers van de bezoekertool. Deze licentie wordt gebruikt op [hetarchief.be](https://hetarchief.be) |
 
 ### VIAA-licentie intra-muros
 
