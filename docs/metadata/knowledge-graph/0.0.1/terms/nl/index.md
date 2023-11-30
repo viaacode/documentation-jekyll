@@ -25,8 +25,8 @@ Datamodel Termenlijst
 , [fr](../fr)
 
 **Auteurs:**
-[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 , [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
@@ -82,8 +82,8 @@ Een SKOS-concept kan als idee of begrip worden gezien; een gedachte-eenheid. Ech
 | <a id='skos%3AexactMatch'></a>exacte overeenkomst <br> <small>[(skos:exactMatch)](http://www.w3.org/2004/02/skos/core#exactMatch)</small> | `skos:exactMatch` wordt gebruikt om twee concepten te verbinden, waarbij een hoge mate van vertrouwen wordt uitgedrukt dat de concepten uitwisselbaar in een brede waaier van informatiezoektoepassingen kunnen worden gebruikt. `skos:exactMatch` is een transitieve eigenschap en is een sub-eigenschap van `skos:closeMatch`. | `0..*` | [concept](#skos%3AConcept)  |
 | <a id='skos%3Arelated'></a>gerelateerd <br> <small>[(skos:related)](http://www.w3.org/2004/02/skos/core#related)</small> | Verbindt een concept met een concept waarmee er een associatieve semantische relatie is. | `0..*` | [concept](#skos%3AConcept)  |
 | <a id='skos%3ArelatedMatch'></a>gerelateerde match <br> <small>[(skos:relatedMatch)](http://www.w3.org/2004/02/skos/core#relatedMatch)</small> | skos:relatedMatch wordt gebruikt om een associatieve mapping link te geven tussen twee conceptuele resources in verschillende conceptenschema's. | `0..*` | [concept](#skos%3AConcept)  |
-| <a id='haTer%3AhigherPriority'></a>heeft een hogere prioriteit dan <br> <small>[(haTer:higherPriority)](https://data.hetarchief.be/ns/terms/higherPriority)</small> |  | `0..*` | [concept](#skos%3AConcept)  |
-| <a id='haTer%3AlowerPriority'></a>heeft een lagere prioriteit dan <br> <small>[(haTer:lowerPriority)](https://data.hetarchief.be/ns/terms/lowerPriority)</small> |  | `0..*` | [concept](#skos%3AConcept)  |
+| <a id='haTer%3AhigherPriority'></a>heeft een hogere prioriteit dan <br> <small>[(haTer:higherPriority)](https://data.hetarchief.be/ns/terms/higherPriority)</small> | Relateert een concept aan een ander concept dat een hogere prioriteit heeft. | `0..*` | [concept](#skos%3AConcept)  |
+| <a id='haTer%3AlowerPriority'></a>heeft een lagere prioriteit dan <br> <small>[(haTer:lowerPriority)](https://data.hetarchief.be/ns/terms/lowerPriority)</small> | Relateert een concept aan een ander concept dat een lagere prioriteit heeft. | `0..*` | [concept](#skos%3AConcept)  |
 | <a id='skos%3AhistoryNote'></a>historische notitie <br> <small>[(skos:historyNote)](http://www.w3.org/2004/02/skos/core#historyNote)</small> | Een notitie over de vroegere staat/gebruik/betekenis van een concept. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='skos%3AinScheme'></a>in schema <br> <small>[(skos:inScheme)](http://www.w3.org/2004/02/skos/core#inScheme)</small> | Verbindt een resource (bijvoorbeeld een concept) met een conceptenschema waarin het is opgenomen. | `1..*` | [conceptenschema](#skos%3AConceptScheme)  |
 | <a id='skos%3AmappingRelation'></a>mapping relatie <br> <small>[(skos:mappingRelation)](http://www.w3.org/2004/02/skos/core#mappingRelation)</small> | Verbindt twee concepten die, door conventie, uit verschillende schema's komen en vergelijkbare betekenissen hebben | `0..*` | [concept](#skos%3AConcept)  |
@@ -99,8 +99,8 @@ Een SKOS-concept kan als idee of begrip worden gezien; een gedachte-eenheid. Ech
 | <a id='skos%3AtopConceptOf'></a>top concept van <br> <small>[(skos:topConceptOf)](http://www.w3.org/2004/02/skos/core#topConceptOf)</small> | Verbindt een concept met het conceptenschema waarvan het een bovenste niveau concept (top concept) is. | `0..*` | [conceptenschema](#skos%3AConceptScheme)  |
 | <a id='skos%3AhiddenLabel'></a>verborgen label <br> <small>[(skos:hiddenLabel)](http://www.w3.org/2004/02/skos/core#hiddenLabel)</small> | Een lexicaal label voor een resource dat verborgen moet worden bij het genereren van visuele weergaven van de resource, maar dat nog steeds toegankelijk moet zijn voor vrije tekst zoekoperaties. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='skos%3Aexample'></a>voorbeeld <br> <small>[(skos:example)](http://www.w3.org/2004/02/skos/core#example)</small> | Een voorbeeld van het gebruik van een concept. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
-| <a id='skosxl%3AprefLabel'></a>voorkeurslabel <br> <small>[(skosxl:prefLabel)](http://www.w3.org/2008/05/skos-xl#prefLabel)</small> | De eigenschap skosxl:prefLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:prefLabel. | `0..1` | [label](#skosxl%3ALabel)  |
 | <a id='skos%3AprefLabel'></a>voorkeurslabel <br> <small>[(skos:prefLabel)](http://www.w3.org/2004/02/skos/core#prefLabel)</small> | Het verkozen lexicale label voor een resource, in een gegeven taal. | `1..*`[^1] | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
+| <a id='skosxl%3AprefLabel'></a>voorkeurslabel <br> <small>[(skosxl:prefLabel)](http://www.w3.org/2008/05/skos-xl#prefLabel)</small> | De eigenschap skosxl:prefLabel wordt gebruikt om een skosxl:Label te koppelen met een skos:Concept. De eigenschap is analoog aan skos:prefLabel. | `0..1` | [label](#skosxl%3ALabel)  |
 | <a id='skos%3AchangeNote'></a>wijzigingsnotitie <br> <small>[(skos:changeNote)](http://www.w3.org/2004/02/skos/core#changeNote)</small> | Een notitie over een wijziging aan een concept. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 
 ## <a id="skos%3AConceptScheme"></a>conceptenschema <small>[(skos:ConceptScheme)](http://www.w3.org/2004/02/skos/core#ConceptScheme)</small>
@@ -163,7 +163,7 @@ De klasse van RDF-lijsten.
 
 | Eigenschap | Beschrijving | Kardinaliteit | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='_%3Anad625f5ef9fa41a6aaa5841e0fe33cf8b14'></a>None <br> <small>[(_:nad625f5ef9fa41a6aaa5841e0fe33cf8b14)](nad625f5ef9fa41a6aaa5841e0fe33cf8b14)</small> |  | `0..*` | [concept](#skos%3AConcept) _of_ [verzameling](#skos%3ACollection)  |
+| <a id='_%3Anbc4d90f0a07946f7bad84830d4c91a95b14'></a>None <br> <small>[(_:nbc4d90f0a07946f7bad84830d4c91a95b14)](nbc4d90f0a07946f7bad84830d4c91a95b14)</small> |  | `0..*` | [concept](#skos%3AConcept) _of_ [verzameling](#skos%3ACollection)  |
 
 ## <a id="skos%3ACollection"></a>verzameling <small>[(skos:Collection)](http://www.w3.org/2004/02/skos/core#Collection)</small>
 
