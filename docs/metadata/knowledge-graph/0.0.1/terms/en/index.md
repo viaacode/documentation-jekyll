@@ -25,8 +25,8 @@ Data model List of terms
 , [fr](../fr)
 
 **Authors:**
-[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 , [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
@@ -107,8 +107,8 @@ A SKOS concept can be viewed as an idea or notion; a unit of thought. However, w
 | <a id='skos%3AeditorialNote'></a>editorial note <br> <small>[(skos:editorialNote)](http://www.w3.org/2004/02/skos/core#editorialNote)</small> | A note for an editor, translator or maintainer of the vocabulary. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='skos%3AexactMatch'></a>exact match <br> <small>[(skos:exactMatch)](http://www.w3.org/2004/02/skos/core#exactMatch)</small> | `skos:exactMatch` is used to link two concepts, indicating a high degree of confidence that the concepts can be used interchangeably across a wide range of information retrieval applications. `skos:exactMatch` is a transitive property, and is a sub-property of `skos:closeMatch`. | `0..*` | [concept](#skos%3AConcept)  |
 | <a id='skos%3Aexample'></a>example <br> <small>[(skos:example)](http://www.w3.org/2004/02/skos/core#example)</small> | An example of the use of a concept. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
-| <a id='haTer%3AhigherPriority'></a>has higher priority than <br> <small>[(haTer:higherPriority)](https://data.hetarchief.be/ns/terms/higherPriority)</small> |  | `0..*` | [concept](#skos%3AConcept)  |
-| <a id='haTer%3AlowerPriority'></a>has lower priority than <br> <small>[(haTer:lowerPriority)](https://data.hetarchief.be/ns/terms/lowerPriority)</small> |  | `0..*` | [concept](#skos%3AConcept)  |
+| <a id='haTer%3AhigherPriority'></a>has higher priority than <br> <small>[(haTer:higherPriority)](https://data.hetarchief.be/ns/terms/higherPriority)</small> | Relates a concept to a concept that has a higher priority. | `0..*` | [concept](#skos%3AConcept)  |
+| <a id='haTer%3AlowerPriority'></a>has lower priority than <br> <small>[(haTer:lowerPriority)](https://data.hetarchief.be/ns/terms/lowerPriority)</small> | Relates a concept to a concept that has a lower priority. | `0..*` | [concept](#skos%3AConcept)  |
 | <a id='skos%3AhiddenLabel'></a>hidden label <br> <small>[(skos:hiddenLabel)](http://www.w3.org/2004/02/skos/core#hiddenLabel)</small> | A lexical label for a resource that should be hidden when generating visual displays of the resource, but should still be accessible to free text search operations. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='skos%3AhistoryNote'></a>history note <br> <small>[(skos:historyNote)](http://www.w3.org/2004/02/skos/core#historyNote)</small> | A note about the past state/use/meaning of a concept. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='skos%3AinScheme'></a>in scheme <br> <small>[(skos:inScheme)](http://www.w3.org/2004/02/skos/core#inScheme)</small> | Relates a resource (for example a concept) to a concept scheme in which it is included. | `1..*` | [concept scheme](#skos%3AConceptScheme)  |
@@ -161,7 +161,7 @@ The class of RDF Lists.
 
 | Property | Description | Cardinality | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='_%3Anad625f5ef9fa41a6aaa5841e0fe33cf8b14'></a>None <br> <small>[(_:nad625f5ef9fa41a6aaa5841e0fe33cf8b14)](nad625f5ef9fa41a6aaa5841e0fe33cf8b14)</small> |  | `0..*` | [concept](#skos%3AConcept) _or_ [collection](#skos%3ACollection)  |
+| <a id='_%3Anbc4d90f0a07946f7bad84830d4c91a95b14'></a>None <br> <small>[(_:nbc4d90f0a07946f7bad84830d4c91a95b14)](nbc4d90f0a07946f7bad84830d4c91a95b14)</small> |  | `0..*` | [concept](#skos%3AConcept) _or_ [collection](#skos%3ACollection)  |
 
 ## <a id="skos%3AOrderedCollection"></a>ordered collection <small>[(skos:OrderedCollection)](http://www.w3.org/2004/02/skos/core#OrderedCollection)</small>
 
