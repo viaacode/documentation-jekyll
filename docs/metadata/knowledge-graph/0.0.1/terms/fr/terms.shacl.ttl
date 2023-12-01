@@ -11,15 +11,15 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n2c951025e81a494a95857c383b0203c1b1 a rdfs:Class,
+_:n857994e80bd84d53b5bd5cfca62d6f4db1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
-_:nb96ea042d7e445ad8901c6012c0a8e1db1 a rdfs:Class,
+_:nd905c937b653447a8ba7eee6fdfdbb40b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
-_:nb96ea042d7e445ad8901c6012c0a8e1db17 a rdfs:Class,
+_:nd905c937b653447a8ba7eee6fdfdbb40b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
@@ -358,6 +358,26 @@ skosxl:Label a rdfs:Class,
     skos:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en,
         "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr,
         "Een entiteit is een fysiek, digitaal, conceptueel of een ander soort ding met enkele vaste aspecten; entiteiten kunnen echt of denkbeeldig zijn."@nl .
+
+<https://data.hetarchief.be/ns/bibliographic/NewspaperIssue> a rdfs:Class ;
+    rdfs:label "Newspaper edition"@en,
+        "Edition de journal"@fr,
+        "Kranteneditie"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> ;
+    rdfs:subClassOf <http://www.loc.gov/premis/rdf/v3/IntellectualEntity> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents the newspaper edition as a whole."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent l'édition du journal dans son ensemble."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en de kranteneditie als geheel voorstelt."@nl .
+
+<https://data.hetarchief.be/ns/bibliographic/NewspaperIssuePage> a rdfs:Class ;
+    rdfs:label "Newspaper issue page"@en,
+        "Page d'édition de journal"@fr,
+        "Kranteneditiepagina"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> ;
+    rdfs:subClassOf <http://www.loc.gov/premis/rdf/v3/IntellectualEntity> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."@en,
+        "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent une page de journal spécifique."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en een specifieke krantenpagina voorstelt."@nl .
 
 <https://data.hetarchief.be/ns/object/CarrierRepresentation> a rdfs:Class ;
     rdfs:label "carrier representation"@en,
@@ -946,7 +966,7 @@ dct:format a rdf:Property ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:nb96ea042d7e445ad8901c6012c0a8e1db1 ;
+    rdfs:domain _:nd905c937b653447a8ba7eee6fdfdbb40b1 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1014,7 +1034,7 @@ dct:format a rdf:Property ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:nb96ea042d7e445ad8901c6012c0a8e1db17 ;
+    rdfs:domain _:nd905c937b653447a8ba7eee6fdfdbb40b17 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1243,6 +1263,30 @@ skosxl:labelRelation a rdf:Property,
     skos:definition "A homepage for some thing. "@en,
         "Une page d'accueil pour quelque chose"@fr,
         "Een homepagina van/voor iets"@nl .
+
+<https://data.hetarchief.be/ns/bibliographic/numberOfPages> a rdf:Property ;
+    rdfs:label "number of pages"@en,
+        "nombre de pages"@fr,
+        "aantal pagina's"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/bibliographic/NewspaperIssue> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of pages that a particular work consists of."@en,
+        "Le nombre de pages qui composent une œuvre particulière."@fr,
+        "Het aantal pagina's waaruit een bepaald werk bestaat."@nl ;
+    skos:related schema:numberOfPages .
+
+<https://data.hetarchief.be/ns/bibliographic/pageNumber> a rdf:Property ;
+    rdfs:label "page number"@en,
+        "numéro de page"@fr,
+        "paginanummer"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/bibliographic/NewspaperIssuePage> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf schema:position ;
+    skos:definition "The sequence number of a page within its larger whole (e.g. a newspaper edition, a book, etc.)."@en,
+        "Le numéro de séquence d'une page dans son ensemble plus grand (par exemple, une édition de journal, un livre, etc.)."@fr,
+        "Het volgnummer van een pagina binnen zijn groter geheel (bv. een kranteneditie, een boek, etc.)."@nl .
 
 <https://data.hetarchief.be/ns/object/preservationProblem> a rdf:Property ;
     rdfs:label "preservation problem"@en,
@@ -1655,18 +1699,6 @@ schema:artform a rdf:Property ;
         "La forme artistique, le support ou le mode de ce travail créatif, par exemple Peinture, Dessin, Sculpture, Impression, Photographie, Assemblage, Collage, etc."@fr,
         "De kunstvorm, het medium of de vorm van dit creatieve werk, bijvoorbeeld Schilderij, Tekening, Beeldhouwwerk, Print, Foto, Assemblage, Collage, etc."@nl .
 
-schema:author a rdf:Property ;
-    rdfs:label "author"@en,
-        "auteur"@fr,
-        "auteur"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> schema:Role ) ] ;
-    owl:equivalentProperty dct:creator ;
-    skos:definition "The author of this content or rating."@en,
-        "L'auteur de ce contenu ou de cette évaluation."@fr,
-        "De auteur van deze inhoud of beoordeling."@nl .
-
 schema:birthDate a rdf:Property ;
     rdfs:label "birth date"@en,
         "date de naissance"@fr,
@@ -1768,6 +1800,18 @@ schema:copyrightYear a rdf:Property ;
     skos:definition "The year during which the claimed copyright for the CreativeWork was first asserted."@en,
         "L'année durant laquelle le droit d'auteur revendiqué pour l'œuvre créative a été revendiqué pour la première fois."@fr,
         "Het jaar waarin het auteursrecht voor het CreativeWork voor het eerst gold/geldend gemaakt werd."@nl .
+
+schema:creator a rdf:Property ;
+    rdfs:label "creator"@en,
+        "créateur"@fr,
+        "maker"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range [ owl:unionOf ( schema:Person <http://www.w3.org/ns/org#Organization> schema:Role ) ] ;
+    owl:equivalentProperty dct:creator ;
+    skos:definition "The creator/author of this CreativeWork."@en,
+        "Le créateur / auteur de ce travail créatif."@fr,
+        "De maker/auteur van dit creatief werk."@nl .
 
 schema:creditText a rdf:Property ;
     rdfs:label "credit text"@en,
@@ -2326,7 +2370,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n2c951025e81a494a95857c383b0203c1b1 ;
+    rdfs:range _:n857994e80bd84d53b5bd5cfca62d6f4db1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -2631,21 +2675,6 @@ skos:notation a rdf:Property,
         "Par convention, skos:notation est utilisé avec un littéral typé dans la position objet du triplet."@fr,
         "Volgens conventie wordt skos:notation gebruikt met een typed literal in de objectpositie van de triple."@nl .
 
-skos:related a rdf:Property,
-        owl:ObjectProperty,
-        owl:SymmetricProperty ;
-    rdfs:label "has related"@en,
-        "a un concept lié"@fr,
-        "heeft gerelateerd concept"@nl ;
-    rdfs:comment "skos:related is disjoint with skos:broaderTransitive"@en,
-        "skos:related est disjoint avec skos:broaderTransitive"@fr,
-        "skos:related is disjunct met skos:broaderTransitive"@nl ;
-    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:subPropertyOf skos:semanticRelation ;
-    skos:definition "Relates a concept to a concept with which there is an associative semantic relationship."@en,
-        "Relie un concept à un concept avec lequel il existe une relation sémantique associative."@fr,
-        "Verbindt een concept met een concept waarmee er een associatieve semantische relatie is."@nl .
-
 skos:topConceptOf a rdf:Property,
         owl:ObjectProperty ;
     rdfs:label "is top concept in scheme"@en,
@@ -2672,6 +2701,38 @@ skosxl:literalForm a rdf:Property,
     skos:definition "The property skosxl:literalForm is used to give the literal form of an skosxl:Label."@en,
         "La propriété skosxl:literalForm est utilisée pour donner la forme littérale d'une skosxl:Label."@fr,
         "De eigenschap skosxl:literalForm wordt gebruikt om de letterlijke vorm van een skosxl:Label te geven."@nl .
+
+haTer:higherPriority a rdf:Property ;
+    rdfs:label "has higher priority than"@en,
+        "a une priorité plus grande que"@fr,
+        "heeft een hogere prioriteit dan"@nl ;
+    rdfs:domain skos:Concept ;
+    rdfs:isDefinedBy haTer: ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf skos:related ;
+    owl:inverseOf haTer:lowerPriority ;
+    skos:definition "Relates a concept to a concept that has a higher priority."@en,
+        "Relie un concept à un concept qui a une priorité plus élevée."@fr,
+        "Relateert een concept aan een ander concept dat een hogere prioriteit heeft."@nl ;
+    skos:example "File format XML1.1 is a more recent and thus preferable format over XML1.0; XML1.1 thus holds a higher priority than XML1.0."@en,
+        "Le format de fichier XML1.1 est un format plus récent et donc préférable à XML1.0; XML1.1 a donc une priorité plus élevée que XML1.0."@fr,
+        "Het bestandsformaat XML1.1 is een recenter en dus verkieslijker formaat dan XML1.0; XML1.1 heeft dus een hogere prioriteit dan XML1.0."@nl .
+
+haTer:lowerPriority a rdf:Property ;
+    rdfs:label "has lower priority than"@en,
+        "a une priorité inférieure à"@fr,
+        "heeft een lagere prioriteit dan"@nl ;
+    rdfs:domain skos:Concept ;
+    rdfs:isDefinedBy haTer: ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf skos:related ;
+    owl:inverseOf haTer:higherPriority ;
+    skos:definition "Relates a concept to a concept that has a lower priority."@en,
+        "Relie un concept à un concept qui a une priorité inférieure."@fr,
+        "Relateert een concept aan een ander concept dat een lagere prioriteit heeft."@nl ;
+    skos:example "File format XML1.1 is a more recent and thus preferable format over XML1.0; XML1.0 thus holds a lower priority than XML1.1."@en,
+        "Le format de fichier XML1.1 est un format plus récent et donc préférable à XML1.0; XML1.0 a donc une priorité inférieure à XML1.1."@fr,
+        "Het bestandsformaat XML1.1 is een recenter en dus verkieslijker formaat dan XML1.0; XML1.0 heeft dus een lagere prioriteit dan XML1.1."@nl .
 
 <http://id.loc.gov/vocabulary/preservation/relationshipSubType/isr> a owl:ObjectProperty ;
     rdfs:label "is Represented by"@en,
@@ -2844,6 +2905,21 @@ skos:narrowerTransitive a rdf:Property,
     skos:scopeNote "By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application."@en,
         "Par convention, skos:narrowerTransitive n'est pas utilisé pour faire des assertions. A la place, les propriétés peuvent être utilisées pour tirer des inferences sur la fermeture transitive de la relation hiérarchique, ce qui est utile par exemple lors de l'implémentation d'un algorithme simple d'expansion de requête dans une application de recherche."@fr,
         "Volgens conventie wordt skos:narrowerTransitive niet gebruikt om beweringen te doen. De eigenschappen kunnen wel gebruikt worden om inferenties te trekken over de transitieve sluiting van de hiërarchische relatie, wat bijvoorbeeld handig is bij het implementeren van een eenvoudig queryexpansie-algoritme in een zoekapplicatie."@nl .
+
+skos:related a rdf:Property,
+        owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "has related"@en,
+        "a un concept lié"@fr,
+        "heeft gerelateerd concept"@nl ;
+    rdfs:comment "skos:related is disjoint with skos:broaderTransitive"@en,
+        "skos:related est disjoint avec skos:broaderTransitive"@fr,
+        "skos:related is disjunct met skos:broaderTransitive"@nl ;
+    rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
+    rdfs:subPropertyOf skos:semanticRelation ;
+    skos:definition "Relates a concept to a concept with which there is an associative semantic relationship."@en,
+        "Relie un concept à un concept avec lequel il existe une relation sémantique associative."@fr,
+        "Verbindt een concept met een concept waarmee er een associatieve semantische relatie is."@nl .
 
 skos:relatedMatch a rdf:Property,
         owl:ObjectProperty,

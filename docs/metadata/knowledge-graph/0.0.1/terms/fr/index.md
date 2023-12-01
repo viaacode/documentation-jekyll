@@ -25,8 +25,8 @@ Modèle de données Listes de termes
 , [nl](../nl)
 
 **Auteurs:**
-[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
-, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 , [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
@@ -122,8 +122,8 @@ Un concept SKOS peut être considéré comme une idée ou une notion, une unité
 
 | Propriété | Description | Cardinalité | Type de données |
 | :------ | :---------- | :---------- | :------- |
-| <a id='haTer%3AlowerPriority'></a>a une priorité inférieure à <br> <small>[(haTer:lowerPriority)](https://data.hetarchief.be/ns/terms/lowerPriority)</small> |  | `0..*` | [concept](#skos%3AConcept)  |
-| <a id='haTer%3AhigherPriority'></a>a une priorité plus grande que <br> <small>[(haTer:higherPriority)](https://data.hetarchief.be/ns/terms/higherPriority)</small> |  | `0..*` | [concept](#skos%3AConcept)  |
+| <a id='haTer%3AlowerPriority'></a>a une priorité inférieure à <br> <small>[(haTer:lowerPriority)](https://data.hetarchief.be/ns/terms/lowerPriority)</small> | Relie un concept à un concept qui a une priorité inférieure. | `0..*` | [concept](#skos%3AConcept)  |
+| <a id='haTer%3AhigherPriority'></a>a une priorité plus grande que <br> <small>[(haTer:higherPriority)](https://data.hetarchief.be/ns/terms/higherPriority)</small> | Relie un concept à un concept qui a une priorité plus élevée. | `0..*` | [concept](#skos%3AConcept)  |
 | <a id='skos%3AtopConceptOf'></a>concept supérieur de <br> <small>[(skos:topConceptOf)](http://www.w3.org/2004/02/skos/core#topConceptOf)</small> | Associe un concept au schéma de concepts dont il s'agit d'un concept de niveau supérieur. | `0..*` | [schéma de concepts](#skos%3AConceptScheme)  |
 | <a id='skos%3AexactMatch'></a>correspondance exacte <br> <small>[(skos:exactMatch)](http://www.w3.org/2004/02/skos/core#exactMatch)</small> | `skos:exactMatch` est utilisé pour lier deux concepts, indiquant un haut degré de confiance que les concepts peuvent être utilisés de manière interchangeable dans un large éventail d'applications de recherche d'information. `skos:exactMatch` est une propriété transitive, et est une sous-propriété de `skos:closeMatch`. | `0..*` | [concept](#skos%3AConcept)  |
 | <a id='skos%3AbroadMatch'></a>correspondance large <br> <small>[(skos:broadMatch)](http://www.w3.org/2004/02/skos/core#broadMatch)</small> | `skos:broadMatch` est utilisé pour indiquer un lien de correspondance hiérarchique entre deux ressources conceptuelles dans des schémas de concepts différents. | `0..*` | [concept](#skos%3AConcept)  |
@@ -158,7 +158,7 @@ La classe des listes RDF.
 
 | Propriété | Description | Cardinalité | Type de données |
 | :------ | :---------- | :---------- | :------- |
-| <a id='_%3Anad625f5ef9fa41a6aaa5841e0fe33cf8b14'></a>None <br> <small>[(_:nad625f5ef9fa41a6aaa5841e0fe33cf8b14)](nad625f5ef9fa41a6aaa5841e0fe33cf8b14)</small> |  | `0..*` | [concept](#skos%3AConcept) _ou_ [collection](#skos%3ACollection)  |
+| <a id='_%3Anbc4d90f0a07946f7bad84830d4c91a95b14'></a>None <br> <small>[(_:nbc4d90f0a07946f7bad84830d4c91a95b14)](nbc4d90f0a07946f7bad84830d4c91a95b14)</small> |  | `0..*` | [concept](#skos%3AConcept) _ou_ [collection](#skos%3ACollection)  |
 
 ## <a id="skos%3AConceptScheme"></a>schéma de concepts <small>[(skos:ConceptScheme)](http://www.w3.org/2004/02/skos/core#ConceptScheme)</small>
 

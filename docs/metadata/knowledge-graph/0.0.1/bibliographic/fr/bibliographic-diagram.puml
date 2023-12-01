@@ -1,0 +1,47 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>Newspaper</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
+class "<b>Edition de journal</b> (haBib:NewspaperIssue)" as haBib_NewspaperIssue [[#haBib%3ANewspaperIssue]]
+class "<b>entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Page d'édition de journal</b> (haBib:NewspaperIssuePage)" as haBib_NewspaperIssuePage [[#haBib%3ANewspaperIssuePage]]
+class "<b>entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+
+
+
+haBib_NewspaperIssue --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haBib_NewspaperIssue : nombre de pages : <i>xsd:decimal</i> [0..1]
+haBib_NewspaperIssue : numéro de l'édition : <i>xsd:decimal</i> [0..1]
+haBib_NewspaperIssue --> schema_Newspaper :fait partie de [0..1]  > 
+haBib_NewspaperIssue --> skos_Concept :fréquence d'émission [0..1]  \ltype de publication [0..1]  > 
+
+
+haBib_NewspaperIssuePage --|> premis_IntellectualEntity #blue;line.dotted;text:blue
+
+haBib_NewspaperIssuePage : numéro de page : <i>xsd:decimal</i> [0..1]
+haBib_NewspaperIssuePage --> haBib_NewspaperIssue :fait partie de [1..1]  > 
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
