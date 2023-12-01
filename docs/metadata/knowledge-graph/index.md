@@ -43,9 +43,9 @@ Deze metadatamodellen zijn momenteel nog in ontwikkeling en zijn dus nog niet be
 
 |Naam|Documentatie (NL)|Documentation (EN)|
 |----|:-----------------------------:|:-------------------------:|
-| **Objectstructuur (kernmodel)** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/object/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/object/en/index.md %}) |
-| **Organisaties** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organization/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organization/en/index.md %}) |
-| **Descriptie** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/descriptive/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/descriptive/en/index.md %}) |
+| **Objectstructuur (kernmodel)** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/objects/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/objects/en/index.md %}) |
+| **Organisaties** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organizations/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/organizations/en/index.md %}) |
+| **Descriptie** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/description/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/description/en/index.md %}) |
 | **Data herkomst** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/events/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/events/en/index.md %}) |
 | **Termenlijsten** | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/terms/nl/index.md %}) | [0.0.1]({{ site.baseurl }}{% link docs/metadata/knowledge-graph/0.0.1/terms/en/index.md %}) |
 
