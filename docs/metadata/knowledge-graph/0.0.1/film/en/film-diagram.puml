@@ -1,0 +1,54 @@
+@startuml
+!theme vibrant
+skinparam classFontSize 14
+!define LIGHTORANGE
+skinparam componentStyle uml2
+skinparam wrapMessageWidth 1000
+skinparam wrapWidth 1000
+' skinparam ArrowColor #Maroon
+' Remove shadows
+skinparam shadowing false
+'skinparam linetype polyline
+skinparam ArrowMessageAlignment left
+top to bottom direction
+
+
+class "<b>OpenCaptions</b> (ebucore:OpenCaptions)" as ebucore_OpenCaptions [[#ebucore%3AOpenCaptions]]
+class "<b>Audio reel</b> (haFil:AudioReel)" as haFil_AudioReel [[#haFil%3AAudioReel]]
+class "<b>Film</b> (haFil:Film)" as haFil_Film [[#haFil%3AFilm]]
+class "<b>Image reel</b> (haFil:ImageReel)" as haFil_ImageReel [[#haFil%3AImageReel]]
+class "<b>carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+
+
+ebucore_OpenCaptions : in language : <i>xsd:string</i> [0..*]
+
+
+
+
+
+haFil_Film --> haObj_CarrierRepresentation :is Represented By [1..*]  > 
+
+
+haFil_ImageReel --> ebucore_OpenCaptions :has (embedded) captioning [0..*]  > 
+haFil_ImageReel --> skos_Concept :coloring type [0..1]  > 
+
+haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
+
+haObj_CarrierRepresentation : number of lost audio reels : <i>xsd:decimal</i> [0..1]
+haObj_CarrierRepresentation : number of lost image reels : <i>xsd:decimal</i> [0..1]
+haObj_CarrierRepresentation : number of reels : <i>xsd:decimal</i> [0..1]
+haObj_CarrierRepresentation --> haFil_AudioReel :stored at [1..*]  > 
+haObj_CarrierRepresentation --> haFil_ImageReel :stored at [1..*]  > 
+
+
+
+
+
+hide circle
+hide methods
+hide empty members
+@enduml
+
+
