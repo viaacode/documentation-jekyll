@@ -13,7 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/en#schema%3ABrand]]
+class "<b>Brand</b> (schema:Brand)" as schema_Brand [[#schema%3ABrand]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>archive component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
@@ -21,8 +21,8 @@ class "<b>carrier representation</b> (haObj:CarrierRepresentation)" as haObj_Car
 class "<b>representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
-class "<b>content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/en#haOrg%3AContentPartner]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>creative work series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
 class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
@@ -34,8 +34,8 @@ class "<b>file</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>organization</b> (org:Organization)" as org_Organization [[../../organizations/en#org%3AOrganization]]
-class "<b>person</b> (schema:Person)" as schema_Person [[../../organizations/en#schema%3APerson]]
+class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>person</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>physical carrier</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
@@ -184,6 +184,7 @@ haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
 
 haObj_PhysicalCarrier : description : <i>rdf:langString</i> [0..1]
 haObj_PhysicalCarrier : identifier : <i>xsd:string</i> [1..1]
+haObj_PhysicalCarrier : material : <i>xsd:string</i> [0..1]
 haObj_PhysicalCarrier : material extent : <i>xsd:string</i> [0..1]
 haObj_PhysicalCarrier : name : <i>rdf:langString</i> [1..1]
 
