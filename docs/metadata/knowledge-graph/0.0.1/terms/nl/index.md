@@ -25,9 +25,9 @@ Datamodel Termenlijst
 , [fr](../fr)
 
 **Auteurs:**
-[Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+[Milan Valadou](mailto:milan.valadou@meemoo.be)
+, [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
 , [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
-, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Datamodel voor het beschrijven van gestructureerde lijsten van termen zoals thesauri.
@@ -163,7 +163,7 @@ De klasse van RDF-lijsten.
 
 | Eigenschap | Beschrijving | Kardinaliteit | Datatype |
 | :------ | :---------- | :---------- | :------- |
-| <a id='_%3Anbc4d90f0a07946f7bad84830d4c91a95b14'></a>None <br> <small>[(_:nbc4d90f0a07946f7bad84830d4c91a95b14)](nbc4d90f0a07946f7bad84830d4c91a95b14)</small> |  | `0..*` | [concept](#skos%3AConcept) _of_ [verzameling](#skos%3ACollection)  |
+| <a id='_%3An726b8426f82246499bd5d681b38af831b14'></a>None <br> <small>[(_:n726b8426f82246499bd5d681b38af831b14)](n726b8426f82246499bd5d681b38af831b14)</small> |  | `0..*` | [concept](#skos%3AConcept) _of_ [verzameling](#skos%3ACollection)  |
 
 ## <a id="skos%3ACollection"></a>verzameling <small>[(skos:Collection)](http://www.w3.org/2004/02/skos/core#Collection)</small>
 
