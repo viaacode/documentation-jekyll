@@ -21,8 +21,8 @@ class "<b>matériel acteur</b> (premis:HardwareAgent)" as premis_HardwareAgent [
 class "<b>acteur</b> (premis:Agent)" as premis_Agent [[#premis%3AAgent]]
 class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>entité</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[../../organizations/fr#org%3AOrganization]]
-class "<b>personne</b> (schema:Person)" as schema_Person [[../../organizations/fr#schema%3APerson]]
+class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>personne</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>statut de résultat</b> (premis:OutcomeStatus)" as premis_OutcomeStatus [[#premis%3AOutcomeStatus]]
 class "<b>événement</b> (premis:Event)" as premis_Event [[#premis%3AEvent]]
@@ -80,7 +80,7 @@ premis_Event : a une note : <i>xsd:string</i> [0..1]
 premis_Event : a une note de résultat : <i>xsd:string</i> [0..1]
 premis_Event --> org_Organization :implementé par [1..1]  > 
 premis_Event --> premis_HardwareAgent :instrument [0..*]  > 
-premis_Event --> premis_Object :a une source [0..1]  \lrésultat [0..1]  > 
+premis_Event --> premis_Object :a une source [0..*]  \lrésultat [0..*]  > 
 premis_Event --> premis_OutcomeStatus :a résultat [0..1]  > 
 premis_Event --> premis_SoftwareAgent :exécuté par [0..1]  > 
 
