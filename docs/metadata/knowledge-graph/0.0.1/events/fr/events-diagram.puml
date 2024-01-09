@@ -80,7 +80,7 @@ premis_Event : a une note : <i>xsd:string</i> [0..1]
 premis_Event : a une note de résultat : <i>xsd:string</i> [0..1]
 premis_Event --> org_Organization :implementé par [1..1]  > 
 premis_Event --> premis_HardwareAgent :instrument [0..*]  > 
-premis_Event --> premis_Object :a une source [0..1]  \lrésultat [0..1]  > 
+premis_Event --> premis_Object :a une source [0..*]  \lrésultat [0..*]  > 
 premis_Event --> premis_OutcomeStatus :a résultat [0..1]  > 
 premis_Event --> premis_SoftwareAgent :exécuté par [0..1]  > 
 
