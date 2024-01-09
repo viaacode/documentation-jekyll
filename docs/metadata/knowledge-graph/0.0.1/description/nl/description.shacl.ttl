@@ -1,4 +1,5 @@
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix ebucore: <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> .
 @prefix edtf: <http://id.loc.gov/datatypes/edtf/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix haObj: <https://data.hetarchief.be/ns/object/> .
@@ -15,15 +16,15 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n857994e80bd84d53b5bd5cfca62d6f4db1 a rdfs:Class,
+_:n1a810260a7134a17b1234210b1e0d2c1b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
-_:nd905c937b653447a8ba7eee6fdfdbb40b1 a rdfs:Class,
+_:nfc9ae55f3dbc448693025694ab822363b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:nd905c937b653447a8ba7eee6fdfdbb40b17 a rdfs:Class,
+_:nfc9ae55f3dbc448693025694ab822363b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
@@ -39,6 +40,24 @@ dct:FileFormat a rdfs:Class ;
     skos:definition "A digital resource format."@en,
         "Un format de ressource numérique."@fr,
         "Een formaat van een digitale bron."@nl .
+
+ebucore:Annotation a rdfs:Class ;
+    rdfs:label "annotation"@en,
+        "annotation"@fr,
+        "Annotatie"@nl ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A class used to annotate Assets."@en,
+        "Une classe utilisée pour annoter les éléments."@fr,
+        "Een klasse die wordt gebruikt om items te annoteren."@nl .
+
+ebucore:TextAnnotation a rdfs:Class ;
+    rdfs:label "Text Annotation"@en,
+        "Annotation texte"@fr,
+        "Tekstannotatie"@nl ;
+    rdfs:subClassOf ebucore:Annotation ;
+    skos:definition "A class specific to the annotation of a text or portions of text."@en,
+        "Une classe spécifique à l'annotation d'un texte ou de portions de texte."@fr,
+        "Een klasse die specifiek is voor de annotatie van een tekst of delen van tekst."@nl .
 
 premis:Agent a rdfs:Class,
         owl:Class ;
@@ -383,6 +402,33 @@ org:Site a rdfs:Class,
         "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent une page de journal spécifique."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en een specifieke krantenpagina voorstelt."@nl .
 
+<https://data.hetarchief.be/ns/film/AudioReel> a rdfs:Class ;
+    rdfs:label "Audio reel"@en,
+        "Bobine audio"@fr,
+        "Geluidsspoel"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> ;
+    skos:definition "A reel of an analog film carrier that contains audio."@en,
+        "Une bobine d'un porte-film analogique qui contient de l'audio."@fr,
+        "Een band van een analoge film drager die audio bevat."@nl .
+
+<https://data.hetarchief.be/ns/film/Film> a rdfs:Class ;
+    rdfs:label "Film"@en,
+        "Film"@fr,
+        "Film"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."@nl .
+
+<https://data.hetarchief.be/ns/film/ImageReel> a rdfs:Class ;
+    rdfs:label "Image reel"@en,
+        "Bobine d'image"@fr,
+        "Beeldspoel"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> ;
+    skos:definition "A reel of an analog film carrier that contains video."@en,
+        "Une bobine d'un porte-film analogique qui contient une vidéo."@fr,
+        "Een speo van een analoge film drager die beeld bevat."@nl .
+
 haObj:CarrierRepresentation a rdfs:Class ;
     rdfs:label "carrier representation"@en,
         "représentation de porteur"@fr,
@@ -409,7 +455,7 @@ haObj:FragmentRepresentation a rdfs:Class ;
         "fragment representatie"@nl ;
     rdfs:isDefinedBy haObj: ;
     rdfs:subClassOf premis:DigitalRepresentation ;
-    owl:equivalentClass <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
+    owl:equivalentClass ebucore:MediaFragment ;
     skos:definition "A spatial or temporal segment of a file that serves as a partial digital representation of an archived Intellectual Entity."@en,
         "Un segment spatial ou temporel d'un fichier qui sert de représentation numérique partielle d'une entité intellectuelle archivée."@fr,
         "Een spatiaal of temporeel segment van een bestand die fungeert als een partiële digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl .
@@ -871,50 +917,26 @@ schema:Thing a rdfs:Class ;
         "Une relation entre un objet d'environnement et un autre objet où l'objet décrit en remplace un autre. Cela permet de conserver une piste d'audit des environnements. A une relation réciproque avec isSupersededBy."@fr,
         "Een relatie tussen een omgevingsobject en een ander object waarbij het beschreven object een ander object vervangt. Hierdoor kan een controlespoor van omgevingen worden bijgehouden. Heeft een wederkerige relatie met isSupersededBy."@nl .
 
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning> a rdf:Property ;
-    rdfs:label "captioning"@en,
-        "sous-titrage"@fr,
-        "ondertiteling"@nl ;
-    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset> ;
-    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
-    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Captioning> ;
-    skos:definition "To signal the presence of Captioning."@en,
-        "Pour signaler la présence du sous-titrage."@fr,
-        "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
-
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment> a rdf:Property ;
-    rdfs:label "fragment"@en,
-        "a un fragment (de média)"@fr,
-        "heeft (media)fragment"@nl ;
-    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> ;
-    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
-    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
-    owl:equivalentProperty <http://www.w3.org/ns/ma-ont#hasFragment> ;
-    owl:inverseOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf> ;
-    skos:definition "To define relation to MediaFragments within a MediaResource."@en,
-        "Pour définir une relation entre des MediaFragments dans une MediaResource."@fr,
-        "Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."@nl .
-
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMimeType> a rdf:Property ;
+ebucore:hasMimeType a rdf:Property ;
     rdfs:label "mime type"@en,
         "mime type"@fr,
         "mime type"@nl ;
-    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> ;
-    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
-    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MimeType>,
+    rdfs:domain ebucore:MediaResource ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:MimeType,
         xsd:string ;
-    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasFormat> ;
+    rdfs:subPropertyOf ebucore:hasFormat ;
     skos:definition "To specify the Mime type of a Resource."@en,
         "Pour spécifier le type MIME d'une ressource."@fr,
         "Om het MIME type van een resource te specificeren."@nl .
 
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasObjectType> a rdf:Property ;
+ebucore:hasObjectType a rdf:Property ;
     rdfs:label "object/asset type"@en,
         "type d'objet/de bien"@fr,
         "type object/activum"@nl ;
-    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#EditorialObject> ;
-    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
-    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#ObjectType>,
+    rdfs:domain ebucore:EditorialObject ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:ObjectType,
         xsd:anyURI,
         xsd:string ;
     skos:definition "To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."@en,
@@ -935,7 +957,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:nd905c937b653447a8ba7eee6fdfdbb40b1 ;
+    rdfs:domain _:nfc9ae55f3dbc448693025694ab822363b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -997,13 +1019,13 @@ premis:size a owl:DatatypeProperty ;
             owl:unionOf ( premis:Bitstream premis:File ) ] ;
     rdfs:isDefinedBy premis: ;
     rdfs:range xsd:nonNegativeInteger ;
-    skos:narrowMatch <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#fileSize> .
+    skos:narrowMatch ebucore:fileSize .
 
 premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:nd905c937b653447a8ba7eee6fdfdbb40b17 ;
+    rdfs:domain _:nfc9ae55f3dbc448693025694ab822363b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1118,7 +1140,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n857994e80bd84d53b5bd5cfca62d6f4db1 ;
+    rdfs:range _:n1a810260a7134a17b1234210b1e0d2c1b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1415,6 +1437,68 @@ foaf:homepage a rdf:Property ;
     vann:preferredNamespacePrefix "haDes" ;
     vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" .
 
+<https://data.hetarchief.be/ns/description#AnnotationShape> a sh:NodeShape ;
+    sh:property [ sh:class ebucore:MediaFragment ;
+            sh:description "The media fragment that is linked to this Annotation."@en,
+                "Le fragment multimédia lié à cette annotation."@fr,
+                "Het media fragment dat gelinkt is aan deze annotatie."@nl ;
+            sh:message "ebucore:isAnnotatedMediaResource is missing or its object is not a ebucore:MediaFragment"@en ;
+            sh:minCount 1 ;
+            sh:name "annotates"@en,
+                "annote"@fr,
+                "annoteert"@nl ;
+            sh:path ebucore:isAnnotatedMediaResource ;
+            sh:severity sh:Violation ],
+        [ sh:datatype xsd:integer ;
+            sh:description "Number to estimate the confidence in the Annotation."@en,
+                "Nombre pour estimer la confiance dans l'annotation."@fr,
+                "Cijfer om het vertrouwen in de annotatie te schatten."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:annotationConfidence is missing, occurs more than once or its object is not a xsd:integer"@en ;
+            sh:minCount 1 ;
+            sh:name "annotation confidence"@en,
+                "confiance en annotation"@fr,
+                "annotatie vertrouwen"@nl ;
+            sh:path ebucore:annotationConfidence ;
+            sh:severity sh:Violation ],
+        [ sh:class skos:Concept ;
+            sh:description "To define a type of Annotation, such as a recognized face or Named Entity."@en,
+                "Pour définir un type d'annotation, comme un visage reconnu ou une entité nommée."@fr,
+                "Om het type annotatie te definiëren, zoals een herkend gezicht of Named Entity."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:annotationType occurs more than once or its object is not a skos:Concept"@en ;
+            sh:minCount 0 ;
+            sh:name "Annotation type"@en,
+                "Type d'annotation"@fr,
+                "type annotatie"@nl ;
+            sh:path ebucore:annotationType ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "To define the target file to which the Annotation applies."@en,
+                "Pour définir le fichier cible auquel l'annotation s'applique."@fr,
+                "Om het doelbestand te definiëren waarop de annotatie van toepassing is."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:hasAnnotationTarget is missing, occurs more than once or its object is not a premis:File"@en ;
+            sh:minCount 1 ;
+            sh:name "Annotation target"@en,
+                "Cible d'annotation"@fr,
+                "Annotatiedoel"@nl ;
+            sh:path ebucore:hasAnnotationTarget ;
+            sh:severity sh:Violation ],
+        [ sh:description "The subject of the Annotation."@en,
+                "Le sujet de l'annotation."@fr,
+                "Het onderwerp van de annotatie."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:hasAnnotationRelatedArtefact is missing, occurs more than once or its object is not an IRI or a Literal"@en ;
+            sh:minCount 1 ;
+            sh:name "Annotation subject"@en,
+                "Sujet d'annotation"@fr,
+                "Annotatie onderwerp"@nl ;
+            sh:nodeKind sh:IRI ;
+            sh:path ebucore:hasAnnotationRelatedArtefact ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass ebucore:Annotation .
+
 <https://data.hetarchief.be/ns/description#ArchiveComponentShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this archive component."@en,
@@ -1621,7 +1705,29 @@ foaf:homepage a rdf:Property ;
     sh:targetClass schema:Episode .
 
 <https://data.hetarchief.be/ns/description#FileNodeShape> a sh:NodeShape ;
-    sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
+    sh:property [ sh:and ( [ sh:class premis:File ] [ sh:class ebucore:ClosedCaptioning ] ) ;
+            sh:description "De ondertitels of transcriptie van dit bestand."@en,
+                "Les sous-titres ou transcription de ce fichier."@fr,
+                "De ondertitels of transcriptie van dit bestand."@nl ;
+            sh:message "ebucore:hasCaptioning is missing, not a premis:File or not a ebucore:ClosedCaptioning."@en ;
+            sh:name "captioning"@en,
+                "sous-titrage"@fr,
+                "ondertiteling"@nl ;
+            sh:path ebucore:hasCaptioning ;
+            sh:severity sh:Violation ],
+        [ sh:class ebucore:MediaFragment ;
+            sh:description "A fragment from this file."@en,
+                "Un fragment de ce fichier."@fr,
+                "Een fragment uit dit bestand."@nl ;
+            sh:message "ebucore:hasMediaFragment is not a ebucore:MediaFragment"@en,
+                "ebucore:hasMediaFragment n'est pas un ebucore:MediaFragment"@fr,
+                "ebucore:hasMediaFragment is geen ebucore:MediaFragment"@nl ;
+            sh:name "has media fragment"@en,
+                "a un fragment multimédia"@fr,
+                "heeft media fragment"@nl ;
+            sh:path ebucore:hasMediaFragment ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#DurationShape>,
         <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
@@ -1837,6 +1943,16 @@ foaf:homepage a rdf:Property ;
             sh:path schema:about ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
+            sh:class schema:Thing ;
+            sh:message "schema:mentions is not a schema:Thing"@en,
+                "schema:mentions n'est pas un schema:Thing"@fr,
+                "schema:mentions is geen schema:Thing"@nl ;
+            sh:name "mentions"@en,
+                "mentionne"@fr,
+                "vermeldt"@nl ;
+            sh:path schema:mentions ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:datatype rdf:langString ;
             sh:message "schema:artform is not of type language string"@en,
                 "schema:artform n'est pas de type language string"@fr,
@@ -1846,17 +1962,6 @@ foaf:homepage a rdf:Property ;
                 "kunstvorm"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path schema:artform ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype rdf:langString ;
-            sh:message "schema:artMedium is not of type language string"@en,
-                "schema:artMedium n'est pas de type language string"@fr,
-                "schema:artMedium is niet van het type language string"@nl ;
-            sh:name "art medium"@en,
-                "moyen d'art"@fr,
-                "kunst medium"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:artMedium ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class haOrg:ContentPartner ;
@@ -1869,6 +1974,17 @@ foaf:homepage a rdf:Property ;
                 "mainteneur/responsable"@fr,
                 "beheerder"@nl ;
             sh:path schema:maintainer ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:message "schema:artMedium is not of type language string"@en,
+                "schema:artMedium n'est pas de type language string"@fr,
+                "schema:artMedium is niet van het type language string"@nl ;
+            sh:name "art medium"@en,
+                "moyen d'art"@fr,
+                "kunst medium"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:artMedium ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
@@ -1955,6 +2071,51 @@ foaf:homepage a rdf:Property ;
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass premis:IntellectualEntity .
 
+<https://data.hetarchief.be/ns/description#MediaFragmentShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:time ;
+            sh:description "The time at which the fragment starts."@en,
+                "Le moment où le fragment commence."@fr,
+                "Het tijdstip waarop het fragment start."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:startTime is not of type xsd:time"@en,
+                "schema:startTime n'est pas de type xsd:time"@fr,
+                "schema:startTime is niet van het type xsd:time"@nl ;
+            sh:name "startTime"@en,
+                "heure de départ"@fr,
+                "starttijd"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:startTime ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:time ;
+            sh:description "The time at which the fragment stops."@en,
+                "Le moment où le fragment s'arrête."@fr,
+                "Het tijdstip waarop het fragment stopt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:endTime is not of type xsd:time"@en,
+                "schema:endTime n'est pas de type xsd:time"@fr,
+                "schema:endTime is niet van het type xsd:time"@nl ;
+            sh:name "endTime"@en,
+                "heure de fin"@fr,
+                "eindtijd"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:endTime ;
+            sh:severity sh:Violation ],
+        [ sh:class premis:File ;
+            sh:description "The file of which this is a fragment."@en,
+                "Le fichier dont il s'agit d'un fragment."@fr,
+                "Het bestand waarvan dit een fragment is."@nl ;
+            sh:message "The object of ebucore:isMediaFragmentOf is not a premis:File"@en,
+                "L'objet de ebucore:isMediaFragmentOf n'est pas un premis:File"@fr,
+                "Het object van ebucore:isMediaFragmentOf is geen premis:File"@nl ;
+            sh:name "is Media Fragment Of"@en,
+                "est fragment des médias de"@fr,
+                "is media fragment van"@nl ;
+            sh:path ebucore:isMediaFragmentOf ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass ebucore:MediaFragment .
+
 <https://data.hetarchief.be/ns/description#PhysicalCarrierNodeShape> a sh:NodeShape ;
     sh:property [ sh:class schema:Brand ;
             sh:description "Brand of the physical carrier."@en,
@@ -2027,6 +2188,22 @@ foaf:homepage a rdf:Property ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path schema:width ;
             sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "The base material that makes up the physical carrier."@en,
+                "Le matériau de base qui constitue le porteur physique."@fr,
+                "Het basismateriaal waaruit de fysieke drager bestaat."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of schema:material is not of type skos:Concept, or occurs more than once"@en,
+                "l'objet de schema:material n'est pas du type skos:Concept, ou apparaît plus qu'une seule fois"@fr,
+                "het object van schema:material is niet van het type skos:Concept, of komt meer dan eens voor"@nl ;
+            sh:minCount 0 ;
+            sh:name "material"@en,
+                "matériau"@fr,
+                "materiaal"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:material ;
+            sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
@@ -2075,6 +2252,30 @@ foaf:homepage a rdf:Property ;
 
 <https://data.hetarchief.be/ns/description#RoleNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
+            sh:class schema:Person ;
+            sh:message "schema:actor is not of class schema:Person"@en,
+                "schema:actor n'est pas de la classe schema:Person"@fr,
+                "schema:actor is niet van de klasse schema:Person"@nl ;
+            sh:name "actor"@en,
+                "acteur"@fr,
+                "acteur"@nl ;
+            sh:path schema:actor ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:message "schema:roleName is missing or not of type string or of class skos:Concept"@en,
+                "schema:roleName est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr,
+                "schema:roleName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
+            sh:minCount 1 ;
+            sh:name "role name"@en,
+                "nom de rôle"@fr,
+                "rolenaam"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:or ( [ sh:datatype xsd:string ;
+                        sh:nodeKind sh:Literal ] [ sh:class skos:Concept ] ) ;
+            sh:path schema:roleName ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:message "schema:creator is not of class schema:Thing, schema:Person or org:Organization"@en,
                 "schema:creator n'est pas de la classe schema:Thing, schema:Person ou org:Organization"@fr,
                 "schema:creator is niet van de klasse schema:Thing, schema:Person of org:Organization"@nl ;
@@ -2103,30 +2304,6 @@ foaf:homepage a rdf:Property ;
                 "uitgever"@nl ;
             sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] [ sh:class schema:Thing ] ) ;
             sh:path schema:publisher ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:class schema:Person ;
-            sh:message "schema:actor is not of class schema:Person"@en,
-                "schema:actor n'est pas de la classe schema:Person"@fr,
-                "schema:actor is niet van de klasse schema:Person"@nl ;
-            sh:name "actor"@en,
-                "acteur"@fr,
-                "acteur"@nl ;
-            sh:path schema:actor ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:message "schema:roleName is missing or not of type string or of class skos:Concept"@en,
-                "schema:roleName est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr,
-                "schema:roleName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
-            sh:minCount 1 ;
-            sh:name "role name"@en,
-                "nom de rôle"@fr,
-                "rolenaam"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:or ( [ sh:datatype xsd:string ;
-                        sh:nodeKind sh:Literal ] [ sh:class skos:Concept ] ) ;
-            sh:path schema:roleName ;
             sh:severity sh:Violation ] ;
     sh:targetClass schema:Role .
 
@@ -2134,6 +2311,51 @@ foaf:homepage a rdf:Property ;
     sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:Thing .
+
+<https://data.hetarchief.be/ns/film/coloringType> a rdf:Property ;
+    rdfs:label "type of coloring image reel"@en,
+        "type de coloration bobine d'image"@fr,
+        "type kleuring filmspoel"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/film/ImageReel> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf <http://dbpedia.org/ontology/filmColourType> ;
+    skos:definition "The type of coloring of the image reel."@en,
+        "Le type de coloration de la bobine d’image."@fr,
+        "Het soort kleuring van de beeldrol/-spoel."@nl .
+
+<https://data.hetarchief.be/ns/film/numberOfMissingAudioReels> a rdf:Property ;
+    rdfs:label "missing audio reels"@en,
+        "bobines audio manquantes"@fr,
+        "ontbrekende audiospoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film if (and how many) audio reels are missing, preceding any digitization process."@en,
+        "Indique pour un film si (et combien) des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film of (en hoeveel) audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+<https://data.hetarchief.be/ns/film/numberOfMissingImageReels> a rdf:Property ;
+    rdfs:label "missing image reels"@en,
+        "bobines d'image manquantes"@fr,
+        "ontbrekende beeldspoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film if (and how many) image reels are missing, preceding any digitization process."@en,
+        "Indique pour un film si (et combien) des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film of (en hoeveel) beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+<https://data.hetarchief.be/ns/film/numberOfReels> a rdf:Property ;
+    rdfs:label "number of film reels"@en,
+        "nombre de bobines de film"@fr,
+        "aantal filmrollen/-spoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/film/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of film reels (regardless of type) that make up a digitized film."@en,
+        "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr,
+        "Het aantal filmrollen/-spoelen (ongeacht het type) waaruit een gedigitaliseerde film bestaat."@nl .
 
 haOrg:allowsBZT a rdf:Property ;
     rdfs:label "allows bezoekertool"@en,
@@ -2287,17 +2509,6 @@ schema:email a rdf:Property ;
         "Adresse e-mail."@fr,
         "E-mailadres."@nl .
 
-schema:endTime a rdf:Property ;
-    rdfs:label "endTime"@en,
-        "heure de fin"@fr,
-        "eindtijd"@nl ;
-    rdfs:isDefinedBy schema: ;
-    skos:definition """
-    The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
-    Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."""@en,
-        "La fin de quelque chose.Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple.John a écrit un livre de janvier à * décembre *.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps de la fin d'un clip dans un fichier plus grand."@fr,
-        "De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand. "@nl .
-
 schema:episodeNumber a rdf:Property ;
     rdfs:label "episode number"@en,
         "numéro d'épisode"@fr,
@@ -2382,15 +2593,6 @@ schema:serialNumber a rdf:Property ;
         "Le numéro de série ou tout identifiant alphanumérique d'un produit particulier. Lorsqu'il est attaché à une offre, il s'agit d'un raccourci pour le numéro de série du produit inclus dans l'offre."@fr,
         "Het serienummer of een alfanumerieke identificatie van een bepaald product. Wanneer het wordt bevestigd aan een aanbieding, is het een snelkoppeling voor het serienummer van het product dat in het aanbod is opgenomen."@nl .
 
-schema:startTime a rdf:Property ;
-    rdfs:label "startTime"@en,
-        "heure de départ"@fr,
-        "starttijd"@nl ;
-    rdfs:isDefinedBy schema: ;
-    skos:definition "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."@en,
-        "Le début du temps de quelque chose. Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple. John a écrit un livre de * janvier * à décembre.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps du début d'un clip dans un fichier plus grand. \\ n \\ nnote que l'événement utilise StartDate / EndDate au lieu de démarrage / fin de fin, même lors de la description des dates avec les temps. Cette situation peut être clarifiée dans les révisions futures."@fr,
-        "De starttijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd die naar verwachting zal beginnen.Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd.Bijv.John schreef een boek van * januari * tot december.Voor media, inclusief audio en video, is dit de tijdoffset van het begin van een clip binnen een groter bestand. \\ n \\ nnote die gebeurtenis gebruikt startdate/enddate in plaats van starttijd/eindtijd, zelfs bij het beschrijven van datums met tijden. Deze situatie kan worden verduidelijkt in toekomstige herzieningen."@nl .
-
 schema:streetAddress a rdf:Property ;
     rdfs:label "streetAddress"@en,
         "adresseDeRue"@fr,
@@ -2449,16 +2651,84 @@ dct:format a rdf:Property ;
         "Le format du fichier, le support physique ou les dimensions de la ressource."@fr,
         "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl .
 
-<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isMediaFragmentOf> a rdf:Property ;
-    rdfs:label "media fragment source"@en,
-        "source du fragment de média (MediaFragment)"@fr,
-        "bron van het mediafragment (MediaFragment)"@nl ;
-    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
-    rdfs:isDefinedBy <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#> ;
-    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> ;
-    skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en,
-        "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
-        "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl .
+ebucore:annotationConfidence a rdf:Property ;
+    rdfs:label "Annotation confidence"@en,
+        "Fiabilité des annotations"@fr,
+        "Annotatievertrouwen"@nl ;
+    rdfs:domain ebucore:Annotation ;
+    rdfs:range xsd:string ;
+    skos:definition "To estimate the confidence in an Annotation."@en,
+        "Pour estimer la confiance dans une annotation."@fr,
+        "Om het vertrouwen in een annotatie te schatten."@nl .
+
+ebucore:annotationType a rdf:Property ;
+    rdfs:label "Annotation type"@en,
+        "Type d'annotation"@fr,
+        "Annotatietype"@nl ;
+    rdfs:domain ebucore:Annotation ;
+    rdfs:range ebucore:Annotation_Type,
+        xsd:anyURI,
+        xsd:string ;
+    skos:definition "Range: string, anyURI or Concept."@en,
+        "To define a type of Annotation."@en,
+        "Pour définir un type d'annotation."@fr,
+        "Om een type annotatie te definiëren."@nl .
+
+ebucore:hasAnnotationRelatedArtefact a rdf:Property ;
+    rdfs:label "Annotation related artefact"@en,
+        "Artefact lié à l'Annotation"@fr,
+        "Artefact verbonden aan de Annotatie"@nl ;
+    rdfs:domain ebucore:Annotation ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf ebucore:hasAnnotationPurpose ;
+    skos:definition "To identify an Artefact subject of the Annotation."@en,
+        "Pour identifier un objet d'artefact de l'annotation."@fr,
+        "Om een artefactonderwerp van de annotatie te identificeren."@nl .
+
+ebucore:hasAnnotationTarget a rdf:Property ;
+    rdfs:label "Annotation target"@en,
+        "Cible d'annotation"@fr,
+        "Annotatiedoel"@nl ;
+    rdfs:domain ebucore:Annotation ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "To define the target object to which the Annotation applies."@en,
+        "Pour définir l'objet cible auquel s'applique l'annotation."@fr,
+        "Om het doelobject te definiëren waarop de annotatie van toepassing is."@nl .
+
+ebucore:hasCaptioning a rdf:Property ;
+    rdfs:label "captioning"@en,
+        "sous-titrage"@fr,
+        "ondertiteling"@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:Captioning ;
+    skos:definition "To signal the presence of Captioning."@en,
+        "Pour signaler la présence du sous-titrage."@fr,
+        "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
+
+ebucore:hasMediaFragment a rdf:Property ;
+    rdfs:label "fragment"@en,
+        "a un fragment (de média)"@fr,
+        "heeft (media)fragment"@nl ;
+    rdfs:domain ebucore:MediaResource ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:MediaFragment ;
+    owl:equivalentProperty <http://www.w3.org/ns/ma-ont#hasFragment> ;
+    owl:inverseOf ebucore:isMediaFragmentOf ;
+    skos:definition "To define relation to MediaFragments within a MediaResource."@en,
+        "Pour définir une relation entre des MediaFragments dans une MediaResource."@fr,
+        "Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."@nl .
+
+ebucore:isAnnotatedMediaResource a rdf:Property ;
+    rdfs:label "Media resource"@en,
+        "Media resource"@fr,
+        "Media resource"@nl ;
+    rdfs:domain ebucore:Annotation ;
+    rdfs:range ebucore:MediaResource ;
+    skos:definition "To link an Annotation to a MediaResource."@en,
+        "Pour lier une annotation à un MediaResource."@fr,
+        "Om een annotatie te koppelen aan een mediaresource."@nl .
 
 premis:note a owl:DatatypeProperty ;
     rdfs:label "has note"@en,
@@ -3031,6 +3301,17 @@ schema:duration a rdf:Property ;
         "La durée de l'objet (film, enregistrement audio, événement, etc.) au format de date ISO 8601."@fr,
         "De duur van het item (film, opname audio, evenement, enz.) in ISO 8601 datumformaat."@nl .
 
+schema:endTime a rdf:Property ;
+    rdfs:label "endTime"@en,
+        "heure de fin"@fr,
+        "eindtijd"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition """
+    The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. E.g. John wrote a book from January to *December*. For media, including audio and video, it's the time offset of the end of a clip within a larger file.
+    Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."""@en,
+        "La fin de quelque chose.Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple.John a écrit un livre de janvier à * décembre *.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps de la fin d'un clip dans un fichier plus grand."@fr,
+        "De eindtijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd dat het naar verwachting zal eindigen. Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd. Bijv.John schreef een boek van januari tot *december*.Voor media, inclusief audio en video, is dit de tijdoffset van het einde van een clip binnen een groter bestand. "@nl .
+
 schema:genre a rdf:Property ;
     rdfs:label "genre"@en,
         "genre"@fr,
@@ -3074,6 +3355,15 @@ schema:maintainer a rdf:Property ;
     skos:definition "A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact."@en,
         "Un mainteneur est une personne ou une organisation qui gère les contributions à, et/ou la publication de, un (généralement complexe) artefact."@fr,
         "Een beheerder is een Persoon of Organisatie die bijdragen beheert aan, en/of publicatie van, een (meestal complex) artefact."@nl .
+
+schema:mentions a rdf:Property ;
+    rdfs:label "mentions"@en,
+        "mentionne"@fr,
+        "vermeldt"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept."@en,
+        "Indique que le Creative Work contient une référence à, mais ne concerne pas nécessairement un concept."@fr,
+        "Geeft aan dat het Creative Work een verwijzing bevat naar, maar niet noodzakelijkerwijs over een concept."@nl .
 
 schema:name a rdf:Property ;
     rdfs:label "name"@en,
@@ -3119,6 +3409,15 @@ schema:spatial a rdf:Property ;
     skos:definition "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content."@en,
         "La couverture spatiale d'un travail créatif (CreativeWork) indique où se situe le contenu."@fr,
         "De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt."@nl .
+
+schema:startTime a rdf:Property ;
+    rdfs:label "startTime"@en,
+        "heure de départ"@fr,
+        "starttijd"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. E.g. John wrote a book from *January* to December. For media, including audio and video, it's the time offset of the start of a clip within a larger file.\\n\\nNote that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions."@en,
+        "Le début du temps de quelque chose. Pour un événement ou un service réservé (par exemple.Pour les actions qui s'étendent sur un certain temps, lorsque l'action a été effectuée.Par exemple. John a écrit un livre de * janvier * à décembre.Pour les médias, y compris l'audio et la vidéo, c'est le décalage de temps du début d'un clip dans un fichier plus grand. \\ n \\ nnote que l'événement utilise StartDate / EndDate au lieu de démarrage / fin de fin, même lors de la description des dates avec les temps. Cette situation peut être clarifiée dans les révisions futures."@fr,
+        "De starttijd van iets. Voor een gereserveerd evenement of service (bijvoorbeeld FoodestablishmentReservation), de tijd die naar verwachting zal beginnen.Voor acties die een periode van tijd omvatten, wanneer de actie werd uitgevoerd.Bijv.John schreef een boek van * januari * tot december.Voor media, inclusief audio en video, is dit de tijdoffset van het begin van een clip binnen een groter bestand. \\ n \\ nnote die gebeurtenis gebruikt startdate/enddate in plaats van starttijd/eindtijd, zelfs bij het beschrijven van datums met tijden. Deze situatie kan worden verduidelijkt in toekomstige herzieningen."@nl .
 
 schema:temporal a rdf:Property ;
     rdfs:label "temporal coverage"@en,
@@ -3218,6 +3517,17 @@ dct:rights a rdf:Property ;
     skos:definition "Information about rights held in and over the resource."@en,
         "Informations sur les droits maintenus dans et au-dessus de la ressource."@fr,
         "Informatie over rechten in en over de bron."@nl .
+
+ebucore:isMediaFragmentOf a rdf:Property ;
+    rdfs:label "media fragment source"@en,
+        "source du fragment de média (MediaFragment)"@fr,
+        "bron van het mediafragment (MediaFragment)"@nl ;
+    rdfs:domain ebucore:MediaFragment ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:MediaResource ;
+    skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en,
+        "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
+        "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl .
 
 <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> a owl:ObjectProperty,
         owl:TransitiveProperty ;
