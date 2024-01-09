@@ -13,23 +13,26 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
+class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
 class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/fr#schema%3ABrand]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
 class "<b>travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>composant d'archive</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>fichier</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>lieu</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[../../organizations/fr#org%3AOrganization]]
-class "<b>partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/fr#haOrg%3AContentPartner]]
 class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>personne</b> (schema:Person)" as schema_Person [[../../organizations/fr#schema%3APerson]]
+class "<b>partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>personne</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
@@ -47,10 +50,27 @@ class "<b>épisode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 
 
+ebucore_MediaFragment : heure de départ : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment : heure de fin : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment --> premis_File :est fragment des médias de [0..*]  > 
+
+
+
+
+
 
 
 schema_Thing : description : <i>rdf:langString</i> [0..1]
 schema_Thing : nom : <i>rdf:langString</i> [1..1]
+
+
+
+ebucore_Annotation : Sujet d'annotation : <i>IRI</i> [1..1]
+ebucore_Annotation : confiance en annotation : <i>xsd:integer</i> [1..1]
+
+ebucore_Annotation --> ebucore_MediaFragment :annote [1..*]  > 
+ebucore_Annotation --> premis_File :Cible d'annotation [1..1]  > 
+ebucore_Annotation --> skos_Concept :Type d'annotation [0..1]  > 
 
 
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -110,6 +130,7 @@ premis_IntellectualEntity --> schema_Person :détenteur des droits d'auteur [0..
 premis_IntellectualEntity --> schema_Place :spatial [0..*]  > 
 premis_IntellectualEntity --> schema_QuantitativeValue :hauteur [0..*]  \llargeur [0..*]  \lprofondeur [0..*]  > 
 premis_IntellectualEntity --> schema_Role :contributeur [0..*]  \lcréateur [0..*]  \léditeur [0..*]  > 
+premis_IntellectualEntity --> schema_Thing :mentionne [0..*]  > 
 premis_IntellectualEntity --> skos_Concept :licence [0..*]  > 
 
 
@@ -121,6 +142,7 @@ premis_File : description : <i>rdf:langString</i> [0..1]
 premis_File : durée : <i>xsd:duration</i> [0..1]
 premis_File : identifier : <i>xsd:string</i> [1..1]
 premis_File : nom : <i>rdf:langString</i> [1..1]
+premis_File --> ebucore_MediaFragment :a un fragment multimédia [0..*]  > 
 
 
 
@@ -143,6 +165,7 @@ haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
 
 haObj_PhysicalCarrier : description : <i>rdf:langString</i> [0..1]
 haObj_PhysicalCarrier : identifier : <i>xsd:string</i> [1..1]
+haObj_PhysicalCarrier : matériau : <i>xsd:string</i> [0..1]
 haObj_PhysicalCarrier : nom : <i>rdf:langString</i> [1..1]
 haObj_PhysicalCarrier : étendue matérielle : <i>xsd:string</i> [0..1]
 
