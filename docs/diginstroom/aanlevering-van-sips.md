@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Digitale instroom > Aanlevering van SIPs
-has_children: true
+title: Aanlevering van SIPs
+parent: Digitale instroom
+has_children: false
 has_toc: true
-nav_order: 1
-has_children: true
+nav_order: 2
 last_modified_date: 2024-01-25T11:15:40+0100
 ---
 
