@@ -30,7 +30,7 @@ Deze pagina beschrijft hoe een meemoo-SIP aan te leveren via S3.
 
 # S3-token aanvragen
 
-Met je meemoo-account kan je een S3-token aanvragen. Hiervoor heb je nodig
+Met je meemoo-account kan je een S3-token aanvragen. Hiervoor heb je nodig:
 
 * je "_common name_": dit is jouw naam zoals die in [LDAP](https://nl.wikipedia.org/wiki/Lightweight_Directory_Access_Protocol) is gekend,
 * het paswoord van jouw account,
