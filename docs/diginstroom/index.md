@@ -5,6 +5,7 @@ has_children: true
 has_toc: true
 nav_order: 1
 has_children: true
+last_modified_date: 2024-01-25T11:15:40+0100
 ---
 
 <details markdown="block">
@@ -36,6 +37,8 @@ Zie `viaa_metadatamodel_voorbeeld_voor_cp.xml` voor een voorbeeld van een volled
 ## Instroom via meemoo SIP
 
 Momenteel werkt meemoo aan een uniforme meemoo SIP voor toekomstige projecten. Lees alles over de specificatie [hier]({{ site.baseurl }}{% link docs/diginstroom/sip/index.md %}).
+
+Deze SIPs worden aan meemoo aangeleverd via S3. Je leest meer over hoe dit in zijn werk gaat op [Aanlevering van SIPs]({{ site.baseurl }}{% link docs/diginstroom/aanlevering-van-sips.md %}).
 
 ## Metadata model
 
