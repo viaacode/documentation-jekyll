@@ -22,7 +22,7 @@ last_modified_date: 2024-01-25T11:15:40+0100
 
 Deze pagina beschrijft hoe een meemoo-SIP aan te leveren via S3.
 
-# Voorvereisten
+# Vooraf
 
 * Je hebt het voortraject gevolgd (zie: [https://support.meemoo.be/hc/nl/articles/8341026782365](https://support.meemoo.be/hc/nl/articles/8341026782365)).
 * Je kan meemoo-SIPs maken (zie: [docs/diginstroom/sip/]({{ site.baseurl }}{% link docs/diginstroom/sip/index.md %})).
