@@ -96,9 +96,11 @@ haObj_DigitalRepresentation --> premis_File :a racine [1..*]  \lcomprend [1..*] 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :est copie d'accès de [0..1]  \lest maître de [0..1]  \lest mezzanine de [0..1]  \lreprésente [1..1]  > 
 
 
+haObj_FragmentRepresentation : durée : <i>xsd:duration</i> [0..1]
 haObj_FragmentRepresentation : heure de départ : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation : heure de fin : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation --> premis_File :est fragment des médias de [1..1]  > 
+
 
 
 
