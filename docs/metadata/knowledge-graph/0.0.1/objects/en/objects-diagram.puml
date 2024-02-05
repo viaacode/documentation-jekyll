@@ -68,9 +68,11 @@ premis_Fixity : fixity checksum : <i>xsd:string</i> [1..*]
 
 
 
+haObj_FragmentRepresentation : duration : <i>xsd:duration</i> [0..1]
 haObj_FragmentRepresentation : endTime : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation : startTime : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation --> premis_File :is Media Fragment Of [1..1]  > 
+
 
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
