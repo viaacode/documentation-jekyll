@@ -68,9 +68,11 @@ premis_Fixity : fixity checksum : <i>xsd:string</i> [1..*]
 
 
 
+haObj_FragmentRepresentation : duur : <i>xsd:duration</i> [0..1]
 haObj_FragmentRepresentation : eindtijd : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation : starttijd : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation --> premis_File :is media fragment van [1..1]  > 
+
 
 
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
