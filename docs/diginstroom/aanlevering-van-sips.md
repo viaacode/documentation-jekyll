@@ -158,10 +158,61 @@ Vervolgens wordt er naar je paswoord gevraagd. Daarna krijg je een token terug i
 
 Met deze `token` en `secret` kan je nu verbinden met de S3-server en SIP's uploaden. Voor meer info over het werken met S3 of het opzetten van een integratie met S3, zie: [https://docs.aws.amazon.com/s3/index.html](https://docs.aws.amazon.com/s3/index.html).
 
+# S3 benaderen met de AWS CLI
+
+Alle Amazon Web Services kunnen ook via CLI ("_command line interface_")
+benaderd worden via de _AWS Command Line Interface_. Alle documentatie over
+deze tool kan je vinden op
+[https://aws.amazon.com/cli/](https://aws.amazon.com/cli/). We gaan er hier
+verder van uit dat de AWS CLI is geïnstalleerd op jouw systeem.
+
+## Configuratie
+
+Met de in de vorige sectie bekomen token en jouw secret, kan een AWS profiel
+worden ingesteld. Bv.:
+
+```shell
+aws configure --profile jef@s3-qas
+```
+
+Volgende configuratie opties moeten dan meegegeven worden:
+
+```
+AWS Access Key ID [None]:       <- vul hier het token in
+AWS Secret Access Key [None]:   <- vul hier je gekozen secret in
+Default region name [None]:     <- mag leeg blijven
+Default output format [None]:   <- mag leeg blijven
+```
+
+Dit profiel wordt geactiveerd door de `AWS_PROFILE` variabele te exporteren in je shell:
+
+```
+export AWS_PROFILE=jef@s3-qas
+```
+
+## Operaties
+
 **Opgelet**
 
 Je moet altijd het meemoo-specifieke S3-endpoint configureren in je integratie of meegeven bij elke operatie. Dit zijn:
 
-*   **INT**: `s3-int.do.viaa.be`
-*   **QAS**: `s3-qas.viaa.be`
-*   **PRD**: `s3.viaa.be`
+* **INT**: `s3-int.do.viaa.be`
+* **QAS**: `s3-qas.viaa.be`
+* **PRD**: `s3.viaa.be`
+
+### Objecten oplijsten: `ls`
+
+Bijvoorbeeld:
+
+```
+aws s3 ls s3://or-123abcd/ --endpoint https://s3-qas.viaa.be --recursive --human-readable --summarize
+```
+
+### Objecten opladen: `cp`
+
+Bijvoorbeeld:
+
+```
+aws s3 cp ./local-file.ext s3://or-123abcd/ --endpoint https://s3-qas.viaa.be
+```
+
