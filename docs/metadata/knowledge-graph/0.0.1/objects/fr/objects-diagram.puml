@@ -13,6 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>Record</b> (mh:Record)" as mh_Record [[#mh%3ARecord]]
 class "<b>emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
 class "<b>entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
@@ -36,6 +37,11 @@ class "<b>représentation fragment</b> (haObj:FragmentRepresentation)" as haObj_
 class "<b>support de stockage</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 
 
+mh_Record : a identifiant d'enregistrement : <i>xsd:string</i> [1..1]
+mh_Record : a identifiant de fragment : <i>xsd:string</i> [1..1]
+
+
+
 premis_StorageLocation : chemin du fichier : <i>xsd:string</i> [1..*]
 premis_StorageLocation --> premis_StorageMedium :milieu de stockage [0..*]  > 
 
@@ -44,6 +50,7 @@ premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity --> haObj_DigitalRepresentation :a copie d'accès [0..*]  \la maître [0..*]  \la mezzanine [0..*]  > 
 premis_IntellectualEntity --> haObj_LocalIdentifier :identificateur local [0..*]  > 
+premis_IntellectualEntity --> mh_Record :était dérivé de [1..1]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :a partie [0..*]  \lest partie de [0..*]  \ll'entité intellectuelle suivante dans l'ordre [0..1]  > 
 premis_IntellectualEntity --> premis_Representation :est représenté par [1..*]  > 
 
@@ -55,6 +62,7 @@ premis_File : porte le nom d'origine : <i>xsd:string</i> [0..1]
 premis_File --> dct_FileFormat :format [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :est inclus dans [0..*]  > 
 premis_File --> haObj_FragmentRepresentation :a le fragment des médias [0..*]  > 
+premis_File --> mh_Record :était dérivé de [1..1]  > 
 premis_File --> premis_File :document [0..*]  \lfichier suivant dans l'ordre [0..1]  \lremplace [0..*]  > 
 premis_File --> premis_Fixity :fixity [1..1]  > 
 premis_File --> premis_StorageLocation :stocké à [1..*]  > 
@@ -87,18 +95,23 @@ premis_Representation --|> premis_Object #blue;line.dotted;text:blue
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stocké à [1..1]  > 
+haObj_CarrierRepresentation --> mh_Record :était dérivé de [1..1]  > 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --> haObj_CarrierRepresentation :a source [0..*]  > 
 haObj_DigitalRepresentation --> haObj_DigitalRepresentation :la représentation numérique suivante dans l'ordre [0..1]  > 
+haObj_DigitalRepresentation --> mh_Record :était dérivé de [1..1]  > 
 haObj_DigitalRepresentation --> premis_File :a racine [1..*]  \lcomprend [1..*]  > 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :est copie d'accès de [0..1]  \lest maître de [0..1]  \lest mezzanine de [0..1]  \lreprésente [1..1]  > 
 
 
+haObj_FragmentRepresentation : durée : <i>xsd:duration</i> [0..1]
 haObj_FragmentRepresentation : heure de départ : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation : heure de fin : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation --> mh_Record :était dérivé de [1..1]  > 
 haObj_FragmentRepresentation --> premis_File :est fragment des médias de [1..1]  > 
+
 
 
 
