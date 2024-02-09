@@ -13,6 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>Record</b> (mh:Record)" as mh_Record [[#mh%3ARecord]]
 class "<b>bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
 class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>bestandsformaat</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
@@ -35,6 +36,11 @@ class "<b>opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [
 class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 
+
+mh_Record : heeft fragment-ID : <i>xsd:string</i> [1..1]
+mh_Record : heeft record-ID : <i>xsd:string</i> [1..1]
+
+
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : heeft (bestands)grootte : <i>xsd:nonNegativeInteger</i> [1..1]
@@ -43,6 +49,7 @@ premis_File : mime type : <i>xsd:string</i> [1..1]
 premis_File --> dct_FileFormat :formaat [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :is opgenomen in [0..*]  > 
 premis_File --> haObj_FragmentRepresentation :heeft media fragment [0..*]  > 
+premis_File --> mh_Record :werd afgeleid van [1..1]  > 
 premis_File --> premis_File :documenteert [0..*]  \lvervangt [0..*]  \lvolgende bestand in volgorde [0..1]  > 
 premis_File --> premis_Fixity :fixity [1..1]  > 
 premis_File --> premis_StorageLocation :opgeslagen op [1..*]  > 
@@ -55,12 +62,14 @@ haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:bl
 
 haObj_DigitalRepresentation --> haObj_CarrierRepresentation :heeft bron [0..*]  > 
 haObj_DigitalRepresentation --> haObj_DigitalRepresentation :volgende digitale representatie in volgorde [0..1]  > 
+haObj_DigitalRepresentation --> mh_Record :werd afgeleid van [1..1]  > 
 haObj_DigitalRepresentation --> premis_File :bevat [1..*]  \lheeft root [1..*]  > 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :is master van [0..1]  \lis mezzanine van [0..1]  \lis toegangskopie van [0..1]  \lrepresenteert [1..1]  > 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_CarrierRepresentation --> haObj_PhysicalCarrier :opgeslagen op [1..1]  > 
+haObj_CarrierRepresentation --> mh_Record :werd afgeleid van [1..1]  > 
 
 
 premis_Fixity : checksum maker : <i>xsd:string</i> [0..*]
@@ -68,9 +77,12 @@ premis_Fixity : fixity checksum : <i>xsd:string</i> [1..*]
 
 
 
+haObj_FragmentRepresentation : duur : <i>xsd:duration</i> [0..1]
 haObj_FragmentRepresentation : eindtijd : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation : starttijd : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation --> mh_Record :werd afgeleid van [1..1]  > 
 haObj_FragmentRepresentation --> premis_File :is media fragment van [1..1]  > 
+
 
 
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
@@ -81,6 +93,7 @@ premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity --> haObj_DigitalRepresentation :heeft master [0..*]  \lheeft mezzanine [0..*]  \lheeft toegangskopie [0..*]  > 
 premis_IntellectualEntity --> haObj_LocalIdentifier :lokale identifier [0..*]  > 
+premis_IntellectualEntity --> mh_Record :werd afgeleid van [1..1]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :heeft deel [0..*]  \lis deel van [0..*]  \lvolgende intellectuele entiteit in volgorde [0..1]  > 
 premis_IntellectualEntity --> premis_Representation :wordt gerepresenteerd door [1..*]  > 
 
