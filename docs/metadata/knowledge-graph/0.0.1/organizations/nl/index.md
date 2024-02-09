@@ -152,6 +152,12 @@ Een educatieve partner is een organisatie die content aanbiedt op het 'Archief v
 
 _Eigenschappen van [organisatie](#org%3AOrganization):_  [aanspreekpunt](#schema%3AcontactPoint),  [alternatieve naam/label](#skos%3AaltLabel),  [beschrijving](#dct%3Adescription),  [classificatie](#org%3Aclassification),  [heeft account manager](#haOrg%3AhasAccountManager),  [heeft een eenheid](#org%3AhasUnit),  [heeft een identificator](#org%3Aidentifier),  [heeft positie](#org%3AhasPost),  [heeft primaire vestiging](#org%3AhasPrimarySite),  [heeft vestiging](#org%3AhasSite),  [homepagina](#foaf%3Ahomepage),  [hoofdlogo](#schema%3Alogo),  [logo](#haOrg%3AhasLogo),  [sector](#haOrg%3Asector),  [tenant naam](#mh%3Alabel),  [voorkeursnaam/-label](#skos%3AprefLabel)
 
+## <a id="haOrg%3ALogo"></a>logo <small>[(haOrg:Logo)](https://data.hetarchief.be/ns/organization/Logo)</small>
+
+
+Een logo is een grafisch teken, embleem of symbool van een organisatie.
+
+
 ## <a id="org%3AOrganization"></a>organisatie <small>[(org:Organization)](http://www.w3.org/ns/org#Organization)</small>
 
 
@@ -197,6 +203,17 @@ Een organisatie zoals een afdeling of dienst die deel uitmaakt van de grotere or
 | <a id='org%3AunitOf'></a>organisatie-eenheid van <br> <small>[(org:unitOf)](http://www.w3.org/ns/org#unitOf)</small> | De organisatie waarvan de organisatie-eenheid deel uitmaakt. | `1..*` | [organisatie](#org%3AOrganization)  |
 
 _Eigenschappen van [organisatie](#org%3AOrganization):_  [aanspreekpunt](#schema%3AcontactPoint),  [alternatieve naam/label](#skos%3AaltLabel),  [beschrijving](#dct%3Adescription),  [classificatie](#org%3Aclassification),  [heeft account manager](#haOrg%3AhasAccountManager),  [heeft een eenheid](#org%3AhasUnit),  [heeft een identificator](#org%3Aidentifier),  [heeft positie](#org%3AhasPost),  [heeft primaire vestiging](#org%3AhasPrimarySite),  [heeft vestiging](#org%3AhasSite),  [homepagina](#foaf%3Ahomepage),  [hoofdlogo](#schema%3Alogo),  [logo](#haOrg%3AhasLogo),  [sector](#haOrg%3Asector),  [tenant naam](#mh%3Alabel),  [voorkeursnaam/-label](#skos%3AprefLabel)
+
+## <a id="haOrg%3AOrganizationType"></a>organisatietype <small>[(haOrg:OrganizationType)](https://data.hetarchief.be/ns/organization/OrganizationType)</small>
+
+
+**Subklasse van:** 
+[concept](#skos%3AConcept)
+
+Het type of de classificatie van een organisatie.
+
+
+
 
 ## <a id="schema%3APerson"></a>persoon <small>[(schema:Person)](https://schema.org/Person)</small>
 
