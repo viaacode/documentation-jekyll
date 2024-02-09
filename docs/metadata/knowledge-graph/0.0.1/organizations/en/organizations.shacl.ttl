@@ -14,17 +14,17 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n857994e80bd84d53b5bd5cfca62d6f4db1 a rdfs:Class,
+_:n2de9e75503e64cdead37969341dcbed5b1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
+
+_:n2de9e75503e64cdead37969341dcbed5b17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
+
+_:na5c8372f9d7a4eeca64ef197f637cf97b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
-
-_:nd905c937b653447a8ba7eee6fdfdbb40b1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
-
-_:nd905c937b653447a8ba7eee6fdfdbb40b17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( <http://www.loc.gov/premis/rdf/v3/RightsStatus> <http://www.loc.gov/premis/rdf/v3/Rule> ) .
 
 dct:FileFormat a rdfs:Class ;
     rdfs:label "file format"@en,
@@ -38,6 +38,24 @@ dct:FileFormat a rdfs:Class ;
     skos:definition "A digital resource format."@en,
         "Un format de ressource numérique."@fr,
         "Een formaat van een digitale bron."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> a rdfs:Class ;
+    rdfs:label "annotation"@en,
+        "annotation"@fr,
+        "Annotatie"@nl ;
+    rdfs:subClassOf owl:Thing ;
+    skos:definition "A class used to annotate Assets."@en,
+        "Une classe utilisée pour annoter les éléments."@fr,
+        "Een klasse die wordt gebruikt om items te annoteren."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#TextAnnotation> a rdfs:Class ;
+    rdfs:label "Text Annotation"@en,
+        "Annotation texte"@fr,
+        "Tekstannotatie"@nl ;
+    rdfs:subClassOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
+    skos:definition "A class specific to the annotation of a text or portions of text."@en,
+        "Une classe spécifique à l'annotation d'un texte ou de portions de texte."@fr,
+        "Een klasse die specifiek is voor de annotatie van een tekst of delen van tekst."@nl .
 
 <http://www.loc.gov/premis/rdf/v3/Agent> a rdfs:Class,
         owl:Class ;
@@ -362,25 +380,88 @@ org:Site a rdfs:Class,
         "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr,
         "Een entiteit is een fysiek, digitaal, conceptueel of een ander soort ding met enkele vaste aspecten; entiteiten kunnen echt of denkbeeldig zijn."@nl .
 
-<https://data.hetarchief.be/ns/bibliographic/NewspaperIssue> a rdfs:Class ;
+<https://data.hetarchief.be/ns/description/Audio> a rdfs:Class ;
+    rdfs:label "Audio"@en,
+        "Audio"@fr,
+        "Audio"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type audio."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type audio."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type audio."@nl .
+
+<https://data.hetarchief.be/ns/description/AudioReel> a rdfs:Class ;
+    rdfs:label "Audio reel"@en,
+        "Bobine audio"@fr,
+        "Geluidsspoel"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    skos:definition "A reel of an analog film carrier that contains audio."@en,
+        "Une bobine d'un porte-film analogique qui contient de l'audio."@fr,
+        "Een band van een analoge film drager die audio bevat."@nl .
+
+<https://data.hetarchief.be/ns/description/DVD> a rdfs:Class ;
+    rdfs:label "DVD"@en,
+        "DVD"@fr,
+        "Dvd"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent le DVD dans son ensemble."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en de dvd als geheel voorstelt."@nl .
+
+<https://data.hetarchief.be/ns/description/DVDChapter> a rdfs:Class ;
+    rdfs:label "DVD Chapter"@en,
+        "Chapitre DVD"@fr,
+        "Dvd-hoofdstuk"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."@en,
+        "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent un chapitre DVD spécifique."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en een specifiek dvd-hoofdstuk voorstelt."@nl .
+
+<https://data.hetarchief.be/ns/description/Film> a rdfs:Class ;
+    rdfs:label "Film"@en,
+        "Film"@fr,
+        "Film"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."@nl .
+
+<https://data.hetarchief.be/ns/description/ImageReel> a rdfs:Class ;
+    rdfs:label "Image reel"@en,
+        "Bobine d'image"@fr,
+        "Beeldspoel"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    skos:definition "A reel of an analog film carrier that contains video."@en,
+        "Une bobine d'un porte-film analogique qui contient une vidéo."@fr,
+        "Een speo van een analoge film drager die beeld bevat."@nl .
+
+<https://data.hetarchief.be/ns/description/NewspaperIssue> a rdfs:Class ;
     rdfs:label "Newspaper edition"@en,
         "Edition de journal"@fr,
         "Kranteneditie"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
     rdfs:subClassOf <http://www.loc.gov/premis/rdf/v3/IntellectualEntity> ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents the newspaper edition as a whole."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent l'édition du journal dans son ensemble."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en de kranteneditie als geheel voorstelt."@nl .
 
-<https://data.hetarchief.be/ns/bibliographic/NewspaperIssuePage> a rdfs:Class ;
+<https://data.hetarchief.be/ns/description/NewspaperIssuePage> a rdfs:Class ;
     rdfs:label "Newspaper issue page"@en,
         "Page d'édition de journal"@fr,
         "Kranteneditiepagina"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
     rdfs:subClassOf <http://www.loc.gov/premis/rdf/v3/IntellectualEntity> ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."@en,
         "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent une page de journal spécifique."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en een specifieke krantenpagina voorstelt."@nl .
+
+<https://data.hetarchief.be/ns/description/Video> a rdfs:Class ;
+    rdfs:label "Video"@en,
+        "Vidéo"@fr,
+        "Video"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
 
 <https://data.hetarchief.be/ns/object/CarrierRepresentation> a rdfs:Class ;
     rdfs:label "carrier representation"@en,
@@ -894,6 +975,51 @@ dct:format a rdf:Property ;
         "Le format du fichier, le support physique ou les dimensions de la ressource."@fr,
         "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl .
 
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationConfidence> a rdf:Property ;
+    rdfs:label "Annotation confidence"@en,
+        "Fiabilité des annotations"@fr,
+        "Annotatievertrouwen"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
+    rdfs:range xsd:string ;
+    skos:definition "To estimate the confidence in an Annotation."@en,
+        "Pour estimer la confiance dans une annotation."@fr,
+        "Om het vertrouwen in een annotatie te schatten."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationType> a rdf:Property ;
+    rdfs:label "Annotation type"@en,
+        "Type d'annotation"@fr,
+        "Annotatietype"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
+    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation_Type>,
+        xsd:anyURI,
+        xsd:string ;
+    skos:definition "Range: string, anyURI or Concept."@en,
+        "To define a type of Annotation."@en,
+        "Pour définir un type d'annotation."@fr,
+        "Om een type annotatie te definiëren."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationRelatedArtefact> a rdf:Property ;
+    rdfs:label "Annotation related artefact"@en,
+        "Artefact lié à l'Annotation"@fr,
+        "Artefact verbonden aan de Annotatie"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
+    rdfs:range xsd:anyURI,
+        xsd:string ;
+    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationPurpose> ;
+    skos:definition "To identify an Artefact subject of the Annotation."@en,
+        "Pour identifier un objet d'artefact de l'annotation."@fr,
+        "Om een artefactonderwerp van de annotatie te identificeren."@nl .
+
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasAnnotationTarget> a rdf:Property ;
+    rdfs:label "Annotation target"@en,
+        "Cible d'annotation"@fr,
+        "Annotatiedoel"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "To define the target object to which the Annotation applies."@en,
+        "Pour définir l'objet cible auquel s'applique l'annotation."@fr,
+        "Om het doelobject te definiëren waarop de annotatie van toepassing is."@nl .
+
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCaptioning> a rdf:Property ;
     rdfs:label "captioning"@en,
         "sous-titrage"@fr,
@@ -944,6 +1070,16 @@ dct:format a rdf:Property ;
         "Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."@fr,
         "Om een ObjectType te definiëren voor een BusinessObject (bv. boek, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."@nl .
 
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#isAnnotatedMediaResource> a rdf:Property ;
+    rdfs:label "Media resource"@en,
+        "Media resource"@fr,
+        "Media resource"@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> ;
+    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaResource> ;
+    skos:definition "To link an Annotation to a MediaResource."@en,
+        "Pour lier une annotation à un MediaResource."@fr,
+        "Om een annotatie te koppelen aan een mediaresource."@nl .
+
 <http://www.europeana.eu/schemas/edm/isNextInSequence> a owl:ObjectProperty ;
     rdfs:label "is next in sequence of"@en,
         "est le prochain dans la séquence de"@fr,
@@ -958,7 +1094,7 @@ dct:format a rdf:Property ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:nd905c937b653447a8ba7eee6fdfdbb40b1 ;
+    rdfs:domain _:n2de9e75503e64cdead37969341dcbed5b1 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1026,7 +1162,7 @@ dct:format a rdf:Property ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:nd905c937b653447a8ba7eee6fdfdbb40b17 ;
+    rdfs:domain _:n2de9e75503e64cdead37969341dcbed5b17 ;
     rdfs:isDefinedBy <http://www.loc.gov/premis/rdf/v3/> ;
     rdfs:subPropertyOf dct:date .
 
@@ -1141,7 +1277,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:n857994e80bd84d53b5bd5cfca62d6f4db1 ;
+    rdfs:range _:na5c8372f9d7a4eeca64ef197f637cf97b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1298,24 +1434,136 @@ skos:scopeNote a rdf:Property,
         "Attribution est l'attribution d'une entité à un agent."@fr,
         "Toekenning is het toekennen van een entiteit aan een agent."@nl .
 
-<https://data.hetarchief.be/ns/bibliographic/numberOfPages> a rdf:Property ;
+<https://data.hetarchief.be/ns/description/audioNoiseReduction> a rdf:Property ;
+    rdfs:label "audio noise reduction"@en,
+        "réduction du bruit audio"@fr,
+        "audio ruisonderdrukking"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range rdf:Literal ;
+    skos:definition "The technology used for noise reduction in audio."@en,
+        "La technologie utilisée pour la réduction du bruit de l'audio."@fr,
+        "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl .
+
+<https://data.hetarchief.be/ns/description/audioRecordingSpeed> a rdf:Property ;
+    rdfs:label "audio recording speed"@en,
+        "vitesse d'enregistrement audio"@fr,
+        "audio-opnamesnelheid"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range skos:Concept ;
+    skos:definition "The speed with which open reel audio or a gramophone record is recorded."@en,
+        "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement de gramophone est enregistré."@fr,
+        "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl .
+
+<https://data.hetarchief.be/ns/description/chapterNumber> a rdf:Property ;
+    rdfs:label "DVD chapter number"@en,
+        "Numéro de chapitre DVD"@fr,
+        "Dvd-hoofdstuknummer"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/description/DVDChapter> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf schema:position ;
+    skos:definition "The sequence number of the DVD chapter in relation to the other chapters that are part of the same DVD."@en,
+        "Le numéro de série du chapitre du DVD par rapport aux autres chapitres qui font partie du même DVD."@fr,
+        "Het volgnummer van het dvd-hoofdstuk ten opzichte van de andere hoofstukken die deel uitmaken van dezelfde dvd."@nl .
+
+<https://data.hetarchief.be/ns/description/coloringType> a rdf:Property ;
+    rdfs:label "type of coloring image reel"@en,
+        "type de coloration bobine d'image"@fr,
+        "type kleuring filmspoel"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/description/ImageReel> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range skos:Concept ;
+    rdfs:subPropertyOf <http://dbpedia.org/ontology/filmColourType> ;
+    skos:definition "The type of coloring of the image reel."@en,
+        "Le type de coloration de la bobine d’image."@fr,
+        "Het soort kleuring van de beeldrol/-spoel."@nl .
+
+<https://data.hetarchief.be/ns/description/iec60094Type> a rdf:Property ;
+    rdfs:label "iec-60094 type"@en,
+        "iec-60094 type"@fr,
+        "iec-60094 type"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range skos:Concept ;
+    skos:definition "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@en,
+        "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@fr,
+        "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl .
+
+<https://data.hetarchief.be/ns/description/numberOfAudioChannels> a rdf:Property ;
+    rdfs:label "number of audio channels"@en,
+        "nombre de canaux audio"@fr,
+        "aantal audiokanalen"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of parallel audio channels that the audio track contains."@en,
+        "Le nombre de canaux audio parallèles que contient la piste audio."@fr,
+        "Het aantal audiokanalen die een audiospoor bevat."@nl .
+
+<https://data.hetarchief.be/ns/description/numberOfAudioTracks> a rdf:Property ;
+    rdfs:label "number of audio tracks"@en,
+        "nombre de pistes audio"@fr,
+        "aantal audiosporen"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of audio tracks that the representation contains."@en,
+        "Le nombre de pistes audio que la représentation contient."@fr,
+        "Het aantal audio sporen die de representatie bevat."@nl .
+
+<https://data.hetarchief.be/ns/description/numberOfMissingAudioReels> a rdf:Property ;
+    rdfs:label "missing audio reels"@en,
+        "bobines audio manquantes"@fr,
+        "ontbrekende audiospoelen"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film if (and how many) audio reels are missing, preceding any digitization process."@en,
+        "Indique pour un film si (et combien) des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film of (en hoeveel) audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+<https://data.hetarchief.be/ns/description/numberOfMissingImageReels> a rdf:Property ;
+    rdfs:label "missing image reels"@en,
+        "bobines d'image manquantes"@fr,
+        "ontbrekende beeldspoelen"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film if (and how many) image reels are missing, preceding any digitization process."@en,
+        "Indique pour un film si (et combien) des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film of (en hoeveel) beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+<https://data.hetarchief.be/ns/description/numberOfPages> a rdf:Property ;
     rdfs:label "number of pages"@en,
         "nombre de pages"@fr,
         "aantal pagina's"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/bibliographic/NewspaperIssue> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> ;
+    rdfs:domain <https://data.hetarchief.be/ns/description/NewspaperIssue> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
     rdfs:range rdfs:Literal ;
     skos:definition "The number of pages that a particular work consists of."@en,
         "Le nombre de pages qui composent une œuvre particulière."@fr,
         "Het aantal pagina's waaruit een bepaald werk bestaat."@nl ;
     skos:related schema:numberOfPages .
 
-<https://data.hetarchief.be/ns/bibliographic/pageNumber> a rdf:Property ;
+<https://data.hetarchief.be/ns/description/numberOfReels> a rdf:Property ;
+    rdfs:label "number of film reels"@en,
+        "nombre de bobines de film"@fr,
+        "aantal filmrollen/-spoelen"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of film reels (regardless of type) that make up a digitized film."@en,
+        "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr,
+        "Het aantal filmrollen/-spoelen (ongeacht het type) waaruit een gedigitaliseerde film bestaat."@nl .
+
+<https://data.hetarchief.be/ns/description/pageNumber> a rdf:Property ;
     rdfs:label "page number"@en,
         "numéro de page"@fr,
         "paginanummer"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/bibliographic/NewspaperIssuePage> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/bibliographic/> ;
+    rdfs:domain <https://data.hetarchief.be/ns/description/NewspaperIssuePage> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
     rdfs:range rdfs:Literal ;
     rdfs:subPropertyOf schema:position ;
     skos:definition "The sequence number of a page within its larger whole (e.g. a newspaper edition, a book, etc.)."@en,
@@ -2302,6 +2550,15 @@ schema:maintainer a rdf:Property ;
     skos:definition "A maintainer is a Person or Organization that manages contributions to, and/or publication of, some (typically complex) artifact."@en,
         "Un mainteneur est une personne ou une organisation qui gère les contributions à, et/ou la publication de, un (généralement complexe) artefact."@fr,
         "Een beheerder is een Persoon of Organisatie die bijdragen beheert aan, en/of publicatie van, een (meestal complex) artefact."@nl .
+
+schema:mentions a rdf:Property ;
+    rdfs:label "mentions"@en,
+        "mentionne"@fr,
+        "vermeldt"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "Indicates that the CreativeWork contains a reference to, but is not necessarily about a concept."@en,
+        "Indique que le Creative Work contient une référence à, mais ne concerne pas nécessairement un concept."@fr,
+        "Geeft aan dat het Creative Work een verwijzing bevat naar, maar niet noodzakelijkerwijs over een concept."@nl .
 
 schema:model a rdf:Property ;
     rdfs:label "model"@en,

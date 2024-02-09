@@ -115,6 +115,12 @@ Une organisation qui fournit des services ou des biens à meemoo, par exemple da
 
 _Propriétés de [organisation](#org%3AOrganization):_  [a gestionnaire de comptes](#haOrg%3AhasAccountManager),  [a un site](#org%3AhasSite),  [a un site principal](#org%3AhasPrimarySite),  [classification](#org%3Aclassification),  [description](#dct%3Adescription),  [label alternatif](#skos%3AaltLabel),  [label préféré](#skos%3AprefLabel),  [logo](#haOrg%3AhasLogo),  [logo principal](#schema%3Alogo),  [nom du locataire Mediahaven](#mh%3Alabel),  [page d'accueil](#foaf%3Ahomepage),  [point de contact](#schema%3AcontactPoint),  [possède un identifiant](#org%3Aidentifier),  [possède un poste](#org%3AhasPost),  [possède une Unité](#org%3AhasUnit),  [secteur](#haOrg%3Asector)
 
+## <a id="haOrg%3ALogo"></a>logo <small>[(haOrg:Logo)](https://data.hetarchief.be/ns/organization/Logo)</small>
+
+
+Un logo est une marque, un emblème ou un symbole graphique d'une organisation.
+
+
 ## <a id="org%3AOrganization"></a>organisation <small>[(org:Organization)](http://www.w3.org/ns/org#Organization)</small>
 
 
@@ -271,6 +277,17 @@ Un établissement ou tout autre lieu dans lequel une Organisation est localisé.
 | :------ | :---------- | :---------- | :------- |
 | <a id='org%3AsiteAddress'></a>adresse du Site <br> <small>[(org:siteAddress)](http://www.w3.org/ns/org#siteAddress)</small> | L'adresse de l'emplacement. | `0..1` | [adresse postale](#schema%3APostalAddress)  |
 | <a id='org%3AsiteOf'></a>site de <br> <small>[(org:siteOf)](http://www.w3.org/ns/org#siteOf)</small> | L'organisation dont cette emplacement fait partie. | `1..*` | [organisation](#org%3AOrganization)  |
+
+## <a id="haOrg%3AOrganizationType"></a>type de organisation <small>[(haOrg:OrganizationType)](https://data.hetarchief.be/ns/organization/OrganizationType)</small>
+
+
+**Sous-classe de:** 
+[concept](#skos%3AConcept)
+
+Le type ou la classification d'une organisation.
+
+
+
 
 ## <a id="org%3AOrganizationalUnit"></a>unité opérationnelle <small>[(org:OrganizationalUnit)](http://www.w3.org/ns/org#OrganizationalUnit)</small>
 

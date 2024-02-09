@@ -13,6 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>Record</b> (mh:Record)" as mh_Record [[#mh%3ARecord]]
 class "<b>carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
 class "<b>representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
@@ -35,14 +36,21 @@ class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
 class "<b>storage medium</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 
+
+mh_Record : has fragment identifier : <i>xsd:string</i> [1..1]
+mh_Record : has record identifier : <i>xsd:string</i> [1..1]
+
+
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_CarrierRepresentation --> haObj_PhysicalCarrier :stored at [1..1]  > 
+haObj_CarrierRepresentation --> mh_Record :was derived from [1..1]  > 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --> haObj_CarrierRepresentation :has Source [0..*]  > 
 haObj_DigitalRepresentation --> haObj_DigitalRepresentation :next digital representation in sequence [0..1]  > 
+haObj_DigitalRepresentation --> mh_Record :was derived from [1..1]  > 
 haObj_DigitalRepresentation --> premis_File :has Root [1..*]  \lincludes [1..*]  > 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :is Access Copy Of [0..1]  \lis Master Of [0..1]  \lis Mezzanine Of [0..1]  \lrepresents [1..1]  > 
 
@@ -54,6 +62,7 @@ premis_File : mime type : <i>xsd:string</i> [1..1]
 premis_File --> dct_FileFormat :format [1..1]  > 
 premis_File --> haObj_DigitalRepresentation :is Include In [0..*]  > 
 premis_File --> haObj_FragmentRepresentation :has media fragment [0..*]  > 
+premis_File --> mh_Record :was derived from [1..1]  > 
 premis_File --> premis_File :documents [0..*]  \lnext file in sequence [0..1]  \lsupersedes [0..*]  > 
 premis_File --> premis_Fixity :fixity [1..1]  > 
 premis_File --> premis_StorageLocation :stored at [1..*]  > 
@@ -68,15 +77,19 @@ premis_Fixity : fixity checksum : <i>xsd:string</i> [1..*]
 
 
 
+haObj_FragmentRepresentation : duration : <i>xsd:duration</i> [0..1]
 haObj_FragmentRepresentation : endTime : <i>xsd:time</i> [1..1]
 haObj_FragmentRepresentation : startTime : <i>xsd:time</i> [1..1]
+haObj_FragmentRepresentation --> mh_Record :was derived from [1..1]  > 
 haObj_FragmentRepresentation --> premis_File :is Media Fragment Of [1..1]  > 
+
 
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity --> haObj_DigitalRepresentation :has Access Copy [0..*]  \lhas Master [0..*]  \lhas Mezzanine [0..*]  > 
 premis_IntellectualEntity --> haObj_LocalIdentifier :local identifier [0..*]  > 
+premis_IntellectualEntity --> mh_Record :was derived from [1..1]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :has Part [0..*]  \lis Part Of [0..*]  \lnext intellectual entity in sequence [0..1]  > 
 premis_IntellectualEntity --> premis_Representation :is Represented By [1..*]  > 
 

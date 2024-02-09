@@ -124,6 +124,12 @@ An educational partner is an organization that provides content on the 'Archief 
 
 _Properties from [organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3Alabel)
 
+## <a id="haOrg%3ALogo"></a>logo <small>[(haOrg:Logo)](https://data.hetarchief.be/ns/organization/Logo)</small>
+
+
+A logo is a graphic mark, emblem, or symbol of an organization.
+
+
 ## <a id="org%3AOrganization"></a>organization <small>[(org:Organization)](http://www.w3.org/ns/org#Organization)</small>
 
 
@@ -155,6 +161,17 @@ Represents a collection of people organized together into a community or other s
 | <a id='skos%3AprefLabel'></a>preferred label <br> <small>[(skos:prefLabel)](http://www.w3.org/2004/02/skos/core#prefLabel)</small> | The preferred name/label of the organization. | `1..*`[^1] | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='haOrg%3Asector'></a>sector <br> <small>[(haOrg:sector)](https://data.hetarchief.be/ns/organization/sector)</small> | The sector the organisation is active in. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='mh%3Alabel'></a>tenant name <br> <small>[(mh:label)](https://data.hetarchief.be/ns/mediahaven/label)</small> | The Mediahaven tenant name of the organization. | `0..*` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
+
+## <a id="haOrg%3AOrganizationType"></a>organization type <small>[(haOrg:OrganizationType)](https://data.hetarchief.be/ns/organization/OrganizationType)</small>
+
+
+**Subclass of:** 
+[concept](#skos%3AConcept)
+
+The type or classification of an organization.
+
+
+
 
 ## <a id="org%3AOrganizationalUnit"></a>organizationalUnit <small>[(org:OrganizationalUnit)](http://www.w3.org/ns/org#OrganizationalUnit)</small>
 
