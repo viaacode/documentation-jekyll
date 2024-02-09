@@ -13,8 +13,11 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
 class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/en#schema%3ABrand]]
+class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>archive component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
 class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
@@ -47,10 +50,27 @@ class "<b>role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 
 
+ebucore_MediaFragment : endTime : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment : startTime : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment --> premis_File :is Media Fragment Of [0..*]  > 
+
+
+
+
+
 
 
 schema_Thing : description : <i>rdf:langString</i> [0..1]
 schema_Thing : name : <i>rdf:langString</i> [1..1]
+
+
+
+ebucore_Annotation : Annotation subject : <i>IRI</i> [1..1]
+ebucore_Annotation : annotation confidence : <i>xsd:integer</i> [1..1]
+
+ebucore_Annotation --> ebucore_MediaFragment :annotates [1..*]  > 
+ebucore_Annotation --> premis_File :Annotation target [1..1]  > 
+ebucore_Annotation --> skos_Concept :Annotation type [0..1]  > 
 
 
 schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -100,19 +120,13 @@ schema_CreativeWorkSeries --> schema_CreativeWorkSeries :has part [0..*]  \lis p
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation : caption : <i>xsd:string</i> [0..1]
-haObj_DigitalRepresentation : date created : <i>edtf:EDTF-level1</i> [1..1]
 haObj_DigitalRepresentation : description : <i>rdf:langString</i> [0..1]
-haObj_DigitalRepresentation : duration : <i>xsd:duration</i> [0..1]
 haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : in language : <i>xsd:string</i> [0..*]
 haObj_DigitalRepresentation : name : <i>rdf:langString</i> [1..1]
-haObj_DigitalRepresentation : thumbnail : <i>IRI</i> [0..1]
 haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
 
-
-
 haObj_DigitalRepresentation --> schema_Role :creator [0..*]  > 
-
 
 
 schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -126,10 +140,17 @@ schema_Episode --> premis_IntellectualEntity :has part [0..*]  >
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
+premis_File : date created : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
 premis_File : description : <i>rdf:langString</i> [0..1]
 premis_File : duration : <i>xsd:duration</i> [0..1]
 premis_File : identifier : <i>xsd:string</i> [1..1]
 premis_File : name : <i>rdf:langString</i> [1..1]
+premis_File : thumbnail : <i>IRI</i> [0..1]
+
+premis_File --> ebucore_MediaFragment :has media fragment [0..*]  > 
+
+
+
 
 
 
@@ -145,8 +166,8 @@ premis_IntellectualEntity : copyright notice : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : copyright year : <i>xsd:integer</i> [0..*]
 premis_IntellectualEntity : credit text : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : date available : <i>xsd:dateTime</i> [0..*]
-premis_IntellectualEntity : date created : <i>edtf:EDTF-level1</i> [1..1]
-premis_IntellectualEntity : date published : <i>edtf:EDTF-level1</i> [0..1]
+premis_IntellectualEntity : date created : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
+premis_IntellectualEntity : date published : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
 premis_IntellectualEntity : description : <i>rdf:langString</i> [0..1]
 premis_IntellectualEntity : format : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : genre : <i>xsd:string</i> [0..1]
@@ -157,6 +178,8 @@ premis_IntellectualEntity : medium : <i>xsd:string</i> [1..*]
 premis_IntellectualEntity : name : <i>rdf:langString</i> [1..1]
 premis_IntellectualEntity : rights information : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : temporal : <i>rdf:langString</i> [0..*]
+
+
 
 
 premis_IntellectualEntity --> haOrg_ContentPartner :maintainer [1..1]  > 
@@ -170,6 +193,7 @@ premis_IntellectualEntity --> schema_Person :copyright holder [0..*]  >
 premis_IntellectualEntity --> schema_Place :spatial [0..*]  > 
 premis_IntellectualEntity --> schema_QuantitativeValue :depth [0..*]  \lheight [0..*]  \lwidth [0..*]  > 
 premis_IntellectualEntity --> schema_Role :contributor [0..*]  \lcreator [0..*]  \lpublisher [0..*]  > 
+premis_IntellectualEntity --> schema_Thing :mentions [0..*]  > 
 premis_IntellectualEntity --> skos_Concept :license [0..*]  > 
 
 
@@ -184,6 +208,7 @@ haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
 
 haObj_PhysicalCarrier : description : <i>rdf:langString</i> [0..1]
 haObj_PhysicalCarrier : identifier : <i>xsd:string</i> [1..1]
+haObj_PhysicalCarrier : material : <i>xsd:string</i> [0..1]
 haObj_PhysicalCarrier : material extent : <i>xsd:string</i> [0..1]
 haObj_PhysicalCarrier : name : <i>rdf:langString</i> [1..1]
 
