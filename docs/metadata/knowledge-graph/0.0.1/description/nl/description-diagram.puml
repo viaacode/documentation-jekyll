@@ -13,7 +13,10 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
 class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/nl#schema%3ABrand]]
+class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
+class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
 class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
@@ -47,6 +50,23 @@ class "<b>serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema
 class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 
 
+ebucore_MediaFragment : eindtijd : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment : starttijd : <i>xsd:time</i> [0..1]
+ebucore_MediaFragment --> premis_File :is media fragment van [0..*]  > 
+
+
+
+
+
+
+
+ebucore_Annotation : Annotatie onderwerp : <i>IRI</i> [1..1]
+ebucore_Annotation : annotatie vertrouwen : <i>xsd:integer</i> [1..1]
+
+ebucore_Annotation --> ebucore_MediaFragment :annoteert [1..*]  > 
+ebucore_Annotation --> premis_File :Annotatiedoel [1..1]  > 
+ebucore_Annotation --> skos_Concept :type annotatie [0..1]  > 
+
 
 
 schema_Thing : naam : <i>rdf:langString</i> [1..1]
@@ -72,10 +92,17 @@ schema_ArchiveComponent --> schema_ArchiveComponent :is deel van [0..*]  \lis ee
 
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
+premis_File : aangemaakt op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
 premis_File : duur : <i>xsd:duration</i> [0..1]
 premis_File : identifier : <i>xsd:string</i> [1..1]
+premis_File : miniatuurafbeelding : <i>IRI</i> [0..1]
 premis_File : naam : <i>rdf:langString</i> [1..1]
 premis_File : omschrijving : <i>rdf:langString</i> [0..1]
+
+premis_File --> ebucore_MediaFragment :heeft media fragment [0..*]  > 
+
+
+
 
 
 
@@ -98,20 +125,14 @@ haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation : aangemaakt op : <i>edtf:EDTF-level1</i> [1..1]
-haObj_DigitalRepresentation : duur : <i>xsd:duration</i> [0..1]
 haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
 haObj_DigitalRepresentation : in taal : <i>xsd:string</i> [0..*]
-haObj_DigitalRepresentation : miniatuurafbeelding : <i>IRI</i> [0..1]
 haObj_DigitalRepresentation : naam : <i>rdf:langString</i> [1..1]
 haObj_DigitalRepresentation : omschrijving : <i>rdf:langString</i> [0..1]
 haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
 
-
-
 haObj_DigitalRepresentation --> schema_Role :maker [0..*]  > 
-
 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
@@ -125,6 +146,7 @@ haObj_CarrierRepresentation : omschrijving : <i>rdf:langString</i> [0..1]
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
 
 haObj_PhysicalCarrier : identifier : <i>xsd:string</i> [1..1]
+haObj_PhysicalCarrier : materiaal : <i>xsd:string</i> [0..1]
 haObj_PhysicalCarrier : materiële omvang : <i>xsd:string</i> [0..1]
 haObj_PhysicalCarrier : naam : <i>rdf:langString</i> [1..1]
 haObj_PhysicalCarrier : omschrijving : <i>rdf:langString</i> [0..1]
@@ -136,7 +158,7 @@ haObj_PhysicalCarrier --> skos_Concept :preservatieprobleem [0..*]  >
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
-premis_IntellectualEntity : aangemaakt op : <i>edtf:EDTF-level1</i> [1..1]
+premis_IntellectualEntity : aangemaakt op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
 premis_IntellectualEntity : alternatieve naam : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : auteursrechtenmelding : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : beschikbaar op : <i>xsd:dateTime</i> [0..*]
@@ -144,7 +166,7 @@ premis_IntellectualEntity : copyright jaar : <i>xsd:integer</i> [0..*]
 premis_IntellectualEntity : credittekst : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : formaat : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : genre : <i>xsd:string</i> [0..1]
-premis_IntellectualEntity : gepubliceerd op : <i>edtf:EDTF-level1</i> [0..1]
+premis_IntellectualEntity : gepubliceerd op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
 premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : in taal : <i>xsd:string</i> [1..*]
 premis_IntellectualEntity : kunst medium : <i>rdf:langString</i> [0..*]
@@ -159,6 +181,8 @@ premis_IntellectualEntity : temporeel : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : trefwoorden : <i>rdf:langString</i> [0..*]
 
 
+
+
 premis_IntellectualEntity --> haOrg_ContentPartner :beheerder [1..1]  > 
 premis_IntellectualEntity --> org_Organization :houder van auteursrecht [0..*]  > 
 
@@ -170,6 +194,7 @@ premis_IntellectualEntity --> schema_Person :houder van auteursrecht [0..*]  >
 premis_IntellectualEntity --> schema_Place :spatiaal [0..*]  > 
 premis_IntellectualEntity --> schema_QuantitativeValue :breedte [0..*]  \ldiepte [0..*]  \lhoogte [0..*]  > 
 premis_IntellectualEntity --> schema_Role :bijdrager [0..*]  \lmaker [0..*]  \luitgever [0..*]  > 
+premis_IntellectualEntity --> schema_Thing :vermeldt [0..*]  > 
 premis_IntellectualEntity --> skos_Concept :licentie [0..*]  > 
 
 
