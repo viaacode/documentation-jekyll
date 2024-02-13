@@ -16,38 +16,38 @@ top to bottom direction
 class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
 class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/nl#schema%3ABrand]]
 class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
+class "<b>Aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 class "<b>Annotatie</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/nl#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>aflevering</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
-class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>archiefcomponent</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
-class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>bestand</b> (premis:File)" as premis_File [[#premis%3AFile]]
-class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>collectie</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
-class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
-class "<b>contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/nl#haOrg%3AContentPartner]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>digitale representatie</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
-class "<b>representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
-class "<b>opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
+class "<b>Drager representatie</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[../../organizations/nl#org%3AOrganization]]
-class "<b>persoon</b> (schema:Person)" as schema_Person [[../../organizations/nl#schema%3APerson]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[../../organizations/nl#org%3AOrganization]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organizations/nl#schema%3APerson]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
-class "<b>creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Creatief werk</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 
 
 ebucore_MediaFragment : eindtijd : <i>xsd:time</i> [0..1]
@@ -59,20 +59,6 @@ ebucore_MediaFragment --> premis_File :is media fragment van [0..*]  >
 
 
 
-
-ebucore_Annotation : Annotatie onderwerp : <i>IRI</i> [1..1]
-ebucore_Annotation : annotatie vertrouwen : <i>xsd:integer</i> [1..1]
-
-ebucore_Annotation --> ebucore_MediaFragment :annoteert [1..*]  > 
-ebucore_Annotation --> premis_File :Annotatiedoel [1..1]  > 
-ebucore_Annotation --> skos_Concept :type annotatie [0..1]  > 
-
-
-
-schema_Thing : naam : <i>rdf:langString</i> [1..1]
-schema_Thing : omschrijving : <i>rdf:langString</i> [0..1]
-
-
 schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_Episode : identifier : <i>xsd:string</i> [1..1]
@@ -80,6 +66,15 @@ schema_Episode : naam : <i>rdf:langString</i> [1..1]
 schema_Episode : omschrijving : <i>rdf:langString</i> [0..1]
 schema_Episode --> premis_IntellectualEntity :is deel van [0..*]  > 
 
+
+
+
+ebucore_Annotation : Annotatie onderwerp : <i>IRI</i> [1..1]
+ebucore_Annotation : annotatie vertrouwen : <i>xsd:integer</i> [1..1]
+
+ebucore_Annotation --> ebucore_MediaFragment :annoteert [1..*]  > 
+ebucore_Annotation --> premis_File :Annotatiedoel [1..1]  > 
+ebucore_Annotation --> skos_Concept :type annotatie [0..1]  > 
 
 
 schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -133,6 +128,11 @@ haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
 
 haObj_DigitalRepresentation --> schema_Role :maker [0..*]  > 
+
+
+
+schema_Thing : naam : <i>rdf:langString</i> [1..1]
+schema_Thing : omschrijving : <i>rdf:langString</i> [0..1]
 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
