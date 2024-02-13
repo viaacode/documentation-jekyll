@@ -13,37 +13,33 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Digitaliseringspartner</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
+class "<b>Educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Land</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
-class "<b>aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>dienstenleverancier</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>digitaliseringspartner</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
-class "<b>educatieve partner</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatie-eenheid</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Organisatietype</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Persoon</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>positie</b> (org:Post)" as org_Post [[#org%3APost]]
-class "<b>postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
-class "<b>aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>projectpartner</b> (haOrg:ProjectPartner)" as haOrg_ProjectPartner [[#haOrg%3AProjectPartner]]
-class "<b>organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>rol</b> (org:Role)" as org_Role [[#org%3ARole]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
-
-
-schema_Country : naam : <i>xsd:string</i> [1..1]
-
+class "<b>Positie</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Postadres</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Projectpartner</b> (haOrg:ProjectPartner)" as haOrg_ProjectPartner [[#haOrg%3AProjectPartner]]
+class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Rol</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Vestiging</b> (org:Site)" as org_Site [[#org%3ASite]]
 
 
 schema_ContactPoint : contacttype : <i>xsd:string</i> [1..1]
@@ -79,6 +75,10 @@ haOrg_EducationalPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_EducationalPartner : heeft een identificator : <i>xsd:string</i> [1..1]
 haOrg_EducationalPartner --> schema_Person :heeft account manager [1..1]  > 
+
+
+
+schema_Country : naam : <i>xsd:string</i> [1..1]
 
 
 
