@@ -1,6 +1,6 @@
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix dct: <http://purl.org/dc/terms/> .
-@prefix haDes: <https://data.hetarchief.be/ns/bibliographic/> .
+@prefix haDes: <https://data.hetarchief.be/ns/description/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
@@ -10,25 +10,24 @@
 @prefix schema: <https://schema.org/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n2de9e75503e64cdead37969341dcbed5b1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n2de9e75503e64cdead37969341dcbed5b17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:na5c8372f9d7a4eeca64ef197f637cf97b1 a rdfs:Class,
+_:n8f1b5cc9e408406daf2097f0fa60eef8b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
+_:nd2085ed949814a32adf9d23a7d75f086b1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:nd2085ed949814a32adf9d23a7d75f086b17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
 dct:FileFormat a rdfs:Class ;
-    rdfs:label "file format"@en,
-        "format de fichier"@fr,
-        "bestandsformaat"@nl ;
+    rdfs:label "File format"@en,
+        "Format de fichier"@fr,
+        "Bestandsformaat"@nl ;
     dct:description "Examples include the formats defined by the list of Internet Media Types."@en ;
     dct:hasVersion <http://dublincore.org/usage/terms/history/#FileFormat-001> ;
     dct:issued "2008-01-14"^^xsd:date ;
@@ -39,8 +38,8 @@ dct:FileFormat a rdfs:Class ;
         "Een formaat van een digitale bron."@nl .
 
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Annotation> a rdfs:Class ;
-    rdfs:label "annotation"@en,
-        "annotation"@fr,
+    rdfs:label "Annotation"@en,
+        "Annotation"@fr,
         "Annotatie"@nl ;
     rdfs:subClassOf owl:Thing ;
     skos:definition "A class used to annotate Assets."@en,
@@ -58,9 +57,9 @@ dct:FileFormat a rdfs:Class ;
 
 premis:Agent a rdfs:Class,
         owl:Class ;
-    rdfs:label "agent"@en,
-        "acteur"@fr,
-        "agent"@nl ;
+    rdfs:label "Agent"@en,
+        "Acteur"@fr,
+        "Agent"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:subClassOf <http://www.w3.org/ns/prov#Agent>,
         <http://xmlns.com/foaf/0.1/Agent> ;
@@ -70,9 +69,9 @@ premis:Agent a rdfs:Class,
 
 premis:Event a rdfs:Class,
         owl:Class ;
-    rdfs:label "event"@en,
-        "événement"@fr,
-        "gebeurtenis"@nl ;
+    rdfs:label "Event"@en,
+        "Événement"@fr,
+        "Gebeurtenis"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventType> ;
     rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
@@ -82,9 +81,9 @@ premis:Event a rdfs:Class,
 
 premis:File a rdfs:Class,
         owl:Class ;
-    rdfs:label "file"@en,
-        "fichier"@fr,
-        "bestand"@nl ;
+    rdfs:label "File"@en,
+        "Fichier"@fr,
+        "Bestand"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:subClassOf premis:Object ;
     owl:disjointWith premis:Bitstream,
@@ -96,9 +95,9 @@ premis:File a rdfs:Class,
 
 premis:Fixity a rdfs:Class,
         owl:Class ;
-    rdfs:label "fixity"@en,
-        "fixité"@fr,
-        "fixity"@nl ;
+    rdfs:label "Fixity"@en,
+        "Fixité"@fr,
+        "Fixity"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions> ;
     skos:definition "Information used to verify whether an object has been altered in an undocumented or unauthorized way."@en,
@@ -107,9 +106,9 @@ premis:Fixity a rdfs:Class,
 
 premis:HardwareAgent a rdfs:Class,
         owl:Class ;
-    rdfs:label "hardware agent"@en,
-        "matériel acteur"@fr,
-        "hardware agent"@nl ;
+    rdfs:label "Hardware agent"@en,
+        "Matériel acteur"@fr,
+        "Hardware agent"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:subClassOf premis:Agent ;
     owl:disjointWith premis:Organization,
@@ -122,9 +121,9 @@ premis:HardwareAgent a rdfs:Class,
 
 premis:IntellectualEntity a rdfs:Class,
         owl:Class ;
-    rdfs:label "intellectual entity"@en,
-        "entité intellectuelle"@fr,
-        "intellectuele entiteit"@nl ;
+    rdfs:label "Intellectual entity"@en,
+        "Entité intellectuelle"@fr,
+        "Intellectuele entiteit"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/environmentFunctionType> ;
     rdfs:subClassOf premis:Object ;
@@ -137,9 +136,9 @@ premis:IntellectualEntity a rdfs:Class,
 
 premis:Object a rdfs:Class,
         owl:Class ;
-    rdfs:label "object"@en,
-        "objet"@fr,
-        "object"@nl ;
+    rdfs:label "Object"@en,
+        "Objet"@fr,
+        "Object"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
     skos:definition "Discrete unit of information subject to digital preservation. Subclasses of Object are Intellectual Entity, Representation, File and Bitstream."@en,
@@ -148,9 +147,9 @@ premis:Object a rdfs:Class,
 
 premis:OutcomeStatus a rdfs:Class,
         owl:Class ;
-    rdfs:label "outcome status"@en,
-        "statut de résultat"@fr,
-        "uitkomststatus"@nl ;
+    rdfs:label "Outcome status"@en,
+        "Statut de résultat"@fr,
+        "Uitkomststatus"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/eventOutcome> ;
     skos:definition "Overall result of the Event in terms of success, partial success, or failure."@en,
@@ -159,9 +158,9 @@ premis:OutcomeStatus a rdfs:Class,
 
 premis:Representation a rdfs:Class,
         owl:Class ;
-    rdfs:label "representation"@en,
-        "représentation"@fr,
-        "representatie"@nl ;
+    rdfs:label "Representation"@en,
+        "Représentation"@fr,
+        "Representatie"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:subClassOf premis:Object ;
     owl:disjointWith premis:Bitstream,
@@ -173,9 +172,9 @@ premis:Representation a rdfs:Class,
 
 premis:SoftwareAgent a rdfs:Class,
         owl:Class ;
-    rdfs:label "software agent"@en,
-        "logiciel acteur"@fr,
-        "software agent"@nl ;
+    rdfs:label "Software agent"@en,
+        "Logiciel acteur"@fr,
+        "Software agent"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:subClassOf premis:Agent,
         <http://www.w3.org/ns/prov#SoftwareAgent> ;
@@ -188,9 +187,9 @@ premis:SoftwareAgent a rdfs:Class,
 
 premis:StorageLocation a rdfs:Class,
         owl:Class ;
-    rdfs:label "storage location"@en,
-        "emplacement de stockage"@fr,
-        "opslagplaats"@nl ;
+    rdfs:label "Storage location"@en,
+        "Emplacement de stockage"@fr,
+        "Opslagplaats"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/contentLocationType> ;
     skos:definition "Information needed to retrieve a physical item from its physical storage location or a file from the storage system, or to access a bitstream within a file."@en,
@@ -199,9 +198,9 @@ premis:StorageLocation a rdfs:Class,
 
 premis:StorageMedium a rdfs:Class,
         owl:Class ;
-    rdfs:label "storage medium"@en,
-        "support de stockage"@fr,
-        "opslagmedium"@nl ;
+    rdfs:label "Storage medium"@en,
+        "Support de stockage"@fr,
+        "Opslagmedium"@nl ;
     rdfs:isDefinedBy premis: ;
     rdfs:seeAlso <http://id.loc.gov/vocabulary/preservation/storageMedium> ;
     skos:definition "The physical medium on which the Object is stored (e.g., magnetic tape, hard disk, CD-ROM, DVD)."@en,
@@ -209,9 +208,9 @@ premis:StorageMedium a rdfs:Class,
         "Het fysieke medium waarop het Object is opgeslagen (bijvoorbeeld, de magnetische tape, de harde schijf, de CD-ROM, de DVD)."@nl .
 
 rdf:List a rdfs:Class ;
-    rdfs:label "list"@en,
-        "liste"@fr,
-        "lijst"@nl ;
+    rdfs:label "List"@en,
+        "Liste"@fr,
+        "Lijst"@nl ;
     rdfs:isDefinedBy rdf: ;
     rdfs:subClassOf rdfs:Resource ;
     skos:definition "The class of RDF Lists."@en,
@@ -220,9 +219,9 @@ rdf:List a rdfs:Class ;
 
 skos:Collection a rdfs:Class,
         owl:Class ;
-    rdfs:label "collection"@en,
-        "collection"@fr,
-        "verzameling"@nl ;
+    rdfs:label "Collection"@en,
+        "Collection"@fr,
+        "Verzameling"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     owl:disjointWith skos:Concept,
         skos:ConceptScheme ;
@@ -235,9 +234,9 @@ skos:Collection a rdfs:Class,
 
 skos:Concept a rdfs:Class,
         owl:Class ;
-    rdfs:label "concept"@en,
-        "concept"@fr,
-        "concept"@nl ;
+    rdfs:label "Concept"@en,
+        "Concept"@fr,
+        "Concept"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     skos:definition "A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive."@en,
         "Un concept SKOS peut être considéré comme une idée ou une notion, une unité de pensée. Cependant, ce qui constitue une unité de pensée est subjectif, et cette définition se veut suggestive, plutôt que restrictive."@fr,
@@ -245,9 +244,9 @@ skos:Concept a rdfs:Class,
 
 skos:ConceptScheme a rdfs:Class,
         owl:Class ;
-    rdfs:label "concept scheme"@en,
-        "schéma de concepts"@fr,
-        "conceptenschema"@nl ;
+    rdfs:label "Concept scheme"@en,
+        "Schéma de concepts"@fr,
+        "Conceptenschema"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     owl:disjointWith skos:Concept ;
     skos:definition "A set of concepts, optionally including statements about semantic relationships between those concepts."@en,
@@ -262,9 +261,9 @@ skos:ConceptScheme a rdfs:Class,
 
 skos:OrderedCollection a rdfs:Class,
         owl:Class ;
-    rdfs:label "ordered collection"@en,
-        "collection ordonnée"@fr,
-        "geordende collectie"@nl ;
+    rdfs:label "Ordered collection"@en,
+        "Collection ordonnée"@fr,
+        "Geordende collectie"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
     rdfs:subClassOf skos:Collection ;
     skos:definition "An ordered collection of concepts, where both the grouping and the ordering are meaningful."@en,
@@ -276,9 +275,9 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/2008/05/skos-xl#Label> a rdfs:Class,
         owl:Class ;
-    rdfs:label "label"@en,
-        "étiquette"@fr,
-        "label"@nl ;
+    rdfs:label "Label"@en,
+        "Étiquette"@fr,
+        "Label"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/2008/05/skos-xl> ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -292,9 +291,9 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/ns/org#Organization> a rdfs:Class,
         owl:Class ;
-    rdfs:label "organization"@en,
-        "organisation"@fr,
-        "organisatie"@nl ;
+    rdfs:label "Organization"@en,
+        "Organisation"@fr,
+        "Organisatie"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
     rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
     owl:disjointWith schema:Person ;
@@ -306,9 +305,9 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/ns/org#OrganizationalUnit> a rdfs:Class,
         owl:Class ;
-    rdfs:label "organizationalUnit"@en,
-        "unité opérationnelle"@fr,
-        "organisatie-eenheid"@nl ;
+    rdfs:label "OrganizationalUnit"@en,
+        "Unité opérationnelle"@fr,
+        "Organisatie-eenheid"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
     skos:definition "An Organization such as a University Support Unit which is part of some larger FormalOrganization and only has full recognition within the context of that FormalOrganization, it is not a Legal Entity in its own right. Units can be large and complex containing other Units and even FormalOrganizations. Alternative names: _OU_ _Unit_ _Department_"@en,
@@ -317,9 +316,9 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/ns/org#Post> a rdfs:Class,
         owl:Class ;
-    rdfs:label "post"@en,
-        "poste"@fr,
-        "positie"@nl ;
+    rdfs:label "Post"@en,
+        "Poste"@fr,
+        "Positie"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
     skos:definition "A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio (for example the Secretary of State for Scotland is part of UK Cabinet by virtue of being Secretary of State for Scotland, not as an individual person). A post can be held by multiple people and hence can be treated as a organization in its own right."@en,
         "Un Poste représente une position au sein d'une Organisation qui existe indépendamment de la personne ou des personnes qui le remplissent. Les postes peuvent être utilisés pour représenter des situations où une personne est membre d'une Organisation d'office (par exemple, le Secrétaire d'Etat pour l'Ecosse fait partie du Cabinet du Royaume-Uni du fait d'être Secrétaire d'Etat pour l'Ecosse, non pas comme une personne physique). Un poste après peut être occupé par plusieurs personnes et peut donc être considéré comme une Organisation à part entière."@fr,
@@ -327,9 +326,9 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/ns/org#Role> a rdfs:Class,
         owl:Class ;
-    rdfs:label "role"@en,
-        "rôle"@fr,
-        "rol"@nl ;
+    rdfs:label "Role"@en,
+        "Rôle"@fr,
+        "Rol"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
     rdfs:subClassOf skos:Concept ;
     skos:definition "Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of `org:Membership`. It is common for roles to be arranged in some taxonomic structure and we use SKOS to represent that. The normal SKOS lexical properties should be used when labelling the Role. Additional descriptive properties for the Role, such as a Salary band, may be added by extension vocabularies."@en,
@@ -338,9 +337,9 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/ns/org#Site> a rdfs:Class,
         owl:Class ;
-    rdfs:label "site"@en,
-        "site"@fr,
-        "vestiging"@nl ;
+    rdfs:label "Site"@en,
+        "Site"@fr,
+        "Vestiging"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/org> ;
     skos:definition "An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations. In most cases a Site will be a physical location. However, we don't exclude the possibility of non-physical sites such as a virtual office with an associated post box and phone reception service. Extensions may provide subclasses to denote particular types of site."@en,
         "Un établissement ou tout autre lieu dans lequel une Organisation est localisé. Beaucoup d'organisations sont dispersées à travers plusieurs sites. Dans la plupart des cas un Site sera un lieu physique. Toutefois, nous n'excluons pas la possibilité de sites non-physiques comme un bureau virtuel avec une boîte postale et un service de secrétariat mutualisé. Des extensions pourraient fournir des sous-classes pour décrire des types de sites particuliers."@fr,
@@ -348,9 +347,9 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/ns/prov#Activity> a rdfs:Class,
         owl:Class ;
-    rdfs:label "activity"@en,
-        "activité"@fr,
-        "activiteit"@nl ;
+    rdfs:label "Activity"@en,
+        "Activité"@fr,
+        "Activiteit"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     owl:disjointWith <http://www.w3.org/ns/prov#Entity> ;
     skos:definition "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities."@en,
@@ -359,9 +358,9 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/ns/prov#Agent> a rdfs:Class,
         owl:Class ;
-    rdfs:label "agent"@en,
-        "agent"@fr,
-        "agent"@nl ;
+    rdfs:label "Agent"@en,
+        "Agent"@fr,
+        "Agent"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     owl:disjointWith <http://www.w3.org/ns/prov#InstantaneousEvent> ;
     skos:definition "An agent is something that bears some form of responsibility for an activity taking place, for the existence of an entity, or for another agent's activity. "@en,
@@ -370,102 +369,111 @@ skos:OrderedCollection a rdfs:Class,
 
 <http://www.w3.org/ns/prov#Entity> a rdfs:Class,
         owl:Class ;
-    rdfs:label "entity"@en,
-        "entité"@fr,
-        "entiteit"@nl ;
+    rdfs:label "Entity"@en,
+        "Entité"@fr,
+        "Entiteit"@nl ;
     rdfs:isDefinedBy <http://www.w3.org/ns/prov-o#> ;
     owl:disjointWith <http://www.w3.org/ns/prov#InstantaneousEvent> ;
     skos:definition "An entity is a physical, digital, conceptual, or other kind of thing with some fixed aspects; entities may be real or imaginary. "@en,
         "Une entité est un objet physique, numérique, conceptuel ou autre de type fixe ; les entités peuvent être réelles ou imaginaires."@fr,
         "Een entiteit is een fysiek, digitaal, conceptueel of een ander soort ding met enkele vaste aspecten; entiteiten kunnen echt of denkbeeldig zijn."@nl .
 
-<https://data.hetarchief.be/ns/description/Audio> a rdfs:Class ;
+haDes:Audio a rdfs:Class ;
     rdfs:label "Audio"@en,
         "Audio"@fr,
         "Audio"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type audio."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type audio."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type audio."@nl .
 
-<https://data.hetarchief.be/ns/description/AudioReel> a rdfs:Class ;
+haDes:AudioReel a rdfs:Class ;
     rdfs:label "Audio reel"@en,
         "Bobine audio"@fr,
         "Geluidsspoel"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     skos:definition "A reel of an analog film carrier that contains audio."@en,
         "Une bobine d'un porte-film analogique qui contient de l'audio."@fr,
         "Een band van een analoge film drager die audio bevat."@nl .
 
-<https://data.hetarchief.be/ns/description/DVD> a rdfs:Class ;
+haDes:DVD a rdfs:Class ;
     rdfs:label "DVD"@en,
         "DVD"@fr,
         "Dvd"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent le DVD dans son ensemble."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en de dvd als geheel voorstelt."@nl .
 
-<https://data.hetarchief.be/ns/description/DVDChapter> a rdfs:Class ;
-    rdfs:label "DVD Chapter"@en,
+haDes:DVDChapter a rdfs:Class ;
+    rdfs:label "DVD chapter"@en,
         "Chapitre DVD"@fr,
         "Dvd-hoofdstuk"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."@en,
         "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent un chapitre DVD spécifique."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en een specifiek dvd-hoofdstuk voorstelt."@nl .
 
-<https://data.hetarchief.be/ns/description/Film> a rdfs:Class ;
+haDes:Film a rdfs:Class ;
     rdfs:label "Film"@en,
         "Film"@fr,
         "Film"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."@nl .
 
-<https://data.hetarchief.be/ns/description/ImageReel> a rdfs:Class ;
+haDes:ImageReel a rdfs:Class ;
     rdfs:label "Image reel"@en,
         "Bobine d'image"@fr,
         "Beeldspoel"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     skos:definition "A reel of an analog film carrier that contains video."@en,
         "Une bobine d'un porte-film analogique qui contient une vidéo."@fr,
         "Een speo van een analoge film drager die beeld bevat."@nl .
 
-<https://data.hetarchief.be/ns/description/NewspaperIssue> a rdfs:Class ;
+haDes:NewspaperIssue a rdfs:Class ;
     rdfs:label "Newspaper edition"@en,
         "Edition de journal"@fr,
         "Kranteneditie"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:subClassOf premis:IntellectualEntity ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents the newspaper edition as a whole."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent l'édition du journal dans son ensemble."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en de kranteneditie als geheel voorstelt."@nl .
 
-<https://data.hetarchief.be/ns/description/NewspaperIssuePage> a rdfs:Class ;
+haDes:NewspaperIssuePage a rdfs:Class ;
     rdfs:label "Newspaper issue page"@en,
         "Page d'édition de journal"@fr,
         "Kranteneditiepagina"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:subClassOf premis:IntellectualEntity ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type newspaper, and represents a specific newspaper page."@en,
         "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent une page de journal spécifique."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en een specifieke krantenpagina voorstelt."@nl .
 
-<https://data.hetarchief.be/ns/description/Video> a rdfs:Class ;
+haDes:Video a rdfs:Class ;
     rdfs:label "Video"@en,
         "Vidéo"@fr,
         "Video"@nl ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
 
+<https://data.hetarchief.be/ns/mediahaven/Record> a rdfs:Class ;
+    rdfs:label "Mediahaven record"@en,
+        "Enregistrement Mediahaven"@fr,
+        "Mediahavenrecord"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
+    skos:definition "A record in the Mediahaven asset management system."@en,
+        "Un enregistrement dans le système de gestion d'actifs Mediahaven."@fr,
+        "Een record in het Mediahaven asset management systeem."@nl .
+
 <https://data.hetarchief.be/ns/object/CarrierRepresentation> a rdfs:Class ;
-    rdfs:label "carrier representation"@en,
-        "représentation de porteur"@fr,
-        "drager representatie"@nl ;
+    rdfs:label "Carrier representation"@en,
+        "Représentation de porteur"@fr,
+        "Drager representatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
     rdfs:subClassOf premis:Representation ;
     skos:definition "A physical or digital representation of an archived intellectual entity that is stored on a physical carrier such as a video tape, film reel, paper or canvas."@en,
@@ -473,9 +481,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een fysieke of digitale weergave van een gearchiveerde intellectuele entiteit (Intellectual Entity) die is opgeslagen op een fysieke drager zoals een videoband, filmrol, papier of canvas."@nl .
 
 <https://data.hetarchief.be/ns/object/DigitalRepresentation> a rdfs:Class ;
-    rdfs:label "digital representation"@en,
-        "représentation digitale"@fr,
-        "digitale representatie"@nl ;
+    rdfs:label "Digital representation"@en,
+        "Représentation digitale"@fr,
+        "Digitale representatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
     rdfs:subClassOf premis:Representation ;
     skos:definition "Digital representation of an archived intellectual entity."@en,
@@ -483,9 +491,9 @@ skos:OrderedCollection a rdfs:Class,
         "Digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl .
 
 <https://data.hetarchief.be/ns/object/FragmentRepresentation> a rdfs:Class ;
-    rdfs:label "fragment representation"@en,
-        "représentation fragment"@fr,
-        "fragment representatie"@nl ;
+    rdfs:label "Fragment representation"@en,
+        "Représentation fragment"@fr,
+        "Fragment representatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
     rdfs:subClassOf premis:DigitalRepresentation ;
     owl:equivalentClass <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#MediaFragment> ;
@@ -494,9 +502,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een spatiaal of temporeel segment van een bestand die fungeert als een partiële digitale representatie van een gearchiveerde intellectuele entiteit (Intellectual Entity)."@nl .
 
 <https://data.hetarchief.be/ns/object/LocalIdentifier> a rdfs:Class ;
-    rdfs:label "local identifier"@en,
-        "identifiant local"@fr,
-        "lokale identificatie"@nl ;
+    rdfs:label "Local identifier"@en,
+        "Identifiant local"@fr,
+        "Lokale identificatie"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
     rdfs:subClassOf premis:Identifier,
         skos:Concept ;
@@ -505,9 +513,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een lokale identificatie voor een object gedefinieerd door of bekend bij de contentpartner, bijvoorbeeld een barcode, een identificatie uit een externe database of de identificatie in het registratiesysteem van de collectie van de contentpartner."@nl .
 
 <https://data.hetarchief.be/ns/object/PhysicalCarrier> a rdfs:Class ;
-    rdfs:label "physical carrier"@en,
-        "porteur physique"@fr,
-        "fysieke drager"@nl ;
+    rdfs:label "Physical carrier"@en,
+        "Porteur physique"@fr,
+        "Fysieke drager"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
     rdfs:subClassOf premis:StorageLocation ;
     skos:definition "A physical carrier in which data, sound, images, etc., are stored.  For certain categories of material, the physical carrier consists of a storage medium (e.g., tape, film) sometimes encased in a plastic, metal, etc., housing (e.g., cassette, cartridge) that is an integral part of the item."@en,
@@ -515,9 +523,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een fysieke drager waarop data, geluid, beeld etc. zijn opgeslagen. Voor bepaalde materiaalcategorieën bestaat de fysieke drager uit een opslagmedium (bijv. tape, film), soms verpakt in een plastic, metalen, enz. behuizing (bijv. cassette, cartridge) die een integraal onderdeel vormt van het item."@nl .
 
 <https://data.hetarchief.be/ns/organization/ContentPartner> a rdfs:Class ;
-    rdfs:label "content partner"@en,
-        "partenaire de contenus"@fr,
-        "contentpartner"@nl ;
+    rdfs:label "Content partner"@en,
+        "Partenaire de contenus"@fr,
+        "Contentpartner"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
     skos:definition "A content partner is an organization that has signed a collaboration agreement with meemoo for the long-term preservation and dissemination of their content."@en,
@@ -525,9 +533,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een contentpartner is een organisatie die een samenwerkingovereenkomst heeft ondertekend met meemoo voor de langetermijnpreservatie en ontsluiting van hun materiaal."@nl .
 
 <https://data.hetarchief.be/ns/organization/DigitizationPartner> a rdfs:Class ;
-    rdfs:label "digitization partner"@en,
-        "partenaire de digitalisation"@fr,
-        "digitaliseringspartner"@nl ;
+    rdfs:label "Digitization partner"@en,
+        "Partenaire de digitalisation"@fr,
+        "Digitaliseringspartner"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
     rdfs:subClassOf <http://www.w3.org/ns/org#ServiceProvider> ;
     skos:definition "An organization that provides digitisation services to meemoo."@en,
@@ -535,9 +543,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een organisatie die aan meemoo digitaliseringsdiensten levert."@nl .
 
 <https://data.hetarchief.be/ns/organization/EducationalPartner> a rdfs:Class ;
-    rdfs:label "educational partner"@en,
-        "partenaire éducatif"@fr,
-        "educatieve partner"@nl ;
+    rdfs:label "Educational partner"@en,
+        "Partenaire éducatif"@fr,
+        "Educatieve partner"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
     skos:definition "An educational partner is an organization that provides content on the 'Archief voor Onderwijs' platform and has signed the 'educational partner' collaboration agreement with meemoo (e.g. an educational publisher, KlasCement, Mediawijs, etc.)."@en,
@@ -545,9 +553,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een educatieve partner is een organisatie die content aanbiedt op het 'Archief voor Onderwijs'-platform en met meemoo de samenwerkingsovereenkomst 'educatieve partner' heeft ondertekend (bv. een educatieve uitgeverij, KlasCement, Mediawijs, enz.)."@nl .
 
 <https://data.hetarchief.be/ns/organization/Logo> a rdfs:Class ;
-    rdfs:label "logo"@en,
-        "logo"@fr,
-        "logo"@nl ;
+    rdfs:label "Logo"@en,
+        "Logo"@fr,
+        "Logo"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
     rdfs:subClassOf schema:ImageObject ;
     skos:definition "A logo is a graphic mark, emblem, or symbol of an organization."@en,
@@ -555,9 +563,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een logo is een grafisch teken, embleem of symbool van een organisatie."@nl .
 
 <https://data.hetarchief.be/ns/organization/OrganizationType> a rdfs:Class ;
-    rdfs:label "organization type"@en,
-        "type de organisation"@fr,
-        "organisatietype"@nl ;
+    rdfs:label "Organization type"@en,
+        "Type de organisation"@fr,
+        "Organisatietype"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
     rdfs:subClassOf skos:Concept ;
     skos:definition "The type or classification of an organization."@en,
@@ -565,9 +573,9 @@ skos:OrderedCollection a rdfs:Class,
         "Het type of de classificatie van een organisatie."@nl .
 
 <https://data.hetarchief.be/ns/organization/ProjectPartner> a rdfs:Class ;
-    rdfs:label "project partner"@en,
-        "partenaire de projet"@fr,
-        "projectpartner"@nl ;
+    rdfs:label "Project partner"@en,
+        "Partenaire de projet"@fr,
+        "Projectpartner"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
     skos:definition "An organization that collaborates with meemoo on projects formalized in an agreement or decision, such as projects within the Flemish cultural heritage decree, projects funded by the European Union, or other innovation and research projects."@en,
@@ -575,9 +583,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een organisatie die samenwerkt met meemoo aan projecten die geformaliseerd zijn in een overeenkomst of besluit, zoals bijvoorbeeld projecten binnen het Vlaamse cultureelerfgoeddecreet, projecten onder financiering van de Europese Unie, of andere innovatie- en onderzoeksprojecten."@nl .
 
 <https://data.hetarchief.be/ns/organization/ServiceConsumer> a rdfs:Class ;
-    rdfs:label "service consumer"@en,
-        "consomatteur de services"@fr,
-        "dienstenafnemer"@nl ;
+    rdfs:label "Service consumer"@en,
+        "Consomatteur de services"@fr,
+        "Dienstenafnemer"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
     skos:definition "An organization that consumes services from meemoo, with a contractual relationship with meemoo. This is not a content partner, but a private organization that stores digital content at meemoo (e.g. Plantentuin Meise)."@en,
@@ -585,9 +593,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een organisatie die diensten bij meemoo afneemt, met contractuele relatie met meemoo. Het gaat hier niet over een contentpartner, maar over een particuliere organisatie die digitale opslag doet bij meemoo (bv. Plantentuin Meise)."@nl .
 
 <https://data.hetarchief.be/ns/organization/ServiceProvider> a rdfs:Class ;
-    rdfs:label "service provider"@en,
-        "fournisseur de services"@fr,
-        "dienstenleverancier"@nl ;
+    rdfs:label "Service provider"@en,
+        "Fournisseur de services"@fr,
+        "Dienstenleverancier"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
     rdfs:subClassOf <http://www.w3.org/ns/org#Organization> ;
     skos:definition "An organization that provides services or goods to meemoo, for example related to IT, digitization, etc."@en,
@@ -595,9 +603,9 @@ skos:OrderedCollection a rdfs:Class,
         "Een organisatie die aan meemoo diensten of goederen levert, bijvoorbeeld op het gebied van IT, digitalisering, enz."@nl .
 
 schema:ArchiveComponent a rdfs:Class ;
-    rdfs:label "archive component"@en,
-        "composant d'archive"@fr,
-        "archiefcomponent"@nl ;
+    rdfs:label "Archive component"@en,
+        "Composant d'archive"@fr,
+        "Archiefcomponent"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:CreativeWork ;
     skos:definition "An intangible type to be applied to any archive content, carrying with it a set of properties required to describe archival items and collections."@en,
@@ -605,9 +613,9 @@ schema:ArchiveComponent a rdfs:Class ;
         "Een immaterieel type dat toegepast moet worden op elke inhoud van het archief, met daarbij een set van eigenschappen die nodig zijn om archiefitems en -collecties te beschrijven."@nl .
 
 schema:Collection a rdfs:Class ;
-    rdfs:label "collection"@en,
-        "collection"@fr,
-        "collectie"@nl ;
+    rdfs:label "Collection"@en,
+        "Collection"@fr,
+        "Collectie"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:CreativeWork ;
     skos:definition "A collection of items, e.g. creative works or products, typically but not necessarily of the same kind."@en,
@@ -615,9 +623,9 @@ schema:Collection a rdfs:Class ;
         "Een collectie van items, bv. creatieve werken (creative works) of producten, gewoonlijk maar niet altijd van dezelfde soort."@nl .
 
 schema:ContactPoint a rdfs:Class ;
-    rdfs:label "contactPoint"@en,
-        "point de contact"@fr,
-        "aanspreek-/meldpunt"@nl ;
+    rdfs:label "Contact point"@en,
+        "Point de contact"@fr,
+        "Aanspreek-/meldpunt"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:StructuredValue ;
     skos:definition "A contact point, for example a Customer Complaints department."@en,
@@ -635,9 +643,9 @@ schema:Country a rdfs:Class ;
     rdfs:subClassOf schema:AdministrativeArea .
 
 schema:CreativeWork a rdfs:Class ;
-    rdfs:label "creative work"@en,
-        "travail créatif"@fr,
-        "creatief werk"@nl ;
+    rdfs:label "Creative work"@en,
+        "Travail créatif"@fr,
+        "Creatief werk"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:Thing ;
     skos:definition "The most generic kind of creative work, including books, movies, photographs, software programs, etc."@en,
@@ -645,9 +653,9 @@ schema:CreativeWork a rdfs:Class ;
         "De meest generieke soort van creatief werk (CreativeWork), zoals boeken, films, foto's, programma's, enz."@nl .
 
 schema:CreativeWorkSeason a rdfs:Class ;
-    rdfs:label "creative work season"@en,
+    rdfs:label "Creative work season"@en,
         "Saison du travail créatif"@fr,
-        "creatief werk seizoen"@nl ;
+        "Creatief werk seizoen"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:CreativeWork ;
     skos:definition "A media season e.g. tv, radio, video game etc."@en,
@@ -655,9 +663,9 @@ schema:CreativeWorkSeason a rdfs:Class ;
         "Een mediaseizoen, bijvoorbeeld tv, radio, videogame etc."@nl .
 
 schema:CreativeWorkSeries a rdfs:Class ;
-    rdfs:label "creative work series"@en,
-        "série du travail créatif"@fr,
-        "serie van het creatief werk"@nl ;
+    rdfs:label "Creative work series"@en,
+        "Série du travail créatif"@fr,
+        "Serie van het creatief werk"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:CreativeWork ;
     skos:definition "A CreativeWorkSeries in schema.org is a group of related items, typically but not necessarily of the same kind. CreativeWorkSeries are usually organized into some order, often chronological. Unlike ItemList which is a general purpose data structure for lists of things, the emphasis with CreativeWorkSeries is on published materials (written e.g. books and periodicals, or media such as tv, radio and games)."@en,
@@ -665,9 +673,9 @@ schema:CreativeWorkSeries a rdfs:Class ;
         "Een CreativeWorkSeries in schema.org is een groep vergelijkbare items, meestal maar niet altijd van dezelfde soort. CreativeWorkSeries zijn meestal gegroepeerd in een bepaalde volgorde, vaak chronologisch. In tegenstelling tot ItemList, ligt de nadruk van CreativeWorkSeries op gepubliceerd materiaal (bijvoorbeeld boeken en periodieken, of media zoals tv, radio en games)."@nl .
 
 schema:Episode a rdfs:Class ;
-    rdfs:label "episode"@en,
-        "épisode"@fr,
-        "aflevering"@nl ;
+    rdfs:label "Episode"@en,
+        "Épisode"@fr,
+        "Aflevering"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:CreativeWork ;
     skos:definition "A media episode (e.g. TV, radio, video game) which can be part of a series or season."@en,
@@ -675,9 +683,9 @@ schema:Episode a rdfs:Class ;
         "Een media aflevering (bijvoorbeeld tv, radio, videogame) die deel uitmaakt van een serie of seizoen."@nl .
 
 schema:Event a rdfs:Class ;
-    rdfs:label "event"@en,
-        "événement"@fr,
-        "gebeurtenis"@nl ;
+    rdfs:label "Event"@en,
+        "Événement"@fr,
+        "Gebeurtenis"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:Thing ;
     skos:definition "An event happening at a certain time and location, such as a concert, lecture, or festival."@en,
@@ -685,9 +693,9 @@ schema:Event a rdfs:Class ;
         "Een gebeurtenis die plaatsvindt op een gegeven moment en locatie, zoals een concert, een lezing of een festival."@nl .
 
 schema:Organization a rdfs:Class ;
-    rdfs:label "organisation"@en,
-        "organisation"@fr,
-        "organisatie"@nl ;
+    rdfs:label "Organisation"@en,
+        "Organisation"@fr,
+        "Organisatie"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:Thing ;
     skos:definition "An organization such as a school, NGO, corporation, club, etc."@en,
@@ -695,9 +703,9 @@ schema:Organization a rdfs:Class ;
         "Een organisatie zoals een school, NGO, corporatie, club, enz."@nl .
 
 schema:PerformanceRole a rdfs:Class ;
-    rdfs:label "performance role"@en,
-        "rôle de performance"@fr,
-        "uitvoeringsrol"@nl ;
+    rdfs:label "Performance role"@en,
+        "Rôle de performance"@fr,
+        "Uitvoeringsrol"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:Role ;
     skos:definition "A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc."@en,
@@ -705,9 +713,9 @@ schema:PerformanceRole a rdfs:Class ;
         "Een PerformanceRole is een rol die een entiteit vertolkt met betrekking tot een theatrale uitvoering, bijvoorbeeld in een film, televisieserie etc."@nl .
 
 schema:Person a rdfs:Class ;
-    rdfs:label "person"@en,
-        "personne"@fr,
-        "persoon"@nl ;
+    rdfs:label "Person"@en,
+        "Personne"@fr,
+        "Persoon"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:Thing ;
     owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> ;
@@ -716,9 +724,9 @@ schema:Person a rdfs:Class ;
         "Een persoon (levend, dood, ondood, of fictief)."@nl .
 
 schema:Place a rdfs:Class ;
-    rdfs:label "place"@en,
-        "lieu"@fr,
-        "plaats"@nl ;
+    rdfs:label "Place"@en,
+        "Lieu"@fr,
+        "Plaats"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:Thing ;
     skos:definition "Entities that have a somewhat fixed, physical extension."@en,
@@ -726,9 +734,9 @@ schema:Place a rdfs:Class ;
         "Entiteiten die een enigszins vastliggende, fysieke uitbreiding hebben."@nl .
 
 schema:PostalAddress a rdfs:Class ;
-    rdfs:label "postal address"@en,
-        "adresse postale"@fr,
-        "postadres"@nl ;
+    rdfs:label "Postal address"@en,
+        "Adresse postale"@fr,
+        "Postadres"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:ContactPoint ;
     skos:definition "The mailing address."@en,
@@ -737,8 +745,8 @@ schema:PostalAddress a rdfs:Class ;
 
 schema:QuantitativeValue a rdfs:Class ;
     rdfs:label "quantitative Value"@en,
-        "valeur quantitative"@fr,
-        "kwantitatieve waarde"@nl ;
+        "Valeur quantitative"@fr,
+        "Kwantitatieve waarde"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:Thing ;
     skos:definition "A point value or interval for product characteristics and other purposes."@en,
@@ -746,9 +754,9 @@ schema:QuantitativeValue a rdfs:Class ;
         "Een puntwaarde of interval voor producteigenschappen en andere doeleinden."@nl .
 
 schema:Role a rdfs:Class ;
-    rdfs:label "role"@en,
-        "rôle"@fr,
-        "rol"@nl ;
+    rdfs:label "Role"@en,
+        "Rôle"@fr,
+        "Rol"@nl ;
     rdfs:isDefinedBy schema: ;
     rdfs:subClassOf schema:Thing ;
     skos:definition """Represents additional information about a relationship or property.
@@ -775,25 +783,6 @@ schema:Thing a rdfs:Class ;
     skos:definition "The most generic type of item."@en,
         "Le type d'élément le plus générique."@fr,
         "Het meest generieke type item."@nl .
-
-<http://data.hetarchief.be/ns/description/> a owl:Ontology ;
-    dct:author [ schema:email "miel.vandersande@meemoo.be" ;
-            schema:name "Miel Vander Sande" ],
-        [ schema:email "lennert.vandevelde@meemoo.be" ;
-            schema:name "Lennert Van de Velde" ],
-        [ schema:email "milan.valadou@meemoo.be" ;
-            schema:name "Milan Valadou" ] ;
-    dct:created "2022-01-07" ;
-    dct:description "Data model to describe the content of objects."@en,
-        "Modèle de données pour décrire le contenu des objets."@fr,
-        "Datamodel voor de beschrijving van de inhoud van objecten."@nl ;
-    dct:modified "2024-01-17" ;
-    dct:title "Data model Description"@en,
-        "Modèle de données Description"@fr,
-        "Datamodel Descriptie"@nl ;
-    pav:version "0.0.1" ;
-    vann:preferredNamespacePrefix "haDes" ;
-    vann:preferredNamespaceUri "http://data.hetarchief.be/ns/description/" .
 
 <http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out> a owl:ObjectProperty ;
     rdfs:label "outcome"@en,
@@ -1087,7 +1076,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n2de9e75503e64cdead37969341dcbed5b1 ;
+    rdfs:domain _:nd2085ed949814a32adf9d23a7d75f086b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1155,7 +1144,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n2de9e75503e64cdead37969341dcbed5b17 ;
+    rdfs:domain _:nd2085ed949814a32adf9d23a7d75f086b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1270,7 +1259,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:na5c8372f9d7a4eeca64ef197f637cf97b1 ;
+    rdfs:range _:n8f1b5cc9e408406daf2097f0fa60eef8b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1524,7 +1513,24 @@ skos:scopeNote a rdf:Property,
         "Une page d'accueil pour quelque chose"@fr,
         "Een homepagina van/voor iets"@nl .
 
-haDes:NewspaperIssueNodeShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/bibliographic> a owl:Ontology ;
+    dct:author [ schema:email "miel.vandersande@meemoo.be" ;
+            schema:name "Miel Vander Sande" ],
+        [ schema:email "lennert.vandevelde@meemoo.be" ;
+            schema:name "Lennert Van de Velde" ],
+        [ schema:email "milan.valadou@meemoo.be" ;
+            schema:name "Milan Valadou" ] ;
+    dct:created "2023-11-13" ;
+    dct:description "Data model to provide a detailed description of bibliographic objects and their components."@en,
+        "Modèle de données pour fournir une description détaillée des objets bibliographiques et leurs composants."@fr,
+        "Datamodel voor de gedetailleerde beschrijving van bibliografische objecten en hun componenten."@nl ;
+    dct:modified "2024-02-13" ;
+    dct:title "Bibliographic data model"@en,
+        "Modèle de données bibliographiques"@fr,
+        "Bibliografisch datamodel "@nl ;
+    pav:version "0.0.1" .
+
+<https://data.hetarchief.be/ns/bibliographic#NewspaperIssueNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:datatype xsd:decimal ;
             sh:description "Indicates how many pages a certain bibliographic object contains."@en,
@@ -1607,7 +1613,7 @@ haDes:NewspaperIssueNodeShape a sh:NodeShape ;
             sh:severity sh:Violation ] ;
     sh:targetClass haDes:NewspaperIssue .
 
-haDes:NewspaperIssuePageNodeShape a sh:NodeShape ;
+<https://data.hetarchief.be/ns/bibliographic#NewspaperIssuePageNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:datatype xsd:decimal ;
             sh:description "Indicates the serial number of a page within the greater object it is part of."@en,
@@ -1650,141 +1656,128 @@ haDes:NewspaperIssuePageNodeShape a sh:NodeShape ;
             sh:severity sh:Violation ] ;
     sh:targetClass haDes:NewspaperIssuePage .
 
-<https://data.hetarchief.be/ns/description/audioNoiseReduction> a rdf:Property ;
+haDes:audioNoiseReduction a rdf:Property ;
     rdfs:label "audio noise reduction"@en,
         "réduction du bruit audio"@fr,
         "audio ruisonderdrukking"@nl ;
     rdfs:domain <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range rdf:Literal ;
     skos:definition "The technology used for noise reduction in audio."@en,
         "La technologie utilisée pour la réduction du bruit de l'audio."@fr,
         "De techniek die gebruikt wordt voor ruisonderdrukking bij audio."@nl .
 
-<https://data.hetarchief.be/ns/description/audioRecordingSpeed> a rdf:Property ;
+haDes:audioRecordingSpeed a rdf:Property ;
     rdfs:label "audio recording speed"@en,
         "vitesse d'enregistrement audio"@fr,
         "audio-opnamesnelheid"@nl ;
     rdfs:domain <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range skos:Concept ;
     skos:definition "The speed with which open reel audio or a gramophone record is recorded."@en,
         "La vitesse à laquelle l'audio à bobine ouverte ou un enregistrement de gramophone est enregistré."@fr,
         "De snelheid waarmee openspoelaudio of een grammofoonplaat wordt opgenomen."@nl .
 
-<https://data.hetarchief.be/ns/description/chapterNumber> a rdf:Property ;
+haDes:chapterNumber a rdf:Property ;
     rdfs:label "DVD chapter number"@en,
         "Numéro de chapitre DVD"@fr,
         "Dvd-hoofdstuknummer"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/description/DVDChapter> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:domain haDes:DVDChapter ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range xsd:integer ;
     rdfs:subPropertyOf schema:position ;
     skos:definition "The sequence number of the DVD chapter in relation to the other chapters that are part of the same DVD."@en,
         "Le numéro de série du chapitre du DVD par rapport aux autres chapitres qui font partie du même DVD."@fr,
         "Het volgnummer van het dvd-hoofdstuk ten opzichte van de andere hoofstukken die deel uitmaken van dezelfde dvd."@nl .
 
-<https://data.hetarchief.be/ns/description/coloringType> a rdf:Property ;
+haDes:coloringType a rdf:Property ;
     rdfs:label "type of coloring image reel"@en,
         "type de coloration bobine d'image"@fr,
         "type kleuring filmspoel"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/description/ImageReel> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:domain haDes:ImageReel ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range skos:Concept ;
     rdfs:subPropertyOf <http://dbpedia.org/ontology/filmColourType> ;
     skos:definition "The type of coloring of the image reel."@en,
         "Le type de coloration de la bobine d’image."@fr,
         "Het soort kleuring van de beeldrol/-spoel."@nl .
 
-<https://data.hetarchief.be/ns/description/iec60094Type> a rdf:Property ;
+haDes:iec60094Type a rdf:Property ;
     rdfs:label "iec-60094 type"@en,
         "iec-60094 type"@fr,
         "iec-60094 type"@nl ;
     rdfs:domain <https://data.hetarchief.be/ns/object/PhysicalCarrier> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range skos:Concept ;
     skos:definition "The IEC-60094 Type of the compact cassette that indicates the magnetic material used as a binder on top of the polyester bottom layer of the cassette."@en,
         "Le type IEC-60094 de la cassette compacte qui indique le matériau magnétique utilisé comme liant sur le dessus de la couche inférieure en polyester de la cassette."@fr,
         "Het iec-60094 type van de compact cassette die duidt op het magnetisch materiaal dat als bindmiddel werd gebruikt bovenop de polyester onderlaag van de cassette."@nl .
 
-<https://data.hetarchief.be/ns/description/numberOfAudioChannels> a rdf:Property ;
+haDes:numberOfAudioChannels a rdf:Property ;
     rdfs:label "number of audio channels"@en,
         "nombre de canaux audio"@fr,
         "aantal audiokanalen"@nl ;
     rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range rdfs:Literal ;
     skos:definition "The number of parallel audio channels that the audio track contains."@en,
         "Le nombre de canaux audio parallèles que contient la piste audio."@fr,
         "Het aantal audiokanalen die een audiospoor bevat."@nl .
 
-<https://data.hetarchief.be/ns/description/numberOfAudioTracks> a rdf:Property ;
+haDes:numberOfAudioTracks a rdf:Property ;
     rdfs:label "number of audio tracks"@en,
         "nombre de pistes audio"@fr,
         "aantal audiosporen"@nl ;
     rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range rdfs:Literal ;
     skos:definition "The number of audio tracks that the representation contains."@en,
         "Le nombre de pistes audio que la représentation contient."@fr,
         "Het aantal audio sporen die de representatie bevat."@nl .
 
-<https://data.hetarchief.be/ns/description/numberOfMissingAudioReels> a rdf:Property ;
+haDes:numberOfMissingAudioReels a rdf:Property ;
     rdfs:label "missing audio reels"@en,
         "bobines audio manquantes"@fr,
         "ontbrekende audiospoelen"@nl ;
     rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range rdfs:Literal ;
     skos:definition "Indicates for a film if (and how many) audio reels are missing, preceding any digitization process."@en,
         "Indique pour un film si (et combien) des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
         "Duidt aan voor een film of (en hoeveel) audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
 
-<https://data.hetarchief.be/ns/description/numberOfMissingImageReels> a rdf:Property ;
+haDes:numberOfMissingImageReels a rdf:Property ;
     rdfs:label "missing image reels"@en,
         "bobines d'image manquantes"@fr,
         "ontbrekende beeldspoelen"@nl ;
     rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range rdfs:Literal ;
     skos:definition "Indicates for a film if (and how many) image reels are missing, preceding any digitization process."@en,
         "Indique pour un film si (et combien) des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
         "Duidt aan voor een film of (en hoeveel) beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
 
-<https://data.hetarchief.be/ns/description/numberOfPages> a rdf:Property ;
-    rdfs:label "number of pages"@en,
-        "nombre de pages"@fr,
-        "aantal pagina's"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/description/NewspaperIssue> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "The number of pages that a particular work consists of."@en,
-        "Le nombre de pages qui composent une œuvre particulière."@fr,
-        "Het aantal pagina's waaruit een bepaald werk bestaat."@nl ;
-    skos:related schema:numberOfPages .
-
-<https://data.hetarchief.be/ns/description/numberOfReels> a rdf:Property ;
+haDes:numberOfReels a rdf:Property ;
     rdfs:label "number of film reels"@en,
         "nombre de bobines de film"@fr,
         "aantal filmrollen/-spoelen"@nl ;
     rdfs:domain <https://data.hetarchief.be/ns/object/CarrierRepresentation> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
+    rdfs:isDefinedBy haDes: ;
     rdfs:range rdfs:Literal ;
     skos:definition "The number of film reels (regardless of type) that make up a digitized film."@en,
         "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr,
         "Het aantal filmrollen/-spoelen (ongeacht het type) waaruit een gedigitaliseerde film bestaat."@nl .
 
-<https://data.hetarchief.be/ns/description/pageNumber> a rdf:Property ;
-    rdfs:label "page number"@en,
-        "numéro de page"@fr,
-        "paginanummer"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/description/NewspaperIssuePage> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/description/> ;
-    rdfs:range rdfs:Literal ;
-    rdfs:subPropertyOf schema:position ;
-    skos:definition "The sequence number of a page within its larger whole (e.g. a newspaper edition, a book, etc.)."@en,
-        "Le numéro de séquence d'une page dans son ensemble plus grand (par exemple, une édition de journal, un livre, etc.)."@fr,
-        "Het volgnummer van een pagina binnen zijn groter geheel (bv. een kranteneditie, een boek, etc.)."@nl .
+<https://data.hetarchief.be/ns/mediahaven/fragmentIdentifier> a rdf:Property ;
+    rdfs:label "fragment identifier"@en,
+        "identifiant de fragment"@fr,
+        "fragment-ID"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/mediahaven/Record> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
+    rdfs:range xsd:string ;
+    skos:definition "The fragment identifier of a record or a fragment in the Mediahaven asset management system."@en,
+        "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr,
+        "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl .
 
 <https://data.hetarchief.be/ns/object/preservationProblem> a rdf:Property ;
     rdfs:label "preservation problem"@en,
@@ -2841,6 +2834,30 @@ skos:topConceptOf a rdf:Property,
     rdfs:range <http://www.w3.org/ns/prov#Activity> ;
     rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasInfluencedBy> ;
     owl:propertyChainAxiom ( <http://www.w3.org/ns/prov#qualifiedGeneration> <http://www.w3.org/ns/prov#activity> ) .
+
+haDes:numberOfPages a rdf:Property ;
+    rdfs:label "number of pages"@en,
+        "nombre de pages"@fr,
+        "aantal pagina's"@nl ;
+    rdfs:domain haDes:NewspaperIssue ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "The number of pages that a particular work consists of."@en,
+        "Le nombre de pages qui composent une œuvre particulière."@fr,
+        "Het aantal pagina's waaruit een bepaald werk bestaat."@nl ;
+    skos:related schema:numberOfPages .
+
+haDes:pageNumber a rdf:Property ;
+    rdfs:label "page number"@en,
+        "numéro de page"@fr,
+        "paginanummer"@nl ;
+    rdfs:domain haDes:NewspaperIssuePage ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    rdfs:subPropertyOf schema:position ;
+    skos:definition "The sequence number of a page within its larger whole (e.g. a newspaper edition, a book, etc.)."@en,
+        "Le numéro de séquence d'une page dans son ensemble plus grand (par exemple, une édition de journal, un livre, etc.)."@fr,
+        "Het volgnummer van een pagina binnen zijn groter geheel (bv. een kranteneditie, een boek, etc.)."@nl .
 
 <https://data.hetarchief.be/ns/object/hasAccessCopy> a rdf:Property ;
     rdfs:label "has access copy"@en,
