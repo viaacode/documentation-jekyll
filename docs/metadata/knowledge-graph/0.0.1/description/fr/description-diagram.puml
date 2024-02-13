@@ -16,38 +16,38 @@ top to bottom direction
 class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
 class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/fr#schema%3ABrand]]
 class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
+class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
-class "<b>collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
-class "<b>travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>composant d'archive</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
-class "<b>travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
-class "<b>entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>fichier</b> (premis:File)" as premis_File [[#premis%3AFile]]
-class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>lieu</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Composant d'archive</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Fichier</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Lieu</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[../../organizations/fr#org%3AOrganization]]
-class "<b>partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/fr#haOrg%3AContentPartner]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>personne</b> (schema:Person)" as schema_Person [[../../organizations/fr#schema%3APerson]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[../../organizations/fr#org%3AOrganization]]
+class "<b>Partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/fr#haOrg%3AContentPartner]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Personne</b> (schema:Person)" as schema_Person [[../../organizations/fr#schema%3APerson]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
-class "<b>emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
-class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>rôle</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Rôle</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>série du travail créatif</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
-class "<b>travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>valeur quantitative</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
+class "<b>Série du travail créatif</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Valeur quantitative</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>épisode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
-class "<b>travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Épisode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Travail créatif</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
 
 
 ebucore_MediaFragment : heure de départ : <i>xsd:time</i> [0..1]
@@ -60,17 +60,17 @@ ebucore_MediaFragment --> premis_File :est fragment des médias de [0..*]  >
 
 
 
-schema_Thing : description : <i>rdf:langString</i> [0..1]
-schema_Thing : nom : <i>rdf:langString</i> [1..1]
-
-
-
 ebucore_Annotation : Sujet d'annotation : <i>IRI</i> [1..1]
 ebucore_Annotation : confiance en annotation : <i>xsd:integer</i> [1..1]
 
 ebucore_Annotation --> ebucore_MediaFragment :annote [1..*]  > 
 ebucore_Annotation --> premis_File :Cible d'annotation [1..1]  > 
 ebucore_Annotation --> skos_Concept :Type d'annotation [0..1]  > 
+
+
+
+schema_Thing : description : <i>rdf:langString</i> [0..1]
+schema_Thing : nom : <i>rdf:langString</i> [1..1]
 
 
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
