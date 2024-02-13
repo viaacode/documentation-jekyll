@@ -13,13 +13,13 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>concept scheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
-class "<b>label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
-class "<b>list</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
-class "<b>ordered collection</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
-class "<b>collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Concept scheme</b> (skos:ConceptScheme)" as skos_ConceptScheme [[#skos%3AConceptScheme]]
+class "<b>Label</b> (skosxl:Label)" as skosxl_Label [[#skosxl%3ALabel]]
+class "<b>List</b> (rdf:List)" as rdf_List [[#rdf%3AList]]
+class "<b>Ordered collection</b> (skos:OrderedCollection)" as skos_OrderedCollection [[#skos%3AOrderedCollection]]
+class "<b>Collection</b> (skos:Collection)" as skos_Collection [[#skos%3ACollection]]
 
 
 skos_Collection : alternative label : <i>rdf:langString</i> [0..*]
