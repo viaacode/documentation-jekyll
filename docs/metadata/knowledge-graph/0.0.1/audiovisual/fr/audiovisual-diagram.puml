@@ -13,20 +13,15 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Video</b> (haDes:Video)" as haDes_Video [[#haDes%3AVideo]]
-class "<b>DVD</b> (haDes:DVD)" as haDes_DVD [[#haDes%3ADVD]]
 class "<b>Audio</b> (haDes:Audio)" as haDes_Audio [[#haDes%3AAudio]]
-class "<b>DVDChapter</b> (haDes:DVDChapter)" as haDes_DVDChapter [[#haDes%3ADVDChapter]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
-class "<b>porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
-class "<b>emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
-class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-
-
-
-
-haDes_DVD --> haDes_DVDChapter :a une partie [0..*]  > 
+class "<b>Chapitre DVD</b> (haDes:DVDChapter)" as haDes_DVDChapter [[#haDes%3ADVDChapter]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
+class "<b>DVD</b> (haDes:DVD)" as haDes_DVD [[#haDes%3ADVD]]
+class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Vidéo</b> (haDes:Video)" as haDes_Video [[#haDes%3AVideo]]
 
 
 
@@ -36,6 +31,9 @@ haDes_DVDChapter --> haDes_DVD :fait partie de [1..1]  >
 
 
 
+
+
+haDes_DVD --> haDes_DVDChapter :a une partie [0..*]  > 
 
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
 
@@ -47,6 +45,8 @@ haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:bl
 
 haObj_CarrierRepresentation : nombre de pistes audio : <i>xsd:nonNegativeInteger</i> [0..1]
 haObj_CarrierRepresentation : nombre de pistes audio : <i>xsd:nonNegativeInteger</i> [0..1]
+
+
 
 
 

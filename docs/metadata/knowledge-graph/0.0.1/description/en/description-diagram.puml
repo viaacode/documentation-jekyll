@@ -16,37 +16,37 @@ top to bottom direction
 class "<b>MediaFragment</b> (ebucore:MediaFragment)" as ebucore_MediaFragment [[#ebucore%3AMediaFragment]]
 class "<b>Brand</b> (schema:Brand)" as schema_Brand [[../../events/en#schema%3ABrand]]
 class "<b>ClosedCaptioning</b> (ebucore:ClosedCaptioning)" as ebucore_ClosedCaptioning [[#ebucore%3AClosedCaptioning]]
+class "<b>Annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
+class "<b>Archive component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
+class "<b>Content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/en#haOrg%3AContentPartner]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Creative work series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>Digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
+class "<b>Creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
+class "<b>File</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Organization</b> (org:Organization)" as org_Organization [[../../organizations/en#org%3AOrganization]]
+class "<b>Person</b> (schema:Person)" as schema_Person [[../../organizations/en#schema%3APerson]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>annotation</b> (ebucore:Annotation)" as ebucore_Annotation [[#ebucore%3AAnnotation]]
-class "<b>archive component</b> (schema:ArchiveComponent)" as schema_ArchiveComponent [[#schema%3AArchiveComponent]]
-class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>carrier representation</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
-class "<b>representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>collection</b> (schema:Collection)" as schema_Collection [[#schema%3ACollection]]
-class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
-class "<b>content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[../../organizations/en#haOrg%3AContentPartner]]
-class "<b>organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>creative work series</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
-class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>digital representation</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>episode</b> (schema:Episode)" as schema_Episode [[#schema%3AEpisode]]
-class "<b>creative work</b> (schema:CreativeWork)" as schema_CreativeWork [[#schema%3ACreativeWork]]
-class "<b>file</b> (premis:File)" as premis_File [[#premis%3AFile]]
-class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>intellectual entity</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>organization</b> (org:Organization)" as org_Organization [[../../organizations/en#org%3AOrganization]]
-class "<b>person</b> (schema:Person)" as schema_Person [[../../organizations/en#schema%3APerson]]
+class "<b>Physical carrier</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>physical carrier</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
-class "<b>storage location</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
+class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
+class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
-class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 
 
@@ -57,11 +57,6 @@ ebucore_MediaFragment --> premis_File :is Media Fragment Of [0..*]  >
 
 
 
-
-
-
-schema_Thing : description : <i>rdf:langString</i> [0..1]
-schema_Thing : name : <i>rdf:langString</i> [1..1]
 
 
 
@@ -223,14 +218,6 @@ schema_Place : description : <i>rdf:langString</i> [0..1]
 schema_Place : name : <i>rdf:langString</i> [1..1]
 
 
-schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
-
-schema_QuantitativeValue : unit code : <i>xsd:string</i> [0..*]
-schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..*]
-schema_QuantitativeValue : value : <i>xsd:float</i> [0..*]
-
-
-
 schema_Role --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_Role : role name : <i>xsd:string</i> [1..*]
@@ -238,6 +225,19 @@ schema_Role --> org_Organization :contributor [0..*]  \lcreator [0..*]  \lpublis
 schema_Role --> schema_Person :actor [0..*]  \lcontributor [0..*]  \lcreator [0..*]  \lpublisher [0..*]  > 
 schema_Role --> schema_Thing :contributor [0..*]  \lcreator [0..*]  \lpublisher [0..*]  > 
 schema_Role --> skos_Concept :role name [1..*]  > 
+
+
+
+schema_Thing : description : <i>rdf:langString</i> [0..1]
+schema_Thing : name : <i>rdf:langString</i> [1..1]
+
+
+schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
+
+schema_QuantitativeValue : unit code : <i>xsd:string</i> [0..*]
+schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..*]
+schema_QuantitativeValue : value : <i>xsd:float</i> [0..*]
+
 
 
 

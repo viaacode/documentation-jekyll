@@ -13,37 +13,33 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>Adresse postale</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
+class "<b>Point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Consomatteur de services</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Fournisseur de services</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Partenaire de digitalisation</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
+class "<b>Partenaire de projet</b> (haOrg:ProjectPartner)" as haOrg_ProjectPartner [[#haOrg%3AProjectPartner]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
+class "<b>Partenaire éducatif</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Pays</b> (schema:Country)" as schema_Country [[#schema%3ACountry]]
-class "<b>adresse postale</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
-class "<b>point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>consomatteur de services</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>fournisseur de services</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>logo</b> (haOrg:Logo)" as haOrg_Logo [[#haOrg%3ALogo]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>partenaire de contenus</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>partenaire de digitalisation</b> (haOrg:DigitizationPartner)" as haOrg_DigitizationPartner [[#haOrg%3ADigitizationPartner]]
-class "<b>partenaire de projet</b> (haOrg:ProjectPartner)" as haOrg_ProjectPartner [[#haOrg%3AProjectPartner]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>partenaire éducatif</b> (haOrg:EducationalPartner)" as haOrg_EducationalPartner [[#haOrg%3AEducationalPartner]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-class "<b>personne</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
+class "<b>Personne</b> (schema:Person)" as schema_Person [[#schema%3APerson]]
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
-class "<b>point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
-class "<b>poste</b> (org:Post)" as org_Post [[#org%3APost]]
-class "<b>rôle</b> (org:Role)" as org_Role [[#org%3ARole]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>site</b> (org:Site)" as org_Site [[#org%3ASite]]
-class "<b>type de organisation</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>unité opérationnelle</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
-class "<b>organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
-
-
-schema_Country : nom : <i>xsd:string</i> [1..1]
-
+class "<b>Point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Poste</b> (org:Post)" as org_Post [[#org%3APost]]
+class "<b>Rôle</b> (org:Role)" as org_Role [[#org%3ARole]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Site</b> (org:Site)" as org_Site [[#org%3ASite]]
+class "<b>Type de organisation</b> (haOrg:OrganizationType)" as haOrg_OrganizationType [[#haOrg%3AOrganizationType]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Unité opérationnelle</b> (org:OrganizationalUnit)" as org_OrganizationalUnit [[#org%3AOrganizationalUnit]]
+class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 
 schema_PostalAddress --|> schema_ContactPoint #blue;line.dotted;text:blue
 
@@ -110,6 +106,10 @@ haOrg_EducationalPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_EducationalPartner : possède un identifiant : <i>xsd:string</i> [1..1]
 haOrg_EducationalPartner --> schema_Person :a gestionnaire de comptes [1..1]  > 
+
+
+
+schema_Country : nom : <i>xsd:string</i> [1..1]
 
 
 schema_Person --|> schema_Thing #blue;line.dotted;text:blue

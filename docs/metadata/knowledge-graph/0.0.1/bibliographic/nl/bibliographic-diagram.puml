@@ -13,11 +13,18 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>NewspaperIssue</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
-class "<b>NewspaperIssuePage</b> (haDes:NewspaperIssuePage)" as haDes_NewspaperIssuePage [[#haDes%3ANewspaperIssuePage]]
 class "<b>Newspaper</b> (schema:Newspaper)" as schema_Newspaper [[#schema%3ANewspaper]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
+class "<b>Kranteneditie</b> (haDes:NewspaperIssue)" as haDes_NewspaperIssue [[#haDes%3ANewspaperIssue]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Kranteneditiepagina</b> (haDes:NewspaperIssuePage)" as haDes_NewspaperIssuePage [[#haDes%3ANewspaperIssuePage]]
+class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 
+
+
+
+
+haDes_NewspaperIssue --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
 haDes_NewspaperIssue : aantal pagina's : <i>xsd:decimal</i> [0..1]
 haDes_NewspaperIssue : editienummer : <i>xsd:decimal</i> [0..1]
@@ -25,13 +32,10 @@ haDes_NewspaperIssue --> schema_Newspaper :maakt deel uit van [0..1]  >
 haDes_NewspaperIssue --> skos_Concept :uitgavefrequentie [0..1]  \luitgavetype [0..1]  > 
 
 
+haDes_NewspaperIssuePage --|> premis_IntellectualEntity #blue;line.dotted;text:blue
 
 haDes_NewspaperIssuePage : paginanummer : <i>xsd:decimal</i> [0..1]
 haDes_NewspaperIssuePage --> haDes_NewspaperIssue :maakt deel uit van [1..1]  > 
-
-
-
-
 
 
 

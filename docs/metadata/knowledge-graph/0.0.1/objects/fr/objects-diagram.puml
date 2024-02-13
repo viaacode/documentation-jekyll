@@ -13,37 +13,37 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
-class "<b>Record</b> (mh:Record)" as mh_Record [[#mh%3ARecord]]
-class "<b>emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
-class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>fichier</b> (premis:File)" as premis_File [[#premis%3AFile]]
-class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>fixité</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
-class "<b>format de fichier</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
-class "<b>identifiant local</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
-class "<b>concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
-class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>entité</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
-class "<b>porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
-class "<b>emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
-class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
-class "<b>représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
-class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
-class "<b>représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
-class "<b>représentation fragment</b> (haObj:FragmentRepresentation)" as haObj_FragmentRepresentation [[#haObj%3AFragmentRepresentation]]
-class "<b>support de stockage</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
-
-
-mh_Record : a identifiant d'enregistrement : <i>xsd:string</i> [1..1]
-mh_Record : a identifiant de fragment : <i>xsd:string</i> [1..1]
-
+class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Enregistrement Mediahaven</b> (mh:Record)" as mh_Record [[#mh%3ARecord]]
+class "<b>Entité intellectuelle</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Fichier</b> (premis:File)" as premis_File [[#premis%3AFile]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Fixité</b> (premis:Fixity)" as premis_Fixity [[#premis%3AFixity]]
+class "<b>Format de fichier</b> (dct:FileFormat)" as dct_FileFormat [[#dct%3AFileFormat]]
+class "<b>Identifiant local</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Entité</b> (prov:Entity)" as prov_Entity [[#prov%3AEntity]]
+class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
+class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Représentation fragment</b> (haObj:FragmentRepresentation)" as haObj_FragmentRepresentation [[#haObj%3AFragmentRepresentation]]
+class "<b>Support de stockage</b> (premis:StorageMedium)" as premis_StorageMedium [[#premis%3AStorageMedium]]
 
 
 premis_StorageLocation : chemin du fichier : <i>xsd:string</i> [1..*]
 premis_StorageLocation --> premis_StorageMedium :milieu de stockage [0..*]  > 
+
+
+
+mh_Record : a identifiant d'enregistrement : <i>xsd:string</i> [1..1]
+mh_Record : a identifiant de fragment : <i>xsd:string</i> [1..1]
 
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
