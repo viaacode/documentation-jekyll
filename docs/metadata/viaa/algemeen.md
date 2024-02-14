@@ -118,25 +118,26 @@ Eventuele alternatieve ID's van de oorspronkelijke drager of het *born digital* 
 | `<Acquisition_number />`       | |
 | `<Alternative_number />`       | |
 | `<Analoge_drager />`           | |
+| `<Api />`                      | |
 | `<Ardome />`                   | |
 | `<Basis />`                    | |
+| `<Bestandsnaam />`             | De orignele bestandsnaam van het item. |
+| `<DataPID />`                  | |
 | `<Historical_carrier />`       | |
 | `<Historical_record_number />` | |
 | `<Inventarisnummer />`         | Unieke identifier bij bv. musea die gelinkt is aan een fysiek object uit de collectie.|
 | `<MEDIA_ID />`                 | |
 | `<Object_number />`            | Het Axiell Adlib object number.  |
-| `<Priref />`                   | |
-| `<Word_ID />`                  | |
-| `<Topstuk_ID />`               | Het topstuk ID, toegekend door het Departement Cultuur, Jeugd en Media, tijdens de erkenning van het topstuk. |
-| `<WorkPID />`                  | |
-| `<DataPID />`                  | |
-| `<Bestandsnaam />`             | De orignele bestandsnaam van het item. |
-| `<Api />`                      | |
 | `<Pdf />`                      | |
 | `<PersistenteURI_Record />`    | Persistente URI die verwijst naar de lokale record bij de contentpartner. |
-| `<PersistenteURI_Werk />`      | Persistente URI die verwijst naar het werk dat wordt afgebeeld. |
 | `<PersistenteURI_VKC_Record />`    | Persistente URI die verwijst naar de lokale record bij de Vlaamse Kunstencollectie. |
 | `<PersistenteURI_VKC_Werk />`      | Persistente URI die verwijst naar het werk dat wordt afgebeeld bij de Vlaamse Kunstencollectie. |
+| `<PersistenteURI_Werk />`      | Persistente URI die verwijst naar het werk dat wordt afgebeeld. |
+| `<Priref />`                   | |
+| `<Vaf_ID />`                   | Unieke identifier binnen het VAF (Vlaams Audiovisueel Fonds). |
+| `<Topstuk_ID />`               | Het topstuk ID, toegekend door het Departement Cultuur, Jeugd en Media, tijdens de erkenning van het topstuk. |
+| `<Word_ID />`                  | |
+| `<WorkPID />`                  | |
 
 ## Batch ID
 
