@@ -39,7 +39,7 @@ This is the very first release of the SIP, which lays the groundwork for the new
 - Introductionary materials about the motivation and design of the SIP
 - A layout of the SIP's core concepts, which originate from the PREMIS data model
 - The first content profile: _Basic_
-- Use case documents about the intake of single audiovisual files with or without subtitles (using the _Newspaper_ profile)
+- Use case documents about the intake of single audiovisual files with or without subtitles (using the _Basic_ profile)
 
 ### What was **changed** compared to the previous version?
 
