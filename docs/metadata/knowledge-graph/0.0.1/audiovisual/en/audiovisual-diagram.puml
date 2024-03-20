@@ -27,7 +27,7 @@ class "<b>Video</b> (haDes:Video)" as haDes_Video [[#haDes%3AVideo]]
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation : number of audio tracks : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of audio channels : <i>xsd:nonNegativeInteger</i> [0..1]
 haObj_CarrierRepresentation : number of audio tracks : <i>xsd:nonNegativeInteger</i> [0..1]
 
 
