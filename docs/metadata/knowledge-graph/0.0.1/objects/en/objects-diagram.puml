@@ -44,7 +44,7 @@ haObj_CarrierRepresentation --> mh_Record :was derived from [1..1]  >
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --> haObj_CarrierRepresentation :has Source [0..*]  > 
-haObj_DigitalRepresentation --> haObj_DigitalRepresentation :next digital representation in sequence [0..1]  > 
+haObj_DigitalRepresentation --> haObj_DigitalRepresentation :has Source [0..*]  \lnext digital representation in sequence [0..1]  > 
 haObj_DigitalRepresentation --> mh_Record :was derived from [1..1]  > 
 haObj_DigitalRepresentation --> premis_File :has Root [1..*]  \lincludes [1..*]  > 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :is Access Copy Of [0..1]  \lis Master Of [0..1]  \lis Mezzanine Of [0..1]  \lrepresents [1..1]  > 
@@ -54,12 +54,12 @@ premis_File --|> premis_Object #blue;line.dotted;text:blue
 premis_File : has original name : <i>xsd:string</i> [0..1]
 premis_File : has size : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
-premis_File --> dct_FileFormat :format [1..1]  > 
+premis_File --> dct_FileFormat :format [0..1]  > 
 premis_File --> haObj_DigitalRepresentation :is Include In [0..*]  > 
 premis_File --> haObj_FragmentRepresentation :has media fragment [0..*]  > 
 premis_File --> mh_Record :was derived from [1..1]  > 
 premis_File --> premis_File :documents [0..*]  \lnext file in sequence [0..1]  \lsupersedes [0..*]  > 
-premis_File --> premis_Fixity :fixity [1..1]  > 
+premis_File --> premis_Fixity :fixity [0..1]  > 
 premis_File --> premis_StorageLocation :stored at [1..*]  > 
 
 
@@ -68,7 +68,7 @@ premis_File --> premis_StorageLocation :stored at [1..*]  >
 
 
 premis_Fixity : checksum creator : <i>xsd:string</i> [0..*]
-premis_Fixity : fixity checksum : <i>xsd:string</i> [1..*]
+premis_Fixity : fixity checksum : <i>xsd:string</i> [1..1]
 
 
 
@@ -94,8 +94,12 @@ haObj_LocalIdentifier : value : <i>xsd:string</i> [1..1]
 
 
 
+mh_Record : date created : <i>xsd:dateTime</i> [1..1]
+mh_Record : date deleted : <i>xsd:dateTime</i> [0..1]
+mh_Record : date modified : <i>xsd:dateTime</i> [1..1]
 mh_Record : has fragment identifier : <i>xsd:string</i> [1..1]
 mh_Record : has record identifier : <i>xsd:string</i> [1..1]
+
 
 
 premis_Object --|> prov_Entity #blue;line.dotted;text:blue
@@ -110,7 +114,7 @@ premis_Representation --|> premis_Object #blue;line.dotted;text:blue
 
 
 
-premis_StorageLocation : file path : <i>xsd:string</i> [1..*]
+premis_StorageLocation : file path : <i>xsd:string</i> [0..1]
 premis_StorageLocation --> premis_StorageMedium :storage medium [0..*]  > 
 
 
