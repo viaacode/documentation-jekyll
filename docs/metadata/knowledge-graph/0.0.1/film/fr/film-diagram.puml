@@ -38,9 +38,9 @@ haDes_Film --> haObj_CarrierRepresentation :est représenté par [1..*]  >
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation : nombre de bobines : <i>xsd:decimal</i> [0..1]
-haObj_CarrierRepresentation : nombre de bobines audio perdues : <i>xsd:decimal</i> [0..1]
-haObj_CarrierRepresentation : nombre de bobines d'image perdues : <i>xsd:decimal</i> [0..1]
+haObj_CarrierRepresentation : nombre de bobines : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : nombre de bobines audio perdues : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : nombre de bobines d'image perdues : <i>xsd:nonNegativeInteger</i> [0..1]
 haObj_CarrierRepresentation --> haDes_AudioReel :stocké à [1..*]  > 
 haObj_CarrierRepresentation --> haDes_ImageReel :stocké à [1..*]  > 
 

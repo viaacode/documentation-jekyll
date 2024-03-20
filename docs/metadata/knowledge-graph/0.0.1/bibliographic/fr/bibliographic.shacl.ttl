@@ -1,6 +1,7 @@
 @prefix bf: <http://id.loc.gov/ontologies/bibframe/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix haDes: <https://data.hetarchief.be/ns/description/> .
+@prefix haPrmId: <https://data.hetarchief.be/id/production-method/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix pav: <http://purl.org/pav/> .
 @prefix premis: <http://www.loc.gov/premis/rdf/v3/> .
@@ -12,15 +13,15 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n285690bf595442428d3c6b4ad985715db1 a rdfs:Class,
+_:n1fe3cc60b6314ee68c827b06bc1664a3b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n285690bf595442428d3c6b4ad985715db17 a rdfs:Class,
+_:n1fe3cc60b6314ee68c827b06bc1664a3b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:nedc4f5af2a154d64b7a3c8756b220888b1 a rdfs:Class,
+_:ncb24695b770246099d7f6589fbedca41b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -744,7 +745,7 @@ schema:PostalAddress a rdfs:Class ;
         "Het postadres."@nl .
 
 schema:QuantitativeValue a rdfs:Class ;
-    rdfs:label "quantitative Value"@en,
+    rdfs:label "Quantitative Value"@en,
         "Valeur quantitative"@fr,
         "Kwantitatieve waarde"@nl ;
     rdfs:isDefinedBy schema: ;
@@ -957,6 +958,21 @@ dct:available a rdf:Property ;
         "Date à laquelle la ressource devient ou deviendra disponible."@fr,
         "Datum waarop de bron beschikbaar is of zal zijn."@nl .
 
+dct:format a rdf:Property ;
+    rdfs:label "format"@en,
+        "format"@fr,
+        "formaat"@nl ;
+    dct:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
+    dct:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
+    dct:issued "2008-01-14"^^xsd:date ;
+    dct:modified "2008-01-14"^^xsd:date ;
+    rdfs:isDefinedBy dct: ;
+    rdfs:range dct:MediaTypeOrExtent ;
+    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> ;
+    skos:definition "The file format, physical medium, or dimensions of the resource."@en,
+        "Le format du fichier, le support physique ou les dimensions de la ressource."@fr,
+        "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl .
+
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#annotationConfidence> a rdf:Property ;
     rdfs:label "Annotation confidence"@en,
         "Fiabilité des annotations"@fr,
@@ -1013,6 +1029,18 @@ dct:available a rdf:Property ;
         "Pour signaler la présence du sous-titrage."@fr,
         "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
 
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember> a rdf:Property ;
+    rdfs:label "Cast member"@en,
+        "Membre de la distribution"@fr,
+        "Cast lid"@nl ;
+    rdfs:comment "A member of the cast."@en,
+        "Range: a string or a Cast"@en,
+        "A member of the cast."@fr,
+        "Een lid van de cast."@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset> ;
+    rdfs:range <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Cast>,
+        xsd:string .
+
 <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasMediaFragment> a rdf:Property ;
     rdfs:label "fragment"@en,
         "a un fragment (de média)"@fr,
@@ -1062,6 +1090,17 @@ dct:available a rdf:Property ;
         "Pour lier une annotation à un MediaResource."@fr,
         "Om een annotatie te koppelen aan een mediaresource."@nl .
 
+<http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#synopsis> a rdf:Property ;
+    rdfs:label "Synopsis"@en,
+        "synopsis"@fr,
+        "Korte inhoud"@nl ;
+    rdfs:comment "To provide a summary."@en,
+        "To provide a summary."@fr,
+        "Om een samenvatting te geven."@nl ;
+    rdfs:domain <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#Asset> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf <http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#description> .
+
 <http://www.europeana.eu/schemas/edm/isNextInSequence> a owl:ObjectProperty ;
     rdfs:label "is next in sequence of"@en,
         "est le prochain dans la séquence de"@fr,
@@ -1076,7 +1115,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n285690bf595442428d3c6b4ad985715db1 ;
+    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1144,7 +1183,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n285690bf595442428d3c6b4ad985715db17 ;
+    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1259,7 +1298,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:nedc4f5af2a154d64b7a3c8756b220888b1 ;
+    rdfs:range _:ncb24695b770246099d7f6589fbedca41b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1532,12 +1571,12 @@ skos:scopeNote a rdf:Property,
 
 <https://data.hetarchief.be/ns/bibliographic#NewspaperIssueNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:decimal ;
+            sh:datatype xsd:nonNegativeInteger ;
             sh:description "Indicates how many pages a certain bibliographic object contains."@en,
                 "Indique le nombre de pages qu'un certain objet bibliographique contient."@fr,
                 "Geeft aan uit hoeveel pagina's een bepaald bibliografisch object bestaat."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of haDes:numberOfPages is not of type xsd:decimal, or occurs more than once"@en ;
+            sh:message "the object of haDes:numberOfPages is not of type xsd:nonNegativeInteger, or occurs more than once"@en ;
             sh:minCount 0 ;
             sh:name "number of pages"@en,
                 "nombre de pages"@fr,
@@ -1559,31 +1598,18 @@ skos:scopeNote a rdf:Property,
             sh:path schema:isPartOf ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:decimal ;
+            sh:datatype xsd:string ;
             sh:description "Indicates the serial number of a newspaper edition within the greater newspaper series it is part of."@en,
                 "Indique le numéro de série d'une édition de journal dans la série de journaux plus grande dont elle fait partie."@fr,
                 "Geeft het volgnummer aan van een kranteneditie binnen de grotere krantenserie waarvan het deel uitmaakt."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of schema:issueNumber is not of type xsd:decimal, or occurs more than once"@en ;
+            sh:message "the object of schema:issueNumber is not of type xsd:string, or occurs more than once"@en ;
             sh:minCount 0 ;
             sh:name "issue number"@en,
                 "numéro de l'édition"@fr,
                 "editienummer"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path schema:issueNumber ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:description "Extra indication of the type of NewspaperIssue."@en,
-                "Indication supplémentaire du type de NewspaperIssue."@fr,
-                "Indicatie van het type NewspaperIssue."@nl ;
-            sh:hasValue "newspaper" ;
-            sh:maxCount 1 ;
-            sh:message "the object of dct:format is not 'newspaper', is missing or occurs more than once"@en ;
-            sh:minCount 1 ;
-            sh:name "format"@en,
-                "format"@fr,
-                "formaat"@nl ;
-            sh:path dct:format ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class skos:Concept ;
@@ -1604,23 +1630,37 @@ skos:scopeNote a rdf:Property,
                 "Indique le type de publication spécifique d'une édition de journal (par exemple, édition du journal du matin, du soir, du week-end, etc.)."@fr,
                 "Geeft het specifieke uitgavetype aan van een kranteneditie (bv. ochtend-, avond-, weekendkranteneditie etc.)."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of haDes:issueType is not of type skos:Concept, or occurs more than once"@en ;
+            sh:message "the object of bf:edition is not of type skos:Concept, or occurs more than once"@en ;
             sh:minCount 0 ;
             sh:name "publication type"@en,
                 "type de publication"@fr,
                 "uitgavetype"@nl ;
             sh:path bf:edition ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class skos:Concept ;
+            sh:description "The process used to produce the newspaper edition (e.g. handwritten, typed, printed)."@en,
+                "Le processus utilisé pour produire la édition de journal (par exemple manuscrit, dactylographié, imprimé)."@fr,
+                "Het proces dat werd gebruikt om de kranteneditie te produceren (bijv. handgeschreven, getypt, gedrukt)."@nl ;
+            sh:in ( haPrmId:handwritten haPrmId:typed haPrmId:printed ) ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:productionMethod is not of type skos:Concept, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "production method"@en,
+                "méthode de production"@fr,
+                "productie methode"@nl ;
+            sh:path bf:productionMethod ;
             sh:severity sh:Violation ] ;
     sh:targetClass haDes:NewspaperIssue .
 
 <https://data.hetarchief.be/ns/bibliographic#NewspaperIssuePageNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:decimal ;
+            sh:datatype xsd:nonNegativeInteger ;
             sh:description "Indicates the serial number of a page within the greater object it is part of."@en,
                 "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr,
                 "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of haDes:pageNumber is not of type xsd:decimal,or occurs more than once"@en ;
+            sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
             sh:minCount 0 ;
             sh:name "page number"@en,
                 "numéro de page"@fr,
@@ -1640,21 +1680,157 @@ skos:scopeNote a rdf:Property,
                 "fait partie de"@fr,
                 "maakt deel uit van"@nl ;
             sh:path rel:isp ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:description "Extra indication of the NewspaperIssuePage type."@en,
-                "Indication supplémentaire du NewspaperIssuePage type."@fr,
-                "Extra indicatie van het NewspaperIssuePage type."@nl ;
-            sh:hasValue "newspaperpage" ;
-            sh:maxCount 1 ;
-            sh:message "the object of dct:format is not 'newspaperpage', is missing or occurs more than once"@en ;
-            sh:minCount 1 ;
-            sh:name "format"@en,
-                "format"@fr,
-                "formaat"@nl ;
-            sh:path dct:format ;
             sh:severity sh:Violation ] ;
     sh:targetClass haDes:NewspaperIssuePage .
+
+<https://data.hetarchief.be/ns/bibliographic#NewspaperNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "schema:identifier is missing or not of type string "@en,
+                "schema:identifier est manquant ou n'est pas de type string"@fr,
+                "schema:identifier ontbreekt of is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "abraham identifier"@en,
+                "abraham identifier"@fr,
+                "abraham identifier"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:maxCount 1 ;
+            sh:message "schema:name is missing or not of type string "@en,
+                "schema:name est manquant ou n'est pas de type string"@fr,
+                "schema:name ontbreekt of is niet van het type string"@nl ;
+            sh:minCount 1 ;
+            sh:name "name"@en,
+                "nom"@fr,
+                "naam"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:name ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:message "schema:alternateName is not of type string"@en,
+                "schema:alternateName n'est pas de type string"@fr,
+                "schema:alternateName is niet van het type string"@nl ;
+            sh:name "alternate name"@en,
+                "nom alternatif"@fr,
+                "alternatieve naam"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:alternateName ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:message "schema:startDate is not of type xsd:dateTime."@en,
+                "schema:startDate n'est pas de type xsd:dateTime."@fr,
+                "schema:startDate is niet van het type xsd:dateTime."@nl ;
+            sh:minCount 0 ;
+            sh:name "start date"@en,
+                "date de début"@fr,
+                "begindatum"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:startDate ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:maxCount 1 ;
+            sh:message "schema:endDate is not of type xsd:dateTime."@en,
+                "schema:endDate n'est pas de type xsd:dateTime."@fr,
+                "schema:endDate is niet van het type xsd:dateTime."@nl ;
+            sh:minCount 0 ;
+            sh:name "end date"@en,
+                "date de fin"@fr,
+                "einddatum"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:endDate ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:Place ;
+            sh:description "Indicates the serial number of a page within the greater object it is part of."@en,
+                "Indique le numéro de série d'une page dans l'objet plus grand dont elle fait partie."@fr,
+                "Geeft het volgnummer aan van een pagina binnen het grotere object waarvan het deel uitmaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of haDes:pageNumber is not of type xsd:nonNegativeInteger,or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "page number"@en,
+                "numéro de page"@fr,
+                "paginanummer"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:locationCreated ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            rdfs:label "supplement"@en,
+                "supplément"@fr,
+                "supplement"@nl ;
+            sh:class schema:Newspaper ;
+            sh:description "Newspaper that updates or otherwise complements the predominant newspaper."@en,
+                "Journal qui met à jour ou complète autrement le journal prédominant."@fr,
+                "Krant die de overheersende krant bijwerkt of anderszins aanvult."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:supplement is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path bf:supplement ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            rdfs:label "supplement to"@en,
+                "compléter"@fr,
+                "supplement aan"@nl ;
+            sh:class schema:Newspaper ;
+            sh:description "Newspaper that is updated or otherwise complemented by the augmenting newspaper."@en,
+                "Journal qui est mis à jour ou autrement complété par le journal augmentant."@fr,
+                "Krant die wordt bijgewerkt of anderszins wordt aangevuld met de aanvullende krant."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:supplementTo is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path bf:supplementTo ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            rdfs:label "succeeded by"@en,
+                "succédé par"@fr,
+                "opgevolgd door"@nl ;
+            skos:definition "Newspaper that succeeds the newspaper being described, e.g., later in time or after in a narrative."@en,
+                "Journal qui succède à la journal décrite, par exemple, plus tard dans le temps ou après dans un récit."@fr,
+                "Krant die de krant die wordt beschreven opvolgt, bijvoorbeeld later in de tijd of daarna in een verhaal."@nl ;
+            sh:class schema:Newspaper ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:succeededBy is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path bf:succeededBy ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            rdfs:label "preceded by"@en,
+                "précédé par"@fr,
+                "voorafgegaan door"@nl ;
+            sh:class schema:Newspaper ;
+            sh:description "Newspaper that precedes the newspaper being described, e.g., is earlier in time or before in narrative."@en,
+                "Le journal qui précède le journal décrit, par exemple, est plus tôt dans le temps ou avant dans le récit."@fr,
+                "Krant die voorafgaat aan de beschreven krant, bijvoorbeeld, is eerder in de tijd of eerder in het verhaal."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of bf:precededBy is not of type schema:Newspaper, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:nodeKind sh:IRI ;
+            sh:path bf:precededBy ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:Role ;
+            sh:description "Publisher of the newspaper."@en,
+                "Uitgever van de krant."@fr,
+                "Éditeur du journal."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:publisher is not of class schema:Role, or occurs more than once"@en ;
+            sh:minCount 0 ;
+            sh:name "publisher"@en,
+                "éditeur"@fr,
+                "uitgever"@nl ;
+            sh:path schema:publisher ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass schema:Newspaper .
 
 haDes:audioNoiseReduction a rdf:Property ;
     rdfs:label "audio noise reduction"@en,
@@ -1778,6 +1954,17 @@ haDes:numberOfReels a rdf:Property ;
     skos:definition "The fragment identifier of a record or a fragment in the Mediahaven asset management system."@en,
         "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr,
         "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl .
+
+<https://data.hetarchief.be/ns/mediahaven/tenantName> a rdf:Property ;
+    rdfs:label "tenant name"@en,
+        "nom du locataire"@fr,
+        "tenant naam"@nl ;
+    rdfs:domain <http://www.w3.org/ns/org#Organization> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
+    rdfs:range xsd:string ;
+    skos:definition "The Mediahaven tenant name of the organization."@en,
+        "Le nom du locataire Mediahaven de l'organisation."@fr,
+        "De Mediahaven tenant naam van de organisatie."@nl .
 
 <https://data.hetarchief.be/ns/object/preservationProblem> a rdf:Property ;
     rdfs:label "preservation problem"@en,
@@ -1911,18 +2098,6 @@ schema:addressRegion a rdf:Property ;
     schema:domainIncludes schema:DefinedRegion,
         schema:PostalAddress ;
     schema:rangeIncludes schema:Text .
-
-schema:alternateName a rdf:Property ;
-    rdfs:label "alternate name"@en,
-        "nom alternatif"@fr,
-        "alternatieve naam"@nl ;
-    rdfs:domain schema:Thing ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range xsd:string ;
-    owl:equivalentProperty dct:alternative ;
-    skos:definition "An alias for the item"@en,
-        "Un alias pour l'élément"@fr,
-        "Een alias voor het item"@nl .
 
 schema:artMedium a rdf:Property ;
     rdfs:label "art medium"@en,
@@ -2068,7 +2243,7 @@ schema:creditText a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:isDefinedBy schema: ;
     rdfs:range xsd:string ;
-    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.",
+    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work."@en,
         "Texte qui peut être utilisé pour créditer la ou les personne(s) et/ou organisation(s) associée(s) à une oeuvre créative (CreativeWork) publiée."@fr,
         "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl .
 
@@ -2082,6 +2257,25 @@ schema:dateCreated a rdf:Property ;
     skos:definition "The date on which the CreativeWork was created."@en,
         "La date à laquelle le CreativeWork a été créé."@fr,
         "De datum waarin het CreativeWork werd gemaakt."@nl .
+
+schema:dateDeleted a rdf:Property ;
+    rdfs:label "date deleted" ;
+    rdfs:domain schema:DataFeedItem ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The datetime the item was removed from the DataFeed."@en,
+        "De DateTime Het item is verwijderd uit de DataFeed."@fr,
+        "L'élément DateTime a été supprimé du DataFeed."@nl .
+
+schema:dateModified a rdf:Property ;
+    rdfs:label "date modified" ;
+    rdfs:domain schema:CreativeWork,
+        schema:DataFeedItem ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."@en,
+        "La date à laquelle le Creativework a été récemment modifié ou lorsque l'entrée de l'élément a été modifiée dans une DataFeed."@fr,
+        "De datum waarop het creatieve werk het meest recent werd gewijzigd of wanneer de invoer van het item binnen een DataFeed werd gewijzigd."@nl .
 
 schema:datePublished a rdf:Property ;
     rdfs:label "date published"@en,
@@ -2287,18 +2481,6 @@ schema:model a rdf:Property ;
         "Le modèle du produit.Utilisez avec l'URL d'un produit de produit ou une représentation textuelle de l'identifiant du modèle. L'URL du ProductModel peut provenir d'une source externe.Il est recommandé de fournir en outre des identificateurs de produits solides via les propriétés GTIN8 / GTIN13 / GTIN14 et MPN."@fr,
         "Het model van het product.Gebruik met de URL van een productmodel of een tekstuele weergave van de model-ID. De URL van het productmodel kan uit een externe bron zijn.Het wordt aanbevolen om bovendien sterke productidentifiers te bieden via de eigenschappen GTIN8/GTIN13/GTIN14 en MPN."@nl .
 
-schema:name a rdf:Property ;
-    rdfs:label "name"@en,
-        "nom"@fr,
-        "naam"@nl ;
-    rdfs:domain schema:Thing ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range xsd:string ;
-    owl:equivalentProperty dct:title ;
-    skos:definition "The name of the item."@en,
-        "Le nom de l'article."@fr,
-        "De naam van het item."@nl .
-
 schema:postOfficeBoxNumber a rdf:Property ;
     rdfs:label "postOfficeBoxNumber"@en,
         "numéroBoîtePostale"@fr,
@@ -2323,17 +2505,6 @@ schema:postalCode a rdf:Property ;
         schema:GeoShape,
         schema:PostalAddress ;
     schema:rangeIncludes schema:Text .
-
-schema:publisher a rdf:Property ;
-    rdfs:label "publisher"@en,
-        "éditeur"@fr,
-        "uitgever"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    owl:equivalentProperty dct:publisher ;
-    skos:definition "The publisher of the creative work."@en,
-        "L'éditeur du travail créatif."@fr,
-        "De uitgever van het creatief werk."@nl .
 
 schema:roleName a rdf:Property ;
     rdfs:label "role name"@en,
@@ -2963,17 +3134,34 @@ haDes:pageNumber a rdf:Property ;
         "Le format de fichier XML1.1 est un format plus récent et donc préférable à XML1.0; XML1.0 a donc une priorité inférieure à XML1.1."@fr,
         "Het bestandsformaat XML1.1 is een recenter en dus verkieslijker formaat dan XML1.0; XML1.0 heeft dus een lagere prioriteit dan XML1.1."@nl .
 
-schema:identifier a rdf:Property ;
-    rdfs:label "identifier"@en,
-        "identifiant"@fr,
-        "identifier"@nl ;
+schema:alternateName a rdf:Property ;
+    rdfs:label "alternate name"@en,
+        "nom alternatif"@fr,
+        "alternatieve naam"@nl ;
     rdfs:domain schema:Thing ;
     rdfs:isDefinedBy schema: ;
     rdfs:range xsd:string ;
-    owl:equivalentProperty dct:identifier ;
-    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
-        "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
-        "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
+    owl:equivalentProperty dct:alternative ;
+    skos:definition "An alias for the item"@en,
+        "Un alias pour l'élément"@fr,
+        "Een alias voor het item"@nl .
+
+schema:endDate a rdf:Property ;
+    rdfs:label "end date"@en,
+        "date de fin"@fr,
+        "einddatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date de fin et l'heure de l'article (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@fr,
+        "De einddatum en tijd van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
 
 schema:isPartOf a rdf:Property ;
     rdfs:label "is part of"@en,
@@ -2985,6 +3173,46 @@ schema:isPartOf a rdf:Property ;
         "Indique un élément ou un CreativeWork qui fait partie de cet élément, ou de ce CreativeWork (dans un certain sens)."@fr,
         "Geeft een item of CreativeWork aan waarvan dit item, of CreativeWork (in een bepaald opzicht), een onderdeel is."@nl .
 
+schema:name a rdf:Property ;
+    rdfs:label "name"@en,
+        "nom"@fr,
+        "naam"@nl ;
+    rdfs:domain schema:Thing ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty dct:title ;
+    skos:definition "The name of the item."@en,
+        "Le nom de l'article."@fr,
+        "De naam van het item."@nl .
+
+schema:publisher a rdf:Property ;
+    rdfs:label "publisher"@en,
+        "éditeur"@fr,
+        "uitgever"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    owl:equivalentProperty dct:publisher ;
+    skos:definition "The publisher of the creative work."@en,
+        "L'éditeur du travail créatif."@fr,
+        "De uitgever van het creatief werk."@nl .
+
+schema:startDate a rdf:Property ;
+    rdfs:label "start date"@en,
+        "date de début"@fr,
+        "begindatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date et l'heure de la date de la statistique par l'item (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@fr,
+        "De startdatum en tijd van de status van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
+
 dct:description a rdfs:Property ;
     rdfs:label "description"@en,
         "description"@fr,
@@ -2993,21 +3221,6 @@ dct:description a rdfs:Property ;
     skos:definition "An account of the resource."@en,
         "Un compte rendu de la ressource."@fr,
         "Een verslag van de resource"@nl .
-
-dct:format a rdf:Property ;
-    rdfs:label "format"@en,
-        "format"@fr,
-        "formaat"@nl ;
-    dct:description "Examples of dimensions include size and duration. Recommended best practice is to use a controlled vocabulary such as the list of Internet Media Types [MIME]."@en ;
-    dct:hasVersion <http://dublincore.org/usage/terms/history/#formatT-001> ;
-    dct:issued "2008-01-14"^^xsd:date ;
-    dct:modified "2008-01-14"^^xsd:date ;
-    rdfs:isDefinedBy dct: ;
-    rdfs:range dct:MediaTypeOrExtent ;
-    rdfs:subPropertyOf <http://purl.org/dc/elements/1.1/format> ;
-    skos:definition "The file format, physical medium, or dimensions of the resource."@en,
-        "Le format du fichier, le support physique ou les dimensions de la ressource."@fr,
-        "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl .
 
 <http://www.ontologydesignpatterns.org/cp/owl/sequence.owl#follows> a owl:ObjectProperty,
         owl:TransitiveProperty ;
@@ -3088,6 +3301,18 @@ skos:narrowerTransitive a rdf:Property,
     skos:scopeNote "By convention, skos:narrowerTransitive is not used to make assertions. Rather, the properties can be used to draw inferences about the transitive closure of the hierarchical relation, which is useful e.g. when implementing a simple query expansion algorithm in a search application."@en,
         "Par convention, skos:narrowerTransitive n'est pas utilisé pour faire des assertions. A la place, les propriétés peuvent être utilisées pour tirer des inferences sur la fermeture transitive de la relation hiérarchique, ce qui est utile par exemple lors de l'implémentation d'un algorithme simple d'expansion de requête dans une application de recherche."@fr,
         "Volgens conventie wordt skos:narrowerTransitive niet gebruikt om beweringen te doen. De eigenschappen kunnen wel gebruikt worden om inferenties te trekken over de transitieve sluiting van de hiërarchische relatie, wat bijvoorbeeld handig is bij het implementeren van een eenvoudig queryexpansie-algoritme in een zoekapplicatie."@nl .
+
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier"@en,
+        "identifiant"@fr,
+        "identifier"@nl ;
+    rdfs:domain schema:Thing ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty dct:identifier ;
+    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
+        "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
+        "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
 
 rel:isr a owl:ObjectProperty ;
     rdfs:label "is Represented by"@en,

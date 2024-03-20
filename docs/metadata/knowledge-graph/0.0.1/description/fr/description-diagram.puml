@@ -69,16 +69,17 @@ ebucore_Annotation --> skos_Concept :Type d'annotation [0..1]  >
 
 
 
-schema_Thing : description : <i>rdf:langString</i> [0..1]
-schema_Thing : nom : <i>rdf:langString</i> [1..1]
+schema_Thing : description : <i>rdf:langString</i> [0..*]
+schema_Thing : nom : <i>rdf:langString</i> [1..*]
 
 
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_Collection : description : <i>rdf:langString</i> [0..1]
-schema_Collection : identifier : <i>xsd:string</i> [1..1]
-schema_Collection : nom : <i>rdf:langString</i> [1..1]
+schema_Collection : description : <i>rdf:langString</i> [0..*]
+schema_Collection : identifier : <i>xsd:string</i> [0..1]
+schema_Collection : nom : <i>rdf:langString</i> [1..*]
 schema_Collection : nombre d'éléments : <i>xsd:integer</i> [0..*]
+schema_Collection --> haObj_PhysicalCarrier :fait partie de [0..*]  > 
 schema_Collection --> premis_IntellectualEntity :fait partie de [0..*]  > 
 
 
@@ -86,8 +87,8 @@ schema_Collection --> premis_IntellectualEntity :fait partie de [0..*]  >
 
 schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_ArchiveComponent : description : <i>rdf:langString</i> [0..1]
-schema_ArchiveComponent : nom : <i>rdf:langString</i> [1..1]
+schema_ArchiveComponent : description : <i>rdf:langString</i> [0..*]
+schema_ArchiveComponent : nom : <i>rdf:langString</i> [1..*]
 schema_ArchiveComponent --> premis_IntellectualEntity :fait partie de [0..*]  > 
 
 schema_ArchiveComponent --> schema_ArchiveComponent :est partie de [0..*]  \lfait partie de [0..*]  > 
@@ -97,26 +98,28 @@ schema_ArchiveComponent --> schema_ArchiveComponent :est partie de [0..*]  \lfai
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity : année de copyright : <i>xsd:integer</i> [0..*]
-premis_IntellectualEntity : avis de copyright : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : avis de copyright : <i>xsd:string</i> [0..*]
 premis_IntellectualEntity : date de création : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
 premis_IntellectualEntity : date de publication : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
-premis_IntellectualEntity : description : <i>rdf:langString</i> [0..1]
+premis_IntellectualEntity : description : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : disponible le : <i>xsd:dateTime</i> [0..*]
-premis_IntellectualEntity : en langue : <i>xsd:string</i> [1..*]
+premis_IntellectualEntity : en langue : <i>xsd:string</i> [0..*]
 premis_IntellectualEntity : format : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : forme d'art : <i>rdf:langString</i> [0..*]
-premis_IntellectualEntity : genre : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : genre : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
 premis_IntellectualEntity : informations sur les droits : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : les acteurs : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : mots-clés : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : moyen d'art : <i>rdf:langString</i> [0..*]
-premis_IntellectualEntity : médium : <i>xsd:string</i> [1..*]
-premis_IntellectualEntity : nom : <i>rdf:langString</i> [1..1]
+premis_IntellectualEntity : nom : <i>rdf:langString</i> [1..*]
 premis_IntellectualEntity : nom alternatif : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : résumé : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : sur : <i>IRI</i> [0..*]
+premis_IntellectualEntity : synopsis : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : temporelle : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : texte de crédit : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : type d'objet : <i>xsd:string</i> [0..1]
 
 
 
@@ -130,9 +133,9 @@ premis_IntellectualEntity --> schema_CreativeWorkSeries :est partie de [0..*]  >
 premis_IntellectualEntity --> schema_Episode :est partie de [0..*]  > 
 premis_IntellectualEntity --> schema_Person :détenteur des droits d'auteur [0..*]  > 
 premis_IntellectualEntity --> schema_Place :spatial [0..*]  > 
-premis_IntellectualEntity --> schema_QuantitativeValue :hauteur [0..*]  \llargeur [0..*]  \lprofondeur [0..*]  > 
+premis_IntellectualEntity --> schema_QuantitativeValue :hauteur [0..1]  \llargeur [0..1]  \lprofondeur [0..1]  > 
 premis_IntellectualEntity --> schema_Role :contributeur [0..*]  \lcréateur [0..*]  \léditeur [0..*]  > 
-premis_IntellectualEntity --> schema_Thing :mentionne [0..*]  > 
+premis_IntellectualEntity --> schema_Thing :détenteur des droits d'auteur [0..*]  \lmentionne [0..*]  > 
 premis_IntellectualEntity --> skos_Concept :licence [0..*]  > 
 
 
@@ -141,11 +144,11 @@ premis_IntellectualEntity --> skos_Concept :licence [0..*]  >
 premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : créé le : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
-premis_File : description : <i>rdf:langString</i> [0..1]
+premis_File : description : <i>rdf:langString</i> [0..*]
 premis_File : durée : <i>xsd:duration</i> [0..1]
-premis_File : identifier : <i>xsd:string</i> [1..1]
+premis_File : identifier : <i>xsd:string</i> [0..1]
 premis_File : image miniature : <i>IRI</i> [0..1]
-premis_File : nom : <i>rdf:langString</i> [1..1]
+premis_File : nom : <i>rdf:langString</i> [1..*]
 
 premis_File --> ebucore_MediaFragment :a un fragment multimédia [0..*]  > 
 
@@ -157,8 +160,8 @@ premis_File --> ebucore_MediaFragment :a un fragment multimédia [0..*]  >
 
 schema_Place --|> schema_Thing #blue;line.dotted;text:blue
 
-schema_Place : description : <i>rdf:langString</i> [0..1]
-schema_Place : nom : <i>rdf:langString</i> [1..1]
+schema_Place : description : <i>rdf:langString</i> [0..*]
+schema_Place : nom : <i>rdf:langString</i> [1..*]
 
 
 
@@ -171,32 +174,32 @@ schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
 
-haObj_PhysicalCarrier : description : <i>rdf:langString</i> [0..1]
+haObj_PhysicalCarrier : description : <i>rdf:langString</i> [0..*]
 haObj_PhysicalCarrier : identifier : <i>xsd:string</i> [1..1]
 haObj_PhysicalCarrier : matériau : <i>xsd:string</i> [0..1]
-haObj_PhysicalCarrier : nom : <i>rdf:langString</i> [1..1]
+haObj_PhysicalCarrier : nom : <i>rdf:langString</i> [1..*]
 haObj_PhysicalCarrier : étendue matérielle : <i>xsd:string</i> [0..1]
 
 haObj_PhysicalCarrier --> schema_Brand :marque [0..1]  > 
-haObj_PhysicalCarrier --> schema_QuantitativeValue :hauteur [0..*]  \llargeur [0..*]  \lprofondeur [0..*]  > 
+haObj_PhysicalCarrier --> schema_QuantitativeValue :hauteur [0..1]  \llargeur [0..1]  \lprofondeur [0..1]  > 
 haObj_PhysicalCarrier --> skos_Concept :problème de préservation [0..*]  > 
 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation : description : <i>rdf:langString</i> [0..1]
-haObj_CarrierRepresentation : identifier : <i>xsd:string</i> [1..1]
-haObj_CarrierRepresentation : nom : <i>rdf:langString</i> [1..1]
+haObj_CarrierRepresentation : description : <i>rdf:langString</i> [0..*]
+haObj_CarrierRepresentation : identifier : <i>xsd:string</i> [0..1]
+haObj_CarrierRepresentation : nom : <i>rdf:langString</i> [1..*]
 
 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation : description : <i>rdf:langString</i> [0..1]
+haObj_DigitalRepresentation : description : <i>rdf:langString</i> [0..*]
 haObj_DigitalRepresentation : en langue : <i>xsd:string</i> [0..*]
-haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : légende : <i>xsd:string</i> [0..1]
-haObj_DigitalRepresentation : nom : <i>rdf:langString</i> [1..1]
+haObj_DigitalRepresentation : nom : <i>rdf:langString</i> [1..*]
 haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
 
 haObj_DigitalRepresentation --> schema_Role :créateur [0..*]  > 
@@ -213,9 +216,9 @@ schema_Role --> skos_Concept :nom de rôle [1..*]  >
 
 schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_CreativeWorkSeries : description : <i>rdf:langString</i> [0..1]
-schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
-schema_CreativeWorkSeries : nom : <i>rdf:langString</i> [1..1]
+schema_CreativeWorkSeries : description : <i>rdf:langString</i> [0..*]
+schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [0..1]
+schema_CreativeWorkSeries : nom : <i>rdf:langString</i> [1..*]
 schema_CreativeWorkSeries : numéro de saison : <i>xsd:integer</i> [0..*]
 schema_CreativeWorkSeries --> premis_IntellectualEntity :fait partie de [0..*]  > 
 
@@ -225,17 +228,17 @@ schema_CreativeWorkSeries --> schema_CreativeWorkSeries :est partie de [0..*]  \
 
 schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
 
-schema_QuantitativeValue : code d'unité : <i>xsd:string</i> [0..*]
-schema_QuantitativeValue : texte d'unité : <i>xsd:string</i> [0..*]
-schema_QuantitativeValue : valeur : <i>xsd:float</i> [0..*]
+schema_QuantitativeValue : code d'unité : <i>xsd:string</i> [1..1]
+schema_QuantitativeValue : texte d'unité : <i>xsd:string</i> [0..1]
+schema_QuantitativeValue : valeur : <i>xsd:float</i> [1..1]
 
 
 
 schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_Episode : description : <i>rdf:langString</i> [0..1]
+schema_Episode : description : <i>rdf:langString</i> [0..*]
 schema_Episode : identifier : <i>xsd:string</i> [1..1]
-schema_Episode : nom : <i>rdf:langString</i> [1..1]
+schema_Episode : nom : <i>rdf:langString</i> [1..*]
 schema_Episode --> premis_IntellectualEntity :fait partie de [0..*]  > 
 
 

@@ -43,7 +43,7 @@ haObj_PhysicalCarrier --> skos_Concept :iec-60094 type [0..1]  \lvitesse d'enreg
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation : nombre de pistes audio : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : nombre de canaux audio : <i>xsd:nonNegativeInteger</i> [0..1]
 haObj_CarrierRepresentation : nombre de pistes audio : <i>xsd:nonNegativeInteger</i> [0..1]
 
 

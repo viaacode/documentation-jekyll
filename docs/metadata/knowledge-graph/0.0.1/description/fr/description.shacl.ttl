@@ -17,15 +17,15 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n285690bf595442428d3c6b4ad985715db1 a rdfs:Class,
+_:n1fe3cc60b6314ee68c827b06bc1664a3b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n285690bf595442428d3c6b4ad985715db17 a rdfs:Class,
+_:n1fe3cc60b6314ee68c827b06bc1664a3b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:nedc4f5af2a154d64b7a3c8756b220888b1 a rdfs:Class,
+_:ncb24695b770246099d7f6589fbedca41b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -749,7 +749,7 @@ schema:PostalAddress a rdfs:Class ;
         "Het postadres."@nl .
 
 schema:QuantitativeValue a rdfs:Class ;
-    rdfs:label "quantitative Value"@en,
+    rdfs:label "Quantitative Value"@en,
         "Valeur quantitative"@fr,
         "Kwantitatieve waarde"@nl ;
     rdfs:isDefinedBy schema: ;
@@ -976,19 +976,6 @@ ebucore:hasMimeType a rdf:Property ;
         "Pour spécifier le type MIME d'une ressource."@fr,
         "Om het MIME type van een resource te specificeren."@nl .
 
-ebucore:hasObjectType a rdf:Property ;
-    rdfs:label "object/asset type"@en,
-        "type d'objet/de bien"@fr,
-        "type object/activum"@nl ;
-    rdfs:domain ebucore:EditorialObject ;
-    rdfs:isDefinedBy ebucore: ;
-    rdfs:range ebucore:ObjectType,
-        xsd:anyURI,
-        xsd:string ;
-    skos:definition "To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."@en,
-        "Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."@fr,
-        "Om een ObjectType te definiëren voor een BusinessObject (bv. boek, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."@nl .
-
 <http://www.europeana.eu/schemas/edm/isNextInSequence> a owl:ObjectProperty ;
     rdfs:label "is next in sequence of"@en,
         "est le prochain dans la séquence de"@fr,
@@ -1003,7 +990,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n285690bf595442428d3c6b4ad985715db1 ;
+    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1071,7 +1058,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n285690bf595442428d3c6b4ad985715db17 ;
+    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1186,7 +1173,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:nedc4f5af2a154d64b7a3c8756b220888b1 ;
+    rdfs:range _:ncb24695b770246099d7f6589fbedca41b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1523,16 +1510,6 @@ foaf:homepage a rdf:Property ;
 
 <https://data.hetarchief.be/ns/description#ArchiveComponentShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:class schema:ArchiveComponent ;
-            sh:message "schema:isPartOf is not of class schema:ArchiveComponent."@en,
-                "schema:isPartOf n'est pas de la classe schema:ArchiveComponent."@fr,
-                "schema:isPartOf is niet van de klasse schema:ArchiveComponent."@nl ;
-            sh:name "is part of"@en,
-                "est partie de"@fr,
-                "is een deel van"@nl ;
-            sh:path schema:isPartOf ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
             sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this archive component."@en,
                 "Indique une intellectualité ou un travail créatif qui fait partie de cette composante d'archives."@fr,
                 "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze archief component."@nl ;
@@ -1545,18 +1522,49 @@ foaf:homepage a rdf:Property ;
             sh:or ( [ sh:class premis:IntellectualEntity ] [ sh:class schema:ArchiveComponent ] ) ;
             sh:path schema:hasPart ;
             sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:ArchiveComponent ;
+            sh:message "schema:isPartOf is not of class schema:ArchiveComponent."@en,
+                "schema:isPartOf n'est pas de la classe schema:ArchiveComponent."@fr,
+                "schema:isPartOf is niet van de klasse schema:ArchiveComponent."@nl ;
+            sh:name "is part of"@en,
+                "est partie de"@fr,
+                "is een deel van"@nl ;
+            sh:path schema:isPartOf ;
+            sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:ArchiveComponent .
 
 <https://data.hetarchief.be/ns/description#CarrierRepresentationNodeShape> a sh:NodeShape ;
-    sh:property <https://data.hetarchief.be/ns/description#DescriptionShape>,
-        <https://data.hetarchief.be/ns/description#IdentifierShape>,
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+            sh:minCount 0 ;
+            sh:name "identifier"@en,
+                "identifier"@fr,
+                "identifier"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass haObj:CarrierRepresentation .
 
 <https://data.hetarchief.be/ns/description#CollectionShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+            sh:minCount 0 ;
+            sh:name "identifier"@en,
+                "identifier"@fr,
+                "identifier"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:datatype xsd:integer ;
             sh:description "The number of items in the Collection."@en,
                 "Le nombre d'éléments dans la collection."@fr,
@@ -1570,7 +1578,6 @@ foaf:homepage a rdf:Property ;
             sh:path schema:collectionSize ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:class premis:IntellectualEntity ;
             sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this collection."@en,
                 "Indique un IntellectualEntity ou CreativeWork qui fait partie de cette collection."@fr,
                 "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze collectie."@nl ;
@@ -1580,26 +1587,15 @@ foaf:homepage a rdf:Property ;
             sh:name "has part"@en,
                 "fait partie de"@fr,
                 "is deel van"@nl ;
+            sh:or ( [ sh:class premis:IntellectualEntity ] [ sh:class haObj:PhysicalCarrier ] ) ;
             sh:path schema:hasPart ;
             sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
-        <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:Collection .
 
 <https://data.hetarchief.be/ns/description#CreativeWorkSeriesShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:integer ;
-            sh:message "schema:seasonNumber is not of type integer"@en,
-                "schema:seasonNumber n'est pas de type integer"@fr,
-                "schema:seasonNumber is niet van het type integer"@nl ;
-            sh:name "season number"@en,
-                "numéro de saison"@fr,
-                "seizoensnummer"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:seasonNumber ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
             sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en,
                 "Indique une intellectualité ou un travail créatif qui fait partie de cette saison."@fr,
                 "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
@@ -1622,13 +1618,45 @@ foaf:homepage a rdf:Property ;
                 "is een deel van"@nl ;
             sh:path schema:isPartOf ;
             sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+            sh:minCount 0 ;
+            sh:name "identifier"@en,
+                "identifier"@fr,
+                "identifier"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:integer ;
+            sh:message "schema:seasonNumber is not of type integer"@en,
+                "schema:seasonNumber n'est pas de type integer"@fr,
+                "schema:seasonNumber is niet van het type integer"@nl ;
+            sh:name "season number"@en,
+                "numéro de saison"@fr,
+                "seizoensnummer"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:seasonNumber ;
+            sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
-        <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:CreativeWorkSeries .
 
 <https://data.hetarchief.be/ns/description#DigitalRepresentationNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+            sh:minCount 0 ;
+            sh:name "identifier"@en,
+                "identifier"@fr,
+                "identifier"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:message "schema:transcript is not of type string "@en,
@@ -1675,7 +1703,6 @@ foaf:homepage a rdf:Property ;
             sh:path schema:creator ;
             sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
-        <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass haObj:DigitalRepresentation .
 
@@ -1699,7 +1726,18 @@ foaf:homepage a rdf:Property ;
     sh:targetClass schema:Episode .
 
 <https://data.hetarchief.be/ns/description#FileNodeShape> a sh:NodeShape ;
-    sh:property [ sh:and ( [ sh:class premis:File ] [ sh:class ebucore:ClosedCaptioning ] ) ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+            sh:minCount 0 ;
+            sh:name "identifier"@en,
+                "identifier"@fr,
+                "identifier"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        [ sh:and ( [ sh:class premis:File ] [ sh:class ebucore:ClosedCaptioning ] ) ;
             sh:description "De ondertitels of transcriptie van dit bestand."@en,
                 "Les sous-titres ou transcription de ce fichier."@fr,
                 "De ondertitels of transcriptie van dit bestand."@nl ;
@@ -1750,7 +1788,6 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#DurationShape>,
-        <https://data.hetarchief.be/ns/description#IdentifierShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass premis:File .
 
@@ -1823,8 +1860,7 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ;
             sh:uniqueLang true ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
+            sh:datatype rdf:langString ;
             sh:message "schema:genre is not of type string"@en,
                 "schema:genre n'est pas de type string"@fr,
                 "schema:genre is niet van het type string"@nl ;
@@ -1833,7 +1869,8 @@ foaf:homepage a rdf:Property ;
                 "genre"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path schema:genre ;
-            sh:severity sh:Violation ],
+            sh:severity sh:Violation ;
+            sh:uniqueLang true ],
         [ a sh:PropertyShape ;
             sh:class schema:Place ;
             sh:message "schema:spatialCoverage is not of class schema:Place"@en,
@@ -1871,7 +1908,6 @@ foaf:homepage a rdf:Property ;
             sh:message "schema:inLanguage is not of type string"@en,
                 "schema:inLanguage n'est pas de type string"@fr,
                 "schema:inLanguage is niet van het type string"@nl ;
-            sh:minCount 1 ;
             sh:name "in language"@en,
                 "en langue"@fr,
                 "in taal"@nl ;
@@ -1912,17 +1948,17 @@ foaf:homepage a rdf:Property ;
             sh:path schema:maintainer ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:message "schema:copyrightHolder is not of class schema:Person or org:Organization"@en,
-                "schema:copyrightHolder n'est pas de la classe schema:Person ou org:Organization"@fr,
-                "schema:copyrightHolder is niet van de klasse schema:Person of org:Organization"@nl ;
+            sh:message "schema:copyrightHolder is not of class schema:Person, schema:Thing, or org:Organization"@en,
+                "schema:copyrightHolder n'est pas de la classe schema:Person, schema:Thing ou org:Organization"@fr,
+                "schema:copyrightHolder is niet van de klasse schema:Person, schema:Thing of org:Organization"@nl ;
             sh:name "copyright holder"@en,
                 "détenteur des droits d'auteur"@fr,
                 "houder van auteursrecht"@nl ;
-            sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] ) ;
+            sh:or ( [ sh:class schema:Person ] [ sh:class org:Organization ] [ sh:class schema:Thing ] ) ;
             sh:path schema:copyrightHolder ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype rdf:langString ;
+            sh:datatype xsd:string ;
             sh:message "schema:copyrightNotice is not of type string"@en,
                 "schema:copyrightNotice n'est pas de type string"@fr,
                 "schema:copyrightNotice is niet van het type string"@nl ;
@@ -1956,6 +1992,20 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype rdf:langString ;
+            sh:message "schema:alternateName is not of type string"@en,
+                "schema:alternateName n'est pas de type string"@fr,
+                "schema:alternateName is niet van het type string"@nl ;
+            sh:name "alternate name"@en,
+                "nom alternatif"@fr,
+                "alternatieve naam"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:alternateName ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype rdf:langString ;
+            sh:description "Text to credit person(s) and/or organization(s) associated with the intellectual entity."@en,
+                "Texte pour énoncer les person(s) et / ou les organisations associés à l'entité intellectuelle."@fr,
+                "Tekst om perso(o)n(en) en/of organisatie(s) geassocieerd met de intellectuele entiteit te vermelden."@nl ;
             sh:message "schema:creditText is not of type string"@en,
                 "schema:creditText n'est pas de type string"@fr,
                 "schema:creditText is niet van het type string"@nl ;
@@ -1974,17 +2024,6 @@ foaf:homepage a rdf:Property ;
                 "over"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path schema:about ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype rdf:langString ;
-            sh:message "schema:alternateName is not of type string"@en,
-                "schema:alternateName n'est pas de type string"@fr,
-                "schema:alternateName is niet van het type string"@nl ;
-            sh:name "alternate name"@en,
-                "nom alternatif"@fr,
-                "alternatieve naam"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:alternateName ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class schema:Thing ;
@@ -2020,7 +2059,7 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
-            sh:in ( "audio" "video" "film" "paper" ) ;
+            sh:in ( "audio"^^xsd:string "video"^^xsd:string "film"^^xsd:string "paper"^^xsd:string "newspaper"^^xsd:string "newspaperpage"^^xsd:string "videofragment"^^xsd:string "audiofragment"^^xsd:string ) ;
             sh:maxCount 1 ;
             sh:message "dct:format is missing or not of type string or value is not in (audio video film paper)"@en,
                 "dct:format est manquant ou n'est pas de type string ou la valeur n'est pas dans (audio video film paper)"@fr,
@@ -2031,29 +2070,6 @@ foaf:homepage a rdf:Property ;
                 "formaat"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path dct:format ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:message "dct:medium is not of type string "@en,
-                "dct:medium n'est pas de type string"@fr,
-                "dct:medium is niet van het type string"@nl ;
-            sh:minCount 1 ;
-            sh:name "medium"@en,
-                "médium"@fr,
-                "medium"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path dct:medium ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:class schema:QuantitativeValue ;
-            sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en,
-                "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
-                "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
-            sh:name "height"@en,
-                "hauteur"@fr,
-                "hoogte"@nl ;
-            sh:nodeKind sh:BlankNodeOrIRI ;
-            sh:path schema:height ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:message "schema:isPartOf is not of class schema:ArchiveComponent, schema:CreativeWorkSeries, schema:Episode or schema:Collection."@en,
@@ -2067,6 +2083,19 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
+            sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en,
+                "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
+                "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
+            sh:name "height"@en,
+                "hauteur"@fr,
+                "hoogte"@nl ;
+            sh:nodeKind sh:BlankNodeOrIRI ;
+            sh:path schema:height ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en,
                 "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
                 "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
@@ -2078,6 +2107,7 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:message "schema:width is not a blank node or of class schema:QuantitativeValue"@en,
                 "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
                 "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
@@ -2086,6 +2116,45 @@ foaf:homepage a rdf:Property ;
                 "breedte"@nl ;
             sh:nodeKind sh:BlankNodeOrIRI ;
             sh:path schema:width ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description ""@en ;
+            sh:maxCount 1 ;
+            sh:message "schema:hasObjectType is not of type string"@en,
+                "schema:hasObjectType n'est pas de type string"@fr,
+                "schema:hasObjectType is niet van het type string"@nl ;
+            sh:name "object type"@en,
+                "type d'objet"@fr,
+                "type object"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path ebucore:hasObjectType ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "De castleden van een tv- of theaterproductie."@en,
+                "Les acteurs d'une production télévisée ou théâtrale."@en,
+                "The cast members of a TV or theatre production."@en ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:hasCastMember is not of type string"@en ;
+            sh:name "castmembers"@en,
+                "les acteurs"@fr,
+                "castleden"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path ebucore:hasCastMember ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "The plot summary of the TV or theatre production."@en,
+                "De korte inhoud van de tv- of theaterproductie."@nl,
+                "Le résumé de l'intrigue de la production télévisée ou théâtrale."@nl ;
+            sh:maxCount 1 ;
+            sh:message "ebucore:synopsis is not of type string"@en ;
+            sh:name "synopsis"@en,
+                "synopsis"@fr,
+                "korte inhoud"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path ebucore:synopsis ;
             sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#IdentifierShape>,
@@ -2178,6 +2247,7 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:message "schema:height is not a blank node or of class schema:QuantitativeValue"@en,
                 "schema:height n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
                 "schema:height is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
@@ -2189,6 +2259,7 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:message "schema:depth is not a blank node or of class schema:QuantitativeValue"@en,
                 "schema:depth n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
                 "schema:depth is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
@@ -2200,6 +2271,7 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:class schema:QuantitativeValue ;
+            sh:maxCount 1 ;
             sh:message "schema:width is not a blank node or of class schema:QuantitativeValue"@en,
                 "schema:width n'est pas une 'blank node' ou de la classe schema:QuantitativeValue"@fr,
                 "schema:width is geen 'blank node' of niet van de klasse schema:QuantitativeValue"@nl ;
@@ -2238,9 +2310,11 @@ foaf:homepage a rdf:Property ;
 <https://data.hetarchief.be/ns/description#QuantitativeValueShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
+            sh:maxCount 1 ;
             sh:message "schema:unitCode is not of type string "@en,
                 "schema:unitCode n'est pas de type string"@fr,
                 "schema:unitCode is niet van het type string"@nl ;
+            sh:minCount 1 ;
             sh:name "unit code"@en,
                 "code d'unité"@fr,
                 "eenheidcode"@nl ;
@@ -2249,6 +2323,7 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
+            sh:maxCount 1 ;
             sh:message "schema:unitText is not of type string "@en,
                 "schema:unitText n'est pas de type string"@fr,
                 "schema:unitText is niet van het type string"@nl ;
@@ -2260,9 +2335,11 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
             sh:datatype xsd:float ;
+            sh:maxCount 1 ;
             sh:message "schema:value is not of type float "@en,
                 "schema:value n'est pas de type float"@fr,
                 "schema:value is niet van het type float"@nl ;
+            sh:minCount 1 ;
             sh:name "value"@en,
                 "valeur"@fr,
                 "waarde"@nl ;
@@ -2480,6 +2557,17 @@ haDes:pageNumber a rdf:Property ;
         "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr,
         "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl .
 
+<https://data.hetarchief.be/ns/mediahaven/tenantName> a rdf:Property ;
+    rdfs:label "tenant name"@en,
+        "nom du locataire"@fr,
+        "tenant naam"@nl ;
+    rdfs:domain org:Organization ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
+    rdfs:range xsd:string ;
+    skos:definition "The Mediahaven tenant name of the organization."@en,
+        "Le nom du locataire Mediahaven de l'organisation."@fr,
+        "De Mediahaven tenant naam van de organisatie."@nl .
+
 haOrg:allowsBZT a rdf:Property ;
     rdfs:label "allows bezoekertool"@en,
         "permet le bezoekertool"@fr,
@@ -2608,6 +2696,25 @@ schema:contactType a rdf:Property ;
     schema:domainIncludes schema:ContactPoint ;
     schema:rangeIncludes schema:Text .
 
+schema:dateDeleted a rdf:Property ;
+    rdfs:label "date deleted" ;
+    rdfs:domain schema:DataFeedItem ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The datetime the item was removed from the DataFeed."@en,
+        "De DateTime Het item is verwijderd uit de DataFeed."@fr,
+        "L'élément DateTime a été supprimé du DataFeed."@nl .
+
+schema:dateModified a rdf:Property ;
+    rdfs:label "date modified" ;
+    rdfs:domain schema:CreativeWork,
+        schema:DataFeedItem ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."@en,
+        "La date à laquelle le Creativework a été récemment modifié ou lorsque l'entrée de l'élément a été modifiée dans une DataFeed."@fr,
+        "De datum waarop het creatieve werk het meest recent werd gewijzigd of wanneer de invoer van het item binnen een DataFeed werd gewijzigd."@nl .
+
 schema:deathDate a rdf:Property ;
     rdfs:label "death date"@en,
         "date de décès"@fr,
@@ -2631,6 +2738,23 @@ schema:email a rdf:Property ;
     skos:definition "Email address."@en,
         "Adresse e-mail."@fr,
         "E-mailadres."@nl .
+
+schema:endDate a rdf:Property ;
+    rdfs:label "end date"@en,
+        "date de fin"@fr,
+        "einddatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date de fin et l'heure de l'article (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@fr,
+        "De einddatum en tijd van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
 
 schema:episodeNumber a rdf:Property ;
     rdfs:label "episode number"@en,
@@ -2716,6 +2840,23 @@ schema:serialNumber a rdf:Property ;
         "Le numéro de série ou tout identifiant alphanumérique d'un produit particulier. Lorsqu'il est attaché à une offre, il s'agit d'un raccourci pour le numéro de série du produit inclus dans l'offre."@fr,
         "Het serienummer of een alfanumerieke identificatie van een bepaald product. Wanneer het wordt bevestigd aan een aanbieding, is het een snelkoppeling voor het serienummer van het product dat in het aanbod is opgenomen."@nl .
 
+schema:startDate a rdf:Property ;
+    rdfs:label "start date"@en,
+        "date de début"@fr,
+        "begindatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date et l'heure de la date de la statistique par l'item (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@fr,
+        "De startdatum en tijd van de status van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
+
 schema:streetAddress a rdf:Property ;
     rdfs:label "streetAddress"@en,
         "adresseDeRue"@fr,
@@ -2774,6 +2915,16 @@ dct:format a rdf:Property ;
         "Le format du fichier, le support physique ou les dimensions de la ressource."@fr,
         "Het bestandsformaat, fysiek medium of afmetingen van de bron."@nl .
 
+dct:medium a rdf:Property ;
+    rdfs:label "medium"@en,
+        "médium"@fr,
+        "medium"@nl ;
+    rdfs:isDefinedBy dct: ;
+    rdfs:range xsd:string ;
+    skos:definition "The material or physical carrier of the resource"@en,
+        "Le support matériel ou physique de la ressource"@fr,
+        "Het materiaal of fysieke drager van de bron"@nl .
+
 ebucore:annotationConfidence a rdf:Property ;
     rdfs:label "Annotation confidence"@en,
         "Fiabilité des annotations"@fr,
@@ -2830,6 +2981,18 @@ ebucore:hasCaptioning a rdf:Property ;
         "Pour signaler la présence du sous-titrage."@fr,
         "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
 
+ebucore:hasCastMember a rdf:Property ;
+    rdfs:label "Cast member"@en,
+        "Membre de la distribution"@fr,
+        "Cast lid"@nl ;
+    rdfs:comment "A member of the cast."@en,
+        "Range: a string or a Cast"@en,
+        "A member of the cast."@fr,
+        "Een lid van de cast."@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:range ebucore:Cast,
+        xsd:string .
+
 ebucore:hasMediaFragment a rdf:Property ;
     rdfs:label "fragment"@en,
         "a un fragment (de média)"@fr,
@@ -2843,6 +3006,19 @@ ebucore:hasMediaFragment a rdf:Property ;
         "Pour définir une relation entre des MediaFragments dans une MediaResource."@fr,
         "Om een relatie te definiëren tussen MediaFragments binnenin een MediaResource."@nl .
 
+ebucore:hasObjectType a rdf:Property ;
+    rdfs:label "object/asset type"@en,
+        "type d'objet/de bien"@fr,
+        "type object/activum"@nl ;
+    rdfs:domain ebucore:EditorialObject ;
+    rdfs:isDefinedBy ebucore: ;
+    rdfs:range ebucore:ObjectType,
+        xsd:anyURI,
+        xsd:string ;
+    skos:definition "To define an ObjectType for the BusinessObject (e.g. book, report, programme, clip) if not defined as a subClass of BusinessObject."@en,
+        "Pour définir un ObjectType pour un BusinessObject (par exemple un livre, rapport, programme, clip) s'il n'est pas défini comme une sous-classe de BusinessObject."@fr,
+        "Om een ObjectType te definiëren voor een BusinessObject (bv. boek, rapport, programma, clip) indien dit niet gedefinieerd is als een subklasse van BusinessObject."@nl .
+
 ebucore:isAnnotatedMediaResource a rdf:Property ;
     rdfs:label "Media resource"@en,
         "Media resource"@fr,
@@ -2852,6 +3028,17 @@ ebucore:isAnnotatedMediaResource a rdf:Property ;
     skos:definition "To link an Annotation to a MediaResource."@en,
         "Pour lier une annotation à un MediaResource."@fr,
         "Om een annotatie te koppelen aan een mediaresource."@nl .
+
+ebucore:synopsis a rdf:Property ;
+    rdfs:label "Synopsis"@en,
+        "synopsis"@fr,
+        "Korte inhoud"@nl ;
+    rdfs:comment "To provide a summary."@en,
+        "To provide a summary."@fr,
+        "Om een samenvatting te geven."@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf ebucore:description .
 
 premis:note a owl:DatatypeProperty ;
     rdfs:label "has note"@en,
@@ -3399,7 +3586,7 @@ schema:creditText a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:isDefinedBy schema: ;
     rdfs:range xsd:string ;
-    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.",
+    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work."@en,
         "Texte qui peut être utilisé pour créditer la ou les personne(s) et/ou organisation(s) associée(s) à une oeuvre créative (CreativeWork) publiée."@fr,
         "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl .
 
@@ -3629,16 +3816,6 @@ dct:description a rdfs:Property ;
         "Un compte rendu de la ressource."@fr,
         "Een verslag van de resource"@nl .
 
-dct:medium a rdf:Property ;
-    rdfs:label "medium"@en,
-        "médium"@fr,
-        "medium"@nl ;
-    rdfs:isDefinedBy dct: ;
-    rdfs:range xsd:string ;
-    skos:definition "The material or physical carrier of the resource"@en,
-        "Le support matériel ou physique de la ressource"@fr,
-        "Het materiaal of fysieke drager van de bron"@nl .
-
 dct:rights a rdf:Property ;
     rdfs:label "Rights"@en,
         "Droits"@fr,
@@ -3790,18 +3967,6 @@ schema:height a rdf:Property ;
         "La hauteur de l'objet."@fr,
         "De hoogte van het item."@nl .
 
-schema:identifier a rdf:Property ;
-    rdfs:label "identifier"@en,
-        "identifiant"@fr,
-        "identifier"@nl ;
-    rdfs:domain schema:Thing ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range xsd:string ;
-    owl:equivalentProperty dct:identifier ;
-    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
-        "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
-        "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
-
 schema:inLanguage a rdf:Property ;
     rdfs:label "in language"@en,
         "en langue"@fr,
@@ -3869,6 +4034,20 @@ skos:related a rdf:Property,
     skos:definition "Relates a concept to a concept with which there is an associative semantic relationship."@en,
         "Relie un concept à un concept avec lequel il existe une relation sémantique associative."@fr,
         "Verbindt een concept met een concept waarmee er een associatieve semantische relatie is."@nl .
+
+<https://data.hetarchief.be/ns/description#IdentifierShape> a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1 ;
+    sh:message "schema:identifier is missing or not of type string "@en,
+        "schema:identifier est manquant ou n'est pas de type string"@fr,
+        "schema:identifier ontbreekt of is niet van het type string"@nl ;
+    sh:minCount 1 ;
+    sh:name "identifier"@en,
+        "identifier"@fr,
+        "identifier"@nl ;
+    sh:nodeKind sh:Literal ;
+    sh:path schema:identifier ;
+    sh:severity sh:Violation .
 
 schema:creator a rdf:Property ;
     rdfs:label "creator"@en,
@@ -3943,23 +4122,20 @@ skos:note a rdf:Property,
     rdfs:seeAlso <http://www.w3.org/2008/05/skos> ;
     owl:imports <http://www.w3.org/2004/02/skos/core> .
 
-<https://data.hetarchief.be/ns/description#IdentifierShape> a sh:PropertyShape ;
-    sh:datatype xsd:string ;
-    sh:maxCount 1 ;
-    sh:message "schema:identifier is missing or not of type string "@en,
-        "schema:identifier est manquant ou n'est pas de type string"@fr,
-        "schema:identifier ontbreekt of is niet van het type string"@nl ;
-    sh:minCount 1 ;
-    sh:name "identifier"@en,
-        "identifier"@fr,
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier"@en,
+        "identifiant"@fr,
         "identifier"@nl ;
-    sh:nodeKind sh:Literal ;
-    sh:path schema:identifier ;
-    sh:severity sh:Violation .
+    rdfs:domain schema:Thing ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty dct:identifier ;
+    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
+        "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
+        "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
 
 <https://data.hetarchief.be/ns/description#DescriptionShape> a sh:PropertyShape ;
     sh:datatype rdf:langString ;
-    sh:maxCount 1 ;
     sh:message "schema:description is missing or not of type string "@en,
         "schema:description est manquant ou n'est pas de type string"@fr,
         "schema:description ontbreekt of is niet van het type string"@nl ;
@@ -3969,11 +4145,11 @@ skos:note a rdf:Property,
         "omschrijving"@nl ;
     sh:nodeKind sh:Literal ;
     sh:path schema:description ;
-    sh:severity sh:Violation .
+    sh:severity sh:Violation ;
+    sh:uniqueLang true .
 
 <https://data.hetarchief.be/ns/description#NameShape> a sh:PropertyShape ;
     sh:datatype rdf:langString ;
-    sh:maxCount 1 ;
     sh:message "schema:name is missing or not of type string "@en,
         "schema:name est manquant ou n'est pas de type string"@fr,
         "schema:name ontbreekt of is niet van het type string"@nl ;
@@ -3983,7 +4159,8 @@ skos:note a rdf:Property,
         "naam"@nl ;
     sh:nodeKind sh:Literal ;
     sh:path schema:name ;
-    sh:severity sh:Violation .
+    sh:severity sh:Violation ;
+    sh:uniqueLang true .
 
 premis:relationship a owl:ObjectProperty ;
     rdfs:label "has relationship"@en,

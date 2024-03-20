@@ -14,15 +14,15 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n285690bf595442428d3c6b4ad985715db1 a rdfs:Class,
+_:n1fe3cc60b6314ee68c827b06bc1664a3b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n285690bf595442428d3c6b4ad985715db17 a rdfs:Class,
+_:n1fe3cc60b6314ee68c827b06bc1664a3b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:nedc4f5af2a154d64b7a3c8756b220888b1 a rdfs:Class,
+_:ncb24695b770246099d7f6589fbedca41b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -746,7 +746,7 @@ schema:PostalAddress a rdfs:Class ;
         "Het postadres."@nl .
 
 schema:QuantitativeValue a rdfs:Class ;
-    rdfs:label "quantitative Value"@en,
+    rdfs:label "Quantitative Value"@en,
         "Valeur quantitative"@fr,
         "Kwantitatieve waarde"@nl ;
     rdfs:isDefinedBy schema: ;
@@ -1029,6 +1029,18 @@ ebucore:hasAnnotationTarget a rdf:Property ;
         "Pour définir l'objet cible auquel s'applique l'annotation."@fr,
         "Om het doelobject te definiëren waarop de annotatie van toepassing is."@nl .
 
+ebucore:hasCastMember a rdf:Property ;
+    rdfs:label "Cast member"@en,
+        "Membre de la distribution"@fr,
+        "Cast lid"@nl ;
+    rdfs:comment "A member of the cast."@en,
+        "Range: a string or a Cast"@en,
+        "A member of the cast."@fr,
+        "Een lid van de cast."@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:range ebucore:Cast,
+        xsd:string .
+
 ebucore:hasMediaFragment a rdf:Property ;
     rdfs:label "fragment"@en,
         "a un fragment (de média)"@fr,
@@ -1078,6 +1090,17 @@ ebucore:isAnnotatedMediaResource a rdf:Property ;
         "Pour lier une annotation à un MediaResource."@fr,
         "Om een annotatie te koppelen aan een mediaresource."@nl .
 
+ebucore:synopsis a rdf:Property ;
+    rdfs:label "Synopsis"@en,
+        "synopsis"@fr,
+        "Korte inhoud"@nl ;
+    rdfs:comment "To provide a summary."@en,
+        "To provide a summary."@fr,
+        "Om een samenvatting te geven."@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf ebucore:description .
+
 <http://www.europeana.eu/schemas/edm/isNextInSequence> a owl:ObjectProperty ;
     rdfs:label "is next in sequence of"@en,
         "est le prochain dans la séquence de"@fr,
@@ -1092,7 +1115,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n285690bf595442428d3c6b4ad985715db1 ;
+    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1160,7 +1183,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n285690bf595442428d3c6b4ad985715db17 ;
+    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1266,7 +1289,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:nedc4f5af2a154d64b7a3c8756b220888b1 ;
+    rdfs:range _:ncb24695b770246099d7f6589fbedca41b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1635,14 +1658,14 @@ haDes:pageNumber a rdf:Property ;
 
 <https://data.hetarchief.be/ns/film#CarrierRepresentationNodeShape> a sh:Nodeshape ;
     sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:decimal ;
+            sh:datatype xsd:nonNegativeInteger ;
             sh:description "Indicates if and how many audio reels were lost (prior to any digitization processes)."@en,
                 "Indique si et combien de bobines audio ont été perdues (avant tout processus de numérisation)."@fr,
                 "Geeft aan of en hoeveel geluidsrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:decimal, or occurs more than once"@en,
-                "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr,
-                "het object van haDes:numberAudioReelsLost is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+            sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:nonNegativeInteger, or occurs more than once"@en,
+                "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr,
+                "het object van haDes:numberAudioReelsLost is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
             sh:minCount 0 ;
             sh:name "number of lost audio reels"@en,
                 "nombre de bobines audio perdues"@fr,
@@ -1651,14 +1674,14 @@ haDes:pageNumber a rdf:Property ;
             sh:path haDes:numberOfMissingAudioReels ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:decimal ;
+            sh:datatype xsd:nonNegativeInteger ;
             sh:description "Indicates if and how many image reels were lost (prior to any digitization processes)."@en,
                 "Indique si et combien de bobines d'image ont été perdues (avant tout processus de numérisation)."@fr,
                 "Geeft aan of en hoeveel beeldrol/-spoel verloren werden (vóór enig eventueel digitaliseringsproces)."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:decimal, or occurs more than once"@en,
-                "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr,
-                "het object van haDes:numberAudioReelsLost is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+            sh:message "the object of haDes:numberAudioReelsLost is not of type xsd:nonNegativeInteger, or occurs more than once"@en,
+                "l'objet de haDes:numberAudioReelsLost n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr,
+                "het object van haDes:numberAudioReelsLost is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
             sh:minCount 0 ;
             sh:name "number of lost image reels"@en,
                 "nombre de bobines d'image perdues"@fr,
@@ -1667,14 +1690,14 @@ haDes:pageNumber a rdf:Property ;
             sh:path haDes:numberOfMissingImageReels ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:decimal ;
+            sh:datatype xsd:nonNegativeInteger ;
             sh:description "Indicates the number of reels (regardless of type) that the film consists of."@en,
                 "Indique le nombre de bobines (quel que soit le type) qui composent le film."@fr,
                 "Geeft aan uit hoeveel rollen/spoelen (ongeacht het type) waaruit de film bestaat."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of haDes:numberOfReels is not of type xsd:decimal, or occurs more than once"@en,
-                "l'objet de haDes:numberOfReels n'est pas de type xsd:decimal, ou apparaît plus d'une seule fois"@fr,
-                "het object van haDes:numberOfReels is niet van het type xsd:decimal, of komt meer dan eens voor"@nl ;
+            sh:message "the object of haDes:numberOfReels is not of type xsd:nonNegativeInteger, or occurs more than once"@en,
+                "l'objet de haDes:numberOfReels n'est pas de type xsd:nonNegativeInteger, ou apparaît plus d'une seule fois"@fr,
+                "het object van haDes:numberOfReels is niet van het type xsd:nonNegativeInteger, of komt meer dan eens voor"@nl ;
             sh:minCount 0 ;
             sh:name "number of reels"@en,
                 "nombre de bobines"@fr,
@@ -1775,6 +1798,17 @@ haDes:pageNumber a rdf:Property ;
     skos:definition "The fragment identifier of a record or a fragment in the Mediahaven asset management system."@en,
         "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr,
         "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl .
+
+<https://data.hetarchief.be/ns/mediahaven/tenantName> a rdf:Property ;
+    rdfs:label "tenant name"@en,
+        "nom du locataire"@fr,
+        "tenant naam"@nl ;
+    rdfs:domain <http://www.w3.org/ns/org#Organization> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
+    rdfs:range xsd:string ;
+    skos:definition "The Mediahaven tenant name of the organization."@en,
+        "Le nom du locataire Mediahaven de l'organisation."@fr,
+        "De Mediahaven tenant naam van de organisatie."@nl .
 
 haObj:preservationProblem a rdf:Property ;
     rdfs:label "preservation problem"@en,
@@ -2065,7 +2099,7 @@ schema:creditText a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:isDefinedBy schema: ;
     rdfs:range xsd:string ;
-    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.",
+    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work."@en,
         "Texte qui peut être utilisé pour créditer la ou les personne(s) et/ou organisation(s) associée(s) à une oeuvre créative (CreativeWork) publiée."@fr,
         "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl .
 
@@ -2079,6 +2113,25 @@ schema:dateCreated a rdf:Property ;
     skos:definition "The date on which the CreativeWork was created."@en,
         "La date à laquelle le CreativeWork a été créé."@fr,
         "De datum waarin het CreativeWork werd gemaakt."@nl .
+
+schema:dateDeleted a rdf:Property ;
+    rdfs:label "date deleted" ;
+    rdfs:domain schema:DataFeedItem ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The datetime the item was removed from the DataFeed."@en,
+        "De DateTime Het item is verwijderd uit de DataFeed."@fr,
+        "L'élément DateTime a été supprimé du DataFeed."@nl .
+
+schema:dateModified a rdf:Property ;
+    rdfs:label "date modified" ;
+    rdfs:domain schema:CreativeWork,
+        schema:DataFeedItem ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."@en,
+        "La date à laquelle le Creativework a été récemment modifié ou lorsque l'entrée de l'élément a été modifiée dans une DataFeed."@fr,
+        "De datum waarop het creatieve werk het meest recent werd gewijzigd of wanneer de invoer van het item binnen een DataFeed werd gewijzigd."@nl .
 
 schema:datePublished a rdf:Property ;
     rdfs:label "date published"@en,
@@ -2148,6 +2201,23 @@ schema:email a rdf:Property ;
     skos:definition "Email address."@en,
         "Adresse e-mail."@fr,
         "E-mailadres."@nl .
+
+schema:endDate a rdf:Property ;
+    rdfs:label "end date"@en,
+        "date de fin"@fr,
+        "einddatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date de fin et l'heure de l'article (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@fr,
+        "De einddatum en tijd van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
 
 schema:endTime a rdf:Property ;
     rdfs:label "endTime"@en,
@@ -2373,6 +2443,23 @@ schema:spatial a rdf:Property ;
     skos:definition "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content."@en,
         "La couverture spatiale d'un travail créatif (CreativeWork) indique où se situe le contenu."@fr,
         "De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt."@nl .
+
+schema:startDate a rdf:Property ;
+    rdfs:label "start date"@en,
+        "date de début"@fr,
+        "begindatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date et l'heure de la date de la statistique par l'item (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@fr,
+        "De startdatum en tijd van de status van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
 
 schema:startTime a rdf:Property ;
     rdfs:label "startTime"@en,

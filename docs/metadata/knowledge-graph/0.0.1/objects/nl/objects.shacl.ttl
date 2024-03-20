@@ -19,15 +19,15 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n285690bf595442428d3c6b4ad985715db1 a rdfs:Class,
+_:n1fe3cc60b6314ee68c827b06bc1664a3b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n285690bf595442428d3c6b4ad985715db17 a rdfs:Class,
+_:n1fe3cc60b6314ee68c827b06bc1664a3b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:nedc4f5af2a154d64b7a3c8756b220888b1 a rdfs:Class,
+_:ncb24695b770246099d7f6589fbedca41b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -751,7 +751,7 @@ schema:PostalAddress a rdfs:Class ;
         "Het postadres."@nl .
 
 schema:QuantitativeValue a rdfs:Class ;
-    rdfs:label "quantitative Value"@en,
+    rdfs:label "Quantitative Value"@en,
         "Valeur quantitative"@fr,
         "Kwantitatieve waarde"@nl ;
     rdfs:isDefinedBy schema: ;
@@ -950,6 +950,18 @@ ebucore:hasCaptioning a rdf:Property ;
         "Pour signaler la présence du sous-titrage."@fr,
         "Om de aanwezigheid van ondertiteling aan te duiden."@nl .
 
+ebucore:hasCastMember a rdf:Property ;
+    rdfs:label "Cast member"@en,
+        "Membre de la distribution"@fr,
+        "Cast lid"@nl ;
+    rdfs:comment "A member of the cast."@en,
+        "Range: a string or a Cast"@en,
+        "A member of the cast."@fr,
+        "Een lid van de cast."@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:range ebucore:Cast,
+        xsd:string .
+
 ebucore:hasObjectType a rdf:Property ;
     rdfs:label "object/asset type"@en,
         "type d'objet/de bien"@fr,
@@ -973,11 +985,22 @@ ebucore:isAnnotatedMediaResource a rdf:Property ;
         "Pour lier une annotation à un MediaResource."@fr,
         "Om een annotatie te koppelen aan een mediaresource."@nl .
 
+ebucore:synopsis a rdf:Property ;
+    rdfs:label "Synopsis"@en,
+        "synopsis"@fr,
+        "Korte inhoud"@nl ;
+    rdfs:comment "To provide a summary."@en,
+        "To provide a summary."@fr,
+        "Om een samenvatting te geven."@nl ;
+    rdfs:domain ebucore:Asset ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf ebucore:description .
+
 premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n285690bf595442428d3c6b4ad985715db1 ;
+    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1002,7 +1025,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n285690bf595442428d3c6b4ad985715db17 ;
+    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1097,7 +1120,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:nedc4f5af2a154d64b7a3c8756b220888b1 ;
+    rdfs:range _:ncb24695b770246099d7f6589fbedca41b1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1487,6 +1510,17 @@ prov:wasAttributedTo a owl:ObjectProperty ;
         "Le numéro de séquence d'une page dans son ensemble plus grand (par exemple, une édition de journal, un livre, etc.)."@fr,
         "Het volgnummer van een pagina binnen zijn groter geheel (bv. een kranteneditie, een boek, etc.)."@nl .
 
+mh:tenantName a rdf:Property ;
+    rdfs:label "tenant name"@en,
+        "nom du locataire"@fr,
+        "tenant naam"@nl ;
+    rdfs:domain <http://www.w3.org/ns/org#Organization> ;
+    rdfs:isDefinedBy mh: ;
+    rdfs:range xsd:string ;
+    skos:definition "The Mediahaven tenant name of the organization."@en,
+        "Le nom du locataire Mediahaven de l'organisation."@fr,
+        "De Mediahaven tenant naam van de organisatie."@nl .
+
 <https://data.hetarchief.be/ns/object> a owl:Ontology ;
     dct:author [ schema:email "milan.valadou@meemoo.be" ;
             schema:name "Milan Valadou" ],
@@ -1618,8 +1652,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
                 "heeft root"@nl ;
             sh:path rel:hsr ;
             sh:severity sh:Violation ],
-        [ sh:class haObj:CarrierRepresentation ;
-            sh:description "The physical carrier from which this digital representation originates from."@en,
+        [ sh:description "The physical carrier from which this digital representation originates from."@en,
                 "Le porteur physique dont vient cette représentation numérique."@fr,
                 "De fysieke drager waarvan deze digitale representatie afkomstig is."@nl ;
             sh:message "rel:hss is not a haObj:CarrierRepresentation"@en,
@@ -1628,6 +1661,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
             sh:name "has Source"@en,
                 "a source"@fr,
                 "heeft bron"@nl ;
+            sh:or ( [ sh:class haObj:CarrierRepresentation ] [ sh:class haObj:DigitalRepresentation ] ) ;
             sh:path rel:hss ;
             sh:severity sh:Violation ],
         [ sh:class haObj:DigitalRepresentation ;
@@ -1687,10 +1721,8 @@ prov:wasAttributedTo a owl:ObjectProperty ;
                 "La somme de contrôle de fixité calculée du fichier."@fr,
                 "De berekende fixity checksum van het bestand."@nl ;
             sh:maxCount 1 ;
-            sh:message "premis:fixity is missing or not a premis:Fixity"@en,
-                "premis:fixity manque ou n'est pas une premis:Fixity"@fr,
-                "premis:fixity ontbreekt of is geen premis:Fixity"@nl ;
-            sh:minCount 1 ;
+            sh:message "premis:fixity is missing or not a premis:Fixity"@en ;
+            sh:minCount 0 ;
             sh:name "fixity"@en,
                 "fixity"@fr,
                 "fixity"@nl ;
@@ -1717,7 +1749,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
             sh:message "dct:format is missing or not a dct:FileFormat"@en,
                 "dct:format manque ou n'est pas une dct:FileFormat"@fr,
                 "dct:format ontbreekt of is geen dct:FileFormat"@nl ;
-            sh:minCount 1 ;
+            sh:minCount 0 ;
             sh:name "format"@en,
                 "format"@fr,
                 "formaat"@nl ;
@@ -1819,6 +1851,8 @@ prov:wasAttributedTo a owl:ObjectProperty ;
             sh:description "The value of the checksum."@en,
                 "La valeur de la somme de contrôle."@fr,
                 "De waarde van de checksum."@nl ;
+            sh:maxCount 1 ;
+            sh:message "rdf:value is missing, occurs more than once, or is not of type string"@en ;
             sh:minCount 1 ;
             sh:name "fixity checksum"@en,
                 "vérification de la fixation"@fr,
@@ -1964,9 +1998,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
             sh:description "A local identifier for the intellectual entity."@en,
                 "Un identificateur local pour l'entité intellectuelle."@fr,
                 "Een lokale identifier voor de intellectuele entiteit."@nl ;
-            sh:message "premis:identifier is missing or not a LocalIdentifier"@en,
-                "premis:identifier manque ou n'est pas un LocalIdentifier"@fr,
-                "premis:identifier ontbreekt of is geen LocalIdentifier"@nl ;
+            sh:message "premis:identifier is not a LocalIdentifier"@en ;
             sh:name "local identifier"@en,
                 "identificateur local"@fr,
                 "lokale identifier"@nl ;
@@ -1976,9 +2008,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
             sh:description "An intellectual entity that is part of this intellectual entity."@en,
                 "Une entité intellectuelle qui fait partie de cette entité intellectuelle."@fr,
                 "Een intellectuele entiteit die deel uitmaakt van deze intellectuele entiteit."@nl ;
-            sh:message "rel:hsp is not a premis:IntellectualEntity"@en,
-                "rel:hsp n'est pas de la classe premis:IntellectualEntity"@fr,
-                "rel:hsp is niet van de klasse premis:IntellectualEntity"@nl ;
+            sh:message "rel:hsp is not a premis:IntellectualEntity"@en ;
             sh:name "has Part"@en,
                 "a partie"@fr,
                 "heeft deel"@nl ;
@@ -1988,9 +2018,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
             sh:description "The intellectual entity of which this intellectual entity is part of."@en,
                 "L'entité intellectuelle dont cette entité intellectuelle fait partie de."@fr,
                 "De intellectuele entiteit waarvan deze intellectuele entiteit deel uit maakt."@nl ;
-            sh:message "rel:isp is not a premis:IntellectualEntity"@en,
-                "rel:isp n'est pas de la classe premis:IntellectualEntity"@fr,
-                "rel:isp is niet van de klasse premis:IntellectualEntity"@nl ;
+            sh:message "rel:isp is not a premis:IntellectualEntity"@en ;
             sh:name "is Part Of"@en,
                 "est partie de"@fr,
                 "is deel van"@nl ;
@@ -2000,9 +2028,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
             sh:description "A representation of the intellectual entity."@en,
                 "Une représentation de l'entité intellectuelle."@fr,
                 "Een representatie van de intellectuele entiteit."@nl ;
-            sh:message "rel:isr is missing or not a premis:Representation"@en,
-                "rel:isr manque ou n'est pas une premis:Representation"@fr,
-                "rel:isr ontbreekt of is geen premis:Representation"@nl ;
+            sh:message "rel:isr is missing or not a premis:Representation"@en ;
             sh:minCount 1 ;
             sh:name "is Represented By"@en,
                 "est représenté par"@fr,
@@ -2013,9 +2039,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
             sh:description "The archive master of the intellectual entity."@en,
                 "Le maître des archives de l'entité intellectuelle."@fr,
                 "De archiefmaster van de intellectuele entiteit."@nl ;
-            sh:message "haObj:hasMasterCopy not a haObj:DigitalRepresentation"@en,
-                "haObj:hasMasterCopy n'est pas un haObj:DigitalRepresentation"@fr,
-                "haObj:hasMasterCopy is geen haObj:DigitalRepresentation"@nl ;
+            sh:message "haObj:hasMasterCopy not a haObj:DigitalRepresentation"@en ;
             sh:name "has Master"@en,
                 "a maître"@fr,
                 "heeft master"@nl ;
@@ -2030,9 +2054,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
                 "La valeur de cet identifiant."@fr,
                 "De waarde van deze identifier."@nl ;
             sh:maxCount 1 ;
-            sh:message "rdf:value is missing or not of type string"@en,
-                "rdf:value est manquant ou n'est pas de type string"@fr,
-                "rdf:value ontbreekt of is niet van het type string"@nl ;
+            sh:message "rdf:value is missing, occurs more than once, or is not of type string"@en ;
             sh:minCount 1 ;
             sh:name "value"@en,
                 "valeur"@fr,
@@ -2102,6 +2124,48 @@ prov:wasAttributedTo a owl:ObjectProperty ;
                 "heeft fragment-ID"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path mh:fragmentIdentifier ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:description "The date on which the record was created."@en,
+                "La date à laquelle le dossier a été créé."@fr,
+                "De datum waarop het record is aangemaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:dateCreated is not of type xsd:dateTime or is missing."@en ;
+            sh:minCount 1 ;
+            sh:name "date created"@en,
+                "date de création"@fr,
+                "datum aangemaakt"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:dateCreated ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:description "The date on which the record was deleted."@en,
+                "La date à laquelle le dossier a été supprimée."@fr,
+                "De datum waarop het record is verwijderd."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:dateDeleted is not of type xsd:dateTime or occurs more than once."@en ;
+            sh:minCount 0 ;
+            sh:name "date deleted"@en,
+                "date supprimée"@fr,
+                "datum verwijderd"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:dateDeleted ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:description "The date on which the record was most recently modified."@en,
+                "La date à laquelle le dossier a été récemment modifié."@fr,
+                "De datum waarop het record het meest recent is gewijzigd."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:dateModified is not of type xsd:dateTime or is missing."@en ;
+            sh:minCount 1 ;
+            sh:name "date modified"@en,
+                "date modifiée"@fr,
+                "datum gewijzigd"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:dateModified ;
             sh:severity sh:Violation ] ;
     sh:targetClass mh:Record .
 
@@ -2109,7 +2173,7 @@ prov:wasAttributedTo a owl:ObjectProperty ;
     sh:property [ sh:description "The file path of the storage location."@en,
                 "Le chemin du fichier de l'emplacement de stockage."@fr,
                 "Het pad van de opslaglocatie."@nl ;
-            sh:minCount 1 ;
+            sh:maxCount 1 ;
             sh:name "file path"@en,
                 "chemin du fichier"@fr,
                 "opslagpad"@nl ;
@@ -2417,20 +2481,9 @@ schema:creditText a rdf:Property ;
     rdfs:domain schema:CreativeWork ;
     rdfs:isDefinedBy schema: ;
     rdfs:range xsd:string ;
-    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work.",
+    skos:definition "Text that can be used to credit person(s) and/or organization(s) associated with a published Creative Work."@en,
         "Texte qui peut être utilisé pour créditer la ou les personne(s) et/ou organisation(s) associée(s) à une oeuvre créative (CreativeWork) publiée."@fr,
         "Tekst die gebruikt kan worden om personen en/of organisaties aan te geven die met een gepubliceerd CreativeWork zijn verbonden."@nl .
-
-schema:dateCreated a rdf:Property ;
-    rdfs:label "date created"@en,
-        "date de création"@fr,
-        "creatiedatum"@nl ;
-    rdfs:domain schema:CreativeWork ;
-    rdfs:isDefinedBy schema: ;
-    owl:equivalentProperty dct:created ;
-    skos:definition "The date on which the CreativeWork was created."@en,
-        "La date à laquelle le CreativeWork a été créé."@fr,
-        "De datum waarin het CreativeWork werd gemaakt."@nl .
 
 schema:datePublished a rdf:Property ;
     rdfs:label "date published"@en,
@@ -2489,6 +2542,23 @@ schema:email a rdf:Property ;
     skos:definition "Email address."@en,
         "Adresse e-mail."@fr,
         "E-mailadres."@nl .
+
+schema:endDate a rdf:Property ;
+    rdfs:label "end date"@en,
+        "date de fin"@fr,
+        "einddatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The end date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date de fin et l'heure de l'article (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@fr,
+        "De einddatum en tijd van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
 
 schema:episodeNumber a rdf:Property ;
     rdfs:label "episode number"@en,
@@ -2714,6 +2784,23 @@ schema:spatial a rdf:Property ;
     skos:definition "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content."@en,
         "La couverture spatiale d'un travail créatif (CreativeWork) indique où se situe le contenu."@fr,
         "De geografische dekking van een CreativeWork geeft aan waar de focus van de inhoud ligt."@nl .
+
+schema:startDate a rdf:Property ;
+    rdfs:label "start date"@en,
+        "date de début"@fr,
+        "begindatum"@nl ;
+    rdfs:isDefinedBy schema: ;
+    skos:definition "The start date and time of the item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))."@en,
+        "La date et l'heure de la date de la statistique par l'item (en [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@fr,
+        "De startdatum en tijd van de status van het item (in [ISO 8601 date format](http://en.wikipedia.org/wiki/ISO_8601))"@nl ;
+    schema:domainIncludes schema:CreativeWorkSeason,
+        schema:CreativeWorkSeries,
+        schema:DatedMoneySpecification,
+        schema:Event,
+        schema:MerchantReturnPolicySeasonalOverride,
+        schema:Role ;
+    schema:rangeIncludes schema:Date,
+        schema:DateTime .
 
 schema:streetAddress a rdf:Property ;
     rdfs:label "streetAddress"@en,
@@ -3364,6 +3451,36 @@ mh:fragmentIdentifier a rdf:Property ;
     skos:example "File format XML1.1 is a more recent and thus preferable format over XML1.0; XML1.0 thus holds a lower priority than XML1.1."@en,
         "Le format de fichier XML1.1 est un format plus récent et donc préférable à XML1.0; XML1.0 a donc une priorité inférieure à XML1.1."@fr,
         "Het bestandsformaat XML1.1 is een recenter en dus verkieslijker formaat dan XML1.0; XML1.0 heeft dus een lagere prioriteit dan XML1.1."@nl .
+
+schema:dateCreated a rdf:Property ;
+    rdfs:label "date created"@en,
+        "date de création"@fr,
+        "creatiedatum"@nl ;
+    rdfs:domain schema:CreativeWork ;
+    rdfs:isDefinedBy schema: ;
+    owl:equivalentProperty dct:created ;
+    skos:definition "The date on which the CreativeWork was created."@en,
+        "La date à laquelle le CreativeWork a été créé."@fr,
+        "De datum waarin het CreativeWork werd gemaakt."@nl .
+
+schema:dateDeleted a rdf:Property ;
+    rdfs:label "date deleted" ;
+    rdfs:domain schema:DataFeedItem ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The datetime the item was removed from the DataFeed."@en,
+        "De DateTime Het item is verwijderd uit de DataFeed."@fr,
+        "L'élément DateTime a été supprimé du DataFeed."@nl .
+
+schema:dateModified a rdf:Property ;
+    rdfs:label "date modified" ;
+    rdfs:domain schema:CreativeWork,
+        schema:DataFeedItem ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:dateTime ;
+    skos:definition "The date on which the CreativeWork was most recently modified or when the item's entry was modified within a DataFeed."@en,
+        "La date à laquelle le Creativework a été récemment modifié ou lorsque l'entrée de l'élément a été modifiée dans une DataFeed."@fr,
+        "De datum waarop het creatieve werk het meest recent werd gewijzigd of wanneer de invoer van het item binnen een DataFeed werd gewijzigd."@nl .
 
 schema:duration a rdf:Property ;
     rdfs:label "duration"@en,

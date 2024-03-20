@@ -29,9 +29,9 @@ ebucore_OpenCaptions : in language : <i>xsd:string</i> [0..*]
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation : number of lost audio reels : <i>xsd:decimal</i> [0..1]
-haObj_CarrierRepresentation : number of lost image reels : <i>xsd:decimal</i> [0..1]
-haObj_CarrierRepresentation : number of reels : <i>xsd:decimal</i> [0..1]
+haObj_CarrierRepresentation : number of lost audio reels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of lost image reels : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : number of reels : <i>xsd:nonNegativeInteger</i> [0..1]
 haObj_CarrierRepresentation --> haDes_AudioReel :stored at [1..*]  > 
 haObj_CarrierRepresentation --> haDes_ImageReel :stored at [1..*]  > 
 
