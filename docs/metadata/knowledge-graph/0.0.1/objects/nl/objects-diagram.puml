@@ -41,12 +41,12 @@ premis_File --|> premis_Object #blue;line.dotted;text:blue
 premis_File : heeft (bestands)grootte : <i>xsd:nonNegativeInteger</i> [1..1]
 premis_File : heeft originele naam : <i>xsd:string</i> [0..1]
 premis_File : mime type : <i>xsd:string</i> [1..1]
-premis_File --> dct_FileFormat :formaat [1..1]  > 
+premis_File --> dct_FileFormat :formaat [0..1]  > 
 premis_File --> haObj_DigitalRepresentation :is opgenomen in [0..*]  > 
 premis_File --> haObj_FragmentRepresentation :heeft media fragment [0..*]  > 
 premis_File --> mh_Record :werd afgeleid van [1..1]  > 
 premis_File --> premis_File :documenteert [0..*]  \lvervangt [0..*]  \lvolgende bestand in volgorde [0..1]  > 
-premis_File --> premis_Fixity :fixity [1..1]  > 
+premis_File --> premis_Fixity :fixity [0..1]  > 
 premis_File --> premis_StorageLocation :opgeslagen op [1..*]  > 
 
 
@@ -56,7 +56,7 @@ premis_File --> premis_StorageLocation :opgeslagen op [1..*]  >
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --> haObj_CarrierRepresentation :heeft bron [0..*]  > 
-haObj_DigitalRepresentation --> haObj_DigitalRepresentation :volgende digitale representatie in volgorde [0..1]  > 
+haObj_DigitalRepresentation --> haObj_DigitalRepresentation :heeft bron [0..*]  \lvolgende digitale representatie in volgorde [0..1]  > 
 haObj_DigitalRepresentation --> mh_Record :werd afgeleid van [1..1]  > 
 haObj_DigitalRepresentation --> premis_File :bevat [1..*]  \lheeft root [1..*]  > 
 haObj_DigitalRepresentation --> premis_IntellectualEntity :is master van [0..1]  \lis mezzanine van [0..1]  \lis toegangskopie van [0..1]  \lrepresenteert [1..1]  > 
@@ -68,7 +68,7 @@ haObj_CarrierRepresentation --> mh_Record :werd afgeleid van [1..1]  >
 
 
 premis_Fixity : checksum maker : <i>xsd:string</i> [0..*]
-premis_Fixity : fixity checksum : <i>xsd:string</i> [1..*]
+premis_Fixity : fixity checksum : <i>xsd:string</i> [1..1]
 
 
 
@@ -98,8 +98,12 @@ haObj_LocalIdentifier : waarde : <i>xsd:string</i> [1..1]
 
 
 
+mh_Record : datum aangemaakt : <i>xsd:dateTime</i> [1..1]
+mh_Record : datum gewijzigd : <i>xsd:dateTime</i> [1..1]
+mh_Record : datum verwijderd : <i>xsd:dateTime</i> [0..1]
 mh_Record : heeft fragment-ID : <i>xsd:string</i> [1..1]
 mh_Record : heeft record-ID : <i>xsd:string</i> [1..1]
+
 
 
 premis_Object --|> prov_Entity #blue;line.dotted;text:blue
@@ -109,7 +113,7 @@ premis_Object --> premis_Object :relatie [0..*]  >
 
 
 
-premis_StorageLocation : opslagpad : <i>xsd:string</i> [1..*]
+premis_StorageLocation : opslagpad : <i>xsd:string</i> [0..1]
 premis_StorageLocation --> premis_StorageMedium :opslagmedium [0..*]  > 
 
 
