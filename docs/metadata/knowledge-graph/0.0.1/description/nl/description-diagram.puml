@@ -62,8 +62,8 @@ ebucore_MediaFragment --> premis_File :is media fragment van [0..*]  >
 schema_Episode --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_Episode : identifier : <i>xsd:string</i> [1..1]
-schema_Episode : naam : <i>rdf:langString</i> [1..1]
-schema_Episode : omschrijving : <i>rdf:langString</i> [0..1]
+schema_Episode : naam : <i>rdf:langString</i> [1..*]
+schema_Episode : omschrijving : <i>rdf:langString</i> [0..*]
 schema_Episode --> premis_IntellectualEntity :is deel van [0..*]  > 
 
 
@@ -79,8 +79,8 @@ ebucore_Annotation --> skos_Concept :type annotatie [0..1]  >
 
 schema_ArchiveComponent --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_ArchiveComponent : naam : <i>rdf:langString</i> [1..1]
-schema_ArchiveComponent : omschrijving : <i>rdf:langString</i> [0..1]
+schema_ArchiveComponent : naam : <i>rdf:langString</i> [1..*]
+schema_ArchiveComponent : omschrijving : <i>rdf:langString</i> [0..*]
 schema_ArchiveComponent --> premis_IntellectualEntity :is deel van [0..*]  > 
 
 schema_ArchiveComponent --> schema_ArchiveComponent :is deel van [0..*]  \lis een deel van [0..*]  > 
@@ -89,10 +89,10 @@ premis_File --|> premis_Object #blue;line.dotted;text:blue
 
 premis_File : aangemaakt op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
 premis_File : duur : <i>xsd:duration</i> [0..1]
-premis_File : identifier : <i>xsd:string</i> [1..1]
+premis_File : identifier : <i>xsd:string</i> [0..1]
 premis_File : miniatuurafbeelding : <i>IRI</i> [0..1]
-premis_File : naam : <i>rdf:langString</i> [1..1]
-premis_File : omschrijving : <i>rdf:langString</i> [0..1]
+premis_File : naam : <i>rdf:langString</i> [1..*]
+premis_File : omschrijving : <i>rdf:langString</i> [0..*]
 
 premis_File --> ebucore_MediaFragment :heeft media fragment [0..*]  > 
 
@@ -105,9 +105,10 @@ premis_File --> ebucore_MediaFragment :heeft media fragment [0..*]  >
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
 
 schema_Collection : aantal items : <i>xsd:integer</i> [0..*]
-schema_Collection : identifier : <i>xsd:string</i> [1..1]
-schema_Collection : naam : <i>rdf:langString</i> [1..1]
-schema_Collection : omschrijving : <i>rdf:langString</i> [0..1]
+schema_Collection : identifier : <i>xsd:string</i> [0..1]
+schema_Collection : naam : <i>rdf:langString</i> [1..*]
+schema_Collection : omschrijving : <i>rdf:langString</i> [0..*]
+schema_Collection --> haObj_PhysicalCarrier :is deel van [0..*]  > 
 schema_Collection --> premis_IntellectualEntity :is deel van [0..*]  > 
 
 
@@ -120,10 +121,10 @@ haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [1..1]
+haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : in taal : <i>xsd:string</i> [0..*]
-haObj_DigitalRepresentation : naam : <i>rdf:langString</i> [1..1]
-haObj_DigitalRepresentation : omschrijving : <i>rdf:langString</i> [0..1]
+haObj_DigitalRepresentation : naam : <i>rdf:langString</i> [1..*]
+haObj_DigitalRepresentation : omschrijving : <i>rdf:langString</i> [0..*]
 haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
 
@@ -131,15 +132,15 @@ haObj_DigitalRepresentation --> schema_Role :maker [0..*]  >
 
 
 
-schema_Thing : naam : <i>rdf:langString</i> [1..1]
-schema_Thing : omschrijving : <i>rdf:langString</i> [0..1]
+schema_Thing : naam : <i>rdf:langString</i> [1..*]
+schema_Thing : omschrijving : <i>rdf:langString</i> [0..*]
 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation : identifier : <i>xsd:string</i> [1..1]
-haObj_CarrierRepresentation : naam : <i>rdf:langString</i> [1..1]
-haObj_CarrierRepresentation : omschrijving : <i>rdf:langString</i> [0..1]
+haObj_CarrierRepresentation : identifier : <i>xsd:string</i> [0..1]
+haObj_CarrierRepresentation : naam : <i>rdf:langString</i> [1..*]
+haObj_CarrierRepresentation : omschrijving : <i>rdf:langString</i> [0..*]
 
 
 
@@ -148,11 +149,11 @@ haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
 haObj_PhysicalCarrier : identifier : <i>xsd:string</i> [1..1]
 haObj_PhysicalCarrier : materiaal : <i>xsd:string</i> [0..1]
 haObj_PhysicalCarrier : materiële omvang : <i>xsd:string</i> [0..1]
-haObj_PhysicalCarrier : naam : <i>rdf:langString</i> [1..1]
-haObj_PhysicalCarrier : omschrijving : <i>rdf:langString</i> [0..1]
+haObj_PhysicalCarrier : naam : <i>rdf:langString</i> [1..*]
+haObj_PhysicalCarrier : omschrijving : <i>rdf:langString</i> [0..*]
 
 haObj_PhysicalCarrier --> schema_Brand :merk [0..1]  > 
-haObj_PhysicalCarrier --> schema_QuantitativeValue :breedte [0..*]  \ldiepte [0..*]  \lhoogte [0..*]  > 
+haObj_PhysicalCarrier --> schema_QuantitativeValue :breedte [0..1]  \ldiepte [0..1]  \lhoogte [0..1]  > 
 haObj_PhysicalCarrier --> skos_Concept :preservatieprobleem [0..*]  > 
 
 
@@ -160,25 +161,28 @@ premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
 premis_IntellectualEntity : aangemaakt op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [1..1]
 premis_IntellectualEntity : alternatieve naam : <i>rdf:langString</i> [0..*]
-premis_IntellectualEntity : auteursrechtenmelding : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : auteursrechtenmelding : <i>xsd:string</i> [0..*]
 premis_IntellectualEntity : beschikbaar op : <i>xsd:dateTime</i> [0..*]
+premis_IntellectualEntity : castleden : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : copyright jaar : <i>xsd:integer</i> [0..*]
 premis_IntellectualEntity : credittekst : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : formaat : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : genre : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : genre : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : gepubliceerd op : <i>edtf:EDTF-level0 | edtf:EDTF-level1 | edtf:EDTF-level2</i> [0..1]
 premis_IntellectualEntity : identifier : <i>xsd:string</i> [1..1]
-premis_IntellectualEntity : in taal : <i>xsd:string</i> [1..*]
+premis_IntellectualEntity : in taal : <i>xsd:string</i> [0..*]
+premis_IntellectualEntity : korte inhoud : <i>xsd:string</i> [0..1]
+premis_IntellectualEntity : korte inhoud : <i>xsd:string</i> [0..1]
 premis_IntellectualEntity : kunst medium : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : kunstvorm : <i>rdf:langString</i> [0..*]
-premis_IntellectualEntity : medium : <i>xsd:string</i> [1..*]
-premis_IntellectualEntity : naam : <i>rdf:langString</i> [1..1]
-premis_IntellectualEntity : omschrijving : <i>rdf:langString</i> [0..1]
+premis_IntellectualEntity : naam : <i>rdf:langString</i> [1..*]
+premis_IntellectualEntity : omschrijving : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : over : <i>IRI</i> [0..*]
 premis_IntellectualEntity : rechteninformatie : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : samenvatting : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : temporeel : <i>rdf:langString</i> [0..*]
 premis_IntellectualEntity : trefwoorden : <i>rdf:langString</i> [0..*]
+premis_IntellectualEntity : type object : <i>xsd:string</i> [0..1]
 
 
 
@@ -192,9 +196,9 @@ premis_IntellectualEntity --> schema_CreativeWorkSeries :is een deel van [0..*] 
 premis_IntellectualEntity --> schema_Episode :is een deel van [0..*]  > 
 premis_IntellectualEntity --> schema_Person :houder van auteursrecht [0..*]  > 
 premis_IntellectualEntity --> schema_Place :spatiaal [0..*]  > 
-premis_IntellectualEntity --> schema_QuantitativeValue :breedte [0..*]  \ldiepte [0..*]  \lhoogte [0..*]  > 
+premis_IntellectualEntity --> schema_QuantitativeValue :breedte [0..1]  \ldiepte [0..1]  \lhoogte [0..1]  > 
 premis_IntellectualEntity --> schema_Role :bijdrager [0..*]  \lmaker [0..*]  \luitgever [0..*]  > 
-premis_IntellectualEntity --> schema_Thing :vermeldt [0..*]  > 
+premis_IntellectualEntity --> schema_Thing :houder van auteursrecht [0..*]  \lvermeldt [0..*]  > 
 premis_IntellectualEntity --> skos_Concept :licentie [0..*]  > 
 
 
@@ -202,9 +206,9 @@ premis_IntellectualEntity --> skos_Concept :licentie [0..*]  >
 
 schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
 
-schema_QuantitativeValue : eenheidcode : <i>xsd:string</i> [0..*]
-schema_QuantitativeValue : eenheidstekst : <i>xsd:string</i> [0..*]
-schema_QuantitativeValue : waarde : <i>xsd:float</i> [0..*]
+schema_QuantitativeValue : eenheidcode : <i>xsd:string</i> [1..1]
+schema_QuantitativeValue : eenheidstekst : <i>xsd:string</i> [0..1]
+schema_QuantitativeValue : waarde : <i>xsd:float</i> [1..1]
 
 
 
@@ -215,8 +219,8 @@ schema_Person --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_Place --|> schema_Thing #blue;line.dotted;text:blue
 
-schema_Place : naam : <i>rdf:langString</i> [1..1]
-schema_Place : omschrijving : <i>rdf:langString</i> [0..1]
+schema_Place : naam : <i>rdf:langString</i> [1..*]
+schema_Place : omschrijving : <i>rdf:langString</i> [0..*]
 
 
 schema_Role --|> schema_Thing #blue;line.dotted;text:blue
@@ -230,9 +234,9 @@ schema_Role --> skos_Concept :rolenaam [1..*]  >
 
 schema_CreativeWorkSeries --|> schema_CreativeWork #blue;line.dotted;text:blue
 
-schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [1..1]
-schema_CreativeWorkSeries : naam : <i>rdf:langString</i> [1..1]
-schema_CreativeWorkSeries : omschrijving : <i>rdf:langString</i> [0..1]
+schema_CreativeWorkSeries : identifier : <i>xsd:string</i> [0..1]
+schema_CreativeWorkSeries : naam : <i>rdf:langString</i> [1..*]
+schema_CreativeWorkSeries : omschrijving : <i>rdf:langString</i> [0..*]
 schema_CreativeWorkSeries : seizoensnummer : <i>xsd:integer</i> [0..*]
 schema_CreativeWorkSeries --> premis_IntellectualEntity :is deel van [0..*]  > 
 
