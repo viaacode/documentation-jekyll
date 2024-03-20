@@ -33,9 +33,9 @@ haDes_ImageReel --> skos_Concept :type kleuring [0..1]  >
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_CarrierRepresentation : aantal (film)rollen/-spoelen : <i>xsd:decimal</i> [0..1]
-haObj_CarrierRepresentation : aantal verloren audiorollen/-spoelen : <i>xsd:decimal</i> [0..1]
-haObj_CarrierRepresentation : aantal verloren beeldrollen/-spoelen : <i>xsd:decimal</i> [0..1]
+haObj_CarrierRepresentation : aantal (film)rollen/-spoelen : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : aantal verloren audiorollen/-spoelen : <i>xsd:nonNegativeInteger</i> [0..1]
+haObj_CarrierRepresentation : aantal verloren beeldrollen/-spoelen : <i>xsd:nonNegativeInteger</i> [0..1]
 haObj_CarrierRepresentation --> haDes_AudioReel :opgeslagen op [1..*]  > 
 haObj_CarrierRepresentation --> haDes_ImageReel :opgeslagen op [1..*]  > 
 
