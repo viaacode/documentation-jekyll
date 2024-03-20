@@ -89,7 +89,7 @@ A content partner is an organization that has signed a collaboration agreement w
 | <a id='org%3Aidentifier'></a>has identifier <br> <small>[(org:identifier)](http://www.w3.org/ns/org#identifier)</small> | Indicates the unique identifier of the content partner. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='haOrg%3ArequestForm'></a>request form <br> <small>[(haOrg:requestForm)](https://data.hetarchief.be/ns/organization/requestForm)</small> | A link to a form with which a user can request content from the content partner. | `0..*` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 
-_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3Alabel)
+_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3AtenantName)
 
 ## <a id="schema%3ACountry"></a>Country <small>[(schema:Country)](https://schema.org/Country)</small>
 
@@ -122,7 +122,7 @@ An educational partner is an organization that provides content on the 'Archief 
 | <a id='haOrg%3AhasAccountManager'></a>has account manager <br> <small>[(haOrg:hasAccountManager)](https://data.hetarchief.be/ns/organization/hasAccountManager)</small> | The account manager of the educational partner. | `1..1` | [Person](#schema%3APerson)  |
 | <a id='org%3Aidentifier'></a>has identifier <br> <small>[(org:identifier)](http://www.w3.org/ns/org#identifier)</small> | Indicates the unique identifier of the educational partner. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 
-_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3Alabel)
+_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3AtenantName)
 
 ## <a id="haOrg%3ALogo"></a>Logo <small>[(haOrg:Logo)](https://data.hetarchief.be/ns/organization/Logo)</small>
 
@@ -160,7 +160,7 @@ Represents a collection of people organized together into a community or other s
 | <a id='schema%3Alogo'></a>main logo <br> <small>[(schema:logo)](https://schema.org/logo)</small> | The main logo of the organization. | `0..1` | [Logo](#haOrg%3ALogo)  |
 | <a id='skos%3AprefLabel'></a>preferred label <br> <small>[(skos:prefLabel)](http://www.w3.org/2004/02/skos/core#prefLabel)</small> | The preferred name/label of the organization. | `1..*`[^1] | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='haOrg%3Asector'></a>sector <br> <small>[(haOrg:sector)](https://data.hetarchief.be/ns/organization/sector)</small> | The sector the organisation is active in. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
-| <a id='mh%3Alabel'></a>tenant name <br> <small>[(mh:label)](https://data.hetarchief.be/ns/mediahaven/label)</small> | The Mediahaven tenant name of the organization. | `0..*` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
+| <a id='mh%3AtenantName'></a>tenant name <br> <small>[(mh:tenantName)](https://data.hetarchief.be/ns/mediahaven/tenantName)</small> | The Mediahaven tenant name of the organization. | `0..*` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 
 ## <a id="haOrg%3AOrganizationType"></a>Organization type <small>[(haOrg:OrganizationType)](https://data.hetarchief.be/ns/organization/OrganizationType)</small>
 
@@ -185,7 +185,7 @@ An Organization such as a University Support Unit which is part of some larger F
 | :------ | :---------- | :---------- | :------- |
 | <a id='org%3AunitOf'></a>unit of <br> <small>[(org:unitOf)](http://www.w3.org/ns/org#unitOf)</small> | The organization of which the organizational unit is part. | `1..*` | [Organization](#org%3AOrganization)  |
 
-_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3Alabel)
+_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3AtenantName)
 
 ## <a id="schema%3APerson"></a>Person <small>[(schema:Person)](https://schema.org/Person)</small>
 
@@ -249,7 +249,7 @@ An organization that collaborates with meemoo on projects formalized in an agree
 | :------ | :---------- | :---------- | :------- |
 | <a id='org%3Aidentifier'></a>has identifier <br> <small>[(org:identifier)](http://www.w3.org/ns/org#identifier)</small> | Indicates the unique identifier of the project partner. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 
-_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3Alabel)
+_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3AtenantName)
 
 ## <a id="org%3ARole"></a>Role <small>[(org:Role)](http://www.w3.org/ns/org#Role)</small>
 
@@ -277,7 +277,7 @@ An organization that consumes services from meemoo, with a contractual relations
 | :------ | :---------- | :---------- | :------- |
 | <a id='org%3Aidentifier'></a>has identifier <br> <small>[(org:identifier)](http://www.w3.org/ns/org#identifier)</small> | Indicates the unique identifier of the service consumer. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 
-_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3Alabel)
+_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3AtenantName)
 
 ## <a id="haOrg%3AServiceProvider"></a>Service provider <small>[(haOrg:ServiceProvider)](https://data.hetarchief.be/ns/organization/ServiceProvider)</small>
 
@@ -291,7 +291,7 @@ An organization that provides services or goods to meemoo, for example related t
 | :------ | :---------- | :---------- | :------- |
 | <a id='org%3Aidentifier'></a>has identifier <br> <small>[(org:identifier)](http://www.w3.org/ns/org#identifier)</small> | Indicates the unique identifier of the service provider. | `1..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 
-_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3Alabel)
+_Properties from [Organization](#org%3AOrganization):_  [alternative label](#skos%3AaltLabel),  [classification](#org%3Aclassification),  [contact point](#schema%3AcontactPoint),  [description](#dct%3Adescription),  [has Unit](#org%3AhasUnit),  [has account manager](#haOrg%3AhasAccountManager),  [has identifier](#org%3Aidentifier),  [has post](#org%3AhasPost),  [has primary site](#org%3AhasPrimarySite),  [has site](#org%3AhasSite),  [homepage](#foaf%3Ahomepage),  [logo](#haOrg%3AhasLogo),  [main logo](#schema%3Alogo),  [preferred label](#skos%3AprefLabel),  [sector](#haOrg%3Asector),  [tenant name](#mh%3AtenantName)
 
 ## <a id="org%3ASite"></a>Site <small>[(org:Site)](http://www.w3.org/ns/org#Site)</small>
 
