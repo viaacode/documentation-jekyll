@@ -1,0 +1,74 @@
+<premis:premis version="2.3" xmlns:premis="info:lc/xmlns/premis-v2">
+    <premis:event xmlns:premis="info:lc/xmlns/premis-v2" xmlns:mets="http://www.loc.gov/METS/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:revtmd="http://nwtssite.nwts.nara/schema/" xmlns:viaa="http://viaa.be"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <premis:eventIdentifier>
+            <premis:eventIdentifierType>SP Event</premis:eventIdentifierType>
+            <premis:eventIdentifierValue>INSPECTION-EVENT</premis:eventIdentifierValue>
+        </premis:eventIdentifier>
+        <premis:eventType>INSPECTION</premis:eventType>
+        <premis:eventDateTime>2022-03-25</premis:eventDateTime>
+        <premis:eventDetail>CEX / COLOR / MUTE</premis:eventDetail>
+        <premis:eventOutcomeInformation>
+            <premis:eventOutcome>y</premis:eventOutcome>
+        </premis:eventOutcomeInformation>
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>SP Agent</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>David</premis:linkingAgentIdentifierValue>
+        </premis:linkingAgentIdentifier>
+        <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>Carrier PID</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>n58cg2782p</premis:linkingObjectIdentifierValue>
+        </premis:linkingObjectIdentifier>
+    </premis:event>
+    <premis:event xmlns:premis="info:lc/xmlns/premis-v2" xmlns:mets="http://www.loc.gov/METS/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:revtmd="http://nwtssite.nwts.nara/schema/" xmlns:viaa="http://viaa.be"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <premis:eventIdentifier>
+            <premis:eventIdentifierType>SP Event</premis:eventIdentifierType>
+            <premis:eventIdentifierValue>DIGITIZATION-EVENT</premis:eventIdentifierValue>
+        </premis:eventIdentifier>
+        <premis:eventType>DIGITIZATION</premis:eventType>
+        <premis:eventDateTime>2022-04-26</premis:eventDateTime>
+        <premis:eventDetail>Abrasion marks, many scratches, many inlaid dust/dirt, grain, slight
+            instability, blur, under/overexposure related to camera capture.</premis:eventDetail>
+        <premis:eventOutcomeInformation>
+            <premis:eventOutcome>y</premis:eventOutcome>
+        </premis:eventOutcomeInformation>
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>SP Agent</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>David / ScanStation</premis:linkingAgentIdentifierValue>
+        </premis:linkingAgentIdentifier>
+        <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>Carrier PID</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>n58cg2782p_001_zip.zip</premis:linkingObjectIdentifierValue>
+        </premis:linkingObjectIdentifier>
+    </premis:event>
+    <premis:event xmlns:premis="info:lc/xmlns/premis-v2" xmlns:mets="http://www.loc.gov/METS/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:revtmd="http://nwtssite.nwts.nara/schema/" xmlns:viaa="http://viaa.be"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <premis:eventIdentifier>
+            <premis:eventIdentifierType>SP Event</premis:eventIdentifierType>
+            <premis:eventIdentifierValue>EDITING-EVENT</premis:eventIdentifierValue>
+        </premis:eventIdentifier>
+        <premis:eventType>EDITING</premis:eventType>
+        <premis:eventDateTime>2022-04-28</premis:eventDateTime>
+        <premis:eventDetail>Abrasion marks, scratches, inlaid dust/dirt, important grain, slight
+            instability, under/overexposure related to camera capture, slight color fading/shift on
+            some scenes.</premis:eventDetail>
+        <premis:eventOutcomeInformation>
+            <premis:eventOutcome>y</premis:eventOutcome>
+        </premis:eventOutcomeInformation>
+        <premis:linkingAgentIdentifier>
+            <premis:linkingAgentIdentifierType>SP Agent</premis:linkingAgentIdentifierType>
+            <premis:linkingAgentIdentifierValue>JulienS / Nucoda</premis:linkingAgentIdentifierValue>
+        </premis:linkingAgentIdentifier>
+        <premis:linkingObjectIdentifier>
+            <premis:linkingObjectIdentifierType>Carrier PID</premis:linkingObjectIdentifierType>
+            <premis:linkingObjectIdentifierValue>n58cg2782p_mezzanine.mov</premis:linkingObjectIdentifierValue>
+        </premis:linkingObjectIdentifier>
+    </premis:event>
+</premis:premis>
