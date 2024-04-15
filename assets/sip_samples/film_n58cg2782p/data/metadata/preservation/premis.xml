@@ -92,18 +92,68 @@
       <premis:objectIdentifierValue>uuid-e2f092de-f800-486c-a291-3160ce740544</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
-    <premis:objectIdentifier>
-      <premis:objectIdentifierType>batch_name</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>FLMB20</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
-    <premis:objectIdentifier>
-      <premis:objectIdentifierType>batch_id</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>FLMB20</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
-    <premis:objectIdentifier>
-      <premis:objectIdentifierType>barcode_image_reels</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>AFLM_FEL_001392</premis:objectIdentifierValue>
-    </premis:objectIdentifier>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>batch_name</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>FLMB20</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>batch_id</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>FLMB20</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>barcode_image_reels</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>AFLM_FEL_001392</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>material_type</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>Original positive</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>is_the_sound_sync</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>projection_speed</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>is_there_a_sync_point</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesExtension xmlns:schema="https://schema.org/"
+        xmlns:haDes="https://data.hetarchief.be/ns/descriptive/"
+        xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#">
+        <!-- ebucore properties -->
+        <ebucore:dataFormat>
+          <!-- in case there is captioning, the boolean 'closed' attribute can be used to denote
+          whether the captioning is closed (e.g. optional) or open (e.g. embedded, non-optional) -->
+          <ebucore:captioningFormat captioningPresenceFlag="false" />
+        </ebucore:dataFormat>
+        <ebucore:videoFormat>
+          <ebucore:aspectRatio>
+            <ebucore:factorNumerator>1</ebucore:factorNumerator>
+            <ebucore:factorDenominator>37</ebucore:factorDenominator>
+          </ebucore:aspectRatio>
+        </ebucore:videoFormat>
+        <!-- schema properties -->
+        <schema:material>acetate</schema:material>
+        <schema:size>
+          <schema:value>135</schema:value>
+          <schema:unitText>m</schema:unitText>
+          <schema:unitCode>MTR</schema:unitCode>
+        </schema:size>
+        <schema:duration>0:32:48</schema:duration>
+        <!-- haObj properties -->
+        <haObj:preservationProblem>Base Scratching remarks: Light scratches, lines and stripes. Some
+          cables. vinegar date: 2021-06-30 pH value:PH 4.8</haObj:preservationProblem>
+        <!-- haDes properties -->
+        <haDes:numberOfReels>1</haDes:numberOfReels>
+        <haDes:numberOfMissingAudioReels>0</haDes:numberOfMissingAudioReels>
+        <haDes:numberOfMissingImageReels>0</haDes:numberOfMissingImageReels>
+        <haDes:coloringType valueUri="https://data.hetarchief.be/id/color-type/Color">Color</haDes:coloringType>
+      </premis:significantPropertiesExtension>
+    </premis:significantProperties>
 
     <premis:storage>
       <!-- #? is there a way to refer to our carrier thesaurus in this tag? It does not seem to
@@ -171,6 +221,7 @@
         <schema:value>film in good state</schema:value>
       </premis:eventDetailExtension>
     </premis:eventDetailInformation>
+
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
     </premis:eventOutcomeInformation>
@@ -400,9 +451,10 @@
       2022-05-07T00:00:00
     </premis:eventDateTime>
     <premis:eventDetailInformation>
-      <!-- #? Or would it be better to define this with a linkingObjectIdentifier and an outcome
-      role below? -->
-      <premis:eventDetail>lto_id: I61842L6</premis:eventDetail>
+      <premis:eventDetailExtension xmlns:schema="https://schema.org">
+        <schema:name>lto_id</schema:name>
+        <schema:value>I61842L6</schema:value>
+      </premis:eventDetailExtension>
     </premis:eventDetailInformation>
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
