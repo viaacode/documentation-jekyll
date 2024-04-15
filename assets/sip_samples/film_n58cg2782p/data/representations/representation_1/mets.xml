@@ -10,7 +10,7 @@
                         https://DILCIS.eu/XML/METS/SIPExtensionMETS https://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
 
     <!-- Creation date of the representation_1 METS file -->
-    <metsHdr CREATEDATE="2023-11-16T10:02:37.009+02:00" />
+    <metsHdr CREATEDATE="2023-11-16T10:02:37.009+02:00" csip:OAISPACKAGETYPE="SIP"/>
 
     <amdSec>
         <digiprovMD ID="uuid-efe21062-8ebd-42f5-94a7-67cb3fe71f40">
