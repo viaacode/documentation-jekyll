@@ -158,27 +158,18 @@
     (representation)? -->
     <premis:eventDetailInformation>
       <premis:eventDetail>Base Scratching remarks: Light scratches, lines and stripes. Some cables. vinegar date: 2021-06-30 pH value:PH 4.8</premis:eventDetail>
-    </premis:eventDetailInformation>
-    <!-- #? does this belong here, or with the descriptive metadata about the carrier
-    (representation)? -->
-    <premis:eventDetailInformation>
-      <premis:eventDetail>
-        estimate_preparation_time_for_digitisation: 1:30:00
-      </premis:eventDetail>
-    </premis:eventDetailInformation>
-    <!-- #? does this belong here, or with the descriptive metadata about the carrier
-    (representation)? -->
-    <premis:eventDetailInformation>
-      <premis:eventDetail>
-        estimate_manual_cleaning_time: 0:00:00
-      </premis:eventDetail>
-    </premis:eventDetailInformation>
-    <!-- #? does this belong here, or with the descriptive metadata about the carrier
-    (representation)? -->
-    <premis:eventDetailInformation>
-      <premis:eventDetail>
-        physical_state_film: film in good state
-      </premis:eventDetail>
+      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
+        <schema:name>estimate_preparation_time_for_digitisation</schema:name>
+        <schema:value>1:30:00</schema:value>
+      </premis:eventDetailExtension>
+      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
+        <schema:name>estimate_manual_cleaning_time</schema:name>
+        <schema:value>0:00:00</schema:value>
+      </premis:eventDetailExtension>
+      <premis:eventDetailExtension xmlns:schema="https://schema.org/">
+        <schema:name>physical_state_film</schema:name>
+        <schema:value>film in good state</schema:value>
+      </premis:eventDetailExtension>
     </premis:eventDetailInformation>
     <premis:eventOutcomeInformation>
       <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
@@ -441,7 +432,7 @@
       <premis:agentIdentifierValue>OR-jw86m54</premis:agentIdentifierValue>
     </premis:agentIdentifier>
     <premis:agentName>FelixArchief</premis:agentName>
-    <premis:agentType>CP agent</premis:agentType>
+    <premis:agentType>CP-AGENT</premis:agentType>
   </premis:agent>
 
   <!-- reference to the service provider -->
@@ -451,7 +442,7 @@
       <premis:agentIdentifierValue>OR-183420s</premis:agentIdentifierValue>
     </premis:agentIdentifier>
     <premis:agentName>Vectracom</premis:agentName>
-    <premis:agentType>SP Agent</premis:agentType>
+    <premis:agentType>SP-AGENT</premis:agentType>
   </premis:agent>
 
 </premis:premis>
