@@ -121,38 +121,49 @@
       <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
     </premis:significantProperties>
     <premis:significantProperties>
-      <premis:significantPropertiesExtension xmlns:schema="https://schema.org/"
-        xmlns:haDes="https://data.hetarchief.be/ns/descriptive/"
-        xmlns:ebucore="http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#">
-        <!-- ebucore properties -->
-        <ebucore:dataFormat>
-          <!-- in case there is captioning, the boolean 'closed' attribute can be used to denote
-          whether the captioning is closed (e.g. optional) or open (e.g. embedded, non-optional) -->
-          <ebucore:captioningFormat captioningPresenceFlag="false" />
-        </ebucore:dataFormat>
-        <ebucore:videoFormat>
-          <ebucore:aspectRatio>
-            <ebucore:factorNumerator>1</ebucore:factorNumerator>
-            <ebucore:factorDenominator>37</ebucore:factorDenominator>
-          </ebucore:aspectRatio>
-        </ebucore:videoFormat>
-        <!-- schema properties -->
-        <schema:material>acetate</schema:material>
-        <schema:size>
-          <schema:value>135</schema:value>
-          <schema:unitText>m</schema:unitText>
-          <schema:unitCode>MTR</schema:unitCode>
-        </schema:size>
-        <schema:duration>0:32:48</schema:duration>
-        <!-- haObj properties -->
-        <haObj:preservationProblem>Base Scratching remarks: Light scratches, lines and stripes. Some
-          cables. vinegar date: 2021-06-30 pH value:PH 4.8</haObj:preservationProblem>
-        <!-- haDes properties -->
-        <haDes:numberOfReels>1</haDes:numberOfReels>
-        <haDes:numberOfMissingAudioReels>0</haDes:numberOfMissingAudioReels>
-        <haDes:numberOfMissingImageReels>0</haDes:numberOfMissingImageReels>
-        <haDes:coloringType valueUri="https://data.hetarchief.be/id/color-type/Color">Color</haDes:coloringType>
-      </premis:significantPropertiesExtension>
+      <premis:significantPropertiesType>value_cp</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>3 somewhat interesting, LR digitisation</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>image_sound</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>image</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>aspect_ratio</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>1:37</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>num_reels</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>1</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>projection_speed</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>18 f/s</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>preservation_problems</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>Base Scratching remarks: Light scratches, lines and
+        stripes. Some cables.\nvinegar date: 2021-06-30 pH value:PH 4.8</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>film_base</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>acetate</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>duration_viaa</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>0:32:48</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>subtitles</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>no</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>length</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>135 Meter</premis:significantPropertiesValue>
+    </premis:significantProperties>
+    <premis:significantProperties>
+      <premis:significantPropertiesType>color_or_bw</premis:significantPropertiesType>
+      <premis:significantPropertiesValue>Color</premis:significantPropertiesValue>
     </premis:significantProperties>
 
     <premis:storage>
