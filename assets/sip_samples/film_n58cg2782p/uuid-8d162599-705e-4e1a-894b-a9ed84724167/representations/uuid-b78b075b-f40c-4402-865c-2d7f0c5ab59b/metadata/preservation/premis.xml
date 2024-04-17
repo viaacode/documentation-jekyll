@@ -43,13 +43,13 @@
         <premis:messageDigestAlgorithm authority="cryptographicHashFunctions" authorityURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions" valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
                 MD5
         </premis:messageDigestAlgorithm>
-        <premis:messageDigest>8390f7bc2ad023ed50993befb55326a3</premis:messageDigest>
+        <premis:messageDigest>a7cf1ae7933a08462f3dc17b08e24eee</premis:messageDigest>
       </premis:fixity>
-      <premis:size>1662976</premis:size>
+      <premis:size>3153920</premis:size>
       <premis:format>
         <premis:formatRegistry>
           <premis:formatRegistryName>PRONOM</premis:formatRegistryName>
-          <premis:formatRegistryKey>fmt/193</premis:formatRegistryKey>
+          <premis:formatRegistryKey>fmt/541</premis:formatRegistryKey>
           <premis:formatRegistryRole authority="formatRegistryRole" authorityURI="http://id.loc.gov/vocabulary/preservation/formatRegistryRole" valueURI="http://id.loc.gov/vocabulary/preservation/formatRegistryRole/spe">specification</premis:formatRegistryRole>
         </premis:formatRegistry>
       </premis:format>

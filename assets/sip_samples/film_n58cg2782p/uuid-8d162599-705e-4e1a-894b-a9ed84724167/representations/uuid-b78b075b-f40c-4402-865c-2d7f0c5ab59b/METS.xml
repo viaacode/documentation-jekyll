@@ -18,8 +18,8 @@
             <!-- Creation date of the premis.xml file -->
             <!-- Checksum of the premis.xml file -->
             <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple"
-                xlink:href="./metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="4892"
-                CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="f35b875aae390b0603da8f541d96be10"
+                xlink:href="metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="4892"
+                CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="c8d49c85ea42e3a5168e006df4f7a6ee"
                 CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
@@ -29,20 +29,20 @@
         <!-- Creation dates of the files in data directory -->
         <!-- Checksums of the files in data directory -->
         <fileGrp USE="data" ID="uuid-9efb44ee-91e9-45a1-baef-78cc169848ae">
-            <file ID="uuid-c1e040ec-8479-44b3-b2c6-b7c7cbeda543" MIMETYPE="image/x-dpx" SIZE="1662976"
-                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="8390f7bc2ad023ed50993befb55326a3"
+            <file ID="uuid-c1e040ec-8479-44b3-b2c6-b7c7cbeda543" MIMETYPE="image/x-dpx" SIZE="3153920"
+                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="a7cf1ae7933a08462f3dc17b08e24eee"
                 CHECKSUMTYPE="MD5">
-                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="./data/dummy_n58cg2782p_001_000000.dpx" />
+                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/dummy_n58cg2782p_001_000000.dpx" />
             </file>
         </fileGrp>
     </fileSec>
 
     <structMap ID="uuid-3c4c435b-f6b7-414b-83ea-9310e7dbc0cc" TYPE="PHYSICAL" LABEL="CSIP">
-        <div ID="uuid-afc45f6f-a2d2-4dc1-8704-071c9b8cbad0" LABEL="representation_3">
+        <div ID="uuid-afc45f6f-a2d2-4dc1-8704-071c9b8cbad0" LABEL="uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b">
             <!-- ADMID points to mets/amdSec/digiprovMD/@ID -->
             <div ID="uuid-f9f9826d-4143-494e-9c91-42e80d08814b" LABEL="Metadata"
                 ADMID="uuid-8acb1001-716f-4180-ae59-93bb26dd0723" />
-            <div ID="uuid-b79ec143-9c47-4e30-affe-7d27c94b4516" LABEL="Representations">
+            <div ID="uuid-b79ec143-9c47-4e30-affe-7d27c94b4516" LABEL="data">
                 <!-- File pointers to file IDs in mets/fileSec/fileGrp[@USE="data"]/file/@ID -->
                     <fptr FILEID="uuid-c1e040ec-8479-44b3-b2c6-b7c7cbeda543" />
             </div>
