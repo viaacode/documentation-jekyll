@@ -70,7 +70,7 @@
       </premis:format>
     </premis:objectCharacteristics>
 
-    <premis:originalName></premis:originalName>
+    <premis:originalName>dummy_n58cg2782p_001_zip.zip</premis:originalName>
 
     <!-- relationship between file and its representation -->
     <premis:relationship>
