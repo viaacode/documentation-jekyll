@@ -49,8 +49,8 @@
 
         <fileGrp USE="Representations/representation_1"
             ID="uuid-c388a348-8b44-4634-8cd1-509c0219b993">
-            <file ID="uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4" MIMETYPE="text/xml" SIZE="3073"
-                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="0ba2428aaa86391c4c39c1d9766676d0"
+            <file ID="uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4" MIMETYPE="text/xml" SIZE="3122"
+                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="8adb546389d623f3c690a1aae487af3c"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
                     xlink:href="representations/uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4/METS.xml" />
@@ -58,8 +58,8 @@
         </fileGrp>
         <fileGrp USE="Representations/representation_2"
             ID="uuid-f3967739-fbc7-4c1e-a78d-d81ea36a8c78">
-            <file ID="uuid-9868b185-3644-452d-9412-d127e555b5e5" MIMETYPE="text/xml" SIZE="3074"
-                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="0dd74c3effccefbf1c58e7885b1eaa15"
+            <file ID="uuid-9868b185-3644-452d-9412-d127e555b5e5" MIMETYPE="text/xml" SIZE="3119"
+                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="d14506f69c2631d6ea7f515f79625a56"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
                     xlink:href="representations/uuid-9868b185-3644-452d-9412-d127e555b5e5/METS.xml" />
@@ -67,8 +67,8 @@
         </fileGrp>
         <fileGrp USE="Representations/representation_3"
             ID="uuid-e54c22c7-ec53-4e89-a97d-919e1c48190b">
-            <file ID="uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b" MIMETYPE="text/xml" SIZE="3076"
-                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="3cc5a2a39da8f81a38e9ca570dbd10cd"
+            <file ID="uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b" MIMETYPE="text/xml" SIZE="3121"
+                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="2f8b7842333811372562851c3c1339fb"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
                     xlink:href="representations/uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b/METS.xml" />
