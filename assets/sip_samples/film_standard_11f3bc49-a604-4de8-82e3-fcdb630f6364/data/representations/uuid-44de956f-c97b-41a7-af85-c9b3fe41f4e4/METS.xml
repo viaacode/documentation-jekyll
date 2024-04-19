@@ -10,7 +10,7 @@
                         https://DILCIS.eu/XML/METS/SIPExtensionMETS https://earksip.dilcis.eu/schema/DILCISExtensionSIPMETS.xsd">
 
     <!-- Creation date of the representation_1 METS file -->
-    <metsHdr CREATEDATE="2023-11-16T10:02:37.009+02:00" csip:OAISPACKAGETYPE="SIP"/>
+    <metsHdr CREATEDATE="2023-11-16T10:02:37.009+02:00" csip:OAISPACKAGETYPE="SIP" />
 
     <amdSec>
         <digiprovMD ID="uuid-efe21062-8ebd-42f5-94a7-67cb3fe71f40">
@@ -29,16 +29,19 @@
         <!-- Creation dates of the files in data directory -->
         <!-- Checksums of the files in data directory -->
         <fileGrp USE="data" ID="uuid-4b48b8ca-0bf5-458d-8d46-b9d02a0c2967">
-            <file ID="uuid-944a3f4b-461d-4263-bae7-da6bca87dcd9" MIMETYPE="application/zip" SIZE="1213919"
+            <file ID="uuid-944a3f4b-461d-4263-bae7-da6bca87dcd9" MIMETYPE="application/zip"
+                SIZE="1213919"
                 CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="0666ed8b7832d87bac146da58756b9aa"
                 CHECKSUMTYPE="MD5">
-                <FLocat LOCTYPE="URL" xlink:type="simple" xlink:href="data/dummy_n58cg2782p_001_zip.zip" />
+                <FLocat LOCTYPE="URL" xlink:type="simple"
+                    xlink:href="data/dummy_n58cg2782p_001_zip.zip" />
             </file>
         </fileGrp>
     </fileSec>
 
     <structMap ID="uuid-4339f6d6-aa0f-4da2-83b3-3fcb9e73cf4c" TYPE="PHYSICAL" LABEL="CSIP">
-        <div ID="uuid-e7d2311f-9218-4013-b7ab-92cfdb1dbb9c" LABEL="uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4">
+        <div ID="uuid-e7d2311f-9218-4013-b7ab-92cfdb1dbb9c"
+            LABEL="uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4">
             <!-- ADMID points to mets/amdSec/digiprovMD/@ID -->
             <div ID="uuid-a86d8f6a-e7f5-4253-ac81-f18064e04a63" LABEL="Metadata"
                 ADMID="uuid-efe21062-8ebd-42f5-94a7-67cb3fe71f40" />
