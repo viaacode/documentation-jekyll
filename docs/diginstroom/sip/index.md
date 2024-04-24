@@ -12,9 +12,38 @@ parent:       Digitale instroom
 
 The meemoo SIP specification is available in the following versions:
 
-## Version [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-blue">Release Candidate</span>
+## Version [2.0]({{ site.baseurl }}{% link docs/diginstroom/sip/2.0/index.md %}) <span class="label label-yellow">Editor's Draft</span>
 
-This second release adds support for the intake of digital reproductions of museum objects and digitized newspapers. This version is **not yet supported**.
+This major release fully aligns the meemoo SIP with the [EARK CSIP specification](https://earksip.dilcis.eu/).
+
+### What was **added** compared to the previous version?
+
+Nothing
+
+### What was **changed** compared to the previous version?
+
+- Comformance with the EARK CSIP 2.2 specification.
+
+### What was **removed** compared to the previous version?
+
+- The _Bag_ level was removed and therefore, the SIP no longer depends on the BagIt specification.
+
+## Version [1.2]({{ site.baseurl }}{% link docs/diginstroom/sip/1.2/index.md %}) <span class="label label-blue">Release Candidate</span>
+
+This third release broadens support for written works and extends the metadata for the basic profile. This version is **not yet supported**.
+
+### What was **added** compared to the previous version?
+
+Nothing
+
+### What was **changed** compared to the previous version?
+
+- The content profile _Newspaper_ was renamed to _Bibliographic_, which now supports more MODS elements.
+- The content profile _Basic_ now supports the descriptive `dc+schema.xml` metadata that was previously part of the content profile _Material Artwork_. The content profile _Material Artwork_ now refers to the content profile _Basic_ for its descriptive metadata requirements.
+
+## Version [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-green">Stable</span>
+
+This second release adds support for the intake of digital reproductions of museum objects and digitized newspapers. This version is **supported since March 2023**.
 
 ### What was **added** compared to the previous version?
 
@@ -31,9 +60,9 @@ Nothing
 
 Nothing
 
-## Version [1.0]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %}) <span class="label label-green">Stable</span>
+## Version [1.0]({{ site.baseurl }}{% link docs/diginstroom/sip/1.0/index.md %}) <span class="label label-red">Retired</span>
 
-This is the very first release of the SIP, which lays the groundwork for the new digital intake format at meemoo. This version is **supported since 30 September 2022**.
+This is the very first release of the SIP, which lays the groundwork for the new digital intake format at meemoo. This version is **retired since April 2024** and is no longer supported.
 
 ### What was **added** compared to the previous version?
 
