@@ -548,6 +548,8 @@ Aan de hand van een gecontroleerde lijst kan de rol van de bijdrager worden gesp
 | `<Verteller />` | |
 | `<Voorzitter />` | |
 | `<Afgebeelde />` | De entiteiten (bv. objecten, plaatsen of personen) die worden afgebeeld op het materiaal. |
+| `<Afzender />` | De entiteit (bv. organisatie of persoon) die het materiaal origineel heeft verzonden, zoals bij een brief of postkaart. |
+| `<Ontvanger />` | De entiteit (bv. organisatie of persoon) die het materiaal origineel heeft ontvangen, zoals bij een brief of postkaart. |
 
 ## Publisher
 
