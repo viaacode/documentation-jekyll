@@ -686,31 +686,34 @@ Omschrijving van de aard, het genre van het item adhv een gecontroleerde lijst d
 
 {: .no_toc }
 
-| `Actualiteit` | |
-| `Animatie` | |
-| `Concert` | |
-| `Dans` | |
-| `Docudrama` | |
-| `Documentaire` | |
-| `Documentatie` | |
-| `Drama` | |
-| `Educatief` | |
-| `Entertainment` | |
-| `Fictie` | |
-| `Interview` | |
-| `Komedie` | |
-| `Kortfilm` | |
-| `Kunstwerk` | |
-| `Muziekopname` | |
-| `Nieuws` | |
-| `Non-fictie` | |
-| `Opera` | |
-| `Performance` | |
-| `Speelfilm` | |
-| `Sport` | |
-| `Wetenschap` | |
+| `Actualiteit` | Een verslag van de gebeurtenissen van de dag of van het ogenblik; het nieuws dat op dat moment aan de orde is. |
+| `Animatie` | Een film of video met getekende of andere levenloze figuren, waarbij animatie toegepast is. |
+| `Concert` | Een voorstelling waar muziek gespeeld wordt voor publiek. |
+| `Dans` | Een voorstelling voor publiek waar ritmisch bewogen wordt op muziek. |
+| `Docudrama` | Een combinatie van documentaire en drama; een soort verslag van een historische of actuele gebeurtenis, waarbij uitgaande van feitelijke gegevens historische gebeurtenissen worden nagespeeld. |
+| `Documentaire` | Een non-fictieve film of programma op televisie of radio over dingen die echt gebeurd zijn. Ze bevatten scènes of opnames uit de werkelijkheid die een beeld proberen te geven van een bepaalde situatie.  |
+| `Documentatie` | Materiaal dat een bepaald onderwerp om- en beschrijft. |
+| `Drama` | Een toneelstuk of met een slechte afloop. |
+| `Educatief` | Materiaal dat bedoeld is om van te leren of opvoedkundige waarde heeft. |
+| `Entertainment` | Materiaal met een amusementsfunctie en heeft als hoofddoel het vertier, vermaak of amusement van het publiek. |
+| `Fictie` | Een verhaal of tekst, dat niet op de werkelijkheid is gebaseerd. Het wordt geschreven vanuit de fantasie van de schrijver.  |
+| `Interview` | Een georganiseerd gesprek waarbij iemand vragen stelt en een ander antwoordt. |
+| `Komedie` | Dramatisch werk waarin op amusante wijze over gewone mensen in alledaagse situaties gehandeld wordt. |
+| `Kortfilm` | Een film met een voor films relatief korte speelduur. |
+| `Kunstwerk` | Een voortbrengsel van het creatief en origineel tot uiting of voorstelling brengen van gedachten of gevoelens, bijvoorbeeld een schilderij, een muziekstuk of een beeldhouwwerk; voortbrengsel van de kunst |
+| `Magazine` | Een periodieke publicatie die per aflevering bestaat uit een bundeling van artikelen. |
+| `Muziekopname` | Een geluidsopname die bestaat uit muziek. |
+| `Nieuws` | Berichten over belangrijke dingen die kortgeleden gebeurd zijn. |
+| `Non-fictie` | Een verhaal of tekst, dat op de werkelijkheid is gebaseerd. De schrijver beschrijft feiten. |
+| `Opera` | De opera is een toneelstuk met orkestbegeleiding waarin voornamelijk gezongen wordt in poëzievorm.  |
+| `Performance` | Een theatrale voorstelling van een podiumkunstenaar of beeldend kunstenaar |
+| `Speelfilm` | Een film waarin acteurs spelen. |
+| `Sport` | Een televisie- of radioprogramma waar verslag wordt gedaan van sportwedstrijden, uitslagen van sportwedstrijden worden gegeven of een wedstrijd wordt besproken. |
+| `Wetenschap` | Een televisie- of radioprogramma met wetenschap als hoofdonderwerp. |
 | `Praatprogramma` | Een televisieprogramma of radioprogramma waarbij het hoofdaandeel uit spreken bestaat; een talkshow. |
 | `Theater` | Theater is een verzamelnaam voor kunstvormen waarbij acteurs levende voorstellingen maken voor een publiek, opgevoerd op een scène, waarbij het hoofdaandeel uit spreken bestaat. |
+| `Podcast` | Een podcast is een audio-'uitzending' waarbij het geluidsbestand op aanvraag beschikbaar is door middel van webfeeds. |
+| `Bladmuziek` | Muziek die op papier genoteerd is. |
 
 ## Object type
 
