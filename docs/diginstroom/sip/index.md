@@ -14,7 +14,7 @@ The meemoo SIP specification is available in the following versions:
 
 ## Version [2.0]({{ site.baseurl }}{% link docs/diginstroom/sip/2.0/index.md %}) <span class="label label-yellow">Editor's Draft</span>
 
-This major release fully aligns the meemoo SIP with the [EARK CSIP specification](https://earksip.dilcis.eu/).
+This major release ensures adherence of the meemoo SIP to the [EARK CSIP specification](https://earksip.dilcis.eu/).
 
 ### What was **added** compared to the previous version?
 
