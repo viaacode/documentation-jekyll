@@ -30,8 +30,12 @@ This third release broadens support for written works and extends the metadata f
 
 ### What was **added** compared to the previous version?
 
-- The content profile _Newspaper_ was renamed to _Bibliographic_, which now supports more MODS elements.
+- The content profile _Newspaper_ was renamed to _Bibliographic_, which now supports more MODS elements. 
 - The content profile _Basic_ now supports the descriptive `dc+schema.xml` metadata that was previously part of the content profile _Material Artwork_. The content profile _Material Artwork_ now refers to the content profile _Basic_ for its descriptive metadata requirements.
+
+### What was **removed** compared to the previous version?
+
+- The content profile _Bibliographic_, formerly known as _Newspaper_, does no longer allow the use of `dc+schema.xml` metadata.
 
 ## Version [1.1]({{ site.baseurl }}{% link docs/diginstroom/sip/1.1/index.md %}) <span class="label label-green">Stable</span>
 
