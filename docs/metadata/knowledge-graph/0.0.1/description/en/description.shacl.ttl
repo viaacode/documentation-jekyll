@@ -17,15 +17,15 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n1fe3cc60b6314ee68c827b06bc1664a3b1 a rdfs:Class,
+_:n4c8636d9dd794dfaba89266f1367b5f2b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n1fe3cc60b6314ee68c827b06bc1664a3b17 a rdfs:Class,
+_:n4c8636d9dd794dfaba89266f1367b5f2b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:ncb24695b770246099d7f6589fbedca41b1 a rdfs:Class,
+_:nc2a0aac23f184b8b9ffeaf33c527f9dbb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -465,6 +465,15 @@ haDes:Video a rdfs:Class ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
+
+<https://data.hetarchief.be/ns/mediahaven/Fragment> a rdfs:Class ;
+    rdfs:label "Mediahaven fragment"@en,
+        "Fragment Mediahaven"@fr,
+        "Mediahavenfragment"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
+    skos:definition "A fragment in the Mediahaven asset management system."@en,
+        "Un fragment dans le système de gestion d'actifs Mediahaven."@fr,
+        "Een fragment in het Mediahaven asset management systeem."@nl .
 
 <https://data.hetarchief.be/ns/mediahaven/Record> a rdfs:Class ;
     rdfs:label "Mediahaven record"@en,
@@ -990,7 +999,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b1 ;
+    rdfs:domain _:n4c8636d9dd794dfaba89266f1367b5f2b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1002,13 +1011,6 @@ premis:fixity a owl:ObjectProperty ;
             owl:unionOf ( premis:Bitstream premis:File ) ] ;
     rdfs:isDefinedBy premis: ;
     rdfs:range premis:Fixity .
-
-premis:identifier a owl:ObjectProperty ;
-    rdfs:label "has identifier"@en,
-        "a identifiant"@fr,
-        "heeft identificatiecode"@nl ;
-    rdfs:isDefinedBy premis: ;
-    rdfs:range premis:Identifier .
 
 premis:medium a owl:ObjectProperty ;
     rdfs:label "has medium"@en,
@@ -1058,7 +1060,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b17 ;
+    rdfs:domain _:n4c8636d9dd794dfaba89266f1367b5f2b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1173,7 +1175,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:ncb24695b770246099d7f6589fbedca41b1 ;
+    rdfs:range _:nc2a0aac23f184b8b9ffeaf33c527f9dbb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1537,19 +1539,6 @@ foaf:homepage a rdf:Property ;
     sh:targetClass schema:ArchiveComponent .
 
 <https://data.hetarchief.be/ns/description#CarrierRepresentationNodeShape> a sh:NodeShape ;
-    sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "schema:identifier occurs more than once or is not of type string "@en ;
-            sh:minCount 0 ;
-            sh:name "identifier"@en,
-                "identifier"@fr,
-                "identifier"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:identifier ;
-            sh:severity sh:Violation ],
-        <https://data.hetarchief.be/ns/description#DescriptionShape>,
-        <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass haObj:CarrierRepresentation .
 
 <https://data.hetarchief.be/ns/description#CollectionShape> a sh:NodeShape ;
@@ -1596,19 +1585,6 @@ foaf:homepage a rdf:Property ;
 
 <https://data.hetarchief.be/ns/description#CreativeWorkSeriesShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en,
-                "Indique une intellectualité ou un travail créatif qui fait partie de cette saison."@fr,
-                "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
-            sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en,
-                "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr,
-                "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
-            sh:name "has part"@en,
-                "fait partie de"@fr,
-                "is deel van"@nl ;
-            sh:or ( [ sh:class premis:IntellectualEntity ] [ sh:class schema:CreativeWorkSeries ] ) ;
-            sh:path schema:hasPart ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
             sh:class schema:CreativeWorkSeries ;
             sh:message "schema:isPartOf is not of class schema:CreativeWorkSeries."@en,
                 "schema:isPartOf n'est pas de la classe schema:CreativeWorkSeries."@fr,
@@ -1640,23 +1616,25 @@ foaf:homepage a rdf:Property ;
             sh:nodeKind sh:Literal ;
             sh:path schema:seasonNumber ;
             sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:description "Indicates an IntellectualEntity or CreativeWork that is part of this series."@en,
+                "Indique une intellectualité ou un travail créatif qui fait partie de cette saison."@fr,
+                "Geeft aan dat deze IntellectualEntity of CreativeWork deel uitmaakt van deze serie."@nl ;
+            sh:message "schema:hasPart is not of class premis:IntellectualEntity"@en,
+                "schema:hasPart n'est pas de la classe premis:IntellectualEntity"@fr,
+                "schema:hasPart is niet van de klasse premis:IntellectualEntity"@nl ;
+            sh:name "has part"@en,
+                "fait partie de"@fr,
+                "is deel van"@nl ;
+            sh:or ( [ sh:class premis:IntellectualEntity ] [ sh:class schema:CreativeWorkSeries ] ) ;
+            sh:path schema:hasPart ;
+            sh:severity sh:Violation ],
         <https://data.hetarchief.be/ns/description#DescriptionShape>,
         <https://data.hetarchief.be/ns/description#NameShape> ;
     sh:targetClass schema:CreativeWorkSeries .
 
 <https://data.hetarchief.be/ns/description#DigitalRepresentationNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:maxCount 1 ;
-            sh:message "schema:identifier occurs more than once or is not of type string "@en ;
-            sh:minCount 0 ;
-            sh:name "identifier"@en,
-                "identifier"@fr,
-                "identifier"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:identifier ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
             sh:datatype xsd:string ;
             sh:maxCount 1 ;
             sh:message "schema:transcript is not of type string "@en,
@@ -1701,9 +1679,7 @@ foaf:homepage a rdf:Property ;
                 "créateur"@fr,
                 "maker"@nl ;
             sh:path schema:creator ;
-            sh:severity sh:Violation ],
-        <https://data.hetarchief.be/ns/description#DescriptionShape>,
-        <https://data.hetarchief.be/ns/description#NameShape> ;
+            sh:severity sh:Violation ] ;
     sh:targetClass haObj:DigitalRepresentation .
 
 <https://data.hetarchief.be/ns/description#EpisodeShape> a sh:NodeShape ;
@@ -2348,6 +2324,22 @@ foaf:homepage a rdf:Property ;
             sh:severity sh:Violation ] ;
     sh:targetClass schema:QuantitativeValue .
 
+<https://data.hetarchief.be/ns/description#RepresentationNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "schema:identifier occurs more than once or is not of type string "@en ;
+            sh:minCount 0 ;
+            sh:name "identifier"@en,
+                "identifier"@fr,
+                "identifier"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        <https://data.hetarchief.be/ns/description#DescriptionShape>,
+        <https://data.hetarchief.be/ns/description#NameShape> ;
+    sh:targetClass premis:Representation .
+
 <https://data.hetarchief.be/ns/description#RoleNodeShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
             sh:message "schema:creator is not of class schema:Thing, schema:Person or org:Organization"@en,
@@ -2390,7 +2382,6 @@ foaf:homepage a rdf:Property ;
             sh:path schema:actor ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
             sh:message "schema:roleName is missing or not of type string or of class skos:Concept"@en,
                 "schema:roleName est manquant ou n'est pas de type string ou de la classe skos:Concept"@fr,
                 "schema:roleName ontbreekt of is niet van het type string of van de klasse skos:Concept"@nl ;
@@ -2398,9 +2389,9 @@ foaf:homepage a rdf:Property ;
             sh:name "role name"@en,
                 "nom de rôle"@fr,
                 "rolenaam"@nl ;
-            sh:nodeKind sh:Literal ;
             sh:or ( [ sh:datatype xsd:string ;
-                        sh:nodeKind sh:Literal ] [ sh:class skos:Concept ] ) ;
+                        sh:nodeKind sh:Literal ] [ sh:class skos:Concept ;
+                        sh:nodeKind sh:IRI ] ) ;
             sh:path schema:roleName ;
             sh:severity sh:Violation ] ;
     sh:targetClass schema:Role .
@@ -2546,16 +2537,16 @@ haDes:pageNumber a rdf:Property ;
         "Le numéro de séquence d'une page dans son ensemble plus grand (par exemple, une édition de journal, un livre, etc.)."@fr,
         "Het volgnummer van een pagina binnen zijn groter geheel (bv. een kranteneditie, een boek, etc.)."@nl .
 
-<https://data.hetarchief.be/ns/mediahaven/fragmentIdentifier> a rdf:Property ;
-    rdfs:label "fragment identifier"@en,
-        "identifiant de fragment"@fr,
-        "fragment-ID"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/mediahaven/Record> ;
+<https://data.hetarchief.be/ns/mediahaven/record> a rdf:Property ;
+    rdfs:label "record"@en,
+        "enregistrement"@fr,
+        "record"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/mediahaven/Fragment> ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
-    rdfs:range xsd:string ;
-    skos:definition "The fragment identifier of a record or a fragment in the Mediahaven asset management system."@en,
-        "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr,
-        "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl .
+    rdfs:range <https://data.hetarchief.be/ns/mediahaven/Record> ;
+    skos:definition "The record in the Mediahaven asset management system."@en,
+        "L'enregistrement dans le système de gestion d'actifs Mediahaven."@fr,
+        "Het fragment in het Mediahaven asset management systeem."@nl .
 
 <https://data.hetarchief.be/ns/mediahaven/tenantName> a rdf:Property ;
     rdfs:label "tenant name"@en,
@@ -2567,6 +2558,14 @@ haDes:pageNumber a rdf:Property ;
     skos:definition "The Mediahaven tenant name of the organization."@en,
         "Le nom du locataire Mediahaven de l'organisation."@fr,
         "De Mediahaven tenant naam van de organisatie."@nl .
+
+haObj:primaryIdentifier a rdf:Property ;
+    rdfs:label "has primary identifier"@en,
+        "a identifiant principal"@fr,
+        "heeft primaire identificatiecode"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:range haObj:LocalIdentifier ;
+    rdfs:subPropertyOf premis:identifier .
 
 haOrg:allowsBZT a rdf:Property ;
     rdfs:label "allows bezoekertool"@en,
@@ -3039,6 +3038,13 @@ ebucore:synopsis a rdf:Property ;
     rdfs:domain ebucore:Asset ;
     rdfs:range xsd:string ;
     rdfs:subPropertyOf ebucore:description .
+
+premis:identifier a owl:ObjectProperty ;
+    rdfs:label "has identifier"@en,
+        "a identifiant"@fr,
+        "heeft identificatiecode"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Identifier .
 
 premis:note a owl:DatatypeProperty ;
     rdfs:label "has note"@en,
