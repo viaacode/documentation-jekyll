@@ -31,7 +31,7 @@ schema_Newspaper : begindatum : <i>xsd:dateTime</i> [0..1]
 schema_Newspaper : einddatum : <i>xsd:dateTime</i> [0..1]
 schema_Newspaper : naam : <i>rdf:langString</i> [1..1]
 
-schema_Newspaper --> schema_Newspaper :None [0..1]  \lNone [0..1]  \lNone [0..1]  \lNone [0..1]  > 
+schema_Newspaper --> schema_Newspaper :opgevolgd door [0..1]  \lsupplement [0..1]  \lsupplement aan [0..1]  \lvoorafgegaan door [0..1]  > 
 schema_Newspaper --> schema_Place :paginanummer [0..1]  > 
 schema_Newspaper --> schema_Role :uitgever [0..1]  > 
 
