@@ -31,7 +31,7 @@ schema_Newspaper : date de fin : <i>xsd:dateTime</i> [0..1]
 schema_Newspaper : nom : <i>rdf:langString</i> [1..1]
 schema_Newspaper : nom alternatif : <i>rdf:langString</i> [0..*]
 
-schema_Newspaper --> schema_Newspaper :None [0..1]  \lNone [0..1]  \lNone [0..1]  \lNone [0..1]  > 
+schema_Newspaper --> schema_Newspaper :compléter [0..1]  \lprécédé par [0..1]  \lsuccédé par [0..1]  \lsupplément [0..1]  > 
 schema_Newspaper --> schema_Place :numéro de page [0..1]  > 
 schema_Newspaper --> schema_Role :éditeur [0..1]  > 
 
