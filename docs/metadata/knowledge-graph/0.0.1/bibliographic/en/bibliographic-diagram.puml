@@ -31,7 +31,7 @@ schema_Newspaper : end date : <i>xsd:dateTime</i> [0..1]
 schema_Newspaper : name : <i>rdf:langString</i> [1..1]
 schema_Newspaper : start date : <i>xsd:dateTime</i> [0..1]
 
-schema_Newspaper --> schema_Newspaper :None [0..1]  \lNone [0..1]  \lNone [0..1]  \lNone [0..1]  > 
+schema_Newspaper --> schema_Newspaper :preceded by [0..1]  \lsucceeded by [0..1]  \lsupplement [0..1]  \lsupplement to [0..1]  > 
 schema_Newspaper --> schema_Place :page number [0..1]  > 
 schema_Newspaper --> schema_Role :publisher [0..1]  > 
 
