@@ -13,15 +13,15 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n1fe3cc60b6314ee68c827b06bc1664a3b1 a rdfs:Class,
+_:n4c8636d9dd794dfaba89266f1367b5f2b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n1fe3cc60b6314ee68c827b06bc1664a3b17 a rdfs:Class,
+_:n4c8636d9dd794dfaba89266f1367b5f2b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:ncb24695b770246099d7f6589fbedca41b1 a rdfs:Class,
+_:nc2a0aac23f184b8b9ffeaf33c527f9dbb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -461,6 +461,15 @@ haDes:Video a rdfs:Class ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
+
+<https://data.hetarchief.be/ns/mediahaven/Fragment> a rdfs:Class ;
+    rdfs:label "Mediahaven fragment"@en,
+        "Fragment Mediahaven"@fr,
+        "Mediahavenfragment"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
+    skos:definition "A fragment in the Mediahaven asset management system."@en,
+        "Un fragment dans le système de gestion d'actifs Mediahaven."@fr,
+        "Een fragment in het Mediahaven asset management systeem."@nl .
 
 <https://data.hetarchief.be/ns/mediahaven/Record> a rdfs:Class ;
     rdfs:label "Mediahaven record"@en,
@@ -1115,7 +1124,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b1 ;
+    rdfs:domain _:n4c8636d9dd794dfaba89266f1367b5f2b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1127,13 +1136,6 @@ premis:fixity a owl:ObjectProperty ;
             owl:unionOf ( premis:Bitstream premis:File ) ] ;
     rdfs:isDefinedBy premis: ;
     rdfs:range premis:Fixity .
-
-premis:identifier a owl:ObjectProperty ;
-    rdfs:label "has identifier"@en,
-        "a identifiant"@fr,
-        "heeft identificatiecode"@nl ;
-    rdfs:isDefinedBy premis: ;
-    rdfs:range premis:Identifier .
 
 premis:medium a owl:ObjectProperty ;
     rdfs:label "has medium"@en,
@@ -1183,7 +1185,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b17 ;
+    rdfs:domain _:n4c8636d9dd794dfaba89266f1367b5f2b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1298,7 +1300,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:ncb24695b770246099d7f6589fbedca41b1 ;
+    rdfs:range _:nc2a0aac23f184b8b9ffeaf33c527f9dbb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1762,9 +1764,6 @@ skos:scopeNote a rdf:Property,
             sh:path schema:locationCreated ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            rdfs:label "supplement"@en,
-                "supplément"@fr,
-                "supplement"@nl ;
             sh:class schema:Newspaper ;
             sh:description "Newspaper that updates or otherwise complements the predominant newspaper."@en,
                 "Journal qui met à jour ou complète autrement le journal prédominant."@fr,
@@ -1772,13 +1771,13 @@ skos:scopeNote a rdf:Property,
             sh:maxCount 1 ;
             sh:message "the object of bf:supplement is not of type schema:Newspaper, or occurs more than once"@en ;
             sh:minCount 0 ;
+            sh:name "supplement"@en,
+                "supplément"@fr,
+                "supplement"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path bf:supplement ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            rdfs:label "supplement to"@en,
-                "compléter"@fr,
-                "supplement aan"@nl ;
             sh:class schema:Newspaper ;
             sh:description "Newspaper that is updated or otherwise complemented by the augmenting newspaper."@en,
                 "Journal qui est mis à jour ou autrement complété par le journal augmentant."@fr,
@@ -1786,13 +1785,13 @@ skos:scopeNote a rdf:Property,
             sh:maxCount 1 ;
             sh:message "the object of bf:supplementTo is not of type schema:Newspaper, or occurs more than once"@en ;
             sh:minCount 0 ;
+            sh:name "supplement to"@en,
+                "compléter"@fr,
+                "supplement aan"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path bf:supplementTo ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            rdfs:label "succeeded by"@en,
-                "succédé par"@fr,
-                "opgevolgd door"@nl ;
             skos:definition "Newspaper that succeeds the newspaper being described, e.g., later in time or after in a narrative."@en,
                 "Journal qui succède à la journal décrite, par exemple, plus tard dans le temps ou après dans un récit."@fr,
                 "Krant die de krant die wordt beschreven opvolgt, bijvoorbeeld later in de tijd of daarna in een verhaal."@nl ;
@@ -1800,13 +1799,13 @@ skos:scopeNote a rdf:Property,
             sh:maxCount 1 ;
             sh:message "the object of bf:succeededBy is not of type schema:Newspaper, or occurs more than once"@en ;
             sh:minCount 0 ;
+            sh:name "succeeded by"@en,
+                "succédé par"@fr,
+                "opgevolgd door"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path bf:succeededBy ;
             sh:severity sh:Violation ],
         [ a sh:PropertyShape ;
-            rdfs:label "preceded by"@en,
-                "précédé par"@fr,
-                "voorafgegaan door"@nl ;
             sh:class schema:Newspaper ;
             sh:description "Newspaper that precedes the newspaper being described, e.g., is earlier in time or before in narrative."@en,
                 "Le journal qui précède le journal décrit, par exemple, est plus tôt dans le temps ou avant dans le récit."@fr,
@@ -1814,6 +1813,9 @@ skos:scopeNote a rdf:Property,
             sh:maxCount 1 ;
             sh:message "the object of bf:precededBy is not of type schema:Newspaper, or occurs more than once"@en ;
             sh:minCount 0 ;
+            sh:name "preceded by"@en,
+                "précédé par"@fr,
+                "voorafgegaan door"@nl ;
             sh:nodeKind sh:IRI ;
             sh:path bf:precededBy ;
             sh:severity sh:Violation ],
@@ -1944,16 +1946,16 @@ haDes:numberOfReels a rdf:Property ;
         "Le nombre de bobines de film (quel que soit le type) qui composent un film numérisé."@fr,
         "Het aantal filmrollen/-spoelen (ongeacht het type) waaruit een gedigitaliseerde film bestaat."@nl .
 
-<https://data.hetarchief.be/ns/mediahaven/fragmentIdentifier> a rdf:Property ;
-    rdfs:label "fragment identifier"@en,
-        "identifiant de fragment"@fr,
-        "fragment-ID"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/mediahaven/Record> ;
+<https://data.hetarchief.be/ns/mediahaven/record> a rdf:Property ;
+    rdfs:label "record"@en,
+        "enregistrement"@fr,
+        "record"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/mediahaven/Fragment> ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
-    rdfs:range xsd:string ;
-    skos:definition "The fragment identifier of a record or a fragment in the Mediahaven asset management system."@en,
-        "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr,
-        "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl .
+    rdfs:range <https://data.hetarchief.be/ns/mediahaven/Record> ;
+    skos:definition "The record in the Mediahaven asset management system."@en,
+        "L'enregistrement dans le système de gestion d'actifs Mediahaven."@fr,
+        "Het fragment in het Mediahaven asset management systeem."@nl .
 
 <https://data.hetarchief.be/ns/mediahaven/tenantName> a rdf:Property ;
     rdfs:label "tenant name"@en,
@@ -1971,6 +1973,14 @@ haDes:numberOfReels a rdf:Property ;
         "problème de préservation"@fr,
         "preservatieprobleem"@nl ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> .
+
+<https://data.hetarchief.be/ns/object/primaryIdentifier> a rdf:Property ;
+    rdfs:label "has primary identifier"@en,
+        "a identifiant principal"@fr,
+        "heeft primaire identificatiecode"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/object/> ;
+    rdfs:range <https://data.hetarchief.be/ns/object/LocalIdentifier> ;
+    rdfs:subPropertyOf premis:identifier .
 
 <https://data.hetarchief.be/ns/organization/allowsBZT> a rdf:Property ;
     rdfs:label "allows bezoekertool"@en,
@@ -2713,6 +2723,13 @@ dct:rights a rdf:Property ;
     skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en,
         "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
         "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl .
+
+premis:identifier a owl:ObjectProperty ;
+    rdfs:label "has identifier"@en,
+        "a identifiant"@fr,
+        "heeft identificatiecode"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Identifier .
 
 premis:note a owl:DatatypeProperty ;
     rdfs:label "has note"@en,
