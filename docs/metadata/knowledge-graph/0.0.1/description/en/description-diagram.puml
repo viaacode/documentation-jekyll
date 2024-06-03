@@ -45,6 +45,8 @@ class "<b>Place</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Quantitative Value</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[#schema%3AQuantitativeValue]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Representation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Role</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Thing</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
@@ -77,11 +79,6 @@ schema_ArchiveComponent --> premis_IntellectualEntity :has part [0..*]  >
 schema_ArchiveComponent --> schema_ArchiveComponent :has part [0..*]  \lis part of [0..*]  > 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
-
-haObj_CarrierRepresentation : description : <i>rdf:langString</i> [0..*]
-haObj_CarrierRepresentation : identifier : <i>xsd:string</i> [0..1]
-haObj_CarrierRepresentation : name : <i>rdf:langString</i> [1..*]
-
 
 
 schema_Collection --|> schema_CreativeWork #blue;line.dotted;text:blue
@@ -116,12 +113,8 @@ schema_CreativeWorkSeries --> schema_CreativeWorkSeries :has part [0..*]  \lis p
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation : caption : <i>xsd:string</i> [0..1]
-haObj_DigitalRepresentation : description : <i>rdf:langString</i> [0..*]
-haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : in language : <i>xsd:string</i> [0..*]
-haObj_DigitalRepresentation : name : <i>rdf:langString</i> [1..*]
 haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
-
 haObj_DigitalRepresentation --> schema_Role :creator [0..*]  > 
 
 
@@ -228,6 +221,14 @@ schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
 schema_QuantitativeValue : unit code : <i>xsd:string</i> [1..1]
 schema_QuantitativeValue : unit text : <i>xsd:string</i> [0..1]
 schema_QuantitativeValue : value : <i>xsd:float</i> [1..1]
+
+
+
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+premis_Representation : description : <i>rdf:langString</i> [0..*]
+premis_Representation : identifier : <i>xsd:string</i> [0..1]
+premis_Representation : name : <i>rdf:langString</i> [1..*]
 
 
 
