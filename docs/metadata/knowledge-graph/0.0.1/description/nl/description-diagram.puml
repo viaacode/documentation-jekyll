@@ -44,6 +44,8 @@ class "<b>Persoon</b> (schema:Person)" as schema_Person [[../../organizations/nl
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Plaats</b> (schema:Place)" as schema_Place [[#schema%3APlace]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
+class "<b>Representatie</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Rol</b> (schema:Role)" as schema_Role [[#schema%3ARole]]
 class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Serie van het creatief werk</b> (schema:CreativeWorkSeries)" as schema_CreativeWorkSeries [[#schema%3ACreativeWorkSeries]]
@@ -121,13 +123,9 @@ haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : in taal : <i>xsd:string</i> [0..*]
-haObj_DigitalRepresentation : naam : <i>rdf:langString</i> [1..*]
-haObj_DigitalRepresentation : omschrijving : <i>rdf:langString</i> [0..*]
 haObj_DigitalRepresentation : onderschrift : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : transcriptie : <i>xsd:string</i> [0..1]
-
 haObj_DigitalRepresentation --> schema_Role :maker [0..*]  > 
 
 
@@ -137,11 +135,6 @@ schema_Thing : omschrijving : <i>rdf:langString</i> [0..*]
 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
-
-haObj_CarrierRepresentation : identifier : <i>xsd:string</i> [0..1]
-haObj_CarrierRepresentation : naam : <i>rdf:langString</i> [1..*]
-haObj_CarrierRepresentation : omschrijving : <i>rdf:langString</i> [0..*]
-
 
 
 haObj_PhysicalCarrier --|> premis_StorageLocation #blue;line.dotted;text:blue
@@ -221,6 +214,14 @@ schema_Place --|> schema_Thing #blue;line.dotted;text:blue
 
 schema_Place : naam : <i>rdf:langString</i> [1..*]
 schema_Place : omschrijving : <i>rdf:langString</i> [0..*]
+
+
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+premis_Representation : identifier : <i>xsd:string</i> [0..1]
+premis_Representation : naam : <i>rdf:langString</i> [1..*]
+premis_Representation : omschrijving : <i>rdf:langString</i> [0..*]
+
 
 
 schema_Role --|> schema_Thing #blue;line.dotted;text:blue
