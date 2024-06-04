@@ -19,15 +19,15 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n1fe3cc60b6314ee68c827b06bc1664a3b1 a rdfs:Class,
+_:n4c8636d9dd794dfaba89266f1367b5f2b1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:n1fe3cc60b6314ee68c827b06bc1664a3b17 a rdfs:Class,
+_:n4c8636d9dd794dfaba89266f1367b5f2b17 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
-_:ncb24695b770246099d7f6589fbedca41b1 a rdfs:Class,
+_:nc2a0aac23f184b8b9ffeaf33c527f9dbb1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
 
@@ -467,6 +467,15 @@ prov:Entity a rdfs:Class,
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
+
+mh:Fragment a rdfs:Class ;
+    rdfs:label "Mediahaven fragment"@en,
+        "Fragment Mediahaven"@fr,
+        "Mediahavenfragment"@nl ;
+    rdfs:isDefinedBy mh: ;
+    skos:definition "A fragment in the Mediahaven asset management system."@en,
+        "Un fragment dans le système de gestion d'actifs Mediahaven."@fr,
+        "Een fragment in het Mediahaven asset management systeem."@nl .
 
 mh:Record a rdfs:Class ;
     rdfs:label "Mediahaven record"@en,
@@ -1000,7 +1009,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b1 ;
+    rdfs:domain _:n4c8636d9dd794dfaba89266f1367b5f2b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1025,7 +1034,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b17 ;
+    rdfs:domain _:n4c8636d9dd794dfaba89266f1367b5f2b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1120,7 +1129,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:ncb24695b770246099d7f6589fbedca41b1 ;
+    rdfs:range _:nc2a0aac23f184b8b9ffeaf33c527f9dbb1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1557,18 +1566,6 @@ mh:tenantName a rdf:Property ;
                 "stocké à"@fr,
                 "opgeslagen op"@nl ;
             sh:path premis:storedAt ;
-            sh:severity sh:Violation ],
-        [ sh:class mh:Record ;
-            sh:description "The Mediahaven record from which this carrier representation was derived."@en,
-                "L'enregistrement Mediahaven à partir duquel cette représentation du porteur est dérivée."@fr,
-                "Het Mediahaven record waarvan deze dragerrepresentatie afgeleid werd."@nl ;
-            sh:maxCount 1 ;
-            sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
-            sh:minCount 1 ;
-            sh:name "was derived from"@en,
-                "était dérivé de"@fr,
-                "werd afgeleid van"@nl ;
-            sh:path prov:wasDerivedFrom ;
             sh:severity sh:Violation ] ;
     sh:targetClass haObj:CarrierRepresentation .
 
@@ -1612,20 +1609,6 @@ mh:tenantName a rdf:Property ;
                 "is toegangskopie van"@nl ;
             sh:path haObj:isAccessCopyOf ;
             sh:severity sh:Violation ],
-        [ sh:class premis:IntellectualEntity ;
-            sh:description "The intellectual entity that represents this digital representation."@en,
-                "L'entité intellectuelle qui représente cette représentation digital."@fr,
-                "De intellectuele entiteit die deze digitale representatie representeert."@nl ;
-            sh:maxCount 1 ;
-            sh:message "rel:rep is missing or not a premis:IntellectualEntity"@en,
-                "rel:rep manque ou n'est pas une premis:IntellectualEntity"@fr,
-                "rel:rep ontbreekt of is geen premis:IntellectualEntity"@nl ;
-            sh:minCount 1 ;
-            sh:name "represents"@en,
-                "représente"@fr,
-                "representeert"@nl ;
-            sh:path rel:rep ;
-            sh:severity sh:Violation ],
         [ sh:class premis:File ;
             sh:description "A file that is part of this digital representation."@en,
                 "Un fichier qui fait partie de cette représentation digital."@fr,
@@ -1652,16 +1635,16 @@ mh:tenantName a rdf:Property ;
                 "heeft root"@nl ;
             sh:path rel:hsr ;
             sh:severity sh:Violation ],
-        [ sh:description "The physical carrier from which this digital representation originates from."@en,
+        [ sh:class premis:Representation ;
+            sh:description "The physical carrier from which this digital representation originates from."@en,
                 "Le porteur physique dont vient cette représentation numérique."@fr,
                 "De fysieke drager waarvan deze digitale representatie afkomstig is."@nl ;
-            sh:message "rel:hss is not a haObj:CarrierRepresentation"@en,
-                "rel:hss n'est pas un haObj:CarrierRepresentation"@fr,
-                "rel:hss is geen haObj:CarrierRepresentation"@nl ;
+            sh:message "rel:hss is not a premis:Representation"@en,
+                "rel:hss n'est pas un premis:Representation"@fr,
+                "rel:hss is geen premis:Representation"@nl ;
             sh:name "has Source"@en,
                 "a source"@fr,
                 "heeft bron"@nl ;
-            sh:or ( [ sh:class haObj:CarrierRepresentation ] [ sh:class haObj:DigitalRepresentation ] ) ;
             sh:path rel:hss ;
             sh:severity sh:Violation ],
         [ sh:class haObj:DigitalRepresentation ;
@@ -1676,18 +1659,6 @@ mh:tenantName a rdf:Property ;
                 "la représentation numérique suivante dans l'ordre"@fr,
                 "volgende digitale representatie in volgorde"@nl ;
             sh:path edm:isNextInSequence ;
-            sh:severity sh:Violation ],
-        [ sh:class mh:Record ;
-            sh:description "The Mediahaven record from which this digital representation was derived."@en,
-                "L'enregistrement Mediahaven à partir duquel cette représentation digitale est dérivée."@fr,
-                "Het Mediahaven record waarvan deze digitale representatie afgeleid werd."@nl ;
-            sh:maxCount 1 ;
-            sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
-            sh:minCount 1 ;
-            sh:name "was derived from"@en,
-                "était dérivé de"@fr,
-                "werd afgeleid van"@nl ;
-            sh:path prov:wasDerivedFrom ;
             sh:severity sh:Violation ] ;
     sh:targetClass haObj:DigitalRepresentation .
 
@@ -1832,12 +1803,12 @@ mh:tenantName a rdf:Property ;
             sh:nodeKind sh:Literal ;
             sh:path premis:originalName ;
             sh:severity sh:Violation ],
-        [ sh:class mh:Record ;
+        [ sh:class mh:Fragment ;
             sh:description "The Mediahaven record from which this file was derived."@en,
                 "L'enregistrement Mediahaven à partir duquel ce fichier est dérivé."@fr,
                 "Het Mediahaven record waarvan dit bestand afgeleid werd."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
+            sh:message "the object of prov:wasDerivedFrom is no mh:Fragment, is absent or occurs more than once"@en ;
             sh:minCount 1 ;
             sh:name "was derived from"@en,
                 "était dérivé de"@fr,
@@ -1869,6 +1840,78 @@ mh:tenantName a rdf:Property ;
             sh:path dct:creator ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:Fixity .
+
+<https://data.hetarchief.be/ns/object#FragmentNodeShape> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:datatype xsd:string ;
+            sh:description "The unique identifier of a fragment within the Mediahaven asset management system."@en,
+                "L'identifiant unique du fragment au sein du système de gestion d'actifs Mediahaven."@fr,
+                "De unieke identifier van een fragment binnen het Mediahaven asset management system."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of schema:identifier is no xsd:string, is missing or occurs more than once"@en ;
+            sh:minCount 1 ;
+            sh:name "has fragment identifier"@en,
+                "a identifiant du fragment"@fr,
+                "heeft fragment-ID"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:identifier ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:class mh:Record ;
+            sh:description "The Mediahaven Record to which this fragment belongs."@en,
+                "Le dossier MediaHaven auquel appartient ce fragment."@fr,
+                "Het Mediahaven record waartoe dit fragment behoort."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of mh:record is no mh:Record, is missing or occurs more than once"@en ;
+            sh:minCount 1 ;
+            sh:name "has record"@en,
+                "a record"@fr,
+                "heeft record"@nl ;
+            sh:path mh:record ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:description "The date on which the record was created."@en,
+                "La date à laquelle le dossier a été créé."@fr,
+                "De datum waarop het record is aangemaakt."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:dateCreated is not of type xsd:dateTime or is missing."@en ;
+            sh:minCount 1 ;
+            sh:name "date created"@en,
+                "date de création"@fr,
+                "datum aangemaakt"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:dateCreated ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:description "The date on which the record was deleted."@en,
+                "La date à laquelle le dossier a été supprimée."@fr,
+                "De datum waarop het record is verwijderd."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:dateDeleted is not of type xsd:dateTime or occurs more than once."@en ;
+            sh:minCount 0 ;
+            sh:name "date deleted"@en,
+                "date supprimée"@fr,
+                "datum verwijderd"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:dateDeleted ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            sh:datatype xsd:dateTime ;
+            sh:description "The date on which the record was most recently modified."@en,
+                "La date à laquelle le dossier a été récemment modifié."@fr,
+                "De datum waarop het record het meest recent is gewijzigd."@nl ;
+            sh:maxCount 1 ;
+            sh:message "schema:dateModified is not of type xsd:dateTime or is missing."@en ;
+            sh:minCount 1 ;
+            sh:name "date modified"@en,
+                "date modifiée"@fr,
+                "datum gewijzigd"@nl ;
+            sh:nodeKind sh:Literal ;
+            sh:path schema:dateModified ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass mh:Fragment .
 
 <https://data.hetarchief.be/ns/object#FragmentRepresentationShape> a sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
@@ -1928,23 +1971,21 @@ mh:tenantName a rdf:Property ;
                 "est fragment des médias de"@fr,
                 "is media fragment van"@nl ;
             sh:path ebucore:isMediaFragmentOf ;
-            sh:severity sh:Violation ],
-        [ sh:class mh:Record ;
-            sh:description "The Mediahaven record from which this fragment representation was derived."@en,
-                "L'enregistrement Mediahaven à partir duquel cette représentation du fragment est dérivée."@fr,
-                "Het Mediahaven record waarvan deze fragmentenrepresentatie afgeleid werd."@nl ;
-            sh:maxCount 1 ;
-            sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
-            sh:minCount 1 ;
-            sh:name "was derived from"@en,
-                "était dérivé de"@fr,
-                "werd afgeleid van"@nl ;
-            sh:path prov:wasDerivedFrom ;
             sh:severity sh:Violation ] ;
     sh:targetClass haObj:FragmentRepresentation .
 
 <https://data.hetarchief.be/ns/object#IntellectualEntityShape> a sh:NodeShape ;
     sh:property [ sh:class haObj:DigitalRepresentation ;
+            sh:description "The archive master of the intellectual entity."@en,
+                "Le maître des archives de l'entité intellectuelle."@fr,
+                "De archiefmaster van de intellectuele entiteit."@nl ;
+            sh:message "haObj:hasMasterCopy not a haObj:DigitalRepresentation"@en ;
+            sh:name "has Master"@en,
+                "a maître"@fr,
+                "heeft master"@nl ;
+            sh:path haObj:hasMasterCopy ;
+            sh:severity sh:Violation ],
+        [ sh:class haObj:DigitalRepresentation ;
             sh:description "The mezzanine copy of the intellectual entity."@en,
                 "La copie mezzanine de l'entité intellectuelle."@fr,
                 "De mezzanine kopie van de intellectuele entiteit."@nl ;
@@ -1981,12 +2022,12 @@ mh:tenantName a rdf:Property ;
                 "volgende intellectuele entiteit in volgorde"@nl ;
             sh:path edm:isNextInSequence ;
             sh:severity sh:Violation ],
-        [ sh:class mh:Record ;
+        [ sh:class mh:Fragment ;
             sh:description "The Mediahaven record from which this intellectual entity was derived."@en,
                 "L'enregistrement Mediahaven à partir duquel cette entité intellectuelle est dérivée."@fr,
                 "Het Mediahaven record waarvan deze intellectuele entiteit afgeleid werd."@nl ;
             sh:maxCount 1 ;
-            sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
+            sh:message "the object of prov:wasDerivedFrom is no mh:Fragment, is absent or occurs more than once"@en ;
             sh:minCount 1 ;
             sh:name "was derived from"@en,
                 "était dérivé de"@fr,
@@ -2003,6 +2044,17 @@ mh:tenantName a rdf:Property ;
                 "identificateur local"@fr,
                 "lokale identifier"@nl ;
             sh:path premis:identifier ;
+            sh:severity sh:Violation ],
+        [ a sh:PropertyShape ;
+            rdfs:label "primary local identifier"@en,
+                "identificateur local principal"@fr,
+                "primaire lokale identifier"@nl ;
+            sh:class haObj:LocalIdentifier ;
+            sh:description "The primary local identifier for the intellectual entity."@en,
+                "Un identificateur local principal pour l'entité intellectuelle."@fr,
+                "De primaire lokale identifier voor de intellectuele entiteit."@nl ;
+            sh:message "haObj:primaryIdentifier is not a LocalIdentifier"@en ;
+            sh:path haObj:primaryIdentifier ;
             sh:severity sh:Violation ],
         [ sh:class premis:IntellectualEntity ;
             sh:description "An intellectual entity that is part of this intellectual entity."@en,
@@ -2034,16 +2086,6 @@ mh:tenantName a rdf:Property ;
                 "est représenté par"@fr,
                 "wordt gerepresenteerd door"@nl ;
             sh:path rel:isr ;
-            sh:severity sh:Violation ],
-        [ sh:class haObj:DigitalRepresentation ;
-            sh:description "The archive master of the intellectual entity."@en,
-                "Le maître des archives de l'entité intellectuelle."@fr,
-                "De archiefmaster van de intellectuele entiteit."@nl ;
-            sh:message "haObj:hasMasterCopy not a haObj:DigitalRepresentation"@en ;
-            sh:name "has Master"@en,
-                "a maître"@fr,
-                "heeft master"@nl ;
-            sh:path haObj:hasMasterCopy ;
             sh:severity sh:Violation ] ;
     sh:targetClass premis:IntellectualEntity .
 
@@ -2110,64 +2152,37 @@ mh:tenantName a rdf:Property ;
                 "heeft record-ID"@nl ;
             sh:nodeKind sh:Literal ;
             sh:path schema:identifier ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:string ;
-            sh:description "The unique identifier of a fragment within the Mediahaven asset management system."@en,
-                "L'identifiant unique d'un fragment au sein du système de gestion d'actifs Mediahaven."@fr,
-                "De unieke identifier van een fragment binnen het Mediahaven asset management system."@nl ;
-            sh:maxCount 1 ;
-            sh:message "the object of mh:fragmentIdentifier is no xsd:string, is missing or occurs more than once"@en ;
-            sh:minCount 1 ;
-            sh:name "has fragment identifier"@en,
-                "a identifiant de fragment"@fr,
-                "heeft fragment-ID"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path mh:fragmentIdentifier ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:dateTime ;
-            sh:description "The date on which the record was created."@en,
-                "La date à laquelle le dossier a été créé."@fr,
-                "De datum waarop het record is aangemaakt."@nl ;
-            sh:maxCount 1 ;
-            sh:message "schema:dateCreated is not of type xsd:dateTime or is missing."@en ;
-            sh:minCount 1 ;
-            sh:name "date created"@en,
-                "date de création"@fr,
-                "datum aangemaakt"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:dateCreated ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:dateTime ;
-            sh:description "The date on which the record was deleted."@en,
-                "La date à laquelle le dossier a été supprimée."@fr,
-                "De datum waarop het record is verwijderd."@nl ;
-            sh:maxCount 1 ;
-            sh:message "schema:dateDeleted is not of type xsd:dateTime or occurs more than once."@en ;
-            sh:minCount 0 ;
-            sh:name "date deleted"@en,
-                "date supprimée"@fr,
-                "datum verwijderd"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:dateDeleted ;
-            sh:severity sh:Violation ],
-        [ a sh:PropertyShape ;
-            sh:datatype xsd:dateTime ;
-            sh:description "The date on which the record was most recently modified."@en,
-                "La date à laquelle le dossier a été récemment modifié."@fr,
-                "De datum waarop het record het meest recent is gewijzigd."@nl ;
-            sh:maxCount 1 ;
-            sh:message "schema:dateModified is not of type xsd:dateTime or is missing."@en ;
-            sh:minCount 1 ;
-            sh:name "date modified"@en,
-                "date modifiée"@fr,
-                "datum gewijzigd"@nl ;
-            sh:nodeKind sh:Literal ;
-            sh:path schema:dateModified ;
             sh:severity sh:Violation ] ;
     sh:targetClass mh:Record .
+
+<https://data.hetarchief.be/ns/object#RepresentationShape> a sh:NodeShape ;
+    sh:property [ sh:class premis:IntellectualEntity ;
+            sh:description "The intellectual entity that represents this digital representation."@en,
+                "L'entité intellectuelle qui représente cette représentation digital."@fr,
+                "De intellectuele entiteit die deze digitale representatie representeert."@nl ;
+            sh:maxCount 1 ;
+            sh:message "rel:rep is missing or not a premis:IntellectualEntity"@en,
+                "rel:rep manque ou n'est pas une premis:IntellectualEntity"@fr,
+                "rel:rep ontbreekt of is geen premis:IntellectualEntity"@nl ;
+            sh:minCount 1 ;
+            sh:name "represents"@en,
+                "représente"@fr,
+                "representeert"@nl ;
+            sh:path rel:rep ;
+            sh:severity sh:Violation ],
+        [ sh:class mh:Fragment ;
+            sh:description "The Mediahaven fragment from which this digital representation was derived."@en,
+                "Le fragment Mediahaven à partir duquel cette représentation digitale est dérivée."@fr,
+                "Het Mediahaven fragment waarvan deze digitale representatie afgeleid werd."@nl ;
+            sh:maxCount 1 ;
+            sh:message "the object of prov:wasDerivedFrom is no mh:Record, is absent or occurs more than once"@en ;
+            sh:minCount 1 ;
+            sh:name "was derived from"@en,
+                "était dérivé de"@fr,
+                "werd afgeleid van"@nl ;
+            sh:path prov:wasDerivedFrom ;
+            sh:severity sh:Violation ] ;
+    sh:targetClass premis:Representation .
 
 <https://data.hetarchief.be/ns/object#StorageLocationShape> a sh:NodeShape ;
     sh:property [ sh:description "The file path of the storage location."@en,
@@ -3067,13 +3082,6 @@ premis:fixity a owl:ObjectProperty ;
     rdfs:isDefinedBy premis: ;
     rdfs:range premis:Fixity .
 
-premis:identifier a owl:ObjectProperty ;
-    rdfs:label "has identifier"@en,
-        "a identifiant"@fr,
-        "heeft identificatiecode"@nl ;
-    rdfs:isDefinedBy premis: ;
-    rdfs:range premis:Identifier .
-
 premis:note a owl:DatatypeProperty ;
     rdfs:label "has note"@en,
         "a note"@fr,
@@ -3385,16 +3393,24 @@ prov:wasGeneratedBy a owl:ObjectProperty ;
     rdfs:subPropertyOf prov:wasInfluencedBy ;
     owl:propertyChainAxiom ( prov:qualifiedGeneration prov:activity ) .
 
-mh:fragmentIdentifier a rdf:Property ;
-    rdfs:label "fragment identifier"@en,
-        "identifiant de fragment"@fr,
-        "fragment-ID"@nl ;
-    rdfs:domain mh:Record ;
+mh:record a rdf:Property ;
+    rdfs:label "record"@en,
+        "enregistrement"@fr,
+        "record"@nl ;
+    rdfs:domain mh:Fragment ;
     rdfs:isDefinedBy mh: ;
-    rdfs:range xsd:string ;
-    skos:definition "The fragment identifier of a record or a fragment in the Mediahaven asset management system."@en,
-        "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr,
-        "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl .
+    rdfs:range mh:Record ;
+    skos:definition "The record in the Mediahaven asset management system."@en,
+        "L'enregistrement dans le système de gestion d'actifs Mediahaven."@fr,
+        "Het fragment in het Mediahaven asset management systeem."@nl .
+
+haObj:primaryIdentifier a rdf:Property ;
+    rdfs:label "has primary identifier"@en,
+        "a identifiant principal"@fr,
+        "heeft primaire identificatiecode"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:range haObj:LocalIdentifier ;
+    rdfs:subPropertyOf premis:identifier .
 
 <https://data.hetarchief.be/ns/organization/hasAccountManager> a rdf:Property ;
     rdfs:label "has an account manager"@en,
@@ -3532,6 +3548,13 @@ ebucore:isMediaFragmentOf a rdf:Property ;
     skos:definition "To identify the Media Resource to which a Media Fragment belongs to."@en,
         "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
         "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl .
+
+premis:identifier a owl:ObjectProperty ;
+    rdfs:label "has identifier"@en,
+        "a identifiant"@fr,
+        "heeft identificatiecode"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Identifier .
 
 premis:medium a owl:ObjectProperty ;
     rdfs:label "has medium"@en,
@@ -3678,18 +3701,6 @@ haObj:isMezzanineCopyOf a rdf:Property ;
     rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasMezzanineCopy .
 
-schema:identifier a rdf:Property ;
-    rdfs:label "identifier"@en,
-        "identifiant"@fr,
-        "identifier"@nl ;
-    rdfs:domain schema:Thing ;
-    rdfs:isDefinedBy schema: ;
-    rdfs:range xsd:string ;
-    owl:equivalentProperty dct:identifier ;
-    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
-        "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
-        "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
-
 edm:isNextInSequence a owl:ObjectProperty ;
     rdfs:label "is next in sequence of"@en,
         "est le prochain dans la séquence de"@fr,
@@ -3725,6 +3736,18 @@ skos:related a rdf:Property,
     skos:definition "Relates a concept to a concept with which there is an associative semantic relationship."@en,
         "Relie un concept à un concept avec lequel il existe une relation sémantique associative."@fr,
         "Verbindt een concept met een concept waarmee er een associatieve semantische relatie is."@nl .
+
+schema:identifier a rdf:Property ;
+    rdfs:label "identifier"@en,
+        "identifiant"@fr,
+        "identifier"@nl ;
+    rdfs:domain schema:Thing ;
+    rdfs:isDefinedBy schema: ;
+    rdfs:range xsd:string ;
+    owl:equivalentProperty dct:identifier ;
+    skos:definition "The identifier property represents any kind of identifier for any kind of Thing, such as ISBNs, GTIN codes, UUIDs etc."@en,
+        "La propriété 'identifier' représente n'importe quel type d'identifiant pour n'importe quel type d'objet (Thing), tels que les ISBNs, les codes GTIN, les UUIDs etc."@fr,
+        "De identifier-eigenschap representeert elk soort identifier voor elk soort ding (Thing), zoals ISBNs, GTIN codes, UUIDs enz."@nl .
 
 rel:isr a owl:ObjectProperty ;
     rdfs:label "is Represented by"@en,

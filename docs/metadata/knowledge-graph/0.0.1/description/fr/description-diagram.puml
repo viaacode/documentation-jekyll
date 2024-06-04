@@ -36,6 +36,8 @@ class "<b>Personne</b> (schema:Person)" as schema_Person [[../../organizations/f
 class "<b>Chose</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Porteur physique</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [[#haObj%3APhysicalCarrier]]
 class "<b>Emplacement de stockage</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
+class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
+class "<b>Objet</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
 class "<b>Représentation de porteur</b> (haObj:CarrierRepresentation)" as haObj_CarrierRepresentation [[#haObj%3ACarrierRepresentation]]
 class "<b>Représentation</b> (premis:Representation)" as premis_Representation [[#premis%3ARepresentation]]
 class "<b>Représentation digitale</b> (haObj:DigitalRepresentation)" as haObj_DigitalRepresentation [[#haObj%3ADigitalRepresentation]]
@@ -185,23 +187,22 @@ haObj_PhysicalCarrier --> schema_QuantitativeValue :hauteur [0..1]  \llargeur [0
 haObj_PhysicalCarrier --> skos_Concept :problème de préservation [0..*]  > 
 
 
+premis_Representation --|> premis_Object #blue;line.dotted;text:blue
+
+premis_Representation : description : <i>rdf:langString</i> [0..*]
+premis_Representation : identifier : <i>xsd:string</i> [0..1]
+premis_Representation : nom : <i>rdf:langString</i> [1..*]
+
+
+
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
-
-haObj_CarrierRepresentation : description : <i>rdf:langString</i> [0..*]
-haObj_CarrierRepresentation : identifier : <i>xsd:string</i> [0..1]
-haObj_CarrierRepresentation : nom : <i>rdf:langString</i> [1..*]
-
 
 
 haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:blue
 
-haObj_DigitalRepresentation : description : <i>rdf:langString</i> [0..*]
 haObj_DigitalRepresentation : en langue : <i>xsd:string</i> [0..*]
-haObj_DigitalRepresentation : identifier : <i>xsd:string</i> [0..1]
 haObj_DigitalRepresentation : légende : <i>xsd:string</i> [0..1]
-haObj_DigitalRepresentation : nom : <i>rdf:langString</i> [1..*]
 haObj_DigitalRepresentation : transcription : <i>xsd:string</i> [0..1]
-
 haObj_DigitalRepresentation --> schema_Role :créateur [0..*]  > 
 
 
