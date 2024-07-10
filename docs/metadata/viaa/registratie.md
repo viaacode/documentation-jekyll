@@ -239,6 +239,7 @@ Hierbij gaat het om de soort uitgave van de editie. Een krant kent meerdere soor
 - `Morning`
 - `Afternoon`
 - `Evening`
+- `Weekend`
 
 ## Jaargang en volumenummer
 
