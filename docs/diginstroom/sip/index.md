@@ -21,7 +21,7 @@ This major release ensures adherence of the meemoo SIP to the [EARK (C)SIP speci
 - Conformance with the EARK (C)SIP 2.2 specification. For more details, check out [changes to 1.X section]({{ site.baseurl }}{% link docs/diginstroom/sip/2.0/1_introduction.md %}#changes-compared-to-version-1x);
 - Faulty references to previous versions of the specfication were corrected;
 - A note was added to the overview that contains the exact E-ARK SIP version with which this specification is conformant;
-- A number of small clarifications were added to the text to improve the understanding of certain requirements.
+- A number of small clarifications were added to the text to improve the understanding of certain requirements (e.g. the use of the `METS/@OBJID` attribute).
 
 ### What was **removed** compared to the previous version?
 
