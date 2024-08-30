@@ -25,9 +25,9 @@ Modèle de données Description
 , [nl](../nl)
 
 **Auteurs:**
-[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+[Milan Valadou](mailto:milan.valadou@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
-, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Modèle de données pour décrire le contenu des objets.
@@ -159,8 +159,14 @@ Un type intangible à appliquer à tout contenu d'archives, portant avec lui un 
 [Objet](#premis%3AObject)
 
 **Sous-classes:** 
-[Edition de journal](#haDes%3ANewspaperIssue)
+[Audio](#haDes%3AAudio)
+, [Chapitre DVD](#haDes%3ADVDChapter)
+, [DVD](#haDes%3ADVD)
+, [Edition de journal](#haDes%3ANewspaperIssue)
+, [Film](#haDes%3AFilm)
+, [Image](#haDes%3AImage)
 , [Page d'édition de journal](#haDes%3ANewspaperIssuePage)
+, [Vidéo](#haDes%3AVideo)
 
 Ensemble de contenu qui est considéré comme une unité intellectuelle pour des objectifs de gestion et de description.
 
