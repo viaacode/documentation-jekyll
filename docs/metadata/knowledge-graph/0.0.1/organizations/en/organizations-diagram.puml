@@ -13,6 +13,7 @@ skinparam ArrowMessageAlignment left
 top to bottom direction
 
 
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/en#skos%3AConcept]]
 class "<b>Contact point</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
 class "<b>Content partner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
@@ -42,6 +43,8 @@ class "<b>Organization</b> (org:Organization)" as org_Organization [[#org%3AOrga
 class "<b>Site</b> (org:Site)" as org_Site [[#org%3ASite]]
 
 
+
+
 schema_ContactPoint : contact type : <i>xsd:string</i> [1..1]
 schema_ContactPoint : email : <i>xsd:string</i> [0..*]
 schema_ContactPoint : telephone : <i>xsd:string</i> [0..*]
@@ -49,12 +52,10 @@ schema_ContactPoint : telephone : <i>xsd:string</i> [0..*]
 
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
-haOrg_ContentPartner : allows bezoekertool : <i>xsd:boolean</i> [1..1]
-haOrg_ContentPartner : allows overlay : <i>xsd:boolean</i> [1..1]
 haOrg_ContentPartner : has identifier : <i>xsd:string</i> [1..1]
 haOrg_ContentPartner : request form : <i>xsd:string</i> [0..*]
 haOrg_ContentPartner --> schema_Person :has account manager [1..1]  > 
-
+haOrg_ContentPartner --> skos_Concept :has preference [0..*]  > 
 
 
 
