@@ -26,6 +26,8 @@ class "<b>Fysieke drager</b> (haObj:PhysicalCarrier)" as haObj_PhysicalCarrier [
 class "<b>Opslagplaats</b> (premis:StorageLocation)" as premis_StorageLocation [[#premis%3AStorageLocation]]
 class "<b>Intellectuele entiteit</b> (premis:IntellectualEntity)" as premis_IntellectualEntity [[#premis%3AIntellectualEntity]]
 class "<b>Object</b> (premis:Object)" as premis_Object [[#premis%3AObject]]
+class "<b>Kwantitatieve waarde</b> (schema:QuantitativeValue)" as schema_QuantitativeValue [[../../description/nl#schema%3AQuantitativeValue]]
+class "<b>Ding</b> (schema:Thing)" as schema_Thing [[#schema%3AThing]]
 class "<b>Lokale identificatie</b> (haObj:LocalIdentifier)" as haObj_LocalIdentifier [[#haObj%3ALocalIdentifier]]
 class "<b>Concept</b> (skos:Concept)" as skos_Concept [[#skos%3AConcept]]
 class "<b>Mediahavenfragment</b> (mh:Fragment)" as mh_Fragment [[#mh%3AFragment]]
@@ -48,7 +50,8 @@ premis_File --> haObj_FragmentRepresentation :heeft media fragment [0..*]  >
 premis_File --> mh_Fragment :werd afgeleid van [1..1]  > 
 premis_File --> premis_File :documenteert [0..*]  \lvervangt [0..*]  \lvolgende bestand in volgorde [0..1]  > 
 premis_File --> premis_Fixity :fixity [0..1]  > 
-premis_File --> premis_StorageLocation :opgeslagen op [1..*]  > 
+premis_File --> premis_StorageLocation :opgeslagen op [1..1]  > 
+premis_File --> schema_QuantitativeValue :breedte [0..1]  \lhoogte [0..1]  > 
 
 
 
@@ -58,7 +61,7 @@ haObj_DigitalRepresentation --|> premis_Representation #blue;line.dotted;text:bl
 
 haObj_DigitalRepresentation --> haObj_DigitalRepresentation :volgende digitale representatie in volgorde [0..1]  > 
 haObj_DigitalRepresentation --> premis_File :bevat [1..*]  \lheeft root [1..*]  > 
-haObj_DigitalRepresentation --> premis_IntellectualEntity :is master van [0..1]  \lis mezzanine van [0..1]  \lis toegangskopie van [0..1]  > 
+haObj_DigitalRepresentation --> premis_IntellectualEntity :is IIIF-kopie van [0..1]  \lis master van [0..1]  \lis mezzanine van [0..1]  \lis toegangskopie van [0..1]  \lis transcriptiekopie van [0..1]  > 
 haObj_DigitalRepresentation --> premis_Representation :heeft bron [0..*]  > 
 
 haObj_CarrierRepresentation --|> premis_Representation #blue;line.dotted;text:blue
@@ -84,11 +87,14 @@ haObj_PhysicalCarrier --> premis_StorageMedium :opslagmedium [1..1]  >
 
 premis_IntellectualEntity --|> premis_Object #blue;line.dotted;text:blue
 
-premis_IntellectualEntity --> haObj_DigitalRepresentation :heeft master [0..*]  \lheeft mezzanine [0..*]  \lheeft toegangskopie [0..*]  > 
+premis_IntellectualEntity --> haObj_DigitalRepresentation :heeft IIIF-kopie [0..*]  \lheeft master [0..*]  \lheeft mezzanine [0..*]  \lheeft toegangskopie [0..*]  \lheeft transcriptiekopie [0..*]  > 
 premis_IntellectualEntity --> haObj_LocalIdentifier :heeft primaire identificatiecode [0..*]  \llokale identifier [0..*]  > 
 premis_IntellectualEntity --> mh_Fragment :werd afgeleid van [1..1]  > 
 premis_IntellectualEntity --> premis_IntellectualEntity :heeft deel [0..*]  \lis deel van [0..*]  \lvolgende intellectuele entiteit in volgorde [0..1]  > 
 premis_IntellectualEntity --> premis_Representation :wordt gerepresenteerd door [1..*]  > 
+
+schema_QuantitativeValue --|> schema_Thing #blue;line.dotted;text:blue
+
 
 haObj_LocalIdentifier --|> skos_Concept #blue;line.dotted;text:blue
 
