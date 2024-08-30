@@ -25,9 +25,9 @@ Data model Description
 , [fr](../fr)
 
 **Authors:**
-[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+[Milan Valadou](mailto:milan.valadou@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
-, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Data model to describe the content of objects.
@@ -225,8 +225,14 @@ Named and ordered sequence of bytes that is known to an operating system.
 [Object](#premis%3AObject)
 
 **Subclasses:** 
-[Newspaper edition](#haDes%3ANewspaperIssue)
+[Audio](#haDes%3AAudio)
+, [DVD](#haDes%3ADVD)
+, [DVD chapter](#haDes%3ADVDChapter)
+, [Film](#haDes%3AFilm)
+, [Image](#haDes%3AImage)
+, [Newspaper edition](#haDes%3ANewspaperIssue)
 , [Newspaper issue page](#haDes%3ANewspaperIssuePage)
+, [Video](#haDes%3AVideo)
 
 A set of content that is considered a single intellectual unit for purposes of management and description: for example, a particular book, map, photograph, database, or piece of hardware or software. An Intellectual Entity can include other Intellectual Entities; for example, a web site can include a web page; a web page can include an image. An Intellectual Entity may have one or more digital representations. An Intellectual Entity may also describe an environment, defined as technology supporting a digital object in some way (e.g. by rendering or executing it). Environments can consist of software, hardware, or a combination of both.
 
@@ -237,9 +243,9 @@ A set of content that is considered a single intellectual unit for purposes of m
 | <a id='schema%3AalternateName'></a>alternate name <br> <small>[(schema:alternateName)](https://schema.org/alternateName)</small> | An alias for the item | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='schema%3AartMedium'></a>art medium <br> <small>[(schema:artMedium)](https://schema.org/artMedium)</small> | The material used. (e.g. Oil, Watercolour, Acrylic, Linoprint, Marble, Cyanotype, Digital, Lithograph, DryPoint, Intaglio, Pastel, Woodcut, Pencil, Mixed Media, etc.) | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
 | <a id='schema%3Aartform'></a>artform <br> <small>[(schema:artform)](https://schema.org/artform)</small> | The artform, medium, or mode of this creative work for example Painting, Drawing, Sculpture, Print, Photograph, Assemblage, Collage, etc. | `0..*` | [`rdf:langString`](http://www.w3.org/1999/02/22-rdf-syntax-ns#langString)  |
-| <a id='ebucore%3AhasCastMember'></a>castmembers <br> <small>[(ebucore:hasCastMember)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember)</small> | The cast members of a TV or theatre production. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='ebucore%3AhasCastMember'></a>castmembers <br> <small>[(ebucore:hasCastMember)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember)</small> | Les acteurs d'une production télévisée ou théâtrale. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='ebucore%3AhasCastMember'></a>castmembers <br> <small>[(ebucore:hasCastMember)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember)</small> | De castleden van een tv- of theaterproductie. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
+| <a id='ebucore%3AhasCastMember'></a>castmembers <br> <small>[(ebucore:hasCastMember)](http://www.ebu.ch/metadata/ontologies/ebucore/ebucore#hasCastMember)</small> | The cast members of a TV or theatre production. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
 | <a id='schema%3Acontributor'></a>contributor <br> <small>[(schema:contributor)](https://schema.org/contributor)</small> | A secondary contributor to the CreativeWork or Event. | `0..*` | [Role](#schema%3ARole)  |
 | <a id='schema%3AcopyrightHolder'></a>copyright holder <br> <small>[(schema:copyrightHolder)](https://schema.org/copyrightHolder)</small> | The party holding the legal copyright to the CreativeWork. | `0..*` | [Person <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/en#schema%3APerson){:target="_blank"} _or_ [Organization <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../organizations/en#org%3AOrganization){:target="_blank"} _or_ [Thing](#schema%3AThing)  |
 | <a id='schema%3AcopyrightNotice'></a>copyright notice <br> <small>[(schema:copyrightNotice)](https://schema.org/copyrightNotice)</small> | Text of a notice appropriate for describing the copyright aspects of this Creative Work, ideally indicating the owner of the copyright for the Work. | `0..*` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |

@@ -25,9 +25,9 @@ Modèle de données Events
 , [nl](../nl)
 
 **Auteurs:**
-[Milan Valadou](mailto:milan.valadou@meemoo.be)
+[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
-, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 
 
 Modèle de données pour décrire des événements.

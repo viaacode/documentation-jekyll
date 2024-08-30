@@ -14,6 +14,7 @@ top to bottom direction
 
 
 class "<b>Aanspreek-/meldpunt</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/nl#skos%3AConcept]]
 class "<b>Contentpartner</b> (haOrg:ContentPartner)" as haOrg_ContentPartner [[#haOrg%3AContentPartner]]
 class "<b>Organisatie</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Dienstenafnemer</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
@@ -47,14 +48,14 @@ schema_ContactPoint : e-mail : <i>xsd:string</i> [0..*]
 schema_ContactPoint : telefoonnummer : <i>xsd:string</i> [0..*]
 
 
+
+
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_ContentPartner : aanvraagformulier : <i>xsd:string</i> [0..*]
 haOrg_ContentPartner : heeft een identificator : <i>xsd:string</i> [1..1]
-haOrg_ContentPartner : laat bezoekertool toe : <i>xsd:boolean</i> [1..1]
-haOrg_ContentPartner : laat overlay toe : <i>xsd:boolean</i> [1..1]
 haOrg_ContentPartner --> schema_Person :heeft account manager [1..1]  > 
-
+haOrg_ContentPartner --> skos_Concept :verkiest [0..*]  > 
 
 
 haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue

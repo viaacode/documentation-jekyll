@@ -25,9 +25,9 @@ Modèle de données bibliographiques
 , [nl](../nl)
 
 **Auteurs:**
-[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
-, [Milan Valadou](mailto:milan.valadou@meemoo.be)
+[Milan Valadou](mailto:milan.valadou@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 
 
 Modèle de données pour fournir une description détaillée des objets bibliographiques et leurs composants.
@@ -45,6 +45,7 @@ Modèle de données pour fournir une description détaillée des objets bibliogr
 | bf     | [http://id.loc.gov/ontologies/bibframe/](http://id.loc.gov/ontologies/bibframe/) |
 | dct     | [http://purl.org/dc/terms/](http://purl.org/dc/terms/) |
 | haDes     | [https://data.hetarchief.be/ns/description/](https://data.hetarchief.be/ns/description/) |
+| haEdTId     | [https://data.hetarchief.be/id/edition-type/](https://data.hetarchief.be/id/edition-type/) |
 | haPrmId     | [https://data.hetarchief.be/id/production-method/](https://data.hetarchief.be/id/production-method/) |
 | owl     | [http://www.w3.org/2002/07/owl#](http://www.w3.org/2002/07/owl#) |
 | pav     | [http://purl.org/pav/](http://purl.org/pav/) |
@@ -96,7 +97,7 @@ Cette classe s'applique aux médias dans les archives de meemoo qui proviennent 
 | <a id='bf%3AproductionMethod'></a>méthode de production <br> <small>[(bf:productionMethod)](http://id.loc.gov/ontologies/bibframe/productionMethod)</small> | Le processus utilisé pour produire la édition de journal (par exemple manuscrit, dactylographié, imprimé). | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){:target="_blank"} <br>_Valeurs possibles: [`haPrmId:handwritten`](https://data.hetarchief.be/id/production-method/handwritten), [`haPrmId:typed`](https://data.hetarchief.be/id/production-method/typed), [`haPrmId:printed`](https://data.hetarchief.be/id/production-method/printed)_ |
 | <a id='haDes%3AnumberOfPages'></a>nombre de pages <br> <small>[(haDes:numberOfPages)](https://data.hetarchief.be/ns/description/numberOfPages)</small> | Indique le nombre de pages qu'un certain objet bibliographique contient. | `0..1` | [`xsd:nonNegativeInteger`](http://www.w3.org/2001/XMLSchema#nonNegativeInteger)  |
 | <a id='schema%3AissueNumber'></a>numéro de l'édition <br> <small>[(schema:issueNumber)](https://schema.org/issueNumber)</small> | Indique le numéro de série d'une édition de journal dans la série de journaux plus grande dont elle fait partie. | `0..1` | [`xsd:string`](http://www.w3.org/2001/XMLSchema#string)  |
-| <a id='bf%3Aedition'></a>type de publication <br> <small>[(bf:edition)](http://id.loc.gov/ontologies/bibframe/edition)</small> | Indique le type de publication spécifique d'une édition de journal (par exemple, édition du journal du matin, du soir, du week-end, etc.). | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){:target="_blank"}  |
+| <a id='bf%3Aedition'></a>type de publication <br> <small>[(bf:edition)](http://id.loc.gov/ontologies/bibframe/edition)</small> | Indique le type de publication spécifique d'une édition de journal (par exemple, édition du journal du matin, du soir, du week-end, etc.). | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/fr#skos%3AConcept){:target="_blank"} <br>_Valeurs possibles: [`haEdTId:morning-edition`](https://data.hetarchief.be/id/edition-type/morning-edition), [`haEdTId:afternoon-edition`](https://data.hetarchief.be/id/edition-type/afternoon-edition), [`haEdTId:evening-edition`](https://data.hetarchief.be/id/edition-type/evening-edition), [`haEdTId:weekend-edition`](https://data.hetarchief.be/id/edition-type/weekend-edition)_ |
 
 
 

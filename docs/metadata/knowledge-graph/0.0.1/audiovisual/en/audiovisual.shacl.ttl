@@ -13,17 +13,17 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-_:n1fe3cc60b6314ee68c827b06bc1664a3b1 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:n1fe3cc60b6314ee68c827b06bc1664a3b17 a rdfs:Class,
-        owl:Class ;
-    owl:unionOf ( premis:RightsStatus premis:Rule ) .
-
-_:ncb24695b770246099d7f6589fbedca41b1 a rdfs:Class,
+_:n0eda34ab87e64af8be809e1d9077553ab1 a rdfs:Class,
         owl:Class ;
     owl:unionOf ( skos:Concept skos:Collection ) .
+
+_:na87fcceb263b4ca493cedf23101c1dd8b1 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
+
+_:na87fcceb263b4ca493cedf23101c1dd8b17 a rdfs:Class,
+        owl:Class ;
+    owl:unionOf ( premis:RightsStatus premis:Rule ) .
 
 dct:FileFormat a rdfs:Class ;
     rdfs:label "File format"@en,
@@ -384,9 +384,10 @@ haDes:Audio a rdfs:Class ;
         "Audio"@fr,
         "Audio"@nl ;
     rdfs:isDefinedBy haDes: ;
-    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type audio."@en,
-        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type audio."@fr,
-        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type audio."@nl .
+    rdfs:subClassOf premis:IntellectualEntity ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from digital born audio or an analog carrier of type audio."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de l'audio né numérique ou à l'origine d'un support analogue du type audio."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van digitaal geboren audio of dat oorspronkelijk afkomstig is van een analoge drager van het type audio."@nl .
 
 haDes:AudioReel a rdfs:Class ;
     rdfs:label "Audio reel"@en,
@@ -402,6 +403,7 @@ haDes:DVD a rdfs:Class ;
         "DVD"@fr,
         "Dvd"@nl ;
     rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents the DVD as a whole."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent le DVD dans son ensemble."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en de dvd als geheel voorstelt."@nl .
@@ -411,6 +413,7 @@ haDes:DVDChapter a rdfs:Class ;
         "Chapitre DVD"@fr,
         "Dvd-hoofdstuk"@nl ;
     rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type DVD, and represents a specific DVD chapter."@en,
         "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type DVD, et représentent un chapitre DVD spécifique."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type dvd, en een specifiek dvd-hoofdstuk voorstelt."@nl .
@@ -420,9 +423,20 @@ haDes:Film a rdfs:Class ;
         "Film"@fr,
         "Film"@nl ;
     rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf premis:IntellectualEntity ;
     skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type film."@en,
         "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type film."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type film."@nl .
+
+haDes:Image a rdfs:Class ;
+    rdfs:label "Image"@en,
+        "Image"@fr,
+        "Afbeelding"@nl ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf premis:IntellectualEntity ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from a digital born image or an analog carrier of type image."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'une image née numérique ou d'un support analogue du type vidéo."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een digitaal geboren afbeelding of van een analoge drager van het type afbeelding."@nl .
 
 haDes:ImageReel a rdfs:Class ;
     rdfs:label "Image reel"@en,
@@ -453,14 +467,44 @@ haDes:NewspaperIssuePage a rdfs:Class ;
         "Cette classe s'applique aux médias des archives de meemoo qui proviennent à l'origine d'un support analogue du type journal, et représentent une page de journal spécifique."@fr,
         "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type krant, en een specifieke krantenpagina voorstelt."@nl .
 
+haDes:SilentFilm a rdfs:Class ;
+    rdfs:label "Silent film"@en,
+        "Film muet"@fr,
+        "Stomme film"@nl ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf haDes:Film ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier for silent film."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue pour le film muet."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager voor stomme film."@nl .
+
+haDes:SoundFilm a rdfs:Class ;
+    rdfs:label "Sound film"@en,
+        "Film sonore"@fr,
+        "Geluidsfilm"@nl ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:subClassOf haDes:Film ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier for sound film."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue pour le film sonore."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager voor geluidsfilm."@nl .
+
 haDes:Video a rdfs:Class ;
     rdfs:label "Video"@en,
         "Vidéo"@fr,
         "Video"@nl ;
     rdfs:isDefinedBy haDes: ;
-    skos:definition "This class applies to media in meemoo's archive that is originally derived from an analog carrier of type video."@en,
-        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine d'un support analogue du type vidéo."@fr,
-        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
+    rdfs:subClassOf premis:IntellectualEntity ;
+    skos:definition "This class applies to media in meemoo's archive that is originally derived from digital born video or an analog carrier of type video."@en,
+        "Cette classe s'applique aux médias dans les archives de meemoo qui proviennent à l'origine de la vidéo née numérique ou à l'origine d'un support analogue du type vidéo."@fr,
+        "Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk afkomstig is van digitaal geboren video of dat oorspronkelijk afkomstig is van een analoge drager van het type video."@nl .
+
+<https://data.hetarchief.be/ns/mediahaven/Fragment> a rdfs:Class ;
+    rdfs:label "Mediahaven fragment"@en,
+        "Fragment Mediahaven"@fr,
+        "Mediahavenfragment"@nl ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
+    skos:definition "A fragment in the Mediahaven asset management system."@en,
+        "Un fragment dans le système de gestion d'actifs Mediahaven."@fr,
+        "Een fragment in het Mediahaven asset management systeem."@nl .
 
 <https://data.hetarchief.be/ns/mediahaven/Record> a rdfs:Class ;
     rdfs:label "Mediahaven record"@en,
@@ -1105,7 +1149,7 @@ premis:endDate a owl:DatatypeProperty ;
     rdfs:label "end date"@en,
         "date de fin"@fr,
         "einddatum"@nl ;
-    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b1 ;
+    rdfs:domain _:na87fcceb263b4ca493cedf23101c1dd8b1 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1117,13 +1161,6 @@ premis:fixity a owl:ObjectProperty ;
             owl:unionOf ( premis:Bitstream premis:File ) ] ;
     rdfs:isDefinedBy premis: ;
     rdfs:range premis:Fixity .
-
-premis:identifier a owl:ObjectProperty ;
-    rdfs:label "has identifier"@en,
-        "a identifiant"@fr,
-        "heeft identificatiecode"@nl ;
-    rdfs:isDefinedBy premis: ;
-    rdfs:range premis:Identifier .
 
 premis:medium a owl:ObjectProperty ;
     rdfs:label "has medium"@en,
@@ -1173,7 +1210,7 @@ premis:startDate a owl:DatatypeProperty ;
     rdfs:label "start date"@en,
         "date de début"@fr,
         "startdatum"@nl ;
-    rdfs:domain _:n1fe3cc60b6314ee68c827b06bc1664a3b17 ;
+    rdfs:domain _:na87fcceb263b4ca493cedf23101c1dd8b17 ;
     rdfs:isDefinedBy premis: ;
     rdfs:subPropertyOf dct:date .
 
@@ -1288,7 +1325,7 @@ skos:member a rdf:Property,
         "heeft lid"@nl ;
     rdfs:domain skos:Collection ;
     rdfs:isDefinedBy <http://www.w3.org/2004/02/skos/core> ;
-    rdfs:range _:ncb24695b770246099d7f6589fbedca41b1 ;
+    rdfs:range _:n0eda34ab87e64af8be809e1d9077553ab1 ;
     skos:definition "Relates a collection to one of its members."@en,
         "Relie une collection à l'un de ses membres."@fr,
         "Verbindt een collectie met één van zijn leden."@nl .
@@ -1670,6 +1707,9 @@ skos:scopeNote a rdf:Property,
             sh:severity sh:Violation ] ;
     sh:targetClass haDes:DVD .
 
+<https://data.hetarchief.be/ns/audiovisual#ImageNodeShape> a sh:NodeShape ;
+    sh:targetClass haDes:Image .
+
 <https://data.hetarchief.be/ns/audiovisual#VideoNodeShape> a sh:NodeShape ;
     sh:targetClass haDes:Video .
 
@@ -1685,27 +1725,49 @@ haDes:coloringType a rdf:Property ;
         "Le type de coloration de la bobine d’image."@fr,
         "Het soort kleuring van de beeldrol/-spoel."@nl .
 
-haDes:numberOfMissingAudioReels a rdf:Property ;
+haDes:hasMissingAudioReels a rdf:Property ;
     rdfs:label "missing audio reels"@en,
         "bobines audio manquantes"@fr,
         "ontbrekende audiospoelen"@nl ;
     rdfs:domain haObj:CarrierRepresentation ;
     rdfs:isDefinedBy haDes: ;
     rdfs:range rdfs:Literal ;
-    skos:definition "Indicates for a film if (and how many) audio reels are missing, preceding any digitization process."@en,
-        "Indique pour un film si (et combien) des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
-        "Duidt aan voor een film of (en hoeveel) audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+    skos:definition "Indicates for a film if audio reels are missing, preceding any digitization process."@en,
+        "Indique pour un film si des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film of er audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
 
-haDes:numberOfMissingImageReels a rdf:Property ;
+haDes:hasMissingImageReels a rdf:Property ;
     rdfs:label "missing image reels"@en,
         "bobines d'image manquantes"@fr,
         "ontbrekende beeldspoelen"@nl ;
     rdfs:domain haObj:CarrierRepresentation ;
     rdfs:isDefinedBy haDes: ;
     rdfs:range rdfs:Literal ;
-    skos:definition "Indicates for a film if (and how many) image reels are missing, preceding any digitization process."@en,
-        "Indique pour un film si (et combien) des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
-        "Duidt aan voor een film of (en hoeveel) beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+    skos:definition "Indicates for a film if image reels are missing, preceding any digitization process."@en,
+        "Indique pour un film si des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film of er beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+haDes:numberOfMissingAudioReels a rdf:Property ;
+    rdfs:label "number of missing audio reels"@en,
+        "nombre de bobines audio manquantes"@fr,
+        "aantal ontbrekende audiospoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film how many audio reels are missing, preceding any digitization process."@en,
+        "Indique pour un film combien des bobines audio sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film hoeveel audiorollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
+
+haDes:numberOfMissingImageReels a rdf:Property ;
+    rdfs:label "number of missing image reels"@en,
+        "nombre de bobines d'image manquantes"@fr,
+        "aantal ontbrekende beeldspoelen"@nl ;
+    rdfs:domain haObj:CarrierRepresentation ;
+    rdfs:isDefinedBy haDes: ;
+    rdfs:range rdfs:Literal ;
+    skos:definition "Indicates for a film how many image reels are missing, preceding any digitization process."@en,
+        "Indique pour un film combien des bobines d'image sont manquantes, avant toute opération de numérisation."@fr,
+        "Duidt aan voor een film hoeveel beeldrollen/-spoelen ontbreken, voorafgaand aan enig digitaliseringsproces."@nl .
 
 haDes:numberOfPages a rdf:Property ;
     rdfs:label "number of pages"@en,
@@ -1742,16 +1804,16 @@ haDes:pageNumber a rdf:Property ;
         "Le numéro de séquence d'une page dans son ensemble plus grand (par exemple, une édition de journal, un livre, etc.)."@fr,
         "Het volgnummer van een pagina binnen zijn groter geheel (bv. een kranteneditie, een boek, etc.)."@nl .
 
-<https://data.hetarchief.be/ns/mediahaven/fragmentIdentifier> a rdf:Property ;
-    rdfs:label "fragment identifier"@en,
-        "identifiant de fragment"@fr,
-        "fragment-ID"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/mediahaven/Record> ;
+<https://data.hetarchief.be/ns/mediahaven/record> a rdf:Property ;
+    rdfs:label "record"@en,
+        "enregistrement"@fr,
+        "record"@nl ;
+    rdfs:domain <https://data.hetarchief.be/ns/mediahaven/Fragment> ;
     rdfs:isDefinedBy <https://data.hetarchief.be/ns/mediahaven/> ;
-    rdfs:range xsd:string ;
-    skos:definition "The fragment identifier of a record or a fragment in the Mediahaven asset management system."@en,
-        "L'identifiant de fragment d'un enregistrement ou un fragment dans le système de gestion d'actifs Mediahaven."@fr,
-        "De fragment-ID van een record of een fragment in het Mediahaven asset management systeem."@nl .
+    rdfs:range <https://data.hetarchief.be/ns/mediahaven/Record> ;
+    skos:definition "The record in the Mediahaven asset management system."@en,
+        "L'enregistrement dans le système de gestion d'actifs Mediahaven."@fr,
+        "Het fragment in het Mediahaven asset management systeem."@nl .
 
 <https://data.hetarchief.be/ns/mediahaven/tenantName> a rdf:Property ;
     rdfs:label "tenant name"@en,
@@ -1770,27 +1832,13 @@ haObj:preservationProblem a rdf:Property ;
         "preservatieprobleem"@nl ;
     rdfs:isDefinedBy haObj: .
 
-<https://data.hetarchief.be/ns/organization/allowsBZT> a rdf:Property ;
-    rdfs:label "allows bezoekertool"@en,
-        "permet le bezoekertool"@fr,
-        "laat bezoekertool toe"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/organization/ContentPartner> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "Gives admission to disseminate the content of which this content partner is the owner on the Bezoekertool of meemoo."@en,
-        "Donne admission pour diffuser le contenu dont cette contentpartner est propriétaire sur le Bezoekertool de meemoo."@fr,
-        "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te ontsluiten op de Bezoekertool van meemoo."@nl .
-
-<https://data.hetarchief.be/ns/organization/allowsOverlay> a rdf:Property ;
-    rdfs:label "allows overlay"@en,
-        "permet la superposition"@fr,
-        "laat overlay toe"@nl ;
-    rdfs:domain <https://data.hetarchief.be/ns/organization/ContentPartner> ;
-    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
-    rdfs:range rdfs:Literal ;
-    skos:definition "Gives admission to present the content of which this content partner is the owner with an overlay."@en,
-        "Donne admission pour présenter le contenu dont cette contentpartner est propriétaire avec une superposition."@fr,
-        "Geeft toelating om het materiaal, waarvan deze contentpartner eigenaar is, te presenteren met een watermerk."@nl .
+haObj:primaryIdentifier a rdf:Property ;
+    rdfs:label "has primary identifier"@en,
+        "a identifiant principal"@fr,
+        "heeft primaire identificatiecode"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:range haObj:LocalIdentifier ;
+    rdfs:subPropertyOf premis:identifier .
 
 <https://data.hetarchief.be/ns/organization/hasLogo> a rdf:Property ;
     rdfs:label "has a logo"@en,
@@ -1802,6 +1850,17 @@ haObj:preservationProblem a rdf:Property ;
     skos:definition "A logo for an organization."@en,
         "Un logo pour une organisation."@fr,
         "Een logo voor een organisatie."@nl .
+
+<https://data.hetarchief.be/ns/organization/hasPreference> a rdf:Property ;
+    rdfs:label "prefers"@en,
+        "préfère"@fr,
+        "verkiest"@nl ;
+    rdfs:domain <http://www.w3.org/ns/org#Organization> ;
+    rdfs:isDefinedBy <https://data.hetarchief.be/ns/organization/> ;
+    rdfs:range skos:Concept ;
+    skos:definition "Expresses the wish of an organization regarding whether or not to perform a certain service in collaboration with/by meemoo."@en,
+        "Exprime le souhait d'une organisation quant à la réalisation ou non d'un certain service en collaboration avec/par meemoo."@fr,
+        "Drukt de wens uit van een organisatie met betrekking tot het al dan niet uitvoeren van een bepaalde service in samenwerking met/door meemoo."@nl .
 
 <https://data.hetarchief.be/ns/organization/requestForm> a rdf:Property ;
     rdfs:label "request form"@en,
@@ -2601,6 +2660,13 @@ ebucore:isMediaFragmentOf a rdf:Property ;
         "Pour identifier la MediaResource à laquelle appartient un MediaFragment."@fr,
         "Om de MediaResource te identificeren waartoe een MediaFragment behoort."@nl .
 
+premis:identifier a owl:ObjectProperty ;
+    rdfs:label "has identifier"@en,
+        "a identifiant"@fr,
+        "heeft identificatiecode"@nl ;
+    rdfs:isDefinedBy premis: ;
+    rdfs:range premis:Identifier .
+
 premis:note a owl:DatatypeProperty ;
     rdfs:label "has note"@en,
         "a note"@fr,
@@ -2968,6 +3034,14 @@ haObj:hasAccessCopy a rdf:Property ;
     rdfs:subPropertyOf rel:isr ;
     owl:inverseOf haObj:isAccessCopyOf .
 
+haObj:hasIIIFCopy a rdf:Property ;
+    rdfs:label "has IIIF copy"@en,
+        "a copie IIIF"@fr,
+        "heeft IIIF-kopie"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:isr ;
+    owl:inverseOf haObj:isIIIFCopyOf .
+
 haObj:hasMasterCopy a rdf:Property ;
     rdfs:label "has archiving master"@en,
         "a copie principale"@fr,
@@ -2984,6 +3058,14 @@ haObj:hasMezzanineCopy a rdf:Property ;
     rdfs:subPropertyOf rel:isr ;
     owl:inverseOf haObj:isMezzanineCopyOf .
 
+haObj:hasTranscriptionCopy a rdf:Property ;
+    rdfs:label "has transcription copy"@en,
+        "a copie de transcription"@fr,
+        "heeft transcriptiekopie"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:isr ;
+    owl:inverseOf haObj:isTranscriptionCopyOf .
+
 haObj:isAccessCopyOf a rdf:Property ;
     rdfs:label "is access copy of"@en,
         "est copie d'accès de"@fr,
@@ -2991,6 +3073,14 @@ haObj:isAccessCopyOf a rdf:Property ;
     rdfs:isDefinedBy haObj: ;
     rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasAccessCopy .
+
+haObj:isIIIFCopyOf a rdf:Property ;
+    rdfs:label "is IIIF copy of"@en,
+        "est copie IIIF de"@fr,
+        "is IIIF-kopie van"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:rep ;
+    owl:inverseOf haObj:hasIIIFCopy .
 
 haObj:isMasterCopyOf a rdf:Property ;
     rdfs:label "is archiving master of"@en,
@@ -3007,6 +3097,14 @@ haObj:isMezzanineCopyOf a rdf:Property ;
     rdfs:isDefinedBy haObj: ;
     rdfs:subPropertyOf rel:rep ;
     owl:inverseOf haObj:hasMezzanineCopy .
+
+haObj:isTranscriptionCopyOf a rdf:Property ;
+    rdfs:label "is transcription copy of"@en,
+        "est copie transcription de"@fr,
+        "is transcriptiekopie van"@nl ;
+    rdfs:isDefinedBy haObj: ;
+    rdfs:subPropertyOf rel:rep ;
+    owl:inverseOf haObj:hasTranscriptionCopy .
 
 <https://data.hetarchief.be/ns/organization/hasAccountManager> a rdf:Property ;
     rdfs:label "has an account manager"@en,
@@ -3165,26 +3263,6 @@ skos:narrowerTransitive a rdf:Property,
         "Par convention, skos:narrowerTransitive n'est pas utilisé pour faire des assertions. A la place, les propriétés peuvent être utilisées pour tirer des inferences sur la fermeture transitive de la relation hiérarchique, ce qui est utile par exemple lors de l'implémentation d'un algorithme simple d'expansion de requête dans une application de recherche."@fr,
         "Volgens conventie wordt skos:narrowerTransitive niet gebruikt om beweringen te doen. De eigenschappen kunnen wel gebruikt worden om inferenties te trekken over de transitieve sluiting van de hiërarchische relatie, wat bijvoorbeeld handig is bij het implementeren van een eenvoudig queryexpansie-algoritme in een zoekapplicatie."@nl .
 
-rel:isr a owl:ObjectProperty ;
-    rdfs:label "is Represented by"@en,
-        "est représenté par"@fr,
-        "wordt gerepresenteerd door"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf premis:relationship ;
-    skos:definition "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en,
-        "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
-        "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl .
-
-rel:rep a owl:ObjectProperty ;
-    rdfs:label "represents"@en,
-        "représente"@fr,
-        "representeert"@nl ;
-    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
-    rdfs:subPropertyOf premis:relationship ;
-    skos:definition "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en,
-        "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr,
-        "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl .
-
 skos:related a rdf:Property,
         owl:ObjectProperty,
         owl:SymmetricProperty ;
@@ -3228,6 +3306,26 @@ skos:semanticRelation a rdf:Property,
     skos:scopeNote "This property should not be used directly, but as a super-property for all properties denoting a relationship of meaning between concepts."@en,
         "Cette propriété ne doit pas être utilisée directement, mais comme super-propriété pour toutes les propriétés désignant une relation de sens entre concepts."@fr,
         "Deze eigenschap moet niet direct gebruikt worden, maar als super-eigenschap voor alle eigenschappen die een betekenisrelatie tussen concepten aanduiden."@nl .
+
+rel:isr a owl:ObjectProperty ;
+    rdfs:label "is Represented by"@en,
+        "est représenté par"@fr,
+        "wordt gerepresenteerd door"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship ;
+    skos:definition "A relationship in which an abstract intellectual entity is represented as a file or representation or a software agent is represented by an environment object. Has a reciprocal relationship of represents."@en,
+        "Relation dans laquelle une entité intellectuelle (intellectual entity) abstraite est représentée par un fichier (file) ou une représentation (representation) ou un logiciel est représenté par un objet d'environnement. A une relation réciproque avec represents."@fr,
+        "Een relatie waarin een abstracte intellectuele entiteit (intellectual entity) wordt gerepresenteerd als een bestand (file) of representatie (representatie), of een software-agent wordt gerepresenteerd door een omgevingsobject. Heeft een wederkerige relatie met represents."@nl .
+
+rel:rep a owl:ObjectProperty ;
+    rdfs:label "represents"@en,
+        "représente"@fr,
+        "representeert"@nl ;
+    rdfs:isDefinedBy <http://id.loc.gov/vocabulary/preservation/relationshipSubType> ;
+    rdfs:subPropertyOf premis:relationship ;
+    skos:definition "A relationship in which a file or representation is captured in an abstract intellectual entity description that it represents. It is a statement of what can depict or stand for the Intellectual Entity. Has a reciprocal relationship of isRepresentedBy."@en,
+        "Une relation dans laquelle un fichier (file) ou une représentation (representation) est capturé dans une description abstraite de l'entité intellectuelle (intellectual entity) qu'elle représente. Il s'agit d'une déclaration de ce qui peut dépeindre ou représenter l'entité intellectuelle (intellectual entity). A une relation réciproque avec isRepresentedBy."@fr,
+        "Een relatie waarin een bestand (file) of representatie (representation) wordt vastgelegd in een abstracte intellectuele entiteitsbeschrijving die het representeert. Het is een verklaring van wat de Intellectuele Entiteit kan afbeelden of vertegenwoordigen. Heeft een wederkerige relatie met isRepresentedBy."@nl .
 
 skos:note a rdf:Property,
         owl:AnnotationProperty ;
