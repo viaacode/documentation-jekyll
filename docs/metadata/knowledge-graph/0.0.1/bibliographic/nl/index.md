@@ -1,7 +1,7 @@
 ---
 layout: "default"
 title: "Bibliografisch datamodel "
-parent: "Datamodel Descriptie"
+parent: "Knowledge Graph"
 nav_order: 1
 nav_exclude: True
 ---
@@ -25,9 +25,9 @@ Bibliografisch datamodel
 , [fr](../fr)
 
 **Auteurs:**
-[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
-, [Milan Valadou](mailto:milan.valadou@meemoo.be)
+[Milan Valadou](mailto:milan.valadou@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 
 
 Datamodel voor de gedetailleerde beschrijving van bibliografische objecten en hun componenten.
@@ -45,6 +45,7 @@ Datamodel voor de gedetailleerde beschrijving van bibliografische objecten en hu
 | bf     | [http://id.loc.gov/ontologies/bibframe/](http://id.loc.gov/ontologies/bibframe/) |
 | dct     | [http://purl.org/dc/terms/](http://purl.org/dc/terms/) |
 | haDes     | [https://data.hetarchief.be/ns/description/](https://data.hetarchief.be/ns/description/) |
+| haEdTId     | [https://data.hetarchief.be/id/edition-type/](https://data.hetarchief.be/id/edition-type/) |
 | haPrmId     | [https://data.hetarchief.be/id/production-method/](https://data.hetarchief.be/id/production-method/) |
 | owl     | [http://www.w3.org/2002/07/owl#](http://www.w3.org/2002/07/owl#) |
 | pav     | [http://purl.org/pav/](http://purl.org/pav/) |
@@ -96,7 +97,7 @@ Deze klasse is van toepassing op media in meemoo's archief dat oorspronkelijk af
 | <a id='schema%3AisPartOf'></a>maakt deel uit van <br> <small>[(schema:isPartOf)](https://schema.org/isPartOf)</small> | Geeft de krantenserie aan waar een specifieke kranteneditie deel van uitmaakt. | `0..1` | [Newspaper](#schema%3ANewspaper)  |
 | <a id='bf%3AproductionMethod'></a>productie methode <br> <small>[(bf:productionMethod)](http://id.loc.gov/ontologies/bibframe/productionMethod)</small> | Het proces dat werd gebruikt om de kranteneditie te produceren (bijv. handgeschreven, getypt, gedrukt). | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){:target="_blank"} <br>_Mogelijke waarden: [`haPrmId:handwritten`](https://data.hetarchief.be/id/production-method/handwritten), [`haPrmId:typed`](https://data.hetarchief.be/id/production-method/typed), [`haPrmId:printed`](https://data.hetarchief.be/id/production-method/printed)_ |
 | <a id='bf%3Aissuance'></a>uitgavefrequentie <br> <small>[(bf:issuance)](http://id.loc.gov/ontologies/bibframe/issuance)</small> | Geeft aan hoe vaak een krant verschijnt, b.v. tweemaal per dag, dagelijks, wekelijks etc. | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){:target="_blank"}  |
-| <a id='bf%3Aedition'></a>uitgavetype <br> <small>[(bf:edition)](http://id.loc.gov/ontologies/bibframe/edition)</small> | Geeft het specifieke uitgavetype aan van een kranteneditie (bv. ochtend-, avond-, weekendkranteneditie etc.). | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){:target="_blank"}  |
+| <a id='bf%3Aedition'></a>uitgavetype <br> <small>[(bf:edition)](http://id.loc.gov/ontologies/bibframe/edition)</small> | Geeft het specifieke uitgavetype aan van een kranteneditie (bv. ochtend-, avond-, weekendkranteneditie etc.). | `0..1` | [Concept <svg class="svg-external-link" viewBox="0 0 24 24" aria-labelledby="svg-external-link-title"><use xlink:href="#svg-external-link"></use></svg>](../../terms/nl#skos%3AConcept){:target="_blank"} <br>_Mogelijke waarden: [`haEdTId:morning-edition`](https://data.hetarchief.be/id/edition-type/morning-edition), [`haEdTId:afternoon-edition`](https://data.hetarchief.be/id/edition-type/afternoon-edition), [`haEdTId:evening-edition`](https://data.hetarchief.be/id/edition-type/evening-edition), [`haEdTId:weekend-edition`](https://data.hetarchief.be/id/edition-type/weekend-edition)_ |
 
 
 
