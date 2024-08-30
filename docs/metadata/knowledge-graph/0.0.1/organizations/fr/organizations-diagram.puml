@@ -15,6 +15,7 @@ top to bottom direction
 
 class "<b>Adresse postale</b> (schema:PostalAddress)" as schema_PostalAddress [[#schema%3APostalAddress]]
 class "<b>Point de contact</b> (schema:ContactPoint)" as schema_ContactPoint [[#schema%3AContactPoint]]
+class "<b>Concept</b> (skos:Concept)" as skos_Concept [[../../terms/fr#skos%3AConcept]]
 class "<b>Consomatteur de services</b> (haOrg:ServiceConsumer)" as haOrg_ServiceConsumer [[#haOrg%3AServiceConsumer]]
 class "<b>Organisation</b> (org:Organization)" as org_Organization [[#org%3AOrganization]]
 class "<b>Fournisseur de services</b> (haOrg:ServiceProvider)" as haOrg_ServiceProvider [[#haOrg%3AServiceProvider]]
@@ -52,6 +53,8 @@ schema_PostalAddress : ville : <i>xsd:string</i> [0..1]
 schema_PostalAddress --> schema_Country :pays [0..1]  > 
 
 
+
+
 haOrg_ServiceConsumer --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_ServiceConsumer : possède un identifiant : <i>xsd:string</i> [1..1]
@@ -86,11 +89,9 @@ org_Organization --> schema_Person :a gestionnaire de comptes [0..1]  >
 haOrg_ContentPartner --|> org_Organization #blue;line.dotted;text:blue
 
 haOrg_ContentPartner : formulaire de demande : <i>xsd:string</i> [0..*]
-haOrg_ContentPartner : permet la superposition : <i>xsd:boolean</i> [1..1]
-haOrg_ContentPartner : permet le bezoekertool : <i>xsd:boolean</i> [1..1]
 haOrg_ContentPartner : possède un identifiant : <i>xsd:string</i> [1..1]
 haOrg_ContentPartner --> schema_Person :a gestionnaire de comptes [1..1]  > 
-
+haOrg_ContentPartner --> skos_Concept :préfère [0..*]  > 
 
 
 
