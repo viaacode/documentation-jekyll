@@ -25,9 +25,9 @@ Datamodel Descriptie
 , [fr](../fr)
 
 **Auteurs:**
-[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+[Milan Valadou](mailto:milan.valadou@meemoo.be)
+, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
-, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 
 
 Datamodel voor de beschrijving van de inhoud van objecten.
@@ -248,8 +248,14 @@ Een fysieke drager waarop data, geluid, beeld etc. zijn opgeslagen. Voor bepaald
 [Object](#premis%3AObject)
 
 **Subklassen:** 
-[Kranteneditie](#haDes%3ANewspaperIssue)
+[Afbeelding](#haDes%3AImage)
+, [Audio](#haDes%3AAudio)
+, [Dvd](#haDes%3ADVD)
+, [Dvd-hoofdstuk](#haDes%3ADVDChapter)
+, [Film](#haDes%3AFilm)
+, [Kranteneditie](#haDes%3ANewspaperIssue)
 , [Kranteneditiepagina](#haDes%3ANewspaperIssuePage)
+, [Video](#haDes%3AVideo)
 
 Set van inhoud die beschouwd wordt als één enkele intellectuele eenheid met als doeleinden beheer en beschrijving.
 
