@@ -25,9 +25,9 @@ Data model Events
 , [fr](../fr)
 
 **Authors:**
-[Milan Valadou](mailto:milan.valadou@meemoo.be)
+[Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
+, [Milan Valadou](mailto:milan.valadou@meemoo.be)
 , [Miel Vander Sande](mailto:miel.vandersande@meemoo.be)
-, [Lennert Van de Velde](mailto:lennert.vandevelde@meemoo.be)
 
 
 Data model to describe events.
