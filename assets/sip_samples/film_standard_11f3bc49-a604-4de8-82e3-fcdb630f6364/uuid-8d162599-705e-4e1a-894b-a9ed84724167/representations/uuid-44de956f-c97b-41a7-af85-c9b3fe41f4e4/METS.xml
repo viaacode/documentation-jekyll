@@ -3,7 +3,7 @@
     xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
     OBJID="uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4" TYPE="Video – File-based and Physical Media"
-    PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml"
+    PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP-v2-2-0.xml"
     xsi:schemaLocation="https://www.w3.org./1999/xlink http://www.loc.gov/standards/xlink/xlink.xsd
                         http://www.loc.gov/METS/ https://www.loc.gov/standards/mets/mets.xsd
                         https://DILCIS.eu/XML/METS/CSIPExtensionMETS https://earkcsip.dilcis.eu/schema/DILCISExtensionMETS.xsd
@@ -18,8 +18,8 @@
             <!-- Creation date of the premis.xml file -->
             <!-- Checksum of the premis.xml file -->
             <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple"
-                xlink:href="metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="5027"
-                CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="0537a462aff75e2783b70c7196e5e48b"
+                xlink:href="metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="5023"
+                CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="987a2bee5939c0641c434aa24f6f6709"
                 CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>

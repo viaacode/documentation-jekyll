@@ -55,9 +55,9 @@
           valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
           MD5
         </premis:messageDigestAlgorithm>
-        <premis:messageDigest>587488eec66f925fcc5cc6e0f083b3cf</premis:messageDigest>
+        <premis:messageDigest>0225bb8f6298a73ec3ea8acc20a1e9ab</premis:messageDigest>
       </premis:fixity>
-      <premis:size>27524681761</premis:size>
+      <premis:size>28</premis:size>
       <premis:format>
         <premis:formatRegistry>
           <premis:formatRegistryName>PRONOM</premis:formatRegistryName>

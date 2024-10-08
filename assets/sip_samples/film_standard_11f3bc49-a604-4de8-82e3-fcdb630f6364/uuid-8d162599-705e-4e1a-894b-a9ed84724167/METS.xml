@@ -3,7 +3,7 @@
     xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
     OBJID="uuid-8d162599-705e-4e1a-894b-a9ed84724167"
-    PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP.xml"
+    PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP-v2-2-0.xml"
     TYPE="Video – File-based and Physical Media">
 
     <metsHdr CREATEDATE="2023-11-17T10:01:15.014+02:00" csip:OAISPACKAGETYPE="SIP">
@@ -38,8 +38,8 @@
     <amdSec>
         <digiprovMD ID="uuid-e4406929-4e4c-4d71-88be-65febad583d2">
             <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple"
-                xlink:href="metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="27712"
-                CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="5fc49deb13e667dcd5361031a198d23d"
+                xlink:href="metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="26877"
+                CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="ba7300b959a2a30f4223df1c9a1ef178"
                 CHECKSUMTYPE="MD5" />
         </digiprovMD>
     </amdSec>
@@ -49,8 +49,8 @@
 
         <fileGrp USE="Representations/representation_1"
             ID="uuid-c388a348-8b44-4634-8cd1-509c0219b993">
-            <file ID="uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4" MIMETYPE="text/xml" SIZE="3122"
-                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="8adb546389d623f3c690a1aae487af3c"
+            <file ID="uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4" MIMETYPE="text/xml" SIZE="3129"
+                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="6f88856136a43e9143349a0cf30bc60b"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
                     xlink:href="representations/uuid-44de956f-c97b-41a7-af85-c9b3fe41f4e4/METS.xml" />
@@ -58,8 +58,8 @@
         </fileGrp>
         <fileGrp USE="Representations/representation_2"
             ID="uuid-f3967739-fbc7-4c1e-a78d-d81ea36a8c78">
-            <file ID="uuid-9868b185-3644-452d-9412-d127e555b5e5" MIMETYPE="text/xml" SIZE="3119"
-                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="d14506f69c2631d6ea7f515f79625a56"
+            <file ID="uuid-9868b185-3644-452d-9412-d127e555b5e5" MIMETYPE="text/xml" SIZE="3126"
+                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="b09002c5d82e3c9456683b215b76edfc"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
                     xlink:href="representations/uuid-9868b185-3644-452d-9412-d127e555b5e5/METS.xml" />
@@ -67,8 +67,8 @@
         </fileGrp>
         <fileGrp USE="Representations/representation_3"
             ID="uuid-e54c22c7-ec53-4e89-a97d-919e1c48190b">
-            <file ID="uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b" MIMETYPE="text/xml" SIZE="3121"
-                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="2f8b7842333811372562851c3c1339fb"
+            <file ID="uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b" MIMETYPE="text/xml" SIZE="3128"
+                CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="2a183cdc757f427028b67339d9c12b1a"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
                     xlink:href="representations/uuid-b78b075b-f40c-4402-865c-2d7f0c5ab59b/METS.xml" />
