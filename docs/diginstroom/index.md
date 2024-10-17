@@ -25,13 +25,13 @@ Deze pagina biedt contentpartners (CP's) van meemoo meer inzicht in hoe de metad
 
 CP's die over born digital of gedigitaliseerd materiaal beschikken, zullen metadata over deze essence moeten aanleveren. Dit gebeurt in de vorm van een sidecar XML-bestand voor elke essence, bv. test.xml + test.mxf. Meemoo's ingestproces verwacht metadata die reeds gemapt werd naar meemoo's metadatamodel, zoals uitgelegd hieronder. Indien je vragen en/of opmerkingen zou hebben, horen we die graag via support@meemoo.be!
 
-Je kan je gemapte metadata valideren aan de hand van onze XSD `viaa_metadatamodel_xsd.xsd`. Een eenvoudige manier om dit te doen, is met xmllint (een deel van  [libxml](http://xmlsoft.org/)). Open een terminal en voer volgend commando uit:
+Je kan je gemapte metadata valideren aan de hand van onze XSD [`viaa_metadatamodel_xsd.xsd`](https://github.com/viaacode/documentation/blob/7bbe0323731bc180f0b5855b47245935ab8704c4/assets/legacy_born_digital/viaa_metadatamodel_van_cp_naar_viaa.xsd). Een eenvoudige manier om dit te doen, is met xmllint (een deel van  [libxml](http://xmlsoft.org/)). Open een terminal en voer volgend commando uit:
 
 ```bash
 xmllint --noout --schema viaa_metadatamodel_voor_cp.xsd viaa_metadatamodel_voorbeeld_voor_cp.xml
 ```
 
-Zie `viaa_metadatamodel_voorbeeld_voor_cp.xml` voor een voorbeeld van een volledig ingevuld metadatabestand.
+Zie [`viaa_metadatamodel_voorbeeld_voor_cp.xml`](https://github.com/viaacode/documentation/blob/7bbe0323731bc180f0b5855b47245935ab8704c4/assets/legacy_born_digital/viaa_metadatamodel_voorbeeld_van_cp_naar_viaa.xml) voor een voorbeeld van een volledig ingevuld metadatabestand.
 
 
 ## Instroom via meemoo SIP
