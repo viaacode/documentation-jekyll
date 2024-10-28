@@ -12,6 +12,18 @@ parent:       Digitale instroom
 
 The meemoo SIP specification is available in the following versions:
 
+## Version [2.1]({{ site.baseurl }}{% link docs/diginstroom/sip/2.1/index.md %}) <span class="label label-yellow">Editor's Draft</span>
+
+This release adds support for digitised film via a dedicated Film content profile. This version is being drafted and is **not yet supported**.
+
+### What was **added** compared to the previous version?
+
+- The content profile Film.
+
+### What was **removed** compared to the previous version?
+
+Not applicable.
+
 ## Version [2.0]({{ site.baseurl }}{% link docs/diginstroom/sip/2.0/index.md %}) <span class="label label-yellow">Editor's Draft</span>
 
 This major release ensures adherence of the meemoo SIP to the [EARK (C)SIP specification](https://earksip.dilcis.eu/). This version is being drafted and is **not yet supported**.
