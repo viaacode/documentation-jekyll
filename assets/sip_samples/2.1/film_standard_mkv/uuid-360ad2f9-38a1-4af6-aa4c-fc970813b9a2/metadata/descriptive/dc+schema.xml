@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<metadata xmlns="https://data.hetarchief.be/id/sip/1.2/film"
+  xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xs="http://www.w3.org/2001/XMLSchema/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:edtf="http://id.loc.gov/datatypes/edtf/" xmlns:schema="https://schema.org/">
+
+  <!-- general title for the resource -->
+  <dcterms:title xml:lang="nl">Dummyfilmtitel</dcterms:title>
+
+  <!-- general description for the resource -->
+  <dcterms:description xml:lang="nl">Een dummybeschrijving</dcterms:description>
+
+  <!-- linking id between dc and premis -->
+  <dcterms:identifier>uuid-050351c8-0387-40b2-a072-f991116832d2</dcterms:identifier>
+
+  <!-- creationdate -->
+  <dcterms:created xsi:type="edtf:EDTF-level1">2024-XX-XX</dcterms:created>
+
+  <!-- keywords for the resource -->
+  <dcterms:subject xml:lang="en">amateur recording</dcterms:subject>
+  <dcterms:subject xml:lang="en">silent movie</dcterms:subject>
+  <dcterms:subject xml:lang="en">Belgium</dcterms:subject>
+
+  <!-- archiefvormer role -->
+  <schema:creator schema:roleName="archiefvormer">
+    <schema:name>Dummy privéarchief</schema:name>
+  </schema:creator>
+
+  <!-- rightsholder -->
+  <dcterms:rightsHolder>© dummyorganisatie</dcterms:rightsHolder>
+
+  <!-- IE type -->
+  <dcterms:format>film</dcterms:format>
+
+  <!-- VIAA licenses for the resource -->
+  <dcterms:license>VIAA-ONDERWIJS</dcterms:license>
+  <dcterms:license>VIAA-ONDERZOEK</dcterms:license>
+  <dcterms:license>VIAA-INTRA-CP-CONTENT</dcterms:license>
+  <dcterms:license>VIAA-INTRA_CP-METADATA-ALL</dcterms:license>
+  <dcterms:license>VIAA-PUBLIEK-METADATA-LTD</dcterms:license>
+  <dcterms:license>BEZOEKERTOOL-CONTENT</dcterms:license>
+  <dcterms:license>BEZOEKERTOOL-METADATA-ALL</dcterms:license>
+
+</metadata>
