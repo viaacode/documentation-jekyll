@@ -31,7 +31,7 @@
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
-    <!-- relationship with representation 1: zip -->
+    <!-- relationship with representation 1: mkv master -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType"
         authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
@@ -47,7 +47,7 @@
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
-    <!-- relationship with representation 2: mov -->
+    <!-- relationship with representation 2: mov mezzanine -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType"
         authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
@@ -61,7 +61,7 @@
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
-    <!-- relationship with representation 3: dpx -->
+    <!-- relationship with representation 3: ZIP (with dpxs) QC -->
     <premis:relationship>
       <premis:relationshipType authority="relationshipType"
         authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
@@ -190,6 +190,7 @@
       - check-out
       - inspection
       - digitization
+      - compression
       - editing
       - transfer
  -->
