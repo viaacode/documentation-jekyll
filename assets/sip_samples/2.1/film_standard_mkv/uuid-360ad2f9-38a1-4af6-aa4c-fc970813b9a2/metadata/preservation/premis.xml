@@ -383,6 +383,65 @@
 
   </premis:event>
 
+  <!-- compression event; performed by the SP -->
+  <premis:event>
+    <premis:eventIdentifier>
+      <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
+      <premis:eventIdentifierValue>uuid-9a18ba7f-c4d2-4323-a568-923b5e89c4e4</premis:eventIdentifierValue>
+    </premis:eventIdentifier>
+    <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/compression">compression</premis:eventType>
+    <premis:eventDateTime>2022-04-28T00:00:00</premis:eventDateTime>
+    <premis:eventDetailInformation>
+      <premis:eventDetail>
+        RAWcooked 23.09.20241109, FFmpeg 7.1
+        Parameters used: --all -o Variation_Examples/AIP_VARIATION_3-M_image_0_sound_N_scans/rawcooked/t14th8df5w_001.mkv
+        Package name: t14th8df5w_001_%06d.dpx
+        Track 1:
+        (000001 --> 000025)
+        DPX/Raw/RGB/8bit/U/LE
+        Info: Reversibility data created by RAWcooked 23.09.20241109.
+        Info: Uncompressed file hashes (used by reversibility check) present.
+        Info: Reversibility was checked, no issue detected.
+      </premis:eventDetail>
+    </premis:eventDetailInformation>
+    <premis:eventOutcomeInformation>
+      <premis:eventOutcome valueURI="http://id.loc.gov/vocabulary/preservation/eventOutcome/suc">success</premis:eventOutcome>
+    </premis:eventOutcomeInformation>
+
+    <!-- reference to the agent of the service provider -->
+    <!-- people part of an organization acting as agent don't have a role assigned  -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>SP-AGENT</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>JulienS/RAWcooked 23.09.20241109, FFmpeg 7.1</premis:linkingAgentIdentifierValue>
+    </premis:linkingAgentIdentifier>
+
+    <!-- reference to the service provider -->
+    <!-- organizations acting as agents have an additional implementer role -->
+    <premis:linkingAgentIdentifier>
+      <premis:linkingAgentIdentifierType>MEEMOO-OR-ID</premis:linkingAgentIdentifierType>
+      <premis:linkingAgentIdentifierValue>OR-183420s</premis:linkingAgentIdentifierValue>
+      <premis:linkingAgentRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedAgentRole/imp">implementer</premis:linkingAgentRole>
+    </premis:linkingAgentIdentifier>
+
+    <!-- reference to the input of the event -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+
+    <!-- reference to the output of the event -->
+    <premis:linkingObjectIdentifier>
+      <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectRole
+        valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
+    </premis:linkingObjectIdentifier>
+
+  </premis:event>
+
   <!-- editing event; performed by the SP -->
   <premis:event>
     <premis:eventIdentifier>
