@@ -8,7 +8,7 @@
 
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-050351c8-0387-40b2-a072-f991116832d2</premis:objectIdentifierValue>
+      <premis:objectIdentifierValue>uuid-</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
     <premis:objectIdentifier>
@@ -27,7 +27,7 @@
         by</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-a27d233d-12f4-4c61-a135-3f8748976016</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
@@ -41,7 +41,7 @@
         valueURI="https://data.hetarchief.be/ns/object/hasMasterCopy">has master</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-684d76fd-6d40-4aaa-b897-36d7e2872680</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
@@ -55,7 +55,7 @@
         valueURI="https://data.hetarchief.be/ns/object/hasMezzanineCopy">has mezzanine</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-9e15c27f-1c4e-48c7-a979-36c2af0e1c88</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
@@ -70,7 +70,7 @@
         by</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-223e08bd-31a1-4340-b966-6f3b4f02bb90</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
@@ -115,7 +115,7 @@
     <!-- Create PREMIS object for the representation itself -->
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-a27d233d-12f4-4c61-a135-3f8748976016</premis:objectIdentifierValue>
+      <premis:objectIdentifierValue>uuid-</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
     <premis:significantProperties>
@@ -208,7 +208,7 @@
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/rep">represents</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-050351c8-0387-40b2-a072-f991116832d2</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
@@ -229,7 +229,7 @@
     <premis:eventIdentifier>
 
       <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
-      <premis:eventIdentifierValue>uuid-fd17cd1e-a977-496d-9373-053c9ee92275</premis:eventIdentifierValue>
+      <premis:eventIdentifierValue>uuid-</premis:eventIdentifierValue>
 
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/registration">
@@ -268,7 +268,7 @@
     <!-- reference to the premis:Representation object of the carrier representation -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-      <premis:linkingObjectIdentifierValue>uuid-a27d233d-12f4-4c61-a135-3f8748976016</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>
@@ -279,7 +279,7 @@
     <premis:eventIdentifier>
 
       <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
-      <premis:eventIdentifierValue>uuid-f519b865-3c76-4011-bd32-4abe2fff23e6</premis:eventIdentifierValue>
+      <premis:eventIdentifierValue>uuid-</premis:eventIdentifierValue>
 
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/check-out">
@@ -302,7 +302,7 @@
     <!-- reference to the premis:Representation object of the carrier representation -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-      <premis:linkingObjectIdentifierValue>uuid-a27d233d-12f4-4c61-a135-3f8748976016</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>
@@ -312,7 +312,7 @@
   <premis:event>
     <premis:eventIdentifier>
       <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
-      <premis:eventIdentifierValue>uuid-919c6d5f-c2c5-4941-b7d5-79e843bec000</premis:eventIdentifierValue>
+      <premis:eventIdentifierValue>uuid-</premis:eventIdentifierValue>
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/inspection">inspection</premis:eventType>
     <premis:eventDateTime>2022-03-25T00:00:00</premis:eventDateTime>
@@ -345,7 +345,7 @@
     <!-- reference to the premis:Representation object of the carrier representation -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-      <premis:linkingObjectIdentifierValue>uuid-a27d233d-12f4-4c61-a135-3f8748976016</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>
@@ -357,7 +357,7 @@
   <premis:event>
     <premis:eventIdentifier>
       <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
-      <premis:eventIdentifierValue>uuid-fe64cca8-360b-4e9a-8179-6a69ef386d89</premis:eventIdentifierValue>
+      <premis:eventIdentifierValue>uuid-</premis:eventIdentifierValue>
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/digitization">digitization</premis:eventType>
     <premis:eventDateTime>2022-04-26T00:00:00</premis:eventDateTime>
@@ -395,7 +395,7 @@
     <!-- reference to the premis:Representation object of the carrier representation -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-      <premis:linkingObjectIdentifierValue>uuid-a27d233d-12f4-4c61-a135-3f8748976016</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>
@@ -404,7 +404,7 @@
     master) -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-      <premis:linkingObjectIdentifierValue>uuid-684d76fd-6d40-4aaa-b897-36d7e2872680</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>
@@ -416,7 +416,7 @@
   <premis:event>
     <premis:eventIdentifier>
       <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
-      <premis:eventIdentifierValue>uuid-9a18ba7f-c4d2-4323-a568-923b5e89c4e4</premis:eventIdentifierValue>
+      <premis:eventIdentifierValue>uuid-</premis:eventIdentifierValue>
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/compression">compression</premis:eventType>
     <premis:eventDateTime>2022-04-28T00:00:00</premis:eventDateTime>
@@ -475,7 +475,7 @@
   <premis:event>
     <premis:eventIdentifier>
       <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
-      <premis:eventIdentifierValue>uuid-90188a95-71ef-470c-828c-b15609e69fae</premis:eventIdentifierValue>
+      <premis:eventIdentifierValue>uuid-</premis:eventIdentifierValue>
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/editing">editing</premis:eventType>
     <premis:eventDateTime>2022-04-28T00:00:00</premis:eventDateTime>
@@ -508,7 +508,7 @@
     <!-- reference to the premis:Representation object of the carrier representation -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-      <premis:linkingObjectIdentifierValue>uuid-a27d233d-12f4-4c61-a135-3f8748976016</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>
@@ -517,7 +517,7 @@
     mezzanine copy) -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-      <premis:linkingObjectIdentifierValue>uuid-9e15c27f-1c4e-48c7-a979-36c2af0e1c88</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/out">outcome</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>
@@ -529,7 +529,7 @@
     <premis:eventIdentifier>
 
       <premis:eventIdentifierType>UUID</premis:eventIdentifierType>
-      <premis:eventIdentifierValue>uuid-4f2f4684-2dac-4be8-9536-d1e1e9dd1e1e</premis:eventIdentifierValue>
+      <premis:eventIdentifierValue>uuid-</premis:eventIdentifierValue>
 
     </premis:eventIdentifier>
     <premis:eventType valueURI="https://data.hetarchief.be/id/event-type/transfer">
@@ -559,7 +559,7 @@
     master) -->
     <premis:linkingObjectIdentifier>
       <premis:linkingObjectIdentifierType>UUID</premis:linkingObjectIdentifierType>
-      <premis:linkingObjectIdentifierValue>uuid-684d76fd-6d40-4aaa-b897-36d7e2872680</premis:linkingObjectIdentifierValue>
+      <premis:linkingObjectIdentifierValue>uuid-</premis:linkingObjectIdentifierValue>
       <premis:linkingObjectRole
         valueURI="http://id.loc.gov/vocabulary/preservation/eventRelatedObjectRole/sou">source</premis:linkingObjectRole>
     </premis:linkingObjectIdentifier>

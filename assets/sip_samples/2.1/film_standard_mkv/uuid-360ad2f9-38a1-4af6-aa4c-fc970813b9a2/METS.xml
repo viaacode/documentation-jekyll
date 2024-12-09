@@ -2,7 +2,7 @@
 <mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
     xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
-    OBJID="uuid-360ad2f9-38a1-4af6-aa4c-fc970813b9a2"
+    OBJID="uuid-"
     PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP-v2-2-0.xml"
     csip:CONTENTINFORMATIONTYPE="OTHER"
     csip:OTHERCONTENTINFORMATIONTYPE="https://data.hetarchief.be/id/sip/2.1/film"
@@ -30,7 +30,7 @@
     </metsHdr>
 
     <!-- ref to descriptive metadata about IE and carrier (representation) -->
-    <dmdSec ID="uuid-cda36580-f1c4-4e58-9ab2-4e7664263f56" CREATED="2023-11-16T00:00:00+02:00">
+    <dmdSec ID="uuid-" CREATED="2023-11-16T00:00:00+02:00">
         <mdRef LOCTYPE="URL" MDTYPE="OTHER" xlink:type="simple"
             xlink:href="metadata/descriptive/dc+schema.xml" MIMETYPE="text/xml" SIZE="1797"
             CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="e8f8b51619c75302f2915fd1c0f1d778"
@@ -39,7 +39,7 @@
 
     <!-- ref to the PREMIS metadata about IE/subIE(s)/package -->
     <amdSec>
-        <digiprovMD ID="uuid-30bdf089-b63d-4563-84e5-1ef247ee5a81">
+        <digiprovMD ID="uuid-">
             <mdRef LOCTYPE="URL" MDTYPE="PREMIS" xlink:type="simple"
                 xlink:href="metadata/preservation/premis.xml" MIMETYPE="text/xml" SIZE="26877"
                 CREATED="2023-11-16T00:00:00+02:00" CHECKSUM="65dc682a88da0ac0b321918815315540"
@@ -48,60 +48,60 @@
     </amdSec>
 
     <!-- file section -->
-    <fileSec ID="uuid-64efbc0e-b1cf-44ba-9f65-cb1fe3077eb3">
+    <fileSec ID="uuid-">
 
         <fileGrp USE="Representations/representation_1"
-            ID="uuid-23a706e2-5cc4-4282-abcc-ef7c77644c53">
-            <file ID="uuid-cffb35d2-b524-4ca6-9c3c-93500a25461b" MIMETYPE="text/xml" SIZE="3212"
+            ID="uuid-">
+            <file ID="uuid-" MIMETYPE="text/xml" SIZE="3212"
                 CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="889cf164778a5189ce84fa146ead4d92"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="representations/uuid-cffb35d2-b524-4ca6-9c3c-93500a25461b/METS.xml" />
+                    xlink:href="representations/uuid-/METS.xml" />
             </file>
         </fileGrp>
         <fileGrp USE="Representations/representation_2"
-            ID="uuid-abf2905f-49a6-42e3-a69d-12dd8eb46e2d">
-            <file ID="uuid-979e8a70-e7a4-4bf1-ade1-ea2aedc9590b" MIMETYPE="text/xml" SIZE="3217"
+            ID="uuid-">
+            <file ID="uuid-" MIMETYPE="text/xml" SIZE="3217"
                 CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="7d81a4703ad8af3ce775ae6fa568e837"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="representations/uuid-979e8a70-e7a4-4bf1-ade1-ea2aedc9590b/METS.xml" />
+                    xlink:href="representations/uuid-/METS.xml" />
             </file>
         </fileGrp>
         <fileGrp USE="Representations/representation_3"
-            ID="uuid-4961325b-fc26-4b61-84aa-cf6cc1b92ae3">
-            <file ID="uuid-eb6d4aa4-75e2-4cda-a404-811e2dd64e6b" MIMETYPE="text/xml" SIZE="4530"
+            ID="uuid-">
+            <file ID="uuid-" MIMETYPE="text/xml" SIZE="4530"
                 CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="3ccf5a87bc6c467664129a9af93b25cf"
                 CHECKSUMTYPE="MD5">
                 <FLocat LOCTYPE="URL" xlink:type="simple"
-                    xlink:href="representations/uuid-eb6d4aa4-75e2-4cda-a404-811e2dd64e6b/METS.xml" />
+                    xlink:href="representations/uuid-/METS.xml" />
             </file>
         </fileGrp>
 
     </fileSec>
 
-    <structMap ID="uuid-fe1853e6-152b-47f8-9a88-c734e650970b" TYPE="PHYSICAL" LABEL="CSIP">
-        <div ID="uuid-ee59b3f5-3e98-4d86-bfc0-9b4dc110cb75">
-            <div ID="uuid-3bf3fff1-24f9-440f-a5b6-07c63dab1bbc" LABEL="Metadata"
-                ADMID="uuid-30bdf089-b63d-4563-84e5-1ef247ee5a81"
-                DMDID="uuid-cda36580-f1c4-4e58-9ab2-4e7664263f56" />
-            <div ID="uuid-8f672370-1c3f-4349-96d9-305d24e33aed"
-                LABEL="representations/uuid-cffb35d2-b524-4ca6-9c3c-93500a25461b">
+    <structMap ID="uuid-" TYPE="PHYSICAL" LABEL="CSIP">
+        <div ID="uuid-">
+            <div ID="uuid-" LABEL="Metadata"
+                ADMID="uuid-"
+                DMDID="uuid-" />
+            <div ID="uuid-"
+                LABEL="representations/uuid-">
                 <mptr xlink:type="simple"
-                    xlink:href="representations/uuid-cffb35d2-b524-4ca6-9c3c-93500a25461b/METS.xml"
-                    LOCTYPE="URL" xlink:title="uuid-cffb35d2-b524-4ca6-9c3c-93500a25461b" />
+                    xlink:href="representations/uuid-/METS.xml"
+                    LOCTYPE="URL" xlink:title="uuid-" />
             </div>
-            <div ID="uuid-a127f8d5-cf04-4ca2-a430-91993174e71c"
-                LABEL="representations/uuid-979e8a70-e7a4-4bf1-ade1-ea2aedc9590b">
+            <div ID="uuid-"
+                LABEL="representations/uuid-">
                 <mptr xlink:type="simple"
-                    xlink:href="representations/uuid-979e8a70-e7a4-4bf1-ade1-ea2aedc9590b/METS.xml"
-                    LOCTYPE="URL" xlink:title="uuid-979e8a70-e7a4-4bf1-ade1-ea2aedc9590b" />
+                    xlink:href="representations/uuid-/METS.xml"
+                    LOCTYPE="URL" xlink:title="uuid-" />
             </div>
-            <div ID="uuid-a3e35b55-6a70-4a4a-a87b-c5577ffe2bd1"
-                LABEL="representations/uuid-eb6d4aa4-75e2-4cda-a404-811e2dd64e6b">
+            <div ID="uuid-"
+                LABEL="representations/uuid-">
                 <mptr xlink:type="simple"
-                    xlink:href="representations/uuid-eb6d4aa4-75e2-4cda-a404-811e2dd64e6b/METS.xml"
-                    LOCTYPE="URL" xlink:title="uuid-eb6d4aa4-75e2-4cda-a404-811e2dd64e6b" />
+                    xlink:href="representations/uuid-/METS.xml"
+                    LOCTYPE="URL" xlink:title="uuid-" />
             </div>
         </div>
     </structMap>

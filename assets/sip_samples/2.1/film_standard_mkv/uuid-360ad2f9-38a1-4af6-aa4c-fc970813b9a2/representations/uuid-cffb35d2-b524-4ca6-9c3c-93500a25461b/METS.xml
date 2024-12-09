@@ -2,7 +2,7 @@
 <mets xmlns="http://www.loc.gov/METS/" xmlns:csip="https://DILCIS.eu/XML/METS/CSIPExtensionMETS"
     xmlns:sip="https://DILCIS.eu/XML/METS/SIPExtensionMETS"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink"
-    OBJID="uuid-cffb35d2-b524-4ca6-9c3c-93500a25461b" TYPE="Video – File-based and Physical Media"
+    OBJID="uuid-" TYPE="Video – File-based and Physical Media"
     PROFILE="https://earksip.dilcis.eu/profile/E-ARK-SIP-v2-2-0.xml"
     csip:CONTENTINFORMATIONTYPE="OTHER"
     csip:OTHERCONTENTINFORMATIONTYPE="https://data.hetarchief.be/id/sip/2.1/film"
@@ -15,7 +15,7 @@
     <metsHdr CREATEDATE="2023-11-16T10:02:37.009+02:00" csip:OAISPACKAGETYPE="SIP" />
 
     <amdSec>
-        <digiprovMD ID="uuid-a5e32a42-f264-4aa2-b2d4-58e4377ec663">
+        <digiprovMD ID="uuid-">
             <!-- Size of the premis.xml file -->
             <!-- Creation date of the premis.xml file -->
             <!-- Checksum of the premis.xml file -->
@@ -26,12 +26,12 @@
         </digiprovMD>
     </amdSec>
 
-    <fileSec ID="uuid-5d2e36dc-d926-403c-ab0c-ba1d89234550">
+    <fileSec ID="uuid-">
         <!-- Size of the file in data directory -->
         <!-- Creation date of the file in data directory -->
         <!-- Checksum of the file in data directory -->
-        <fileGrp USE="data" ID="uuid-fbd94fde-3030-4822-8691-5c88a1f00adb">
-            <file ID="uuid-545a2932-4a2f-40b4-b3c1-393d4c8a89bc" MIMETYPE="video/x-matroska"
+        <fileGrp USE="data" ID="uuid-">
+            <file ID="uuid-" MIMETYPE="video/x-matroska"
                 SIZE="6255"
                 CREATED="2023-11-10T12:01:00+02:00" CHECKSUM="a427d6f9dcf9d4db5145dc159fef7727"
                 CHECKSUMTYPE="MD5">
@@ -41,15 +41,15 @@
         </fileGrp>
     </fileSec>
 
-    <structMap ID="uuid-9acc1545-9fb8-4eff-881b-a325c9e75f0d" TYPE="PHYSICAL" LABEL="CSIP">
-        <div ID="uuid-d8f87fd9-da19-4feb-8772-7b1ea12e7a09"
-            LABEL="uuid-cffb35d2-b524-4ca6-9c3c-93500a25461b">
+    <structMap ID="uuid-" TYPE="PHYSICAL" LABEL="CSIP">
+        <div ID="uuid-"
+            LABEL="uuid-">
             <!-- ADMID points to mets/amdSec/digiprovMD/@ID -->
-            <div ID="uuid-24a5ca20-aeee-4b68-8ee1-452323adb9f1" LABEL="Metadata"
-                ADMID="uuid-a5e32a42-f264-4aa2-b2d4-58e4377ec663" />
-            <div ID="uuid-55c9e69f-f32c-4075-8869-3232ec0e0687" LABEL="data">
+            <div ID="uuid-" LABEL="Metadata"
+                ADMID="uuid-" />
+            <div ID="uuid-" LABEL="data">
                 <!-- File pointer to file ID in mets/fileSec/fileGrp[@USE="data"]/file/@ID -->
-                <fptr FILEID="uuid-545a2932-4a2f-40b4-b3c1-393d4c8a89bc" />
+                <fptr FILEID="uuid-" />
             </div>
         </div>
     </structMap>

@@ -11,7 +11,7 @@
   <dcterms:description xml:lang="nl">Een dummybeschrijving</dcterms:description>
 
   <!-- linking id between dc and premis -->
-  <dcterms:identifier>uuid-050351c8-0387-40b2-a072-f991116832d2</dcterms:identifier>
+  <dcterms:identifier>uuid-</dcterms:identifier>
 
   <!-- creationdate -->
   <dcterms:created xsi:type="edtf:EDTF-level1">2024-XX-XX</dcterms:created>
