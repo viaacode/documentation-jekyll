@@ -8,7 +8,7 @@
     <!-- Create PREMIS object for the representation itself -->
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-9e15c27f-1c4e-48c7-a979-36c2af0e1c88</premis:objectIdentifierValue>
+      <premis:objectIdentifierValue>uuid-ed415625-bc4b-4ecc-b220-9c9d4400bde8</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
     <!-- relationship between representation and its files, detailed below -->
@@ -21,7 +21,7 @@
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc">includes</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-34aa83b1-76f7-475a-b4ed-78b7b9fb0109</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-b8e8db68-296b-4025-9dad-df966fe05b70</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
@@ -35,7 +35,7 @@
         valueURI="https://data.hetarchief.be/ns/object/isMezzanineCopyOf">is mezzanine of</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-050351c8-0387-40b2-a072-f991116832d2</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-f9ef158c-f03c-4840-836e-8ffb8e8ebe04</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
   </premis:object>
@@ -44,7 +44,7 @@
 
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-34aa83b1-76f7-475a-b4ed-78b7b9fb0109</premis:objectIdentifierValue>
+      <premis:objectIdentifierValue>uuid-b8e8db68-296b-4025-9dad-df966fe05b70</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
     <premis:objectCharacteristics>
@@ -81,7 +81,7 @@
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-9e15c27f-1c4e-48c7-a979-36c2af0e1c88</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-ed415625-bc4b-4ecc-b220-9c9d4400bde8</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
