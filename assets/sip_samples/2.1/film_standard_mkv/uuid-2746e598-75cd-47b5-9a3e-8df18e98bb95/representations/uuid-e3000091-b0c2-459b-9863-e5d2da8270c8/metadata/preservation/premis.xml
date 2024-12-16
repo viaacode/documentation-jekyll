@@ -8,7 +8,7 @@
     <!-- Create PREMIS object for the representation itself -->
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-</premis:objectIdentifierValue>
+      <premis:objectIdentifierValue>uuid-ed415625-bc4b-4ecc-b220-9c9d4400bde8</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
     <!-- relationship between representation and its files, detailed below -->
@@ -21,7 +21,7 @@
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/inc">includes</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-b8e8db68-296b-4025-9dad-df966fe05b70</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
@@ -31,11 +31,11 @@
         authorityURI="http://id.loc.gov/vocabulary/preservation/relationshipType"
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipType/str">structural</premis:relationshipType>
       <premis:relationshipSubType authority="haObj"
-        authorityURI="https://data.hetarchief.be/ns/object/"
-        valueURI="https://data.hetarchief.be/ns/object/isMasterCopyOf">is master of</premis:relationshipSubType>
+        authorityURI="https://data.hetarchief.be/ns/object"
+        valueURI="https://data.hetarchief.be/ns/object/isMezzanineCopyOf">is mezzanine of</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-f9ef158c-f03c-4840-836e-8ffb8e8ebe04</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
   </premis:object>
@@ -44,7 +44,7 @@
 
     <premis:objectIdentifier>
       <premis:objectIdentifierType>UUID</premis:objectIdentifierType>
-      <premis:objectIdentifierValue>uuid-</premis:objectIdentifierValue>
+      <premis:objectIdentifierValue>uuid-b8e8db68-296b-4025-9dad-df966fe05b70</premis:objectIdentifierValue>
     </premis:objectIdentifier>
 
     <premis:objectCharacteristics>
@@ -54,13 +54,13 @@
           valueURI="http://id.loc.gov/vocabulary/preservation/cryptographicHashFunctions/md5">
           MD5
         </premis:messageDigestAlgorithm>
-        <premis:messageDigest>a427d6f9dcf9d4db5145dc159fef7727</premis:messageDigest>
+        <premis:messageDigest>04c2f9a43c2aa4d6f6975903bad69a67</premis:messageDigest>
       </premis:fixity>
-      <premis:size>6255</premis:size>
+      <premis:size>52574</premis:size>
       <premis:format>
         <premis:formatRegistry>
           <premis:formatRegistryName>PRONOM</premis:formatRegistryName>
-          <premis:formatRegistryKey>fmt/569</premis:formatRegistryKey>
+          <premis:formatRegistryKey>x-fmt/384</premis:formatRegistryKey>
           <premis:formatRegistryRole authority="formatRegistryRole"
             authorityURI="http://id.loc.gov/vocabulary/preservation/formatRegistryRole"
             valueURI="http://id.loc.gov/vocabulary/preservation/formatRegistryRole/spe">
@@ -69,7 +69,7 @@
       </premis:format>
     </premis:objectCharacteristics>
 
-    <premis:originalName>master_dummy.mkv</premis:originalName>
+    <premis:originalName>mezzanine_dummy.mov</premis:originalName>
 
     <!-- relationship between file and its representation -->
     <premis:relationship>
@@ -81,7 +81,7 @@
         valueURI="http://id.loc.gov/vocabulary/preservation/relationshipSubType/isi">is included in</premis:relationshipSubType>
       <premis:relatedObjectIdentifier>
         <premis:relatedObjectIdentifierType>UUID</premis:relatedObjectIdentifierType>
-        <premis:relatedObjectIdentifierValue>uuid-</premis:relatedObjectIdentifierValue>
+        <premis:relatedObjectIdentifierValue>uuid-ed415625-bc4b-4ecc-b220-9c9d4400bde8</premis:relatedObjectIdentifierValue>
       </premis:relatedObjectIdentifier>
     </premis:relationship>
 
