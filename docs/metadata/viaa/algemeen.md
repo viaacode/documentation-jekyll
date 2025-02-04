@@ -176,7 +176,7 @@ De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele r
 
 
 | **XML element**        | `<dc_relations type="list"><is_deel_van/></dc_relations>`                                                |
-| **Datatype**           | [PID](#pid)                                                                              |
+| **Datatype**           | [PID](#pid) of [dc_identifier_localid](#dc_identifier_localid) in de vorm `dc_identifier_localid:<id>`                                                                              |
 | **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                                    |
 | **Herhaalbaar**        | Ja                                                                                                       |
 
@@ -186,7 +186,7 @@ De relatiemetadatavelden in het meemoo datamodel worden gebruikt om de formele r
 
 
 | **XML element**        | `<dc_relations type="list"><bevat/></dc_relations>`                                    |
-| **Datatype**           | [PID](#pid)                                                                                     |
+| **Datatype**           | [PID](#pid) of [dc_identifier_localid](#dc_identifier_localid) in de vorm `dc_identifier_localid:<id>`                                                                                 |
 | **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                  |
 | **Herhaalbaar**        | Ja                                                                                     |
 
@@ -196,7 +196,7 @@ In dit veld worden verwante digitale objecten (PIDs) aangegeven.
 
 
 | **XML element**        | `<dc_relations type="list"><is_verwant_aan/></dc_relations>`       |
-| **Datatype**           | [PID](#pid)                                                                 |
+| **Datatype**           | [PID](#pid) of [dc_identifier_localid](#dc_identifier_localid) in de vorm `dc_identifier_localid:<id>`                                                               |
 | **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)              |
 | **Herhaalbaar**        | Ja                                                                 |
 
@@ -206,7 +206,7 @@ In dit veld worden versies van digitale objecten (PIDs) aangegeven. (vb. Dubbele
 
 
 | **XML element**        | `<dc_relations type="list"><is_versie_van/></dc_relations>`                                 |
-| **Datatype**           | [PID](#pid)                                                                                          |
+| **Datatype**           | [PID](#pid) of [dc_identifier_localid](#dc_identifier_localid) in de vorm `dc_identifier_localid:<id>`                                                                                         |
 | **Verplichting**       | Automatisch ingevuld door meemoo mapping (born digital)                                       |
 | **Herhaalbaar**        | Ja                                                                                          |
 
